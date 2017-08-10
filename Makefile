@@ -139,7 +139,7 @@ override_property += \
 # You should configure the property according to your device and your ID with replace the "Nexus-6P_Unofficial".
 override_property += \
     ro.flyme.romer=Ankris \
-    ro.product.model_romer=athene
+    ro.product.model_romer=athene_Unofficial
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
