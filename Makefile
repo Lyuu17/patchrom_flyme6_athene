@@ -139,12 +139,12 @@ override_property += \
 # You should configure the property according to your device and your ID with replace the "Nexus-6P_Unofficial".
 override_property += \
     ro.flyme.romer=Ankris \
-    ro.product.model_romer=athene_Unofficial
-    persist.sys.timezone=Europe/Brussels
-    ro.product.locale=en-US
-    ro.meizu.voip.support=true
-    ro.build.user=Ankris
-    ro.build.host=none
+    ro.product.model_romer=athene_Unofficial \
+    persist.sys.timezone=Europe/Brussels \
+    ro.product.locale=en-US \
+    ro.meizu.voip.support=true \
+    ro.build.user=Ankris \
+    ro.build.host=none \
     ro.sf.lcd_density=400
 
 ##############################################################################
