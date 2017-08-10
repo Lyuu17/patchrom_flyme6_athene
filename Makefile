@@ -54,7 +54,7 @@ vendor_modify_images := boot
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyChain PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell CMSettingsProvider telresources
+vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService CMActions CMSettingsProvider HTMLViewer KeyChain PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell telresources
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -140,6 +140,12 @@ override_property += \
 override_property += \
     ro.flyme.romer=Ankris \
     ro.product.model_romer=athene_Unofficial
+    persist.sys.timezone=Europe/Brussels
+    ro.product.locale=en-US
+    ro.meizu.voip.support=true
+    ro.build.user=Ankris
+    ro.build.host=none
+    ro.sf.lcd_density=400
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
