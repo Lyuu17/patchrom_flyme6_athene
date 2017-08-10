@@ -1,7 +1,7 @@
 #
 # ADDITIONAL_DEFAULT_PROPERTIES
 #
-ro.adb.secure=1
+ro.adb.secure=0
 ro.secure=1
 security.perf_harden=1
 ro.allow.mock.location=0
@@ -19,4 +19,4 @@ debug.atrace.tags.enableflags=0
 ro.bootimage.build.date=lundi 29 mai 2017, 18:27:34 (UTC+0200)
 ro.bootimage.build.date.utc=1496075254
 ro.bootimage.build.fingerprint=Motorola/cm_athene/athene:6.0.1/MOB31T/df4c3c2e01:userdebug/test-keys
-persist.sys.usb.config=none
+persist.sys.usb.config=mtp,adb
