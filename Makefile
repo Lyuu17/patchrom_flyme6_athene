@@ -138,15 +138,16 @@ override_property += \
     ro.meizu.voip.support=true \
     ro.build.user=Ankris \
     ro.build.host=none \
-    ro.sf.lcd_density=400
+    ro.sf.lcd_density=400 \
+    persist.camera.HAL3.enabled=0
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
 # The default value is nothing.
 # You can add the property name in the value from the build.prop.
 #-----------------------------------------------------------------------------
-# remove_property += \
-#     dev.defaultwallpaper
+remove_property += \
+     camera.hal1.packagelist
 
 ##############################################################################
 # Defines whether uses assertions in /META-INF/com/google/android/updater-script of the OTA package.
