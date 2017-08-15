@@ -181,7 +181,7 @@ remove_property += \
 # Defines whether build an international version of package.
 # Default: false
 #-----------------------------------------------------------------------------
-#PRODUCE_INTERNATIONAL_ROM := true
+PRODUCE_INTERNATIONAL_ROM := true
 
 ##############################################################################
 # Defines whether use sepolicy inject.
