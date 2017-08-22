@@ -131,23 +131,30 @@ override_property += \
     ro.flyme.romer=Ankris \
     ro.product.model_romer=athene_Unofficial
 
-#fixes
+#language
 override_property += \
     persist.sys.timezone=Europe/Brussels \
     ro.product.locale=en-US \
+
+#misc
+override_property += \
     ro.meizu.voip.support=true \
     ro.build.user=Ankris \
     ro.build.host=none \
-    ro.sf.lcd_density=400 \
-    persist.camera.HAL3.enabled=0
+    ro.sf.lcd_density=420
+
+#cam
+override_property += \
+    persist.camera.HAL3.enabled=1 \
+    camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.snapchat.android,com.instagram.android
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
 # The default value is nothing.
 # You can add the property name in the value from the build.prop.
 #-----------------------------------------------------------------------------
-remove_property += \
-     camera.hal1.packagelist
+#remove_property += \
+#     camera.hal1.packagelist
 
 ##############################################################################
 # Defines whether uses assertions in /META-INF/com/google/android/updater-script of the OTA package.
