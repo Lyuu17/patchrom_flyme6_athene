@@ -980,6 +980,8 @@
 
     invoke-virtual {v6, v1}, Landroid/widget/GridView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    invoke-virtual {v6, v4}, Landroid/widget/GridView;->setLayoutDirection(I)V
+
     .line 2208
     iget-object v1, p0, Lcom/android/internal/app/MzResolverActivity$NormalGridFrag;->mPageViews:Ljava/util/ArrayList;
 
@@ -2041,6 +2043,10 @@
 
     iput-object v2, p0, Lcom/android/internal/app/MzResolverActivity$NormalGridFrag;->mOverScrollLayout:Lcom/meizu/widget/ViewPagerOverScrollLayout;
 
+    iget-object v2, p0, Lcom/android/internal/app/MzResolverActivity$NormalGridFrag;->mPointView:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v2, v5}, Landroid/widget/LinearLayout;->setLayoutDirection(I)V
+
     .line 1999
     iget-object v2, p0, Lcom/android/internal/app/MzResolverActivity$NormalGridFrag;->mTitle:Ljava/lang/CharSequence;
 
@@ -2144,7 +2150,7 @@
 
     move-result-object v3
 
-    const v4, 0x10403d2
+    const v4, #android:string@whichViewApplication#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
