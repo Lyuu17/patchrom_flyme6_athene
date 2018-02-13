@@ -104,34 +104,34 @@
     .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
     .prologue
-    .line 3948
+    .line 4284
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    .line 3949
+    .line 4285
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {p1}, Lcom/android/server/notification/NotificationManagerService;->-get8(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
+    invoke-static {p1}, Lcom/android/server/notification/NotificationManagerService;->-get13(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
 
     move-result-object v1
 
     iget-object v2, p1, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
-    invoke-static {p1}, Lcom/android/server/notification/NotificationManagerService;->-get21(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ManagedServices$UserProfiles;
+    invoke-static {p1}, Lcom/android/server/notification/NotificationManagerService;->-get29(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ManagedServices$UserProfiles;
 
     move-result-object v3
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/android/server/notification/ManagedServices;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/Object;Lcom/android/server/notification/ManagedServices$UserProfiles;)V
 
-    .line 3946
+    .line 4282
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mLightTrimListeners:Landroid/util/ArraySet;
 
-    .line 3948
+    .line 4284
     return-void
 .end method
 
@@ -142,13 +142,13 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 4174
+    .line 4510
     if-nez p1, :cond_0
 
-    .line 4175
+    .line 4511
     return v4
 
-    .line 4178
+    .line 4514
     :cond_0
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -156,7 +156,7 @@
 
     monitor-enter v3
 
-    .line 4179
+    .line 4515
     :try_start_0
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mServices:Ljava/util/ArrayList;
 
@@ -178,7 +178,7 @@
 
     check-cast v0, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-    .line 4180
+    .line 4516
     .local v0, "serviceInfo":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     iget-object v2, v0, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->component:Landroid/content/ComponentName;
 
@@ -194,7 +194,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 4181
+    .line 4517
     const/4 v2, 0x1
 
     monitor-exit v3
@@ -205,10 +205,10 @@
     :cond_2
     monitor-exit v3
 
-    .line 4185
+    .line 4521
     return v4
 
-    .line 4178
+    .line 4514
     .end local v1    # "serviceInfo$iterator":Ljava/util/Iterator;
     :catchall_0
     move-exception v2
@@ -224,27 +224,27 @@
     .param p2, "interruptionFilter"    # I
 
     .prologue
-    .line 4165
+    .line 4501
     iget-object v1, p1, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->service:Landroid/os/IInterface;
 
     check-cast v1, Landroid/service/notification/INotificationListener;
 
-    .line 4167
+    .line 4503
     .local v1, "listener":Landroid/service/notification/INotificationListener;
     :try_start_0
     invoke-interface {v1, p2}, Landroid/service/notification/INotificationListener;->onInterruptionFilterChanged(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4164
+    .line 4500
     :goto_0
     return-void
 
-    .line 4168
+    .line 4504
     :catch_0
     move-exception v0
 
-    .line 4169
+    .line 4505
     .local v0, "ex":Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->TAG:Ljava/lang/String;
 
@@ -277,27 +277,27 @@
     .param p2, "hints"    # I
 
     .prologue
-    .line 4155
+    .line 4491
     iget-object v1, p1, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->service:Landroid/os/IInterface;
 
     check-cast v1, Landroid/service/notification/INotificationListener;
 
-    .line 4157
+    .line 4493
     .local v1, "listener":Landroid/service/notification/INotificationListener;
     :try_start_0
     invoke-interface {v1, p2}, Landroid/service/notification/INotificationListener;->onListenerHintsChanged(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4154
+    .line 4490
     :goto_0
     return-void
 
-    .line 4158
+    .line 4494
     :catch_0
     move-exception v0
 
-    .line 4159
+    .line 4495
     .local v0, "ex":Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->TAG:Ljava/lang/String;
 
@@ -331,33 +331,33 @@
     .param p3, "rankingUpdate"    # Landroid/service/notification/NotificationRankingUpdate;
 
     .prologue
-    .line 4121
+    .line 4457
     iget-object v1, p1, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->service:Landroid/os/IInterface;
 
     check-cast v1, Landroid/service/notification/INotificationListener;
 
-    .line 4122
+    .line 4458
     .local v1, "listener":Landroid/service/notification/INotificationListener;
     new-instance v2, Lcom/android/server/notification/NotificationManagerService$StatusBarNotificationHolder;
 
     invoke-direct {v2, p2}, Lcom/android/server/notification/NotificationManagerService$StatusBarNotificationHolder;-><init>(Landroid/service/notification/StatusBarNotification;)V
 
-    .line 4124
+    .line 4460
     .local v2, "sbnHolder":Lcom/android/server/notification/NotificationManagerService$StatusBarNotificationHolder;
     :try_start_0
     invoke-interface {v1, v2, p3}, Landroid/service/notification/INotificationListener;->onNotificationPosted(Landroid/service/notification/IStatusBarNotificationHolder;Landroid/service/notification/NotificationRankingUpdate;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4120
+    .line 4456
     :goto_0
     return-void
 
-    .line 4125
+    .line 4461
     :catch_0
     move-exception v0
 
-    .line 4126
+    .line 4462
     .local v0, "ex":Landroid/os/RemoteException;
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->TAG:Ljava/lang/String;
 
@@ -390,27 +390,27 @@
     .param p2, "rankingUpdate"    # Landroid/service/notification/NotificationRankingUpdate;
 
     .prologue
-    .line 4146
+    .line 4482
     iget-object v1, p1, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->service:Landroid/os/IInterface;
 
     check-cast v1, Landroid/service/notification/INotificationListener;
 
-    .line 4148
+    .line 4484
     .local v1, "listener":Landroid/service/notification/INotificationListener;
     :try_start_0
     invoke-interface {v1, p2}, Landroid/service/notification/INotificationListener;->onNotificationRankingUpdate(Landroid/service/notification/NotificationRankingUpdate;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4145
+    .line 4481
     :goto_0
     return-void
 
-    .line 4149
+    .line 4485
     :catch_0
     move-exception v0
 
-    .line 4150
+    .line 4486
     .local v0, "ex":Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->TAG:Ljava/lang/String;
 
@@ -444,7 +444,7 @@
     .param p3, "rankingUpdate"    # Landroid/service/notification/NotificationRankingUpdate;
 
     .prologue
-    .line 4132
+    .line 4468
     invoke-virtual {p2}, Landroid/service/notification/StatusBarNotification;->getUserId()I
 
     move-result v3
@@ -455,37 +455,37 @@
 
     if-nez v3, :cond_0
 
-    .line 4133
+    .line 4469
     return-void
 
-    .line 4135
+    .line 4471
     :cond_0
     iget-object v1, p1, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->service:Landroid/os/IInterface;
 
     check-cast v1, Landroid/service/notification/INotificationListener;
 
-    .line 4136
+    .line 4472
     .local v1, "listener":Landroid/service/notification/INotificationListener;
     new-instance v2, Lcom/android/server/notification/NotificationManagerService$StatusBarNotificationHolder;
 
     invoke-direct {v2, p2}, Lcom/android/server/notification/NotificationManagerService$StatusBarNotificationHolder;-><init>(Landroid/service/notification/StatusBarNotification;)V
 
-    .line 4138
+    .line 4474
     .local v2, "sbnHolder":Lcom/android/server/notification/NotificationManagerService$StatusBarNotificationHolder;
     :try_start_0
     invoke-interface {v1, v2, p3}, Landroid/service/notification/INotificationListener;->onNotificationRemoved(Landroid/service/notification/IStatusBarNotificationHolder;Landroid/service/notification/NotificationRankingUpdate;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4131
+    .line 4467
     :goto_0
     return-void
 
-    .line 4139
+    .line 4475
     :catch_0
     move-exception v0
 
-    .line 4140
+    .line 4476
     .local v0, "ex":Landroid/os/RemoteException;
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->TAG:Ljava/lang/String;
 
@@ -519,7 +519,7 @@
     .param p1, "binder"    # Landroid/os/IBinder;
 
     .prologue
-    .line 3966
+    .line 4302
     invoke-static {p1}, Landroid/service/notification/INotificationListener$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/notification/INotificationListener;
 
     move-result-object v0
@@ -532,7 +532,7 @@
     .param p1, "service"    # Landroid/os/IInterface;
 
     .prologue
-    .line 3971
+    .line 4307
     instance-of v0, p1, Landroid/service/notification/INotificationListener;
 
     return v0
@@ -542,43 +542,43 @@
     .locals 2
 
     .prologue
-    .line 3954
+    .line 4290
     new-instance v0, Lcom/android/server/notification/ManagedServices$Config;
 
     invoke-direct {v0}, Lcom/android/server/notification/ManagedServices$Config;-><init>()V
 
-    .line 3955
+    .line 4291
     .local v0, "c":Lcom/android/server/notification/ManagedServices$Config;
     const-string/jumbo v1, "notification listener"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->caption:Ljava/lang/String;
 
-    .line 3956
+    .line 4292
     const-string/jumbo v1, "android.service.notification.NotificationListenerService"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->serviceInterface:Ljava/lang/String;
 
-    .line 3957
+    .line 4293
     const-string/jumbo v1, "enabled_notification_listeners"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->secureSettingName:Ljava/lang/String;
 
-    .line 3958
+    .line 4294
     const-string/jumbo v1, "android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->bindPermission:Ljava/lang/String;
 
-    .line 3959
+    .line 4295
     const-string/jumbo v1, "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->settingsAction:Ljava/lang/String;
 
-    .line 3960
+    .line 4296
     const v1, 0x10404f0
 
     iput v1, v0, Lcom/android/server/notification/ManagedServices$Config;->clientLabel:I
 
-    .line 3961
+    .line 4297
     return-object v0
 .end method
 
@@ -587,7 +587,7 @@
     .param p1, "info"    # Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     .prologue
-    .line 4006
+    .line 4342
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mLightTrimListeners:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
@@ -612,7 +612,7 @@
     .param p1, "interruptionFilter"    # I
 
     .prologue
-    .line 4106
+    .line 4442
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mServices:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -634,7 +634,7 @@
 
     check-cast v0, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-    .line 4107
+    .line 4443
     .local v0, "serviceInfo":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     invoke-virtual {v0}, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->isEnabledForCurrentProfiles()Z
 
@@ -642,10 +642,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 4110
+    .line 4446
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v2}, Lcom/android/server/notification/NotificationManagerService;->-get8(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/notification/NotificationManagerService;->-get13(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -657,7 +657,7 @@
 
     goto :goto_0
 
-    .line 4105
+    .line 4441
     .end local v0    # "serviceInfo":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     :cond_1
     return-void
@@ -668,7 +668,7 @@
     .param p1, "hints"    # I
 
     .prologue
-    .line 4092
+    .line 4428
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mServices:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -690,7 +690,7 @@
 
     check-cast v0, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-    .line 4093
+    .line 4429
     .local v0, "serviceInfo":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     invoke-virtual {v0}, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->isEnabledForCurrentProfiles()Z
 
@@ -698,10 +698,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 4096
+    .line 4432
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v2}, Lcom/android/server/notification/NotificationManagerService;->-get8(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/notification/NotificationManagerService;->-get13(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -713,7 +713,7 @@
 
     goto :goto_0
 
-    .line 4091
+    .line 4427
     .end local v0    # "serviceInfo":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     :cond_1
     return-void
@@ -725,14 +725,14 @@
     .param p2, "oldSbn"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 4018
+    .line 4354
     new-instance v6, Lcom/android/server/notification/NotificationManagerService$TrimCache;
 
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {v6, v8, p1}, Lcom/android/server/notification/NotificationManagerService$TrimCache;-><init>(Lcom/android/server/notification/NotificationManagerService;Landroid/service/notification/StatusBarNotification;)V
 
-    .line 4020
+    .line 4356
     .local v6, "trimCache":Lcom/android/server/notification/NotificationManagerService$TrimCache;
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mServices:Ljava/util/ArrayList;
 
@@ -755,7 +755,7 @@
 
     check-cast v0, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-    .line 4021
+    .line 4357
     .local v0, "info":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -763,7 +763,7 @@
 
     move-result v5
 
-    .line 4022
+    .line 4358
     .local v5, "sbnVisible":Z
     if-eqz p2, :cond_3
 
@@ -773,14 +773,14 @@
 
     move-result v3
 
-    .line 4024
+    .line 4360
     .local v3, "oldSbnVisible":Z
     :goto_1
     if-nez v3, :cond_1
 
     if-eqz v5, :cond_0
 
-    .line 4027
+    .line 4363
     :cond_1
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -788,23 +788,23 @@
 
     move-result-object v7
 
-    .line 4030
+    .line 4366
     .local v7, "update":Landroid/service/notification/NotificationRankingUpdate;
     if-eqz v3, :cond_2
 
     if-eqz v5, :cond_4
 
-    .line 4041
+    .line 4377
     :cond_2
     invoke-virtual {v6, v0}, Lcom/android/server/notification/NotificationManagerService$TrimCache;->ForListener(Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;)Landroid/service/notification/StatusBarNotification;
 
     move-result-object v4
 
-    .line 4042
+    .line 4378
     .local v4, "sbnToPost":Landroid/service/notification/StatusBarNotification;
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v8}, Lcom/android/server/notification/NotificationManagerService;->-get8(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
+    invoke-static {v8}, Lcom/android/server/notification/NotificationManagerService;->-get13(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
 
     move-result-object v8
 
@@ -816,7 +816,7 @@
 
     goto :goto_0
 
-    .line 4022
+    .line 4358
     .end local v3    # "oldSbnVisible":Z
     .end local v4    # "sbnToPost":Landroid/service/notification/StatusBarNotification;
     .end local v7    # "update":Landroid/service/notification/NotificationRankingUpdate;
@@ -825,7 +825,7 @@
 
     goto :goto_1
 
-    .line 4031
+    .line 4367
     .restart local v3    # "oldSbnVisible":Z
     .restart local v7    # "update":Landroid/service/notification/NotificationRankingUpdate;
     :cond_4
@@ -833,11 +833,11 @@
 
     move-result-object v2
 
-    .line 4032
+    .line 4368
     .local v2, "oldSbnLightClone":Landroid/service/notification/StatusBarNotification;
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v8}, Lcom/android/server/notification/NotificationManagerService;->-get8(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
+    invoke-static {v8}, Lcom/android/server/notification/NotificationManagerService;->-get13(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
 
     move-result-object v8
 
@@ -849,7 +849,7 @@
 
     goto :goto_0
 
-    .line 4016
+    .line 4352
     .end local v0    # "info":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     .end local v2    # "oldSbnLightClone":Landroid/service/notification/StatusBarNotification;
     .end local v3    # "oldSbnVisible":Z
@@ -863,7 +863,7 @@
     .locals 5
 
     .prologue
-    .line 4077
+    .line 4413
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mServices:Ljava/util/ArrayList;
 
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -885,7 +885,7 @@
 
     check-cast v0, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-    .line 4078
+    .line 4414
     .local v0, "serviceInfo":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     invoke-virtual {v0}, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->isEnabledForCurrentProfiles()Z
 
@@ -893,18 +893,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 4081
+    .line 4417
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v3, v0}, Lcom/android/server/notification/NotificationManagerService;->-wrap0(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;)Landroid/service/notification/NotificationRankingUpdate;
 
     move-result-object v2
 
-    .line 4082
+    .line 4418
     .local v2, "update":Landroid/service/notification/NotificationRankingUpdate;
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v3}, Lcom/android/server/notification/NotificationManagerService;->-get8(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
+    invoke-static {v3}, Lcom/android/server/notification/NotificationManagerService;->-get13(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
 
     move-result-object v3
 
@@ -916,7 +916,7 @@
 
     goto :goto_0
 
-    .line 4076
+    .line 4412
     .end local v0    # "serviceInfo":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     .end local v2    # "update":Landroid/service/notification/NotificationRankingUpdate;
     :cond_1
@@ -928,12 +928,12 @@
     .param p1, "sbn"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 4058
+    .line 4394
     invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->cloneLight()Landroid/service/notification/StatusBarNotification;
 
     move-result-object v2
 
-    .line 4059
+    .line 4395
     .local v2, "sbnLight":Landroid/service/notification/StatusBarNotification;
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mServices:Ljava/util/ArrayList;
 
@@ -956,7 +956,7 @@
 
     check-cast v0, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-    .line 4060
+    .line 4396
     .local v0, "info":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -966,18 +966,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 4063
+    .line 4399
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v4, v0}, Lcom/android/server/notification/NotificationManagerService;->-wrap0(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;)Landroid/service/notification/NotificationRankingUpdate;
 
     move-result-object v3
 
-    .line 4064
+    .line 4400
     .local v3, "update":Landroid/service/notification/NotificationRankingUpdate;
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v4}, Lcom/android/server/notification/NotificationManagerService;->-get8(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
+    invoke-static {v4}, Lcom/android/server/notification/NotificationManagerService;->-get13(Lcom/android/server/notification/NotificationManagerService;)Landroid/os/Handler;
 
     move-result-object v4
 
@@ -989,7 +989,7 @@
 
     goto :goto_0
 
-    .line 4054
+    .line 4390
     .end local v0    # "info":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     .end local v3    # "update":Landroid/service/notification/NotificationRankingUpdate;
     :cond_1
@@ -1001,12 +1001,12 @@
     .param p1, "info"    # Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     .prologue
-    .line 3976
+    .line 4312
     iget-object v1, p1, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->service:Landroid/os/IInterface;
 
     check-cast v1, Landroid/service/notification/INotificationListener;
 
-    .line 3978
+    .line 4314
     .local v1, "listener":Landroid/service/notification/INotificationListener;
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -1014,7 +1014,7 @@
 
     monitor-enter v4
 
-    .line 3979
+    .line 4315
     :try_start_0
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -1027,17 +1027,17 @@
     .local v2, "update":Landroid/service/notification/NotificationRankingUpdate;
     monitor-exit v4
 
-    .line 3982
+    .line 4318
     :try_start_1
     invoke-interface {v1, v2}, Landroid/service/notification/INotificationListener;->onListenerConnected(Landroid/service/notification/NotificationRankingUpdate;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 3975
+    .line 4311
     :goto_0
     return-void
 
-    .line 3978
+    .line 4314
     .end local v2    # "update":Landroid/service/notification/NotificationRankingUpdate;
     :catchall_0
     move-exception v3
@@ -1046,7 +1046,7 @@
 
     throw v3
 
-    .line 3983
+    .line 4319
     .restart local v2    # "update":Landroid/service/notification/NotificationRankingUpdate;
     :catch_0
     move-exception v0
@@ -1060,7 +1060,7 @@
     .param p1, "removed"    # Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     .prologue
-    .line 3990
+    .line 4326
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/notification/NotificationManagerService;->-wrap6(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;)Z
@@ -1069,23 +1069,23 @@
 
     if-eqz v0, :cond_0
 
-    .line 3991
+    .line 4327
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-wrap35(Lcom/android/server/notification/NotificationManagerService;)V
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-wrap36(Lcom/android/server/notification/NotificationManagerService;)V
 
-    .line 3992
+    .line 4328
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-wrap33(Lcom/android/server/notification/NotificationManagerService;)V
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-wrap34(Lcom/android/server/notification/NotificationManagerService;)V
 
-    .line 3994
+    .line 4330
     :cond_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mLightTrimListeners:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p1}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
 
-    .line 3989
+    .line 4325
     return-void
 .end method
 
@@ -1095,21 +1095,21 @@
     .param p2, "trim"    # I
 
     .prologue
-    .line 3998
+    .line 4334
     const/4 v0, 0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 3999
+    .line 4335
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mLightTrimListeners:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 3997
+    .line 4333
     :goto_0
     return-void
 
-    .line 4001
+    .line 4337
     :cond_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->mLightTrimListeners:Landroid/util/ArraySet;
 

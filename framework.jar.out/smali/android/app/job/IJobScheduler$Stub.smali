@@ -30,13 +30,13 @@
 
 .field static final TRANSACTION_cancelAll:I = 0x4
 
-.field static final TRANSACTION_getAllPendingJobs:I = 0x5
+.field static final TRANSACTION_getAllPendingJobs_4:I = 0x5
 
 .field static final TRANSACTION_getPendingJob:I = 0x6
 
-.field static final TRANSACTION_schedule:I = 0x1
-
 .field static final TRANSACTION_scheduleAsPackage:I = 0x2
+
+.field static final TRANSACTION_schedule_0:I = 0x1
 
 
 # direct methods

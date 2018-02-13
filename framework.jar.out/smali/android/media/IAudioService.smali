@@ -23,6 +23,14 @@
     .end annotation
 .end method
 
+.method public abstract addMediaPlayerAndUpdateRemoteController(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract adjustStreamVolume(IIILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -90,6 +98,14 @@
 .end method
 
 .method public abstract getCurrentAudioFocus()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getCurrentHotwordInputPackageName()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -170,6 +186,14 @@
 .end method
 
 .method public abstract getVibrateSetting(I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract handleHotwordInput(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -306,6 +330,14 @@
 .end method
 
 .method public abstract reloadAudioSettings()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract removeMediaPlayerAndUpdateRemoteController(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -522,6 +554,14 @@
 .end method
 
 .method public abstract unregisterRecordingCallback(Landroid/media/IRecordingConfigDispatcher;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract updateRemoteControllerOnExistingMediaPlayers()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

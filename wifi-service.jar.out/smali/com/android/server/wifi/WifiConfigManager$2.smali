@@ -19,7 +19,7 @@
     .locals 1
 
     .prologue
-    .line 1091
+    .line 1118
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiConfigManager$PnoListComparator;-><init>(Lcom/android/server/wifi/WifiConfigManager$PnoListComparator;)V
@@ -35,7 +35,7 @@
     .param p2, "b"    # Landroid/net/wifi/WifiConfiguration;
 
     .prologue
-    .line 1095
+    .line 1122
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration;->getNetworkSelectionStatus()Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;
 
     move-result-object v2
@@ -44,7 +44,7 @@
 
     move-result v0
 
-    .line 1097
+    .line 1124
     .local v0, "isConfigALastSeen":Z
     invoke-virtual {p2}, Landroid/net/wifi/WifiConfiguration;->getNetworkSelectionStatus()Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;
 
@@ -54,18 +54,18 @@
 
     move-result v1
 
-    .line 1098
+    .line 1125
     .local v1, "isConfigBLastSeen":Z
     if-eq v0, v1, :cond_0
 
-    .line 1099
+    .line 1126
     invoke-static {v1, v0}, Ljava/lang/Boolean;->compare(ZZ)I
 
     move-result v2
 
     return v2
 
-    .line 1101
+    .line 1128
     :cond_0
     iget v2, p2, Landroid/net/wifi/WifiConfiguration;->numAssociation:I
 

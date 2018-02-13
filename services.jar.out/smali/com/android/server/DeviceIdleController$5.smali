@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
     .prologue
-    .line 383
+    .line 385
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$5;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +42,7 @@
     .prologue
     const/16 v4, 0x8
 
-    .line 388
+    .line 390
     const-string/jumbo v0, "android.os.action.DEVICE_IDLE_MODE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -55,12 +55,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 389
+    .line 391
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$5;->this$0:Lcom/android/server/DeviceIdleController;
 
     iget-object v0, v0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 390
+    .line 392
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$5;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-static {v1}, Lcom/android/server/DeviceIdleController;->-get1(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
@@ -69,20 +69,20 @@
 
     iget-wide v2, v1, Lcom/android/server/DeviceIdleController$Constants;->MIN_DEEP_MAINTENANCE_TIME:J
 
-    .line 389
+    .line 391
     invoke-virtual {v0, v4, v2, v3}, Lcom/android/server/DeviceIdleController$MyHandler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 384
+    .line 386
     :goto_0
     return-void
 
-    .line 392
+    .line 394
     :cond_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$5;->this$0:Lcom/android/server/DeviceIdleController;
 
     iget-object v0, v0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 393
+    .line 395
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$5;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-static {v1}, Lcom/android/server/DeviceIdleController;->-get1(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
@@ -91,7 +91,7 @@
 
     iget-wide v2, v1, Lcom/android/server/DeviceIdleController$Constants;->MIN_LIGHT_MAINTENANCE_TIME:J
 
-    .line 392
+    .line 394
     invoke-virtual {v0, v4, v2, v3}, Lcom/android/server/DeviceIdleController$MyHandler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_0

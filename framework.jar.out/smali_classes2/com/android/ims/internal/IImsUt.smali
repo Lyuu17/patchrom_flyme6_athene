@@ -23,6 +23,14 @@
     .end annotation
 .end method
 
+.method public abstract queryCFForServiceClass(ILjava/lang/String;I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract queryCLIP()I
     .annotation system Ldalvik/annotation/Throws;
         value = {

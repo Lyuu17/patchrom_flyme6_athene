@@ -113,57 +113,46 @@
 
     iput-object v0, p0, Landroid/preference/PreferenceGroupAdapter;->mTempPreferenceLayout:Landroid/preference/PreferenceGroupAdapter$PreferenceLayout;
 
-    .line 84
     iput-boolean v2, p0, Landroid/preference/PreferenceGroupAdapter;->mHasReturnedViewTypeCount:Z
 
-    .line 86
     iput-boolean v2, p0, Landroid/preference/PreferenceGroupAdapter;->mIsSyncing:Z
 
-    .line 88
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Landroid/preference/PreferenceGroupAdapter;->mHandler:Landroid/os/Handler;
 
-    .line 90
     new-instance v0, Landroid/preference/PreferenceGroupAdapter$1;
 
     invoke-direct {v0, p0}, Landroid/preference/PreferenceGroupAdapter$1;-><init>(Landroid/preference/PreferenceGroupAdapter;)V
 
     iput-object v0, p0, Landroid/preference/PreferenceGroupAdapter;->mSyncRunnable:Ljava/lang/Runnable;
 
-    .line 96
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/preference/PreferenceGroupAdapter;->mHighlightedPosition:I
 
-    .line 126
     iput-object p1, p0, Landroid/preference/PreferenceGroupAdapter;->mPreferenceGroup:Landroid/preference/PreferenceGroup;
 
-    .line 128
     iget-object v0, p0, Landroid/preference/PreferenceGroupAdapter;->mPreferenceGroup:Landroid/preference/PreferenceGroup;
 
     invoke-virtual {v0, p0}, Landroid/preference/PreferenceGroup;->setOnPreferenceChangeInternalListener(Landroid/preference/Preference$OnPreferenceChangeInternalListener;)V
 
-    .line 130
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/preference/PreferenceGroupAdapter;->mPreferenceList:Ljava/util/List;
 
-    .line 131
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/preference/PreferenceGroupAdapter;->mPreferenceLayouts:Ljava/util/ArrayList;
 
-    .line 133
     invoke-direct {p0}, Landroid/preference/PreferenceGroupAdapter;->syncMyPreferences()V
 
-    .line 125
 
     invoke-direct/range {p0 .. p0}, Landroid/preference/PreferenceGroupAdapter;->initFlymeExtraFields()V
 
@@ -480,7 +469,6 @@
 
     :cond_flyme_0
 
-    .line 267
     const/4 v0, 0x0
 
     return v0

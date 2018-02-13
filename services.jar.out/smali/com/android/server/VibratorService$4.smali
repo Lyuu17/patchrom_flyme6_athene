@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/VibratorService;
 
     .prologue
-    .line 243
+    .line 255
     iput-object p1, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,11 +40,16 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 246
+    .line 258
     iget-object v0, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap4(Lcom/android/server/VibratorService;)V
 
-    .line 245
+    .line 259
+    iget-object v0, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
+
+    invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap5(Lcom/android/server/VibratorService;)V
+
+    .line 257
     return-void
 .end method

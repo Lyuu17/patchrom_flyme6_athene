@@ -23,6 +23,8 @@
 
 .field public static final config_autoBrightnessBrighteningLightDebounce:I = 0x10e0072
 
+.field public static final config_autoBrightnessBrighteningLightFastDebounce:I = 0x10e0071
+
 .field public static final config_autoBrightnessDarkeningLightDebounce:I = 0x10e0073
 
 .field public static final config_autoBrightnessInitialLightSensorRate:I = 0x10e0074
@@ -32,6 +34,8 @@
 .field public static final config_autoPowerModeAnyMotionSensor:I = 0x10e000d
 
 .field public static final config_autoPowerModeThresholdAngle:I = 0x10e000c
+
+.field public static final config_backKillTimeout:I = 0x10e00b9
 
 .field public static final config_backPanicBehavior:I = 0x10e0053
 
@@ -60,6 +64,8 @@
 .field public static final config_burnInProtectionMinHorizontalOffset:I = 0x10e00ab
 
 .field public static final config_burnInProtectionMinVerticalOffset:I = 0x10e00ad
+
+.field public static final config_buttonBrightnessSettingDefault:I = 0x10e0079
 
 .field public static final config_cameraLaunchGestureSensorType:I = 0x10e00b2
 
@@ -101,6 +107,10 @@
 
 .field public static final config_deskDockRotation:I = 0x10e0047
 
+.field public static final config_deviceHardwareKeys:I = 0x10e0068
+
+.field public static final config_deviceHardwareWakeKeys:I = 0x10e0069
+
 .field public static final config_dockedStackDividerSnapMode:I = 0x10e00b4
 
 .field public static final config_doublePressOnPowerBehavior:I = 0x10e0055
@@ -135,6 +145,8 @@
 
 .field public static final config_jobSchedulerInactivityIdleThreshold:I = 0x10e00b5
 
+.field public static final config_keyboardBrightnessSettingDefault:I = 0x10e007a
+
 .field public static final config_lidKeyboardAccessibility:I = 0x10e0045
 
 .field public static final config_lidNavigationAccessibility:I = 0x10e0046
@@ -147,9 +159,13 @@
 
 .field public static final config_longAnimTime:I = 0x10e0002
 
+.field public static final config_longPressOnAppSwitchBehavior:I = 0x10e0067
+
 .field public static final config_longPressOnBackBehavior:I = 0x10e0052
 
 .field public static final config_longPressOnHomeBehavior:I = 0x10e0064
+
+.field public static final config_longPressOnMenuBehavior:I = 0x10e0066
 
 .field public static final config_longPressOnPowerBehavior:I = 0x10e0051
 
@@ -162,6 +178,8 @@
 .field public static final config_lowMemoryKillerMinFreeKbytesAdjust:I = 0x10e0009
 
 .field public static final config_maxResolverActivityColumns:I = 0x10e009b
+
+.field public static final config_max_initial_scans_on_selective_channels:I = 0x10e003c
 
 .field public static final config_max_pan_devices:I = 0x10e0012
 
@@ -246,6 +264,8 @@
 .field public static final config_shortPressOnSleepBehavior:I = 0x10e0057
 
 .field public static final config_shutdownBatteryTemperature:I = 0x10e0059
+
+.field public static final config_sms_authorization_timeout_ms:I = 0x10e00ba
 
 .field public static final config_soundEffectVolumeDb:I = 0x10e0004
 
@@ -335,6 +355,8 @@
 
 .field public static final config_wifi_logger_ring_buffer_default_size_limit_kb:I = 0x10e0015
 
+.field public static final config_wifi_logger_ring_buffer_size_limit_kb:I = 0x10e0014
+
 .field public static final config_wifi_logger_ring_buffer_verbose_size_limit_kb:I = 0x10e0016
 
 .field public static final config_wifi_network_switching_blacklist_time:I = 0x10e0031
@@ -363,11 +385,15 @@
 
 .field public static final dock_enter_exit_duration:I = 0x10e00db
 
+.field public static final power_key_hits_emergency:I = 0x10e00b8
+
 .field public static final status_bar_notification_info_maxnum:I = 0x10e0003
 
 .field public static final thumbnail_width_tv:I = 0x10e00bd
 
 .field public static final time_picker_mode:I = 0x10e00dd
+
+.field public static final wifi_hotspot_security_type:I = 0x10e00bc
 
 
 # direct methods
@@ -375,7 +401,7 @@
     .locals 0
 
     .prologue
-    .line 17751
+    .line 26348
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

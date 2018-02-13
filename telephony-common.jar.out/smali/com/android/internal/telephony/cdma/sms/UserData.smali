@@ -20,6 +20,12 @@
 
 .field public static final ENCODING_GSM_DCS:I = 0xa
 
+.field public static final ENCODING_GSM_DCS_16BIT:I = 0x2
+
+.field public static final ENCODING_GSM_DCS_7BIT:I = 0x0
+
+.field public static final ENCODING_GSM_DCS_8BIT:I = 0x1
+
 .field public static final ENCODING_IA5:I = 0x3
 
 .field public static final ENCODING_IS91_EXTENDED_PROTOCOL:I = 0x1
@@ -78,7 +84,7 @@
 
     const/16 v4, 0xa
 
-    .line 65
+    .line 73
     const/16 v1, 0x5f
 
     new-array v1, v1, [C
@@ -87,14 +93,14 @@
 
     sput-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->ASCII_MAP:[C
 
-    .line 87
+    .line 95
     new-instance v1, Landroid/util/SparseIntArray;
 
     invoke-direct {v1}, Landroid/util/SparseIntArray;-><init>()V
 
     sput-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
-    .line 89
+    .line 97
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -105,7 +111,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 90
+    .line 98
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
     sget-object v2, Lcom/android/internal/telephony/cdma/sms/UserData;->ASCII_MAP:[C
@@ -116,23 +122,23 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 89
+    .line 97
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 92
+    .line 100
     :cond_0
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, v4, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 93
+    .line 101
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, v5, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 121
+    .line 129
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->ASCII_MAP:[C
 
     array-length v1, v1
@@ -146,7 +152,7 @@
     .line 24
     return-void
 
-    .line 65
+    .line 73
     :array_0
     .array-data 2
         0x20s
@@ -254,7 +260,7 @@
     .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 132
+    .line 140
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/cdma/sms/UserData;->msgEncodingSet:Z
@@ -270,16 +276,16 @@
     .prologue
     const/4 v6, -0x1
 
-    .line 106
+    .line 114
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 107
+    .line 115
     .local v2, "len":I
     new-array v3, v2, [B
 
-    .line 108
+    .line 116
     .local v3, "result":[B
     const/4 v1, 0x0
 
@@ -287,7 +293,7 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 109
+    .line 117
     sget-object v4, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -298,7 +304,7 @@
 
     move-result v0
 
-    .line 110
+    .line 118
     .local v0, "charCode":I
     if-ne v0, v6, :cond_0
 
@@ -306,18 +312,18 @@
 
     return-object v4
 
-    .line 111
+    .line 119
     :cond_0
     int-to-byte v4, v0
 
     aput-byte v4, v3, v1
 
-    .line 108
+    .line 116
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 113
+    .line 121
     .end local v0    # "charCode":I
     :cond_1
     return-object v3
@@ -329,18 +335,18 @@
     .locals 3
 
     .prologue
-    .line 152
+    .line 160
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 153
+    .line 161
     .local v0, "builder":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "UserData "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 154
+    .line 162
     const-string/jumbo v1, "{ msgEncoding="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -360,7 +366,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 155
+    .line 163
     const-string/jumbo v1, ", msgType="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -371,7 +377,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 156
+    .line 164
     const-string/jumbo v1, ", paddingBits="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -382,7 +388,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 157
+    .line 165
     const-string/jumbo v1, ", numFields="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -393,7 +399,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 158
+    .line 166
     const-string/jumbo v1, ", userDataHeader="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -404,7 +410,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 159
+    .line 167
     const-string/jumbo v1, ", payload=\'"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -425,7 +431,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 160
+    .line 168
     const-string/jumbo v1, ", payloadStr=\'"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -442,19 +448,19 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 161
+    .line 169
     const-string/jumbo v1, " }"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 162
+    .line 170
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 154
+    .line 162
     :cond_0
     const-string/jumbo v1, "unset"
 

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiController;
 
     .prologue
-    .line 876
+    .line 1024
     iput-object p1, p0, Lcom/android/server/wifi/WifiController$FullLockHeldState;->this$0:Lcom/android/server/wifi/WifiController;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -40,35 +40,29 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 879
+    .line 1027
     iget-object v0, p0, Lcom/android/server/wifi/WifiController$FullLockHeldState;->this$0:Lcom/android/server/wifi/WifiController;
 
-    invoke-static {v0}, Lcom/android/server/wifi/WifiController;->-get16(Lcom/android/server/wifi/WifiController;)Lcom/android/server/wifi/WifiStateMachine;
-
-    move-result-object v0
+    iget-object v0, v0, Lcom/android/server/wifi/WifiController;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->setOperationalMode(I)V
 
-    .line 880
+    .line 1028
     iget-object v0, p0, Lcom/android/server/wifi/WifiController$FullLockHeldState;->this$0:Lcom/android/server/wifi/WifiController;
 
-    invoke-static {v0}, Lcom/android/server/wifi/WifiController;->-get16(Lcom/android/server/wifi/WifiController;)Lcom/android/server/wifi/WifiStateMachine;
-
-    move-result-object v0
+    iget-object v0, v0, Lcom/android/server/wifi/WifiController;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->setDriverStart(Z)V
 
-    .line 881
+    .line 1029
     iget-object v0, p0, Lcom/android/server/wifi/WifiController$FullLockHeldState;->this$0:Lcom/android/server/wifi/WifiController;
 
-    invoke-static {v0}, Lcom/android/server/wifi/WifiController;->-get16(Lcom/android/server/wifi/WifiController;)Lcom/android/server/wifi/WifiStateMachine;
-
-    move-result-object v0
+    iget-object v0, v0, Lcom/android/server/wifi/WifiController;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->setHighPerfModeEnabled(Z)V
 
-    .line 878
+    .line 1026
     return-void
 .end method

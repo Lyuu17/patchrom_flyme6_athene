@@ -87,6 +87,14 @@
     .end annotation
 .end method
 
+.method public abstract recordVideoCallData(Ljava/lang/String;IJJ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract registerUsageCallback(Ljava/lang/String;Landroid/net/DataUsageRequest;Landroid/os/Messenger;Landroid/os/IBinder;)Landroid/net/DataUsageRequest;
     .annotation system Ldalvik/annotation/Throws;
         value = {

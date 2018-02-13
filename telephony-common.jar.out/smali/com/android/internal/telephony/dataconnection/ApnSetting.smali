@@ -8,6 +8,8 @@
 
 .field static final LOG_TAG:Ljava/lang/String; = "ApnSetting"
 
+.field static final TAG:Ljava/lang/String; = "ApnSetting"
+
 .field static final V2_FORMAT_REGEX:Ljava/lang/String; = "^\\[ApnSettingV2\\]\\s*"
 
 .field static final V3_FORMAT_REGEX:Ljava/lang/String; = "^\\[ApnSettingV3\\]\\s*"
@@ -62,7 +64,7 @@
 
 .field public final roamingProtocol:Ljava/lang/String;
 
-.field public final types:[Ljava/lang/String;
+.field public types:[Ljava/lang/String;
 
 .field public final user:Ljava/lang/String;
 
@@ -100,55 +102,55 @@
     .param p26, "mvnoMatchData"    # Ljava/lang/String;
 
     .prologue
-    .line 115
+    .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 113
+    .line 115
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->permanentFailed:Z
 
-    .line 122
+    .line 124
     iput p1, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->id:I
 
-    .line 123
+    .line 125
     iput-object p2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->numeric:Ljava/lang/String;
 
-    .line 124
+    .line 126
     iput-object p3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->carrier:Ljava/lang/String;
 
-    .line 125
+    .line 127
     iput-object p4, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->apn:Ljava/lang/String;
 
-    .line 126
+    .line 128
     iput-object p5, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->proxy:Ljava/lang/String;
 
-    .line 127
+    .line 129
     iput-object p6, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->port:Ljava/lang/String;
 
-    .line 128
+    .line 130
     iput-object p7, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsc:Ljava/lang/String;
 
-    .line 129
+    .line 131
     iput-object p8, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsProxy:Ljava/lang/String;
 
-    .line 130
+    .line 132
     iput-object p9, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsPort:Ljava/lang/String;
 
-    .line 131
+    .line 133
     iput-object p10, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->user:Ljava/lang/String;
 
-    .line 132
+    .line 134
     move-object/from16 v0, p11
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->password:Ljava/lang/String;
 
-    .line 133
+    .line 135
     move/from16 v0, p12
 
     iput v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->authType:I
 
-    .line 134
+    .line 136
     move-object/from16 v0, p13
 
     array-length v2, v0
@@ -157,7 +159,7 @@
 
     iput-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
 
-    .line 135
+    .line 137
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -168,7 +170,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 136
+    .line 138
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
 
     aget-object v3, p13, v1
@@ -181,33 +183,33 @@
 
     aput-object v3, v2, v1
 
-    .line 135
+    .line 137
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 138
+    .line 140
     :cond_0
     move-object/from16 v0, p14
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->protocol:Ljava/lang/String;
 
-    .line 139
+    .line 141
     move-object/from16 v0, p15
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->roamingProtocol:Ljava/lang/String;
 
-    .line 140
+    .line 142
     move/from16 v0, p16
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->carrierEnabled:Z
 
-    .line 141
+    .line 143
     move/from16 v0, p17
 
     iput v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->bearer:I
 
-    .line 142
+    .line 144
     invoke-static/range {p17 .. p17}, Landroid/telephony/ServiceState;->getBitmaskForTech(I)I
 
     move-result v2
@@ -216,47 +218,47 @@
 
     iput v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->bearerBitmask:I
 
-    .line 143
+    .line 145
     move/from16 v0, p19
 
     iput v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->profileId:I
 
-    .line 144
+    .line 146
     move/from16 v0, p20
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->modemCognitive:Z
 
-    .line 145
+    .line 147
     move/from16 v0, p21
 
     iput v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->maxConns:I
 
-    .line 146
+    .line 148
     move/from16 v0, p22
 
     iput v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->waitTime:I
 
-    .line 147
+    .line 149
     move/from16 v0, p23
 
     iput v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->maxConnsTime:I
 
-    .line 148
+    .line 150
     move/from16 v0, p24
 
     iput v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mtu:I
 
-    .line 149
+    .line 151
     move-object/from16 v0, p25
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mvnoType:Ljava/lang/String;
 
-    .line 150
+    .line 152
     move-object/from16 v0, p26
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mvnoMatchData:Ljava/lang/String;
 
-    .line 121
+    .line 123
     return-void
 .end method
 
@@ -265,7 +267,7 @@
     .param p1, "apn"    # Lcom/android/internal/telephony/dataconnection/ApnSetting;
 
     .prologue
-    .line 155
+    .line 157
     move-object/from16 v0, p1
 
     iget v2, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->id:I
@@ -298,7 +300,7 @@
 
     iget-object v9, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsProxy:Ljava/lang/String;
 
-    .line 156
+    .line 158
     move-object/from16 v0, p1
 
     iget-object v10, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsPort:Ljava/lang/String;
@@ -323,7 +325,7 @@
 
     iget-object v15, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->protocol:Ljava/lang/String;
 
-    .line 157
+    .line 159
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->roamingProtocol:Ljava/lang/String;
@@ -348,7 +350,7 @@
 
     move/from16 v19, v0
 
-    .line 158
+    .line 160
     move-object/from16 v0, p1
 
     iget v0, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->profileId:I
@@ -379,7 +381,7 @@
 
     move/from16 v24, v0
 
-    .line 159
+    .line 161
     move-object/from16 v0, p1
 
     iget v0, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mtu:I
@@ -400,10 +402,10 @@
 
     move-object/from16 v1, p0
 
-    .line 155
+    .line 157
     invoke-direct/range {v1 .. v27}, Lcom/android/internal/telephony/dataconnection/ApnSetting;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZIIIZIIIILjava/lang/String;Ljava/lang/String;)V
 
-    .line 154
+    .line 156
     return-void
 .end method
 
@@ -423,12 +425,12 @@
     .end annotation
 
     .prologue
-    .line 283
+    .line 285
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 284
+    .line 286
     .local v3, "retVal":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/telephony/dataconnection/ApnSetting;>;"
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -436,10 +438,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 285
+    .line 287
     return-object v3
 
-    .line 287
+    .line 289
     :cond_0
     const-string/jumbo v4, "\\s*;\\s*"
 
@@ -447,7 +449,7 @@
 
     move-result-object v2
 
-    .line 288
+    .line 290
     .local v2, "apnStrings":[Ljava/lang/String;
     const/4 v4, 0x0
 
@@ -458,26 +460,26 @@
 
     aget-object v1, v2, v4
 
-    .line 289
+    .line 291
     .local v1, "apnString":Ljava/lang/String;
     invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/ApnSetting;->fromString(Ljava/lang/String;)Lcom/android/internal/telephony/dataconnection/ApnSetting;
 
     move-result-object v0
 
-    .line 290
+    .line 292
     .local v0, "apn":Lcom/android/internal/telephony/dataconnection/ApnSetting;
     if-eqz v0, :cond_1
 
-    .line 291
+    .line 293
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 288
+    .line 290
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 294
+    .line 296
     .end local v0    # "apn":Lcom/android/internal/telephony/dataconnection/ApnSetting;
     .end local v1    # "apnString":Ljava/lang/String;
     :cond_2
@@ -489,14 +491,14 @@
     .param p0, "data"    # Ljava/lang/String;
 
     .prologue
-    .line 191
+    .line 193
     if-nez p0, :cond_0
 
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 195
+    .line 197
     :cond_0
     const-string/jumbo v1, "^\\[ApnSettingV3\\]\\s*.*"
 
@@ -508,10 +510,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 196
+    .line 198
     const/16 v30, 0x3
 
-    .line 197
+    .line 199
     .local v30, "version":I
     const-string/jumbo v1, "^\\[ApnSettingV3\\]\\s*"
 
@@ -523,7 +525,7 @@
 
     move-result-object p0
 
-    .line 205
+    .line 207
     :goto_0
     const-string/jumbo v1, "\\s*,\\s*"
 
@@ -533,7 +535,7 @@
 
     move-result-object v28
 
-    .line 206
+    .line 208
     .local v28, "a":[Ljava/lang/String;
     move-object/from16 v0, v28
 
@@ -543,12 +545,12 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 207
+    .line 209
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 198
+    .line 200
     .end local v28    # "a":[Ljava/lang/String;
     .end local v30    # "version":I
     :cond_1
@@ -562,10 +564,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 199
+    .line 201
     const/16 v30, 0x2
 
-    .line 200
+    .line 202
     .restart local v30    # "version":I
     const-string/jumbo v1, "^\\[ApnSettingV2\\]\\s*"
 
@@ -579,7 +581,7 @@
 
     goto :goto_0
 
-    .line 202
+    .line 204
     .end local v30    # "version":I
     :cond_2
     const/16 v30, 0x1
@@ -587,7 +589,7 @@
     .restart local v30    # "version":I
     goto :goto_0
 
-    .line 212
+    .line 214
     .restart local v28    # "a":[Ljava/lang/String;
     :cond_3
     const/16 v1, 0xc
@@ -601,44 +603,44 @@
 
     move-result v13
 
-    .line 220
+    .line 222
     .local v13, "authType":I
     :goto_1
     const/16 v19, 0x0
 
-    .line 221
+    .line 223
     .local v19, "bearerBitmask":I
     const/16 v20, 0x0
 
-    .line 222
+    .line 224
     .local v20, "profileId":I
     const/16 v21, 0x0
 
-    .line 223
+    .line 225
     .local v21, "modemCognitive":Z
     const/16 v22, 0x0
 
-    .line 224
+    .line 226
     .local v22, "maxConns":I
     const/16 v23, 0x0
 
-    .line 225
+    .line 227
     .local v23, "waitTime":I
     const/16 v24, 0x0
 
-    .line 226
+    .line 228
     .local v24, "maxConnsTime":I
     const/16 v25, 0x0
 
-    .line 227
+    .line 229
     .local v25, "mtu":I
     const-string/jumbo v26, ""
 
-    .line 228
+    .line 230
     .local v26, "mvnoType":Ljava/lang/String;
     const-string/jumbo v27, ""
 
-    .line 229
+    .line 231
     .local v27, "mvnoMatchData":Ljava/lang/String;
     const/4 v1, 0x1
 
@@ -646,7 +648,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 230
+    .line 232
     move-object/from16 v0, v28
 
     array-length v1, v0
@@ -655,7 +657,7 @@
 
     new-array v14, v1, [Ljava/lang/String;
 
-    .line 231
+    .line 233
     .local v14, "typeArray":[Ljava/lang/String;
     move-object/from16 v0, v28
 
@@ -671,18 +673,18 @@
 
     invoke-static {v0, v2, v14, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 232
+    .line 234
     const-string/jumbo v15, "IP"
 
-    .line 233
+    .line 235
     .local v15, "protocol":Ljava/lang/String;
     const-string/jumbo v16, "IP"
 
-    .line 234
+    .line 236
     .local v16, "roamingProtocol":Ljava/lang/String;
     const/16 v17, 0x1
 
-    .line 268
+    .line 270
     .end local v21    # "modemCognitive":Z
     :cond_4
     :goto_2
@@ -736,7 +738,7 @@
 
     aget-object v9, v28, v2
 
-    .line 269
+    .line 271
     const/16 v2, 0x9
 
     aget-object v10, v28, v2
@@ -749,18 +751,18 @@
 
     aget-object v12, v28, v2
 
-    .line 268
+    .line 270
     const/4 v2, -0x1
 
-    .line 269
+    .line 271
     const/16 v18, 0x0
 
-    .line 268
+    .line 270
     invoke-direct/range {v1 .. v27}, Lcom/android/internal/telephony/dataconnection/ApnSetting;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZIIIZIIIILjava/lang/String;Ljava/lang/String;)V
 
     return-object v1
 
-    .line 213
+    .line 215
     .end local v13    # "authType":I
     .end local v14    # "typeArray":[Ljava/lang/String;
     .end local v15    # "protocol":Ljava/lang/String;
@@ -776,14 +778,14 @@
     :catch_0
     move-exception v29
 
-    .line 214
+    .line 216
     .local v29, "e":Ljava/lang/NumberFormatException;
     const/4 v13, 0x0
 
     .restart local v13    # "authType":I
     goto :goto_1
 
-    .line 236
+    .line 238
     .end local v29    # "e":Ljava/lang/NumberFormatException;
     .restart local v19    # "bearerBitmask":I
     .restart local v20    # "profileId":I
@@ -803,12 +805,12 @@
 
     if-ge v1, v2, :cond_6
 
-    .line 237
+    .line 239
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 239
+    .line 241
     :cond_6
     const/16 v1, 0xd
 
@@ -820,19 +822,19 @@
 
     move-result-object v14
 
-    .line 240
+    .line 242
     .restart local v14    # "typeArray":[Ljava/lang/String;
     const/16 v1, 0xe
 
     aget-object v15, v28, v1
 
-    .line 241
+    .line 243
     .restart local v15    # "protocol":Ljava/lang/String;
     const/16 v1, 0xf
 
     aget-object v16, v28, v1
 
-    .line 242
+    .line 244
     .restart local v16    # "roamingProtocol":Ljava/lang/String;
     const/16 v1, 0x10
 
@@ -842,7 +844,7 @@
 
     move-result v17
 
-    .line 244
+    .line 246
     .local v17, "carrierEnabled":Z
     const/16 v1, 0x11
 
@@ -852,7 +854,7 @@
 
     move-result v19
 
-    .line 246
+    .line 248
     move-object/from16 v0, v28
 
     array-length v1, v0
@@ -861,7 +863,7 @@
 
     if-le v1, v2, :cond_7
 
-    .line 247
+    .line 249
     const/16 v1, 0x13
 
     aget-object v1, v28, v1
@@ -870,7 +872,7 @@
 
     move-result v21
 
-    .line 249
+    .line 251
     .local v21, "modemCognitive":Z
     const/16 v1, 0x12
 
@@ -881,7 +883,7 @@
 
     move-result v20
 
-    .line 250
+    .line 252
     const/16 v1, 0x14
 
     aget-object v1, v28, v1
@@ -890,7 +892,7 @@
 
     move-result v22
 
-    .line 251
+    .line 253
     const/16 v1, 0x15
 
     aget-object v1, v28, v1
@@ -899,7 +901,7 @@
 
     move-result v23
 
-    .line 252
+    .line 254
     const/16 v1, 0x16
 
     aget-object v1, v28, v1
@@ -910,7 +912,7 @@
 
     move-result v24
 
-    .line 256
+    .line 258
     .end local v21    # "modemCognitive":Z
     :cond_7
     :goto_3
@@ -922,7 +924,7 @@
 
     if-le v1, v2, :cond_8
 
-    .line 258
+    .line 260
     const/16 v1, 0x17
 
     :try_start_2
@@ -934,7 +936,7 @@
 
     move-result v25
 
-    .line 262
+    .line 264
     :cond_8
     :goto_4
     move-object/from16 v0, v28
@@ -945,26 +947,26 @@
 
     if-le v1, v2, :cond_4
 
-    .line 263
+    .line 265
     const/16 v1, 0x18
 
     aget-object v26, v28, v1
 
-    .line 264
+    .line 266
     const/16 v1, 0x19
 
     aget-object v27, v28, v1
 
     goto/16 :goto_2
 
-    .line 259
+    .line 261
     :catch_1
     move-exception v29
 
     .restart local v29    # "e":Ljava/lang/NumberFormatException;
     goto :goto_4
 
-    .line 253
+    .line 255
     .end local v29    # "e":Ljava/lang/NumberFormatException;
     .restart local v21    # "modemCognitive":Z
     :catch_2
@@ -982,22 +984,22 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 364
+    .line 366
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 365
+    .line 367
     .local v3, "len":I
     const/4 v2, 0x0
 
-    .line 367
+    .line 369
     .local v2, "idxCompare":I
     if-gtz v3, :cond_0
 
     return v5
 
-    .line 368
+    .line 370
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -1007,7 +1009,7 @@
 
     return v5
 
-    .line 370
+    .line 372
     :cond_1
     const/4 v1, 0x0
 
@@ -1015,12 +1017,12 @@
     :goto_0
     if-ge v1, v3, :cond_4
 
-    .line 371
+    .line 373
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 372
+    .line 374
     .local v0, "c":C
     const/16 v4, 0x78
 
@@ -1030,13 +1032,13 @@
 
     if-ne v0, v4, :cond_3
 
-    .line 370
+    .line 372
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 372
+    .line 374
     :cond_3
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
@@ -1044,10 +1046,10 @@
 
     if-eq v0, v4, :cond_2
 
-    .line 375
+    .line 377
     return v5
 
-    .line 378
+    .line 380
     .end local v0    # "c":C
     :cond_4
     const/4 v4, 0x1
@@ -1067,13 +1069,13 @@
 
     const/4 v8, 0x1
 
-    .line 406
+    .line 421
     if-eqz p3, :cond_0
 
-    .line 407
+    .line 422
     const-string/jumbo v1, "carrier_metered_roaming_apn_types_strings"
 
-    .line 411
+    .line 426
     .local v1, "carrierConfig":Ljava/lang/String;
     :goto_0
     const-string/jumbo v5, "carrier_config"
@@ -1082,24 +1084,24 @@
 
     move-result-object v2
 
-    .line 410
+    .line 425
     check-cast v2, Landroid/telephony/CarrierConfigManager;
 
-    .line 412
+    .line 427
     .local v2, "configManager":Landroid/telephony/CarrierConfigManager;
     if-nez v2, :cond_1
 
-    .line 413
+    .line 428
     const-string/jumbo v5, "ApnSetting"
 
     const-string/jumbo v6, "Carrier config service is not available"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 414
+    .line 429
     return v8
 
-    .line 408
+    .line 423
     .end local v1    # "carrierConfig":Ljava/lang/String;
     .end local v2    # "configManager":Landroid/telephony/CarrierConfigManager;
     :cond_0
@@ -1108,18 +1110,18 @@
     .restart local v1    # "carrierConfig":Ljava/lang/String;
     goto :goto_0
 
-    .line 417
+    .line 432
     .restart local v2    # "configManager":Landroid/telephony/CarrierConfigManager;
     :cond_1
     invoke-virtual {v2, p2}, Landroid/telephony/CarrierConfigManager;->getConfigForSubId(I)Landroid/os/PersistableBundle;
 
     move-result-object v0
 
-    .line 418
+    .line 433
     .local v0, "b":Landroid/os/PersistableBundle;
     if-nez v0, :cond_2
 
-    .line 419
+    .line 434
     const-string/jumbo v5, "ApnSetting"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1142,20 +1144,20 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 420
+    .line 435
     return v8
 
-    .line 423
+    .line 438
     :cond_2
     invoke-virtual {v0, v1}, Landroid/os/PersistableBundle;->getStringArray(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 424
+    .line 439
     .local v4, "meteredApnTypes":[Ljava/lang/String;
     if-nez v4, :cond_3
 
-    .line 425
+    .line 440
     const-string/jumbo v5, "ApnSetting"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1188,10 +1190,10 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 426
+    .line 441
     return v8
 
-    .line 429
+    .line 444
     :cond_3
     new-instance v3, Ljava/util/HashSet;
 
@@ -1201,7 +1203,7 @@
 
     invoke-direct {v3, v5}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 437
+    .line 452
     .local v3, "meteredApnSet":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     const-string/jumbo v5, "*"
 
@@ -1211,10 +1213,10 @@
 
     if-eqz v5, :cond_4
 
-    .line 439
+    .line 454
     return v8
 
-    .line 442
+    .line 457
     :cond_4
     invoke-virtual {v3, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -1222,10 +1224,10 @@
 
     if-eqz v5, :cond_5
 
-    .line 444
+    .line 459
     return v8
 
-    .line 445
+    .line 460
     :cond_5
     const-string/jumbo v5, "*"
 
@@ -1235,143 +1237,230 @@
 
     if-eqz v5, :cond_6
 
-    .line 448
+    .line 463
     invoke-virtual {v3}, Ljava/util/HashSet;->size()I
 
     move-result v5
 
     if-lez v5, :cond_6
 
-    .line 451
+    .line 466
     return v8
 
-    .line 456
+    .line 471
     :cond_6
     return v6
 .end method
 
 .method public static mvnoMatches(Lcom/android/internal/telephony/uicc/IccRecords;Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 6
+    .locals 13
     .param p0, "r"    # Lcom/android/internal/telephony/uicc/IccRecords;
     .param p1, "mvnoType"    # Ljava/lang/String;
     .param p2, "mvnoMatchData"    # Ljava/lang/String;
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
-    const/4 v4, 0x1
-
-    .line 382
-    const-string/jumbo v3, "spn"
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 383
-    invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getServiceProviderName()Ljava/lang/String;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_2
+    const/4 v12, 0x1
 
     .line 384
-    invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getServiceProviderName()Ljava/lang/String;
+    const-string/jumbo v6, "spn"
 
-    move-result-object v3
+    invoke-virtual {p1, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    invoke-virtual {v3, p2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result v6
 
-    move-result v3
-
-    .line 383
-    if-eqz v3, :cond_2
+    if-eqz v6, :cond_0
 
     .line 385
-    return v4
+    invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getServiceProviderName()Ljava/lang/String;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_4
+
+    .line 386
+    invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getServiceProviderName()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6, p2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v6
+
+    .line 385
+    if-eqz v6, :cond_4
 
     .line 387
-    :cond_0
-    const-string/jumbo v3, "imsi"
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 388
-    invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getIMSI()Ljava/lang/String;
-
-    move-result-object v1
+    return v12
 
     .line 389
-    .local v1, "imsiSIM":Ljava/lang/String;
-    if-eqz v1, :cond_2
+    :cond_0
+    const-string/jumbo v6, "imsi"
 
-    invoke-static {p2, v1}, Lcom/android/internal/telephony/dataconnection/ApnSetting;->imsiMatches(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {p1, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v6
 
-    if-eqz v3, :cond_2
+    if-eqz v6, :cond_1
 
     .line 390
-    return v4
+    invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getIMSI()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 391
+    .local v2, "imsiSIM":Ljava/lang/String;
+    if-eqz v2, :cond_4
+
+    invoke-static {p2, v2}, Lcom/android/internal/telephony/dataconnection/ApnSetting;->imsiMatches(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
 
     .line 392
-    .end local v1    # "imsiSIM":Ljava/lang/String;
+    return v12
+
+    .line 394
+    .end local v2    # "imsiSIM":Ljava/lang/String;
     :cond_1
-    const-string/jumbo v3, "gid"
+    const-string/jumbo v6, "gid"
 
-    invoke-virtual {p1, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {p1, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v6
 
-    if-eqz v3, :cond_2
+    if-eqz v6, :cond_2
 
-    .line 393
+    .line 395
     invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getGid1()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 394
+    .line 396
     .local v0, "gid1":Ljava/lang/String;
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v5
 
-    .line 395
-    .local v2, "mvno_match_data_length":I
-    if-eqz v0, :cond_2
+    .line 397
+    .local v5, "mvno_match_data_length":I
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v6
 
-    if-lt v3, v2, :cond_2
+    if-lt v6, v5, :cond_4
 
-    .line 396
-    invoke-virtual {v0, v5, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 398
+    invoke-virtual {v0, v7, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v3, p2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v6, p2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v3
-
-    .line 395
-    if-eqz v3, :cond_2
+    move-result v6
 
     .line 397
-    return v4
+    if-eqz v6, :cond_4
 
-    .line 400
+    .line 399
+    return v12
+
+    .line 401
     .end local v0    # "gid1":Ljava/lang/String;
-    .end local v2    # "mvno_match_data_length":I
+    .end local v5    # "mvno_match_data_length":I
     :cond_2
-    return v5
+    const-string/jumbo v6, "iccid"
+
+    invoke-virtual {p1, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    .line 402
+    invoke-virtual {p0}, Lcom/android/internal/telephony/uicc/IccRecords;->getIccId()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 403
+    .local v1, "iccId":Ljava/lang/String;
+    if-eqz v1, :cond_4
+
+    .line 404
+    const-string/jumbo v6, ","
+
+    invoke-virtual {p2, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 405
+    .local v4, "mvnoIccidList":[Ljava/lang/String;
+    array-length v8, v4
+
+    move v6, v7
+
+    :goto_0
+    if-ge v6, v8, :cond_4
+
+    aget-object v3, v4, v6
+
+    .line 406
+    .local v3, "mvnoIccid":Ljava/lang/String;
+    const-string/jumbo v9, "ApnSetting"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "mvnoIccid: "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 407
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_3
+
+    .line 408
+    const-string/jumbo v6, "ApnSetting"
+
+    const-string/jumbo v7, "mvno icc id match found"
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 409
+    return v12
+
+    .line 405
+    :cond_3
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    .line 415
+    .end local v1    # "iccId":Ljava/lang/String;
+    .end local v3    # "mvnoIccid":Ljava/lang/String;
+    .end local v4    # "mvnoIccidList":[Ljava/lang/String;
+    :cond_4
+    return v7
 .end method
 
 
@@ -1383,18 +1472,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 342
+    .line 344
     iget-boolean v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->carrierEnabled:Z
 
     if-nez v2, :cond_0
 
     return v3
 
-    .line 343
+    .line 345
     :cond_0
     const/4 v1, 0x1
 
-    .line 344
+    .line 346
     .local v1, "wildcardable":Z
     const-string/jumbo v2, "ia"
 
@@ -1406,7 +1495,7 @@
 
     const/4 v1, 0x0
 
-    .line 345
+    .line 347
     :cond_1
     iget-object v4, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
 
@@ -1419,7 +1508,7 @@
 
     aget-object v0, v4, v2
 
-    .line 347
+    .line 349
     .local v0, "t":Ljava/lang/String;
     invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -1427,7 +1516,7 @@
 
     if-nez v6, :cond_3
 
-    .line 348
+    .line 350
     if-eqz v1, :cond_2
 
     const-string/jumbo v6, "*"
@@ -1436,10 +1525,10 @@
 
     move-result v6
 
-    .line 347
+    .line 349
     if-nez v6, :cond_3
 
-    .line 349
+    .line 351
     :cond_2
     const-string/jumbo v6, "default"
 
@@ -1449,29 +1538,29 @@
 
     if-eqz v6, :cond_4
 
-    .line 350
+    .line 352
     const-string/jumbo v6, "hipri"
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v6
 
-    .line 347
+    .line 349
     if-eqz v6, :cond_4
 
-    .line 351
+    .line 353
     :cond_3
     const/4 v2, 0x1
 
     return v2
 
-    .line 345
+    .line 347
     :cond_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 354
+    .line 356
     .end local v0    # "t":Ljava/lang/String;
     :cond_5
     return v3
@@ -1484,21 +1573,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 476
+    .line 491
     instance-of v2, p1, Lcom/android/internal/telephony/dataconnection/ApnSetting;
 
     if-nez v2, :cond_0
 
-    .line 477
+    .line 492
     return v1
 
     :cond_0
     move-object v0, p1
 
-    .line 480
+    .line 495
     check-cast v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;
 
-    .line 482
+    .line 497
     .local v0, "other":Lcom/android/internal/telephony/dataconnection/ApnSetting;
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->carrier:Ljava/lang/String;
 
@@ -1510,14 +1599,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 483
+    .line 498
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->id:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->id:I
 
     if-ne v2, v3, :cond_1
 
-    .line 484
+    .line 499
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->numeric:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->numeric:Ljava/lang/String;
@@ -1526,10 +1615,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 485
+    .line 500
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->apn:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->apn:Ljava/lang/String;
@@ -1538,10 +1627,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 486
+    .line 501
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->proxy:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->proxy:Ljava/lang/String;
@@ -1550,10 +1639,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 487
+    .line 502
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsc:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsc:Ljava/lang/String;
@@ -1562,10 +1651,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 488
+    .line 503
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsProxy:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsProxy:Ljava/lang/String;
@@ -1574,10 +1663,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 489
+    .line 504
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsPort:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsPort:Ljava/lang/String;
@@ -1586,10 +1675,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 490
+    .line 505
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->port:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->port:Ljava/lang/String;
@@ -1598,10 +1687,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 491
+    .line 506
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->user:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->user:Ljava/lang/String;
@@ -1610,10 +1699,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 492
+    .line 507
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->password:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->password:Ljava/lang/String;
@@ -1622,17 +1711,17 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 493
+    .line 508
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->authType:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->authType:I
 
     if-ne v2, v3, :cond_1
 
-    .line 494
+    .line 509
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
@@ -1641,10 +1730,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 495
+    .line 510
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->protocol:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->protocol:Ljava/lang/String;
@@ -1653,10 +1742,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 496
+    .line 511
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->roamingProtocol:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->roamingProtocol:Ljava/lang/String;
@@ -1665,73 +1754,73 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 497
+    .line 512
     iget-boolean v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->carrierEnabled:Z
 
     iget-boolean v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->carrierEnabled:Z
 
     if-ne v2, v3, :cond_1
 
-    .line 498
+    .line 513
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->bearer:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->bearer:I
 
     if-ne v2, v3, :cond_1
 
-    .line 499
+    .line 514
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->bearerBitmask:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->bearerBitmask:I
 
     if-ne v2, v3, :cond_1
 
-    .line 500
+    .line 515
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->profileId:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->profileId:I
 
     if-ne v2, v3, :cond_1
 
-    .line 501
+    .line 516
     iget-boolean v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->modemCognitive:Z
 
     iget-boolean v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->modemCognitive:Z
 
     if-ne v2, v3, :cond_1
 
-    .line 502
+    .line 517
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->maxConns:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->maxConns:I
 
     if-ne v2, v3, :cond_1
 
-    .line 503
+    .line 518
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->waitTime:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->waitTime:I
 
     if-ne v2, v3, :cond_1
 
-    .line 504
+    .line 519
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->maxConnsTime:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->maxConnsTime:I
 
     if-ne v2, v3, :cond_1
 
-    .line 505
+    .line 520
     iget v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mtu:I
 
     iget v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mtu:I
 
     if-ne v2, v3, :cond_1
 
-    .line 506
+    .line 521
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mvnoType:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mvnoType:Ljava/lang/String;
@@ -1740,10 +1829,10 @@
 
     move-result v2
 
-    .line 482
+    .line 497
     if-eqz v2, :cond_1
 
-    .line 507
+    .line 522
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mvnoMatchData:Ljava/lang/String;
 
     iget-object v2, v0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mvnoMatchData:Ljava/lang/String;
@@ -1752,7 +1841,7 @@
 
     move-result v1
 
-    .line 482
+    .line 497
     :cond_1
     return v1
 .end method
@@ -1763,7 +1852,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 338
+    .line 340
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mvnoType:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1799,7 +1888,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 460
+    .line 475
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
 
     array-length v4, v3
@@ -1811,7 +1900,7 @@
 
     aget-object v0, v3, v1
 
-    .line 462
+    .line 477
     .local v0, "type":Ljava/lang/String;
     invoke-static {v0, p1, p2, p3}, Lcom/android/internal/telephony/dataconnection/ApnSetting;->isMeteredApnType(Ljava/lang/String;Landroid/content/Context;IZ)Z
 
@@ -1819,18 +1908,18 @@
 
     if-eqz v5, :cond_0
 
-    .line 465
+    .line 480
     const/4 v1, 0x1
 
     return v1
 
-    .line 460
+    .line 475
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 469
+    .line 484
     .end local v0    # "type":Ljava/lang/String;
     :cond_1
     return v2
@@ -1840,12 +1929,12 @@
     .locals 4
 
     .prologue
-    .line 299
+    .line 301
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 300
+    .line 302
     .local v1, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v2, "[ApnSettingV3] "
 
@@ -1853,165 +1942,165 @@
 
     move-result-object v2
 
-    .line 301
+    .line 303
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->carrier:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 302
+    .line 304
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 302
+    .line 304
     iget v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->id:I
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 303
+    .line 305
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 303
+    .line 305
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->numeric:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 304
+    .line 306
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 304
+    .line 306
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->apn:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 305
+    .line 307
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 305
+    .line 307
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->proxy:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 306
+    .line 308
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 306
+    .line 308
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsc:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 307
+    .line 309
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 307
+    .line 309
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsProxy:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 308
+    .line 310
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 308
+    .line 310
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->mmsPort:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 309
+    .line 311
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 309
+    .line 311
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->port:Ljava/lang/String;
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 310
+    .line 312
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 310
+    .line 312
     iget v3, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->authType:I
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 310
+    .line 312
     const-string/jumbo v3, ", "
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 311
+    .line 313
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -2022,14 +2111,14 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 312
+    .line 314
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 313
+    .line 315
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/ApnSetting;->types:[Ljava/lang/String;
 
     array-length v2, v2
@@ -2038,18 +2127,18 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 314
+    .line 316
     const-string/jumbo v2, " | "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 311
+    .line 313
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 317
+    .line 319
     :cond_1
     const-string/jumbo v2, ", "
 
@@ -2061,7 +2150,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 318
+    .line 320
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2072,7 +2161,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 319
+    .line 321
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2083,7 +2172,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 320
+    .line 322
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2094,7 +2183,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 321
+    .line 323
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2105,7 +2194,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 322
+    .line 324
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2116,7 +2205,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 323
+    .line 325
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2127,7 +2216,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 324
+    .line 326
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2138,7 +2227,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 325
+    .line 327
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2149,7 +2238,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 326
+    .line 328
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2160,7 +2249,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 327
+    .line 329
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2171,7 +2260,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 328
+    .line 330
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2182,7 +2271,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 329
+    .line 331
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2193,7 +2282,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 330
+    .line 332
     const-string/jumbo v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2204,7 +2293,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 331
+    .line 333
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2

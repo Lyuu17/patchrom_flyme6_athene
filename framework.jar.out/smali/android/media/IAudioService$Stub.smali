@@ -28,6 +28,8 @@
 
 .field static final TRANSACTION_abandonAudioFocus:I = 0x24
 
+.field static final TRANSACTION_addMediaPlayerAndUpdateRemoteController:I = 0x43
+
 .field static final TRANSACTION_adjustStreamVolume:I = 0x2
 
 .field static final TRANSACTION_adjustSuggestedStreamVolume:I = 0x1
@@ -43,6 +45,8 @@
 .field static final TRANSACTION_getActiveRecordingConfigurations:I = 0x3f
 
 .field static final TRANSACTION_getCurrentAudioFocus:I = 0x26
+
+.field static final TRANSACTION_getCurrentHotwordInputPackageName:I = 0x41
 
 .field static final TRANSACTION_getLastAudibleStreamVolume:I = 0xb
 
@@ -63,6 +67,8 @@
 .field static final TRANSACTION_getUiSoundsStreamType:I = 0x2d
 
 .field static final TRANSACTION_getVibrateSetting:I = 0x13
+
+.field static final TRANSACTION_handleHotwordInput:I = 0x40
 
 .field static final TRANSACTION_isBluetoothA2dpOn:I = 0x22
 
@@ -97,6 +103,8 @@
 .field static final TRANSACTION_registerRecordingCallback:I = 0x3d
 
 .field static final TRANSACTION_reloadAudioSettings:I = 0x1b
+
+.field static final TRANSACTION_removeMediaPlayerAndUpdateRemoteController:I = 0x44
 
 .field static final TRANSACTION_requestAudioFocus:I = 0x23
 
@@ -151,6 +159,8 @@
 .field static final TRANSACTION_unregisterAudioPolicyAsync:I = 0x3a
 
 .field static final TRANSACTION_unregisterRecordingCallback:I = 0x3e
+
+.field static final TRANSACTION_updateRemoteControllerOnExistingMediaPlayers:I = 0x42
 
 
 # direct methods
@@ -241,7 +251,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 726
+    .line 768
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -3007,7 +3017,159 @@
 
     return v4
 
+    .line 727
+    .end local v49    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/media/AudioRecordingConfiguration;>;"
+    :sswitch_40
+    const-string/jumbo v4, "android.media.IAudioService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 729
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    if-eqz v4, :cond_1d
+
+    const/16 v36, 0x1
+
+    .line 730
+    .restart local v36    # "_arg0":Z
+    :goto_1d
+    move-object/from16 v0, p0
+
+    move/from16 v1, v36
+
+    invoke-virtual {v0, v1}, Landroid/media/IAudioService$Stub;->handleHotwordInput(Z)V
+
+    .line 731
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 732
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 729
+    .end local v36    # "_arg0":Z
+    :cond_1d
+    const/16 v36, 0x0
+
+    goto :goto_1d
+
+    .line 736
+    :sswitch_41
+    const-string/jumbo v4, "android.media.IAudioService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 737
+    invoke-virtual/range {p0 .. p0}, Landroid/media/IAudioService$Stub;->getCurrentHotwordInputPackageName()Ljava/lang/String;
+
+    move-result-object v48
+
+    .line 738
+    .restart local v48    # "_result":Ljava/lang/String;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 739
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v48
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 740
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 744
+    .end local v48    # "_result":Ljava/lang/String;
+    :sswitch_42
+    const-string/jumbo v4, "android.media.IAudioService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 745
+    invoke-virtual/range {p0 .. p0}, Landroid/media/IAudioService$Stub;->updateRemoteControllerOnExistingMediaPlayers()V
+
+    .line 746
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 747
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 751
+    :sswitch_43
+    const-string/jumbo v4, "android.media.IAudioService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 753
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v35
+
+    .line 754
+    .restart local v35    # "_arg0":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v35
+
+    invoke-virtual {v0, v1}, Landroid/media/IAudioService$Stub;->addMediaPlayerAndUpdateRemoteController(Ljava/lang/String;)V
+
+    .line 755
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 756
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 760
+    .end local v35    # "_arg0":Ljava/lang/String;
+    :sswitch_44
+    const-string/jumbo v4, "android.media.IAudioService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 762
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v35
+
+    .line 763
+    .restart local v35    # "_arg0":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v35
+
+    invoke-virtual {v0, v1}, Landroid/media/IAudioService$Stub;->removeMediaPlayerAndUpdateRemoteController(Ljava/lang/String;)V
+
+    .line 764
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 765
+    const/4 v4, 0x1
+
+    return v4
+
     .line 41
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -3073,6 +3235,11 @@
         0x3d -> :sswitch_3d
         0x3e -> :sswitch_3e
         0x3f -> :sswitch_3f
+        0x40 -> :sswitch_40
+        0x41 -> :sswitch_41
+        0x42 -> :sswitch_42
+        0x43 -> :sswitch_43
+        0x44 -> :sswitch_44
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

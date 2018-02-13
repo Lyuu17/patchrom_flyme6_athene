@@ -49,33 +49,33 @@
     .param p8, "_bannerRes"    # I
 
     .prologue
-    .line 280
+    .line 284
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 283
+    .line 287
     iput-object p1, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->owner:Landroid/content/pm/PackageParser$Package;
 
-    .line 284
+    .line 288
     iput-object p2, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->outError:[Ljava/lang/String;
 
-    .line 285
+    .line 289
     iput p3, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->nameRes:I
 
-    .line 286
+    .line 290
     iput p4, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->labelRes:I
 
-    .line 287
+    .line 291
     iput p5, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->iconRes:I
 
-    .line 288
+    .line 292
     iput p7, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->logoRes:I
 
-    .line 289
+    .line 293
     iput p8, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->bannerRes:I
 
-    .line 290
+    .line 294
     iput p6, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->roundIconRes:I
 
-    .line 282
+    .line 286
     return-void
 .end method

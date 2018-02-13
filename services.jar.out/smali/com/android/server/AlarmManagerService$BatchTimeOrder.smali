@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 605
+    .line 637
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,36 +46,36 @@
     .param p2, "b2"    # Lcom/android/server/AlarmManagerService$Batch;
 
     .prologue
-    .line 607
+    .line 639
     iget-wide v0, p1, Lcom/android/server/AlarmManagerService$Batch;->start:J
 
-    .line 608
+    .line 640
     .local v0, "when1":J
     iget-wide v2, p2, Lcom/android/server/AlarmManagerService$Batch;->start:J
 
-    .line 609
+    .line 641
     .local v2, "when2":J
     cmp-long v4, v0, v2
 
     if-lez v4, :cond_0
 
-    .line 610
+    .line 642
     const/4 v4, 0x1
 
     return v4
 
-    .line 612
+    .line 644
     :cond_0
     cmp-long v4, v0, v2
 
     if-gez v4, :cond_1
 
-    .line 613
+    .line 645
     const/4 v4, -0x1
 
     return v4
 
-    .line 615
+    .line 647
     :cond_1
     const/4 v4, 0x0
 
@@ -88,7 +88,7 @@
     .param p2, "b2"    # Ljava/lang/Object;
 
     .prologue
-    .line 606
+    .line 638
     check-cast p1, Lcom/android/server/AlarmManagerService$Batch;
 
     .end local p1    # "b1":Ljava/lang/Object;

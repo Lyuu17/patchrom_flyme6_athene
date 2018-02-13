@@ -30,7 +30,7 @@
     .param p2, "val$im"    # Landroid/widget/ImageView;
 
     .prologue
-    .line 98
+    .line 100
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iput-object p2, p0, Lcom/android/internal/app/PlatLogoActivity$1;->val$im:Landroid/widget/ImageView;
@@ -47,7 +47,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 101
+    .line 103
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$1;->val$im:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/android/internal/app/PlatLogoActivity$1$1;
@@ -56,9 +56,9 @@
 
     invoke-direct {v1, p0, v2}, Lcom/android/internal/app/PlatLogoActivity$1$1;-><init>(Lcom/android/internal/app/PlatLogoActivity$1;Landroid/widget/ImageView;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 148
+    .line 150
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity;->mTapCount:I
@@ -67,6 +67,6 @@
 
     iput v1, v0, Lcom/android/internal/app/PlatLogoActivity;->mTapCount:I
 
-    .line 100
+    .line 102
     return-void
 .end method

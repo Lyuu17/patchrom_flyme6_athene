@@ -35,13 +35,13 @@
     .param p1, "capacity"    # I
 
     .prologue
-    .line 856
+    .line 865
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 857
+    .line 866
     iput p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mCapacity:I
 
-    .line 858
+    .line 867
     new-instance v0, Ljava/util/ArrayDeque;
 
     iget v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mCapacity:I
@@ -50,7 +50,7 @@
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
-    .line 856
+    .line 865
     return-void
 .end method
 
@@ -61,25 +61,25 @@
     .param p1, "scanData"    # Landroid/net/wifi/WifiScanner$ScanData;
 
     .prologue
-    .line 874
+    .line 883
     invoke-virtual {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->isFull()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 875
+    .line 884
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->pollFirst()Ljava/lang/Object;
 
-    .line 877
+    .line 886
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->offerLast(Ljava/lang/Object;)Z
 
-    .line 873
+    .line 882
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 866
+    .line 875
     iget v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mCapacity:I
 
     return v0
@@ -97,12 +97,12 @@
     .locals 1
 
     .prologue
-    .line 881
+    .line 890
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->clear()V
 
-    .line 880
+    .line 889
     return-void
 .end method
 
@@ -110,7 +110,7 @@
     .locals 2
 
     .prologue
-    .line 885
+    .line 894
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mBuffer:Ljava/util/ArrayDeque;
@@ -134,7 +134,7 @@
     .locals 2
 
     .prologue
-    .line 870
+    .line 879
     invoke-virtual {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->size()I
 
     move-result v0
@@ -158,7 +158,7 @@
     .locals 1
 
     .prologue
-    .line 862
+    .line 871
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->size()I

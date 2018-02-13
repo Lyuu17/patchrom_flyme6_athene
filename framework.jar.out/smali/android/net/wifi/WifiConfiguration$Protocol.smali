@@ -31,7 +31,7 @@
     .locals 3
 
     .prologue
-    .line 136
+    .line 138
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -56,7 +56,7 @@
 
     sput-object v0, Landroid/net/wifi/WifiConfiguration$Protocol;->strings:[Ljava/lang/String;
 
-    .line 122
+    .line 124
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .locals 0
 
     .prologue
-    .line 123
+    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -282,6 +282,8 @@
 
 .field static final TRANSACTION_requestBugreport:I = 0x2a
 
+.field static final TRANSACTION_requireSecureKeyguard:I = 0xcc
+
 .field static final TRANSACTION_resetPassword:I = 0x1c
 
 .field static final TRANSACTION_retrieveNetworkLogs:I = 0xcb
@@ -521,7 +523,7 @@
     .line 42
     sparse-switch p1, :sswitch_data_0
 
-    .line 3310
+    .line 3320
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -7791,7 +7793,7 @@
 
     .line 1762
     :goto_9a
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual/range {p0 .. p0}, Landroid/app/admin/IDevicePolicyManager$Stub;->getClass()Ljava/lang/Class;
 
     move-result-object v4
 
@@ -8077,7 +8079,7 @@
 
     .line 1824
     :goto_9f
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual/range {p0 .. p0}, Landroid/app/admin/IDevicePolicyManager$Stub;->getClass()Ljava/lang/Class;
 
     move-result-object v4
 
@@ -14372,9 +14374,54 @@
     .restart local v15    # "_arg0":Landroid/content/ComponentName;
     goto :goto_12f
 
-    .line 42
-    nop
+    .line 3311
+    .end local v15    # "_arg0":Landroid/content/ComponentName;
+    :sswitch_cc
+    const-string/jumbo v4, "android.app.admin.IDevicePolicyManager"
 
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 3313
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 3314
+    .restart local v5    # "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v5}, Landroid/app/admin/IDevicePolicyManager$Stub;->requireSecureKeyguard(I)Z
+
+    move-result v71
+
+    .line 3315
+    .restart local v71    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 3316
+    if-eqz v71, :cond_130
+
+    const/4 v4, 0x1
+
+    :goto_130
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 3317
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 3316
+    :cond_130
+    const/4 v4, 0x0
+
+    goto :goto_130
+
+    .line 42
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -14580,6 +14627,7 @@
         0xc9 -> :sswitch_c9
         0xca -> :sswitch_ca
         0xcb -> :sswitch_cb
+        0xcc -> :sswitch_cc
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

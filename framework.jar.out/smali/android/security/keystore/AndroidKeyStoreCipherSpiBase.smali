@@ -222,9 +222,7 @@
     if-eqz v0, :cond_6
 
     .line 269
-    nop
-
-    nop
+    check-cast v7, Ljava/security/InvalidKeyException;
 
     .end local v7    # "e":Ljava/security/GeneralSecurityException;
     throw v7
@@ -237,9 +235,7 @@
     if-eqz v0, :cond_7
 
     .line 271
-    nop
-
-    nop
+    check-cast v7, Ljava/security/InvalidAlgorithmParameterException;
 
     .end local v7    # "e":Ljava/security/GeneralSecurityException;
     throw v7
@@ -654,7 +650,7 @@
 
     .line 554
     :cond_1
-    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v2
 
@@ -675,7 +671,7 @@
 
     move-result v7
 
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v8
 
@@ -688,13 +684,13 @@
 
     .line 560
     .local v3, "outputArray":[B
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v6
 
     add-int/2addr v6, v2
 
-    invoke-virtual {p1, v6}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p1, v6}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 567
     :goto_0
@@ -708,7 +704,7 @@
     if-lez v5, :cond_3
 
     .line 569
-    invoke-virtual {p2}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v4
 
@@ -908,7 +904,7 @@
 
     iget-object v1, p0, Landroid/security/keystore/AndroidKeyStoreCipherSpiBase;->mCachedException:Ljava/lang/Exception;
 
-    invoke-virtual {v0, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v0, v1}, Ljavax/crypto/IllegalBlockSizeException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -980,7 +976,7 @@
 
     invoke-direct {v0}, Ljavax/crypto/IllegalBlockSizeException;-><init>()V
 
-    invoke-virtual {v0, v7}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v0, v7}, Ljavax/crypto/IllegalBlockSizeException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -1006,7 +1002,7 @@
 
     invoke-direct {v0}, Ljavax/crypto/IllegalBlockSizeException;-><init>()V
 
-    invoke-virtual {v0, v6}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v0, v6}, Ljavax/crypto/IllegalBlockSizeException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -1020,7 +1016,7 @@
 
     invoke-direct {v0}, Ljavax/crypto/IllegalBlockSizeException;-><init>()V
 
-    invoke-virtual {v0, v6}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v0, v6}, Ljavax/crypto/IllegalBlockSizeException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -1034,7 +1030,7 @@
 
     invoke-direct {v0}, Ljavax/crypto/BadPaddingException;-><init>()V
 
-    invoke-virtual {v0, v6}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v0, v6}, Ljavax/crypto/BadPaddingException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -1048,7 +1044,7 @@
 
     invoke-direct {v0}, Ljavax/crypto/AEADBadTagException;-><init>()V
 
-    invoke-virtual {v0, v6}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v0, v6}, Ljavax/crypto/AEADBadTagException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -1579,7 +1575,7 @@
 
     .line 397
     :cond_1
-    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v2
 
@@ -1600,7 +1596,7 @@
 
     move-result v7
 
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v8
 
@@ -1613,13 +1609,13 @@
 
     .line 403
     .local v3, "outputArray":[B
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v6
 
     add-int/2addr v6, v2
 
-    invoke-virtual {p1, v6}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p1, v6}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 410
     :goto_0
@@ -1633,7 +1629,7 @@
     if-lez v5, :cond_3
 
     .line 412
-    invoke-virtual {p2}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v4
 
@@ -1910,7 +1906,7 @@
 
     .line 465
     :cond_0
-    invoke-virtual {p1}, Ljava/nio/Buffer;->hasRemaining()Z
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
     move-result v3
 
@@ -1938,7 +1934,7 @@
 
     move-result v3
 
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v4
 
@@ -1946,17 +1942,17 @@
 
     .line 475
     .local v2, "inputOffset":I
-    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
 
     .line 476
     .local v1, "inputLen":I
-    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v3
 
-    invoke-virtual {p1, v3}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 483
     :goto_0
@@ -1970,7 +1966,7 @@
     .end local v1    # "inputLen":I
     .end local v2    # "inputOffset":I
     :cond_2
-    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v3
 
@@ -2517,7 +2513,7 @@
 
     invoke-direct {v8}, Ljavax/crypto/IllegalBlockSizeException;-><init>()V
 
-    invoke-virtual {v8, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v8, v1}, Ljavax/crypto/IllegalBlockSizeException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v8
 

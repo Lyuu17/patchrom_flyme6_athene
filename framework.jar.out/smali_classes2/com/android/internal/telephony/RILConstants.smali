@@ -112,6 +112,8 @@
 
 .field public static final INVALID_MODEM_STATE:I = 0x2e
 
+.field public static final INVALID_PARAMETER:I = 0x42
+
 .field public static final INVALID_SIM_STATE:I = 0x2d
 
 .field public static final INVALID_SMSC_ADDRESS:I = 0x3a
@@ -294,6 +296,8 @@
 
 .field public static final RIL_REQUEST_BASEBAND_VERSION:I = 0x33
 
+.field public static final RIL_REQUEST_CAF_SIM_OPEN_CHANNEL_WITH_P2:I = 0x8b
+
 .field public static final RIL_REQUEST_CANCEL_USSD:I = 0x1e
 
 .field public static final RIL_REQUEST_CDMA_BROADCAST_ACTIVATION:I = 0x5e
@@ -371,6 +375,8 @@
 .field public static final RIL_REQUEST_EXPLICIT_CALL_TRANSFER:I = 0x48
 
 .field public static final RIL_REQUEST_GET_ACTIVITY_INFO:I = 0x87
+
+.field public static final RIL_REQUEST_GET_ADN_RECORD:I = 0x8c
 
 .field public static final RIL_REQUEST_GET_ALLOWED_CARRIERS:I = 0x89
 
@@ -524,6 +530,8 @@
 
 .field public static final RIL_REQUEST_SIM_CLOSE_CHANNEL:I = 0x74
 
+.field public static final RIL_REQUEST_SIM_GET_ATR:I = 0x8a
+
 .field public static final RIL_REQUEST_SIM_IO:I = 0x1c
 
 .field public static final RIL_REQUEST_SIM_OPEN_CHANNEL:I = 0x73
@@ -553,6 +561,8 @@
 .field public static final RIL_REQUEST_SWITCH_WAITING_OR_HOLDING_AND_ACTIVE:I = 0xf
 
 .field public static final RIL_REQUEST_UDUB:I = 0x11
+
+.field public static final RIL_REQUEST_UPDATE_ADN_RECORD:I = 0x8d
 
 .field public static final RIL_REQUEST_VOICE_RADIO_TECH:I = 0x6c
 
@@ -614,6 +624,10 @@
 
 .field public static final RIL_UNSOL_RESEND_INCALL_MUTE:I = 0x406
 
+.field public static final RIL_UNSOL_RESPONSE_ADN_INIT_DONE:I = 0x417
+
+.field public static final RIL_UNSOL_RESPONSE_ADN_RECORDS:I = 0x418
+
 .field public static final RIL_UNSOL_RESPONSE_BASE:I = 0x3e8
 
 .field public static final RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED:I = 0x3e9
@@ -657,6 +671,8 @@
 .field public static final RIL_UNSOL_STK_EVENT_NOTIFY:I = 0x3f6
 
 .field public static final RIL_UNSOL_STK_PROACTIVE_COMMAND:I = 0x3f5
+
+.field public static final RIL_UNSOL_STK_SEND_SMS_RESULT:I = 0x2afa
 
 .field public static final RIL_UNSOL_STK_SESSION_END:I = 0x3f4
 
@@ -741,22 +757,30 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 163
+    const/4 v2, 0x0
+
+    .line 167
     const-string/jumbo v0, "ro.telephony.default_network"
 
-    .line 164
-    const/4 v1, 0x0
+    .line 168
+    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    .line 163
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+    move-result-object v1
+
+    .line 166
+    invoke-static {v2, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
     sput v0, Lcom/android/internal/telephony/RILConstants;->PREFERRED_NETWORK_MODE:I
 
-    .line 32
+    .line 33
     return-void
 .end method

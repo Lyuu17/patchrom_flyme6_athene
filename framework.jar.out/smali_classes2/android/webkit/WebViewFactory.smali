@@ -651,7 +651,6 @@
 
     throw v4
 
-    .line 191
     :cond_2
     :goto_flyme_0
     :try_start_2
@@ -659,9 +658,8 @@
 
     move-result-object v1
 
-    .line 192
     .local v1, "oldPolicy":Landroid/os/StrictMode$ThreadPolicy;
-    const-string/jumbo v4, "WebViewFactory.getProvider()"
+    const-string v4, "WebViewFactory.getProvider()"
 
     const-wide/16 v6, 0x10
 

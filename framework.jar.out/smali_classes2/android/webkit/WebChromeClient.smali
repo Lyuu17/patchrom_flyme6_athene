@@ -29,7 +29,7 @@
     .locals 1
 
     .prologue
-    .line 386
+    .line 397
     const/4 v0, 0x0
 
     return-object v0
@@ -39,7 +39,7 @@
     .locals 1
 
     .prologue
-    .line 397
+    .line 408
     const/4 v0, 0x0
 
     return-object v0
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 402
+    .line 413
     .local p1, "callback":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<[Ljava/lang/String;>;"
     return-void
 .end method
@@ -68,7 +68,7 @@
     .param p1, "window"    # Landroid/webkit/WebView;
 
     .prologue
-    .line 153
+    .line 162
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .end annotation
 
     .prologue
-    .line 361
+    .line 372
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .param p1, "consoleMessage"    # Landroid/webkit/ConsoleMessage;
 
     .prologue
-    .line 371
+    .line 382
     invoke-virtual {p1}, Landroid/webkit/ConsoleMessage;->message()Ljava/lang/String;
 
     move-result-object v0
@@ -99,15 +99,15 @@
 
     move-result v1
 
-    .line 372
+    .line 383
     invoke-virtual {p1}, Landroid/webkit/ConsoleMessage;->sourceId()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 371
+    .line 382
     invoke-virtual {p0, v0, v1, v2}, Landroid/webkit/WebChromeClient;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 373
+    .line 384
     const/4 v0, 0x0
 
     return v0
@@ -121,7 +121,7 @@
     .param p4, "resultMsg"    # Landroid/os/Message;
 
     .prologue
-    .line 135
+    .line 144
     const/4 v0, 0x0
 
     return v0
@@ -139,10 +139,10 @@
     .end annotation
 
     .prologue
-    .line 255
+    .line 264
     invoke-interface {p9, p3, p4}, Landroid/webkit/WebStorage$QuotaUpdater;->updateQuota(J)V
 
-    .line 252
+    .line 261
     return-void
 .end method
 
@@ -150,17 +150,22 @@
     .locals 0
 
     .prologue
-    .line 308
+    .line 319
     return-void
 .end method
 
 .method public onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V
-    .locals 0
+    .locals 1
     .param p1, "origin"    # Ljava/lang/String;
     .param p2, "callback"    # Landroid/webkit/GeolocationPermissions$Callback;
 
     .prologue
-    .line 300
+    .line 310
+    const/16 v0, 0x36
+
+    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
+
+    .line 309
     return-void
 .end method
 
@@ -168,7 +173,7 @@
     .locals 0
 
     .prologue
-    .line 105
+    .line 114
     return-void
 .end method
 
@@ -180,7 +185,7 @@
     .param p4, "result"    # Landroid/webkit/JsResult;
 
     .prologue
-    .line 167
+    .line 176
     const/4 v0, 0x0
 
     return v0
@@ -194,7 +199,7 @@
     .param p4, "result"    # Landroid/webkit/JsResult;
 
     .prologue
-    .line 225
+    .line 234
     const/4 v0, 0x0
 
     return v0
@@ -208,7 +213,7 @@
     .param p4, "result"    # Landroid/webkit/JsResult;
 
     .prologue
-    .line 185
+    .line 194
     const/4 v0, 0x0
 
     return v0
@@ -223,7 +228,7 @@
     .param p5, "result"    # Landroid/webkit/JsPromptResult;
 
     .prologue
-    .line 204
+    .line 213
     const/4 v0, 0x0
 
     return v0
@@ -233,7 +238,7 @@
     .locals 1
 
     .prologue
-    .line 348
+    .line 359
     const/4 v0, 0x1
 
     return v0
@@ -244,10 +249,10 @@
     .param p1, "request"    # Landroid/webkit/PermissionRequest;
 
     .prologue
-    .line 321
+    .line 332
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->deny()V
 
-    .line 320
+    .line 331
     return-void
 .end method
 
@@ -256,7 +261,7 @@
     .param p1, "request"    # Landroid/webkit/PermissionRequest;
 
     .prologue
-    .line 330
+    .line 341
     return-void
 .end method
 
@@ -279,10 +284,10 @@
     .end annotation
 
     .prologue
-    .line 278
+    .line 287
     invoke-interface {p5, p3, p4}, Landroid/webkit/WebStorage$QuotaUpdater;->updateQuota(J)V
 
-    .line 277
+    .line 286
     return-void
 .end method
 
@@ -322,7 +327,7 @@
     .param p1, "view"    # Landroid/webkit/WebView;
 
     .prologue
-    .line 144
+    .line 153
     return-void
 .end method
 
@@ -335,7 +340,7 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 106
     return-void
 .end method
 
@@ -345,7 +350,7 @@
     .param p2, "callback"    # Landroid/webkit/WebChromeClient$CustomViewCallback;
 
     .prologue
-    .line 82
+    .line 91
     return-void
 .end method
 
@@ -367,11 +372,21 @@
     .end annotation
 
     .prologue
-    .line 425
+    .line 436
     .local p2, "filePathCallback":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<[Landroid/net/Uri;>;"
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public onThemeColorChanged(Landroid/webkit/WebView;I)V
+    .locals 0
+    .param p1, "view"    # Landroid/webkit/WebView;
+    .param p2, "color"    # I
+
+    .prologue
+    .line 67
+    return-void
 .end method
 
 .method public openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V
@@ -395,13 +410,13 @@
     .end annotation
 
     .prologue
-    .line 525
+    .line 536
     .local p1, "uploadFile":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<Landroid/net/Uri;>;"
     const/4 v0, 0x0
 
     invoke-interface {p1, v0}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
-    .line 524
+    .line 535
     return-void
 .end method
 
@@ -410,6 +425,6 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 536
+    .line 547
     return-void
 .end method

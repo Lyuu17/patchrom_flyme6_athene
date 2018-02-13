@@ -1503,10 +1503,9 @@
     .end annotation
 
     .prologue
-    .line 249
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstaller:Lcom/android/internal/os/InstallerConnection;
 
-    const-string/jumbo v1, "copyfiles"
+    const-string v1, "copyfiles"
 
     const/4 v2, 0x2
 
@@ -1522,6 +1521,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/os/InstallerConnection;->execute(Ljava/lang/String;[Ljava/lang/Object;)[Ljava/lang/String;
 
-    .line 248
     return-void
 .end method

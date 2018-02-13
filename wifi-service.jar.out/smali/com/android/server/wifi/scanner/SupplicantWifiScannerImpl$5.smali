@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     .prologue
-    .line 481
+    .line 482
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$5;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 483
+    .line 484
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$5;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     invoke-static {v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->-get0(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;)Lcom/android/server/wifi/WifiNative$PnoEventHandler;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 484
+    .line 485
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$5;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     invoke-static {v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->-get0(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;)Lcom/android/server/wifi/WifiNative$PnoEventHandler;
@@ -61,17 +61,17 @@
 
     invoke-interface {v0}, Lcom/android/server/wifi/WifiNative$PnoEventHandler;->onPnoScanFailed()V
 
-    .line 487
+    .line 488
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$5;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->-set1(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;Lcom/android/server/wifi/WifiNative$PnoSettings;)Lcom/android/server/wifi/WifiNative$PnoSettings;
 
-    .line 488
+    .line 489
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$5;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->-set0(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;Lcom/android/server/wifi/WifiNative$PnoEventHandler;)Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 482
+    .line 483
     return-void
 .end method

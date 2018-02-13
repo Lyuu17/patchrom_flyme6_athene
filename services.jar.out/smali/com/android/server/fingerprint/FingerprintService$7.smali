@@ -33,7 +33,7 @@
     .param p12, "$anonymous8"    # Ljava/lang/String;
 
     .prologue
-    .line 573
+    .line 575
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     move-object v0, p0
@@ -58,7 +58,7 @@
 
     invoke-direct/range {v0 .. v11}, Lcom/android/server/fingerprint/AuthenticationClient;-><init>(Landroid/content/Context;JLandroid/os/IBinder;Landroid/hardware/fingerprint/IFingerprintServiceReceiver;IIJZLjava/lang/String;)V
 
-    .line 574
+    .line 576
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 601
+    .line 603
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0}, Lcom/android/server/fingerprint/FingerprintService;->getFingerprintDaemon()Landroid/hardware/fingerprint/IFingerprintDaemon;
@@ -82,7 +82,7 @@
     .locals 2
 
     .prologue
-    .line 577
+    .line 579
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get4(Lcom/android/server/fingerprint/FingerprintService;)I
@@ -93,7 +93,15 @@
 
     invoke-static {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->-set1(Lcom/android/server/fingerprint/FingerprintService;I)I
 
-    .line 578
+    .line 580
+    iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
+
+    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get10(Lcom/android/server/fingerprint/FingerprintService;)Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get4(Lcom/android/server/fingerprint/FingerprintService;)I
@@ -104,7 +112,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 579
+    .line 581
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get10(Lcom/android/server/fingerprint/FingerprintService;)Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
@@ -117,7 +125,7 @@
 
     iput v1, v0, Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;->lockout:I
 
-    .line 581
+    .line 583
     :cond_0
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -127,17 +135,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 583
+    .line 585
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-wrap5(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 584
+    .line 586
     const/4 v0, 0x1
 
     return v0
 
-    .line 586
+    .line 588
     :cond_1
     const/4 v0, 0x0
 
@@ -148,12 +156,12 @@
     .locals 1
 
     .prologue
-    .line 596
+    .line 598
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-wrap10(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 595
+    .line 597
     return-void
 .end method
 
@@ -161,11 +169,11 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 593
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0}, Lcom/android/server/fingerprint/FingerprintService;->resetFailedAttempts()V
 
-    .line 590
+    .line 592
     return-void
 .end method

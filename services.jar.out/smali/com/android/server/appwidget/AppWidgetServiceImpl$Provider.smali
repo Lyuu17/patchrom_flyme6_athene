@@ -48,22 +48,22 @@
     .locals 1
 
     .prologue
-    .line 3668
+    .line 3671
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3671
+    .line 3674
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->widgets:Ljava/util/ArrayList;
 
-    .line 3679
+    .line 3682
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->tag:I
 
-    .line 3668
+    .line 3671
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .locals 1
 
     .prologue
-    .line 3682
+    .line 3685
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
     iget v0, v0, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;->uid:I
@@ -100,14 +100,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 3692
+    .line 3695
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->widgets:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 3693
+    .line 3696
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -115,7 +115,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 3694
+    .line 3697
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->widgets:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -124,7 +124,7 @@
 
     check-cast v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 3695
+    .line 3698
     .local v2, "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     iget-object v3, v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
@@ -138,7 +138,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 3696
+    .line 3699
     iget-object v3, v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
     invoke-virtual {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->getUserId()I
@@ -147,18 +147,18 @@
 
     if-ne v3, p2, :cond_0
 
-    .line 3697
+    .line 3700
     const/4 v3, 0x1
 
     return v3
 
-    .line 3693
+    .line 3696
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3700
+    .line 3703
     .end local v2    # "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     :cond_1
     const/4 v3, 0x0
@@ -172,14 +172,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 3686
+    .line 3689
     invoke-virtual {p0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->getUserId()I
 
     move-result v0
 
     if-ne v0, p2, :cond_0
 
-    .line 3687
+    .line 3690
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
     iget-object v0, v0, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;->componentName:Landroid/content/ComponentName;
@@ -192,7 +192,7 @@
 
     move-result v0
 
-    .line 3686
+    .line 3689
     :goto_0
     return v0
 
@@ -206,7 +206,7 @@
     .locals 1
 
     .prologue
-    .line 3730
+    .line 3733
     iget-boolean v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->maskedByQuietProfile:Z
 
     if-nez v0, :cond_0
@@ -231,14 +231,14 @@
     .param p1, "masked"    # Z
 
     .prologue
-    .line 3717
+    .line 3720
     iget-boolean v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->maskedByLockedProfile:Z
 
-    .line 3718
+    .line 3721
     .local v0, "oldState":Z
     iput-boolean p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->maskedByLockedProfile:Z
 
-    .line 3719
+    .line 3722
     if-eq p1, v0, :cond_0
 
     const/4 v1, 0x1
@@ -257,14 +257,14 @@
     .param p1, "masked"    # Z
 
     .prologue
-    .line 3710
+    .line 3713
     iget-boolean v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->maskedByQuietProfile:Z
 
-    .line 3711
+    .line 3714
     .local v0, "oldState":Z
     iput-boolean p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->maskedByQuietProfile:Z
 
-    .line 3712
+    .line 3715
     if-eq p1, v0, :cond_0
 
     const/4 v1, 0x1
@@ -283,14 +283,14 @@
     .param p1, "masked"    # Z
 
     .prologue
-    .line 3724
+    .line 3727
     iget-boolean v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->maskedBySuspendedPackage:Z
 
-    .line 3725
+    .line 3728
     .local v0, "oldState":Z
     iput-boolean p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->maskedBySuspendedPackage:Z
 
-    .line 3726
+    .line 3729
     if-eq p1, v0, :cond_0
 
     const/4 v1, 0x1
@@ -308,7 +308,7 @@
     .locals 2
 
     .prologue
-    .line 3705
+    .line 3708
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

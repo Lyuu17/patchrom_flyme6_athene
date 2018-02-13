@@ -78,8 +78,7 @@
     .param p3, "gravity"    # I
 
     .prologue
-    .line 74
-    const v4, 0x1010300
+    const v4, #android:attr@popupMenuStyle#t
 
     const/4 v5, 0x0
 

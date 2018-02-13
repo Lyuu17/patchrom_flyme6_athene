@@ -36,17 +36,17 @@
     .locals 1
 
     .prologue
-    .line 1894
+    .line 1897
     const-string/jumbo v0, "content://com.android.calendar/properties"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1893
+    .line 1896
     sput-object v0, Landroid/provider/CalendarContract$CalendarCache;->URI:Landroid/net/Uri;
 
-    .line 1889
+    .line 1892
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .locals 0
 
     .prologue
-    .line 1899
+    .line 1902
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

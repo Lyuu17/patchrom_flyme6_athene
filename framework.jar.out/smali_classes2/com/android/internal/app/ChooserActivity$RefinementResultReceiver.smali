@@ -161,9 +161,7 @@
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mSelectedTarget:Lcom/android/internal/app/ResolverActivity$TargetInfo;
 
     .line 1495
-    nop
-
-    nop
+    check-cast v0, Landroid/content/Intent;
 
     .line 1494
     .end local v0    # "intentParcelable":Landroid/os/Parcelable;

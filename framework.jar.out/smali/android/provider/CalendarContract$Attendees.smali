@@ -61,6 +61,11 @@
 
     .prologue
     .line 874
+    const/16 v0, 0x36
+
+    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
+
+    .line 875
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -73,20 +78,20 @@
 
     aput-object v0, v4, v1
 
-    .line 875
+    .line 876
     .local v4, "attArgs":[Ljava/lang/String;
     sget-object v1, Landroid/provider/CalendarContract$Attendees;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v3, "event_id=?"
 
-    .line 876
+    .line 877
     const/4 v5, 0x0
 
     move-object v0, p0
 
     move-object v2, p3
 
-    .line 875
+    .line 876
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0

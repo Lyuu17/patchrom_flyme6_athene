@@ -671,9 +671,7 @@
     move-object v0, p1
 
     .line 293
-    nop
-
-    nop
+    check-cast v0, Landroid/net/nsd/DnsSdTxtRecord;
 
     .line 294
     .local v0, "record":Landroid/net/nsd/DnsSdTxtRecord;

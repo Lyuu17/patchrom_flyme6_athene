@@ -41,7 +41,7 @@
     .param p6, "val$statusToken"    # Ljava/lang/String;
 
     .prologue
-    .line 2965
+    .line 2991
     .local p4, "$anonymous1":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Ljava/lang/Boolean;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$23;->this$0:Landroid/accounts/AccountManager;
 
@@ -66,16 +66,16 @@
     .end annotation
 
     .prologue
-    .line 2975
+    .line 3001
     const-string/jumbo v0, "booleanResult"
 
-    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 2976
+    .line 3002
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
     const-string/jumbo v1, "no result in response"
@@ -84,11 +84,11 @@
 
     throw v0
 
-    .line 2978
+    .line 3004
     :cond_0
     const-string/jumbo v0, "booleanResult"
 
-    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -109,7 +109,7 @@
     .end annotation
 
     .prologue
-    .line 2974
+    .line 3000
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$23;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -126,25 +126,25 @@
     .end annotation
 
     .prologue
-    .line 2968
+    .line 2994
     iget-object v0, p0, Landroid/accounts/AccountManager$23;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
 
     move-result-object v0
 
-    .line 2969
-    iget-object v1, p0, Landroid/accounts/AccountManager$BaseFutureTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    .line 2995
+    iget-object v1, p0, Landroid/accounts/AccountManager$23;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
-    .line 2970
+    .line 2996
     iget-object v2, p0, Landroid/accounts/AccountManager$23;->val$account:Landroid/accounts/Account;
 
-    .line 2971
+    .line 2997
     iget-object v3, p0, Landroid/accounts/AccountManager$23;->val$statusToken:Ljava/lang/String;
 
-    .line 2968
+    .line 2994
     invoke-interface {v0, v1, v2, v3}, Landroid/accounts/IAccountManager;->isCredentialsUpdateSuggested(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Ljava/lang/String;)V
 
-    .line 2967
+    .line 2993
     return-void
 .end method

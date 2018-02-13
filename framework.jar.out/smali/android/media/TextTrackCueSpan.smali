@@ -72,9 +72,7 @@
     move-object v0, p1
 
     .line 86
-    nop
-
-    nop
+    check-cast v0, Landroid/media/TextTrackCueSpan;
 
     .line 87
     .local v0, "span":Landroid/media/TextTrackCueSpan;

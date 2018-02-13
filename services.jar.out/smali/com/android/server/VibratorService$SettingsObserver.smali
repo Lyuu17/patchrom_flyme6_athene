@@ -25,28 +25,51 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 254
+    .line 267
     iput-object p1, p0, Lcom/android/server/VibratorService$SettingsObserver;->this$0:Lcom/android/server/VibratorService;
 
-    .line 255
+    .line 268
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 254
+    .line 267
     return-void
 .end method
 
 
 # virtual methods
-.method public onChange(Z)V
+.method public onChange(ZLandroid/net/Uri;)V
     .locals 1
-    .param p1, "SelfChange"    # Z
+    .param p1, "selfChange"    # Z
+    .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 260
+    .line 273
+    const-string/jumbo v0, "vibrator_intensity"
+
+    invoke-static {v0}, Lcyanogenmod/providers/CMSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 274
+    iget-object v0, p0, Lcom/android/server/VibratorService$SettingsObserver;->this$0:Lcom/android/server/VibratorService;
+
+    invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap5(Lcom/android/server/VibratorService;)V
+
+    .line 272
+    :goto_0
+    return-void
+
+    .line 276
+    :cond_0
     iget-object v0, p0, Lcom/android/server/VibratorService$SettingsObserver;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap4(Lcom/android/server/VibratorService;)V
 
-    .line 259
-    return-void
+    goto :goto_0
 .end method

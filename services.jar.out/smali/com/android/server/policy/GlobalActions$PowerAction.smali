@@ -27,19 +27,19 @@
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
 
     .prologue
-    .line 350
+    .line 445
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$PowerAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    .line 351
+    .line 446
     const v0, 0x1080030
 
-    .line 352
+    .line 447
     const v1, 0x10401a4
 
-    .line 351
+    .line 446
     invoke-direct {p0, v0, v1}, Lcom/android/server/policy/GlobalActions$SinglePressAction;-><init>(II)V
 
-    .line 350
+    .line 445
     return-void
 .end method
 
@@ -61,10 +61,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 357
+    .line 452
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$PowerAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get4(Lcom/android/server/policy/GlobalActions;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get5(Lcom/android/server/policy/GlobalActions;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -76,7 +76,7 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 358
+    .line 453
     .local v0, "um":Landroid/os/UserManager;
     const-string/jumbo v1, "no_safe_boot"
 
@@ -86,19 +86,19 @@
 
     if-nez v1, :cond_0
 
-    .line 359
+    .line 454
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$PowerAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get13(Lcom/android/server/policy/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get15(Lcom/android/server/policy/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     move-result-object v1
 
     invoke-interface {v1, v3}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->rebootSafeMode(Z)V
 
-    .line 360
+    .line 455
     return v3
 
-    .line 362
+    .line 457
     :cond_0
     const/4 v1, 0x0
 
@@ -109,10 +109,10 @@
     .locals 2
 
     .prologue
-    .line 378
+    .line 473
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions$PowerAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get13(Lcom/android/server/policy/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get15(Lcom/android/server/policy/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     move-result-object v0
 
@@ -120,7 +120,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->shutdown(Z)V
 
-    .line 376
+    .line 471
     return-void
 .end method
 
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 372
+    .line 467
     const/4 v0, 0x1
 
     return v0
@@ -138,7 +138,7 @@
     .locals 1
 
     .prologue
-    .line 367
+    .line 462
     const/4 v0, 0x1
 
     return v0

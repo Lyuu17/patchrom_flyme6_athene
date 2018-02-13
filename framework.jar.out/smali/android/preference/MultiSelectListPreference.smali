@@ -340,7 +340,7 @@
 
     .line 213
     .local v0, "values":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    invoke-virtual {p0, v0}, Landroid/preference/Preference;->callChangeListener(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Landroid/preference/MultiSelectListPreference;->callChangeListener(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -373,10 +373,13 @@
 
     .line 223
     .local v0, "defaultValues":[Ljava/lang/CharSequence;
+    if-eqz v0, :cond_0
+
     array-length v3, v0
 
     .line 224
     .local v3, "valueCount":I
+    :goto_0
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
@@ -386,8 +389,8 @@
     const/4 v1, 0x0
 
     .local v1, "i":I
-    :goto_0
-    if-ge v1, v3, :cond_0
+    :goto_1
+    if-ge v1, v3, :cond_1
 
     .line 227
     aget-object v4, v0, v1
@@ -401,10 +404,22 @@
     .line 226
     add-int/lit8 v1, v1, 0x1
 
+    goto :goto_1
+
+    .line 223
+    .end local v1    # "i":I
+    .end local v2    # "result":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
+    .end local v3    # "valueCount":I
+    :cond_0
+    const/4 v3, 0x0
+
+    .restart local v3    # "valueCount":I
     goto :goto_0
 
     .line 230
-    :cond_0
+    .restart local v1    # "i":I
+    .restart local v2    # "result":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
+    :cond_1
     return-object v2
 .end method
 
@@ -482,7 +497,7 @@
 
     .line 241
     .local v1, "superState":Landroid/os/Parcelable;
-    invoke-virtual {p0}, Landroid/preference/Preference;->isPersistent()Z
+    invoke-virtual {p0}, Landroid/preference/MultiSelectListPreference;->isPersistent()Z
 
     move-result v2
 
@@ -520,7 +535,7 @@
 
     iget-object v0, p0, Landroid/preference/MultiSelectListPreference;->mValues:Ljava/util/Set;
 
-    invoke-virtual {p0, v0}, Landroid/preference/Preference;->getPersistedStringSet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-virtual {p0, v0}, Landroid/preference/MultiSelectListPreference;->getPersistedStringSet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object p2
 
@@ -545,7 +560,7 @@
 
     .prologue
     .line 92
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/MultiSelectListPreference;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -581,7 +596,7 @@
 
     .prologue
     .line 120
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/MultiSelectListPreference;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -636,7 +651,7 @@
     invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     .line 142
-    invoke-virtual {p0, p1}, Landroid/preference/Preference;->persistStringSet(Ljava/util/Set;)Z
+    invoke-virtual {p0, p1}, Landroid/preference/MultiSelectListPreference;->persistStringSet(Ljava/util/Set;)Z
 
     .line 138
     return-void

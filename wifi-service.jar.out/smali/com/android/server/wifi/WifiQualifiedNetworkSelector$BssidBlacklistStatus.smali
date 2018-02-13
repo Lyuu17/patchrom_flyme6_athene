@@ -27,15 +27,15 @@
     .locals 2
 
     .prologue
-    .line 131
+    .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 135
+    .line 136
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$BssidBlacklistStatus;->mBlacklistedTimeStamp:J
 
-    .line 131
+    .line 132
     return-void
 .end method
 

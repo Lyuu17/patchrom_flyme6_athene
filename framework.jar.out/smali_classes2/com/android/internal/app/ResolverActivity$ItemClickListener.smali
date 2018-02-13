@@ -66,9 +66,7 @@
 
     if-eqz v3, :cond_0
 
-    nop
-
-    nop
+    check-cast p1, Landroid/widget/ListView;
 
     move-object v2, p1
 
@@ -146,7 +144,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setEnabled(Z)V
+    invoke-virtual {v3, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 1826
     if-eqz v1, :cond_4
@@ -215,9 +213,7 @@
 
     if-eqz v2, :cond_0
 
-    nop
-
-    nop
+    check-cast p1, Landroid/widget/ListView;
 
     move-object v0, p1
 

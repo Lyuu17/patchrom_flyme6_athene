@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 2749
+    .line 2801
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
     .end annotation
 
     .prologue
-    .line 2755
+    .line 2807
     .local p1, "configs":Ljava/util/List;, "Ljava/util/List<Landroid/media/AudioRecordingConfiguration;>;"
     return-void
 .end method

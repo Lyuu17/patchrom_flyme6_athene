@@ -20,6 +20,8 @@
 
 .field public static final ACTION_HANDSHAKE:Ljava/lang/String; = "android.bluetooth.input.profile.action.HANDSHAKE"
 
+.field public static final ACTION_IDLE_TIME_CHANGED:Ljava/lang/String; = "codeaurora.bluetooth.input.profile.action.IDLE_TIME_CHANGED"
+
 .field public static final ACTION_PROTOCOL_MODE_CHANGED:Ljava/lang/String; = "android.bluetooth.input.profile.action.PROTOCOL_MODE_CHANGED"
 
 .field public static final ACTION_REPORT:Ljava/lang/String; = "android.bluetooth.input.profile.action.REPORT"
@@ -27,6 +29,8 @@
 .field public static final ACTION_VIRTUAL_UNPLUG_STATUS:Ljava/lang/String; = "android.bluetooth.input.profile.action.VIRTUAL_UNPLUG_STATUS"
 
 .field private static final DBG:Z = true
+
+.field public static final EXTRA_IDLE_TIME:Ljava/lang/String; = "codeaurora.bluetooth.BluetoothInputDevice.extra.IDLE_TIME"
 
 .field public static final EXTRA_PROTOCOL_MODE:Ljava/lang/String; = "android.bluetooth.BluetoothInputDevice.extra.PROTOCOL_MODE"
 
@@ -134,49 +138,49 @@
     .param p2, "l"    # Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
     .prologue
-    .line 241
+    .line 252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 208
+    .line 219
     new-instance v2, Landroid/bluetooth/BluetoothInputDevice$1;
 
     invoke-direct {v2, p0}, Landroid/bluetooth/BluetoothInputDevice$1;-><init>(Landroid/bluetooth/BluetoothInputDevice;)V
 
-    .line 207
+    .line 218
     iput-object v2, p0, Landroid/bluetooth/BluetoothInputDevice;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
-    .line 479
+    .line 490
     new-instance v2, Landroid/bluetooth/BluetoothInputDevice$2;
 
     invoke-direct {v2, p0}, Landroid/bluetooth/BluetoothInputDevice$2;-><init>(Landroid/bluetooth/BluetoothInputDevice;)V
 
     iput-object v2, p0, Landroid/bluetooth/BluetoothInputDevice;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 242
+    .line 253
     iput-object p1, p0, Landroid/bluetooth/BluetoothInputDevice;->mContext:Landroid/content/Context;
 
-    .line 243
+    .line 254
     iput-object p2, p0, Landroid/bluetooth/BluetoothInputDevice;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 244
+    .line 255
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/bluetooth/BluetoothInputDevice;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
-    .line 246
+    .line 257
     iget-object v2, p0, Landroid/bluetooth/BluetoothInputDevice;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v2}, Landroid/bluetooth/BluetoothAdapter;->getBluetoothManager()Landroid/bluetooth/IBluetoothManager;
 
     move-result-object v1
 
-    .line 247
+    .line 258
     .local v1, "mgr":Landroid/bluetooth/IBluetoothManager;
     if-eqz v1, :cond_0
 
-    .line 249
+    .line 260
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothInputDevice;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
@@ -184,19 +188,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 255
+    .line 266
     :cond_0
     :goto_0
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothInputDevice;->doBind()Z
 
-    .line 241
+    .line 252
     return-void
 
-    .line 250
+    .line 261
     :catch_0
     move-exception v0
 
-    .line 251
+    .line 262
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "BluetoothInputDevice"
 
@@ -211,7 +215,7 @@
     .locals 2
 
     .prologue
-    .line 498
+    .line 509
     iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->getState()I
@@ -226,7 +230,7 @@
 
     return v0
 
-    .line 499
+    .line 510
     :cond_0
     const/4 v0, 0x0
 
@@ -240,12 +244,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 503
+    .line 514
     if-nez p1, :cond_0
 
     return v1
 
-    .line 505
+    .line 516
     :cond_0
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
@@ -261,7 +265,7 @@
 
     return v0
 
-    .line 506
+    .line 517
     :cond_1
     return v1
 .end method
@@ -271,12 +275,12 @@
     .param p0, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 662
+    .line 723
     const-string/jumbo v0, "BluetoothInputDevice"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 661
+    .line 722
     return-void
 .end method
 
@@ -288,18 +292,18 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 272
+    .line 283
     iget-object v3, p0, Landroid/bluetooth/BluetoothInputDevice;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v3}, Landroid/bluetooth/BluetoothAdapter;->getBluetoothManager()Landroid/bluetooth/IBluetoothManager;
 
     move-result-object v1
 
-    .line 273
+    .line 284
     .local v1, "mgr":Landroid/bluetooth/IBluetoothManager;
     if-eqz v1, :cond_0
 
-    .line 275
+    .line 286
     :try_start_0
     iget-object v3, p0, Landroid/bluetooth/BluetoothInputDevice;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
@@ -307,14 +311,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 281
+    .line 292
     :cond_0
     :goto_0
     iget-object v4, p0, Landroid/bluetooth/BluetoothInputDevice;->mConnection:Landroid/content/ServiceConnection;
 
     monitor-enter v4
 
-    .line 282
+    .line 293
     :try_start_1
     iget-object v3, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
     :try_end_1
@@ -322,13 +326,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 284
+    .line 295
     const/4 v3, 0x0
 
     :try_start_2
     iput-object v3, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
-    .line 285
+    .line 296
     iget-object v3, p0, Landroid/bluetooth/BluetoothInputDevice;->mContext:Landroid/content/Context;
 
     iget-object v5, p0, Landroid/bluetooth/BluetoothInputDevice;->mConnection:Landroid/content/ServiceConnection;
@@ -342,17 +346,17 @@
     :goto_1
     monitor-exit v4
 
-    .line 291
+    .line 302
     iput-object v6, p0, Landroid/bluetooth/BluetoothInputDevice;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 270
+    .line 281
     return-void
 
-    .line 276
+    .line 287
     :catch_0
     move-exception v0
 
-    .line 277
+    .line 288
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v3, "BluetoothInputDevice"
 
@@ -362,12 +366,12 @@
 
     goto :goto_0
 
-    .line 286
+    .line 297
     .end local v0    # "e":Ljava/lang/Exception;
     :catch_1
     move-exception v2
 
-    .line 287
+    .line 298
     .local v2, "re":Ljava/lang/Exception;
     :try_start_3
     const-string/jumbo v3, "BluetoothInputDevice"
@@ -380,7 +384,7 @@
 
     goto :goto_1
 
-    .line 281
+    .line 292
     .end local v2    # "re":Ljava/lang/Exception;
     :catchall_0
     move-exception v3
@@ -397,7 +401,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 315
+    .line 326
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -424,7 +428,7 @@
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
 
-    .line 316
+    .line 327
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -441,7 +445,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 318
+    .line 329
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -453,11 +457,11 @@
 
     return v1
 
-    .line 319
+    .line 330
     :catch_0
     move-exception v0
 
-    .line 320
+    .line 331
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -489,10 +493,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
+    .line 332
     return v4
 
-    .line 324
+    .line 335
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -505,7 +509,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 325
+    .line 336
     :cond_1
     return v4
 .end method
@@ -517,7 +521,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 355
+    .line 366
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -544,7 +548,7 @@
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
 
-    .line 356
+    .line 367
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -561,7 +565,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 358
+    .line 369
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -573,11 +577,11 @@
 
     return v1
 
-    .line 359
+    .line 370
     :catch_0
     move-exception v0
 
-    .line 360
+    .line 371
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -609,10 +613,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 361
+    .line 372
     return v4
 
-    .line 364
+    .line 375
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -625,7 +629,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 365
+    .line 376
     :cond_1
     return v4
 .end method
@@ -636,7 +640,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 259
+    .line 270
     new-instance v1, Landroid/content/Intent;
 
     const-class v2, Landroid/bluetooth/IBluetoothInputDevice;
@@ -647,7 +651,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 260
+    .line 271
     .local v1, "intent":Landroid/content/Intent;
     iget-object v2, p0, Landroid/bluetooth/BluetoothInputDevice;->mContext:Landroid/content/Context;
 
@@ -659,35 +663,35 @@
 
     move-result-object v0
 
-    .line 261
+    .line 272
     .local v0, "comp":Landroid/content/ComponentName;
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 262
+    .line 273
     if-eqz v0, :cond_0
 
     iget-object v2, p0, Landroid/bluetooth/BluetoothInputDevice;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Landroid/bluetooth/BluetoothInputDevice;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 263
+    .line 274
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object v4
 
-    .line 262
+    .line 273
     invoke-virtual {v2, v1, v3, v5, v4}, Landroid/content/Context;->bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/UserHandle;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 267
+    .line 278
     const/4 v2, 0x1
 
     return v2
 
-    .line 264
+    .line 275
     :cond_0
     const-string/jumbo v2, "BluetoothInputDevice"
 
@@ -711,7 +715,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 265
+    .line 276
     return v5
 .end method
 
@@ -728,7 +732,7 @@
     .end annotation
 
     .prologue
-    .line 373
+    .line 384
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -739,7 +743,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 375
+    .line 386
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -751,11 +755,11 @@
 
     return-object v1
 
-    .line 376
+    .line 387
     :catch_0
     move-exception v0
 
-    .line 377
+    .line 388
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -787,14 +791,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 378
+    .line 389
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     return-object v1
 
-    .line 381
+    .line 392
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -807,7 +811,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 382
+    .line 393
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
@@ -823,7 +827,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 407
+    .line 418
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -840,7 +844,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 409
+    .line 420
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -852,11 +856,11 @@
 
     return v1
 
-    .line 410
+    .line 421
     :catch_0
     move-exception v0
 
-    .line 411
+    .line 422
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -888,10 +892,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 412
+    .line 423
     return v4
 
-    .line 415
+    .line 426
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -904,7 +908,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 416
+    .line 427
     :cond_1
     return v4
 .end method
@@ -923,7 +927,7 @@
     .end annotation
 
     .prologue
-    .line 390
+    .line 401
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -934,7 +938,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 392
+    .line 403
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -946,11 +950,11 @@
 
     return-object v1
 
-    .line 393
+    .line 404
     :catch_0
     move-exception v0
 
-    .line 394
+    .line 405
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -982,14 +986,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 395
+    .line 406
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     return-object v1
 
-    .line 398
+    .line 409
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1002,7 +1006,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 399
+    .line 410
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1011,14 +1015,41 @@
     return-object v1
 .end method
 
-.method public getPriority(Landroid/bluetooth/BluetoothDevice;)I
+.method public getIdleTime(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 5
     .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
     .prologue
     const/4 v4, 0x0
 
-    .line 467
+    .line 684
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "getIdletime("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
+
+    .line 685
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -1035,7 +1066,100 @@
 
     if-eqz v1, :cond_0
 
-    .line 469
+    .line 687
+    :try_start_0
+    iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+
+    invoke-interface {v1, p1}, Landroid/bluetooth/IBluetoothInputDevice;->getIdleTime(Landroid/bluetooth/BluetoothDevice;)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    return v1
+
+    .line 688
+    :catch_0
+    move-exception v0
+
+    .line 689
+    .local v0, "e":Landroid/os/RemoteException;
+    const-string/jumbo v1, "BluetoothInputDevice"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Stack:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/Throwable;
+
+    invoke-direct {v3}, Ljava/lang/Throwable;-><init>()V
+
+    invoke-static {v3}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 690
+    return v4
+
+    .line 693
+    .end local v0    # "e":Landroid/os/RemoteException;
+    :cond_0
+    iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+
+    if-nez v1, :cond_1
+
+    const-string/jumbo v1, "BluetoothInputDevice"
+
+    const-string/jumbo v2, "Proxy not attached to service"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 694
+    :cond_1
+    return v4
+.end method
+
+.method public getPriority(Landroid/bluetooth/BluetoothDevice;)I
+    .locals 5
+    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 478
+    iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+
+    if-eqz v1, :cond_0
+
+    invoke-direct {p0}, Landroid/bluetooth/BluetoothInputDevice;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-direct {p0, p1}, Landroid/bluetooth/BluetoothInputDevice;->isValidDevice(Landroid/bluetooth/BluetoothDevice;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 480
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -1047,11 +1171,11 @@
 
     return v1
 
-    .line 470
+    .line 481
     :catch_0
     move-exception v0
 
-    .line 471
+    .line 482
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1083,10 +1207,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 472
+    .line 483
     return v4
 
-    .line 475
+    .line 486
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1099,7 +1223,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 476
+    .line 487
     :cond_1
     return v4
 .end method
@@ -1111,7 +1235,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 548
+    .line 559
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -1128,7 +1252,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 550
+    .line 561
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -1140,11 +1264,11 @@
 
     return v1
 
-    .line 551
+    .line 562
     :catch_0
     move-exception v0
 
-    .line 552
+    .line 563
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1176,10 +1300,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 553
+    .line 564
     return v4
 
-    .line 556
+    .line 567
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1192,7 +1316,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
+    .line 568
     :cond_1
     return v4
 .end method
@@ -1207,7 +1331,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 599
+    .line 610
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -1224,7 +1348,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 601
+    .line 612
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -1236,11 +1360,11 @@
 
     return v1
 
-    .line 602
+    .line 613
     :catch_0
     move-exception v0
 
-    .line 603
+    .line 614
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1272,10 +1396,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 604
+    .line 615
     return v4
 
-    .line 607
+    .line 618
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1288,7 +1412,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 608
+    .line 619
     :cond_1
     return v4
 .end method
@@ -1301,7 +1425,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 649
+    .line 660
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1332,7 +1456,7 @@
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
 
-    .line 650
+    .line 661
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -1349,7 +1473,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 652
+    .line 663
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -1361,11 +1485,11 @@
 
     return v1
 
-    .line 653
+    .line 664
     :catch_0
     move-exception v0
 
-    .line 654
+    .line 665
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1397,10 +1521,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 655
+    .line 666
     return v4
 
-    .line 658
+    .line 669
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1413,7 +1537,132 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 659
+    .line 670
+    :cond_1
+    return v4
+.end method
+
+.method public setIdleTime(Landroid/bluetooth/BluetoothDevice;B)Z
+    .locals 5
+    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
+    .param p2, "idleTime"    # B
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 709
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "setIdletime("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "), idleTime="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
+
+    .line 710
+    iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+
+    if-eqz v1, :cond_0
+
+    invoke-direct {p0}, Landroid/bluetooth/BluetoothInputDevice;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-direct {p0, p1}, Landroid/bluetooth/BluetoothInputDevice;->isValidDevice(Landroid/bluetooth/BluetoothDevice;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 712
+    :try_start_0
+    iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+
+    invoke-interface {v1, p1, p2}, Landroid/bluetooth/IBluetoothInputDevice;->setIdleTime(Landroid/bluetooth/BluetoothDevice;B)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    return v1
+
+    .line 713
+    :catch_0
+    move-exception v0
+
+    .line 714
+    .local v0, "e":Landroid/os/RemoteException;
+    const-string/jumbo v1, "BluetoothInputDevice"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Stack:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/Throwable;
+
+    invoke-direct {v3}, Ljava/lang/Throwable;-><init>()V
+
+    invoke-static {v3}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 715
+    return v4
+
+    .line 718
+    .end local v0    # "e":Landroid/os/RemoteException;
+    :cond_0
+    iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+
+    if-nez v1, :cond_1
+
+    const-string/jumbo v1, "BluetoothInputDevice"
+
+    const-string/jumbo v2, "Proxy not attached to service"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 719
     :cond_1
     return v4
 .end method
@@ -1426,7 +1675,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 435
+    .line 446
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1463,7 +1712,7 @@
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
 
-    .line 436
+    .line 447
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_1
@@ -1480,18 +1729,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 437
+    .line 448
     if-eqz p2, :cond_0
 
-    .line 438
+    .line 449
     const/16 v1, 0x64
 
     if-eq p2, v1, :cond_0
 
-    .line 439
+    .line 450
     return v4
 
-    .line 442
+    .line 453
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1504,11 +1753,11 @@
 
     return v1
 
-    .line 443
+    .line 454
     :catch_0
     move-exception v0
 
-    .line 444
+    .line 455
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1540,10 +1789,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 445
+    .line 456
     return v4
 
-    .line 448
+    .line 459
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_1
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1556,7 +1805,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 449
+    .line 460
     :cond_2
     return v4
 .end method
@@ -1569,7 +1818,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 571
+    .line 582
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1596,7 +1845,7 @@
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
 
-    .line 572
+    .line 583
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -1613,7 +1862,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 574
+    .line 585
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -1625,11 +1874,11 @@
 
     return v1
 
-    .line 575
+    .line 586
     :catch_0
     move-exception v0
 
-    .line 576
+    .line 587
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1661,10 +1910,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 577
+    .line 588
     return v4
 
-    .line 580
+    .line 591
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1677,7 +1926,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 581
+    .line 592
     :cond_1
     return v4
 .end method
@@ -1691,7 +1940,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 625
+    .line 636
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -1708,7 +1957,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 627
+    .line 638
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -1720,11 +1969,11 @@
 
     return v1
 
-    .line 628
+    .line 639
     :catch_0
     move-exception v0
 
-    .line 629
+    .line 640
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1756,10 +2005,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 630
+    .line 641
     return v4
 
-    .line 633
+    .line 644
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1772,7 +2021,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 634
+    .line 645
     :cond_1
     return v4
 .end method
@@ -1784,7 +2033,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 521
+    .line 532
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1811,7 +2060,7 @@
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothInputDevice;->log(Ljava/lang/String;)V
 
-    .line 522
+    .line 533
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
     if-eqz v1, :cond_0
@@ -1828,7 +2077,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 524
+    .line 535
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
 
@@ -1840,11 +2089,11 @@
 
     return v1
 
-    .line 525
+    .line 536
     :catch_0
     move-exception v0
 
-    .line 526
+    .line 537
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BluetoothInputDevice"
 
@@ -1876,10 +2125,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 527
+    .line 538
     return v4
 
-    .line 531
+    .line 542
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
@@ -1892,7 +2141,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 532
+    .line 543
     :cond_1
     return v4
 .end method

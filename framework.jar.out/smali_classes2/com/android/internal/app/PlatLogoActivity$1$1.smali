@@ -30,7 +30,7 @@
     .param p2, "val$im"    # Landroid/widget/ImageView;
 
     .prologue
-    .line 101
+    .line 103
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$1$1;->this$1:Lcom/android/internal/app/PlatLogoActivity$1;
 
     iput-object p2, p0, Lcom/android/internal/app/PlatLogoActivity$1$1;->val$im:Landroid/widget/ImageView;
@@ -49,7 +49,7 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 104
+    .line 106
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$1$1;->this$1:Lcom/android/internal/app/PlatLogoActivity$1;
 
     iget-object v2, v2, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
@@ -64,17 +64,17 @@
 
     return v2
 
-    .line 118
+    .line 120
     :cond_0
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$1$1;->this$1:Lcom/android/internal/app/PlatLogoActivity$1;
 
     iget-object v2, v2, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
-    invoke-virtual {v2}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v2}, Lcom/android/internal/app/PlatLogoActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 119
+    .line 121
     .local v0, "cr":Landroid/content/ContentResolver;
     const-string/jumbo v2, "egg_mode"
 
@@ -86,21 +86,21 @@
 
     if-nez v2, :cond_1
 
-    .line 124
+    .line 126
     :try_start_0
     const-string/jumbo v2, "egg_mode"
 
-    .line 125
+    .line 127
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    .line 123
+    .line 125
     invoke-static {v0, v2, v4, v5}, Landroid/provider/Settings$System;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 130
+    .line 132
     :cond_1
     :goto_0
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$1$1;->val$im:Landroid/widget/ImageView;
@@ -109,18 +109,18 @@
 
     invoke-direct {v3, p0}, Lcom/android/internal/app/PlatLogoActivity$1$1$1;-><init>(Lcom/android/internal/app/PlatLogoActivity$1$1;)V
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->post(Ljava/lang/Runnable;)Z
 
-    .line 145
+    .line 147
     const/4 v2, 0x1
 
     return v2
 
-    .line 126
+    .line 128
     :catch_0
     move-exception v1
 
-    .line 127
+    .line 129
     .local v1, "e":Ljava/lang/RuntimeException;
     const-string/jumbo v2, "PlatLogoActivity"
 

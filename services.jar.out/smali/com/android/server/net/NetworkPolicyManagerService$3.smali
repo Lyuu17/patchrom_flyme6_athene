@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
     .prologue
-    .line 719
+    .line 723
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,25 +41,25 @@
     .locals 2
 
     .prologue
-    .line 722
+    .line 726
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v1, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 723
+    .line 727
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->updatePowerSaveTempWhitelistUL()V
 
-    .line 724
+    .line 728
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->-wrap18(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 725
+    .line 729
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->purgePowerSaveTempWhitelistUL()V
@@ -68,10 +68,10 @@
 
     monitor-exit v1
 
-    .line 721
+    .line 725
     return-void
 
-    .line 722
+    .line 726
     :catchall_0
     move-exception v0
 

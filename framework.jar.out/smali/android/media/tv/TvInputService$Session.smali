@@ -519,7 +519,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->cancel(Z)Z
+    invoke-virtual {v0, v1}, Landroid/media/tv/TvInputService$OverlayViewCleanUpTask;->cancel(Z)Z
 
     .line 1243
     iput-object v3, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewCleanUpTask:Landroid/media/tv/TvInputService$OverlayViewCleanUpTask;
@@ -543,7 +543,7 @@
 
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session;->mOverlayView:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     .line 1252
     const/16 v5, 0x3ec
@@ -652,9 +652,7 @@
     move-object v1, p1
 
     .line 1389
-    nop
-
-    nop
+    check-cast v1, Landroid/view/KeyEvent;
 
     .line 1390
     .local v1, "keyEvent":Landroid/view/KeyEvent;
@@ -713,7 +711,7 @@
 
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v5}, Landroid/view/View;->isAttachedToWindow()Z
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->isAttachedToWindow()Z
 
     move-result v5
 
@@ -750,9 +748,7 @@
     move-object v2, p1
 
     .line 1401
-    nop
-
-    nop
+    check-cast v2, Landroid/view/MotionEvent;
 
     .line 1402
     .local v2, "motionEvent":Landroid/view/MotionEvent;
@@ -812,7 +808,7 @@
     :cond_8
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v5}, Landroid/view/View;->hasWindowFocus()Z
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->hasWindowFocus()Z
 
     move-result v5
 
@@ -821,7 +817,7 @@
     .line 1422
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v5}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v5
 
@@ -833,7 +829,7 @@
 
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->hasFocusable()Z
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->hasFocusable()Z
 
     move-result v5
 
@@ -842,7 +838,7 @@
     .line 1430
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v5}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v5
 
@@ -855,7 +851,7 @@
     :cond_a
     iget-object v5, p0, Landroid/media/tv/TvInputService$Session;->mOverlayViewContainer:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v5}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v5
 
@@ -1465,7 +1461,7 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 1292
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
@@ -1476,7 +1472,7 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 1293
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session;->mWindowManager:Landroid/view/WindowManager;
@@ -1585,7 +1581,7 @@
 
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session;->mOverlayView:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
     .line 1310
     iput-object v2, p0, Landroid/media/tv/TvInputService$Session;->mOverlayView:Landroid/view/View;
@@ -1643,7 +1639,7 @@
     aput-object v0, v3, v4
 
     .line 1376
-    invoke-virtual {v1, v2, v3}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v2, v3}, Landroid/media/tv/TvInputService$OverlayViewCleanUpTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 1372
     :cond_0

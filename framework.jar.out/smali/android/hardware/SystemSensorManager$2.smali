@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/hardware/SystemSensorManager;
 
     .prologue
-    .line 388
+    .line 400
     iput-object p1, p0, Landroid/hardware/SystemSensorManager$2;->this$0:Landroid/hardware/SystemSensorManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 391
+    .line 403
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -49,21 +49,21 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 392
+    .line 404
     invoke-static {}, Landroid/hardware/SystemSensorManager;->-get0()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 393
+    .line 405
     const-string/jumbo v0, "SensorManager"
 
     const-string/jumbo v1, "DYNS received DYNAMIC_SENSOR_CHANED broadcast"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 396
+    .line 408
     :cond_0
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$2;->this$0:Landroid/hardware/SystemSensorManager;
 
@@ -71,12 +71,12 @@
 
     invoke-static {v0, v1}, Landroid/hardware/SystemSensorManager;->-set0(Landroid/hardware/SystemSensorManager;Z)Z
 
-    .line 397
+    .line 409
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$2;->this$0:Landroid/hardware/SystemSensorManager;
 
     invoke-static {v0}, Landroid/hardware/SystemSensorManager;->-wrap0(Landroid/hardware/SystemSensorManager;)V
 
-    .line 390
+    .line 402
     :cond_1
     return-void
 .end method

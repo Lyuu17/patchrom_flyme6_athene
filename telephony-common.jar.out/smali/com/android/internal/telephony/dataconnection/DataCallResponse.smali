@@ -287,6 +287,14 @@
 
     aget-object v17, v4, v17
 
+    const-string/jumbo v18, "[\\D]"
+
+    const-string/jumbo v19, ""
+
+    invoke-virtual/range {v17 .. v19}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v17
+
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_0

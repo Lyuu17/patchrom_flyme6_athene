@@ -1927,7 +1927,6 @@
     .locals 8
 
     .prologue
-    .line 555
     iget-object v6, p0, Lcom/android/server/wm/InputMonitor;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v6}, Lcom/android/server/wm/WindowManagerService;->getDefaultWindowListLocked()Lcom/android/server/wm/WindowList;
@@ -1938,7 +1937,6 @@
 
     move-result v0
 
-    .line 556
     .local v0, "N":I
     iget-object v6, p0, Lcom/android/server/wm/InputMonitor;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -1946,15 +1944,12 @@
 
     move-result-object v3
 
-    .line 557
     .local v3, "list":Lcom/android/server/wm/WindowList;
     const/4 v4, 0x0
 
-    .line 558
     .local v4, "specialWindow":Lcom/android/server/wm/WindowState;
     const/4 v1, -0x1
 
-    .line 559
     .local v1, "insertPos":I
     add-int/lit8 v2, v0, -0x1
 
@@ -1963,14 +1958,12 @@
     :goto_0
     if-ltz v2, :cond_2
 
-    .line 560
     invoke-virtual {v3, v2}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/server/wm/WindowState;
 
-    .line 561
     .local v5, "win":Lcom/android/server/wm/WindowState;
     iget-object v6, v5, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
@@ -1980,7 +1973,6 @@
 
     if-nez v6, :cond_0
 
-    .line 562
     iget-object v6, v5, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     iget v6, v6, Landroid/view/WindowManager$LayoutParams;->type:I
@@ -1989,10 +1981,8 @@
 
     if-ne v6, v7, :cond_0
 
-    .line 563
     move-object v4, v5
 
-    .line 565
     :cond_0
     if-eqz v4, :cond_1
 
@@ -2002,7 +1992,6 @@
 
     if-eqz v6, :cond_1
 
-    .line 566
     iget-object v6, v5, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
     iget-object v6, v6, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceController:Lcom/android/server/wm/WindowSurfaceController;
@@ -2011,26 +2000,21 @@
 
     move-result v6
 
-    .line 565
     if-eqz v6, :cond_1
 
-    .line 566
     iget v6, v4, Lcom/android/server/wm/WindowState;->mLayer:I
 
     iget v7, v5, Lcom/android/server/wm/WindowState;->mLayer:I
 
     if-ge v6, v7, :cond_1
 
-    .line 567
     move v1, v2
 
-    .line 559
     :cond_1
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 570
     .end local v5    # "win":Lcom/android/server/wm/WindowState;
     :cond_2
     const/4 v6, -0x1
@@ -2039,13 +2023,10 @@
 
     if-eqz v4, :cond_3
 
-    .line 571
     invoke-virtual {v3, v4}, Lcom/android/server/wm/WindowList;->remove(Ljava/lang/Object;)Z
 
-    .line 572
     invoke-virtual {v3, v1, v4}, Lcom/android/server/wm/WindowList;->add(ILjava/lang/Object;)V
 
-    .line 554
     :cond_3
     return-void
 .end method

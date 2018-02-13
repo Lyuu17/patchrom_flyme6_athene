@@ -325,7 +325,7 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 2015
+    .line 2031
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -350,7 +350,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2016
+    .line 2032
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -375,7 +375,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2017
+    .line 2033
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -386,7 +386,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 2018
+    .line 2034
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -425,15 +425,15 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2019
+    .line 2035
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 2017
+    .line 2033
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2021
+    .line 2037
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -463,7 +463,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2012
+    .line 2028
     return-void
 .end method
 
@@ -709,15 +709,78 @@
     return v4
 .end method
 
+.method protected final hasDeferredMessages(ILjava/lang/Object;)Z
+    .locals 5
+    .param p1, "what"    # I
+    .param p2, "obj"    # Ljava/lang/Object;
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 1928
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
+
+    .line 1929
+    .local v2, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
+    if-nez v2, :cond_0
+
+    return v4
+
+    .line 1931
+    :cond_0
+    invoke-static {v2}, Lcom/android/internal/util/StateMachine$SmHandler;->-get1(Lcom/android/internal/util/StateMachine$SmHandler;)Ljava/util/ArrayList;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .line 1932
+    .local v0, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/os/Message;>;"
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 1933
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/os/Message;
+
+    .line 1934
+    .local v1, "msg":Landroid/os/Message;
+    iget v3, v1, Landroid/os/Message;->what:I
+
+    if-ne v3, p1, :cond_1
+
+    iget-object v3, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    if-ne v3, p2, :cond_1
+
+    const/4 v3, 0x1
+
+    return v3
+
+    .line 1937
+    .end local v1    # "msg":Landroid/os/Message;
+    :cond_2
+    return v4
+.end method
+
 .method protected final hasMessages(I)Z
     .locals 2
     .param p1, "what"    # I
 
     .prologue
-    .line 1929
+    .line 1945
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 1930
+    .line 1946
     .local v0, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
     if-nez v0, :cond_0
 
@@ -725,7 +788,7 @@
 
     return v1
 
-    .line 1932
+    .line 1948
     :cond_0
     invoke-virtual {v0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->hasMessages(I)Z
 
@@ -738,10 +801,10 @@
     .locals 2
 
     .prologue
-    .line 1974
+    .line 1990
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 1975
+    .line 1991
     .local v0, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
     if-nez v0, :cond_0
 
@@ -749,7 +812,7 @@
 
     return v1
 
-    .line 1977
+    .line 1993
     :cond_0
     invoke-static {v0}, Lcom/android/internal/util/StateMachine$SmHandler;->-wrap1(Lcom/android/internal/util/StateMachine$SmHandler;)Z
 
@@ -763,10 +826,10 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1941
+    .line 1957
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 1942
+    .line 1958
     .local v0, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
     if-nez v0, :cond_1
 
@@ -786,7 +849,7 @@
 
     goto :goto_0
 
-    .line 1944
+    .line 1960
     :cond_1
     invoke-static {v0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->-wrap2(Lcom/android/internal/util/StateMachine$SmHandler;Landroid/os/Message;)Z
 
@@ -800,12 +863,12 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 2050
+    .line 2066
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mName:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2049
+    .line 2065
     return-void
 .end method
 
@@ -814,13 +877,13 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 2040
+    .line 2056
     invoke-virtual {p0, p1}, Lcom/android/internal/util/StateMachine;->addLogRec(Ljava/lang/String;)V
 
-    .line 2041
+    .line 2057
     invoke-virtual {p0, p1}, Lcom/android/internal/util/StateMachine;->log(Ljava/lang/String;)V
 
-    .line 2039
+    .line 2055
     return-void
 .end method
 
@@ -829,12 +892,12 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 2059
+    .line 2075
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mName:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2058
+    .line 2074
     return-void
 .end method
 
@@ -843,12 +906,12 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 2095
+    .line 2111
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mName:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2094
+    .line 2110
     return-void
 .end method
 
@@ -858,12 +921,12 @@
     .param p2, "e"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 2105
+    .line 2121
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mName:Ljava/lang/String;
 
     invoke-static {v0, p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2104
+    .line 2120
     return-void
 .end method
 
@@ -872,12 +935,12 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 2077
+    .line 2093
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mName:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2076
+    .line 2092
     return-void
 .end method
 
@@ -886,12 +949,12 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 2068
+    .line 2084
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mName:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2067
+    .line 2083
     return-void
 .end method
 
@@ -900,12 +963,12 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 2086
+    .line 2102
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mName:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2085
+    .line 2101
     return-void
 .end method
 
@@ -1045,20 +1108,20 @@
     .locals 1
 
     .prologue
-    .line 1952
+    .line 1968
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 1953
+    .line 1969
     .local v0, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1955
+    .line 1971
     :cond_0
     invoke-static {v0}, Lcom/android/internal/util/StateMachine$SmHandler;->-wrap8(Lcom/android/internal/util/StateMachine$SmHandler;)V
 
-    .line 1950
+    .line 1966
     return-void
 .end method
 
@@ -1066,20 +1129,20 @@
     .locals 1
 
     .prologue
-    .line 1963
+    .line 1979
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 1964
+    .line 1980
     .local v0, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1966
+    .line 1982
     :cond_0
     invoke-static {v0}, Lcom/android/internal/util/StateMachine$SmHandler;->-wrap7(Lcom/android/internal/util/StateMachine$SmHandler;)V
 
-    .line 1961
+    .line 1977
     return-void
 .end method
 
@@ -1661,20 +1724,20 @@
     .param p1, "dbg"    # Z
 
     .prologue
-    .line 1987
+    .line 2003
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 1988
+    .line 2004
     .local v0, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1990
+    .line 2006
     :cond_0
     invoke-static {v0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->-wrap9(Lcom/android/internal/util/StateMachine$SmHandler;Z)V
 
-    .line 1985
+    .line 2001
     return-void
 .end method
 
@@ -1732,20 +1795,20 @@
     .locals 1
 
     .prologue
-    .line 1998
+    .line 2014
     iget-object v0, p0, Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 1999
+    .line 2015
     .local v0, "smh":Lcom/android/internal/util/StateMachine$SmHandler;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2002
+    .line 2018
     :cond_0
     invoke-static {v0}, Lcom/android/internal/util/StateMachine$SmHandler;->-wrap5(Lcom/android/internal/util/StateMachine$SmHandler;)V
 
-    .line 1996
+    .line 2012
     return-void
 .end method
 
@@ -1755,28 +1818,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2026
+    .line 2042
     new-instance v1, Ljava/io/StringWriter;
 
     invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
 
-    .line 2027
+    .line 2043
     .local v1, "sr":Ljava/io/StringWriter;
     new-instance v0, Ljava/io/PrintWriter;
 
     invoke-direct {v0, v1}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
-    .line 2028
+    .line 2044
     .local v0, "pr":Ljava/io/PrintWriter;
     invoke-virtual {p0, v2, v0, v2}, Lcom/android/internal/util/StateMachine;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 2029
+    .line 2045
     invoke-virtual {v0}, Ljava/io/PrintWriter;->flush()V
 
-    .line 2030
+    .line 2046
     invoke-virtual {v0}, Ljava/io/PrintWriter;->close()V
 
-    .line 2031
+    .line 2047
     invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object v2

@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 363
+    .line 364
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 365
+    .line 366
     new-instance v0, Landroid/telephony/SignalStrength;
 
     invoke-direct {v0, p1}, Landroid/telephony/SignalStrength;-><init>(Landroid/os/Parcel;)V
@@ -48,7 +48,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 364
+    .line 365
     invoke-virtual {p0, p1}, Landroid/telephony/SignalStrength$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/SignalStrength;
 
     move-result-object v0
@@ -61,7 +61,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 369
+    .line 370
     new-array v0, p1, [Landroid/telephony/SignalStrength;
 
     return-object v0
@@ -72,7 +72,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0, p1}, Landroid/telephony/SignalStrength$1;->newArray(I)[Landroid/telephony/SignalStrength;
 
     move-result-object v0

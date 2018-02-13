@@ -15,11 +15,32 @@
 
 
 # instance fields
+.field public allowedCount:I
+
+.field final clientTokens:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Landroid/os/IBinder;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public delayedCount:I
+
+.field public dialogReqQueue:Lcom/android/server/PermissionDialogReqQueue;
+
 .field public duration:I
+
+.field public ignoredCount:I
 
 .field public mode:I
 
 .field public nesting:I
+
+.field public noteOpCount:I
 
 .field public final op:I
 
@@ -31,45 +52,56 @@
 
 .field public rejectTime:J
 
+.field public startOpCount:I
+
 .field public time:J
 
 .field public final uid:I
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;I)V
+.method public constructor <init>(ILjava/lang/String;II)V
     .locals 1
     .param p1, "_uid"    # I
     .param p2, "_packageName"    # Ljava/lang/String;
     .param p3, "_op"    # I
+    .param p4, "_mode"    # I
 
     .prologue
-    .line 160
+    .line 195
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
+    .line 179
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/AppOpsService$Op;->proxyUid:I
 
-    .line 161
+    .line 196
     iput p1, p0, Lcom/android/server/AppOpsService$Op;->uid:I
 
-    .line 162
+    .line 197
     iput-object p2, p0, Lcom/android/server/AppOpsService$Op;->packageName:Ljava/lang/String;
 
-    .line 163
+    .line 198
     iput p3, p0, Lcom/android/server/AppOpsService$Op;->op:I
 
-    .line 164
-    iget v0, p0, Lcom/android/server/AppOpsService$Op;->op:I
+    .line 199
+    iput p4, p0, Lcom/android/server/AppOpsService$Op;->mode:I
 
-    invoke-static {v0}, Landroid/app/AppOpsManager;->opToDefaultMode(I)I
+    .line 200
+    new-instance v0, Lcom/android/server/PermissionDialogReqQueue;
 
-    move-result v0
+    invoke-direct {v0}, Lcom/android/server/PermissionDialogReqQueue;-><init>()V
 
-    iput v0, p0, Lcom/android/server/AppOpsService$Op;->mode:I
+    iput-object v0, p0, Lcom/android/server/AppOpsService$Op;->dialogReqQueue:Lcom/android/server/PermissionDialogReqQueue;
 
-    .line 160
+    .line 201
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/AppOpsService$Op;->clientTokens:Ljava/util/ArrayList;
+
+    .line 195
     return-void
 .end method

@@ -46,7 +46,11 @@
 
 .field static final TRANSACTION_getFullPowerWhitelist:I = 0x7
 
-.field static final TRANSACTION_getFullPowerWhitelistExceptIdle:I = 0x6
+.field static final TRANSACTION_getFullPowerWhitelistExceptIdle_5:I = 0x6
+
+.field static final TRANSACTION_getIdleStateDetailed:I = 0x14
+
+.field static final TRANSACTION_getLightIdleStateDetailed:I = 0x15
 
 .field static final TRANSACTION_getSystemPowerWhitelist:I = 0x4
 
@@ -138,7 +142,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 16
+    .locals 17
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -153,7 +157,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 228
+    .line 244
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -240,16 +244,18 @@
     .line 67
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getSystemPowerWhitelistExceptIdle()[Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v16
 
     .line 68
-    .local v15, "_result":[Ljava/lang/String;
+    .local v16, "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 69
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
     .line 70
     const/4 v2, 0x1
@@ -257,7 +263,7 @@
     return v2
 
     .line 74
-    .end local v15    # "_result":[Ljava/lang/String;
+    .end local v16    # "_result":[Ljava/lang/String;
     :sswitch_4
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -268,16 +274,18 @@
     .line 75
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getSystemPowerWhitelist()[Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v16
 
     .line 76
-    .restart local v15    # "_result":[Ljava/lang/String;
+    .restart local v16    # "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 77
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
     .line 78
     const/4 v2, 0x1
@@ -285,7 +293,7 @@
     return v2
 
     .line 82
-    .end local v15    # "_result":[Ljava/lang/String;
+    .end local v16    # "_result":[Ljava/lang/String;
     :sswitch_5
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -296,16 +304,18 @@
     .line 83
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getUserPowerWhitelist()[Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v16
 
     .line 84
-    .restart local v15    # "_result":[Ljava/lang/String;
+    .restart local v16    # "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 85
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
     .line 86
     const/4 v2, 0x1
@@ -313,7 +323,7 @@
     return v2
 
     .line 90
-    .end local v15    # "_result":[Ljava/lang/String;
+    .end local v16    # "_result":[Ljava/lang/String;
     :sswitch_6
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -324,16 +334,18 @@
     .line 91
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getFullPowerWhitelistExceptIdle()[Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v16
 
     .line 92
-    .restart local v15    # "_result":[Ljava/lang/String;
+    .restart local v16    # "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 93
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
     .line 94
     const/4 v2, 0x1
@@ -341,7 +353,7 @@
     return v2
 
     .line 98
-    .end local v15    # "_result":[Ljava/lang/String;
+    .end local v16    # "_result":[Ljava/lang/String;
     :sswitch_7
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -352,16 +364,18 @@
     .line 99
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getFullPowerWhitelist()[Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v16
 
     .line 100
-    .restart local v15    # "_result":[Ljava/lang/String;
+    .restart local v16    # "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 101
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
     .line 102
     const/4 v2, 0x1
@@ -369,7 +383,7 @@
     return v2
 
     .line 106
-    .end local v15    # "_result":[Ljava/lang/String;
+    .end local v16    # "_result":[Ljava/lang/String;
     :sswitch_8
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -380,16 +394,16 @@
     .line 107
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getAppIdWhitelistExceptIdle()[I
 
-    move-result-object v14
+    move-result-object v15
 
     .line 108
-    .local v14, "_result":[I
+    .local v15, "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 109
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeIntArray([I)V
+    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 110
     const/4 v2, 0x1
@@ -397,7 +411,7 @@
     return v2
 
     .line 114
-    .end local v14    # "_result":[I
+    .end local v15    # "_result":[I
     :sswitch_9
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -408,16 +422,16 @@
     .line 115
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getAppIdWhitelist()[I
 
-    move-result-object v14
+    move-result-object v15
 
     .line 116
-    .restart local v14    # "_result":[I
+    .restart local v15    # "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 117
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeIntArray([I)V
+    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 118
     const/4 v2, 0x1
@@ -425,7 +439,7 @@
     return v2
 
     .line 122
-    .end local v14    # "_result":[I
+    .end local v15    # "_result":[I
     :sswitch_a
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -436,16 +450,16 @@
     .line 123
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getAppIdUserWhitelist()[I
 
-    move-result-object v14
+    move-result-object v15
 
     .line 124
-    .restart local v14    # "_result":[I
+    .restart local v15    # "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 125
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeIntArray([I)V
+    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 126
     const/4 v2, 0x1
@@ -453,7 +467,7 @@
     return v2
 
     .line 130
-    .end local v14    # "_result":[I
+    .end local v15    # "_result":[I
     :sswitch_b
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -464,16 +478,16 @@
     .line 131
     invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getAppIdTempWhitelist()[I
 
-    move-result-object v14
+    move-result-object v15
 
     .line 132
-    .restart local v14    # "_result":[I
+    .restart local v15    # "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 133
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeIntArray([I)V
+    invoke-virtual {v0, v15}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 134
     const/4 v2, 0x1
@@ -481,7 +495,7 @@
     return v2
 
     .line 138
-    .end local v14    # "_result":[I
+    .end local v15    # "_result":[I
     :sswitch_c
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -500,14 +514,14 @@
 
     invoke-virtual {v0, v3}, Landroid/os/IDeviceIdleController$Stub;->isPowerSaveWhitelistExceptIdleApp(Ljava/lang/String;)Z
 
-    move-result v11
+    move-result v14
 
     .line 142
-    .local v11, "_result":Z
+    .local v14, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 143
-    if-eqz v11, :cond_0
+    if-eqz v14, :cond_0
 
     const/4 v2, 0x1
 
@@ -529,7 +543,7 @@
 
     .line 148
     .end local v3    # "_arg0":Ljava/lang/String;
-    .end local v11    # "_result":Z
+    .end local v14    # "_result":Z
     :sswitch_d
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -548,14 +562,14 @@
 
     invoke-virtual {v0, v3}, Landroid/os/IDeviceIdleController$Stub;->isPowerSaveWhitelistApp(Ljava/lang/String;)Z
 
-    move-result v11
+    move-result v14
 
     .line 152
-    .restart local v11    # "_result":Z
+    .restart local v14    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 153
-    if-eqz v11, :cond_1
+    if-eqz v14, :cond_1
 
     const/4 v2, 0x1
 
@@ -577,7 +591,7 @@
 
     .line 158
     .end local v3    # "_arg0":Ljava/lang/String;
-    .end local v11    # "_result":Z
+    .end local v14    # "_result":Z
     :sswitch_e
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -779,14 +793,14 @@
 
     invoke-virtual {v0, v8}, Landroid/os/IDeviceIdleController$Stub;->registerMaintenanceActivityListener(Landroid/os/IMaintenanceActivityListener;)Z
 
-    move-result v11
+    move-result v14
 
     .line 214
-    .restart local v11    # "_result":Z
+    .restart local v14    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 215
-    if-eqz v11, :cond_2
+    if-eqz v14, :cond_2
 
     const/4 v2, 0x1
 
@@ -808,7 +822,7 @@
 
     .line 220
     .end local v8    # "_arg0":Landroid/os/IMaintenanceActivityListener;
-    .end local v11    # "_result":Z
+    .end local v14    # "_result":Z
     :sswitch_13
     const-string/jumbo v2, "android.os.IDeviceIdleController"
 
@@ -839,6 +853,62 @@
 
     return v2
 
+    .line 229
+    .end local v8    # "_arg0":Landroid/os/IMaintenanceActivityListener;
+    :sswitch_14
+    const-string/jumbo v2, "android.os.IDeviceIdleController"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 230
+    invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getIdleStateDetailed()I
+
+    move-result v11
+
+    .line 231
+    .local v11, "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 232
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v11}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 233
+    const/4 v2, 0x1
+
+    return v2
+
+    .line 237
+    .end local v11    # "_result":I
+    :sswitch_15
+    const-string/jumbo v2, "android.os.IDeviceIdleController"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 238
+    invoke-virtual/range {p0 .. p0}, Landroid/os/IDeviceIdleController$Stub;->getLightIdleStateDetailed()I
+
+    move-result v11
+
+    .line 239
+    .restart local v11    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 240
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v11}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 241
+    const/4 v2, 0x1
+
+    return v2
+
     .line 39
     nop
 
@@ -863,6 +933,8 @@
         0x11 -> :sswitch_11
         0x12 -> :sswitch_12
         0x13 -> :sswitch_13
+        0x14 -> :sswitch_14
+        0x15 -> :sswitch_15
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -48,7 +48,7 @@
     .param p8, "val$endScale"    # F
 
     .prologue
-    .line 464
+    .line 528
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternView$1;->this$0:Lcom/android/internal/widget/LockPatternView;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
@@ -79,7 +79,7 @@
     .prologue
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 467
+    .line 531
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -90,7 +90,7 @@
 
     move-result v0
 
-    .line 468
+    .line 532
     .local v0, "t":F
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
 
@@ -108,7 +108,7 @@
 
     iput v2, v1, Lcom/android/internal/widget/LockPatternView$CellState;->alpha:F
 
-    .line 469
+    .line 533
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
 
     sub-float v2, v4, v0
@@ -125,7 +125,7 @@
 
     iput v2, v1, Lcom/android/internal/widget/LockPatternView$CellState;->translationY:F
 
-    .line 470
+    .line 534
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
 
     iget-object v2, p0, Lcom/android/internal/widget/LockPatternView$1;->this$0:Lcom/android/internal/widget/LockPatternView;
@@ -154,11 +154,11 @@
 
     iput v2, v1, Lcom/android/internal/widget/LockPatternView$CellState;->radius:F
 
-    .line 471
+    .line 535
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->this$0:Lcom/android/internal/widget/LockPatternView;
 
-    invoke-virtual {v1}, Landroid/view/View;->invalidate()V
+    invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
 
-    .line 466
+    .line 530
     return-void
 .end method

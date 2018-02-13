@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
     .prologue
-    .line 266
+    .line 269
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$PackageReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -50,12 +50,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 269
+    .line 272
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 270
+    .line 273
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.PACKAGE_ADDED"
 
@@ -65,23 +65,23 @@
 
     if-nez v1, :cond_0
 
-    .line 271
+    .line 274
     const-string/jumbo v1, "android.intent.action.PACKAGE_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 270
+    .line 273
     if-eqz v1, :cond_1
 
-    .line 272
+    .line 275
     :cond_0
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$PackageReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v1}, Lcom/android/server/usage/UsageStatsService;->clearCarrierPrivilegedApps()V
 
-    .line 274
+    .line 277
     :cond_1
     const-string/jumbo v1, "android.intent.action.PACKAGE_REMOVED"
 
@@ -91,17 +91,17 @@
 
     if-nez v1, :cond_2
 
-    .line 275
+    .line 278
     const-string/jumbo v1, "android.intent.action.PACKAGE_ADDED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 274
+    .line 277
     if-eqz v1, :cond_3
 
-    .line 276
+    .line 279
     :cond_2
     const-string/jumbo v1, "android.intent.extra.REPLACING"
 
@@ -113,12 +113,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 268
+    .line 271
     :cond_3
     :goto_0
     return-void
 
-    .line 277
+    .line 280
     :cond_4
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$PackageReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -130,12 +130,12 @@
 
     move-result-object v2
 
-    .line 278
+    .line 281
     invoke-virtual {p0}, Lcom/android/server/usage/UsageStatsService$PackageReceiver;->getSendingUserId()I
 
     move-result v3
 
-    .line 277
+    .line 280
     invoke-virtual {v1, v2, v3}, Lcom/android/server/usage/UsageStatsService;->clearAppIdleForPackage(Ljava/lang/String;I)V
 
     goto :goto_0

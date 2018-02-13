@@ -28,27 +28,27 @@
 
 .field static final TRANSACTION_registrationAssociatedUriChanged:I = 0xb
 
-.field static final TRANSACTION_registrationChangeFailed:I = 0xc
+.field static final TRANSACTION_registrationChangeFailed_11:I = 0xc
 
-.field static final TRANSACTION_registrationConnected:I = 0x1
+.field static final TRANSACTION_registrationConnectedWithRadioTech_2:I = 0x3
 
-.field static final TRANSACTION_registrationConnectedWithRadioTech:I = 0x3
+.field static final TRANSACTION_registrationConnected_0:I = 0x1
 
 .field static final TRANSACTION_registrationDisconnected:I = 0x5
 
-.field static final TRANSACTION_registrationFeatureCapabilityChanged:I = 0x9
+.field static final TRANSACTION_registrationFeatureCapabilityChanged_8:I = 0x9
 
-.field static final TRANSACTION_registrationProgressing:I = 0x2
+.field static final TRANSACTION_registrationProgressingWithRadioTech_3:I = 0x4
 
-.field static final TRANSACTION_registrationProgressingWithRadioTech:I = 0x4
+.field static final TRANSACTION_registrationProgressing_1:I = 0x2
 
-.field static final TRANSACTION_registrationResumed:I = 0x6
+.field static final TRANSACTION_registrationResumed_5:I = 0x6
 
-.field static final TRANSACTION_registrationServiceCapabilityChanged:I = 0x8
+.field static final TRANSACTION_registrationServiceCapabilityChanged_7:I = 0x8
 
-.field static final TRANSACTION_registrationSuspended:I = 0x7
+.field static final TRANSACTION_registrationSuspended_6:I = 0x7
 
-.field static final TRANSACTION_voiceMessageCountUpdate:I = 0xa
+.field static final TRANSACTION_voiceMessageCountUpdate_9:I = 0xa
 
 
 # direct methods

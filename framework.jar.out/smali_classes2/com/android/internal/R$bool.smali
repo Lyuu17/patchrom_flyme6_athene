@@ -19,6 +19,8 @@
 
 .field public static final action_bar_expanded_action_views_exclusive:I = 0x1120007
 
+.field public static final config_HICEnabledDefault:I = 0x11200db
+
 .field public static final config_LTE_eri_for_network_name:I = 0x11200ad
 
 .field public static final config_allowAllRotations:I = 0x1120039
@@ -81,6 +83,8 @@
 
 .field public static final config_built_in_sip_phone:I = 0x112006b
 
+.field public static final config_buttonLightOnKeypressOnly:I = 0x11200df
+
 .field public static final config_cameraDoubleTapPowerGestureEnabled:I = 0x11200b7
 
 .field public static final config_camera_sound_forced:I = 0x1120089
@@ -99,6 +103,8 @@
 
 .field public static final config_cellBroadcastAppLinks:I = 0x112007f
 
+.field public static final config_dateformat:I = 0x11200e6
+
 .field public static final config_defaultInTouchMode:I = 0x11200ae
 
 .field public static final config_defaultWindowFeatureContextMenu:I = 0x11200aa
@@ -106,6 +112,8 @@
 .field public static final config_defaultWindowFeatureOptionsPanel:I = 0x11200a9
 
 .field public static final config_deskDockEnablesAccelerometer:I = 0x112003d
+
+.field public static final config_deviceHasVariableButtonBrightness:I = 0x1120057
 
 .field public static final config_device_respects_hold_carrier_config:I = 0x112009d
 
@@ -139,6 +147,8 @@
 
 .field public static final config_eap_sim_based_auth_supported:I = 0x11200b6
 
+.field public static final config_emergencyCallOnPowerkeyTapGestureEnabled:I = 0x11200cd
+
 .field public static final config_enableActivityRecognitionHardwareOverlay:I = 0x112005f
 
 .field public static final config_enableAppWidgetService:I = 0x11200bd
@@ -149,13 +159,19 @@
 
 .field public static final config_enableCarDockHomeLaunch:I = 0x1120040
 
+.field public static final config_enableDataSwitch:I = 0x11200c3
+
 .field public static final config_enableFusedLocationOverlay:I = 0x112005b
 
 .field public static final config_enableGeocoderOverlay:I = 0x112005d
 
 .field public static final config_enableGeofenceOverlay:I = 0x112005e
 
+.field public static final config_enableGestureService:I = 0x11200a4
+
 .field public static final config_enableHardwareFlpOverlay:I = 0x112005c
+
+.field public static final config_enableKeypressOptimization:I = 0x11200c2
 
 .field public static final config_enableLockBeforeUnlockScreen:I = 0x112004b
 
@@ -179,6 +195,10 @@
 
 .field public static final config_enable_puk_unlock_screen:I = 0x1120050
 
+.field public static final config_forceAnalogCarDock:I = 0x1120041
+
+.field public static final config_forceAnalogDeskDock:I = 0x112003e
+
 .field public static final config_forceDefaultOrientation:I = 0x112008f
 
 .field public static final config_forceWindowDrawsStatusBarBackground:I = 0x11200b9
@@ -194,6 +214,8 @@
 .field public static final config_hasRecents:I = 0x1120093
 
 .field public static final config_hotswapCapable:I = 0x112004f
+
+.field public static final config_intrusiveBatteryLed:I = 0x1120049
 
 .field public static final config_intrusiveNotificationLed:I = 0x1120048
 
@@ -215,15 +237,33 @@
 
 .field public static final config_nightDisplayAvailable:I = 0x1120044
 
+.field public static final config_notifyClientOnFingerprintCancelSuccess:I = 0x11200de
+
 .field public static final config_overrideRemoteViewsActivityTransition:I = 0x11200ab
 
+.field public static final config_passpoint_setting_on:I = 0x11200cc
+
 .field public static final config_permissionReviewRequired:I = 0x11200d4
+
+.field public static final config_persistUsbDriveNotification:I = 0x11200d6
 
 .field public static final config_pinnerCameraApp:I = 0x11200cf
 
 .field public static final config_powerDecoupleAutoSuspendModeFromDisplay:I = 0x112007d
 
 .field public static final config_powerDecoupleInteractiveModeFromDisplay:I = 0x112007e
+
+.field public static final config_regional_hotspot_show_broadcast_ssid_checkbox:I = 0x11200ca
+
+.field public static final config_regional_hotspot_show_maximum_connection_enable:I = 0x11200c9
+
+.field public static final config_regional_hotspot_show_notification_when_turn_on:I = 0x11200cb
+
+.field public static final config_regional_lte_singnal_threshold:I = 0x11200c5
+
+.field public static final config_regional_mcc_mnc_roaming_setting:I = 0x11200c4
+
+.field public static final config_regional_umts_singnal_threshold:I = 0x11200c6
 
 .field public static final config_requireCallCapableAccountForHandle:I = 0x1120066
 
@@ -237,7 +277,11 @@
 
 .field public static final config_safe_media_volume_enabled:I = 0x1120087
 
+.field public static final config_samsung_stk:I = 0x11200d8
+
 .field public static final config_sendAudioBecomingNoisy:I = 0x1120011
+
+.field public static final config_send_sms1x_on_voice_call:I = 0x1120083
 
 .field public static final config_sf_limitedAlpha:I = 0x112000d
 
@@ -247,7 +291,17 @@
 
 .field public static final config_showNavigationBar:I = 0x1120073
 
+.field public static final config_showOperatorNameInStatusBar:I = 0x11200c8
+
+.field public static final config_show_cmIMESwitcher:I = 0x11200d5
+
+.field public static final config_sim_phonebook_batch_operation:I = 0x11200c0
+
+.field public static final config_singleStageCameraKey:I = 0x1120052
+
 .field public static final config_sip_wifi_only:I = 0x112006a
+
+.field public static final config_sms_authorization_enabled:I = 0x11200e0
 
 .field public static final config_sms_capable:I = 0x1120068
 
@@ -256,6 +310,8 @@
 .field public static final config_sms_force_7bit_encoding:I = 0x11200a8
 
 .field public static final config_sms_utf8_support:I = 0x112006f
+
+.field public static final config_softap_extention:I = 0x112000a
 
 .field public static final config_speed_up_audio_on_mt_calls:I = 0x112008d
 
@@ -293,13 +349,19 @@
 
 .field public static final config_telephony_use_own_number_for_voicemail:I = 0x112006e
 
+.field public static final config_uiBlurEnabled:I = 0x11200da
+
 .field public static final config_ui_enableFadingMarquee:I = 0x1120012
 
 .field public static final config_unplugTurnsOnScreen:I = 0x1120027
 
 .field public static final config_usbChargingMessage:I = 0x1120028
 
+.field public static final config_usb_data_unlock:I = 0x11200e7
+
 .field public static final config_useAttentionLight:I = 0x1120029
+
+.field public static final config_useDefaultBatchingForAccel:I = 0x11200d9
 
 .field public static final config_useDevInputEventForAudioJack:I = 0x1120086
 
@@ -309,7 +371,11 @@
 
 .field public static final config_useRoundIcon:I = 0x11200d0
 
+.field public static final config_useSystemClockforRotationSensor:I = 0x11200d7
+
 .field public static final config_useVolumeKeySounds:I = 0x1120010
+
+.field public static final config_useWakeLockForFlashlight:I = 0x11200dc
 
 .field public static final config_use_sim_language_file:I = 0x11200ac
 
@@ -317,7 +383,11 @@
 
 .field public static final config_user_notification_of_restrictied_mobile_access:I = 0x1120067
 
+.field public static final config_video_call_datausage_enable:I = 0x11200c7
+
 .field public static final config_voice_capable:I = 0x1120065
+
+.field public static final config_volte_preferred:I = 0x11200ce
 
 .field public static final config_wifiDisplaySupportsProtectedBuffers:I = 0x1120088
 
@@ -351,13 +421,19 @@
 
 .field public static final config_windowShowCircularMask:I = 0x1120094
 
+.field public static final config_zero_balance_operator:I = 0x11200c1
+
 .field public static final editable_voicemailnumber:I = 0x11200a5
 
 .field public static final imsServiceAllowTurnOff:I = 0x1120097
 
+.field public static final operator_custom_sim_icon:I = 0x11200e8
+
 .field public static final preferences_prefer_dual_pane:I = 0x1120005
 
 .field public static final show_ongoing_ime_switcher:I = 0x1120006
+
+.field public static final single_hand_mode:I = 0x11200dd
 
 .field public static final skipHoldBeforeMerge:I = 0x1120096
 
@@ -369,13 +445,15 @@
 
 .field public static final use_lock_pattern_drawable:I = 0x1120009
 
+.field public static final wifi_autocon:I = 0x112001c
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 15331
+    .line 23803
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

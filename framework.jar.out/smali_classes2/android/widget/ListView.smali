@@ -158,12 +158,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 150
-    const v0, 0x1010074
+    const v0, #android:attr@listViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 149
     return-void
 .end method
 
@@ -257,7 +255,7 @@
     .line 165
     new-instance v6, Landroid/widget/ArrayAdapter;
 
-    const v7, 0x1090003
+    const v7, #android:layout@simple_list_item_1#t
 
     invoke-direct {v6, p1, v7, v3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
@@ -346,12 +344,10 @@
 
     iput-boolean v6, p0, Landroid/widget/ListView;->mFooterDividersEnabled:Z
 
-    .line 197
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-direct/range {p0 .. p4}, Landroid/widget/ListView;->initFlymeExtraFields(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 157
     return-void
 .end method
 
@@ -6270,10 +6266,8 @@
 
     move/from16 v19, v0
 
-    .line 2031
     const/16 v20, 0xb
 
-    .line 2030
     move/from16 v0, v19
 
     move/from16 v1, v20
@@ -6282,7 +6276,6 @@
 
     invoke-direct/range {p0 .. p1}, Landroid/widget/ListView;->flymeSetupChild(Landroid/view/View;)V
 
-    .line 2032
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/ListView;->mCheckStates:Landroid/util/SparseBooleanArray;
@@ -8505,10 +8498,8 @@
     .param p3, "childIndex"    # I
 
     .prologue
-    .line 3526
     iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
 
-    .line 3528
     .local v0, "divider":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
@@ -8522,10 +8513,8 @@
 
     :cond_flyme_0
 
-    .line 3529
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 3524
     return-void
 .end method
 
@@ -12926,7 +12915,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x1020037
+    .packed-switch #android:id@accessibilityActionScrollToPosition#t
         :pswitch_0
     .end packed-switch
 .end method
@@ -14827,7 +14816,7 @@
     if-ne v2, v3, :cond_2
 
     :cond_0
-    const v2, 0x1020001
+    const v2, #android:id@checkbox#t
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

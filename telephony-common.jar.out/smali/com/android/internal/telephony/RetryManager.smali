@@ -16,7 +16,7 @@
 
 .field private static final DEFAULT_DATA_RETRY_CONFIG:Ljava/lang/String; = "max_retries=3, 5000, 5000, 5000"
 
-.field private static final DEFAULT_INTER_APN_DELAY:J = 0x4e20L
+.field private static final DEFAULT_INTER_APN_DELAY:J = 0xbb8L
 
 .field private static final DEFAULT_INTER_APN_DELAY_FOR_PROVISIONING:J = 0xbb8L
 
@@ -661,7 +661,7 @@
     const-string/jumbo v10, "carrier_data_call_apn_delay_default_long"
 
     .line 336
-    const-wide/16 v12, 0x4e20
+    const-wide/16 v12, 0xbb8
 
     .line 334
     invoke-virtual {v2, v10, v12, v13}, Landroid/os/PersistableBundle;->getLong(Ljava/lang/String;J)J
@@ -844,7 +844,7 @@
     invoke-direct {p0, v10}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
     .line 380
-    const-wide/16 v10, 0x4e20
+    const-wide/16 v10, 0xbb8
 
     iput-wide v10, p0, Lcom/android/internal/telephony/RetryManager;->mInterApnDelay:J
 

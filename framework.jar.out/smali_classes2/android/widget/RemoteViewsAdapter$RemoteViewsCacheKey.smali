@@ -61,9 +61,7 @@
     move-object v0, p1
 
     .line 766
-    nop
-
-    nop
+    check-cast v0, Landroid/widget/RemoteViewsAdapter$RemoteViewsCacheKey;
 
     .line 767
     .local v0, "other":Landroid/widget/RemoteViewsAdapter$RemoteViewsCacheKey;

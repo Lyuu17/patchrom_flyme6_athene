@@ -27,15 +27,15 @@
     .param p2, "onComplete"    # Landroid/os/Message;
 
     .prologue
-    .line 175
+    .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 176
+    .line 185
     iput-object p1, p0, Lcom/android/internal/telephony/GsmCdmaPhone$Cfu;->mSetCfNumber:Ljava/lang/String;
 
-    .line 177
+    .line 186
     iput-object p2, p0, Lcom/android/internal/telephony/GsmCdmaPhone$Cfu;->mOnComplete:Landroid/os/Message;
 
-    .line 175
+    .line 184
     return-void
 .end method

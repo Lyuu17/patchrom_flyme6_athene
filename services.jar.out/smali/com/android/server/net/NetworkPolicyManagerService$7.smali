@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
     .prologue
-    .line 806
+    .line 810
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$7;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,25 +40,25 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 812
+    .line 816
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$7;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->maybeRefreshTrustedTime()V
 
-    .line 813
+    .line 817
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$7;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v1, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mNetworkPoliciesSecondLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 814
+    .line 818
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$7;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->updateNetworkEnabledNL()V
 
-    .line 815
+    .line 819
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$7;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->updateNotificationsNL()V
@@ -67,10 +67,10 @@
 
     monitor-exit v1
 
-    .line 808
+    .line 812
     return-void
 
-    .line 813
+    .line 817
     :catchall_0
     move-exception v0
 

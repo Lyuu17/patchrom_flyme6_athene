@@ -64,7 +64,7 @@
     .line 443
     new-instance v0, Landroid/util/SparseIntArray;
 
-    const/16 v1, 0x11
+    const/16 v1, 0x12
 
     invoke-direct {v0, v1}, Landroid/util/SparseIntArray;-><init>(I)V
 
@@ -184,6 +184,13 @@
     const v1, 0x10000001
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->put(II)V
+
+    .line 470
+    sget-object v0, Landroid/media/MediaMetadataEditor;->METADATA_KEYS_TYPE:Landroid/util/SparseIntArray;
+
+    const/16 v1, 0xa
+
+    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
 
     .line 33
     return-void

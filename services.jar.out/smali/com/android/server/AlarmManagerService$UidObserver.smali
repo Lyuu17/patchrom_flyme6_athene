@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/AlarmManagerService;
 
     .prologue
-    .line 2806
+    .line 2922
     iput-object p1, p0, Lcom/android/server/AlarmManagerService$UidObserver;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-direct {p0}, Landroid/app/IUidObserver$Stub;-><init>()V
@@ -44,7 +44,7 @@
     .end annotation
 
     .prologue
-    .line 2813
+    .line 2929
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 2810
+    .line 2926
     return-void
 .end method
 
@@ -72,14 +72,14 @@
     .end annotation
 
     .prologue
-    .line 2817
+    .line 2933
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$UidObserver;->this$0:Lcom/android/server/AlarmManagerService;
 
     iget-object v1, v0, Lcom/android/server/AlarmManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2818
+    .line 2934
     :try_start_0
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$UidObserver;->this$0:Lcom/android/server/AlarmManagerService;
 
@@ -89,10 +89,10 @@
 
     monitor-exit v1
 
-    .line 2816
+    .line 2932
     return-void
 
-    .line 2817
+    .line 2933
     :catchall_0
     move-exception v0
 
@@ -112,6 +112,6 @@
     .end annotation
 
     .prologue
-    .line 2807
+    .line 2923
     return-void
 .end method

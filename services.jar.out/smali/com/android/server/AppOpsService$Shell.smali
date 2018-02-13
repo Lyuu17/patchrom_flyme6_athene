@@ -41,21 +41,21 @@
     .param p2, "internal"    # Lcom/android/server/AppOpsService;
 
     .prologue
-    .line 1655
+    .line 1895
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
 
-    .line 1647
+    .line 1887
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/AppOpsService$Shell;->userId:I
 
-    .line 1656
+    .line 1896
     iput-object p1, p0, Lcom/android/server/AppOpsService$Shell;->mInterface:Lcom/android/internal/app/IAppOpsService;
 
-    .line 1657
+    .line 1897
     iput-object p2, p0, Lcom/android/server/AppOpsService$Shell;->mInternal:Lcom/android/server/AppOpsService;
 
-    .line 1655
+    .line 1895
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .param p2, "err"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 1673
+    .line 1913
     :try_start_0
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
     :try_end_0
@@ -75,11 +75,11 @@
 
     return v2
 
-    .line 1674
+    .line 1914
     :catch_0
     move-exception v0
 
-    .line 1677
+    .line 1917
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     :try_start_1
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -90,11 +90,11 @@
 
     return v2
 
-    .line 1678
+    .line 1918
     :catch_1
     move-exception v1
 
-    .line 1681
+    .line 1921
     .local v1, "e":Ljava/lang/NumberFormatException;
     :try_start_2
     invoke-static {p1}, Landroid/app/AppOpsManager;->strDebugOpToOp(Ljava/lang/String;)I
@@ -105,11 +105,11 @@
 
     return v2
 
-    .line 1682
+    .line 1922
     :catch_2
     move-exception v0
 
-    .line 1683
+    .line 1923
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -134,7 +134,7 @@
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1684
+    .line 1924
     const/4 v2, -0x1
 
     return v2
@@ -147,7 +147,7 @@
     .param p1, "cmd"    # Ljava/lang/String;
 
     .prologue
-    .line 1662
+    .line 1902
     invoke-static {p0, p1}, Lcom/android/server/AppOpsService;->onShellCommand(Lcom/android/server/AppOpsService$Shell;Ljava/lang/String;)I
 
     move-result v0
@@ -159,16 +159,16 @@
     .locals 1
 
     .prologue
-    .line 1667
+    .line 1907
     invoke-virtual {p0}, Lcom/android/server/AppOpsService$Shell;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 1668
+    .line 1908
     .local v0, "pw":Ljava/io/PrintWriter;
     invoke-static {v0}, Lcom/android/server/AppOpsService;->dumpCommandHelp(Ljava/io/PrintWriter;)V
 
-    .line 1666
+    .line 1906
     return-void
 .end method
 
@@ -189,18 +189,18 @@
 
     const/4 v2, 0x0
 
-    .line 1708
+    .line 1950
     const/4 v1, -0x2
 
     iput v1, p0, Lcom/android/server/AppOpsService$Shell;->userId:I
 
-    .line 1709
+    .line 1951
     iput-object v2, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
-    .line 1710
+    .line 1952
     iput-object v2, p0, Lcom/android/server/AppOpsService$Shell;->modeStr:Ljava/lang/String;
 
-    .line 1711
+    .line 1953
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/AppOpsService$Shell;->getNextArg()Ljava/lang/String;
@@ -210,7 +210,7 @@
     .local v0, "argument":Ljava/lang/String;
     if-eqz v0, :cond_3
 
-    .line 1712
+    .line 1954
     const-string/jumbo v1, "--user"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -219,7 +219,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1713
+    .line 1955
     invoke-virtual {p0}, Lcom/android/server/AppOpsService$Shell;->getNextArgRequired()Ljava/lang/String;
 
     move-result-object v1
@@ -232,41 +232,41 @@
 
     goto :goto_0
 
-    .line 1715
+    .line 1957
     :cond_1
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
     if-nez v1, :cond_2
 
-    .line 1716
+    .line 1958
     iput-object v0, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 1717
+    .line 1959
     :cond_2
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->modeStr:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 1718
+    .line 1960
     iput-object v0, p0, Lcom/android/server/AppOpsService$Shell;->modeStr:Ljava/lang/String;
 
-    .line 1723
+    .line 1965
     :cond_3
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
     if-nez v1, :cond_4
 
-    .line 1724
+    .line 1966
     const-string/jumbo v1, "Error: Operation not specified."
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1725
+    .line 1967
     return v3
 
-    .line 1727
+    .line 1969
     :cond_4
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
@@ -276,21 +276,21 @@
 
     iput v1, p0, Lcom/android/server/AppOpsService$Shell;->op:I
 
-    .line 1728
+    .line 1970
     iget v1, p0, Lcom/android/server/AppOpsService$Shell;->op:I
 
     if-gez v1, :cond_5
 
-    .line 1729
+    .line 1971
     return v3
 
-    .line 1731
+    .line 1973
     :cond_5
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->modeStr:Ljava/lang/String;
 
     if-eqz v1, :cond_6
 
-    .line 1732
+    .line 1974
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->modeStr:Ljava/lang/String;
 
     invoke-virtual {p0, v1, p2}, Lcom/android/server/AppOpsService$Shell;->strModeToMode(Ljava/lang/String;Ljava/io/PrintWriter;)I
@@ -301,14 +301,14 @@
 
     if-gez v1, :cond_7
 
-    .line 1733
+    .line 1975
     return v3
 
-    .line 1736
+    .line 1978
     :cond_6
     iput p1, p0, Lcom/android/server/AppOpsService$Shell;->mode:I
 
-    .line 1738
+    .line 1980
     :cond_7
     return v4
 .end method
@@ -332,16 +332,16 @@
 
     const/4 v1, 0x0
 
-    .line 1742
+    .line 1984
     iput v2, p0, Lcom/android/server/AppOpsService$Shell;->userId:I
 
-    .line 1743
+    .line 1985
     iput-object v1, p0, Lcom/android/server/AppOpsService$Shell;->packageName:Ljava/lang/String;
 
-    .line 1744
+    .line 1986
     iput-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
-    .line 1745
+    .line 1987
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/AppOpsService$Shell;->getNextArg()Ljava/lang/String;
@@ -351,7 +351,7 @@
     .local v0, "argument":Ljava/lang/String;
     if-eqz v0, :cond_3
 
-    .line 1746
+    .line 1988
     const-string/jumbo v1, "--user"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -360,7 +360,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1747
+    .line 1989
     invoke-virtual {p0}, Lcom/android/server/AppOpsService$Shell;->getNextArgRequired()Ljava/lang/String;
 
     move-result-object v1
@@ -373,41 +373,41 @@
 
     goto :goto_0
 
-    .line 1749
+    .line 1991
     :cond_1
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->packageName:Ljava/lang/String;
 
     if-nez v1, :cond_2
 
-    .line 1750
+    .line 1992
     iput-object v0, p0, Lcom/android/server/AppOpsService$Shell;->packageName:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 1751
+    .line 1993
     :cond_2
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 1752
+    .line 1994
     iput-object v0, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
-    .line 1757
+    .line 1999
     :cond_3
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->packageName:Ljava/lang/String;
 
     if-nez v1, :cond_4
 
-    .line 1758
+    .line 2000
     const-string/jumbo v1, "Error: Package name not specified."
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1759
+    .line 2001
     return v5
 
-    .line 1760
+    .line 2002
     :cond_4
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
@@ -415,21 +415,21 @@
 
     if-eqz p1, :cond_5
 
-    .line 1761
+    .line 2003
     const-string/jumbo v1, "Error: Operation not specified."
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1762
+    .line 2004
     return v5
 
-    .line 1764
+    .line 2006
     :cond_5
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
     if-eqz v1, :cond_6
 
-    .line 1765
+    .line 2007
     iget-object v1, p0, Lcom/android/server/AppOpsService$Shell;->opStr:Ljava/lang/String;
 
     invoke-direct {p0, v1, p2}, Lcom/android/server/AppOpsService$Shell;->strOpToOp(Ljava/lang/String;Ljava/io/PrintWriter;)I
@@ -438,32 +438,32 @@
 
     iput v1, p0, Lcom/android/server/AppOpsService$Shell;->op:I
 
-    .line 1766
+    .line 2008
     iget v1, p0, Lcom/android/server/AppOpsService$Shell;->op:I
 
     if-gez v1, :cond_7
 
-    .line 1767
+    .line 2009
     return v5
 
-    .line 1770
+    .line 2012
     :cond_6
     iput v5, p0, Lcom/android/server/AppOpsService$Shell;->op:I
 
-    .line 1772
+    .line 2014
     :cond_7
     iget v1, p0, Lcom/android/server/AppOpsService$Shell;->userId:I
 
     if-ne v1, v2, :cond_8
 
-    .line 1773
+    .line 2015
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/AppOpsService$Shell;->userId:I
 
-    .line 1775
+    .line 2017
     :cond_8
     const-string/jumbo v1, "root"
 
@@ -475,16 +475,16 @@
 
     if-eqz v1, :cond_9
 
-    .line 1776
+    .line 2018
     iput v6, p0, Lcom/android/server/AppOpsService$Shell;->packageUid:I
 
-    .line 1781
+    .line 2023
     :goto_1
     iget v1, p0, Lcom/android/server/AppOpsService$Shell;->packageUid:I
 
     if-gez v1, :cond_a
 
-    .line 1782
+    .line 2024
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -519,10 +519,10 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1783
+    .line 2025
     return v5
 
-    .line 1778
+    .line 2020
     :cond_9
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
@@ -530,12 +530,12 @@
 
     iget-object v2, p0, Lcom/android/server/AppOpsService$Shell;->packageName:Ljava/lang/String;
 
-    .line 1779
+    .line 2021
     iget v3, p0, Lcom/android/server/AppOpsService$Shell;->userId:I
 
     const/16 v4, 0x2000
 
-    .line 1778
+    .line 2020
     invoke-interface {v1, v2, v4, v3}, Landroid/content/pm/IPackageManager;->getPackageUid(Ljava/lang/String;II)I
 
     move-result v1
@@ -544,7 +544,7 @@
 
     goto :goto_1
 
-    .line 1785
+    .line 2027
     :cond_a
     return v6
 .end method
@@ -555,7 +555,7 @@
     .param p2, "err"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 1689
+    .line 1929
     const-string/jumbo v1, "allow"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -564,12 +564,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 1691
+    .line 1931
     const/4 v1, 0x0
 
     return v1
 
-    .line 1689
+    .line 1929
     :cond_0
     const-string/jumbo v1, "deny"
 
@@ -579,12 +579,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 1693
+    .line 1933
     const/4 v1, 0x2
 
     return v1
 
-    .line 1689
+    .line 1929
     :cond_1
     const-string/jumbo v1, "ignore"
 
@@ -594,12 +594,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 1695
+    .line 1935
     const/4 v1, 0x1
 
     return v1
 
-    .line 1689
+    .line 1929
     :cond_2
     const-string/jumbo v1, "default"
 
@@ -609,13 +609,28 @@
 
     if-eqz v1, :cond_3
 
-    .line 1697
+    .line 1937
     const/4 v1, 0x3
 
     return v1
 
-    .line 1700
+    .line 1929
     :cond_3
+    const-string/jumbo v1, "ask"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    .line 1939
+    const/4 v1, 0x4
+
+    return v1
+
+    .line 1942
+    :cond_4
     :try_start_0
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_0
@@ -625,11 +640,11 @@
 
     return v1
 
-    .line 1701
+    .line 1943
     :catch_0
     move-exception v0
 
-    .line 1703
+    .line 1945
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -657,7 +672,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1704
+    .line 1946
     const/4 v1, -0x1
 
     return v1

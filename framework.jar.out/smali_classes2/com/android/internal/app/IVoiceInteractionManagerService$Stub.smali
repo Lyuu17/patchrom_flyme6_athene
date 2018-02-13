@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.app.IVoiceInteractionManagerService"
 
-.field static final TRANSACTION_activeServiceSupportsAssist:I = 0x18
+.field static final TRANSACTION_activeServiceSupportsAssist_23:I = 0x18
 
-.field static final TRANSACTION_activeServiceSupportsLaunchFromKeyguard:I = 0x19
+.field static final TRANSACTION_activeServiceSupportsLaunchFromKeyguard_24:I = 0x19
 
 .field static final TRANSACTION_closeSystemDialogs:I = 0x7
 
@@ -44,7 +44,7 @@
 
 .field static final TRANSACTION_getDspModuleProperties:I = 0xf
 
-.field static final TRANSACTION_getKeyphraseSoundModel:I = 0xc
+.field static final TRANSACTION_getKeyphraseSoundModel_11:I = 0xc
 
 .field static final TRANSACTION_getUserDisabledShowContext:I = 0xb
 
@@ -52,11 +52,11 @@
 
 .field static final TRANSACTION_hideSessionFromSession:I = 0x4
 
-.field static final TRANSACTION_isEnrolledForKeyphrase:I = 0x10
+.field static final TRANSACTION_isEnrolledForKeyphrase_15:I = 0x10
 
 .field static final TRANSACTION_isSessionRunning:I = 0x17
 
-.field static final TRANSACTION_launchVoiceAssistFromKeyguard:I = 0x16
+.field static final TRANSACTION_launchVoiceAssistFromKeyguard_21:I = 0x16
 
 .field static final TRANSACTION_onLockscreenShown:I = 0x1a
 
@@ -68,7 +68,7 @@
 
 .field static final TRANSACTION_showSession:I = 0x1
 
-.field static final TRANSACTION_showSessionForActiveService:I = 0x14
+.field static final TRANSACTION_showSessionForActiveService_19:I = 0x14
 
 .field static final TRANSACTION_showSessionFromSession:I = 0x3
 

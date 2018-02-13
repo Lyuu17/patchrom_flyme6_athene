@@ -63,6 +63,14 @@
     .end annotation
 .end method
 
+.method public abstract interfaceMessageRecevied(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract interfaceRemoved(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

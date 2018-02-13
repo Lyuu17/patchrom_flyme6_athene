@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 603
+    .line 604
     iput-object p1, p0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
 
-    .line 604
+    .line 605
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 603
+    .line 604
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 609
+    .line 610
     move-object/from16 v0, p1
 
     iget v0, v0, Landroid/os/Message;->what:I
@@ -51,12 +51,12 @@
 
     packed-switch v18, :pswitch_data_0
 
-    .line 608
+    .line 609
     :cond_0
     :goto_0
     return-void
 
-    .line 611
+    .line 612
     :pswitch_0
     move-object/from16 v0, p0
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 615
+    .line 616
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -80,7 +80,7 @@
 
     goto :goto_0
 
-    .line 619
+    .line 620
     :pswitch_2
     move-object/from16 v0, p0
 
@@ -94,14 +94,14 @@
 
     if-nez v18, :cond_1
 
-    .line 620
+    .line 621
     const-string/jumbo v18, "MountService"
 
     const-string/jumbo v19, "fstrim requested, but no daemon connection yet; trying again"
 
     invoke-static/range {v18 .. v19}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 621
+    .line 622
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -120,10 +120,10 @@
 
     move-result-object v18
 
-    .line 622
+    .line 623
     const-wide/16 v20, 0x3e8
 
-    .line 621
+    .line 622
     move-object/from16 v0, p0
 
     move-object/from16 v1, v18
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 626
+    .line 627
     :cond_1
     const-string/jumbo v18, "MountService"
 
@@ -142,7 +142,7 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 630
+    .line 631
     :try_start_0
     move-object/from16 v0, p0
 
@@ -160,7 +160,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/MountService;->-set2(Lcom/android/server/MountService;J)J
 
-    .line 631
+    .line 632
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
@@ -189,7 +189,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 636
+    .line 637
     :goto_1
     move-object/from16 v0, p0
 
@@ -201,7 +201,7 @@
 
     move-result v14
 
-    .line 640
+    .line 641
     .local v14, "shouldBenchmark":Z
     :try_start_1
     move-object/from16 v0, p0
@@ -237,7 +237,7 @@
     :try_end_1
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 647
+    .line 648
     :goto_3
     move-object/from16 v0, p1
 
@@ -245,22 +245,22 @@
 
     check-cast v5, Ljava/lang/Runnable;
 
-    .line 648
+    .line 649
     .local v5, "callback":Ljava/lang/Runnable;
     if-eqz v5, :cond_0
 
-    .line 649
+    .line 650
     invoke-interface {v5}, Ljava/lang/Runnable;->run()V
 
     goto/16 :goto_0
 
-    .line 632
+    .line 633
     .end local v5    # "callback":Ljava/lang/Runnable;
     .end local v14    # "shouldBenchmark":Z
     :catch_0
     move-exception v6
 
-    .line 633
+    .line 634
     .local v6, "e":Ljava/lang/Exception;
     const-string/jumbo v18, "MountService"
 
@@ -270,7 +270,7 @@
 
     goto :goto_1
 
-    .line 640
+    .line 641
     .end local v6    # "e":Ljava/lang/Exception;
     .restart local v14    # "shouldBenchmark":Z
     :cond_2
@@ -281,11 +281,11 @@
 
     goto :goto_2
 
-    .line 641
+    .line 642
     :catch_1
     move-exception v11
 
-    .line 642
+    .line 643
     .local v11, "ndce":Lcom/android/server/NativeDaemonConnectorException;
     const-string/jumbo v18, "MountService"
 
@@ -295,7 +295,7 @@
 
     goto :goto_3
 
-    .line 654
+    .line 655
     .end local v11    # "ndce":Lcom/android/server/NativeDaemonConnectorException;
     .end local v14    # "shouldBenchmark":Z
     :pswitch_3
@@ -305,11 +305,11 @@
 
     check-cast v12, Landroid/os/storage/IMountShutdownObserver;
 
-    .line 655
+    .line 656
     .local v12, "obs":Landroid/os/storage/IMountShutdownObserver;
     const/4 v15, 0x0
 
-    .line 657
+    .line 658
     .local v15, "success":Z
     :try_start_3
     move-object/from16 v0, p0
@@ -348,12 +348,12 @@
 
     move-result v15
 
-    .line 660
+    .line 661
     .end local v15    # "success":Z
     :goto_4
     if-eqz v12, :cond_0
 
-    .line 662
+    .line 663
     if-eqz v15, :cond_3
 
     const/16 v18, 0x0
@@ -368,21 +368,21 @@
 
     goto/16 :goto_0
 
-    .line 663
+    .line 664
     :catch_2
     move-exception v8
 
     .local v8, "ignored":Landroid/os/RemoteException;
     goto/16 :goto_0
 
-    .line 662
+    .line 663
     .end local v8    # "ignored":Landroid/os/RemoteException;
     :cond_3
     const/16 v18, -0x1
 
     goto :goto_5
 
-    .line 669
+    .line 670
     .end local v12    # "obs":Landroid/os/storage/IMountShutdownObserver;
     :pswitch_4
     move-object/from16 v0, p1
@@ -393,7 +393,7 @@
 
     check-cast v17, Landroid/os/storage/VolumeInfo;
 
-    .line 670
+    .line 671
     .local v17, "vol":Landroid/os/storage/VolumeInfo;
     move-object/from16 v0, p0
 
@@ -411,7 +411,7 @@
 
     if-eqz v18, :cond_4
 
-    .line 671
+    .line 672
     const-string/jumbo v18, "MountService"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -446,7 +446,7 @@
 
     goto/16 :goto_0
 
-    .line 675
+    .line 676
     :cond_4
     :try_start_5
     move-object/from16 v0, p0
@@ -499,7 +499,7 @@
 
     aput-object v21, v20, v22
 
-    .line 676
+    .line 677
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/os/storage/VolumeInfo;->mountUserId:I
@@ -514,21 +514,21 @@
 
     aput-object v21, v20, v22
 
-    .line 675
+    .line 676
     invoke-virtual/range {v18 .. v20}, Lcom/android/server/NativeDaemonConnector;->execute(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/server/NativeDaemonEvent;
     :try_end_5
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_5 .. :try_end_5} :catch_3
 
     goto/16 :goto_0
 
-    .line 677
+    .line 678
     :catch_3
     move-exception v9
 
     .local v9, "ignored":Lcom/android/server/NativeDaemonConnectorException;
     goto/16 :goto_0
 
-    .line 682
+    .line 683
     .end local v9    # "ignored":Lcom/android/server/NativeDaemonConnectorException;
     .end local v17    # "vol":Landroid/os/storage/VolumeInfo;
     :pswitch_5
@@ -540,7 +540,7 @@
 
     check-cast v17, Landroid/os/storage/VolumeInfo;
 
-    .line 683
+    .line 684
     .restart local v17    # "vol":Landroid/os/storage/VolumeInfo;
     move-object/from16 v0, p0
 
@@ -556,7 +556,7 @@
 
     goto/16 :goto_0
 
-    .line 687
+    .line 688
     .end local v17    # "vol":Landroid/os/storage/VolumeInfo;
     :pswitch_6
     move-object/from16 v0, p1
@@ -567,13 +567,13 @@
 
     check-cast v16, Landroid/os/storage/StorageVolume;
 
-    .line 688
+    .line 689
     .local v16, "userVol":Landroid/os/storage/StorageVolume;
     invoke-virtual/range {v16 .. v16}, Landroid/os/storage/StorageVolume;->getState()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 689
+    .line 690
     .local v7, "envState":Ljava/lang/String;
     const-string/jumbo v18, "MountService"
 
@@ -613,12 +613,12 @@
 
     move-result-object v19
 
-    .line 690
+    .line 691
     invoke-virtual/range {v16 .. v16}, Landroid/os/storage/StorageVolume;->getOwner()Landroid/os/UserHandle;
 
     move-result-object v20
 
-    .line 689
+    .line 690
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v19
@@ -629,19 +629,19 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 692
+    .line 693
     invoke-static {v7}, Landroid/os/storage/VolumeInfo;->getBroadcastForEnvironment(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 693
+    .line 694
     .local v4, "action":Ljava/lang/String;
     if-eqz v4, :cond_0
 
-    .line 694
+    .line 695
     new-instance v10, Landroid/content/Intent;
 
-    .line 695
+    .line 696
     invoke-virtual/range {v16 .. v16}, Landroid/os/storage/StorageVolume;->getPathFile()Ljava/io/File;
 
     move-result-object v18
@@ -650,12 +650,12 @@
 
     move-result-object v18
 
-    .line 694
+    .line 695
     move-object/from16 v0, v18
 
     invoke-direct {v10, v4, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 696
+    .line 697
     .local v10, "intent":Landroid/content/Intent;
     const-string/jumbo v18, "android.os.storage.extra.STORAGE_VOLUME"
 
@@ -665,14 +665,14 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 697
+    .line 698
     const/high16 v18, 0x4000000
 
     move/from16 v0, v18
 
     invoke-virtual {v10, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 698
+    .line 699
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
@@ -695,7 +695,7 @@
 
     goto/16 :goto_0
 
-    .line 705
+    .line 706
     .end local v4    # "action":Ljava/lang/String;
     .end local v7    # "envState":Ljava/lang/String;
     .end local v10    # "intent":Landroid/content/Intent;
@@ -707,7 +707,7 @@
 
     check-cast v10, Landroid/content/Intent;
 
-    .line 706
+    .line 707
     .restart local v10    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -721,10 +721,10 @@
 
     sget-object v19, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 707
+    .line 708
     const-string/jumbo v20, "android.permission.WRITE_MEDIA_STORAGE"
 
-    .line 706
+    .line 707
     move-object/from16 v0, v18
 
     move-object/from16 v1, v19
@@ -735,7 +735,7 @@
 
     goto/16 :goto_0
 
-    .line 711
+    .line 712
     .end local v10    # "intent":Landroid/content/Intent;
     :pswitch_8
     move-object/from16 v0, p1
@@ -744,7 +744,7 @@
 
     check-cast v13, Ljava/lang/String;
 
-    .line 712
+    .line 713
     .local v13, "partGuid":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -758,7 +758,7 @@
 
     goto/16 :goto_0
 
-    .line 716
+    .line 717
     .end local v13    # "partGuid":Ljava/lang/String;
     :pswitch_9
     move-object/from16 v0, p0
@@ -771,7 +771,7 @@
 
     goto/16 :goto_0
 
-    .line 658
+    .line 659
     .restart local v12    # "obs":Landroid/os/storage/IMountShutdownObserver;
     .restart local v15    # "success":Z
     :catch_4
@@ -780,7 +780,7 @@
     .restart local v9    # "ignored":Lcom/android/server/NativeDaemonConnectorException;
     goto/16 :goto_4
 
-    .line 609
+    .line 610
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

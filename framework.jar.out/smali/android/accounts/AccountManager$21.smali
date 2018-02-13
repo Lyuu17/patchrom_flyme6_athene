@@ -39,7 +39,7 @@
     .param p9, "val$optionsIn"    # Landroid/os/Bundle;
 
     .prologue
-    .line 2829
+    .line 2855
     .local p5, "$anonymous2":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$21;->this$0:Landroid/accounts/AccountManager;
 
@@ -67,40 +67,40 @@
     .end annotation
 
     .prologue
-    .line 2832
+    .line 2858
     iget-object v0, p0, Landroid/accounts/AccountManager$21;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
 
     move-result-object v0
 
-    .line 2833
-    iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    .line 2859
+    iget-object v1, p0, Landroid/accounts/AccountManager$21;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
-    .line 2834
+    .line 2860
     iget-object v2, p0, Landroid/accounts/AccountManager$21;->val$account:Landroid/accounts/Account;
 
-    .line 2835
+    .line 2861
     iget-object v3, p0, Landroid/accounts/AccountManager$21;->val$authTokenType:Ljava/lang/String;
 
-    .line 2836
+    .line 2862
     iget-object v4, p0, Landroid/accounts/AccountManager$21;->val$activity:Landroid/app/Activity;
 
     if-eqz v4, :cond_0
 
     const/4 v4, 0x1
 
-    .line 2837
+    .line 2863
     :goto_0
     iget-object v5, p0, Landroid/accounts/AccountManager$21;->val$optionsIn:Landroid/os/Bundle;
 
-    .line 2832
+    .line 2858
     invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountManager;->startUpdateCredentialsSession(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Ljava/lang/String;ZLandroid/os/Bundle;)V
 
-    .line 2831
+    .line 2857
     return-void
 
-    .line 2836
+    .line 2862
     :cond_0
     const/4 v4, 0x0
 

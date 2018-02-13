@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
     .prologue
-    .line 283
+    .line 286
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$DeviceStateReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -52,12 +52,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 286
+    .line 289
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 287
+    .line 290
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v2, "android.intent.action.BATTERY_CHANGED"
 
@@ -67,7 +67,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 288
+    .line 291
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsService$DeviceStateReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     const-string/jumbo v3, "plugged"
@@ -83,12 +83,12 @@
     :cond_0
     invoke-virtual {v2, v1}, Lcom/android/server/usage/UsageStatsService;->setChargingState(Z)V
 
-    .line 285
+    .line 288
     :cond_1
     :goto_0
     return-void
 
-    .line 289
+    .line 292
     :cond_2
     const-string/jumbo v1, "android.os.action.DEVICE_IDLE_MODE_CHANGED"
 
@@ -98,7 +98,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 290
+    .line 293
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$DeviceStateReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v1}, Lcom/android/server/usage/UsageStatsService;->onDeviceIdleModeChanged()V

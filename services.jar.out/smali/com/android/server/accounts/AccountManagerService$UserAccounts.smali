@@ -214,85 +214,85 @@
     .param p4, "deDbFile"    # Ljava/io/File;
 
     .prologue
-    .line 312
+    .line 313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 277
+    .line 278
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 276
+    .line 277
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->credentialsPermissionNotificationIds:Ljava/util/HashMap;
 
-    .line 279
+    .line 280
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 278
+    .line 279
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->signinRequiredNotificationIds:Ljava/util/HashMap;
 
-    .line 280
+    .line 281
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
-    .line 283
+    .line 284
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 282
+    .line 283
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->accountCache:Ljava/util/HashMap;
 
-    .line 286
+    .line 287
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 285
+    .line 286
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->userDataCache:Ljava/util/HashMap;
 
-    .line 289
+    .line 290
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 288
+    .line 289
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->authTokenCache:Ljava/util/HashMap;
 
-    .line 292
+    .line 293
     new-instance v0, Lcom/android/server/accounts/TokenCache;
 
     invoke-direct {v0}, Lcom/android/server/accounts/TokenCache;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->accountTokenCaches:Lcom/android/server/accounts/TokenCache;
 
-    .line 307
+    .line 308
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 306
+    .line 307
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->previousNameCache:Ljava/util/HashMap;
 
-    .line 309
+    .line 310
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->debugDbInsertionPoint:I
 
-    .line 313
+    .line 314
     iput p2, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->userId:I
 
-    .line 314
+    .line 315
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 315
+    .line 316
     :try_start_0
     invoke-static {p1, p2, p3, p4}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->create(Landroid/content/Context;ILjava/io/File;Ljava/io/File;)Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;
 
@@ -304,10 +304,10 @@
 
     monitor-exit v1
 
-    .line 312
+    .line 313
     return-void
 
-    .line 314
+    .line 315
     :catchall_0
     move-exception v0
 

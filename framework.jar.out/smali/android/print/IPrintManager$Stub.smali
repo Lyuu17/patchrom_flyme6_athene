@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_addPrintJobStateChangeListener:I = 0x6
 
-.field static final TRANSACTION_addPrintServiceRecommendationsChangeListener:I = 0xc
+.field static final TRANSACTION_addPrintServiceRecommendationsChangeListener_11:I = 0xc
 
-.field static final TRANSACTION_addPrintServicesChangeListener:I = 0x8
+.field static final TRANSACTION_addPrintServicesChangeListener_7:I = 0x8
 
 .field static final TRANSACTION_cancelPrintJob:I = 0x4
 
@@ -38,21 +38,21 @@
 
 .field static final TRANSACTION_destroyPrinterDiscoverySession:I = 0x16
 
-.field static final TRANSACTION_getCustomPrinterIcon:I = 0x14
+.field static final TRANSACTION_getCustomPrinterIcon_19:I = 0x14
 
 .field static final TRANSACTION_getPrintJobInfo:I = 0x2
 
 .field static final TRANSACTION_getPrintJobInfos:I = 0x1
 
-.field static final TRANSACTION_getPrintServiceRecommendations:I = 0xe
+.field static final TRANSACTION_getPrintServiceRecommendations_13:I = 0xe
 
-.field static final TRANSACTION_getPrintServices:I = 0xa
+.field static final TRANSACTION_getPrintServices_9:I = 0xa
 
 .field static final TRANSACTION_print:I = 0x3
 
 .field static final TRANSACTION_removePrintJobStateChangeListener:I = 0x7
 
-.field static final TRANSACTION_removePrintServiceRecommendationsChangeListener:I = 0xd
+.field static final TRANSACTION_removePrintServiceRecommendationsChangeListener_12:I = 0xd
 
 .field static final TRANSACTION_removePrintServicesChangeListener:I = 0x9
 

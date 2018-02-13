@@ -61,6 +61,8 @@
 
 .field public static final OFF_BECAUSE_OF_USER:I = 0x2
 
+.field public static final POLICY_FLAG_REMOVE_HANDYMODE:I = -0x80000000
+
 .field public static final PRESENCE_EXTERNAL:I = 0x2
 
 .field public static final PRESENCE_INTERNAL:I = 0x1
@@ -159,6 +161,9 @@
 .end method
 
 .method public abstract focusChangedLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManagerPolicy$WindowState;)I
+.end method
+
+.method public abstract freezeOrThawRotation(I)V
 .end method
 
 .method public abstract getConfigDisplayHeight(IIII)I
@@ -264,6 +269,9 @@
 .end method
 
 .method public abstract lockNow(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract needsNavigationBar()Z
 .end method
 
 .method public abstract notifyActivityDrawnForKeyguardLw()V

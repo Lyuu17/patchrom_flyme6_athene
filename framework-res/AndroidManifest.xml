@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.system" android:sharedUserLabel="@string/android_system_label" coreApp="true" package="android">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:sharedUserId="android.uid.system" android:sharedUserLabel="@string/android_system_label" coreApp="true" package="android">
     <eat-comment/>
     <protected-broadcast android:name="android.intent.action.SCREEN_OFF"/>
     <protected-broadcast android:name="android.intent.action.SCREEN_ON"/>
@@ -56,6 +56,8 @@
     <protected-broadcast android:name="android.intent.action.USER_SWITCHED"/>
     <protected-broadcast android:name="android.intent.action.USER_INITIALIZE"/>
     <protected-broadcast android:name="android.intent.action.INTENT_FILTER_NEEDS_VERIFICATION"/>
+    <protected-broadcast android:name="android.intent.action.SU_SESSION_CHANGED"/>
+    <protected-broadcast android:name="Auth_password_wrong"/>
     <protected-broadcast android:name="android.os.action.POWER_SAVE_MODE_CHANGED"/>
     <protected-broadcast android:name="android.os.action.POWER_SAVE_MODE_CHANGING"/>
     <protected-broadcast android:name="android.os.action.DEVICE_IDLE_MODE_CHANGED"/>
@@ -217,8 +219,24 @@
     <protected-broadcast android:name="com.android.server.usb.ACTION_OPEN_IN_APPS"/>
     <protected-broadcast android:name="com.android.server.am.DELETE_DUMPHEAP"/>
     <protected-broadcast android:name="com.android.server.net.action.SNOOZE_WARNING"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.WIGIG_CREDENTIAL_CHANGED"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.WIGIG_STATE_CHANGED"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.WIGIG_AP_STATE_CHANGED"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.supplicant.CONNECTION_CHANGE"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.STATE_CHANGE"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.CONFIGURED_NETWORKS_CHANGE"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.SCAN_RESULTS"/>
+    <protected-broadcast android:name="com.qualcomm.qti.wigig.LINK_CONFIGURATION_CHANGED"/>
+    <protected-broadcast android:name="wigig_scan_available"/>
+    <protected-broadcast android:name="android.net.wigig.p2p.STATE_CHANGED"/>
+    <protected-broadcast android:name="android.net.wigig.p2p.CONNECTION_STATE_CHANGE"/>
+    <protected-broadcast android:name="android.net.wigig.p2p.PEERS_CHANGED"/>
+    <protected-broadcast android:name="android.net.wigig.p2p.DISCOVERY_STATE_CHANGE"/>
+    <protected-broadcast android:name="android.net.wigig.p2p.THIS_DEVICE_CHANGED"/>
+    <protected-broadcast android:name="android.net.wigig.p2p.PERSISTENT_GROUPS_CHANGED"/>
     <protected-broadcast android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
     <protected-broadcast android:name="android.net.wifi.WIFI_AP_STATE_CHANGED"/>
+    <protected-broadcast android:name="android.net.wifi.WIFI_AP_SUB_SYSTEM_RESTART"/>
     <protected-broadcast android:name="android.net.wifi.WIFI_CREDENTIAL_CHANGED"/>
     <protected-broadcast android:name="android.net.wifi.WIFI_SCAN_AVAILABLE"/>
     <protected-broadcast android:name="android.net.wifi.SCAN_RESULTS"/>
@@ -234,6 +252,7 @@
     <protected-broadcast android:name="android.net.wifi.p2p.PEERS_CHANGED"/>
     <protected-broadcast android:name="android.net.wifi.p2p.CONNECTION_STATE_CHANGE"/>
     <protected-broadcast android:name="android.net.wifi.p2p.PERSISTENT_GROUPS_CHANGED"/>
+    <protected-broadcast android:name="codeaurora.net.conn.TETHER_CONNECT_STATE_CHANGED"/>
     <protected-broadcast android:name="android.net.conn.TETHER_STATE_CHANGED"/>
     <protected-broadcast android:name="android.net.conn.INET_CONDITION_ACTION"/>
     <protected-broadcast android:name="android.net.conn.NETWORK_CONDITIONS_MEASURED"/>
@@ -381,30 +400,11 @@
     <protected-broadcast android:name="android.intent.action.MANAGED_PROFILE_AVAILABLE"/>
     <protected-broadcast android:name="android.intent.action.MANAGED_PROFILE_UNAVAILABLE"/>
     <protected-broadcast android:name="com.android.server.pm.DISABLE_QUIET_MODE_AFTER_UNLOCK"/>
+    <protected-broadcast android:name="android.telecom.action.TTY_PREFERRED_MODE_CHANGED"/>
+    <protected-broadcast android:name="android.telecom.action.CURRENT_TTY_MODE_CHANGED"/>
     <protected-broadcast android:name="com.android.server.retaildemo.ACTION_RESET_DEMO"/>
-    <protected-broadcast android:name="com.meizu.safe.ACTION_BLOCK_LOCKED_SCREEN_SHOW"/>
-    <protected-broadcast android:name="meizu.intent.action.BATTERY_LOW_WRANING_DIALOG"/>
-    <protected-broadcast android:name="flyme.intent.action.ACTION_SHOW_LOCK_HOME"/>
-    <protected-broadcast android:name="com.android.server.notification"/>
-    <protected-broadcast android:name="com.meizu.action.DISABLE_TETHER"/>
-    <protected-broadcast android:name="com.meizu.power.powerexception.enter_idle_mode"/>
-    <protected-broadcast android:name="com.meizu.power.powerexception"/>
-    <protected-broadcast android:name="com.meizu.safe.alphame.pure.UPDATE_FINISHED"/>
-    <protected-broadcast android:name="com.meizu.safe.alphame.data_broadcast"/>
-    <protected-broadcast android:name="com.meizu.blockservice.NOTIFICATION_DELETED_ACTION_INCALL"/>
-    <protected-broadcast android:name="com.meizu.blockservice.NOTIFICATION_DELETED_ACTION_MMS"/>
-    <protected-broadcast android:name="com.meizu.safe.permission.lsvm.NOTIFICATION_ACTION_ALLOW_SHOW_ON_LOCKED_SCREEN"/>
-    <protected-broadcast android:name="com.meizu.safe.permission.lsvm.NOTIFICATION_ACTION_FORBID_SHOW_ON_LOCKED_SCREEN"/>
-    <protected-broadcast android:name="com.meizu.safe.permission.lsvm.NOTIFICATION_ACTION_GO_SETTING"/>
-    <protected-broadcast android:name="com.meizu.safe.permission.lsvm.NOTIFICATION_ACTION_IGNORE"/>
-    <protected-broadcast android:name="traffic_action_idle_start_alarm_sim1"/>
-    <protected-broadcast android:name="traffic_action_idle_start_alarm_sim2"/>
-    <protected-broadcast android:name="traffic_action_idle_end_alarm_sim1"/>
-    <protected-broadcast android:name="traffic_action_idle_end_alarm_sim2"/>
-    <protected-broadcast android:name="traffic_action_24_clock_alarm"/>
-    <protected-broadcast android:name="traffic_correct_alarm_sim1"/>
-    <protected-broadcast android:name="traffic_correct_alarm_sim2"/>
-    <protected-broadcast android:name="android.com.meizu.safe.provider.SafeWidgetProvider"/>
+    <protected-broadcast android:name="cyanogenmod.intent.action.LID_STATE_CHANGED"/>
+    <protected-broadcast android:name="com.android.server.policy.PhoneWindowManager.ACTION_TORCH_OFF"/>
     <eat-comment/>
     <eat-comment/>
     <permission-group android:description="@string/permgroupdesc_contacts" android:icon="@drawable/perm_group_contacts" android:label="@string/permgrouplab_contacts" android:name="android.permission-group.CONTACTS" android:priority="100"/>
@@ -475,6 +475,7 @@
     <permission android:name="android.permission.RECEIVE_BLUETOOTH_MAP" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.BIND_DIRECTORY_SEARCH" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.MODIFY_CELL_BROADCASTS" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.AUTHORIZE_OUTGOING_SMS" android:protectionLevel="signature"/>
     <eat-comment/>
     <permission android:description="@string/permdesc_setAlarm" android:label="@string/permlab_setAlarm" android:name="com.android.alarm.permission.SET_ALARM" android:protectionLevel="normal"/>
     <eat-comment/>
@@ -537,13 +538,14 @@
     <permission android:name="android.permission.OEM_UNLOCK_STATE" android:protectionLevel="signature"/>
     <permission android:name="android.permission.ACCESS_PDB_STATE" android:protectionLevel="signature"/>
     <permission android:name="android.permission.NOTIFY_PENDING_SYSTEM_UPDATE" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.PREVENT_POWER_KEY" android:protectionLevel="system|signature"/>
     <eat-comment/>
     <permission android:name="android.permission.CAMERA_DISABLE_TRANSMIT_LED" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.CAMERA_SEND_SYSTEM_EVENTS" android:protectionLevel="system|signature"/>
     <eat-comment/>
     <permission android:name="android.permission.MODIFY_PHONE_STATE" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.READ_PRECISE_PHONE_STATE" android:protectionLevel="system|signature"/>
-    <permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.REGISTER_SIM_SUBSCRIPTION" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.REGISTER_CALL_PROVIDER" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.REGISTER_CONNECTION_MANAGER" android:protectionLevel="system|signature"/>
@@ -554,7 +556,7 @@
     <permission android:name="android.permission.CONTROL_INCALL_EXPERIENCE" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.RECEIVE_STK_COMMANDS" android:protectionLevel="system|signature"/>
     <eat-comment/>
-    <permission android:name="android.permission.WRITE_MEDIA_STORAGE" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.WRITE_MEDIA_STORAGE" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.MANAGE_DOCUMENTS" android:protectionLevel="signature"/>
     <permission android:name="android.permission.CACHE_CONTENT" android:protectionLevel="signature"/>
     <eat-comment/>
@@ -564,7 +566,7 @@
     <permission android:name="android.permission.REAL_GET_TASKS" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.START_TASKS_FROM_RECENTS" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.INTERACT_ACROSS_USERS" android:protectionLevel="system|development|signature"/>
-    <permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" android:protectionLevel="installer|signature"/>
+    <permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" android:protectionLevel="installer|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.MANAGE_USERS" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.CREATE_USERS" android:protectionLevel="signature"/>
     <permission android:description="@string/permdesc_manageProfileAndDeviceOwners" android:label="@string/permlab_manageProfileAndDeviceOwners" android:name="android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS" android:protectionLevel="signature"/>
@@ -605,7 +607,7 @@
     <permission android:name="android.permission.SET_ANIMATION_SCALE" android:protectionLevel="system|development|signature"/>
     <permission android:description="@string/permdesc_persistentActivity" android:label="@string/permlab_persistentActivity" android:name="android.permission.PERSISTENT_ACTIVITY" android:protectionLevel="normal"/>
     <permission android:description="@string/permdesc_getPackageSize" android:label="@string/permlab_getPackageSize" android:name="android.permission.GET_PACKAGE_SIZE" android:protectionLevel="normal"/>
-    <permission android:name="android.permission.SET_PREFERRED_APPLICATIONS" android:protectionLevel="signature"/>
+    <permission android:name="android.permission.SET_PREFERRED_APPLICATIONS" android:protectionLevel="signature" androidprv:allowViaWhitelist="true"/>
     <permission android:description="@string/permdesc_receiveBootCompleted" android:label="@string/permlab_receiveBootCompleted" android:name="android.permission.RECEIVE_BOOT_COMPLETED" android:protectionLevel="normal"/>
     <permission android:description="@string/permdesc_broadcastSticky" android:label="@string/permlab_broadcastSticky" android:name="android.permission.BROADCAST_STICKY" android:protectionLevel="normal"/>
     <permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" android:protectionLevel="system|signature"/>
@@ -621,7 +623,7 @@
     <permission android:name="android.permission.CLEAR_APP_CACHE" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.ALLOW_ANY_CODEC_FOR_PLAYBACK" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.MANAGE_CA_CERTIFICATES" android:protectionLevel="system|signature"/>
-    <permission android:name="android.permission.RECOVERY" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.RECOVERY" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.BIND_JOB_SERVICE" android:protectionLevel="signature"/>
     <uses-permission android:name="android.permission.BIND_JOB_SERVICE"/>
     <uses-permission android:name="com.meizu.safe.permission.ACCESS_APP_SHOW_ON_LOCKED_SCREED_PROVIDER"/>
@@ -630,7 +632,7 @@
     <permission android:name="android.permission.UPDATE_CONFIG" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.RESET_SHORTCUT_MANAGER_THROTTLING" android:protectionLevel="signature"/>
     <eat-comment/>
-    <permission android:name="android.permission.WRITE_SECURE_SETTINGS" android:protectionLevel="system|development|signature"/>
+    <permission android:name="android.permission.WRITE_SECURE_SETTINGS" android:protectionLevel="system|development|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.DUMP" android:protectionLevel="system|development|signature"/>
     <permission android:name="android.permission.READ_LOGS" android:protectionLevel="system|development|signature"/>
     <permission android:name="android.permission.SET_DEBUG_APP" android:protectionLevel="system|development|signature"/>
@@ -638,7 +640,7 @@
     <permission android:name="android.permission.SET_ALWAYS_FINISH" android:protectionLevel="system|development|signature"/>
     <permission android:name="android.permission.SIGNAL_PERSISTENT_PROCESSES" android:protectionLevel="system|development|signature"/>
     <eat-comment/>
-    <permission android:name="android.permission.GET_ACCOUNTS_PRIVILEGED" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.GET_ACCOUNTS_PRIVILEGED" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.GET_PASSWORD" android:protectionLevel="signature"/>
     <permission android:name="android.permission.DIAGNOSTIC" android:protectionLevel="signature"/>
     <permission android:name="android.permission.STATUS_BAR" android:protectionLevel="system|signature"/>
@@ -650,6 +652,7 @@
     <permission android:name="android.permission.UPDATE_APP_OPS_STATS" android:protectionLevel="system|installer|signature"/>
     <permission android:name="android.permission.MANAGE_APP_OPS_RESTRICTIONS" android:protectionLevel="installer|signature"/>
     <permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" android:protectionLevel="signature"/>
+    <permission android:name="android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS" android:protectionLevel="installer|signature"/>
     <permission android:name="android.permission.MANAGE_APP_TOKENS" android:protectionLevel="signature"/>
     <permission android:name="android.permission.REGISTER_WINDOW_MANAGER_LISTENERS" android:protectionLevel="signature"/>
     <permission android:name="android.permission.FREEZE_SCREEN" android:protectionLevel="signature"/>
@@ -658,7 +661,7 @@
     <permission android:name="android.permission.RETRIEVE_WINDOW_TOKEN" android:protectionLevel="signature"/>
     <permission android:name="android.permission.FRAME_STATS" android:protectionLevel="signature"/>
     <permission android:name="android.permission.TEMPORARY_ENABLE_ACCESSIBILITY" android:protectionLevel="signature"/>
-    <permission android:name="android.permission.SET_ACTIVITY_WATCHER" android:protectionLevel="signature"/>
+    <permission android:name="android.permission.SET_ACTIVITY_WATCHER" android:protectionLevel="signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.SHUTDOWN" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.STOP_APP_SWITCHES" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.GET_TOP_ACTIVITY_INFO" android:protectionLevel="signature"/>
@@ -703,7 +706,7 @@
     <permission android:name="android.permission.REVOKE_RUNTIME_PERMISSIONS" android:protectionLevel="installer|signature|verifier"/>
     <permission android:name="android.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.ACCESS_SURFACE_FLINGER" android:protectionLevel="signature"/>
-    <permission android:name="android.permission.READ_FRAME_BUFFER" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.READ_FRAME_BUFFER" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.ACCESS_INPUT_FLINGER" android:protectionLevel="signature"/>
     <permission android:name="android.permission.CONFIGURE_WIFI_DISPLAY" android:protectionLevel="signature"/>
     <permission android:name="android.permission.CONTROL_WIFI_DISPLAY" android:protectionLevel="signature"/>
@@ -711,13 +714,13 @@
     <permission android:name="android.permission.CONTROL_VPN" android:protectionLevel="system|signature"/>
     <uses-permission android:name="android.permission.CONTROL_VPN"/>
     <permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" android:protectionLevel="system|signature"/>
-    <permission android:name="android.permission.CAPTURE_AUDIO_HOTWORD" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.CAPTURE_AUDIO_HOTWORD" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.MODIFY_AUDIO_ROUTING" android:protectionLevel="system|signature"/>
-    <permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" android:protectionLevel="system|signature"/>
-    <permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
+    <permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.BRICK" android:protectionLevel="signature"/>
-    <permission android:name="android.permission.REBOOT" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.REBOOT" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.DEVICE_POWER" android:protectionLevel="signature"/>
     <permission android:name="android.permission.USER_ACTIVITY" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.NET_TUNNELING" android:protectionLevel="signature"/>
@@ -738,7 +741,7 @@
     <permission android:name="android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST" android:protectionLevel="system|signature"/>
     <permission android:description="@string/permdesc_requestIgnoreBatteryOptimizations" android:label="@string/permlab_requestIgnoreBatteryOptimizations" android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" android:protectionLevel="normal"/>
     <permission android:name="android.permission.BATTERY_STATS" android:protectionLevel="system|development|signature"/>
-    <permission android:name="android.permission.BACKUP" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.BACKUP" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.CONFIRM_FULL_BACKUP" android:protectionLevel="signature"/>
     <permission android:name="android.permission.BIND_REMOTEVIEWS" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.BIND_APPWIDGET" android:protectionLevel="system|signature"/>
@@ -751,7 +754,7 @@
     <permission android:name="android.permission.SET_WALLPAPER_COMPONENT" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.READ_DREAM_STATE" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.WRITE_DREAM_STATE" android:protectionLevel="system|signature"/>
-    <permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" android:protectionLevel="system|signature"/>
+    <permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" android:protectionLevel="system|signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.COPY_PROTECTED_DATA" android:protectionLevel="signature"/>
     <permission android:name="android.permission.CRYPT_KEEPER" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.READ_NETWORK_USAGE_HISTORY" android:protectionLevel="system|signature"/>
@@ -769,10 +772,10 @@
     <permission android:name="android.permission.ACCESS_NOTIFICATIONS" android:protectionLevel="system|signature"/>
     <permission android:description="@string/permdesc_access_notification_policy" android:label="@string/permlab_access_notification_policy" android:name="android.permission.ACCESS_NOTIFICATION_POLICY" android:protectionLevel="normal"/>
     <permission android:name="android.permission.MANAGE_NOTIFICATIONS" android:protectionLevel="signature"/>
-    <permission android:name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE" android:protectionLevel="signature"/>
+    <permission android:name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE" android:protectionLevel="signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.MANAGE_FINGERPRINT" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.RESET_FINGERPRINT_LOCKOUT" android:protectionLevel="signature"/>
-    <permission android:name="android.permission.CONTROL_KEYGUARD" android:protectionLevel="signature"/>
+    <permission android:name="android.permission.CONTROL_KEYGUARD" android:protectionLevel="signature" androidprv:allowViaWhitelist="true"/>
     <permission android:name="android.permission.TRUST_LISTENER" android:protectionLevel="signature"/>
     <permission android:name="android.permission.PROVIDE_TRUST_AGENT" android:protectionLevel="system|signature"/>
     <permission android:name="android.permission.LAUNCH_TRUST_AGENT_SETTINGS" android:protectionLevel="system|signature"/>

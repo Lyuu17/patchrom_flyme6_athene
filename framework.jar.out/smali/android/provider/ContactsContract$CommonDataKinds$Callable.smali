@@ -32,45 +32,45 @@
     .locals 2
 
     .prologue
-    .line 7481
+    .line 7488
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 7482
+    .line 7489
     const-string/jumbo v1, "callables"
 
-    .line 7481
+    .line 7488
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 7487
+    .line 7494
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 7488
+    .line 7495
     const-string/jumbo v1, "filter"
 
-    .line 7487
+    .line 7494
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_FILTER_URI:Landroid/net/Uri;
 
-    .line 7496
+    .line 7503
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "filter_enterprise"
 
-    .line 7495
+    .line 7502
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->ENTERPRISE_CONTENT_FILTER_URI:Landroid/net/Uri;
 
-    .line 7475
+    .line 7482
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 0
 
     .prologue
-    .line 7475
+    .line 7482
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

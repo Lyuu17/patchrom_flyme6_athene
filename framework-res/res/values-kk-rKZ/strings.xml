@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Қолданбаға есептік жазбаның синхрондау параметрлерін жөндеу мүмкіндігін береді. Мысалы, бұл People қолданбасын есептік жазбамен синхрондауды қосу үшін қолданылуы мүмкін.</string>
     <string name="permlab_readSyncStats">үйлестіру санақтық ақпаратын оқу</string>
     <string name="permdesc_readSyncStats">Қолданбаға есептік жазбаның синхрондалу статистикаларын, оның ішінде синхрондау шараларының тарихы және қанша дерек синхрондалғаны жайлы, оқу мүмкіндігін береді.</string>
-    <string name="permlab_sdcardRead">Өзіңіздің USB жадыңыздың мазмұнын оқу</string>
-    <string name="permdesc_sdcardRead">"Қолданбаға  USB жадыңыздың мазмұнын оқу мүмкіндігін береді."</string>
-    <string name="permlab_sdcardWrite">USB жадыңыздың мазмұнын өзгерту немесе жою</string>
-    <string name="permdesc_sdcardWrite">Қолданбаға USB қоймасына жазуға рұқсат береді.</string>
+    <string name="permlab_sdcardRead">Өзіңіздің SD картаңыздың мазмұнын оқу</string>
+    <string name="permdesc_sdcardRead">Қолданбаға SD картаңыздың мазмұнын оқу мүмкіндігін береді.</string>
+    <string name="permlab_sdcardWrite">SD картаңыздың мазмұнын өзгерту немесе жою</string>
+    <string name="permdesc_sdcardWrite">Қолданбаға SD картасына жазуға рұқсат береді.</string>
     <string name="permlab_use_sip">SIP қоңырауларын шалу/қабылдау</string>
     <string name="permdesc_use_sip">Қолданбаға SIP қоңырауларын шалуға және қабылдауға рұқсат етеді.</string>
     <string name="permlab_register_sim_subscription">жаңа телекоммуникациялық SIM байланыстарын тіркеу</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">Сәйкес табылмады</string>
     <string name="find_on_page">Беттен табу</string>
     <string name="action_mode_done">Дайын</string>
-    <string name="progress_erasing">USB жадын өшіруде…</string>
+    <string name="progress_erasing">SD картаны өшіруде…</string>
     <string name="share">Бөлісу</string>
     <string name="find">Табу</string>
     <string name="websearch">Веб іздеу</string>

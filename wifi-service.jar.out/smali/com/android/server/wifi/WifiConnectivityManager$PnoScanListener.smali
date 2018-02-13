@@ -40,25 +40,25 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiConnectivityManager;
 
     .prologue
-    .line 433
+    .line 450
     iput-object p1, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 434
+    .line 451
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mScanDetails:Ljava/util/List;
 
-    .line 436
+    .line 453
     const/16 v0, 0x4e20
 
-    .line 435
+    .line 452
     iput v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mLowRssiNetworkRetryDelay:I
 
-    .line 433
+    .line 450
     return-void
 .end method
 
@@ -78,12 +78,12 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 456
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mScanDetails:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 438
+    .line 455
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 450
+    .line 467
     iget v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mLowRssiNetworkRetryDelay:I
 
     return v0
@@ -103,7 +103,7 @@
     .param p2, "description"    # Ljava/lang/String;
 
     .prologue
-    .line 460
+    .line 477
     const-string/jumbo v0, "WifiConnectivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -120,10 +120,10 @@
 
     move-result-object v1
 
-    .line 462
+    .line 479
     const-string/jumbo v2, " description: "
 
-    .line 460
+    .line 477
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -138,7 +138,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 465
+    .line 482
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-get2(Lcom/android/server/wifi/WifiConnectivityManager;)I
@@ -153,18 +153,18 @@
 
     if-ge v1, v0, :cond_0
 
-    .line 466
+    .line 483
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     const/16 v1, 0x7d0
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap3(Lcom/android/server/wifi/WifiConnectivityManager;I)V
 
-    .line 459
+    .line 476
     :goto_0
     return-void
 
-    .line 468
+    .line 485
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
@@ -172,7 +172,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-set0(Lcom/android/server/wifi/WifiConnectivityManager;I)I
 
-    .line 469
+    .line 486
     const-string/jumbo v0, "WifiConnectivityManager"
 
     const-string/jumbo v1, "Failed to successfully start PNO scan for 5 times"
@@ -187,7 +187,7 @@
     .param p1, "fullScanResult"    # Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 488
+    .line 505
     return-void
 .end method
 
@@ -196,7 +196,7 @@
     .param p1, "periodInMs"    # I
 
     .prologue
-    .line 476
+    .line 493
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -213,10 +213,10 @@
 
     move-result-object v1
 
-    .line 477
+    .line 494
     const-string/jumbo v2, "ms"
 
-    .line 476
+    .line 493
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -227,7 +227,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 475
+    .line 492
     return-void
 .end method
 
@@ -240,7 +240,7 @@
 
     const/4 v3, 0x0
 
-    .line 493
+    .line 510
     iget-object v2, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -265,7 +265,7 @@
 
     invoke-static {v2, v4}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 495
+    .line 512
     array-length v4, p1
 
     move v2, v3
@@ -275,7 +275,7 @@
 
     aget-object v0, p1, v2
 
-    .line 496
+    .line 513
     .local v0, "result":Landroid/net/wifi/ScanResult;
     iget-object v5, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mScanDetails:Ljava/util/List;
 
@@ -285,12 +285,12 @@
 
     invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 495
+    .line 512
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 500
+    .line 517
     .end local v0    # "result":Landroid/net/wifi/ScanResult;
     :cond_0
     iget-object v2, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
@@ -303,27 +303,27 @@
 
     move-result v1
 
-    .line 501
+    .line 518
     .local v1, "wasConnectAttempted":Z
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->clearScanDetails()V
 
-    .line 502
+    .line 519
     iget-object v2, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v2, v3}, Lcom/android/server/wifi/WifiConnectivityManager;->-set0(Lcom/android/server/wifi/WifiConnectivityManager;I)I
 
-    .line 504
+    .line 521
     if-nez v1, :cond_2
 
-    .line 506
+    .line 523
     iget v2, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mLowRssiNetworkRetryDelay:I
 
     if-le v2, v7, :cond_1
 
-    .line 507
+    .line 524
     iput v7, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mLowRssiNetworkRetryDelay:I
 
-    .line 509
+    .line 526
     :cond_1
     iget-object v2, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
@@ -331,18 +331,18 @@
 
     invoke-static {v2, v3}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap3(Lcom/android/server/wifi/WifiConnectivityManager;I)V
 
-    .line 512
+    .line 529
     iget v2, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mLowRssiNetworkRetryDelay:I
 
     mul-int/lit8 v2, v2, 0x2
 
     iput v2, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mLowRssiNetworkRetryDelay:I
 
-    .line 492
+    .line 509
     :goto_1
     return-void
 
-    .line 514
+    .line 531
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->resetLowRssiNetworkRetryDelay()V
 
@@ -354,7 +354,7 @@
     .param p1, "results"    # [Landroid/net/wifi/WifiScanner$ScanData;
 
     .prologue
-    .line 484
+    .line 501
     return-void
 .end method
 
@@ -362,14 +362,14 @@
     .locals 2
 
     .prologue
-    .line 455
+    .line 472
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     const-string/jumbo v1, "PnoScanListener onSuccess"
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 454
+    .line 471
     return-void
 .end method
 
@@ -377,11 +377,11 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 462
     const/16 v0, 0x4e20
 
     iput v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PnoScanListener;->mLowRssiNetworkRetryDelay:I
 
-    .line 444
+    .line 461
     return-void
 .end method

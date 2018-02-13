@@ -99,41 +99,47 @@
     .prologue
     const/4 v4, 0x0
 
-    const/4 v3, 0x0
-
     .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
-    iput-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iput-object v4, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     .line 86
-    iput-object v3, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    iput-object v4, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
     .line 159
+    monitor-enter p1
+
+    .line 160
+    :try_start_0
     iget-object v0, p1, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
     if-eqz v0, :cond_1
 
-    .line 160
+    .line 161
     invoke-virtual {p1}, Landroid/os/BaseBundle;->isEmptyParcel()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 161
+    .line 162
     sget-object v0, Landroid/os/BaseBundle$NoImagePreloadHolder;->EMPTY_PARCEL:Landroid/os/Parcel;
 
     iput-object v0, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 171
     :goto_0
+    monitor-exit p1
+
+    .line 173
     iget-object v0, p1, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     if-eqz v0, :cond_2
 
-    .line 172
+    .line 174
     new-instance v0, Landroid/util/ArrayMap;
 
     iget-object v1, p1, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
@@ -142,7 +148,7 @@
 
     iput-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    .line 177
+    .line 179
     :goto_1
     iget-object v0, p1, Landroid/os/BaseBundle;->mClassLoader:Ljava/lang/ClassLoader;
 
@@ -151,15 +157,16 @@
     .line 158
     return-void
 
-    .line 163
+    .line 164
     :cond_0
+    :try_start_1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
-    .line 164
+    .line 165
     iget-object v0, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
     iget-object v1, p1, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
@@ -170,24 +177,43 @@
 
     move-result v2
 
-    invoke-virtual {v0, v1, v4, v2}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
+    const/4 v3, 0x0
 
-    .line 165
+    invoke-virtual {v0, v1, v3, v2}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
+
+    .line 166
     iget-object v0, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->setDataPosition(I)V
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 168
+    .line 159
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p1
+
+    throw v0
+
+    .line 169
     :cond_1
-    iput-object v3, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    const/4 v0, 0x0
+
+    :try_start_2
+    iput-object v0, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 
-    .line 174
+    .line 176
     :cond_2
-    iput-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iput-object v4, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     goto :goto_1
 .end method
@@ -318,10 +344,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1432
+    .line 1441
     if-gez p2, :cond_0
 
-    .line 1433
+    .line 1442
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -346,31 +372,31 @@
 
     throw v3
 
-    .line 1435
+    .line 1444
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1437
+    .line 1446
     sget-object v3, Landroid/os/BaseBundle$NoImagePreloadHolder;->EMPTY_PARCEL:Landroid/os/Parcel;
 
     iput-object v3, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
-    .line 1438
+    .line 1447
     return-void
 
-    .line 1441
+    .line 1450
     :cond_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 1442
+    .line 1451
     .local v0, "magic":I
     const v3, 0x4c444e42    # 5.146036E7f
 
     if-eq v0, v3, :cond_2
 
-    .line 1443
+    .line 1452
     new-instance v3, Ljava/lang/IllegalStateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -383,12 +409,12 @@
 
     move-result-object v4
 
-    .line 1444
+    .line 1453
     invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1443
+    .line 1452
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -401,13 +427,13 @@
 
     throw v3
 
-    .line 1448
+    .line 1457
     :cond_2
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v1
 
-    .line 1449
+    .line 1458
     .local v1, "offset":I
     invoke-static {v1, p2}, Landroid/util/MathUtils;->addOrThrow(II)I
 
@@ -415,25 +441,25 @@
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 1451
+    .line 1460
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v2
 
-    .line 1452
+    .line 1461
     .local v2, "p":Landroid/os/Parcel;
     invoke-virtual {v2, v4}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 1453
+    .line 1462
     invoke-virtual {v2, p1, v1, p2}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
 
-    .line 1456
+    .line 1465
     invoke-virtual {v2, v4}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 1458
+    .line 1467
     iput-object v2, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
-    .line 1431
+    .line 1440
     return-void
 .end method
 
@@ -455,15 +481,15 @@
     .locals 1
 
     .prologue
-    .line 329
+    .line 338
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 330
+    .line 339
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->clear()V
 
-    .line 328
+    .line 337
     return-void
 .end method
 
@@ -472,10 +498,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 341
+    .line 350
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 342
+    .line 351
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -490,10 +516,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 353
+    .line 362
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 354
+    .line 363
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -508,10 +534,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 694
+    .line 703
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 697
+    .line 706
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
@@ -527,24 +553,24 @@
     .param p2, "defaultValue"    # Z
 
     .prologue
-    .line 731
+    .line 740
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 732
+    .line 741
     iget-object v1, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 733
+    .line 742
     .local v3, "o":Ljava/lang/Object;
     if-nez v3, :cond_0
 
-    .line 734
+    .line 743
     return p2
 
-    .line 737
+    .line 746
     :cond_0
     :try_start_0
     move-object v0, v3
@@ -561,11 +587,11 @@
 
     return v1
 
-    .line 738
+    .line 747
     :catch_0
     move-exception v6
 
-    .line 739
+    .line 748
     .local v6, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v4, "Boolean"
 
@@ -579,7 +605,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 740
+    .line 749
     return p2
 .end method
 
@@ -590,24 +616,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1156
+    .line 1165
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1157
+    .line 1166
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1158
+    .line 1167
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1159
+    .line 1168
     return-object v3
 
-    .line 1162
+    .line 1171
     :cond_0
     :try_start_0
     check-cast v1, [Z
@@ -617,18 +643,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1163
+    .line 1172
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1164
+    .line 1173
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "byte[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1165
+    .line 1174
     return-object v3
 .end method
 
@@ -637,10 +663,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 752
+    .line 761
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 753
+    .line 762
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/os/BaseBundle;->getByte(Ljava/lang/String;B)Ljava/lang/Byte;
@@ -660,28 +686,28 @@
     .param p2, "defaultValue"    # B
 
     .prologue
-    .line 765
+    .line 774
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 766
+    .line 775
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 767
+    .line 776
     .local v2, "o":Ljava/lang/Object;
     if-nez v2, :cond_0
 
-    .line 768
+    .line 777
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v0
 
     return-object v0
 
-    .line 771
+    .line 780
     :cond_0
     :try_start_0
     check-cast v2, Ljava/lang/Byte;
@@ -691,12 +717,12 @@
     .end local v2    # "o":Ljava/lang/Object;
     return-object v2
 
-    .line 772
+    .line 781
     .restart local v2    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v5
 
-    .line 773
+    .line 782
     .local v5, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v3, "Byte"
 
@@ -710,7 +736,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 774
+    .line 783
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v0
@@ -725,24 +751,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1179
+    .line 1188
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1180
+    .line 1189
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1181
+    .line 1190
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1182
+    .line 1191
     return-object v3
 
-    .line 1185
+    .line 1194
     :cond_0
     :try_start_0
     check-cast v1, [B
@@ -752,18 +778,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1186
+    .line 1195
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1187
+    .line 1196
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "byte[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1188
+    .line 1197
     return-object v3
 .end method
 
@@ -772,10 +798,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 786
+    .line 795
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 787
+    .line 796
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/os/BaseBundle;->getChar(Ljava/lang/String;C)C
@@ -791,24 +817,24 @@
     .param p2, "defaultValue"    # C
 
     .prologue
-    .line 799
+    .line 808
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 800
+    .line 809
     iget-object v1, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 801
+    .line 810
     .local v3, "o":Ljava/lang/Object;
     if-nez v3, :cond_0
 
-    .line 802
+    .line 811
     return p2
 
-    .line 805
+    .line 814
     :cond_0
     :try_start_0
     move-object v0, v3
@@ -825,11 +851,11 @@
 
     return v1
 
-    .line 806
+    .line 815
     :catch_0
     move-exception v6
 
-    .line 807
+    .line 816
     .local v6, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v4, "Character"
 
@@ -843,7 +869,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 808
+    .line 817
     return p2
 .end method
 
@@ -854,24 +880,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1225
+    .line 1234
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1226
+    .line 1235
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1227
+    .line 1236
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1228
+    .line 1237
     return-object v3
 
-    .line 1231
+    .line 1240
     :cond_0
     :try_start_0
     check-cast v1, [C
@@ -881,18 +907,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1232
+    .line 1241
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1233
+    .line 1242
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "char[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1234
+    .line 1243
     return-object v3
 .end method
 
@@ -901,17 +927,17 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 1028
+    .line 1037
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1029
+    .line 1038
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1031
+    .line 1040
     .local v1, "o":Ljava/lang/Object;
     :try_start_0
     check-cast v1, Ljava/lang/CharSequence;
@@ -921,18 +947,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1032
+    .line 1041
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1033
+    .line 1042
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "CharSequence"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1034
+    .line 1043
     const/4 v2, 0x0
 
     return-object v2
@@ -944,12 +970,12 @@
     .param p2, "defaultValue"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 1050
+    .line 1059
     invoke-virtual {p0, p1}, Landroid/os/BaseBundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 1051
+    .line 1060
     .local v0, "cs":Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
@@ -971,24 +997,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1363
+    .line 1372
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1364
+    .line 1373
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1365
+    .line 1374
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1366
+    .line 1375
     return-object v3
 
-    .line 1369
+    .line 1378
     :cond_0
     :try_start_0
     check-cast v1, [Ljava/lang/CharSequence;
@@ -998,18 +1024,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1370
+    .line 1379
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1371
+    .line 1380
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "CharSequence[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1372
+    .line 1381
     return-object v3
 .end method
 
@@ -1031,24 +1057,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1133
+    .line 1142
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1134
+    .line 1143
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1135
+    .line 1144
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1136
+    .line 1145
     return-object v3
 
-    .line 1139
+    .line 1148
     :cond_0
     :try_start_0
     check-cast v1, Ljava/util/ArrayList;
@@ -1058,18 +1084,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1140
+    .line 1149
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1141
+    .line 1150
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "ArrayList<CharSequence>"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1142
+    .line 1151
     return-object v3
 .end method
 
@@ -1077,7 +1103,7 @@
     .locals 1
 
     .prologue
-    .line 221
+    .line 223
     iget-object v0, p0, Landroid/os/BaseBundle;->mClassLoader:Ljava/lang/ClassLoader;
 
     return-object v0
@@ -1088,10 +1114,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 956
+    .line 965
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 957
+    .line 966
     const-wide/16 v0, 0x0
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/BaseBundle;->getDouble(Ljava/lang/String;D)D
@@ -1107,24 +1133,24 @@
     .param p2, "defaultValue"    # D
 
     .prologue
-    .line 969
+    .line 978
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 970
+    .line 979
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 971
+    .line 980
     .local v4, "o":Ljava/lang/Object;
     if-nez v4, :cond_0
 
-    .line 972
+    .line 981
     return-wide p2
 
-    .line 975
+    .line 984
     :cond_0
     :try_start_0
     move-object v0, v4
@@ -1141,11 +1167,11 @@
 
     return-wide v2
 
-    .line 976
+    .line 985
     :catch_0
     move-exception v7
 
-    .line 977
+    .line 986
     .local v7, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v5, "Double"
 
@@ -1159,7 +1185,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 978
+    .line 987
     return-wide p2
 .end method
 
@@ -1170,24 +1196,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1317
+    .line 1326
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1318
+    .line 1327
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1319
+    .line 1328
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1320
+    .line 1329
     return-object v3
 
-    .line 1323
+    .line 1332
     :cond_0
     :try_start_0
     check-cast v1, [D
@@ -1197,18 +1223,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1324
+    .line 1333
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1325
+    .line 1334
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "double[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1326
+    .line 1335
     return-object v3
 .end method
 
@@ -1217,10 +1243,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 922
+    .line 931
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 923
+    .line 932
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/os/BaseBundle;->getFloat(Ljava/lang/String;F)F
@@ -1236,24 +1262,24 @@
     .param p2, "defaultValue"    # F
 
     .prologue
-    .line 935
+    .line 944
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 936
+    .line 945
     iget-object v1, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 937
+    .line 946
     .local v3, "o":Ljava/lang/Object;
     if-nez v3, :cond_0
 
-    .line 938
+    .line 947
     return p2
 
-    .line 941
+    .line 950
     :cond_0
     :try_start_0
     move-object v0, v3
@@ -1270,11 +1296,11 @@
 
     return v1
 
-    .line 942
+    .line 951
     :catch_0
     move-exception v6
 
-    .line 943
+    .line 952
     .local v6, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v4, "Float"
 
@@ -1288,7 +1314,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 944
+    .line 953
     return p2
 .end method
 
@@ -1299,24 +1325,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1294
+    .line 1303
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1295
+    .line 1304
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1296
+    .line 1305
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1297
+    .line 1306
     return-object v3
 
-    .line 1300
+    .line 1309
     :cond_0
     :try_start_0
     check-cast v1, [F
@@ -1326,18 +1352,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1301
+    .line 1310
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1302
+    .line 1311
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "float[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1303
+    .line 1312
     return-object v3
 .end method
 
@@ -1346,10 +1372,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 854
+    .line 863
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 855
+    .line 864
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/os/BaseBundle;->getInt(Ljava/lang/String;I)I
@@ -1365,24 +1391,24 @@
     .param p2, "defaultValue"    # I
 
     .prologue
-    .line 867
+    .line 876
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 868
+    .line 877
     iget-object v1, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 869
+    .line 878
     .local v3, "o":Ljava/lang/Object;
     if-nez v3, :cond_0
 
-    .line 870
+    .line 879
     return p2
 
-    .line 873
+    .line 882
     :cond_0
     :try_start_0
     move-object v0, v3
@@ -1399,11 +1425,11 @@
 
     return v1
 
-    .line 874
+    .line 883
     :catch_0
     move-exception v6
 
-    .line 875
+    .line 884
     .local v6, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v4, "Integer"
 
@@ -1417,7 +1443,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 876
+    .line 885
     return p2
 .end method
 
@@ -1428,24 +1454,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1248
+    .line 1257
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1249
+    .line 1258
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1250
+    .line 1259
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1251
+    .line 1260
     return-object v3
 
-    .line 1254
+    .line 1263
     :cond_0
     :try_start_0
     check-cast v1, [I
@@ -1455,18 +1481,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1255
+    .line 1264
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1256
+    .line 1265
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "int[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1257
+    .line 1266
     return-object v3
 .end method
 
@@ -1488,24 +1514,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1087
+    .line 1096
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1088
+    .line 1097
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1089
+    .line 1098
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1090
+    .line 1099
     return-object v3
 
-    .line 1093
+    .line 1102
     :cond_0
     :try_start_0
     check-cast v1, Ljava/util/ArrayList;
@@ -1515,18 +1541,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1094
+    .line 1103
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1095
+    .line 1104
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "ArrayList<Integer>"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1096
+    .line 1105
     return-object v3
 .end method
 
@@ -1535,10 +1561,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 888
+    .line 897
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 889
+    .line 898
     const-wide/16 v0, 0x0
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;J)J
@@ -1554,24 +1580,24 @@
     .param p2, "defaultValue"    # J
 
     .prologue
-    .line 901
+    .line 910
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 902
+    .line 911
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 903
+    .line 912
     .local v4, "o":Ljava/lang/Object;
     if-nez v4, :cond_0
 
-    .line 904
+    .line 913
     return-wide p2
 
-    .line 907
+    .line 916
     :cond_0
     :try_start_0
     move-object v0, v4
@@ -1588,11 +1614,11 @@
 
     return-wide v2
 
-    .line 908
+    .line 917
     :catch_0
     move-exception v7
 
-    .line 909
+    .line 918
     .local v7, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v5, "Long"
 
@@ -1606,7 +1632,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 910
+    .line 919
     return-wide p2
 .end method
 
@@ -1617,24 +1643,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1271
+    .line 1280
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1272
+    .line 1281
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1273
+    .line 1282
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1274
+    .line 1283
     return-object v3
 
-    .line 1277
+    .line 1286
     :cond_0
     :try_start_0
     check-cast v1, [J
@@ -1644,18 +1670,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1278
+    .line 1287
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1279
+    .line 1288
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "long[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1280
+    .line 1289
     return-object v3
 .end method
 
@@ -1673,10 +1699,10 @@
     .end annotation
 
     .prologue
-    .line 303
+    .line 312
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 304
+    .line 313
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     return-object v0
@@ -1690,37 +1716,37 @@
 
     const/4 v5, 0x0
 
-    .line 190
+    .line 192
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 191
+    .line 193
     iget-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v3}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
 
-    .line 192
+    .line 194
     .local v2, "size":I
     const/4 v3, 0x1
 
     if-le v2, v3, :cond_0
 
-    .line 193
+    .line 195
     const-string/jumbo v3, "Bundle"
 
     const-string/jumbo v4, "getPairValue() used on Bundle with multiple pairs."
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 197
     :cond_0
     if-nez v2, :cond_1
 
-    .line 196
+    .line 198
     return-object v6
 
-    .line 198
+    .line 200
     :cond_1
     iget-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
@@ -1728,7 +1754,7 @@
 
     move-result-object v1
 
-    .line 200
+    .line 202
     .local v1, "o":Ljava/lang/Object;
     :try_start_0
     check-cast v1, Ljava/lang/String;
@@ -1738,12 +1764,12 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 201
+    .line 203
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 202
+    .line 204
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v3, "getPairValue()"
 
@@ -1751,7 +1777,7 @@
 
     invoke-virtual {p0, v3, v1, v4, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 203
+    .line 205
     return-object v6
 .end method
 
@@ -1762,24 +1788,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1064
+    .line 1073
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1065
+    .line 1074
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1066
+    .line 1075
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1067
+    .line 1076
     return-object v3
 
-    .line 1070
+    .line 1079
     :cond_0
     :try_start_0
     check-cast v1, Ljava/io/Serializable;
@@ -1789,18 +1815,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1071
+    .line 1080
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1072
+    .line 1081
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "Serializable"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1073
+    .line 1082
     return-object v3
 .end method
 
@@ -1809,10 +1835,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 820
+    .line 829
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 821
+    .line 830
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/os/BaseBundle;->getShort(Ljava/lang/String;S)S
@@ -1828,24 +1854,24 @@
     .param p2, "defaultValue"    # S
 
     .prologue
-    .line 833
+    .line 842
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 834
+    .line 843
     iget-object v1, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 835
+    .line 844
     .local v3, "o":Ljava/lang/Object;
     if-nez v3, :cond_0
 
-    .line 836
+    .line 845
     return p2
 
-    .line 839
+    .line 848
     :cond_0
     :try_start_0
     move-object v0, v3
@@ -1862,11 +1888,11 @@
 
     return v1
 
-    .line 840
+    .line 849
     :catch_0
     move-exception v6
 
-    .line 841
+    .line 850
     .local v6, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v4, "Short"
 
@@ -1880,7 +1906,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 842
+    .line 851
     return p2
 .end method
 
@@ -1891,24 +1917,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1202
+    .line 1211
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1203
+    .line 1212
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1204
+    .line 1213
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1205
+    .line 1214
     return-object v3
 
-    .line 1208
+    .line 1217
     :cond_0
     :try_start_0
     check-cast v1, [S
@@ -1918,18 +1944,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1209
+    .line 1218
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1210
+    .line 1219
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "short[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1211
+    .line 1220
     return-object v3
 .end method
 
@@ -1938,17 +1964,17 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 992
+    .line 1001
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 993
+    .line 1002
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 995
+    .line 1004
     .local v1, "o":Ljava/lang/Object;
     :try_start_0
     check-cast v1, Ljava/lang/String;
@@ -1958,18 +1984,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 996
+    .line 1005
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 997
+    .line 1006
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "String"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 998
+    .line 1007
     const/4 v2, 0x0
 
     return-object v2
@@ -1981,12 +2007,12 @@
     .param p2, "defaultValue"    # Ljava/lang/String;
 
     .prologue
-    .line 1014
+    .line 1023
     invoke-virtual {p0, p1}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1015
+    .line 1024
     .local v0, "s":Ljava/lang/String;
     if-nez v0, :cond_0
 
@@ -2008,24 +2034,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1340
+    .line 1349
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1341
+    .line 1350
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1342
+    .line 1351
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1343
+    .line 1352
     return-object v3
 
-    .line 1346
+    .line 1355
     :cond_0
     :try_start_0
     check-cast v1, [Ljava/lang/String;
@@ -2035,18 +2061,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1347
+    .line 1356
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1348
+    .line 1357
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "String[]"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1349
+    .line 1358
     return-object v3
 .end method
 
@@ -2068,24 +2094,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1110
+    .line 1119
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 1111
+    .line 1120
     iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1112
+    .line 1121
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 1113
+    .line 1122
     return-object v3
 
-    .line 1116
+    .line 1125
     :cond_0
     :try_start_0
     check-cast v1, Ljava/util/ArrayList;
@@ -2095,18 +2121,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 1117
+    .line 1126
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1118
+    .line 1127
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "ArrayList<String>"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 1119
+    .line 1128
     return-object v3
 .end method
 
@@ -2114,10 +2140,10 @@
     .locals 1
 
     .prologue
-    .line 321
+    .line 330
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 322
+    .line 331
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->isEmpty()Z
@@ -2131,7 +2157,7 @@
     .locals 2
 
     .prologue
-    .line 298
+    .line 307
     iget-object v0, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
     sget-object v1, Landroid/os/BaseBundle$NoImagePreloadHolder;->EMPTY_PARCEL:Landroid/os/Parcel;
@@ -2153,7 +2179,7 @@
     .locals 1
 
     .prologue
-    .line 291
+    .line 300
     iget-object v0, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
 
     if-eqz v0, :cond_0
@@ -2182,10 +2208,10 @@
     .end annotation
 
     .prologue
-    .line 394
+    .line 403
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 395
+    .line 404
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
@@ -2200,20 +2226,20 @@
     .param p1, "bundle"    # Landroid/os/PersistableBundle;
 
     .prologue
-    .line 373
+    .line 382
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 374
+    .line 383
     invoke-virtual {p1}, Landroid/os/PersistableBundle;->unparcel()V
 
-    .line 375
+    .line 384
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     iget-object v1, p1, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, v1}, Landroid/util/ArrayMap;->putAll(Landroid/util/ArrayMap;)V
 
-    .line 372
+    .line 381
     return-void
 .end method
 
@@ -2222,15 +2248,15 @@
     .param p1, "map"    # Landroid/util/ArrayMap;
 
     .prologue
-    .line 384
+    .line 393
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 385
+    .line 394
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->putAll(Landroid/util/ArrayMap;)V
 
-    .line 383
+    .line 392
     return-void
 .end method
 
@@ -2240,10 +2266,10 @@
     .param p2, "value"    # Z
 
     .prologue
-    .line 406
+    .line 415
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 407
+    .line 416
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -2252,7 +2278,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 405
+    .line 414
     return-void
 .end method
 
@@ -2262,15 +2288,15 @@
     .param p2, "value"    # [Z
 
     .prologue
-    .line 574
+    .line 583
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 575
+    .line 584
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 573
+    .line 582
     return-void
 .end method
 
@@ -2280,10 +2306,10 @@
     .param p2, "value"    # B
 
     .prologue
-    .line 418
+    .line 427
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 419
+    .line 428
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
@@ -2292,7 +2318,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 417
+    .line 426
     return-void
 .end method
 
@@ -2302,15 +2328,15 @@
     .param p2, "value"    # [B
 
     .prologue
-    .line 586
+    .line 595
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 587
+    .line 596
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 585
+    .line 594
     return-void
 .end method
 
@@ -2320,10 +2346,10 @@
     .param p2, "value"    # C
 
     .prologue
-    .line 430
+    .line 439
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 431
+    .line 440
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
@@ -2332,7 +2358,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 429
+    .line 438
     return-void
 .end method
 
@@ -2342,15 +2368,15 @@
     .param p2, "value"    # [C
 
     .prologue
-    .line 610
+    .line 619
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 611
+    .line 620
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 609
+    .line 618
     return-void
 .end method
 
@@ -2360,15 +2386,15 @@
     .param p2, "value"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 514
+    .line 523
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 515
+    .line 524
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 513
+    .line 522
     return-void
 .end method
 
@@ -2378,15 +2404,15 @@
     .param p2, "value"    # [Ljava/lang/CharSequence;
 
     .prologue
-    .line 682
+    .line 691
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 683
+    .line 692
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 681
+    .line 690
     return-void
 .end method
 
@@ -2405,16 +2431,16 @@
     .end annotation
 
     .prologue
-    .line 550
+    .line 559
     .local p2, "value":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 551
+    .line 560
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 549
+    .line 558
     return-void
 .end method
 
@@ -2424,10 +2450,10 @@
     .param p2, "value"    # D
 
     .prologue
-    .line 490
+    .line 499
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 491
+    .line 500
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
@@ -2436,7 +2462,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 489
+    .line 498
     return-void
 .end method
 
@@ -2446,15 +2472,15 @@
     .param p2, "value"    # [D
 
     .prologue
-    .line 658
+    .line 667
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 659
+    .line 668
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 657
+    .line 666
     return-void
 .end method
 
@@ -2464,10 +2490,10 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 478
+    .line 487
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 479
+    .line 488
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -2476,7 +2502,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 477
+    .line 486
     return-void
 .end method
 
@@ -2486,15 +2512,15 @@
     .param p2, "value"    # [F
 
     .prologue
-    .line 646
+    .line 655
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 647
+    .line 656
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 645
+    .line 654
     return-void
 .end method
 
@@ -2504,10 +2530,10 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 454
+    .line 463
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 455
+    .line 464
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2516,7 +2542,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 453
+    .line 462
     return-void
 .end method
 
@@ -2526,15 +2552,15 @@
     .param p2, "value"    # [I
 
     .prologue
-    .line 622
+    .line 631
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 623
+    .line 632
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 621
+    .line 630
     return-void
 .end method
 
@@ -2553,16 +2579,16 @@
     .end annotation
 
     .prologue
-    .line 526
+    .line 535
     .local p2, "value":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 527
+    .line 536
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 525
+    .line 534
     return-void
 .end method
 
@@ -2572,10 +2598,10 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 466
+    .line 475
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 467
+    .line 476
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2584,7 +2610,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 465
+    .line 474
     return-void
 .end method
 
@@ -2594,15 +2620,15 @@
     .param p2, "value"    # [J
 
     .prologue
-    .line 634
+    .line 643
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 635
+    .line 644
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 633
+    .line 642
     return-void
 .end method
 
@@ -2612,15 +2638,15 @@
     .param p2, "value"    # Ljava/io/Serializable;
 
     .prologue
-    .line 562
+    .line 571
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 563
+    .line 572
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 561
+    .line 570
     return-void
 .end method
 
@@ -2630,10 +2656,10 @@
     .param p2, "value"    # S
 
     .prologue
-    .line 442
+    .line 451
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 443
+    .line 452
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {p2}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
@@ -2642,7 +2668,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 441
+    .line 450
     return-void
 .end method
 
@@ -2652,15 +2678,15 @@
     .param p2, "value"    # [S
 
     .prologue
-    .line 598
+    .line 607
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 599
+    .line 608
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 597
+    .line 606
     return-void
 .end method
 
@@ -2670,15 +2696,15 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 502
+    .line 511
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 503
+    .line 512
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 501
+    .line 510
     return-void
 .end method
 
@@ -2688,15 +2714,15 @@
     .param p2, "value"    # [Ljava/lang/String;
 
     .prologue
-    .line 670
+    .line 679
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 671
+    .line 680
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 669
+    .line 678
     return-void
 .end method
 
@@ -2715,16 +2741,16 @@
     .end annotation
 
     .prologue
-    .line 538
+    .line 547
     .local p2, "value":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 539
+    .line 548
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 537
+    .line 546
     return-void
 .end method
 
@@ -2733,16 +2759,16 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1427
+    .line 1436
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 1428
+    .line 1437
     .local v0, "length":I
     invoke-direct {p0, p1, v0}, Landroid/os/BaseBundle;->readFromParcelInner(Landroid/os/Parcel;I)V
 
-    .line 1424
+    .line 1433
     return-void
 .end method
 
@@ -2751,15 +2777,15 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 363
+    .line 372
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 364
+    .line 373
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 362
+    .line 371
     return-void
 .end method
 
@@ -2768,10 +2794,10 @@
     .param p1, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
-    .line 214
+    .line 216
     iput-object p1, p0, Landroid/os/BaseBundle;->mClassLoader:Ljava/lang/ClassLoader;
 
-    .line 213
+    .line 215
     return-void
 .end method
 
@@ -2779,10 +2805,10 @@
     .locals 1
 
     .prologue
-    .line 313
+    .line 322
     invoke-virtual {p0}, Landroid/os/BaseBundle;->unparcel()V
 
-    .line 314
+    .line 323
     iget-object v0, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
@@ -2800,7 +2826,7 @@
     .param p4, "e"    # Ljava/lang/ClassCastException;
 
     .prologue
-    .line 719
+    .line 728
     const-string/jumbo v4, "<null>"
 
     move-object v0, p0
@@ -2815,7 +2841,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/os/BaseBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/ClassCastException;)V
 
-    .line 718
+    .line 727
     return-void
 .end method
 
@@ -2828,34 +2854,34 @@
     .param p5, "e"    # Ljava/lang/ClassCastException;
 
     .prologue
-    .line 703
+    .line 712
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 704
+    .line 713
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "Key "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 705
+    .line 714
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 706
+    .line 715
     const-string/jumbo v1, " expected "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 707
+    .line 716
     invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 708
+    .line 717
     const-string/jumbo v1, " but value was a "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 709
+    .line 718
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -2866,20 +2892,20 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 710
+    .line 719
     const-string/jumbo v1, ".  The default value "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 711
+    .line 720
     invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 712
+    .line 721
     const-string/jumbo v1, " was returned."
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 713
+    .line 722
     const-string/jumbo v1, "Bundle"
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -2888,38 +2914,38 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 714
+    .line 723
     const-string/jumbo v1, "Bundle"
 
     const-string/jumbo v2, "Attempt to cast generated internal exception:"
 
     invoke-static {v1, v2, p5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 702
+    .line 711
     return-void
 .end method
 
 .method declared-synchronized unparcel()V
-    .locals 6
+    .locals 7
 
     .prologue
     monitor-enter p0
 
-    .line 229
+    .line 231
     :try_start_0
     monitor-enter p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 230
+    .line 232
     :try_start_1
-    iget-object v3, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    iget-object v4, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 231
-    .local v3, "parcelledData":Landroid/os/Parcel;
-    if-nez v3, :cond_0
+    .line 233
+    .local v4, "parcelledData":Landroid/os/Parcel;
+    if-nez v4, :cond_0
 
     :try_start_2
     monitor-exit p0
@@ -2928,37 +2954,37 @@
 
     monitor-exit p0
 
-    .line 235
+    .line 237
     return-void
 
-    .line 243
+    .line 245
     :cond_0
     :try_start_3
     invoke-virtual {p0}, Landroid/os/BaseBundle;->isEmptyParcel()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
 
-    .line 246
-    iget-object v4, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    .line 248
+    iget-object v5, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    if-nez v4, :cond_1
+    if-nez v5, :cond_1
 
-    .line 247
-    new-instance v4, Landroid/util/ArrayMap;
+    .line 249
+    new-instance v5, Landroid/util/ArrayMap;
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    invoke-direct {v4, v5}, Landroid/util/ArrayMap;-><init>(I)V
+    invoke-direct {v5, v6}, Landroid/util/ArrayMap;-><init>(I)V
 
-    iput-object v4, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iput-object v5, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    .line 251
+    .line 253
     :goto_0
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    iput-object v4, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    iput-object v5, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -2969,50 +2995,50 @@
 
     monitor-exit p0
 
-    .line 252
+    .line 254
     return-void
 
-    .line 249
+    .line 251
     :cond_1
     :try_start_5
-    iget-object v4, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iget-object v5, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v4}, Landroid/util/ArrayMap;->erase()V
+    invoke-virtual {v5}, Landroid/util/ArrayMap;->erase()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     goto :goto_0
 
-    .line 229
-    .end local v3    # "parcelledData":Landroid/os/Parcel;
+    .line 231
+    .end local v4    # "parcelledData":Landroid/os/Parcel;
     :catchall_0
-    move-exception v4
+    move-exception v5
 
     :try_start_6
     monitor-exit p0
 
-    throw v4
+    throw v5
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     :catchall_1
-    move-exception v4
+    move-exception v5
 
     monitor-exit p0
 
-    throw v4
+    throw v5
 
-    .line 255
-    .restart local v3    # "parcelledData":Landroid/os/Parcel;
+    .line 257
+    .restart local v4    # "parcelledData":Landroid/os/Parcel;
     :cond_2
     :try_start_7
-    invoke-virtual {v3}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {v4}, Landroid/os/Parcel;->readInt()I
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     move-result v0
 
-    .line 258
+    .line 260
     .local v0, "N":I
     if-gez v0, :cond_3
 
@@ -3023,48 +3049,49 @@
 
     monitor-exit p0
 
-    .line 259
+    .line 261
     return-void
 
-    .line 261
+    .line 263
     :cond_3
     :try_start_9
-    iget-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iget-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    .line 262
-    .local v2, "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    if-nez v2, :cond_4
+    .line 264
+    .local v3, "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    if-nez v3, :cond_4
 
-    .line 263
-    new-instance v2, Landroid/util/ArrayMap;
+    .line 265
+    new-instance v3, Landroid/util/ArrayMap;
 
-    .end local v2    # "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    invoke-direct {v2, v0}, Landroid/util/ArrayMap;-><init>(I)V
+    .end local v3    # "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    invoke-direct {v3, v0}, Landroid/util/ArrayMap;-><init>(I)V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 269
-    .restart local v2    # "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    .line 271
+    .restart local v3    # "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
     :goto_1
     :try_start_a
-    iget-object v4, p0, Landroid/os/BaseBundle;->mClassLoader:Ljava/lang/ClassLoader;
+    iget-object v5, p0, Landroid/os/BaseBundle;->mClassLoader:Ljava/lang/ClassLoader;
 
-    invoke-virtual {v3, v2, v0, v4}, Landroid/os/Parcel;->readArrayMapInternal(Landroid/util/ArrayMap;ILjava/lang/ClassLoader;)V
+    invoke-virtual {v4, v3, v0, v5}, Landroid/os/Parcel;->readArrayMapInternal(Landroid/util/ArrayMap;ILjava/lang/ClassLoader;)V
     :try_end_a
-    .catch Landroid/os/BadParcelableException; {:try_start_a .. :try_end_a} :catch_0
+    .catch Landroid/os/BadParcelableException; {:try_start_a .. :try_end_a} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_a .. :try_end_a} :catch_0
     .catchall {:try_start_a .. :try_end_a} :catchall_2
 
-    .line 278
+    .line 287
     :try_start_b
-    iput-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iput-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    .line 279
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+    .line 288
+    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
 
-    .line 280
-    const/4 v4, 0x0
+    .line 289
+    const/4 v5, 0x0
 
-    iput-object v4, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    iput-object v5, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_0
 
@@ -3076,88 +3103,142 @@
 
     monitor-exit p0
 
-    .line 228
+    .line 230
     return-void
 
-    .line 265
+    .line 267
     :cond_4
     :try_start_d
-    invoke-virtual {v2}, Landroid/util/ArrayMap;->erase()V
+    invoke-virtual {v3}, Landroid/util/ArrayMap;->erase()V
 
-    .line 266
-    invoke-virtual {v2, v0}, Landroid/util/ArrayMap;->ensureCapacity(I)V
+    .line 268
+    invoke-virtual {v3, v0}, Landroid/util/ArrayMap;->ensureCapacity(I)V
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_0
 
     goto :goto_1
 
-    .line 270
+    .line 279
     :catch_0
-    move-exception v1
+    move-exception v2
 
-    .line 271
-    .local v1, "e":Landroid/os/BadParcelableException;
+    .line 280
+    .local v2, "e":Ljava/lang/RuntimeException;
     :try_start_e
-    sget-boolean v4, Landroid/os/BaseBundle;->sShouldDefuse:Z
+    sget-boolean v5, Landroid/os/BaseBundle;->sShouldDefuse:Z
 
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_5
 
-    .line 272
-    const-string/jumbo v4, "Bundle"
+    invoke-virtual {v2}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
 
-    const-string/jumbo v5, "Failed to parse Bundle, but defusing quietly"
+    move-result-object v5
 
-    invoke-static {v4, v5, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    instance-of v5, v5, Ljava/lang/ClassNotFoundException;
 
-    .line 273
-    invoke-virtual {v2}, Landroid/util/ArrayMap;->erase()V
+    if-eqz v5, :cond_5
+
+    .line 281
+    const-string/jumbo v5, "Bundle"
+
+    const-string/jumbo v6, "Failed to parse Bundle, but defusing quietly"
+
+    invoke-static {v5, v6, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 282
+    invoke-virtual {v3}, Landroid/util/ArrayMap;->erase()V
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_2
 
-    .line 278
+    .line 287
     :try_start_f
-    iput-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iput-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    .line 279
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+    .line 288
+    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
 
-    .line 280
-    const/4 v4, 0x0
+    .line 289
+    const/4 v5, 0x0
 
-    iput-object v4, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    iput-object v5, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_0
 
     goto :goto_2
 
-    .line 275
+    .line 284
     :cond_5
     :try_start_10
-    throw v1
+    throw v2
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_2
 
-    .line 277
-    .end local v1    # "e":Landroid/os/BadParcelableException;
+    .line 286
+    .end local v2    # "e":Ljava/lang/RuntimeException;
     :catchall_2
-    move-exception v4
+    move-exception v5
 
-    .line 278
+    .line 287
     :try_start_11
-    iput-object v2, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+    iput-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
-    .line 279
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+    .line 288
+    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
 
-    .line 280
+    .line 289
+    const/4 v6, 0x0
+
+    iput-object v6, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+
+    .line 286
+    throw v5
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_0
+
+    .line 272
+    :catch_1
+    move-exception v1
+
+    .line 273
+    .local v1, "e":Landroid/os/BadParcelableException;
+    :try_start_12
+    sget-boolean v5, Landroid/os/BaseBundle;->sShouldDefuse:Z
+
+    if-eqz v5, :cond_6
+
+    .line 274
+    const-string/jumbo v5, "Bundle"
+
+    const-string/jumbo v6, "Failed to parse Bundle, but defusing quietly"
+
+    invoke-static {v5, v6, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 275
+    invoke-virtual {v3}, Landroid/util/ArrayMap;->erase()V
+    :try_end_12
+    .catchall {:try_start_12 .. :try_end_12} :catchall_2
+
+    .line 287
+    :try_start_13
+    iput-object v3, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
+
+    .line 288
+    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
+
+    .line 289
     const/4 v5, 0x0
 
     iput-object v5, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_0
+
+    goto :goto_2
 
     .line 277
-    throw v4
-    :try_end_11
-    .catchall {:try_start_11 .. :try_end_11} :catchall_0
+    :cond_6
+    :try_start_14
+    throw v1
+    :try_end_14
+    .catchall {:try_start_14 .. :try_end_14} :catchall_2
 .end method
 
 .method writeToParcelInner(Landroid/os/Parcel;I)V
@@ -3170,10 +3251,10 @@
 
     const/4 v6, 0x0
 
-    .line 1385
+    .line 1394
     monitor-enter p0
 
-    .line 1386
+    .line 1395
     :try_start_0
     iget-object v3, p0, Landroid/os/BaseBundle;->mParcelledData:Landroid/os/Parcel;
     :try_end_0
@@ -3182,24 +3263,24 @@
     .local v3, "parcelledData":Landroid/os/Parcel;
     monitor-exit p0
 
-    .line 1388
+    .line 1397
     if-eqz v3, :cond_1
 
-    .line 1389
+    .line 1398
     invoke-virtual {p0}, Landroid/os/BaseBundle;->isEmptyParcel()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 1390
+    .line 1399
     invoke-virtual {p1, v6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1381
+    .line 1390
     :goto_0
     return-void
 
-    .line 1385
+    .line 1394
     .end local v3    # "parcelledData":Landroid/os/Parcel;
     :catchall_0
     move-exception v5
@@ -3208,26 +3289,26 @@
 
     throw v5
 
-    .line 1392
+    .line 1401
     .restart local v3    # "parcelledData":Landroid/os/Parcel;
     :cond_0
     invoke-virtual {v3}, Landroid/os/Parcel;->dataSize()I
 
     move-result v1
 
-    .line 1393
+    .line 1402
     .local v1, "length":I
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1394
+    .line 1403
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1395
+    .line 1404
     invoke-virtual {p1, v3, v6, v1}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
 
     goto :goto_0
 
-    .line 1399
+    .line 1408
     .end local v1    # "length":I
     :cond_1
     iget-object v5, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
@@ -3242,56 +3323,56 @@
 
     if-gtz v5, :cond_3
 
-    .line 1400
+    .line 1409
     :cond_2
     invoke-virtual {p1, v6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1401
+    .line 1410
     return-void
 
-    .line 1403
+    .line 1412
     :cond_3
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v2
 
-    .line 1404
+    .line 1413
     .local v2, "lengthPos":I
     const/4 v5, -0x1
 
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1405
+    .line 1414
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1407
+    .line 1416
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v4
 
-    .line 1408
+    .line 1417
     .local v4, "startPos":I
     iget-object v5, p0, Landroid/os/BaseBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->writeArrayMapInternal(Landroid/util/ArrayMap;)V
 
-    .line 1409
+    .line 1418
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
-    .line 1412
+    .line 1421
     .local v0, "endPos":I
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 1413
+    .line 1422
     sub-int v1, v0, v4
 
-    .line 1414
+    .line 1423
     .restart local v1    # "length":I
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1415
+    .line 1424
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
     goto :goto_0

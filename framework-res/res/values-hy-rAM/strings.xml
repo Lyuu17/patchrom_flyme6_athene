@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Թույլ է տալիս հավելվածին փոփոխել համաժամեցման կարգավորումները հաշվի համար: Օրինակ, այն կարող է օգտագործվել` միացնելու Մարդիկ հավելվածի համաժամեցումը հաշվի հետ:</string>
     <string name="permlab_readSyncStats">կարդալ համաժամեցման վիճակագրությունը</string>
     <string name="permdesc_readSyncStats">Թույլ է տալիս հավելվածին կարդալ հաշվի համաժամեցման վիճակագրությունը, այդ թվում` համաժամեցման իրադարձությունների պատմությունը և թե որքան տվյալ է համաժամեցված:</string>
-    <string name="permlab_sdcardRead">կարդալ ձեր USB կրիչի պարունակությունը</string>
-    <string name="permdesc_sdcardRead">Հավելվածին թույլ է տալիս կարդալ ձեր USB կրիչի պարունակությունը:</string>
-    <string name="permlab_sdcardWrite">փոփոխել կամ ջնջել ձեր USB կրիչի բովանդակությունը</string>
-    <string name="permdesc_sdcardWrite">Թույլ է տալիս հավելվածին գրել USB կրիչի վրա:</string>
+    <string name="permlab_sdcardRead">կարդալ ձեր SD քարտի պարունակությունը</string>
+    <string name="permdesc_sdcardRead">Հավելվածին թույլ է տալիս կարդալ ձեր SD քարտի պարունակությունը:</string>
+    <string name="permlab_sdcardWrite">փոփոխել կամ ջնջել ձեր SD քարտի բովանդակությունը</string>
+    <string name="permdesc_sdcardWrite">Թույլ է տալիս հավելվածին գրել SD քարտի վրա:</string>
     <string name="permlab_use_sip">կատարել կամ ստանալ SIP զանգեր</string>
     <string name="permdesc_use_sip">Ծրագրին թույլ է տալիս կատարել և ստանալ SIP զանգեր:</string>
     <string name="permlab_register_sim_subscription">գրանցել նոր հեռահաղորդակցության SIM կապեր</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">Համընկնում չկա</string>
     <string name="find_on_page">Գտեք էջում</string>
     <string name="action_mode_done">Պատրաստ է</string>
-    <string name="progress_erasing">Ջնջում է USB կրիչը...</string>
+    <string name="progress_erasing">Ջնջում է SD քարտը...</string>
     <string name="share">Կիսվել</string>
     <string name="find">Գտնել</string>
     <string name="websearch">Վեբի որոնում</string>

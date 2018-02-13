@@ -67,41 +67,34 @@
 
     iput-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
-    .line 104
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 105
-    const v2, 0x105001b
+    const v2, #android:dimen@toast_y_offset#t
 
-    .line 104
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/Toast$TN;->mY:I
 
-    .line 106
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 107
-    const v2, 0x10e00a0
+    const v2, #android:integer@config_toastDefaultGravity#t
 
-    .line 106
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/Toast$TN;->mGravity:I
 
-    .line 101
     return-void
 .end method
 
@@ -192,7 +185,7 @@
 
     .line 260
     .local v0, "inflate":Landroid/view/LayoutInflater;
-    const v4, 0x1090100
+    const v4, #android:layout@transient_notification#t
 
     const/4 v5, 0x0
 
@@ -202,7 +195,7 @@
 
     .line 261
     .local v3, "v":Landroid/view/View;
-    const v4, 0x102000b
+    const v4, #android:id@message#t
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -437,7 +430,7 @@
     :cond_0
     iget-object v1, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
-    const v2, 0x102000b
+    const v2, #android:id@message#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -510,11 +503,9 @@
 
     move-result-object v1
 
-    .line 120
     .local v1, "pkg":Ljava/lang/String;
     iget-object v3, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
-    .line 121
     .local v3, "tn":Landroid/widget/Toast$TN;
     iget-object v4, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
@@ -530,7 +521,6 @@
 
     :cond_flyme_0
 
-    .line 124
     :try_start_0
     iget v4, p0, Landroid/widget/Toast;->mDuration:I
 

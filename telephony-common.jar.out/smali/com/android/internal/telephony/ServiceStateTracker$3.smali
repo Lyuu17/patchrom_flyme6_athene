@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/ServiceStateTracker;
 
     .prologue
-    .line 443
+    .line 444
     iput-object p1, p0, Lcom/android/internal/telephony/ServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/ServiceStateTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 446
+    .line 447
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/ServiceStateTracker;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/ServiceStateTracker;->-get4(Lcom/android/internal/telephony/ServiceStateTracker;)Lcom/android/internal/telephony/GsmCdmaPhone;
-
-    move-result-object v1
+    iget-object v1, v1, Lcom/android/internal/telephony/ServiceStateTracker;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/GsmCdmaPhone;->isPhoneTypeGsm()Z
 
@@ -53,7 +51,7 @@
 
     if-nez v1, :cond_0
 
-    .line 447
+    .line 448
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/ServiceStateTracker;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -82,10 +80,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/ServiceStateTracker;->loge(Ljava/lang/String;)V
 
-    .line 448
+    .line 449
     return-void
 
-    .line 451
+    .line 452
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -99,17 +97,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 453
+    .line 454
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/ServiceStateTracker;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/ServiceStateTracker;->updateSpnDisplay()V
 
-    .line 445
+    .line 446
     :cond_1
     :goto_0
     return-void
 
-    .line 454
+    .line 455
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -123,23 +121,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 455
+    .line 456
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/ServiceStateTracker;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/ServiceStateTracker;->-set0(Lcom/android/internal/telephony/ServiceStateTracker;Z)Z
 
-    .line 456
+    .line 457
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/ServiceStateTracker;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/ServiceStateTracker;->-get4(Lcom/android/internal/telephony/ServiceStateTracker;)Lcom/android/internal/telephony/GsmCdmaPhone;
-
-    move-result-object v1
+    iget-object v1, v1, Lcom/android/internal/telephony/ServiceStateTracker;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
     iget-object v0, v1, Lcom/android/internal/telephony/GsmCdmaPhone;->mDcTracker:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    .line 457
+    .line 458
     .local v0, "dcTracker":Lcom/android/internal/telephony/dataconnection/DcTracker;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/ServiceStateTracker;
 

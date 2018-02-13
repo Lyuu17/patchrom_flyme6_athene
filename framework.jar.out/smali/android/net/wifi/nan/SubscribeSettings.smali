@@ -131,9 +131,7 @@
     move-object v0, p1
 
     .line 111
-    nop
-
-    nop
+    check-cast v0, Landroid/net/wifi/nan/SubscribeSettings;
 
     .line 113
     .local v0, "lhs":Landroid/net/wifi/nan/SubscribeSettings;

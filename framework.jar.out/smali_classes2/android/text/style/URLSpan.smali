@@ -105,7 +105,6 @@
 
     :cond_flyme_0
 
-    .line 70
     invoke-virtual {p0}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
 
     move-result-object v4
@@ -230,7 +229,7 @@
     .local v4, "tempURL":Ljava/lang/String;
     if-eqz v4, :cond_0
 
-    const-string/jumbo v6, "http://app.meizu.com/phone/"
+    const-string v6, "http://app.meizu.com/phone/"
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -242,7 +241,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "mstore:"
+    const-string v7, "mstore:"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -264,7 +263,7 @@
     :goto_0
     if-eqz v4, :cond_1
 
-    const-string/jumbo v6, "datetime:"
+    const-string v6, "datetime:"
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -297,7 +296,7 @@
     :cond_1
     if-eqz v4, :cond_2
 
-    const-string/jumbo v6, "tel:"
+    const-string v6, "tel:"
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -316,7 +315,7 @@
     goto :goto_1
 
     :cond_2
-    const-string/jumbo v6, "mailto:"
+    const-string v6, "mailto:"
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -337,12 +336,12 @@
     :cond_3
     new-instance v3, Landroid/content/Intent;
 
-    const-string/jumbo v6, "android.intent.action.VIEW"
+    const-string v6, "android.intent.action.VIEW"
 
     invoke-direct {v3, v6, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     .local v3, "intent":Landroid/content/Intent;
-    const-string/jumbo v6, "com.android.browser.application_id"
+    const-string v6, "com.android.browser.application_id"
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 

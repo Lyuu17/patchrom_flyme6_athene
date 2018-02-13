@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onDownloadMmsComplete:I = 0x5
 
-.field static final TRANSACTION_onFilterComplete:I = 0x1
+.field static final TRANSACTION_onFilterComplete_0:I = 0x1
 
 .field static final TRANSACTION_onSendMmsComplete:I = 0x4
 
@@ -48,7 +48,7 @@
     .line 20
     const-string/jumbo v0, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 18
     return-void

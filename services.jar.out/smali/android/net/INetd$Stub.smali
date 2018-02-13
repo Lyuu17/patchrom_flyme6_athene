@@ -28,29 +28,29 @@
 
 .field static final TRANSACTION_bandwidthEnableDataSaver:I = 0x3
 
-.field static final TRANSACTION_firewallReplaceUidChain:I = 0x2
+.field static final TRANSACTION_firewallReplaceUidChain_1:I = 0x2
 
-.field static final TRANSACTION_getMetricsReportingLevel:I = 0xc
+.field static final TRANSACTION_getMetricsReportingLevel_11:I = 0xc
 
-.field static final TRANSACTION_getResolverInfo:I = 0x7
+.field static final TRANSACTION_getResolverInfo_6:I = 0x7
 
-.field static final TRANSACTION_interfaceAddAddress:I = 0x9
+.field static final TRANSACTION_interfaceAddAddress_8:I = 0x9
 
 .field static final TRANSACTION_interfaceDelAddress:I = 0xa
 
-.field static final TRANSACTION_isAlive:I = 0x1
+.field static final TRANSACTION_isAlive_0:I = 0x1
 
-.field static final TRANSACTION_networkRejectNonSecureVpn:I = 0x4
+.field static final TRANSACTION_networkRejectNonSecureVpn_3:I = 0x4
 
 .field static final TRANSACTION_setMetricsReportingLevel:I = 0xd
 
 .field static final TRANSACTION_setProcSysNet:I = 0xb
 
-.field static final TRANSACTION_setResolverConfiguration:I = 0x6
+.field static final TRANSACTION_setResolverConfiguration_5:I = 0x6
 
 .field static final TRANSACTION_socketDestroy:I = 0x5
 
-.field static final TRANSACTION_tetherApplyDnsInterfaces:I = 0x8
+.field static final TRANSACTION_tetherApplyDnsInterfaces_7:I = 0x8
 
 
 # direct methods

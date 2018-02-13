@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract onPlayItemResponse(Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract onPlaybackStateChanged(Landroid/media/session/PlaybackState;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -64,6 +72,30 @@
 .end method
 
 .method public abstract onSessionDestroyed()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract onUpdateFolderInfoBrowsedPlayer(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract onUpdateNowPlayingContentChange()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract onUpdateNowPlayingEntries([J)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

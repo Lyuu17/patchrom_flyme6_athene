@@ -757,14 +757,12 @@
 
     if-ge v14, v0, :cond_3
 
-    .line 339
     move-object/from16 v0, p3
 
     invoke-interface {v0, v14}, Landroid/util/AttributeSet;->getAttributeNameResource(I)I
 
     move-result v20
 
-    .line 340
     .local v20, "stateResId":I
 
     move-object/from16 v0, p0
@@ -779,7 +777,6 @@
 
     sparse-switch v20, :sswitch_data_0
 
-    .line 346
     add-int/lit8 v16, v17, 0x1
 
     .end local v17    # "j":I
@@ -1921,7 +1918,7 @@
     move-result v3
 
     .local v3, "stateResId":I
-    const v4, 0x10101a5
+    const v4, #android:attr@color#t
 
     if-ne v3, v4, :cond_0
 

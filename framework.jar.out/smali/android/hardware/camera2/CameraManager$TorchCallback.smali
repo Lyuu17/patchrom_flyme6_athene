@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 588
+    .line 630
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 619
+    .line 661
     return-void
 .end method
 
@@ -42,6 +42,6 @@
     .param p1, "cameraId"    # Ljava/lang/String;
 
     .prologue
-    .line 602
+    .line 644
     return-void
 .end method

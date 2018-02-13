@@ -39,7 +39,7 @@
     .param p5, "val$connection"    # Landroid/app/IServiceConnection;
 
     .prologue
-    .line 932
+    .line 936
     iput-object p1, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
 
     iput-object p2, p0, Lcom/android/server/am/ActiveServices$3;->val$serviceRecord:Lcom/android/server/am/ServiceRecord;
@@ -62,7 +62,7 @@
     .param p1, "result"    # Landroid/os/Bundle;
 
     .prologue
-    .line 935
+    .line 939
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
 
     iget-object v7, v0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
@@ -72,14 +72,14 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 936
+    .line 940
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move-result-wide v8
 
-    .line 938
+    .line 942
     .local v8, "identity":J
     :try_start_1
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
@@ -96,7 +96,7 @@
 
     if-nez v0, :cond_0
 
-    .line 960
+    .line 964
     :try_start_2
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_2
@@ -104,13 +104,13 @@
 
     monitor-exit v7
 
-    .line 935
+    .line 939
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 939
+    .line 943
     return-void
 
-    .line 945
+    .line 949
     :cond_0
     :try_start_3
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
@@ -121,17 +121,17 @@
 
     move-result-object v0
 
-    .line 947
+    .line 951
     iget-object v1, p0, Lcom/android/server/am/ActiveServices$3;->val$serviceRecord:Lcom/android/server/am/ServiceRecord;
 
     iget-object v1, v1, Lcom/android/server/am/ServiceRecord;->packageName:Ljava/lang/String;
 
-    .line 948
+    .line 952
     iget-object v2, p0, Lcom/android/server/am/ActiveServices$3;->val$serviceRecord:Lcom/android/server/am/ServiceRecord;
 
     iget v2, v2, Lcom/android/server/am/ServiceRecord;->userId:I
 
-    .line 945
+    .line 949
     invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManagerInternal;->isPermissionsReviewRequired(Ljava/lang/String;I)Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -140,33 +140,33 @@
 
     if-nez v0, :cond_1
 
-    .line 950
+    .line 954
     :try_start_4
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
 
     iget-object v1, p0, Lcom/android/server/am/ActiveServices$3;->val$serviceRecord:Lcom/android/server/am/ServiceRecord;
 
-    .line 951
+    .line 955
     iget-object v2, p0, Lcom/android/server/am/ActiveServices$3;->val$serviceIntent:Landroid/content/Intent;
 
     invoke-virtual {v2}, Landroid/content/Intent;->getFlags()I
 
     move-result v2
 
-    .line 952
+    .line 956
     iget-boolean v3, p0, Lcom/android/server/am/ActiveServices$3;->val$callerFg:Z
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    .line 950
+    .line 954
     invoke-static/range {v0 .. v5}, Lcom/android/server/am/ActiveServices;->-wrap1(Lcom/android/server/am/ActiveServices;Lcom/android/server/am/ServiceRecord;IZZZ)Ljava/lang/String;
     :try_end_4
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 960
+    .line 964
     :goto_0
     :try_start_5
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -175,13 +175,13 @@
 
     monitor-exit v7
 
-    .line 935
+    .line 939
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 934
+    .line 938
     return-void
 
-    .line 957
+    .line 961
     :cond_1
     :try_start_6
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
@@ -194,20 +194,20 @@
 
     goto :goto_0
 
-    .line 959
+    .line 963
     :catchall_0
     move-exception v0
 
-    .line 960
+    .line 964
     :try_start_7
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 959
+    .line 963
     throw v0
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 935
+    .line 939
     .end local v8    # "identity":J
     :catchall_1
     move-exception v0
@@ -218,7 +218,7 @@
 
     throw v0
 
-    .line 953
+    .line 957
     .restart local v8    # "identity":J
     :catch_0
     move-exception v6

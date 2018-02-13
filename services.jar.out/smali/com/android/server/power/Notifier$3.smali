@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/power/Notifier;
 
     .prologue
-    .line 683
+    .line 678
     iput-object p1, p0, Lcom/android/server/power/Notifier$3;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 686
+    .line 681
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -55,7 +55,7 @@
 
     aput-object v1, v0, v2
 
-    .line 687
+    .line 682
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -82,16 +82,16 @@
 
     aput-object v1, v0, v2
 
-    .line 686
+    .line 681
     const/16 v1, 0xaa6
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 688
+    .line 683
     iget-object v0, p0, Lcom/android/server/power/Notifier$3;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-static {v0}, Lcom/android/server/power/Notifier;->-wrap2(Lcom/android/server/power/Notifier;)V
 
-    .line 685
+    .line 680
     return-void
 .end method

@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onUnbindMethod:I = 0x3
 
-.field static final TRANSACTION_setActive:I = 0x4
+.field static final TRANSACTION_setActive_3:I = 0x4
 
 .field static final TRANSACTION_setUserActionNotificationSequenceNumber:I = 0x5
 

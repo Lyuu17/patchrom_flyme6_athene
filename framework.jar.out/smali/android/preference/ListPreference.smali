@@ -54,12 +54,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 70
-    const v0, 0x1010091
+    const v0, #android:attr@dialogPreferenceStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/ListPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 69
     return-void
 .end method
 
@@ -415,25 +413,20 @@
 
     iput v0, p0, Landroid/preference/ListPreference;->mClickedDialogEntryIndex:I
 
-    .line 254
     iget-object v0, p0, Landroid/preference/ListPreference;->mEntries:[Ljava/lang/CharSequence;
 
     iget v1, p0, Landroid/preference/ListPreference;->mClickedDialogEntryIndex:I
 
-    .line 255
     new-instance v2, Landroid/preference/ListPreference$1;
 
     invoke-direct {v2, p0}, Landroid/preference/ListPreference$1;-><init>(Landroid/preference/ListPreference;)V
 
-    .line 254
     invoke-virtual {p1, v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setSingleChoiceItems([Ljava/lang/CharSequence;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 273
     invoke-virtual {p1, v3, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     invoke-direct/range {p0 .. p1}, Landroid/preference/ListPreference;->removeFlymeNegativeButton(Landroid/app/AlertDialog$Builder;)V
 
-    .line 245
     return-void
 .end method
 

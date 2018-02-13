@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_onMessageSendSuccess:I = 0x6
 
-.field static final TRANSACTION_onPublishFail:I = 0x1
+.field static final TRANSACTION_onPublishFail_0:I = 0x1
 
 .field static final TRANSACTION_onPublishTerminated:I = 0x2
 
@@ -54,7 +54,7 @@
     .line 20
     const-string/jumbo v0, "android.net.wifi.nan.IWifiNanSessionListener"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/net/wifi/nan/IWifiNanSessionListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 18
     return-void

@@ -289,13 +289,15 @@
 .end method
 
 .method private detectSwipe(IJFF)I
-    .locals 8
+    .locals 10
     .param p1, "i"    # I
     .param p2, "time"    # J
     .param p4, "x"    # F
     .param p5, "y"    # F
 
     .prologue
+    const/4 v8, 0x4
+
     const-wide/16 v6, 0x1f4
 
     .line 216
@@ -385,6 +387,35 @@
 
     .line 231
     :cond_1
+    iget v4, p0, Lcom/android/server/policy/SystemGesturesPointerEventListener;->mSwipeStartThreshold:I
+
+    int-to-float v4, v4
+
+    cmpg-float v4, v2, v4
+
+    if-gtz v4, :cond_2
+
+    .line 232
+    iget v4, p0, Lcom/android/server/policy/SystemGesturesPointerEventListener;->mSwipeDistanceThreshold:I
+
+    int-to-float v4, v4
+
+    add-float/2addr v4, v2
+
+    cmpl-float v4, p4, v4
+
+    if-lez v4, :cond_2
+
+    .line 233
+    cmp-long v4, v0, v6
+
+    if-gez v4, :cond_2
+
+    .line 234
+    return v8
+
+    .line 236
+    :cond_2
     iget v4, p0, Lcom/android/server/policy/SystemGesturesPointerEventListener;->screenWidth:I
 
     iget v5, p0, Lcom/android/server/policy/SystemGesturesPointerEventListener;->mSwipeStartThreshold:I
@@ -395,9 +426,9 @@
 
     cmpl-float v4, v2, v4
 
-    if-ltz v4, :cond_2
+    if-ltz v4, :cond_3
 
-    .line 232
+    .line 237
     iget v4, p0, Lcom/android/server/policy/SystemGesturesPointerEventListener;->mSwipeDistanceThreshold:I
 
     int-to-float v4, v4
@@ -406,29 +437,29 @@
 
     cmpg-float v4, p4, v4
 
-    if-gez v4, :cond_2
+    if-gez v4, :cond_3
 
-    .line 233
+    .line 238
     cmp-long v4, v0, v6
 
-    if-gez v4, :cond_2
+    if-gez v4, :cond_3
 
-    .line 234
+    .line 239
     const/4 v4, 0x3
 
     return v4
 
-    .line 236
-    :cond_2
+    .line 241
+    :cond_3
     iget v4, p0, Lcom/android/server/policy/SystemGesturesPointerEventListener;->mSwipeStartThreshold:I
 
     int-to-float v4, v4
 
     cmpg-float v4, v2, v4
 
-    if-gtz v4, :cond_3
+    if-gtz v4, :cond_4
 
-    .line 237
+    .line 242
     iget v4, p0, Lcom/android/server/policy/SystemGesturesPointerEventListener;->mSwipeDistanceThreshold:I
 
     int-to-float v4, v4
@@ -437,20 +468,18 @@
 
     cmpl-float v4, p4, v4
 
-    if-lez v4, :cond_3
+    if-lez v4, :cond_4
 
-    .line 238
+    .line 243
     cmp-long v4, v0, v6
 
-    if-gez v4, :cond_3
+    if-gez v4, :cond_4
 
-    .line 239
-    const/4 v4, 0x4
+    .line 244
+    return v8
 
-    return v4
-
-    .line 241
-    :cond_3
+    .line 246
+    :cond_4
     const/4 v4, 0x0
 
     return v4

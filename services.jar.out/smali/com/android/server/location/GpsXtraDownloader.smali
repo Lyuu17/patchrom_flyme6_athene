@@ -28,7 +28,7 @@
     .locals 4
 
     .prologue
-    .line 43
+    .line 45
     const-string/jumbo v0, "GpsXtraDownloader"
 
     const/4 v1, 0x3
@@ -39,7 +39,7 @@
 
     sput-boolean v0, Lcom/android/server/location/GpsXtraDownloader;->DEBUG:Z
 
-    .line 46
+    .line 48
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v2, 0x1e
@@ -52,7 +52,7 @@
 
     sput v0, Lcom/android/server/location/GpsXtraDownloader;->CONNECTION_TIMEOUT_MS:I
 
-    .line 40
+    .line 42
     return-void
 .end method
 
@@ -65,13 +65,13 @@
 
     const/4 v9, 0x0
 
-    .line 53
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 57
     const/4 v1, 0x0
 
-    .line 56
+    .line 58
     .local v1, "count":I
     const-string/jumbo v7, "XTRA_SERVER_1"
 
@@ -79,7 +79,7 @@
 
     move-result-object v4
 
-    .line 57
+    .line 59
     .local v4, "server1":Ljava/lang/String;
     const-string/jumbo v7, "XTRA_SERVER_2"
 
@@ -87,7 +87,7 @@
 
     move-result-object v5
 
-    .line 58
+    .line 60
     .local v5, "server2":Ljava/lang/String;
     const-string/jumbo v7, "XTRA_SERVER_3"
 
@@ -95,25 +95,25 @@
 
     move-result-object v6
 
-    .line 59
+    .line 61
     .local v6, "server3":Ljava/lang/String;
     if-eqz v4, :cond_0
 
     const/4 v1, 0x1
 
-    .line 60
+    .line 62
     :cond_0
     if-eqz v5, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 61
+    .line 63
     :cond_1
     if-eqz v6, :cond_2
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 64
+    .line 66
     :cond_2
     const-string/jumbo v7, "XTRA_USER_AGENT"
 
@@ -121,7 +121,7 @@
 
     move-result-object v0
 
-    .line 65
+    .line 67
     .local v0, "agent":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -129,45 +129,45 @@
 
     if-eqz v7, :cond_3
 
-    .line 66
+    .line 68
     const-string/jumbo v7, "Android"
 
     iput-object v7, p0, Lcom/android/server/location/GpsXtraDownloader;->mUserAgent:Ljava/lang/String;
 
-    .line 71
+    .line 73
     :goto_0
     if-nez v1, :cond_4
 
-    .line 72
+    .line 74
     const-string/jumbo v7, "GpsXtraDownloader"
 
     const-string/jumbo v8, "No XTRA servers were specified in the GPS configuration"
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 73
+    .line 75
     iput-object v9, p0, Lcom/android/server/location/GpsXtraDownloader;->mXtraServers:[Ljava/lang/String;
 
-    .line 53
+    .line 55
     :goto_1
     return-void
 
-    .line 68
+    .line 70
     :cond_3
     iput-object v0, p0, Lcom/android/server/location/GpsXtraDownloader;->mUserAgent:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 75
+    .line 77
     :cond_4
     new-array v7, v1, [Ljava/lang/String;
 
     iput-object v7, p0, Lcom/android/server/location/GpsXtraDownloader;->mXtraServers:[Ljava/lang/String;
 
-    .line 76
+    .line 78
     const/4 v1, 0x0
 
-    .line 77
+    .line 79
     if-eqz v4, :cond_7
 
     iget-object v7, p0, Lcom/android/server/location/GpsXtraDownloader;->mXtraServers:[Ljava/lang/String;
@@ -178,7 +178,7 @@
 
     move v2, v1
 
-    .line 78
+    .line 80
     .end local v1    # "count":I
     .local v2, "count":I
     :goto_2
@@ -194,7 +194,7 @@
 
     move v2, v1
 
-    .line 79
+    .line 81
     .end local v1    # "count":I
     .restart local v2    # "count":I
     :cond_5
@@ -208,13 +208,13 @@
     .restart local v1    # "count":I
     aput-object v6, v7, v2
 
-    .line 82
+    .line 84
     :goto_3
     new-instance v3, Ljava/util/Random;
 
     invoke-direct {v3}, Ljava/util/Random;-><init>()V
 
-    .line 83
+    .line 85
     .local v3, "random":Ljava/util/Random;
     invoke-virtual {v3, v1}, Ljava/util/Random;->nextInt(I)I
 
@@ -249,7 +249,7 @@
     .param p1, "url"    # Ljava/lang/String;
 
     .prologue
-    .line 112
+    .line 114
     sget-boolean v9, Lcom/android/server/location/GpsXtraDownloader;->DEBUG:Z
 
     if-eqz v9, :cond_0
@@ -278,11 +278,11 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
+    .line 116
     :cond_0
     const/4 v4, 0x0
 
-    .line 116
+    .line 118
     .local v4, "connection":Ljava/net/HttpURLConnection;
     :try_start_0
     new-instance v9, Ljava/net/URL;
@@ -301,45 +301,45 @@
 
     move-object v4, v0
 
-    .line 118
+    .line 120
     .local v4, "connection":Ljava/net/HttpURLConnection;
     const-string/jumbo v9, "Accept"
 
-    .line 119
+    .line 121
     const-string/jumbo v10, "*/*, application/vnd.wap.mms-message, application/vnd.wap.sic"
 
-    .line 117
-    invoke-virtual {v4, v9, v10}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 121
-    const-string/jumbo v9, "x-wap-profile"
-
-    .line 122
-    const-string/jumbo v10, "http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#"
-
-    .line 120
+    .line 119
     invoke-virtual {v4, v9, v10}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 123
+    const-string/jumbo v9, "x-wap-profile"
+
+    .line 124
+    const-string/jumbo v10, "http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#"
+
+    .line 122
+    invoke-virtual {v4, v9, v10}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 125
     sget v9, Lcom/android/server/location/GpsXtraDownloader;->CONNECTION_TIMEOUT_MS:I
 
     invoke-virtual {v4, v9}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
-    .line 125
+    .line 127
     invoke-virtual {v4}, Ljava/net/HttpURLConnection;->connect()V
 
-    .line 126
+    .line 128
     invoke-virtual {v4}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v8
 
-    .line 127
+    .line 129
     .local v8, "statusCode":I
     const/16 v9, 0xc8
 
     if-eq v8, v9, :cond_3
 
-    .line 128
+    .line 130
     sget-boolean v9, Lcom/android/server/location/GpsXtraDownloader;->DEBUG:Z
 
     if-eqz v9, :cond_1
@@ -369,21 +369,21 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 129
+    .line 131
     :cond_1
     const/4 v9, 0x0
 
-    .line 148
+    .line 150
     if-eqz v4, :cond_2
 
-    .line 149
+    .line 151
     invoke-virtual {v4}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 129
+    .line 131
     :cond_2
     return-object v9
 
-    .line 132
+    .line 134
     :cond_3
     const/4 v10, 0x0
 
@@ -395,19 +395,19 @@
 
     move-result-object v6
 
-    .line 133
+    .line 135
     .local v6, "in":Ljava/io/InputStream;
     new-instance v3, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v3}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 134
+    .line 136
     .local v3, "bytes":Ljava/io/ByteArrayOutputStream;
     const/16 v9, 0x400
 
     new-array v2, v9, [B
 
-    .line 136
+    .line 138
     .local v2, "buffer":[B
     :cond_4
     invoke-virtual {v6, v2}, Ljava/io/InputStream;->read([B)I
@@ -419,12 +419,12 @@
 
     if-eq v5, v9, :cond_b
 
-    .line 137
+    .line 139
     const/4 v9, 0x0
 
     invoke-virtual {v3, v2, v9, v5}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
-    .line 138
+    .line 140
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->size()I
 
     move-result v9
@@ -437,7 +437,7 @@
 
     if-lez v9, :cond_4
 
-    .line 139
+    .line 141
     sget-boolean v9, Lcom/android/server/location/GpsXtraDownloader;->DEBUG:Z
 
     if-eqz v9, :cond_5
@@ -451,7 +451,7 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_3
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 144
+    .line 146
     :cond_5
     if-eqz v6, :cond_6
 
@@ -472,7 +472,7 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 145
+    .line 147
     .end local v2    # "buffer":[B
     .end local v3    # "bytes":Ljava/io/ByteArrayOutputStream;
     .end local v4    # "connection":Ljava/net/HttpURLConnection;
@@ -482,7 +482,7 @@
     :catch_0
     move-exception v7
 
-    .line 146
+    .line 148
     .local v7, "ioe":Ljava/io/IOException;
     :try_start_4
     sget-boolean v9, Lcom/android/server/location/GpsXtraDownloader;->DEBUG:Z
@@ -497,20 +497,20 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 148
+    .line 150
     :cond_7
     if-eqz v4, :cond_8
 
-    .line 149
+    .line 151
     invoke-virtual {v4}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 152
+    .line 154
     :cond_8
     const/4 v9, 0x0
 
     return-object v9
 
-    .line 144
+    .line 146
     .end local v7    # "ioe":Ljava/io/IOException;
     .restart local v2    # "buffer":[B
     .restart local v3    # "bytes":Ljava/io/ByteArrayOutputStream;
@@ -523,21 +523,21 @@
 
     goto :goto_0
 
-    .line 140
+    .line 142
     :cond_9
     const/4 v9, 0x0
 
-    .line 148
+    .line 150
     if-eqz v4, :cond_a
 
-    .line 149
+    .line 151
     invoke-virtual {v4}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 140
+    .line 142
     :cond_a
     return-object v9
 
-    .line 143
+    .line 145
     :cond_b
     :try_start_5
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -547,7 +547,7 @@
 
     move-result-object v9
 
-    .line 144
+    .line 146
     if-eqz v6, :cond_c
 
     :try_start_6
@@ -567,7 +567,7 @@
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 147
+    .line 149
     .end local v2    # "buffer":[B
     .end local v3    # "bytes":Ljava/io/ByteArrayOutputStream;
     .end local v4    # "connection":Ljava/net/HttpURLConnection;
@@ -577,17 +577,17 @@
     :catchall_0
     move-exception v9
 
-    .line 148
+    .line 150
     if-eqz v4, :cond_d
 
-    .line 149
+    .line 151
     invoke-virtual {v4}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 147
+    .line 149
     :cond_d
     throw v9
 
-    .line 144
+    .line 146
     .restart local v2    # "buffer":[B
     .restart local v3    # "bytes":Ljava/io/ByteArrayOutputStream;
     .restart local v4    # "connection":Ljava/net/HttpURLConnection;
@@ -599,18 +599,18 @@
 
     goto :goto_1
 
-    .line 148
+    .line 150
     :cond_e
     if-eqz v4, :cond_f
 
-    .line 149
+    .line 151
     invoke-virtual {v4}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    .line 143
+    .line 145
     :cond_f
     return-object v9
 
-    .line 144
+    .line 146
     .end local v2    # "buffer":[B
     .end local v3    # "bytes":Ljava/io/ByteArrayOutputStream;
     .end local v5    # "count":I
@@ -683,28 +683,28 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 88
+    .line 90
     const/4 v0, 0x0
 
-    .line 89
+    .line 91
     .local v0, "result":[B
     iget v1, p0, Lcom/android/server/location/GpsXtraDownloader;->mNextServerIndex:I
 
-    .line 91
+    .line 93
     .local v1, "startIndex":I
     iget-object v2, p0, Lcom/android/server/location/GpsXtraDownloader;->mXtraServers:[Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 92
+    .line 94
     return-object v3
 
-    .line 96
+    .line 98
     .end local v0    # "result":[B
     :cond_0
     if-nez v0, :cond_2
 
-    .line 97
+    .line 99
     iget-object v2, p0, Lcom/android/server/location/GpsXtraDownloader;->mXtraServers:[Ljava/lang/String;
 
     iget v3, p0, Lcom/android/server/location/GpsXtraDownloader;->mNextServerIndex:I
@@ -715,7 +715,7 @@
 
     move-result-object v0
 
-    .line 100
+    .line 102
     .local v0, "result":[B
     iget v2, p0, Lcom/android/server/location/GpsXtraDownloader;->mNextServerIndex:I
 
@@ -723,7 +723,7 @@
 
     iput v2, p0, Lcom/android/server/location/GpsXtraDownloader;->mNextServerIndex:I
 
-    .line 101
+    .line 103
     iget v2, p0, Lcom/android/server/location/GpsXtraDownloader;->mNextServerIndex:I
 
     iget-object v3, p0, Lcom/android/server/location/GpsXtraDownloader;->mXtraServers:[Ljava/lang/String;
@@ -732,18 +732,18 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 102
+    .line 104
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/android/server/location/GpsXtraDownloader;->mNextServerIndex:I
 
-    .line 105
+    .line 107
     :cond_1
     iget v2, p0, Lcom/android/server/location/GpsXtraDownloader;->mNextServerIndex:I
 
     if-ne v2, v1, :cond_0
 
-    .line 108
+    .line 110
     .end local v0    # "result":[B
     :cond_2
     return-object v0

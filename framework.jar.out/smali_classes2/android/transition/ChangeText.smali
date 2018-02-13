@@ -496,9 +496,7 @@
     move-object v3, v6
 
     .line 187
-    nop
-
-    nop
+    check-cast v3, Landroid/widget/EditText;
 
     move-object/from16 v0, p0
 
@@ -580,7 +578,7 @@
     .local v11, "transitionListener":Landroid/transition/Transition$TransitionListener;
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+    invoke-virtual {v0, v11}, Landroid/transition/ChangeText;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
     .line 301
     return-object v21
@@ -752,7 +750,7 @@
 
     move-object/from16 v0, v24
 
-    invoke-virtual {v0, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 238
     .end local v24    # "outAnim":Landroid/animation/ValueAnimator;
@@ -809,7 +807,7 @@
 
     move-object/from16 v0, v23
 
-    invoke-virtual {v0, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 257
     .end local v23    # "inAnim":Landroid/animation/ValueAnimator;
@@ -827,9 +825,7 @@
     move-object/from16 v3, v21
 
     .line 259
-    nop
-
-    nop
+    check-cast v3, Landroid/animation/AnimatorSet;
 
     const/4 v4, 0x2
 

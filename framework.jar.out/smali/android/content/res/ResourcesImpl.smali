@@ -2453,7 +2453,6 @@
 
     :cond_flyme_0
 
-    .line 827
     iget v1, p2, Landroid/util/TypedValue;->assetCookie:I
 
     int-to-long v4, v1
@@ -3437,7 +3436,6 @@
     .end annotation
 
     .prologue
-    .line 298
     const/4 v2, 0x1
 
     invoke-virtual {p0, p1, p2, v2}, Landroid/content/res/ResourcesImpl;->getValue(ILandroid/util/TypedValue;Z)V
@@ -3452,7 +3450,6 @@
 
     :cond_flyme_0
 
-    .line 300
     :try_start_0
     iget-object v2, p0, Landroid/content/res/ResourcesImpl;->mAssets:Landroid/content/res/AssetManager;
 
@@ -4707,7 +4704,7 @@
     .locals 1
 
     .prologue
-    const-string/jumbo v0, "android"
+    const-string v0, "android"
 
     invoke-virtual {p0, v0}, Landroid/content/res/ResourcesImpl;->setFlymeThemeResource(Ljava/lang/String;)V
 

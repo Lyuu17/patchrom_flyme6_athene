@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/ShortcutService;
 
     .prologue
-    .line 2516
+    .line 2512
     iput-object p1, p0, Lcom/android/server/pm/ShortcutService$4;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 2519
+    .line 2515
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$4;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v1}, Lcom/android/server/pm/ShortcutService;->-get0(Lcom/android/server/pm/ShortcutService;)Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -53,10 +53,10 @@
 
     if-nez v1, :cond_0
 
-    .line 2520
+    .line 2516
     return-void
 
-    .line 2523
+    .line 2519
     :cond_0
     :try_start_0
     const-string/jumbo v1, "android.intent.action.LOCALE_CHANGED"
@@ -71,23 +71,23 @@
 
     if-eqz v1, :cond_1
 
-    .line 2524
+    .line 2520
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$4;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1}, Lcom/android/server/pm/ShortcutService;->handleLocaleChanged()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2518
+    .line 2514
     :cond_1
     :goto_0
     return-void
 
-    .line 2526
+    .line 2522
     :catch_0
     move-exception v0
 
-    .line 2527
+    .line 2523
     .local v0, "e":Ljava/lang/Exception;
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$4;->this$0:Lcom/android/server/pm/ShortcutService;
 

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/imsphone/ImsPhone;
 
     .prologue
-    .line 158
+    .line 160
     iput-object p1, p0, Lcom/android/internal/telephony/imsphone/ImsPhone$1;->this$0:Lcom/android/internal/telephony/imsphone/ImsPhone;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 161
+    .line 163
     iget-object v0, p0, Lcom/android/internal/telephony/imsphone/ImsPhone$1;->this$0:Lcom/android/internal/telephony/imsphone/ImsPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/imsphone/ImsPhone;->exitEmergencyCallbackMode()V
 
-    .line 160
+    .line 162
     return-void
 .end method

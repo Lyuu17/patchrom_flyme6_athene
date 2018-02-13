@@ -45,16 +45,16 @@
     .end annotation
 
     .prologue
-    .line 2771
+    .line 2823
     .local p2, "configs":Ljava/util/List;, "Ljava/util/List<Landroid/media/AudioRecordingConfiguration;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2773
+    .line 2825
     iput-object p1, p0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioRecordingCallback;
 
-    .line 2774
+    .line 2826
     iput-object p2, p0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mConfigs:Ljava/util/List;
 
-    .line 2772
+    .line 2824
     return-void
 .end method

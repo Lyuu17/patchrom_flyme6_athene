@@ -33,18 +33,18 @@
     .param p3, "setterSSID"    # Ljava/lang/String;
 
     .prologue
-    .line 1295
+    .line 1311
     iput-object p1, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantSaver;->this$0:Lcom/android/server/wifi/WifiConfigStore;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1296
+    .line 1312
     iput p2, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantSaver;->mNetId:I
 
-    .line 1297
+    .line 1313
     iput-object p3, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantSaver;->mSetterSSID:Ljava/lang/String;
 
-    .line 1295
+    .line 1311
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1302
+    .line 1318
     const-string/jumbo v0, "password"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1303
+    .line 1319
     if-eqz p2, :cond_0
 
     const-string/jumbo v0, "*"
@@ -76,13 +76,13 @@
 
     move-result v0
 
-    .line 1302
+    .line 1318
     if-eqz v0, :cond_0
 
-    .line 1305
+    .line 1321
     return v2
 
-    .line 1307
+    .line 1323
     :cond_0
     const-string/jumbo v0, "realm"
 
@@ -92,28 +92,28 @@
 
     if-nez v0, :cond_1
 
-    .line 1308
+    .line 1324
     const-string/jumbo v0, "plmn"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 1307
+    .line 1323
     if-eqz v0, :cond_2
 
-    .line 1310
+    .line 1326
     :cond_1
     return v2
 
-    .line 1314
+    .line 1330
     :cond_2
     if-nez p2, :cond_3
 
-    .line 1315
+    .line 1331
     const-string/jumbo p2, "\"\""
 
-    .line 1317
+    .line 1333
     :cond_3
     iget-object v0, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantSaver;->this$0:Lcom/android/server/wifi/WifiConfigStore;
 
@@ -129,7 +129,7 @@
 
     if-nez v0, :cond_4
 
-    .line 1318
+    .line 1334
     iget-object v0, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantSaver;->this$0:Lcom/android/server/wifi/WifiConfigStore;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -168,12 +168,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiConfigStore;->loge(Ljava/lang/String;)V
 
-    .line 1319
+    .line 1335
     const/4 v0, 0x0
 
     return v0
 
-    .line 1321
+    .line 1337
     :cond_4
     return v2
 .end method

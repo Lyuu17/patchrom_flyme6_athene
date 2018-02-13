@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_onRestrictBackgroundWhitelistChanged:I = 0x4
 
-.field static final TRANSACTION_onUidRulesChanged:I = 0x1
+.field static final TRANSACTION_onUidRulesChanged_0:I = 0x1
 
 
 # direct methods

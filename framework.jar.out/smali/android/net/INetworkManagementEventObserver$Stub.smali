@@ -34,19 +34,21 @@
 
 .field static final TRANSACTION_interfaceClassDataActivityChanged:I = 0x8
 
-.field static final TRANSACTION_interfaceDnsServerInfo:I = 0x9
+.field static final TRANSACTION_interfaceDnsServerInfo_9:I = 0xa
 
-.field static final TRANSACTION_interfaceLinkStateChanged:I = 0x2
+.field static final TRANSACTION_interfaceLinkStateChanged_1:I = 0x2
+
+.field static final TRANSACTION_interfaceMessageRecevied:I = 0x9
 
 .field static final TRANSACTION_interfaceRemoved:I = 0x4
 
-.field static final TRANSACTION_interfaceStatusChanged:I = 0x1
+.field static final TRANSACTION_interfaceStatusChanged_0:I = 0x1
 
-.field static final TRANSACTION_limitReached:I = 0x7
+.field static final TRANSACTION_limitReached_6:I = 0x7
 
-.field static final TRANSACTION_routeRemoved:I = 0xb
+.field static final TRANSACTION_routeRemoved:I = 0xc
 
-.field static final TRANSACTION_routeUpdated:I = 0xa
+.field static final TRANSACTION_routeUpdated:I = 0xb
 
 
 # direct methods
@@ -137,7 +139,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 188
+    .line 197
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v10
@@ -478,47 +480,71 @@
 
     move-result-object v1
 
-    .line 152
+    .line 151
     .restart local v1    # "_arg0":Ljava/lang/String;
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+    invoke-virtual {p0, v1}, Landroid/net/INetworkManagementEventObserver$Stub;->interfaceMessageRecevied(Ljava/lang/String;)V
 
-    move-result-wide v2
-
-    .line 154
-    .local v2, "_arg1":J
-    invoke-virtual {p2}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 155
-    .local v7, "_arg2":[Ljava/lang/String;
-    invoke-virtual {p0, v1, v2, v3, v7}, Landroid/net/INetworkManagementEventObserver$Stub;->interfaceDnsServerInfo(Ljava/lang/String;J[Ljava/lang/String;)V
-
-    .line 156
+    .line 152
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 157
+    .line 153
     const/4 v10, 0x1
 
     return v10
 
-    .line 161
+    .line 157
     .end local v1    # "_arg0":Ljava/lang/String;
-    .end local v2    # "_arg1":J
-    .end local v7    # "_arg2":[Ljava/lang/String;
     :sswitch_a
     const-string/jumbo v10, "android.net.INetworkManagementEventObserver"
 
     invoke-virtual {p2, v10}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 159
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 161
+    .restart local v1    # "_arg0":Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v2
+
     .line 163
+    .local v2, "_arg1":J
+    invoke-virtual {p2}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 164
+    .local v7, "_arg2":[Ljava/lang/String;
+    invoke-virtual {p0, v1, v2, v3, v7}, Landroid/net/INetworkManagementEventObserver$Stub;->interfaceDnsServerInfo(Ljava/lang/String;J[Ljava/lang/String;)V
+
+    .line 165
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 166
+    const/4 v10, 0x1
+
+    return v10
+
+    .line 170
+    .end local v1    # "_arg0":Ljava/lang/String;
+    .end local v2    # "_arg1":J
+    .end local v7    # "_arg2":[Ljava/lang/String;
+    :sswitch_b
+    const-string/jumbo v10, "android.net.INetworkManagementEventObserver"
+
+    invoke-virtual {p2, v10}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 172
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
     if-eqz v10, :cond_5
 
-    .line 164
+    .line 173
     sget-object v10, Landroid/net/RouteInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v10, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -527,40 +553,40 @@
 
     check-cast v0, Landroid/net/RouteInfo;
 
-    .line 169
+    .line 178
     :goto_5
     invoke-virtual {p0, v0}, Landroid/net/INetworkManagementEventObserver$Stub;->routeUpdated(Landroid/net/RouteInfo;)V
 
-    .line 170
+    .line 179
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 171
+    .line 180
     const/4 v10, 0x1
 
     return v10
 
-    .line 167
+    .line 176
     :cond_5
     const/4 v0, 0x0
 
     .local v0, "_arg0":Landroid/net/RouteInfo;
     goto :goto_5
 
-    .line 175
+    .line 184
     .end local v0    # "_arg0":Landroid/net/RouteInfo;
-    :sswitch_b
+    :sswitch_c
     const-string/jumbo v10, "android.net.INetworkManagementEventObserver"
 
     invoke-virtual {p2, v10}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 177
+    .line 186
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
     if-eqz v10, :cond_6
 
-    .line 178
+    .line 187
     sget-object v10, Landroid/net/RouteInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v10, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -569,19 +595,19 @@
 
     check-cast v0, Landroid/net/RouteInfo;
 
-    .line 183
+    .line 192
     :goto_6
     invoke-virtual {p0, v0}, Landroid/net/INetworkManagementEventObserver$Stub;->routeRemoved(Landroid/net/RouteInfo;)V
 
-    .line 184
+    .line 193
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 185
+    .line 194
     const/4 v10, 0x1
 
     return v10
 
-    .line 181
+    .line 190
     :cond_6
     const/4 v0, 0x0
 
@@ -604,6 +630,7 @@
         0x9 -> :sswitch_9
         0xa -> :sswitch_a
         0xb -> :sswitch_b
+        0xc -> :sswitch_c
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

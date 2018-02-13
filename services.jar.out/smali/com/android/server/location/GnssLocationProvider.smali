@@ -3800,7 +3800,7 @@
 .method private native native_agps_set_id(ILjava/lang/String;)V
 .end method
 
-.method private native native_agps_set_ref_location_cellid(IIIII)V
+.method private native native_agps_set_ref_location_cellid(IIIIII)V
 .end method
 
 .method private native native_cleanup()V
@@ -5096,7 +5096,7 @@
     monitor-exit v5
 
     .line 1568
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
@@ -5831,7 +5831,7 @@
     if-lez v0, :cond_7
 
     .line 1675
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
@@ -5879,7 +5879,7 @@
 .end method
 
 .method private requestRefLocation(I)V
-    .locals 10
+    .locals 11
     .param p1, "flags"    # I
 
     .prologue
@@ -5892,42 +5892,42 @@
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v9
 
     .line 2093
-    check-cast v8, Landroid/telephony/TelephonyManager;
+    check-cast v9, Landroid/telephony/TelephonyManager;
 
     .line 2095
-    .local v8, "phone":Landroid/telephony/TelephonyManager;
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getPhoneType()I
+    .local v9, "phone":Landroid/telephony/TelephonyManager;
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getPhoneType()I
 
-    move-result v9
+    move-result v10
 
     .line 2096
-    .local v9, "phoneType":I
+    .local v10, "phoneType":I
     const/4 v0, 0x1
 
-    if-ne v9, v0, :cond_4
+    if-ne v10, v0, :cond_4
 
     .line 2097
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getCellLocation()Landroid/telephony/CellLocation;
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getCellLocation()Landroid/telephony/CellLocation;
 
-    move-result-object v6
+    move-result-object v7
 
-    check-cast v6, Landroid/telephony/gsm/GsmCellLocation;
+    check-cast v7, Landroid/telephony/gsm/GsmCellLocation;
 
     .line 2098
-    .local v6, "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
-    if-eqz v6, :cond_3
+    .local v7, "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
+    if-eqz v7, :cond_3
 
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
     .line 2099
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
 
     move-result-object v0
 
@@ -5938,7 +5938,7 @@
     if-le v0, v5, :cond_3
 
     .line 2101
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
 
     move-result-object v0
 
@@ -5954,7 +5954,7 @@
 
     .line 2102
     .local v2, "mcc":I
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getNetworkOperator()Ljava/lang/String;
 
     move-result-object v0
 
@@ -5968,18 +5968,18 @@
 
     .line 2103
     .local v3, "mnc":I
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getNetworkType()I
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getNetworkType()I
 
-    move-result v7
+    move-result v8
 
     .line 2104
-    .local v7, "networkType":I
-    if-eq v7, v5, :cond_0
+    .local v8, "networkType":I
+    if-eq v8, v5, :cond_0
 
     .line 2105
     const/16 v0, 0x8
 
-    if-ne v7, v0, :cond_2
+    if-ne v8, v0, :cond_2
 
     .line 2109
     :cond_0
@@ -5988,25 +5988,29 @@
     .line 2114
     .local v1, "type":I
     :goto_0
-    invoke-virtual {v6}, Landroid/telephony/gsm/GsmCellLocation;->getLac()I
+    invoke-virtual {v7}, Landroid/telephony/gsm/GsmCellLocation;->getLac()I
 
     move-result v4
 
-    invoke-virtual {v6}, Landroid/telephony/gsm/GsmCellLocation;->getCid()I
+    invoke-virtual {v7}, Landroid/telephony/gsm/GsmCellLocation;->getCid()I
 
     move-result v5
+
+    invoke-virtual {v7}, Landroid/telephony/gsm/GsmCellLocation;->getPsc()I
+
+    move-result v6
 
     move-object v0, p0
 
     .line 2113
-    invoke-direct/range {v0 .. v5}, Lcom/android/server/location/GnssLocationProvider;->native_agps_set_ref_location_cellid(IIIII)V
+    invoke-direct/range {v0 .. v6}, Lcom/android/server/location/GnssLocationProvider;->native_agps_set_ref_location_cellid(IIIIII)V
 
     .line 2092
     .end local v1    # "type":I
     .end local v2    # "mcc":I
     .end local v3    # "mnc":I
-    .end local v6    # "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
-    .end local v7    # "networkType":I
+    .end local v7    # "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
+    .end local v8    # "networkType":I
     :cond_1
     :goto_1
     return-void
@@ -6014,22 +6018,22 @@
     .line 2106
     .restart local v2    # "mcc":I
     .restart local v3    # "mnc":I
-    .restart local v6    # "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
-    .restart local v7    # "networkType":I
+    .restart local v7    # "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
+    .restart local v8    # "networkType":I
     :cond_2
     const/16 v0, 0x9
 
-    if-eq v7, v0, :cond_0
+    if-eq v8, v0, :cond_0
 
     .line 2107
     const/16 v0, 0xa
 
-    if-eq v7, v0, :cond_0
+    if-eq v8, v0, :cond_0
 
     .line 2108
     const/16 v0, 0xf
 
-    if-eq v7, v0, :cond_0
+    if-eq v8, v0, :cond_0
 
     .line 2111
     const/4 v1, 0x1
@@ -6041,7 +6045,7 @@
     .end local v1    # "type":I
     .end local v2    # "mcc":I
     .end local v3    # "mnc":I
-    .end local v7    # "networkType":I
+    .end local v8    # "networkType":I
     :cond_3
     const-string/jumbo v0, "GnssLocationProvider"
 
@@ -6052,11 +6056,11 @@
     goto :goto_1
 
     .line 2118
-    .end local v6    # "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
+    .end local v7    # "gsm_cell":Landroid/telephony/gsm/GsmCellLocation;
     :cond_4
     const/4 v0, 0x2
 
-    if-ne v9, v0, :cond_1
+    if-ne v10, v0, :cond_1
 
     .line 2119
     const-string/jumbo v0, "GnssLocationProvider"
@@ -6806,7 +6810,7 @@
     invoke-direct {p0, v8, v2}, Lcom/android/server/location/GnssLocationProvider;->updateStatus(II)V
 
     .line 1470
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 

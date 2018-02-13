@@ -37,33 +37,33 @@
     .param p3, "extractNativeLibs"    # Z
 
     .prologue
-    .line 118
+    .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
+    .line 75
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->mGuard:Ldalvik/system/CloseGuard;
 
-    .line 119
+    .line 121
     iput-object p1, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->apkHandles:[J
 
-    .line 120
+    .line 122
     iput-boolean p2, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->multiArch:Z
 
-    .line 121
+    .line 123
     iput-boolean p3, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->extractNativeLibs:Z
 
-    .line 122
+    .line 124
     iget-object v0, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->mGuard:Ldalvik/system/CloseGuard;
 
     const-string/jumbo v1, "close"
 
     invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 118
+    .line 120
     return-void
 .end method
 
@@ -81,12 +81,12 @@
 
     const/4 v2, 0x0
 
-    .line 90
+    .line 92
     invoke-virtual {p0}, Landroid/content/pm/PackageParser$Package;->getAllCodePaths()Ljava/util/List;
 
     move-result-object v3
 
-    .line 91
+    .line 93
     iget-object v0, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -99,7 +99,7 @@
 
     move v0, v1
 
-    .line 92
+    .line 94
     :goto_0
     iget-object v4, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -111,7 +111,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 90
+    .line 92
     :goto_1
     invoke-static {v3, v0, v1}, Lcom/android/internal/content/NativeLibraryHelper$Handle;->create(Ljava/util/List;ZZ)Lcom/android/internal/content/NativeLibraryHelper$Handle;
 
@@ -122,13 +122,13 @@
     :cond_0
     move v0, v2
 
-    .line 91
+    .line 93
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 92
+    .line 94
     goto :goto_1
 .end method
 
@@ -142,7 +142,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 98
     invoke-virtual {p0}, Landroid/content/pm/PackageParser$PackageLite;->getAllCodePaths()Ljava/util/List;
 
     move-result-object v0
@@ -168,7 +168,7 @@
     .end annotation
 
     .prologue
-    .line 82
+    .line 84
     const/4 v2, 0x0
 
     :try_start_0
@@ -176,7 +176,7 @@
 
     move-result-object v1
 
-    .line 83
+    .line 85
     .local v1, "lite":Landroid/content/pm/PackageParser$PackageLite;
     invoke-static {v1}, Lcom/android/internal/content/NativeLibraryHelper$Handle;->create(Landroid/content/pm/PackageParser$PackageLite;)Lcom/android/internal/content/NativeLibraryHelper$Handle;
     :try_end_0
@@ -186,12 +186,12 @@
 
     return-object v2
 
-    .line 84
+    .line 86
     .end local v1    # "lite":Landroid/content/pm/PackageParser$PackageLite;
     :catch_0
     move-exception v0
 
-    .line 85
+    .line 87
     .local v0, "e":Landroid/content/pm/PackageParser$PackageParserException;
     new-instance v2, Ljava/io/IOException;
 
@@ -240,17 +240,17 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 103
     .local p0, "codePaths":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 102
+    .line 104
     .local v4, "size":I
     new-array v0, v4, [J
 
-    .line 103
+    .line 105
     .local v0, "apkHandles":[J
     const/4 v1, 0x0
 
@@ -258,14 +258,14 @@
     :goto_0
     if-ge v1, v4, :cond_2
 
-    .line 104
+    .line 106
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/lang/String;
 
-    .line 105
+    .line 107
     .local v3, "path":Ljava/lang/String;
     invoke-static {v3}, Lcom/android/internal/content/NativeLibraryHelper;->-wrap0(Ljava/lang/String;)J
 
@@ -273,7 +273,7 @@
 
     aput-wide v6, v0, v1
 
-    .line 106
+    .line 108
     aget-wide v6, v0, v1
 
     const-wide/16 v8, 0x0
@@ -282,24 +282,24 @@
 
     if-nez v5, :cond_1
 
-    .line 108
+    .line 110
     const/4 v2, 0x0
 
     .local v2, "j":I
     :goto_1
     if-ge v2, v1, :cond_0
 
-    .line 109
+    .line 111
     aget-wide v6, v0, v2
 
     invoke-static {v6, v7}, Lcom/android/internal/content/NativeLibraryHelper;->-wrap1(J)V
 
-    .line 108
+    .line 110
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 111
+    .line 113
     :cond_0
     new-instance v5, Ljava/io/IOException;
 
@@ -325,14 +325,14 @@
 
     throw v5
 
-    .line 103
+    .line 105
     .end local v2    # "j":I
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 115
+    .line 117
     .end local v3    # "path":Ljava/lang/String;
     :cond_2
     new-instance v5, Lcom/android/internal/content/NativeLibraryHelper$Handle;
@@ -348,7 +348,7 @@
     .locals 5
 
     .prologue
-    .line 127
+    .line 129
     iget-object v3, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->apkHandles:[J
 
     const/4 v2, 0x0
@@ -360,28 +360,28 @@
 
     aget-wide v0, v3, v2
 
-    .line 128
+    .line 130
     .local v0, "apkHandle":J
     invoke-static {v0, v1}, Lcom/android/internal/content/NativeLibraryHelper;->-wrap1(J)V
 
-    .line 127
+    .line 129
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 130
+    .line 132
     .end local v0    # "apkHandle":J
     :cond_0
     iget-object v2, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->mGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v2}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 131
+    .line 133
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->mClosed:Z
 
-    .line 126
+    .line 128
     return-void
 .end method
 
@@ -394,42 +394,42 @@
     .end annotation
 
     .prologue
-    .line 136
+    .line 138
     iget-object v0, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->mGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
-    .line 137
+    .line 139
     iget-object v0, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->mGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
-    .line 140
+    .line 142
     :cond_0
     :try_start_0
     iget-boolean v0, p0, Lcom/android/internal/content/NativeLibraryHelper$Handle;->mClosed:Z
 
     if-nez v0, :cond_1
 
-    .line 141
+    .line 143
     invoke-virtual {p0}, Lcom/android/internal/content/NativeLibraryHelper$Handle;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 144
+    .line 146
     :cond_1
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 135
+    .line 137
     return-void
 
-    .line 143
+    .line 145
     :catchall_0
     move-exception v0
 
-    .line 144
+    .line 146
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 143
+    .line 145
     throw v0
 .end method

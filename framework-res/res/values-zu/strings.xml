@@ -391,10 +391,10 @@
     <string name="permdesc_writeSyncSettings">Ivumela uhlelo lokusebenza ukushintsha izilungiselelo zokuvumelanisa ze-akhawunti. Isibonelo, lokhu kungasetshenziswa ukunika amandla ukuvumelanisa kohlelo lokusebenza le-People ne-akhawunti.</string>
     <string name="permlab_readSyncStats">funda izibalo zokuvumelanisa</string>
     <string name="permdesc_readSyncStats">Ivumela uhlelo lokusebenza ukufunda izibalo zokuvumelanisa ze-akhawunti, kufaka phakathi umlando wezehlakalo ezivumelanisiwe nokuthi ingakanani idatha evumelanisiwe.</string>
-    <string name="permlab_sdcardRead">funda okuqukethwe kokugciniwe kwakho okufinyeleleka nge-USD</string>
-    <string name="permdesc_sdcardRead">Ivumela uhlelo lokusebenza ukufunda okuqukethwe kwesitoreji sakho se-USB.</string>
-    <string name="permlab_sdcardWrite">guqula noma ususe okuqukethwe kwakho okugciniwe okufinyeleleka nge-USB</string>
-    <string name="permdesc_sdcardWrite">Ivumela uhlelo lokusebenza ukuthi ibhalele ekulondolozweni kwe-USB.</string>
+    <string name="permlab_sdcardRead">funda okuqukethwe ekhadini lakho le-SD</string>
+    <string name="permdesc_sdcardRead">Ivumela uhlelo lokusebenza ukufunda okuqukethwe kwekhadi lakho le-SD.</string>
+    <string name="permlab_sdcardWrite">shintsha noma ususe okuqukethwe ekhadini lakho le-SD</string>
+    <string name="permdesc_sdcardWrite">Ivumela uhlelo lokusebenza ukuthi ibhalele ekhadini le-SD.</string>
     <string name="permlab_use_sip">yenza/thola amakholi we-SIP</string>
     <string name="permdesc_use_sip">Ivumela uhlelo lokusebenza ukwenza nokuthola amakholi we-SIP.</string>
     <string name="permlab_register_sim_subscription">bhalisa uxhumo le-SIM le-telecom olusha</string>
@@ -1029,7 +1029,7 @@ usebenzisa %s"</string>
     <string name="no_matches">Akukho okufanayo</string>
     <string name="find_on_page">Thola ekhasini</string>
     <string name="action_mode_done">Kwenziwe</string>
-    <string name="progress_erasing">Isula isitoreji se-USB.</string>
+    <string name="progress_erasing">Isula ikhadi le-SD...</string>
     <string name="share">Yabelana</string>
     <string name="find">Thola</string>
     <string name="websearch">USesho lweWebhu</string>

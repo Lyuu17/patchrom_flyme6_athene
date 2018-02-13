@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_getVrModeState:I = 0x3
 
-.field static final TRANSACTION_registerListener:I = 0x1
+.field static final TRANSACTION_registerListener_0:I = 0x1
 
 .field static final TRANSACTION_unregisterListener:I = 0x2
 

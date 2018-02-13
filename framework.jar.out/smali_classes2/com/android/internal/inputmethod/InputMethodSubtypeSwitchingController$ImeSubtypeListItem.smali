@@ -556,7 +556,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "com.meizu.flyme.input/com.meizu.input.MzInputService"
+    const-string v1, "com.meizu.flyme.input/com.meizu.input.MzInputService"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -586,7 +586,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "com.meizu.flyme.input/com.meizu.input.MzInputService"
+    const-string v1, "com.meizu.flyme.input/com.meizu.input.MzInputService"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 

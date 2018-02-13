@@ -55,6 +55,14 @@
     .end annotation
 .end method
 
+.method public abstract isDozing()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isDreaming()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

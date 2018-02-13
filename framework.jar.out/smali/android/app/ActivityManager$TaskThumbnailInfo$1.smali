@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1961
+    .line 1976
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1963
+    .line 1978
     new-instance v0, Landroid/app/ActivityManager$TaskThumbnailInfo;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1962
+    .line 1977
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$TaskThumbnailInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/ActivityManager$TaskThumbnailInfo;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1966
+    .line 1981
     new-array v0, p1, [Landroid/app/ActivityManager$TaskThumbnailInfo;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1965
+    .line 1980
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$TaskThumbnailInfo$1;->newArray(I)[Landroid/app/ActivityManager$TaskThumbnailInfo;
 
     move-result-object v0

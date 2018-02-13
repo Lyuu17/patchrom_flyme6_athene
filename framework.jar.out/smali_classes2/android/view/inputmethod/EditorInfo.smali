@@ -792,7 +792,7 @@
     .local v1, "c":C
     if-ne v1, v4, :cond_0
 
-    const-string/jumbo v3, "\"\""
+    const-string v3, "\"\""
 
     invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -961,7 +961,7 @@
 
     move-result-object v6
 
-    const-string/jumbo v7, "="
+    const-string v7, "="
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1112,7 +1112,7 @@
 
     new-instance v4, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v5, "outMap cannot be null"
+    const-string v5, "outMap cannot be null"
 
     invoke-direct {v4, v5}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -1158,7 +1158,7 @@
 
     add-int/2addr v1, v4
 
-    const-string/jumbo v4, "="
+    const-string v4, "="
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
 
@@ -1190,7 +1190,7 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, "true"
+    const-string v5, "true"
 
     invoke-interface {p1, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

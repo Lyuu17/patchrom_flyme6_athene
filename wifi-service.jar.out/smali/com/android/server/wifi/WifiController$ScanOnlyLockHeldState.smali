@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiController;
 
     .prologue
-    .line 867
+    .line 1015
     iput-object p1, p0, Lcom/android/server/wifi/WifiController$ScanOnlyLockHeldState;->this$0:Lcom/android/server/wifi/WifiController;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,28 +38,24 @@
     .locals 2
 
     .prologue
-    .line 870
+    .line 1018
     iget-object v0, p0, Lcom/android/server/wifi/WifiController$ScanOnlyLockHeldState;->this$0:Lcom/android/server/wifi/WifiController;
 
-    invoke-static {v0}, Lcom/android/server/wifi/WifiController;->-get16(Lcom/android/server/wifi/WifiController;)Lcom/android/server/wifi/WifiStateMachine;
-
-    move-result-object v0
+    iget-object v0, v0, Lcom/android/server/wifi/WifiController;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->setOperationalMode(I)V
 
-    .line 871
+    .line 1019
     iget-object v0, p0, Lcom/android/server/wifi/WifiController$ScanOnlyLockHeldState;->this$0:Lcom/android/server/wifi/WifiController;
 
-    invoke-static {v0}, Lcom/android/server/wifi/WifiController;->-get16(Lcom/android/server/wifi/WifiController;)Lcom/android/server/wifi/WifiStateMachine;
-
-    move-result-object v0
+    iget-object v0, v0, Lcom/android/server/wifi/WifiController;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->setDriverStart(Z)V
 
-    .line 869
+    .line 1017
     return-void
 .end method

@@ -27,7 +27,7 @@
     .param p4, "$anonymous2"    # Z
 
     .prologue
-    .line 227
+    .line 230
     iput-object p1, p0, Lcom/android/server/WiredAccessoryManager$1;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     invoke-direct {p0, p2, p3, p4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
@@ -42,16 +42,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 230
+    .line 233
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 229
+    .line 232
     :goto_0
     return-void
 
-    .line 232
+    .line 235
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/WiredAccessoryManager$1;->this$0:Lcom/android/server/WiredAccessoryManager;
 
@@ -65,7 +65,7 @@
 
     invoke-static {v1, v2, v3, v0}, Lcom/android/server/WiredAccessoryManager;->-wrap1(Lcom/android/server/WiredAccessoryManager;IILjava/lang/String;)V
 
-    .line 233
+    .line 236
     iget-object v0, p0, Lcom/android/server/WiredAccessoryManager$1;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     invoke-static {v0}, Lcom/android/server/WiredAccessoryManager;->-get4(Lcom/android/server/WiredAccessoryManager;)Landroid/os/PowerManager$WakeLock;
@@ -76,13 +76,13 @@
 
     goto :goto_0
 
-    .line 236
+    .line 239
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/WiredAccessoryManager$1;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     invoke-static {v0}, Lcom/android/server/WiredAccessoryManager;->-wrap0(Lcom/android/server/WiredAccessoryManager;)V
 
-    .line 237
+    .line 240
     iget-object v0, p0, Lcom/android/server/WiredAccessoryManager$1;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     invoke-static {v0}, Lcom/android/server/WiredAccessoryManager;->-get4(Lcom/android/server/WiredAccessoryManager;)Landroid/os/PowerManager$WakeLock;
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 230
+    .line 233
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

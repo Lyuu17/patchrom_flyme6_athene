@@ -30,7 +30,7 @@
     .param p2, "val$token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 796
+    .line 798
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$2;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iput-object p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$2;->val$token:Landroid/os/IBinder;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 799
+    .line 801
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$2;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iget-object v1, v1, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    .line 800
+    .line 802
     .local v0, "client":Lcom/android/server/fingerprint/ClientMonitor;
     instance-of v1, v0, Lcom/android/server/fingerprint/EnrollClient;
 
@@ -69,7 +69,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 801
+    .line 803
     invoke-virtual {v0}, Lcom/android/server/fingerprint/ClientMonitor;->getToken()Landroid/os/IBinder;
 
     move-result-object v1
@@ -83,11 +83,11 @@
     :goto_0
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/ClientMonitor;->stop(Z)I
 
-    .line 798
+    .line 800
     :cond_0
     return-void
 
-    .line 801
+    .line 803
     :cond_1
     const/4 v1, 0x0
 

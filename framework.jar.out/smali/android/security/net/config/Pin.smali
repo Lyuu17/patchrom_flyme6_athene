@@ -135,9 +135,7 @@
     move-object v0, p1
 
     .line 66
-    nop
-
-    nop
+    check-cast v0, Landroid/security/net/config/Pin;
 
     .line 67
     .local v0, "other":Landroid/security/net/config/Pin;

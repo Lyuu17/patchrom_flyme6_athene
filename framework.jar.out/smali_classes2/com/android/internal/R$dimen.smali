@@ -121,6 +121,8 @@
 
 .field public static final floating_toolbar_vertical_margin:I = 0x10500bc
 
+.field public static final global_actions_avatar_size:I = 0x1050007
+
 .field public static final immersive_mode_cling_width:I = 0x10500a4
 
 .field public static final input_extract_action_button_height:I = 0x10500c7
@@ -257,7 +259,7 @@
     .locals 0
 
     .prologue
-    .line 16476
+    .line 25053
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

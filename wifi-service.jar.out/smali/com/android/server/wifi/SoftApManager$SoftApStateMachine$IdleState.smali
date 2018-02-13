@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
 
     .prologue
-    .line 191
+    .line 223
     iput-object p1, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;->this$1:Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -53,16 +53,16 @@
 
     const/4 v4, 0x0
 
-    .line 194
+    .line 226
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 213
+    .line 245
     :goto_0
     return v5
 
-    .line 196
+    .line 228
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;->this$1:Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
 
@@ -72,7 +72,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/server/wifi/SoftApManager;->-wrap2(Lcom/android/server/wifi/SoftApManager;II)V
 
-    .line 197
+    .line 229
     iget-object v2, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;->this$1:Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
 
     iget-object v3, v2, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->this$0:Lcom/android/server/wifi/SoftApManager;
@@ -85,11 +85,11 @@
 
     move-result v1
 
-    .line 198
+    .line 230
     .local v1, "result":I
     if-nez v1, :cond_0
 
-    .line 199
+    .line 231
     iget-object v2, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;->this$1:Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
 
     iget-object v2, v2, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->this$0:Lcom/android/server/wifi/SoftApManager;
@@ -98,7 +98,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/server/wifi/SoftApManager;->-wrap2(Lcom/android/server/wifi/SoftApManager;II)V
 
-    .line 200
+    .line 232
     iget-object v2, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;->this$1:Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
 
     iget-object v3, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;->this$1:Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
@@ -111,18 +111,18 @@
 
     goto :goto_0
 
-    .line 202
+    .line 234
     :cond_0
     const/4 v0, 0x0
 
-    .line 203
+    .line 235
     .local v0, "reason":I
     if-ne v1, v5, :cond_1
 
-    .line 204
+    .line 236
     const/4 v0, 0x1
 
-    .line 206
+    .line 238
     :cond_1
     iget-object v2, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;->this$1:Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;
 
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 194
+    .line 226
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

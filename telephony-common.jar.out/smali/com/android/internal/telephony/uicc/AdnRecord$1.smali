@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 75
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,34 +41,34 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/uicc/AdnRecord;
-    .locals 6
+    .locals 7
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 84
+    .line 85
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 85
+    .line 86
     .local v1, "efid":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 86
+    .line 87
     .local v2, "recordNumber":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 87
+    .line 88
     .local v3, "alphaTag":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 88
+    .line 89
     .local v4, "number":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
@@ -76,9 +76,15 @@
 
     .line 90
     .local v5, "emails":[Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 92
+    .local v6, "additionalNumbers":[Ljava/lang/String;
     new-instance v0, Lcom/android/internal/telephony/uicc/AdnRecord;
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/uicc/AdnRecord;-><init>(IILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Lcom/android/internal/telephony/uicc/AdnRecord;-><init>(IILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -88,7 +94,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 77
+    .line 78
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/AdnRecord$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/uicc/AdnRecord;
 
     move-result-object v0
@@ -101,7 +107,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 95
+    .line 97
     new-array v0, p1, [Lcom/android/internal/telephony/uicc/AdnRecord;
 
     return-object v0
@@ -112,7 +118,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 94
+    .line 96
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/AdnRecord$1;->newArray(I)[Lcom/android/internal/telephony/uicc/AdnRecord;
 
     move-result-object v0

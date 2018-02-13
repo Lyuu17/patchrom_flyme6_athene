@@ -128,12 +128,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 331
-    const v0, 0x101008e
+    const v0, #android:attr@preferenceStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 330
     return-void
 .end method
 
@@ -165,52 +163,38 @@
 
     const/4 v4, 0x1
 
-    .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
     const v3, 0x7fffffff
 
     iput v3, p0, Landroid/preference/Preference;->mOrder:I
 
-    .line 115
     iput-boolean v4, p0, Landroid/preference/Preference;->mEnabled:Z
 
-    .line 116
     iput-boolean v4, p0, Landroid/preference/Preference;->mSelectable:Z
 
-    .line 118
     iput-boolean v4, p0, Landroid/preference/Preference;->mPersistent:Z
 
-    .line 121
     iput-boolean v4, p0, Landroid/preference/Preference;->mDependencyMet:Z
 
-    .line 122
     iput-boolean v4, p0, Landroid/preference/Preference;->mParentDependencyMet:Z
 
-    .line 127
     iput-boolean v4, p0, Landroid/preference/Preference;->mShouldDisableView:Z
 
-    .line 129
-    const v3, 0x10900a3
+    const v3, #android:layout@preference#t
 
     iput v3, p0, Landroid/preference/Preference;->mLayoutResId:I
 
-    .line 131
     iput-boolean v4, p0, Landroid/preference/Preference;->mCanRecycleLayout:Z
 
-    .line 218
     iput-object p1, p0, Landroid/preference/Preference;->mContext:Landroid/content/Context;
 
-    .line 221
     sget-object v3, Lcom/android/internal/R$styleable;->Preference:[I
 
-    .line 220
     invoke-virtual {p1, p2, v3, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 222
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->getIndexCount()I
 
@@ -433,7 +417,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 217
     :cond_1
     :goto_2
 
@@ -441,13 +424,11 @@
 
     return-void
 
-    .line 288
     :cond_2
     iput-boolean v5, p0, Landroid/preference/Preference;->mCanRecycleLayout:Z
 
     goto :goto_2
 
-    .line 224
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1817,8 +1798,7 @@
 
     const/4 v7, 0x0
 
-    .line 544
-    const v6, 0x1020016
+    const v6, #android:id@title#t
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1843,35 +1823,28 @@
 
     if-nez v6, :cond_8
 
-    .line 548
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 549
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 556
     .end local v4    # "title":Ljava/lang/CharSequence;
     :cond_0
     :goto_0
-    const v6, 0x1020010
+    const v6, #android:id@summary#t
 
-    .line 555
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 557
     .local v3, "summaryView":Landroid/widget/TextView;
     if-eqz v3, :cond_1
 
-    .line 558
     invoke-virtual {p0}, Landroid/preference/Preference;->getSummary()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 559
     .local v2, "summary":Ljava/lang/CharSequence;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1889,7 +1862,7 @@
     .end local v2    # "summary":Ljava/lang/CharSequence;
     :cond_1
     :goto_1
-    const v6, 0x1020006
+    const v6, #android:id@icon#t
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1953,7 +1926,7 @@
 
     .line 580
     :cond_5
-    const v6, 0x102003e
+    const v6, #android:id@icon_frame#t
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1971,27 +1944,23 @@
     :goto_3
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 585
     :cond_6
     iget-boolean v6, p0, Landroid/preference/Preference;->mShouldDisableView:Z
 
     if-eqz v6, :cond_7
 
-    .line 586
     invoke-virtual {p0}, Landroid/preference/Preference;->isEnabled()Z
 
     move-result v6
 
     invoke-direct {p0, p1, v6}, Landroid/preference/Preference;->setEnabledStateOnViews(Landroid/view/View;Z)V
 
-    .line 543
     :cond_7
 
     invoke-virtual/range {p0 .. p1}, Landroid/preference/Preference;->setPreferenceView(Landroid/view/View;)V
 
     return-void
 
-    .line 551
     .end local v0    # "imageFrame":Landroid/view/View;
     .end local v1    # "imageView":Landroid/widget/ImageView;
     .end local v3    # "summaryView":Landroid/widget/TextView;
@@ -2060,37 +2029,30 @@
 
     move-result-object v0
 
-    .line 520
     .local v0, "layout":Landroid/view/View;
-    const v3, 0x1020018
+    const v3, #android:id@widget_frame#t
 
-    .line 519
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 521
     .local v2, "widgetFrame":Landroid/view/ViewGroup;
     if-eqz v2, :cond_0
 
-    .line 522
     iget v3, p0, Landroid/preference/Preference;->mWidgetLayoutResId:I
 
     if-eqz v3, :cond_1
 
-    .line 523
     iget v3, p0, Landroid/preference/Preference;->mWidgetLayoutResId:I
 
     invoke-virtual {v1, v3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    .line 528
     :cond_0
     :goto_0
     return-object v0
 
-    .line 525
     :cond_1
     const/16 v3, 0x8
 
@@ -3326,7 +3288,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "com.meizu"
+    const-string v1, "com.meizu"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

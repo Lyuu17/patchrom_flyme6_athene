@@ -29,15 +29,15 @@
     .param p2, "tracker"    # Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
 
     .prologue
-    .line 336
+    .line 339
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-direct {p0}, Landroid/telephony/CarrierMessagingServiceManager;-><init>()V
 
-    .line 337
+    .line 340
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->mTracker:Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
 
-    .line 336
+    .line 339
     return-void
 .end method
 
@@ -49,44 +49,44 @@
     .param p2, "senderCallback"    # Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;
 
     .prologue
-    .line 342
+    .line 345
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->mSenderCallback:Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;
 
-    .line 343
+    .line 346
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     iget-object v0, v0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
 
-    invoke-virtual {p0, v0, p1}, Landroid/telephony/CarrierMessagingServiceManager;->bindToCarrierMessagingService(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-virtual {p0, v0, p1}, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->bindToCarrierMessagingService(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 344
+    .line 347
     const-string/jumbo v0, "SMSDispatcher"
 
     const-string/jumbo v1, "bindService() for carrier messaging service failed"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 345
+    .line 348
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->mSenderCallback:Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;
 
-    .line 346
+    .line 349
     const/4 v1, 0x1
 
-    .line 347
+    .line 350
     const/4 v2, 0x0
 
-    .line 345
+    .line 348
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->onSendSmsComplete(II)V
 
-    .line 341
+    .line 344
     :goto_0
     return-void
 
-    .line 349
+    .line 352
     :cond_0
     const-string/jumbo v0, "SMSDispatcher"
 

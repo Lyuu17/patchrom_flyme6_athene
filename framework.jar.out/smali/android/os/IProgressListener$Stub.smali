@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onProgress:I = 0x2
 
-.field static final TRANSACTION_onStarted:I = 0x1
+.field static final TRANSACTION_onStarted_0:I = 0x1
 
 
 # direct methods

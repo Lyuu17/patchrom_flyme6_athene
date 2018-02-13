@@ -113,6 +113,9 @@
 
 
 # virtual methods
+.method public abstract getFeature(I)I
+.end method
+
 .method public abstract getLowPowerModeEnabled()Z
 .end method
 
@@ -137,10 +140,16 @@
 .method public abstract setDozeOverrideFromDreamManager(II)V
 .end method
 
+.method public abstract setFeature(II)V
+.end method
+
 .method public abstract setLightDeviceIdleMode(Z)Z
 .end method
 
 .method public abstract setMaximumScreenOffTimeoutFromDeviceAdmin(I)V
+.end method
+
+.method public abstract setPowerSaveMode(Z)Z
 .end method
 
 .method public abstract setScreenBrightnessOverrideFromWindowManager(I)V

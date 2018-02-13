@@ -503,7 +503,7 @@
 
     .prologue
     .line 108
-    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
 
@@ -625,9 +625,7 @@
     if-eqz v0, :cond_0
 
     .line 83
-    nop
-
-    nop
+    check-cast p1, [I
 
     .end local p1    # "object":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/filterfw/core/Frame;->setInts([I)V
@@ -644,9 +642,7 @@
     if-eqz v0, :cond_1
 
     .line 85
-    nop
-
-    nop
+    check-cast p1, [F
 
     .end local p1    # "object":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/filterfw/core/Frame;->setFloats([F)V
@@ -661,9 +657,7 @@
     if-eqz v0, :cond_2
 
     .line 87
-    nop
-
-    nop
+    check-cast p1, Ljava/nio/ByteBuffer;
 
     .end local p1    # "object":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/filterfw/core/Frame;->setData(Ljava/nio/ByteBuffer;)V
@@ -678,9 +672,7 @@
     if-eqz v0, :cond_3
 
     .line 89
-    nop
-
-    nop
+    check-cast p1, Landroid/graphics/Bitmap;
 
     .end local p1    # "object":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/filterfw/core/Frame;->setBitmap(Landroid/graphics/Bitmap;)V

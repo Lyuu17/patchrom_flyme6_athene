@@ -172,80 +172,66 @@
 
     const/4 v3, 0x1
 
-    .line 208
     if-ne p1, v3, :cond_0
 
-    .line 209
-    const v1, 0x103047a
+    const v1, #android:style@Theme.Dialog.Alert#t
 
     return v1
 
-    .line 210
     :cond_0
     const/4 v1, 0x2
 
     if-ne p1, v1, :cond_1
 
-    .line 211
-    const v1, 0x1030483
+    const v1, #android:style@Theme.Holo.Dialog.Alert#t
 
     return v1
 
-    .line 212
     :cond_1
     const/4 v1, 0x3
 
     if-ne p1, v1, :cond_2
 
-    .line 213
-    const v1, 0x1030484
+    const v1, #android:style@Theme.Holo.Light.Dialog.Alert#t
 
     return v1
 
-    .line 214
     :cond_2
     const/4 v1, 0x4
 
     if-ne p1, v1, :cond_3
 
-    .line 215
-    const v1, 0x10302d1
+    const v1, #android:style@Theme.DeviceDefault.Dialog.Alert#t
 
     return v1
 
-    .line 216
     :cond_3
     const/4 v1, 0x5
 
     if-ne p1, v1, :cond_4
 
-    .line 217
-    const v1, 0x10302d2
+    const v1, #android:style@Theme.DeviceDefault.Light.Dialog.Alert#t
 
     return v1
 
-    .line 218
     :cond_4
     const/high16 v1, 0x1000000
 
     if-lt p1, v1, :cond_5
 
-    .line 219
     return p1
 
-    .line 221
     :cond_5
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 222
     .local v0, "outValue":Landroid/util/TypedValue;
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
 
-    const v2, 0x1010309
+    const v2, #android:attr@alertDialogTheme#t
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -291,17 +277,14 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 422
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 423
     iget-object v0, p0, Landroid/app/AlertDialog;->mAlert:Lcom/android/internal/app/AlertController;
 
     invoke-virtual {v0}, Lcom/android/internal/app/AlertController;->installContent()V
 
     invoke-direct/range {p0 .. p0}, Landroid/app/AlertDialog;->applyFlymeStyle()V
 
-    .line 421
     return-void
 .end method
 

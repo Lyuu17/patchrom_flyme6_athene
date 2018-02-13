@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Looper;
 
     .prologue
-    .line 275
+    .line 285
     iput-object p1, p0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,23 +36,23 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 18
+    .locals 19
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 278
+    .line 288
     move-object/from16 v0, p1
 
     iget v1, v0, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 277
+    .line 287
     :goto_0
     :pswitch_0
     return-void
 
-    .line 280
+    .line 290
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -70,16 +70,16 @@
 
     invoke-virtual {v2, v1}, Landroid/telecom/ConnectionServiceAdapter;->addAdapter(Lcom/android/internal/telecom/IConnectionServiceAdapter;)V
 
-    .line 281
+    .line 291
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
-    invoke-static {v1}, Landroid/telecom/ConnectionService;->-wrap12(Landroid/telecom/ConnectionService;)V
+    invoke-static {v1}, Landroid/telecom/ConnectionService;->-wrap13(Landroid/telecom/ConnectionService;)V
 
     goto :goto_0
 
-    .line 284
+    .line 294
     :pswitch_2
     move-object/from16 v0, p0
 
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 287
+    .line 297
     :pswitch_3
     move-object/from16 v0, p1
 
@@ -107,26 +107,26 @@
 
     check-cast v8, Lcom/android/internal/os/SomeArgs;
 
-    .line 290
+    .line 300
     .local v8, "args":Lcom/android/internal/os/SomeArgs;
     :try_start_0
     iget-object v3, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v3, Landroid/telecom/PhoneAccountHandle;
 
-    .line 291
+    .line 301
     .local v3, "connectionManagerPhoneAccount":Landroid/telecom/PhoneAccountHandle;
     iget-object v4, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
 
-    .line 292
+    .line 302
     .local v4, "id":Ljava/lang/String;
     iget-object v5, v8, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
     check-cast v5, Landroid/telecom/ConnectionRequest;
 
-    .line 293
+    .line 303
     .local v5, "request":Landroid/telecom/ConnectionRequest;
     iget v1, v8, Lcom/android/internal/os/SomeArgs;->argi1:I
 
@@ -136,7 +136,7 @@
 
     const/4 v6, 0x1
 
-    .line 294
+    .line 304
     .local v6, "isIncoming":Z
     :goto_1
     iget v1, v8, Lcom/android/internal/os/SomeArgs;->argi2:I
@@ -147,7 +147,7 @@
 
     const/4 v7, 0x1
 
-    .line 295
+    .line 305
     .local v7, "isUnknown":Z
     :goto_2
     move-object/from16 v0, p0
@@ -160,29 +160,29 @@
 
     if-nez v1, :cond_2
 
-    .line 296
+    .line 306
     const-string/jumbo v1, "Enqueueing pre-init request %s"
 
     const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    const/16 v17, 0x0
+    const/16 v18, 0x0
 
-    aput-object v4, v2, v17
+    aput-object v4, v2, v18
 
     move-object/from16 v0, p0
 
     invoke-static {v0, v1, v2}, Landroid/telecom/Log;->d(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 297
+    .line 307
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get5(Landroid/telecom/ConnectionService;)Ljava/util/List;
 
-    move-result-object v17
+    move-result-object v18
 
     new-instance v1, Landroid/telecom/ConnectionService$2$1;
 
@@ -190,19 +190,19 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/telecom/ConnectionService$2$1;-><init>(Landroid/telecom/ConnectionService$2;Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;Landroid/telecom/ConnectionRequest;ZZ)V
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 317
+    .line 327
     :goto_3
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto :goto_0
 
-    .line 293
+    .line 303
     .end local v6    # "isIncoming":Z
     .end local v7    # "isUnknown":Z
     :cond_0
@@ -211,27 +211,27 @@
     .restart local v6    # "isIncoming":Z
     goto :goto_1
 
-    .line 294
+    .line 304
     :cond_1
     const/4 v7, 0x0
 
     .restart local v7    # "isUnknown":Z
     goto :goto_2
 
-    .line 309
+    .line 319
     :cond_2
     :try_start_1
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
-    invoke-static/range {v2 .. v7}, Landroid/telecom/ConnectionService;->-wrap6(Landroid/telecom/ConnectionService;Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;Landroid/telecom/ConnectionRequest;ZZ)V
+    invoke-static/range {v2 .. v7}, Landroid/telecom/ConnectionService;->-wrap7(Landroid/telecom/ConnectionService;Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;Landroid/telecom/ConnectionRequest;ZZ)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_3
 
-    .line 316
+    .line 326
     .end local v3    # "connectionManagerPhoneAccount":Landroid/telecom/PhoneAccountHandle;
     .end local v4    # "id":Ljava/lang/String;
     .end local v5    # "request":Landroid/telecom/ConnectionRequest;
@@ -240,13 +240,13 @@
     :catchall_0
     move-exception v1
 
-    .line 317
+    .line 327
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 316
+    .line 326
     throw v1
 
-    .line 322
+    .line 332
     .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_4
     move-object/from16 v0, p0
@@ -263,7 +263,7 @@
 
     goto/16 :goto_0
 
-    .line 325
+    .line 335
     :pswitch_5
     move-object/from16 v0, p0
 
@@ -275,11 +275,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap4(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap5(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 328
+    .line 338
     :pswitch_6
     move-object/from16 v0, p1
 
@@ -287,49 +287,49 @@
 
     check-cast v8, Lcom/android/internal/os/SomeArgs;
 
-    .line 330
+    .line 340
     .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_2
     iget-object v10, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v10, Ljava/lang/String;
 
-    .line 331
+    .line 341
     .local v10, "callId":Ljava/lang/String;
     iget v0, v8, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    move/from16 v16, v0
+    move/from16 v17, v0
 
-    .line 332
-    .local v16, "videoState":I
+    .line 342
+    .local v17, "videoState":I
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
-    move/from16 v0, v16
+    move/from16 v0, v17
 
-    invoke-static {v1, v10, v0}, Landroid/telecom/ConnectionService;->-wrap3(Landroid/telecom/ConnectionService;Ljava/lang/String;I)V
+    invoke-static {v1, v10, v0}, Landroid/telecom/ConnectionService;->-wrap4(Landroid/telecom/ConnectionService;Ljava/lang/String;I)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 334
+    .line 344
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto/16 :goto_0
 
-    .line 333
+    .line 343
     .end local v10    # "callId":Ljava/lang/String;
-    .end local v16    # "videoState":I
+    .end local v17    # "videoState":I
     :catchall_1
     move-exception v1
 
-    .line 334
+    .line 344
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 333
+    .line 343
     throw v1
 
-    .line 339
+    .line 349
     .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_7
     move-object/from16 v0, p0
@@ -342,11 +342,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap17(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap18(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 342
+    .line 352
     :pswitch_8
     move-object/from16 v0, p1
 
@@ -354,14 +354,14 @@
 
     check-cast v8, Lcom/android/internal/os/SomeArgs;
 
-    .line 344
+    .line 354
     .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_3
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
     iget-object v1, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
@@ -371,28 +371,28 @@
 
     check-cast v2, Ljava/lang/String;
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    invoke-static {v0, v1, v2}, Landroid/telecom/ConnectionService;->-wrap18(Landroid/telecom/ConnectionService;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Landroid/telecom/ConnectionService;->-wrap19(Landroid/telecom/ConnectionService;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    .line 346
+    .line 356
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto/16 :goto_0
 
-    .line 345
+    .line 355
     :catchall_2
     move-exception v1
 
-    .line 346
+    .line 356
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 345
+    .line 355
     throw v1
 
-    .line 351
+    .line 361
     .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_9
     move-object/from16 v0, p0
@@ -405,11 +405,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap7(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap8(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 354
+    .line 364
     :pswitch_a
     move-object/from16 v0, p0
 
@@ -421,11 +421,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap21(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap22(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 357
+    .line 367
     :pswitch_b
     move-object/from16 v0, p0
 
@@ -437,11 +437,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap9(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap10(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 360
+    .line 370
     :pswitch_c
     move-object/from16 v0, p0
 
@@ -453,11 +453,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap25(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap26(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 363
+    .line 373
     :pswitch_d
     move-object/from16 v0, p1
 
@@ -465,20 +465,20 @@
 
     check-cast v8, Lcom/android/internal/os/SomeArgs;
 
-    .line 365
+    .line 375
     .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_4
     iget-object v10, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v10, Ljava/lang/String;
 
-    .line 366
+    .line 376
     .restart local v10    # "callId":Ljava/lang/String;
     iget-object v9, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v9, Landroid/telecom/CallAudioState;
 
-    .line 367
+    .line 377
     .local v9, "audioState":Landroid/telecom/CallAudioState;
     move-object/from16 v0, p0
 
@@ -488,28 +488,28 @@
 
     invoke-direct {v2, v9}, Landroid/telecom/CallAudioState;-><init>(Landroid/telecom/CallAudioState;)V
 
-    invoke-static {v1, v10, v2}, Landroid/telecom/ConnectionService;->-wrap13(Landroid/telecom/ConnectionService;Ljava/lang/String;Landroid/telecom/CallAudioState;)V
+    invoke-static {v1, v10, v2}, Landroid/telecom/ConnectionService;->-wrap14(Landroid/telecom/ConnectionService;Ljava/lang/String;Landroid/telecom/CallAudioState;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
-    .line 369
+    .line 379
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto/16 :goto_0
 
-    .line 368
+    .line 378
     .end local v9    # "audioState":Landroid/telecom/CallAudioState;
     .end local v10    # "callId":Ljava/lang/String;
     :catchall_3
     move-exception v1
 
-    .line 369
+    .line 379
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 368
+    .line 378
     throw v1
 
-    .line 374
+    .line 384
     .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_e
     move-object/from16 v0, p0
@@ -526,119 +526,22 @@
 
     iget v0, v0, Landroid/os/Message;->arg1:I
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
     int-to-char v0, v0
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    invoke-static {v2, v1, v0}, Landroid/telecom/ConnectionService;->-wrap15(Landroid/telecom/ConnectionService;Ljava/lang/String;C)V
+    invoke-static {v2, v1, v0}, Landroid/telecom/ConnectionService;->-wrap16(Landroid/telecom/ConnectionService;Ljava/lang/String;C)V
 
     goto/16 :goto_0
 
-    .line 377
+    .line 387
     :pswitch_f
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
-
-    move-object/from16 v0, p1
-
-    iget-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap23(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    .line 380
-    :pswitch_10
-    move-object/from16 v0, p1
-
-    iget-object v8, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v8, Lcom/android/internal/os/SomeArgs;
-
-    .line 382
-    .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
-    :try_start_5
-    iget-object v11, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
-
-    check-cast v11, Ljava/lang/String;
-
-    .line 383
-    .local v11, "callId1":Ljava/lang/String;
-    iget-object v12, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
-
-    check-cast v12, Ljava/lang/String;
-
-    .line 384
-    .local v12, "callId2":Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
-
-    invoke-static {v1, v11, v12}, Landroid/telecom/ConnectionService;->-wrap5(Landroid/telecom/ConnectionService;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_4
-
-    .line 386
-    invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
-
-    goto/16 :goto_0
-
-    .line 385
-    .end local v11    # "callId1":Ljava/lang/String;
-    .end local v12    # "callId2":Ljava/lang/String;
-    :catchall_4
-    move-exception v1
-
-    .line 386
-    invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
-
-    .line 385
-    throw v1
-
-    .line 391
-    .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
-    :pswitch_11
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
-
-    move-object/from16 v0, p1
-
-    iget-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap22(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    .line 394
-    :pswitch_12
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
-
-    move-object/from16 v0, p1
-
-    iget-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap10(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    .line 397
-    :pswitch_13
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
@@ -653,70 +556,57 @@
 
     goto/16 :goto_0
 
-    .line 400
-    :pswitch_14
+    .line 390
+    :pswitch_10
     move-object/from16 v0, p1
 
     iget-object v8, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v8, Lcom/android/internal/os/SomeArgs;
 
-    .line 402
+    .line 392
     .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
-    :try_start_6
-    iget-object v10, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
+    :try_start_5
+    iget-object v11, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    check-cast v10, Ljava/lang/String;
+    check-cast v11, Ljava/lang/String;
 
-    .line 403
-    .restart local v10    # "callId":Ljava/lang/String;
-    iget v1, v8, Lcom/android/internal/os/SomeArgs;->argi1:I
+    .line 393
+    .local v11, "callId1":Ljava/lang/String;
+    iget-object v12, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    check-cast v12, Ljava/lang/String;
 
-    if-ne v1, v2, :cond_3
-
-    const/4 v15, 0x1
-
-    .line 404
-    .local v15, "proceed":Z
-    :goto_4
+    .line 394
+    .local v12, "callId2":Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
-    invoke-static {v1, v10, v15}, Landroid/telecom/ConnectionService;->-wrap14(Landroid/telecom/ConnectionService;Ljava/lang/String;Z)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_5
+    invoke-static {v1, v11, v12}, Landroid/telecom/ConnectionService;->-wrap6(Landroid/telecom/ConnectionService;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
-    .line 406
+    .line 396
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto/16 :goto_0
 
-    .line 403
-    .end local v15    # "proceed":Z
-    :cond_3
-    const/4 v15, 0x0
-
-    .restart local v15    # "proceed":Z
-    goto :goto_4
-
-    .line 405
-    .end local v10    # "callId":Ljava/lang/String;
-    .end local v15    # "proceed":Z
-    :catchall_5
+    .line 395
+    .end local v11    # "callId1":Ljava/lang/String;
+    .end local v12    # "callId2":Ljava/lang/String;
+    :catchall_4
     move-exception v1
 
-    .line 406
+    .line 396
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 405
+    .line 395
     throw v1
 
-    .line 411
+    .line 401
     .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
-    :pswitch_15
+    :pswitch_11
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
@@ -727,67 +617,172 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap16(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap23(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 415
-    :pswitch_16
+    .line 404
+    :pswitch_12
     move-object/from16 v0, p1
 
     iget-object v8, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v8, Lcom/android/internal/os/SomeArgs;
 
-    .line 417
+    .line 406
+    .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
+    :try_start_6
+    iget-object v10, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
+
+    check-cast v10, Ljava/lang/String;
+
+    .line 407
+    .restart local v10    # "callId":Ljava/lang/String;
+    iget-object v15, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
+
+    check-cast v15, Ljava/lang/String;
+
+    .line 408
+    .local v15, "participant":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
+
+    invoke-static {v1, v10, v15}, Landroid/telecom/ConnectionService;->-wrap3(Landroid/telecom/ConnectionService;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_5
+
+    .line 410
+    invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
+
+    goto/16 :goto_0
+
+    .line 409
+    .end local v10    # "callId":Ljava/lang/String;
+    .end local v15    # "participant":Ljava/lang/String;
+    :catchall_5
+    move-exception v1
+
+    .line 410
+    invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
+
+    .line 409
+    throw v1
+
+    .line 415
+    .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
+    :pswitch_13
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
+
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap11(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 418
+    :pswitch_14
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
+
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap25(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 421
+    :pswitch_15
+    move-object/from16 v0, p1
+
+    iget-object v8, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v8, Lcom/android/internal/os/SomeArgs;
+
+    .line 423
     .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_7
     iget-object v10, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v10, Ljava/lang/String;
 
-    .line 418
+    .line 424
     .restart local v10    # "callId":Ljava/lang/String;
-    iget-object v13, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
+    iget v1, v8, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    check-cast v13, Ljava/lang/String;
+    const/4 v2, 0x1
 
-    .line 419
-    .local v13, "event":Ljava/lang/String;
-    iget-object v14, v8, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
+    if-ne v1, v2, :cond_3
 
-    check-cast v14, Landroid/os/Bundle;
+    const/16 v16, 0x1
 
-    .line 420
-    .local v14, "extras":Landroid/os/Bundle;
+    .line 425
+    .local v16, "proceed":Z
+    :goto_4
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
-    invoke-static {v1, v10, v13, v14}, Landroid/telecom/ConnectionService;->-wrap20(Landroid/telecom/ConnectionService;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+    move/from16 v0, v16
+
+    invoke-static {v1, v10, v0}, Landroid/telecom/ConnectionService;->-wrap15(Landroid/telecom/ConnectionService;Ljava/lang/String;Z)V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_6
 
-    .line 422
+    .line 427
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto/16 :goto_0
 
-    .line 421
+    .line 424
+    .end local v16    # "proceed":Z
+    :cond_3
+    const/16 v16, 0x0
+
+    .restart local v16    # "proceed":Z
+    goto :goto_4
+
+    .line 426
     .end local v10    # "callId":Ljava/lang/String;
-    .end local v13    # "event":Ljava/lang/String;
-    .end local v14    # "extras":Landroid/os/Bundle;
+    .end local v16    # "proceed":Z
     :catchall_6
     move-exception v1
 
-    .line 422
+    .line 427
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 421
+    .line 426
     throw v1
 
-    .line 427
+    .line 432
     .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
+    :pswitch_16
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
+
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-static {v2, v1}, Landroid/telecom/ConnectionService;->-wrap17(Landroid/telecom/ConnectionService;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 436
     :pswitch_17
     move-object/from16 v0, p1
 
@@ -795,49 +790,103 @@
 
     check-cast v8, Lcom/android/internal/os/SomeArgs;
 
-    .line 429
+    .line 438
     .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_8
     iget-object v10, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v10, Ljava/lang/String;
 
-    .line 430
+    .line 439
+    .restart local v10    # "callId":Ljava/lang/String;
+    iget-object v13, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
+
+    check-cast v13, Ljava/lang/String;
+
+    .line 440
+    .local v13, "event":Ljava/lang/String;
+    iget-object v14, v8, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
+
+    check-cast v14, Landroid/os/Bundle;
+
+    .line 441
+    .local v14, "extras":Landroid/os/Bundle;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
+
+    invoke-static {v1, v10, v13, v14}, Landroid/telecom/ConnectionService;->-wrap21(Landroid/telecom/ConnectionService;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_7
+
+    .line 443
+    invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
+
+    goto/16 :goto_0
+
+    .line 442
+    .end local v10    # "callId":Ljava/lang/String;
+    .end local v13    # "event":Ljava/lang/String;
+    .end local v14    # "extras":Landroid/os/Bundle;
+    :catchall_7
+    move-exception v1
+
+    .line 443
+    invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
+
+    .line 442
+    throw v1
+
+    .line 448
+    .end local v8    # "args":Lcom/android/internal/os/SomeArgs;
+    :pswitch_18
+    move-object/from16 v0, p1
+
+    iget-object v8, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v8, Lcom/android/internal/os/SomeArgs;
+
+    .line 450
+    .restart local v8    # "args":Lcom/android/internal/os/SomeArgs;
+    :try_start_9
+    iget-object v10, v8, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
+
+    check-cast v10, Ljava/lang/String;
+
+    .line 451
     .restart local v10    # "callId":Ljava/lang/String;
     iget-object v14, v8, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v14, Landroid/os/Bundle;
 
-    .line 431
+    .line 452
     .restart local v14    # "extras":Landroid/os/Bundle;
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
 
-    invoke-static {v1, v10, v14}, Landroid/telecom/ConnectionService;->-wrap8(Landroid/telecom/ConnectionService;Ljava/lang/String;Landroid/os/Bundle;)V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_7
+    invoke-static {v1, v10, v14}, Landroid/telecom/ConnectionService;->-wrap9(Landroid/telecom/ConnectionService;Ljava/lang/String;Landroid/os/Bundle;)V
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_8
 
-    .line 433
+    .line 454
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto/16 :goto_0
 
-    .line 432
+    .line 453
     .end local v10    # "callId":Ljava/lang/String;
     .end local v14    # "extras":Landroid/os/Bundle;
-    :catchall_7
+    :catchall_8
     move-exception v1
 
-    .line 433
+    .line 454
     invoke-virtual {v8}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 432
+    .line 453
     throw v1
 
-    .line 278
-    nop
-
+    .line 288
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -853,16 +902,22 @@
         :pswitch_f
         :pswitch_10
         :pswitch_11
-        :pswitch_14
+        :pswitch_15
         :pswitch_0
         :pswitch_2
         :pswitch_6
-        :pswitch_12
         :pswitch_13
+        :pswitch_14
         :pswitch_8
         :pswitch_a
-        :pswitch_15
         :pswitch_16
         :pswitch_17
+        :pswitch_18
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_12
     .end packed-switch
 .end method

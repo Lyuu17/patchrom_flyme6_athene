@@ -89,9 +89,7 @@
     if-eqz v0, :cond_0
 
     .line 632
-    nop
-
-    nop
+    check-cast p1, Ljava/lang/Boolean;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -111,9 +109,7 @@
     if-eqz v0, :cond_1
 
     .line 637
-    nop
-
-    nop
+    check-cast p1, Ljava/lang/Byte;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Byte;->byteValue()B
@@ -133,9 +129,7 @@
     if-eqz v0, :cond_2
 
     .line 642
-    nop
-
-    nop
+    check-cast p1, Ljava/lang/Short;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Short;->shortValue()S
@@ -155,9 +149,7 @@
     if-eqz v0, :cond_3
 
     .line 647
-    nop
-
-    nop
+    check-cast p1, Ljava/lang/Integer;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -177,9 +169,7 @@
     if-eqz v0, :cond_4
 
     .line 652
-    nop
-
-    nop
+    check-cast p1, Ljava/lang/Long;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
@@ -199,9 +189,7 @@
     if-eqz v0, :cond_5
 
     .line 657
-    nop
-
-    nop
+    check-cast p1, Ljava/lang/Float;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
@@ -221,9 +209,7 @@
     if-eqz v0, :cond_6
 
     .line 662
-    nop
-
-    nop
+    check-cast p1, Ljava/lang/Double;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
@@ -243,9 +229,7 @@
     if-eqz v0, :cond_7
 
     .line 667
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Byte2;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI8(Landroid/renderscript/Byte2;)V
@@ -261,9 +245,7 @@
     if-eqz v0, :cond_8
 
     .line 672
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Byte3;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI8(Landroid/renderscript/Byte3;)V
@@ -279,9 +261,7 @@
     if-eqz v0, :cond_9
 
     .line 677
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Byte4;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI8(Landroid/renderscript/Byte4;)V
@@ -297,9 +277,7 @@
     if-eqz v0, :cond_a
 
     .line 682
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Short2;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI16(Landroid/renderscript/Short2;)V
@@ -315,9 +293,7 @@
     if-eqz v0, :cond_b
 
     .line 687
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Short3;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI16(Landroid/renderscript/Short3;)V
@@ -333,9 +309,7 @@
     if-eqz v0, :cond_c
 
     .line 692
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Short4;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI16(Landroid/renderscript/Short4;)V
@@ -351,9 +325,7 @@
     if-eqz v0, :cond_d
 
     .line 697
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Int2;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI32(Landroid/renderscript/Int2;)V
@@ -369,9 +341,7 @@
     if-eqz v0, :cond_e
 
     .line 702
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Int3;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI32(Landroid/renderscript/Int3;)V
@@ -387,9 +357,7 @@
     if-eqz v0, :cond_f
 
     .line 707
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Int4;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI32(Landroid/renderscript/Int4;)V
@@ -405,9 +373,7 @@
     if-eqz v0, :cond_10
 
     .line 712
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Long2;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI64(Landroid/renderscript/Long2;)V
@@ -423,9 +389,7 @@
     if-eqz v0, :cond_11
 
     .line 717
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Long3;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI64(Landroid/renderscript/Long3;)V
@@ -441,9 +405,7 @@
     if-eqz v0, :cond_12
 
     .line 722
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Long4;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addI64(Landroid/renderscript/Long4;)V
@@ -459,9 +421,7 @@
     if-eqz v0, :cond_13
 
     .line 727
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Float2;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addF32(Landroid/renderscript/Float2;)V
@@ -477,9 +437,7 @@
     if-eqz v0, :cond_14
 
     .line 732
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Float3;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addF32(Landroid/renderscript/Float3;)V
@@ -495,9 +453,7 @@
     if-eqz v0, :cond_15
 
     .line 737
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Float4;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addF32(Landroid/renderscript/Float4;)V
@@ -513,9 +469,7 @@
     if-eqz v0, :cond_16
 
     .line 742
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Double2;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addF64(Landroid/renderscript/Double2;)V
@@ -531,9 +485,7 @@
     if-eqz v0, :cond_17
 
     .line 747
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Double3;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addF64(Landroid/renderscript/Double3;)V
@@ -549,9 +501,7 @@
     if-eqz v0, :cond_18
 
     .line 752
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Double4;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addF64(Landroid/renderscript/Double4;)V
@@ -567,9 +517,7 @@
     if-eqz v0, :cond_19
 
     .line 757
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Matrix2f;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addMatrix(Landroid/renderscript/Matrix2f;)V
@@ -585,9 +533,7 @@
     if-eqz v0, :cond_1a
 
     .line 762
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Matrix3f;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addMatrix(Landroid/renderscript/Matrix3f;)V
@@ -603,9 +549,7 @@
     if-eqz v0, :cond_1b
 
     .line 767
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/Matrix4f;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addMatrix(Landroid/renderscript/Matrix4f;)V
@@ -621,9 +565,7 @@
     if-eqz v0, :cond_1c
 
     .line 772
-    nop
-
-    nop
+    check-cast p1, Landroid/renderscript/BaseObj;
 
     .end local p1    # "obj":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/renderscript/FieldPacker;->addObj(Landroid/renderscript/BaseObj;)V

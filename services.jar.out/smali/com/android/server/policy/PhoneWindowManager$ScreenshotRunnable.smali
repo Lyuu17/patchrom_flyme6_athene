@@ -29,17 +29,17 @@
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
     .prologue
-    .line 1480
+    .line 1741
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$ScreenshotRunnable;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1481
+    .line 1742
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/policy/PhoneWindowManager$ScreenshotRunnable;->mScreenshotType:I
 
-    .line 1480
+    .line 1741
     return-void
 .end method
 
@@ -59,14 +59,14 @@
     .locals 2
 
     .prologue
-    .line 1489
+    .line 1750
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$ScreenshotRunnable;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget v1, p0, Lcom/android/server/policy/PhoneWindowManager$ScreenshotRunnable;->mScreenshotType:I
 
-    invoke-static {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->-wrap22(Lcom/android/server/policy/PhoneWindowManager;I)V
+    invoke-static {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->-wrap24(Lcom/android/server/policy/PhoneWindowManager;I)V
 
-    .line 1488
+    .line 1749
     return-void
 .end method
 
@@ -75,9 +75,9 @@
     .param p1, "screenshotType"    # I
 
     .prologue
-    .line 1484
+    .line 1745
     iput p1, p0, Lcom/android/server/policy/PhoneWindowManager$ScreenshotRunnable;->mScreenshotType:I
 
-    .line 1483
+    .line 1744
     return-void
 .end method

@@ -29,20 +29,18 @@
     .param p1, "router"    # Landroid/media/AudioRouting;
 
     .prologue
-    .line 1482
+    .line 1519
     instance-of v0, p1, Landroid/media/AudioRecord;
 
     if-eqz v0, :cond_0
 
-    .line 1483
-    nop
-
-    nop
+    .line 1520
+    check-cast p1, Landroid/media/AudioRecord;
 
     .end local p1    # "router":Landroid/media/AudioRouting;
     invoke-interface {p0, p1}, Landroid/media/AudioRecord$OnRoutingChangedListener;->onRoutingChanged(Landroid/media/AudioRecord;)V
 
-    .line 1481
+    .line 1518
     :cond_0
     return-void
 .end method

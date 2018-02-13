@@ -30,6 +30,8 @@
 
 .field static final TRANSACTION_addConnectionServiceAdapter:I = 0x1
 
+.field static final TRANSACTION_addParticipantWithConference:I = 0x18
+
 .field static final TRANSACTION_answer:I = 0x6
 
 .field static final TRANSACTION_answerVideo:I = 0x5
@@ -161,7 +163,7 @@
     .line 45
     sparse-switch p1, :sswitch_data_0
 
-    .line 288
+    .line 298
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -948,7 +950,39 @@
     .local v11, "_arg1":Landroid/os/Bundle;
     goto :goto_7
 
+    .line 289
+    .end local v8    # "_arg0":Ljava/lang/String;
+    .end local v11    # "_arg1":Landroid/os/Bundle;
+    :sswitch_18
+    const-string/jumbo v1, "com.android.internal.telecom.IConnectionService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 291
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 293
+    .restart local v8    # "_arg0":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 294
+    .restart local v3    # "_arg1":Ljava/lang/String;
+    invoke-virtual {p0, v8, v3}, Lcom/android/internal/telecom/IConnectionService$Stub;->addParticipantWithConference(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 295
+    const/4 v1, 0x1
+
+    return v1
+
     .line 45
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -974,6 +1008,7 @@
         0x15 -> :sswitch_15
         0x16 -> :sswitch_16
         0x17 -> :sswitch_17
+        0x18 -> :sswitch_18
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

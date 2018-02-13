@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Ilovaga hisobning sinxronlash sozlamalarini o‘zgartirish uchun ruxsat beradi. Masalan, bundan \"Odamlar\" ilovasini hisob bilan sinxronlanlash uchun foydalanish mumkin.</string>
     <string name="permlab_readSyncStats">sinxronlash statistikasini o‘qish</string>
     <string name="permdesc_readSyncStats">Ilovaga hisobning sinxronlash statistikasini, shu jumladan, sinxronlangan hodisalar tarixi va qancha ma’lumot sinxronlanganligi haqidagi ma’lumotni o‘qishga ruxsat beradi.</string>
-    <string name="permlab_sdcardRead">USB xotiradagi ma’lumotlarni ko‘rish</string>
-    <string name="permdesc_sdcardRead">Dasturga USB xotiradagi ma’lumotlarini ko‘rib chiqish uchun ruxsat beradi.</string>
-    <string name="permlab_sdcardWrite">USB xotiradagi ma’lumotlarni o‘zgartirish/o‘chirish</string>
-    <string name="permdesc_sdcardWrite">Ilova USB xotiraga ma’lumot yozishi mumkin.</string>
+    <string name="permlab_sdcardRead">SD xotira kartasi tarkibidagilarni o‘qish</string>
+    <string name="permdesc_sdcardRead">Dasturga SD kartadagi ma’lumotlarni ko‘rib chiqishga ruxsat berish.</string>
+    <string name="permlab_sdcardWrite">SD xotira kartasi tarkibidagilarni o‘zgartirish yoki o‘chirish</string>
+    <string name="permdesc_sdcardWrite">Ilova SD kartaga ma’lumot yozishi mumkin.</string>
     <string name="permlab_use_sip">SIP qo‘ng‘iroqlarini amalga oshirish/qabul qilish</string>
     <string name="permdesc_use_sip">Ilovaga SIP qo‘ng‘iroqlarini amalga oshirish va qabul qilish uchun ruxsat beradi.</string>
     <string name="permlab_register_sim_subscription">yangi SIM kartali telekommunikatsiya aloqalarini ro‘yxatga olish</string>
@@ -1025,7 +1025,7 @@ ruxsat so‘raldi"</string>
     <string name="no_matches">Topilmadi</string>
     <string name="find_on_page">Sahifadan topish</string>
     <string name="action_mode_done">Tayyor</string>
-    <string name="progress_erasing">USB xotirasi tozalanmoqda…</string>
+    <string name="progress_erasing">SD xotira kartasi tozalanmoqda…</string>
     <string name="share">Yuborish</string>
     <string name="find">Topish</string>
     <string name="websearch">Veb qidiruv</string>

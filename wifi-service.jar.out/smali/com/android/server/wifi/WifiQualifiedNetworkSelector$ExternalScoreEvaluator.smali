@@ -41,26 +41,26 @@
     .param p2, "dbg"    # Z
 
     .prologue
-    .line 1196
+    .line 1211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1189
+    .line 1204
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mBestCandidateType:I
 
-    .line 1190
+    .line 1205
     const/16 v0, -0x80
 
     iput v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mHighScore:I
 
-    .line 1197
+    .line 1212
     iput-object p1, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mLocalLog:Landroid/util/LocalLog;
 
-    .line 1198
+    .line 1213
     iput-boolean p2, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mDbg:Z
 
-    .line 1196
+    .line 1211
     return-void
 .end method
 
@@ -69,17 +69,17 @@
     .param p1, "log"    # Ljava/lang/String;
 
     .prologue
-    .line 1246
+    .line 1261
     iget-boolean v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mDbg:Z
 
     if-eqz v0, :cond_0
 
-    .line 1247
+    .line 1262
     iget-object v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mLocalLog:Landroid/util/LocalLog;
 
     invoke-virtual {v0, p1}, Landroid/util/LocalLog;->log(Ljava/lang/String;)V
 
-    .line 1245
+    .line 1260
     :cond_0
     return-void
 .end method
@@ -93,10 +93,10 @@
     .param p3, "scanResult"    # Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 1216
+    .line 1231
     if-eqz p1, :cond_1
 
-    .line 1217
+    .line 1232
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -105,14 +105,14 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 1218
+    .line 1233
     iget v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mBestCandidateType:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 1219
+    .line 1234
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -121,7 +121,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1220
+    .line 1235
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -129,18 +129,18 @@
 
     iput v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mHighScore:I
 
-    .line 1221
+    .line 1236
     iput-object p2, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mSavedConfig:Landroid/net/wifi/WifiConfiguration;
 
-    .line 1222
+    .line 1237
     iput-object p3, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mScanResultCandidate:Landroid/net/wifi/ScanResult;
 
-    .line 1223
+    .line 1238
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mBestCandidateType:I
 
-    .line 1224
+    .line 1239
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -159,10 +159,10 @@
 
     move-result-object v0
 
-    .line 1225
+    .line 1240
     const-string/jumbo v1, "candidate"
 
-    .line 1224
+    .line 1239
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -173,7 +173,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->localLog(Ljava/lang/String;)V
 
-    .line 1213
+    .line 1228
     :cond_1
     return-void
 .end method
@@ -184,7 +184,7 @@
     .param p2, "scanResult"    # Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 1203
+    .line 1218
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -195,22 +195,22 @@
 
     if-le v0, v1, :cond_0
 
-    .line 1204
+    .line 1219
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mHighScore:I
 
-    .line 1205
+    .line 1220
     iput-object p2, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mScanResultCandidate:Landroid/net/wifi/ScanResult;
 
-    .line 1206
+    .line 1221
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mBestCandidateType:I
 
-    .line 1207
+    .line 1222
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -235,7 +235,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->localLog(Ljava/lang/String;)V
 
-    .line 1202
+    .line 1217
     :cond_0
     return-void
 .end method
@@ -244,7 +244,7 @@
     .locals 1
 
     .prologue
-    .line 1230
+    .line 1245
     iget v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mBestCandidateType:I
 
     return v0
@@ -254,7 +254,7 @@
     .locals 1
 
     .prologue
-    .line 1234
+    .line 1249
     iget v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mHighScore:I
 
     return v0
@@ -264,7 +264,7 @@
     .locals 1
 
     .prologue
-    .line 1242
+    .line 1257
     iget-object v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mSavedConfig:Landroid/net/wifi/WifiConfiguration;
 
     return-object v0
@@ -274,7 +274,7 @@
     .locals 1
 
     .prologue
-    .line 1238
+    .line 1253
     iget-object v0, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$ExternalScoreEvaluator;->mScanResultCandidate:Landroid/net/wifi/ScanResult;
 
     return-object v0

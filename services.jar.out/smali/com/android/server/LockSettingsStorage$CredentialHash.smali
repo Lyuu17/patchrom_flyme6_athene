@@ -41,21 +41,21 @@
     .param p2, "version"    # I
 
     .prologue
-    .line 85
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 86
+    .line 89
     iput-object p1, p0, Lcom/android/server/LockSettingsStorage$CredentialHash;->hash:[B
 
-    .line 87
+    .line 90
     iput p2, p0, Lcom/android/server/LockSettingsStorage$CredentialHash;->version:I
 
-    .line 88
+    .line 91
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/LockSettingsStorage$CredentialHash;->isBaseZeroPattern:Z
 
-    .line 85
+    .line 88
     return-void
 .end method
 
@@ -65,20 +65,20 @@
     .param p2, "isBaseZeroPattern"    # Z
 
     .prologue
-    .line 91
+    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
+    .line 95
     iput-object p1, p0, Lcom/android/server/LockSettingsStorage$CredentialHash;->hash:[B
 
-    .line 93
+    .line 96
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/LockSettingsStorage$CredentialHash;->version:I
 
-    .line 94
+    .line 97
     iput-boolean p2, p0, Lcom/android/server/LockSettingsStorage$CredentialHash;->isBaseZeroPattern:Z
 
-    .line 91
+    .line 94
     return-void
 .end method

@@ -54,9 +54,9 @@
 
 .field static final TRANSACTION_endServiceDeclaration:I = 0x1f
 
-.field static final TRANSACTION_flushPendingBatchResults:I = 0x4
+.field static final TRANSACTION_flushPendingBatchResults_3:I = 0x4
 
-.field static final TRANSACTION_getDevicesMatchingConnectionStates:I = 0x1
+.field static final TRANSACTION_getDevicesMatchingConnectionStates_0:I = 0x1
 
 .field static final TRANSACTION_numHwTrackFiltersAvailable:I = 0x26
 
@@ -86,11 +86,11 @@
 
 .field static final TRANSACTION_startMultiAdvertising:I = 0x5
 
-.field static final TRANSACTION_startScan:I = 0x2
+.field static final TRANSACTION_startScan_1:I = 0x2
 
 .field static final TRANSACTION_stopMultiAdvertising:I = 0x6
 
-.field static final TRANSACTION_stopScan:I = 0x3
+.field static final TRANSACTION_stopScan_2:I = 0x3
 
 .field static final TRANSACTION_unregAll:I = 0x25
 

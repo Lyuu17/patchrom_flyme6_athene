@@ -179,6 +179,8 @@
 
 .field public static final STATUS_PAUSED_BY_APP:I = 0xc1
 
+.field public static final STATUS_PAUSED_MANUAL:I = 0xc5
+
 .field public static final STATUS_PENDING:I = 0xbe
 
 .field public static final STATUS_PRECONDITION_FAILED:I = 0x19c
@@ -438,161 +440,161 @@
     .param p0, "status"    # I
 
     .prologue
-    .line 732
+    .line 737
     sparse-switch p0, :sswitch_data_0
 
-    .line 757
+    .line 762
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 733
+    .line 738
     :sswitch_0
     const-string/jumbo v0, "PENDING"
 
     return-object v0
 
-    .line 734
+    .line 739
     :sswitch_1
     const-string/jumbo v0, "RUNNING"
 
     return-object v0
 
-    .line 735
+    .line 740
     :sswitch_2
     const-string/jumbo v0, "PAUSED_BY_APP"
 
     return-object v0
 
-    .line 736
+    .line 741
     :sswitch_3
     const-string/jumbo v0, "WAITING_TO_RETRY"
 
     return-object v0
 
-    .line 737
+    .line 742
     :sswitch_4
     const-string/jumbo v0, "WAITING_FOR_NETWORK"
 
     return-object v0
 
-    .line 738
+    .line 743
     :sswitch_5
     const-string/jumbo v0, "QUEUED_FOR_WIFI"
 
     return-object v0
 
-    .line 739
+    .line 744
     :sswitch_6
     const-string/jumbo v0, "INSUFFICIENT_SPACE_ERROR"
 
     return-object v0
 
-    .line 740
+    .line 745
     :sswitch_7
     const-string/jumbo v0, "DEVICE_NOT_FOUND_ERROR"
 
     return-object v0
 
-    .line 741
+    .line 746
     :sswitch_8
     const-string/jumbo v0, "SUCCESS"
 
     return-object v0
 
-    .line 742
+    .line 747
     :sswitch_9
     const-string/jumbo v0, "BAD_REQUEST"
 
     return-object v0
 
-    .line 743
+    .line 748
     :sswitch_a
     const-string/jumbo v0, "NOT_ACCEPTABLE"
 
     return-object v0
 
-    .line 744
+    .line 749
     :sswitch_b
     const-string/jumbo v0, "LENGTH_REQUIRED"
 
     return-object v0
 
-    .line 745
+    .line 750
     :sswitch_c
     const-string/jumbo v0, "PRECONDITION_FAILED"
 
     return-object v0
 
-    .line 746
+    .line 751
     :sswitch_d
     const-string/jumbo v0, "FILE_ALREADY_EXISTS_ERROR"
 
     return-object v0
 
-    .line 747
+    .line 752
     :sswitch_e
     const-string/jumbo v0, "CANNOT_RESUME"
 
     return-object v0
 
-    .line 748
+    .line 753
     :sswitch_f
     const-string/jumbo v0, "CANCELED"
 
     return-object v0
 
-    .line 749
+    .line 754
     :sswitch_10
     const-string/jumbo v0, "UNKNOWN_ERROR"
 
     return-object v0
 
-    .line 750
+    .line 755
     :sswitch_11
     const-string/jumbo v0, "FILE_ERROR"
 
     return-object v0
 
-    .line 751
+    .line 756
     :sswitch_12
     const-string/jumbo v0, "UNHANDLED_REDIRECT"
 
     return-object v0
 
-    .line 752
+    .line 757
     :sswitch_13
     const-string/jumbo v0, "UNHANDLED_HTTP_CODE"
 
     return-object v0
 
-    .line 753
+    .line 758
     :sswitch_14
     const-string/jumbo v0, "HTTP_DATA_ERROR"
 
     return-object v0
 
-    .line 754
+    .line 759
     :sswitch_15
     const-string/jumbo v0, "HTTP_EXCEPTION"
 
     return-object v0
 
-    .line 755
+    .line 760
     :sswitch_16
     const-string/jumbo v0, "TOO_MANY_REDIRECTS"
 
     return-object v0
 
-    .line 756
+    .line 761
     :sswitch_17
     const-string/jumbo v0, "BLOCKED"
 
     return-object v0
 
-    .line 732
+    .line 737
     :sswitch_data_0
     .sparse-switch
         0xbe -> :sswitch_0

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/service/quicksettings/TileService;
 
     .prologue
-    .line 225
+    .line 230
     iput-object p1, p0, Landroid/service/quicksettings/TileService$1;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 227
+    .line 232
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 233
+    .line 238
     :try_start_0
     iget-object v1, p0, Landroid/service/quicksettings/TileService$1;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -69,11 +69,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 231
+    .line 236
     :goto_0
     return-void
 
-    .line 234
+    .line 239
     :catch_0
     move-exception v0
 

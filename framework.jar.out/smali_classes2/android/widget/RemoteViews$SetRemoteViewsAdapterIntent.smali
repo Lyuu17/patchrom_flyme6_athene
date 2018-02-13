@@ -40,7 +40,7 @@
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$Action;)V
 
     .line 679
-    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;->viewId:I
 
     .line 680
     iput-object p3, p0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;->intent:Landroid/content/Intent;
@@ -67,7 +67,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iput v0, p0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;->viewId:I
 
     .line 685
     sget-object v0, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -94,7 +94,7 @@
 
     .prologue
     .line 696
-    iget v4, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v4, p0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;->viewId:I
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
     move-result-object v5
 
     .line 702
-    iget v6, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v6, p0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;->viewId:I
 
     .line 701
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -164,9 +164,7 @@
     move-object v0, p2
 
     .line 714
-    nop
-
-    nop
+    check-cast v0, Landroid/appwidget/AppWidgetHostView;
 
     .line 715
     .local v0, "host":Landroid/appwidget/AppWidgetHostView;
@@ -188,9 +186,7 @@
     move-object v2, v1
 
     .line 717
-    nop
-
-    nop
+    check-cast v2, Landroid/widget/AbsListView;
 
     .line 718
     .local v2, "v":Landroid/widget/AbsListView;
@@ -223,7 +219,7 @@
     move-result-object v5
 
     .line 708
-    iget v6, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v6, p0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;->viewId:I
 
     .line 707
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -257,9 +253,7 @@
     move-object v3, v1
 
     .line 721
-    nop
-
-    nop
+    check-cast v3, Landroid/widget/AdapterViewAnimator;
 
     .line 722
     .local v3, "v":Landroid/widget/AdapterViewAnimator;
@@ -295,7 +289,7 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 690
-    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

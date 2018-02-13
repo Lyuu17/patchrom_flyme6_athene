@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Колдонмого эсеп менен синхрондошуу тууралоолорун өзгөртүү уруксатын берет. Мисалы, бул Кишилер колдонмосун эсеп менен синхрондошуусун иштете алат.</string>
     <string name="permlab_readSyncStats">шайкештирүү статистикасын окуу</string>
     <string name="permdesc_readSyncStats">Колдонмого эсептин статистикасын, синхрондоштуруу тарыхын, анын ичинде, канча берилиштер синхрондошкондугун окуганга уруксат берет.</string>
-    <string name="permlab_sdcardRead">USB сактагычыңыздын мазмунун окуу</string>
-    <string name="permdesc_sdcardRead">Колдонмого USB сактагычыңыздын мазмунун окуу мүмкүнчүлүгүн берет.</string>
-    <string name="permlab_sdcardWrite">USB сактагычыңыздын мазмунун өзгөртүү же жок кылуу</string>
-    <string name="permdesc_sdcardWrite">Колдонмого USB сактагычына жазуу мүмкүнчүлүгүн берет.</string>
+    <string name="permlab_sdcardRead">SD-картаңыздын мазмунун окуу</string>
+    <string name="permdesc_sdcardRead">Колдонмого SD-картаңыздын мазмунун окуу мүмкүнчүлүгүн берет.</string>
+    <string name="permlab_sdcardWrite">SD-картаңыздын мазмунун өзгөртүү же жок кылуу</string>
+    <string name="permdesc_sdcardWrite">Колдонмого SD картага жазуу мүмкүнчүлүгүн берет.</string>
     <string name="permlab_use_sip">SIP чалуу/чалууну кабыл алуу</string>
     <string name="permdesc_use_sip">Колдонмого SIP чалууларга жана чалууларды кабыл алууга мүмкүнчүлүк берет.</string>
     <string name="permlab_register_sim_subscription">жаңы телеком SIM туташууларын каттоо</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">Дал келүүлөр жок</string>
     <string name="find_on_page">Барактан табуу</string>
     <string name="action_mode_done">Даяр</string>
-    <string name="progress_erasing">USB сактагыч тазаланууда…</string>
+    <string name="progress_erasing">SD-карта тазаланууда…</string>
     <string name="share">Бөлүшүү</string>
     <string name="find">Табуу</string>
     <string name="websearch">Интернеттен издөө</string>

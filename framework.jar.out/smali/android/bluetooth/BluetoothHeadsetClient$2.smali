@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/bluetooth/BluetoothHeadsetClient;
 
     .prologue
-    .line 1166
+    .line 1183
     iput-object p1, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .param p2, "service"    # Landroid/os/IBinder;
 
     .prologue
-    .line 1169
+    .line 1186
     const-string/jumbo v0, "BluetoothHeadsetClient"
 
     const-string/jumbo v1, "Proxy object connected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1170
+    .line 1187
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
     invoke-static {p2}, Landroid/bluetooth/IBluetoothHeadsetClient$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothHeadsetClient;
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothHeadsetClient;->-set0(Landroid/bluetooth/BluetoothHeadsetClient;Landroid/bluetooth/IBluetoothHeadsetClient;)Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 1172
+    .line 1189
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->-get3(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -68,22 +68,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 1173
+    .line 1190
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->-get3(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
     move-result-object v0
 
-    .line 1174
+    .line 1191
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
-    .line 1173
+    .line 1190
     const/16 v2, 0x10
 
     invoke-interface {v0, v2, v1}, Landroid/bluetooth/BluetoothProfile$ServiceListener;->onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 1168
+    .line 1185
     :cond_0
     return-void
 .end method
@@ -95,19 +95,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1179
+    .line 1196
     const-string/jumbo v0, "BluetoothHeadsetClient"
 
     const-string/jumbo v1, "Proxy object disconnected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1180
+    .line 1197
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
     invoke-static {v0, v2}, Landroid/bluetooth/BluetoothHeadsetClient;->-set0(Landroid/bluetooth/BluetoothHeadsetClient;Landroid/bluetooth/IBluetoothHeadsetClient;)Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 1181
+    .line 1198
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->-get3(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -116,7 +116,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1182
+    .line 1199
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient$2;->this$0:Landroid/bluetooth/BluetoothHeadsetClient;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->-get3(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -127,7 +127,7 @@
 
     invoke-interface {v0, v1}, Landroid/bluetooth/BluetoothProfile$ServiceListener;->onServiceDisconnected(I)V
 
-    .line 1178
+    .line 1195
     :cond_0
     return-void
 .end method

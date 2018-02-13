@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.print.IPrintServicesChangeListener"
 
-.field static final TRANSACTION_onPrintServicesChanged:I = 0x1
+.field static final TRANSACTION_onPrintServicesChanged_0:I = 0x1
 
 
 # direct methods

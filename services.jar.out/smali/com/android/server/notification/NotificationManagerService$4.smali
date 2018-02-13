@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
     .prologue
-    .line 871
+    .line 1004
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$4;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,21 +41,21 @@
     .locals 1
 
     .prologue
-    .line 874
+    .line 1007
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$4;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mStatusBar:Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     if-eqz v0, :cond_0
 
-    .line 875
+    .line 1008
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$4;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mStatusBar:Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     invoke-interface {v0}, Lcom/android/server/statusbar/StatusBarManagerInternal;->buzzBeepBlinked()V
 
-    .line 873
+    .line 1006
     :cond_0
     return-void
 .end method

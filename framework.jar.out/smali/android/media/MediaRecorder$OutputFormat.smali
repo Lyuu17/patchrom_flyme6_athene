@@ -31,9 +31,13 @@
 
 .field public static final OUTPUT_FORMAT_RTP_AVP:I = 0x7
 
+.field public static final QCP:I = 0x14
+
 .field public static final RAW_AMR:I = 0x3
 
 .field public static final THREE_GPP:I = 0x1
+
+.field public static final WAVE:I = 0x15
 
 .field public static final WEBM:I = 0x9
 

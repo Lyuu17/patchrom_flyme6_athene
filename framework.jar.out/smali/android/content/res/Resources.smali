@@ -83,49 +83,40 @@
     .locals 5
 
     .prologue
-    .line 235
     const/4 v2, 0x0
 
     invoke-direct {p0, v2}, Landroid/content/res/Resources;-><init>(Ljava/lang/ClassLoader;)V
 
-    .line 237
     new-instance v1, Landroid/util/DisplayMetrics;
 
     invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 238
     .local v1, "metrics":Landroid/util/DisplayMetrics;
     invoke-virtual {v1}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
-    .line 240
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
-    .line 241
     .local v0, "config":Landroid/content/res/Configuration;
     invoke-virtual {v0}, Landroid/content/res/Configuration;->setToDefaults()V
 
-    .line 243
     new-instance v2, Landroid/content/res/ResourcesImpl;
 
     invoke-static {}, Landroid/content/res/AssetManager;->getSystem()Landroid/content/res/AssetManager;
 
     move-result-object v3
 
-    .line 244
     new-instance v4, Landroid/view/DisplayAdjustments;
 
     invoke-direct {v4}, Landroid/view/DisplayAdjustments;-><init>()V
 
-    .line 243
     invoke-direct {v2, v3, v1, v0, v4}, Landroid/content/res/ResourcesImpl;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/view/DisplayAdjustments;)V
 
     iput-object v2, p0, Landroid/content/res/Resources;->mResourcesImpl:Landroid/content/res/ResourcesImpl;
 
     invoke-static/range {p0 .. p0}, Landroid/content/res/Resources$FlymeInjector;->initFlymeThemeResource(Landroid/content/res/Resources;)V
 
-    .line 234
     return-void
 .end method
 
@@ -404,23 +395,18 @@
     .param p1, "targetSdkVersion"    # I
 
     .prologue
-    .line 142
-    const v2, 0x1030005
+    const v2, #android:style@Theme#t
 
-    .line 143
-    const v3, 0x103006b
+    const v3, #android:style@Theme.Holo#t
 
-    .line 144
-    const v4, 0x1030128
+    const v4, #android:style@Theme.DeviceDefault#t
 
-    .line 145
-    const v5, 0x103013f
+    const v5, #android:style@Theme.DeviceDefault.Light.DarkActionBar#t
 
     move v0, p0
 
     move v1, p1
 
-    .line 141
     invoke-static/range {v0 .. v5}, Landroid/content/res/Resources;->selectSystemTheme(IIIIII)I
 
     move-result v0
@@ -775,12 +761,10 @@
     .end annotation
 
     .prologue
-    .line 919
     invoke-direct {p0}, Landroid/content/res/Resources;->obtainTempTypedValue()Landroid/util/TypedValue;
 
     move-result-object v2
 
-    .line 921
     .local v2, "value":Landroid/util/TypedValue;
     :try_start_0
     iget-object v1, p0, Landroid/content/res/Resources;->mResourcesImpl:Landroid/content/res/ResourcesImpl;
@@ -801,38 +785,31 @@
 
     :cond_flyme_0
 
-    .line 922
     .local v1, "impl":Landroid/content/res/ResourcesImpl;
     const/4 v3, 0x1
 
     invoke-virtual {v1, p1, v2, v3}, Landroid/content/res/ResourcesImpl;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 923
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     const/16 v4, 0x10
 
     if-lt v3, v4, :cond_0
 
-    .line 924
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     const/16 v4, 0x1f
 
     if-gt v3, v4, :cond_0
 
-    .line 925
     iget v3, v2, Landroid/util/TypedValue;->data:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 934
     invoke-direct {p0, v2}, Landroid/content/res/Resources;->releaseTempTypedValue(Landroid/util/TypedValue;)V
 
-    .line 925
     return v3
 
-    .line 926
     :cond_0
     :try_start_1
     iget v3, v2, Landroid/util/TypedValue;->type:I

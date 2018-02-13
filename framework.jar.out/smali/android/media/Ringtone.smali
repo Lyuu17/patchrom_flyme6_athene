@@ -428,28 +428,23 @@
 
     move-result-object v8
 
-    .line 221
     .local v8, "actualTitle":Ljava/lang/String;
     const/4 v3, 0x1
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 223
     const/4 v4, 0x0
 
     aput-object v8, v3, v4
 
-    .line 222
-    const v4, 0x1040450
+    const v4, #android:string@ringtone_default_with_actual#t
 
-    .line 221
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v16
 
-    .line 262
     .end local v8    # "actualTitle":Ljava/lang/String;
     .end local v9    # "actualUri":Landroid/net/Uri;
     .end local v11    # "authority":Ljava/lang/String;
@@ -458,8 +453,7 @@
     :goto_0
     if-nez v16, :cond_1
 
-    .line 263
-    const v3, 0x1040453
+    const v3, #android:string@ringtone_unknown#t
 
     move-object/from16 v0, p0
 
@@ -735,26 +729,21 @@
 
     move-result-object v0
 
-    .line 422
-    const v1, 0x1100005
+    const v1, #android:raw@fallbackring#t
 
-    .line 421
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
 
     move-result-object v6
 
-    .line 423
     .local v6, "afd":Landroid/content/res/AssetFileDescriptor;
     if-eqz v6, :cond_3
 
-    .line 424
     new-instance v0, Landroid/media/MediaPlayer;
 
     invoke-direct {v0}, Landroid/media/MediaPlayer;-><init>()V
 
     iput-object v0, p0, Landroid/media/Ringtone;->mLocalPlayer:Landroid/media/MediaPlayer;
 
-    .line 425
     invoke-virtual {v6}, Landroid/content/res/AssetFileDescriptor;->getDeclaredLength()J
 
     move-result-wide v0

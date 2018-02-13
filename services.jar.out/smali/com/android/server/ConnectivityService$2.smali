@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/ConnectivityService;
 
     .prologue
-    .line 1504
+    .line 1522
     iput-object p1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Landroid/net/INetworkPolicyListener$Stub;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "meteredIfaces"    # [Ljava/lang/String;
 
     .prologue
-    .line 1534
+    .line 1552
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-static {v1}, Lcom/android/server/ConnectivityService;->-get11(Lcom/android/server/ConnectivityService;)Ljava/lang/Object;
@@ -48,7 +48,7 @@
 
     monitor-enter v2
 
-    .line 1535
+    .line 1553
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
@@ -58,7 +58,7 @@
 
     invoke-virtual {v1}, Landroid/util/ArraySet;->clear()V
 
-    .line 1536
+    .line 1554
     const/4 v1, 0x0
 
     array-length v3, p1
@@ -68,7 +68,7 @@
 
     aget-object v0, p1, v1
 
-    .line 1537
+    .line 1555
     .local v0, "iface":Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
@@ -80,7 +80,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1536
+    .line 1554
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -89,10 +89,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 1528
+    .line 1546
     return-void
 
-    .line 1534
+    .line 1552
     :catchall_0
     move-exception v1
 
@@ -107,7 +107,7 @@
     .param p2, "blacklisted"    # Z
 
     .prologue
-    .line 1568
+    .line 1586
     return-void
 .end method
 
@@ -116,7 +116,7 @@
     .param p1, "restrictBackground"    # Z
 
     .prologue
-    .line 1549
+    .line 1567
     iget-object v0, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-static {v0}, Lcom/android/server/ConnectivityService;->-get11(Lcom/android/server/ConnectivityService;)Ljava/lang/Object;
@@ -125,7 +125,7 @@
 
     monitor-enter v1
 
-    .line 1550
+    .line 1568
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
@@ -135,15 +135,15 @@
 
     monitor-exit v1
 
-    .line 1553
+    .line 1571
     if-eqz p1, :cond_0
 
-    .line 1554
+    .line 1572
     const-string/jumbo v0, "onRestrictBackgroundChanged(true): disabling tethering"
 
     invoke-static {v0}, Lcom/android/server/ConnectivityService;->-wrap23(Ljava/lang/String;)V
 
-    .line 1555
+    .line 1573
     iget-object v0, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-static {v0}, Lcom/android/server/ConnectivityService;->-get12(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/Tethering;
@@ -152,11 +152,11 @@
 
     invoke-virtual {v0}, Lcom/android/server/connectivity/Tethering;->untetherAll()V
 
-    .line 1543
+    .line 1561
     :cond_0
     return-void
 
-    .line 1549
+    .line 1567
     :catchall_0
     move-exception v0
 
@@ -171,7 +171,7 @@
     .param p2, "whitelisted"    # Z
 
     .prologue
-    .line 1560
+    .line 1578
     return-void
 .end method
 
@@ -181,7 +181,7 @@
     .param p2, "uidRules"    # I
 
     .prologue
-    .line 1512
+    .line 1530
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-static {v1}, Lcom/android/server/ConnectivityService;->-get11(Lcom/android/server/ConnectivityService;)Ljava/lang/Object;
@@ -190,7 +190,7 @@
 
     monitor-enter v2
 
-    .line 1514
+    .line 1532
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
@@ -206,7 +206,7 @@
 
     move-result v0
 
-    .line 1515
+    .line 1533
     .local v0, "oldRules":I
     if-ne v0, p2, :cond_0
 
@@ -214,11 +214,11 @@
 
     return-void
 
-    .line 1517
+    .line 1535
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1518
+    .line 1536
     :try_start_1
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
@@ -233,10 +233,10 @@
     :goto_0
     monitor-exit v2
 
-    .line 1506
+    .line 1524
     return-void
 
-    .line 1520
+    .line 1538
     :cond_1
     :try_start_2
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -251,7 +251,7 @@
 
     goto :goto_0
 
-    .line 1512
+    .line 1530
     .end local v0    # "oldRules":I
     :catchall_0
     move-exception v1

@@ -28,9 +28,9 @@
 
 .field static final TRANSACTION_getBuffer:I = 0x2
 
-.field static final TRANSACTION_getMap:I = 0x3
+.field static final TRANSACTION_getMap_2:I = 0x3
 
-.field static final TRANSACTION_isCompatible:I = 0x1
+.field static final TRANSACTION_isCompatible_0:I = 0x1
 
 
 # direct methods

@@ -216,7 +216,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 636
+    .line 622
     return-void
 .end method
 
@@ -333,7 +333,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 601
+    .line 587
     return-void
 .end method
 
@@ -426,7 +426,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 628
+    .line 614
     return-void
 .end method
 
@@ -500,7 +500,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 612
+    .line 598
     return-void
 .end method
 
@@ -578,16 +578,6 @@
     return-void
 .end method
 
-.method public iccCloseLogicalChannel(ILandroid/os/Message;)V
-    .locals 0
-    .param p1, "channel"    # I
-    .param p2, "response"    # Landroid/os/Message;
-
-    .prologue
-    .line 578
-    return-void
-.end method
-
 .method public iccIO(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
     .locals 0
     .param p1, "command"    # I
@@ -623,47 +613,6 @@
     return-void
 .end method
 
-.method public iccOpenLogicalChannel(Ljava/lang/String;Landroid/os/Message;)V
-    .locals 0
-    .param p1, "AID"    # Ljava/lang/String;
-    .param p2, "response"    # Landroid/os/Message;
-
-    .prologue
-    .line 575
-    return-void
-.end method
-
-.method public iccTransmitApduBasicChannel(IIIIILjava/lang/String;Landroid/os/Message;)V
-    .locals 0
-    .param p1, "cla"    # I
-    .param p2, "instruction"    # I
-    .param p3, "p1"    # I
-    .param p4, "p2"    # I
-    .param p5, "p3"    # I
-    .param p6, "data"    # Ljava/lang/String;
-    .param p7, "response"    # Landroid/os/Message;
-
-    .prologue
-    .line 586
-    return-void
-.end method
-
-.method public iccTransmitApduLogicalChannel(IIIIIILjava/lang/String;Landroid/os/Message;)V
-    .locals 0
-    .param p1, "channel"    # I
-    .param p2, "cla"    # I
-    .param p3, "instruction"    # I
-    .param p4, "p1"    # I
-    .param p5, "p2"    # I
-    .param p6, "p3"    # I
-    .param p7, "data"    # Ljava/lang/String;
-    .param p8, "response"    # Landroid/os/Message;
-
-    .prologue
-    .line 583
-    return-void
-.end method
-
 .method public invokeOemRilRequestRaw([BLandroid/os/Message;)V
     .locals 0
     .param p1, "data"    # [B
@@ -690,7 +639,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 589
+    .line 575
     return-void
 .end method
 
@@ -700,7 +649,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 598
+    .line 584
     return-void
 .end method
 
@@ -710,7 +659,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 595
+    .line 581
     return-void
 .end method
 
@@ -721,7 +670,7 @@
     .param p3, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 592
+    .line 578
     return-void
 .end method
 
@@ -730,7 +679,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 624
+    .line 610
     return-void
 .end method
 
@@ -872,7 +821,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 604
+    .line 590
     return-void
 .end method
 
@@ -1040,7 +989,7 @@
     .end annotation
 
     .prologue
-    .line 632
+    .line 618
     .local p1, "carriers":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
     return-void
 .end method
@@ -1296,7 +1245,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 608
+    .line 594
     return-void
 .end method
 
@@ -1373,7 +1322,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 616
+    .line 602
     return-void
 .end method
 
@@ -1391,7 +1340,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 620
+    .line 606
     return-void
 .end method
 

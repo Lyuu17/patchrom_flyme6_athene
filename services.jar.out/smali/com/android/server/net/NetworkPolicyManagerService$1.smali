@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
     .prologue
-    .line 682
+    .line 686
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/app/IUidObserver$Stub;-><init>()V
@@ -44,7 +44,7 @@
     .end annotation
 
     .prologue
-    .line 700
+    .line 704
     return-void
 .end method
 
@@ -58,14 +58,14 @@
     .end annotation
 
     .prologue
-    .line 695
+    .line 699
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v1, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 696
+    .line 700
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -75,10 +75,10 @@
 
     monitor-exit v1
 
-    .line 694
+    .line 698
     return-void
 
-    .line 695
+    .line 699
     :catchall_0
     move-exception v0
 
@@ -97,7 +97,7 @@
     .end annotation
 
     .prologue
-    .line 703
+    .line 707
     return-void
 .end method
 
@@ -114,12 +114,12 @@
     .prologue
     const-wide/32 v2, 0x200000
 
-    .line 684
+    .line 688
     const-string/jumbo v0, "onUidStateChanged"
 
     invoke-static {v2, v3, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 686
+    .line 690
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -129,7 +129,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 687
+    .line 691
     :try_start_1
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -142,13 +142,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 690
+    .line 694
     invoke-static {v2, v3}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 683
+    .line 687
     return-void
 
-    .line 686
+    .line 690
     :catchall_0
     move-exception v0
 
@@ -159,13 +159,13 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 689
+    .line 693
     :catchall_1
     move-exception v0
 
-    .line 690
+    .line 694
     invoke-static {v2, v3}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 689
+    .line 693
     throw v0
 .end method

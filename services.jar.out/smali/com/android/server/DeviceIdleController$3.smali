@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
     .prologue
-    .line 362
+    .line 364
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
     .locals 2
 
     .prologue
-    .line 365
+    .line 367
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->-get12(Lcom/android/server/DeviceIdleController;)I
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->-get13(Lcom/android/server/DeviceIdleController;)I
 
     move-result v0
 
@@ -52,12 +52,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 366
+    .line 368
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
 
     monitor-enter v1
 
-    .line 367
+    .line 369
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -67,11 +67,11 @@
 
     monitor-exit v1
 
-    .line 364
+    .line 366
     :cond_0
     return-void
 
-    .line 366
+    .line 368
     :catchall_0
     move-exception v0
 

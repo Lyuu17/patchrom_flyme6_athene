@@ -27,17 +27,17 @@
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
 
     .prologue
-    .line 383
+    .line 478
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$RestartAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    .line 384
+    .line 479
     const v0, 0x1080438
 
     const v1, 0x10401a5
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/policy/GlobalActions$SinglePressAction;-><init>(II)V
 
-    .line 383
+    .line 478
     return-void
 .end method
 
@@ -59,10 +59,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 389
+    .line 484
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$RestartAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get4(Lcom/android/server/policy/GlobalActions;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get5(Lcom/android/server/policy/GlobalActions;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -74,7 +74,7 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 390
+    .line 485
     .local v0, "um":Landroid/os/UserManager;
     const-string/jumbo v1, "no_safe_boot"
 
@@ -84,19 +84,19 @@
 
     if-nez v1, :cond_0
 
-    .line 391
+    .line 486
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$RestartAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get13(Lcom/android/server/policy/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get15(Lcom/android/server/policy/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     move-result-object v1
 
     invoke-interface {v1, v3}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->rebootSafeMode(Z)V
 
-    .line 392
+    .line 487
     return v3
 
-    .line 394
+    .line 489
     :cond_0
     const/4 v1, 0x0
 
@@ -104,21 +104,51 @@
 .end method
 
 .method public onPress()V
-    .locals 2
+    .locals 5
 
     .prologue
-    .line 409
-    iget-object v0, p0, Lcom/android/server/policy/GlobalActions$RestartAction;->this$0:Lcom/android/server/policy/GlobalActions;
+    .line 506
+    :try_start_0
+    const-string/jumbo v2, "power"
 
-    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get13(Lcom/android/server/policy/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    .line 505
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    move-result-object v0
+    move-result-object v2
 
-    const/4 v1, 0x0
+    invoke-static {v2}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
 
-    invoke-interface {v0, v1}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->reboot(Z)V
+    move-result-object v1
 
-    .line 408
+    .line 507
+    .local v1, "pm":Landroid/os/IPowerManager;
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-interface {v1, v2, v3, v4}, Landroid/os/IPowerManager;->reboot(ZLjava/lang/String;Z)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 503
+    return-void
+
+    .line 508
+    .end local v1    # "pm":Landroid/os/IPowerManager;
+    :catch_0
+    move-exception v0
+
+    .line 509
+    .local v0, "e":Landroid/os/RemoteException;
+    const-string/jumbo v2, "GlobalActions"
+
+    const-string/jumbo v3, "PowerManager service died!"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 510
     return-void
 .end method
 
@@ -126,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 499
     const/4 v0, 0x1
 
     return v0
@@ -136,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 494
     const/4 v0, 0x1
 
     return v0

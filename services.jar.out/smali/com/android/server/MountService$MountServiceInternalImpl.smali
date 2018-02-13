@@ -35,20 +35,20 @@
     .param p1, "this$0"    # Lcom/android/server/MountService;
 
     .prologue
-    .line 3806
+    .line 3855
     iput-object p1, p0, Lcom/android/server/MountService$MountServiceInternalImpl;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Landroid/os/storage/MountServiceInternal;-><init>()V
 
-    .line 3809
+    .line 3858
     new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
-    .line 3808
+    .line 3857
     iput-object v0, p0, Lcom/android/server/MountService$MountServiceInternalImpl;->mPolicies:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 3806
+    .line 3855
     return-void
 .end method
 
@@ -69,12 +69,12 @@
     .param p1, "policy"    # Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;
 
     .prologue
-    .line 3814
+    .line 3863
     iget-object v0, p0, Lcom/android/server/MountService$MountServiceInternalImpl;->mPolicies:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3812
+    .line 3861
     return-void
 .end method
 
@@ -86,10 +86,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 3826
+    .line 3875
     const v0, 0x7fffffff
 
-    .line 3827
+    .line 3876
     .local v0, "mountMode":I
     iget-object v4, p0, Lcom/android/server/MountService$MountServiceInternalImpl;->mPolicies:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -111,20 +111,20 @@
 
     check-cast v1, Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;
 
-    .line 3828
+    .line 3877
     .local v1, "policy":Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;
     invoke-interface {v1, p1, p2}, Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;->getMountMode(ILjava/lang/String;)I
 
     move-result v3
 
-    .line 3829
+    .line 3878
     .local v3, "policyMode":I
     if-nez v3, :cond_0
 
-    .line 3830
+    .line 3879
     return v5
 
-    .line 3832
+    .line 3881
     :cond_0
     invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 3834
+    .line 3883
     .end local v1    # "policy":Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;
     .end local v3    # "policyMode":I
     :cond_1
@@ -140,10 +140,10 @@
 
     if-ne v0, v4, :cond_2
 
-    .line 3835
+    .line 3884
     return v5
 
-    .line 3837
+    .line 3886
     :cond_2
     return v0
 .end method
@@ -156,15 +156,15 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 3843
+    .line 3892
     const/16 v3, 0x3e8
 
     if-ne p1, v3, :cond_0
 
-    .line 3844
+    .line 3893
     return v4
 
-    .line 3847
+    .line 3896
     :cond_0
     iget-object v3, p0, Lcom/android/server/MountService$MountServiceInternalImpl;->mPolicies:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -186,22 +186,22 @@
 
     check-cast v0, Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;
 
-    .line 3848
+    .line 3897
     .local v0, "policy":Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;
     invoke-interface {v0, p1, p2}, Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;->hasExternalStorage(ILjava/lang/String;)Z
 
     move-result v2
 
-    .line 3849
+    .line 3898
     .local v2, "policyHasStorage":Z
     if-nez v2, :cond_1
 
-    .line 3850
+    .line 3899
     const/4 v3, 0x0
 
     return v3
 
-    .line 3853
+    .line 3902
     .end local v0    # "policy":Landroid/os/storage/MountServiceInternal$ExternalStorageMountPolicy;
     .end local v2    # "policyHasStorage":Z
     :cond_2
@@ -214,17 +214,17 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3819
+    .line 3868
     invoke-virtual {p0, p1, p2}, Lcom/android/server/MountService$MountServiceInternalImpl;->getExternalStorageMountMode(ILjava/lang/String;)I
 
     move-result v0
 
-    .line 3820
+    .line 3869
     .local v0, "mountMode":I
     iget-object v1, p0, Lcom/android/server/MountService$MountServiceInternalImpl;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v1, p1, v0}, Lcom/android/server/MountService;->-wrap11(Lcom/android/server/MountService;II)V
 
-    .line 3818
+    .line 3867
     return-void
 .end method

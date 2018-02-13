@@ -2176,7 +2176,7 @@
 
     move-result-object v4
 
-    const v5, 0x1020018
+    const v5, #android:id@widget_frame#t
 
     invoke-virtual {v3, v5, v4}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
 
@@ -2192,72 +2192,57 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 3200
     if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 3201
-    const v4, 0x11200ab
+    const v4, #android:bool@config_overrideRemoteViewsActivityTransition#t
 
-    .line 3200
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 3202
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v3
 
-    .line 3203
     sget-object v4, Lcom/android/internal/R$styleable;->Window:[I
 
-    .line 3202
     invoke-virtual {v3, v4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
     move-result-object v2
 
-    .line 3205
     .local v2, "windowStyle":Landroid/content/res/TypedArray;
     const/16 v3, 0x8
 
-    .line 3204
     invoke-virtual {v2, v3, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
-    .line 3207
     .local v1, "windowAnimations":I
     sget-object v3, Lcom/android/internal/R$styleable;->WindowAnimation:[I
 
-    .line 3206
     invoke-virtual {p0, v1, v3}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 3209
     .local v0, "windowAnimationStyle":Landroid/content/res/TypedArray;
     const/16 v3, 0x1a
 
-    .line 3208
     invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
 
     invoke-virtual {p1, v3}, Landroid/widget/RemoteViews$OnClickHandler;->setEnterAnimationId(I)V
 
-    .line 3211
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 3212
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 3199
     .end local v0    # "windowAnimationStyle":Landroid/content/res/TypedArray;
     .end local v1    # "windowAnimations":I
     .end local v2    # "windowStyle":Landroid/content/res/TypedArray;
@@ -3060,8 +3045,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3373
-    const v1, 0x1020018
+    const v1, #android:id@widget_frame#t
 
     invoke-virtual {p2, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -3152,8 +3136,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3409
-    const v0, 0x1020018
+    const v0, #android:id@widget_frame#t
 
     invoke-virtual {p2, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -4819,7 +4802,7 @@
     iget-object v4, v3, Landroid/widget/RemoteViews$ReflectionAction;->value:Ljava/lang/Object;
 
     .local v4, "v":Ljava/lang/Object;
-    const-string/jumbo v5, "setTextColor"
+    const-string v5, "setTextColor"
 
     invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4842,7 +4825,7 @@
     goto :goto_0
 
     :cond_1
-    const-string/jumbo v5, "setText"
+    const-string v5, "setText"
 
     invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4933,7 +4916,7 @@
 
     if-eqz v5, :cond_0
 
-    const-string/jumbo v5, "setText"
+    const-string v5, "setText"
 
     invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

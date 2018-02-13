@@ -64,36 +64,30 @@
     .locals 1
 
     .prologue
-    .line 109
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 119
-    const v0, 0x10900b6
+    const v0, #android:layout@preference_list_fragment#t
 
     iput v0, p0, Landroid/preference/PreferenceFragment;->mLayoutResId:I
 
-    .line 127
     new-instance v0, Landroid/preference/PreferenceFragment$1;
 
     invoke-direct {v0, p0}, Landroid/preference/PreferenceFragment$1;-><init>(Landroid/preference/PreferenceFragment;)V
 
     iput-object v0, p0, Landroid/preference/PreferenceFragment;->mHandler:Landroid/os/Handler;
 
-    .line 139
     new-instance v0, Landroid/preference/PreferenceFragment$2;
 
     invoke-direct {v0, p0}, Landroid/preference/PreferenceFragment$2;-><init>(Landroid/preference/PreferenceFragment;)V
 
     iput-object v0, p0, Landroid/preference/PreferenceFragment;->mRequestFocus:Ljava/lang/Runnable;
 
-    .line 448
     new-instance v0, Landroid/preference/PreferenceFragment$3;
 
     invoke-direct {v0, p0}, Landroid/preference/PreferenceFragment$3;-><init>(Landroid/preference/PreferenceFragment;)V
 
     iput-object v0, p0, Landroid/preference/PreferenceFragment;->mListOnKeyListener:Landroid/view/View$OnKeyListener;
 
-    .line 109
     return-void
 .end method
 
@@ -101,43 +95,35 @@
     .locals 5
 
     .prologue
-    .line 369
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
 
-    .line 370
     .local v0, "preferenceScreen":Landroid/preference/PreferenceScreen;
     if-eqz v0, :cond_1
 
-    .line 371
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 372
     .local v1, "root":Landroid/view/View;
     if-eqz v1, :cond_0
 
-    .line 373
-    const v4, 0x1020016
+    const v4, #android:id@title#t
 
     invoke-virtual {v1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 374
     .local v3, "titleView":Landroid/view/View;
     instance-of v4, v3, Landroid/widget/TextView;
 
     if-eqz v4, :cond_0
 
-    .line 375
     invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 376
     .local v2, "title":Ljava/lang/CharSequence;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -221,7 +207,7 @@
 
     .line 432
     :cond_1
-    const v2, 0x102000a
+    const v2, #android:id@list#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -492,7 +478,7 @@
 
     .line 413
     :cond_1
-    const v2, 0x102000a
+    const v2, #android:id@list#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -651,40 +637,31 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 171
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 172
     sget-object v2, Lcom/android/internal/R$styleable;->PreferenceFragment:[I
 
-    .line 171
     const/4 v3, 0x0
 
-    .line 173
-    const v4, 0x1010506
+    const v4, #android:attr@preferenceFragmentStyle#t
 
-    .line 171
     invoke-virtual {v1, v3, v2, v4, v5}, Landroid/app/Activity;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 177
     .local v0, "a":Landroid/content/res/TypedArray;
     iget v1, p0, Landroid/preference/PreferenceFragment;->mLayoutResId:I
 
-    .line 176
     invoke-virtual {v0, v5, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/preference/PreferenceFragment;->mLayoutResId:I
 
-    .line 179
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 181
     iget v1, p0, Landroid/preference/PreferenceFragment;->mLayoutResId:I
 
     invoke-virtual {p1, v1, p2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -888,31 +865,24 @@
 
     const/4 v6, 0x1
 
-    .line 186
     invoke-super {p0, p1, p2}, Landroid/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    .line 188
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    .line 189
     sget-object v3, Lcom/android/internal/R$styleable;->PreferenceFragment:[I
 
-    .line 190
-    const v4, 0x1010506
+    const v4, #android:attr@preferenceFragmentStyle#t
 
-    .line 191
     const/4 v5, 0x0
 
-    .line 188
     invoke-virtual {v2, v7, v3, v4, v5}, Landroid/app/Activity;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 193
     .local v0, "a":Landroid/content/res/TypedArray;
-    const v2, 0x102000a
+    const v2, #android:id@list#t
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1016,7 +986,7 @@
 
     move-result-object v8
 
-    const v9, 0x105001c
+    const v9, #android:dimen@status_bar_height#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -30,7 +30,7 @@
     .param p2, "val$state"    # Lcom/android/internal/policy/DecorView$ColorViewState;
 
     .prologue
-    .line 1234
+    .line 1236
     iput-object p1, p0, Lcom/android/internal/policy/DecorView$1;->this$0:Lcom/android/internal/policy/DecorView;
 
     iput-object p2, p0, Lcom/android/internal/policy/DecorView$1;->val$state:Lcom/android/internal/policy/DecorView$ColorViewState;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 1237
+    .line 1239
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$1;->val$state:Lcom/android/internal/policy/DecorView$ColorViewState;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$ColorViewState;->view:Landroid/view/View;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1238
+    .line 1240
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$1;->val$state:Lcom/android/internal/policy/DecorView$ColorViewState;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$ColorViewState;->view:Landroid/view/View;
@@ -64,6 +64,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1236
+    .line 1238
     return-void
 .end method

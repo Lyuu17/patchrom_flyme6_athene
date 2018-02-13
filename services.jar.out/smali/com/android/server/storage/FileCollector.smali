@@ -338,7 +338,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
+    .line 77
+    sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
+
+    const-string/jumbo v1, "opus"
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 79
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "3gpp"
@@ -349,7 +360,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 79
+    .line 80
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "3gp"
@@ -360,7 +371,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 80
+    .line 81
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "3gpp2"
@@ -371,7 +382,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 81
+    .line 82
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "3g2"
@@ -382,7 +393,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 82
+    .line 83
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "avi"
@@ -393,7 +404,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 83
+    .line 84
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "dl"
@@ -404,7 +415,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 84
+    .line 85
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "dif"
@@ -415,7 +426,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 85
+    .line 86
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "dv"
@@ -426,7 +437,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 86
+    .line 87
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "fli"
@@ -437,7 +448,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
+    .line 88
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "m4v"
@@ -448,7 +459,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 88
+    .line 89
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "ts"
@@ -459,7 +470,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 89
+    .line 90
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mpeg"
@@ -470,7 +481,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 90
+    .line 91
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mpg"
@@ -481,7 +492,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 91
+    .line 92
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mpe"
@@ -492,7 +503,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 92
+    .line 93
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mp4"
@@ -503,7 +514,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 93
+    .line 94
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "vob"
@@ -514,7 +525,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 94
+    .line 95
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "qt"
@@ -525,7 +536,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 95
+    .line 96
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mov"
@@ -536,7 +547,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 96
+    .line 97
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mxu"
@@ -547,7 +558,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
+    .line 98
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "webm"
@@ -558,7 +569,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 98
+    .line 99
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "lsf"
@@ -569,7 +580,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 99
+    .line 100
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "lsx"
@@ -580,7 +591,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 100
+    .line 101
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mkv"
@@ -591,7 +602,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 101
+    .line 102
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "mng"
@@ -602,7 +613,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 102
+    .line 103
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "asf"
@@ -613,7 +624,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 103
+    .line 104
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "asx"
@@ -624,7 +635,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 104
+    .line 105
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "wm"
@@ -635,7 +646,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 105
+    .line 106
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "wmv"
@@ -646,7 +657,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 106
+    .line 107
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "wmx"
@@ -657,7 +668,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 107
+    .line 108
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "wvx"
@@ -668,7 +679,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 108
+    .line 109
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "movie"
@@ -679,7 +690,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 109
+    .line 110
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "wrf"
@@ -690,7 +701,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 111
+    .line 112
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "bmp"
@@ -701,7 +712,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 112
+    .line 113
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "gif"
@@ -712,7 +723,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 113
+    .line 114
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "jpg"
@@ -723,7 +734,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 114
+    .line 115
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "jpeg"
@@ -734,7 +745,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 115
+    .line 116
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "jpe"
@@ -745,7 +756,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 116
+    .line 117
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "pcx"
@@ -756,7 +767,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 117
+    .line 118
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "png"
@@ -767,7 +778,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 118
+    .line 119
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "svg"
@@ -778,7 +789,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 119
+    .line 120
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "svgz"
@@ -789,7 +800,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 120
+    .line 121
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "tiff"
@@ -800,7 +811,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 121
+    .line 122
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "tif"
@@ -811,7 +822,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 122
+    .line 123
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "wbmp"
@@ -822,7 +833,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 123
+    .line 124
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "webp"
@@ -833,7 +844,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 124
+    .line 125
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "dng"
@@ -844,7 +855,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 125
+    .line 126
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "cr2"
@@ -855,7 +866,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
+    .line 127
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "ras"
@@ -866,7 +877,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 127
+    .line 128
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "art"
@@ -877,7 +888,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 128
+    .line 129
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "jng"
@@ -888,7 +899,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 129
+    .line 130
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "nef"
@@ -899,7 +910,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 130
+    .line 131
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "nrw"
@@ -910,7 +921,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 131
+    .line 132
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "orf"
@@ -921,7 +932,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 132
+    .line 133
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "rw2"
@@ -932,7 +943,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 133
+    .line 134
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "pef"
@@ -943,7 +954,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 134
+    .line 135
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "psd"
@@ -954,7 +965,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 135
+    .line 136
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "pnm"
@@ -965,7 +976,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 136
+    .line 137
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "pbm"
@@ -976,7 +987,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 137
+    .line 138
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "pgm"
@@ -987,7 +998,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 138
+    .line 139
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "ppm"
@@ -998,7 +1009,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 139
+    .line 140
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "srw"
@@ -1009,7 +1020,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 140
+    .line 141
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "arw"
@@ -1020,7 +1031,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 141
+    .line 142
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "rgb"
@@ -1031,7 +1042,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 142
+    .line 143
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "xbm"
@@ -1042,7 +1053,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 143
+    .line 144
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "xpm"
@@ -1053,7 +1064,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 144
+    .line 145
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
     const-string/jumbo v1, "xwd"
@@ -1084,19 +1095,19 @@
     .param p1, "result"    # Lcom/android/server/storage/FileCollector$MeasurementResult;
 
     .prologue
-    .line 183
+    .line 184
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v2
 
-    .line 185
+    .line 186
     .local v2, "files":[Ljava/io/File;
     if-nez v2, :cond_0
 
-    .line 186
+    .line 187
     return-object p1
 
-    .line 189
+    .line 190
     :cond_0
     const/4 v3, 0x0
 
@@ -1107,7 +1118,7 @@
 
     aget-object v1, v2, v3
 
-    .line 190
+    .line 191
     .local v1, "f":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
 
@@ -1115,34 +1126,34 @@
 
     if-eqz v5, :cond_1
 
-    .line 192
+    .line 193
     :try_start_0
     invoke-static {v1, p1}, Lcom/android/server/storage/FileCollector;->collectFiles(Ljava/io/File;Lcom/android/server/storage/FileCollector$MeasurementResult;)Lcom/android/server/storage/FileCollector$MeasurementResult;
     :try_end_0
     .catch Ljava/lang/StackOverflowError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 189
+    .line 190
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 193
+    .line 194
     :catch_0
     move-exception v0
 
-    .line 194
+    .line 195
     .local v0, "e":Ljava/lang/StackOverflowError;
     return-object p1
 
-    .line 197
+    .line 198
     .end local v0    # "e":Ljava/lang/StackOverflowError;
     :cond_1
     invoke-static {p1, v1}, Lcom/android/server/storage/FileCollector;->handleFile(Lcom/android/server/storage/FileCollector$MeasurementResult;Ljava/io/File;)V
 
     goto :goto_1
 
-    .line 201
+    .line 202
     .end local v1    # "f":Ljava/io/File;
     :cond_2
     return-object p1
@@ -1153,12 +1164,12 @@
     .param p0, "file"    # Ljava/io/File;
 
     .prologue
-    .line 223
+    .line 224
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 224
+    .line 225
     .local v0, "fileName":Ljava/lang/String;
     const/16 v2, 0x2e
 
@@ -1166,18 +1177,18 @@
 
     move-result v1
 
-    .line 225
+    .line 226
     .local v1, "index":I
     const/4 v2, -0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 226
+    .line 227
     const-string/jumbo v2, ""
 
     return-object v2
 
-    .line 228
+    .line 229
     :cond_0
     add-int/lit8 v2, v1, 0x1
 
@@ -1197,17 +1208,17 @@
     .param p0, "path"    # Ljava/io/File;
 
     .prologue
-    .line 152
+    .line 153
     invoke-static {p0}, Landroid/os/storage/StorageManager;->maybeTranslateEmulatedPathToInternal(Ljava/io/File;)Ljava/io/File;
 
     move-result-object v0
 
-    .line 153
+    .line 154
     new-instance v1, Lcom/android/server/storage/FileCollector$MeasurementResult;
 
     invoke-direct {v1}, Lcom/android/server/storage/FileCollector$MeasurementResult;-><init>()V
 
-    .line 152
+    .line 153
     invoke-static {v0, v1}, Lcom/android/server/storage/FileCollector;->collectFiles(Ljava/io/File;Lcom/android/server/storage/FileCollector$MeasurementResult;)Lcom/android/server/storage/FileCollector$MeasurementResult;
 
     move-result-object v0
@@ -1222,18 +1233,18 @@
     .prologue
     const-wide/16 v10, 0x0
 
-    .line 162
+    .line 163
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 163
+    .line 164
     .local v0, "pm":Landroid/content/pm/PackageManager;
     invoke-virtual {v0}, Landroid/content/pm/PackageManager;->getPrimaryStorageCurrentVolume()Landroid/os/storage/VolumeInfo;
 
     move-result-object v1
 
-    .line 165
+    .line 166
     .local v1, "primaryVolume":Landroid/os/storage/VolumeInfo;
     const-class v8, Landroid/os/storage/StorageManager;
 
@@ -1243,20 +1254,20 @@
 
     check-cast v3, Landroid/os/storage/StorageManager;
 
-    .line 166
+    .line 167
     .local v3, "sm":Landroid/os/storage/StorageManager;
     invoke-virtual {v3, v1}, Landroid/os/storage/StorageManager;->findEmulatedForPrivate(Landroid/os/storage/VolumeInfo;)Landroid/os/storage/VolumeInfo;
 
     move-result-object v2
 
-    .line 167
+    .line 168
     .local v2, "shared":Landroid/os/storage/VolumeInfo;
     if-nez v2, :cond_0
 
-    .line 168
+    .line 169
     return-wide v10
 
-    .line 171
+    .line 172
     :cond_0
     invoke-virtual {v2}, Landroid/os/storage/VolumeInfo;->getPath()Ljava/io/File;
 
@@ -1266,7 +1277,7 @@
 
     move-result-wide v4
 
-    .line 172
+    .line 173
     .local v4, "sharedDataSize":J
     invoke-virtual {v3}, Landroid/os/storage/StorageManager;->getPrimaryStorageSize()J
 
@@ -1274,16 +1285,16 @@
 
     sub-long v6, v8, v4
 
-    .line 175
+    .line 176
     .local v6, "systemSize":J
     cmp-long v8, v6, v10
 
     if-gtz v8, :cond_1
 
-    .line 176
+    .line 177
     return-wide v10
 
-    .line 179
+    .line 180
     :cond_1
     return-wide v6
 .end method
@@ -1294,12 +1305,12 @@
     .param p1, "f"    # Ljava/io/File;
 
     .prologue
-    .line 205
+    .line 206
     invoke-virtual {p1}, Ljava/io/File;->length()J
 
     move-result-wide v0
 
-    .line 206
+    .line 207
     .local v0, "fileSize":J
     sget-object v3, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
@@ -1323,22 +1334,22 @@
 
     move-result v2
 
-    .line 207
+    .line 208
     .local v2, "fileType":I
     packed-switch v2, :pswitch_data_0
 
-    .line 218
+    .line 219
     iget-wide v4, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->miscSize:J
 
     add-long/2addr v4, v0
 
     iput-wide v4, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->miscSize:J
 
-    .line 204
+    .line 205
     :goto_0
     return-void
 
-    .line 209
+    .line 210
     :pswitch_0
     iget-wide v4, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->audioSize:J
 
@@ -1348,7 +1359,7 @@
 
     goto :goto_0
 
-    .line 212
+    .line 213
     :pswitch_1
     iget-wide v4, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->videosSize:J
 
@@ -1358,7 +1369,7 @@
 
     goto :goto_0
 
-    .line 215
+    .line 216
     :pswitch_2
     iget-wide v4, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->imagesSize:J
 
@@ -1368,7 +1379,7 @@
 
     goto :goto_0
 
-    .line 207
+    .line 208
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2

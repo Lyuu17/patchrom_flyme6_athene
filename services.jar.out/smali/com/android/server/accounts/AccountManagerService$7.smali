@@ -38,7 +38,7 @@
     .param p11, "val$authTokenType"    # Ljava/lang/String;
 
     .prologue
-    .line 2273
+    .line 2290
     iput-object p2, p0, Lcom/android/server/accounts/AccountManagerService$7;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     move-object/from16 v0, p10
@@ -69,7 +69,7 @@
 
     invoke-direct/range {v1 .. v9}, Lcom/android/server/accounts/AccountManagerService$Session;-><init>(Lcom/android/server/accounts/AccountManagerService;Lcom/android/server/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZLjava/lang/String;Z)V
 
-    .line 2275
+    .line 2292
     return-void
 .end method
 
@@ -80,46 +80,46 @@
     .param p1, "result"    # Landroid/os/Bundle;
 
     .prologue
-    .line 2290
+    .line 2307
     const/4 v2, 0x1
 
     invoke-static {p1, v2}, Landroid/os/Bundle;->setDefusable(Landroid/os/Bundle;Z)Landroid/os/Bundle;
 
-    .line 2291
+    .line 2308
     if-eqz p1, :cond_0
 
-    .line 2292
+    .line 2309
     const-string/jumbo v2, "authTokenLabelKey"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2293
+    .line 2310
     .local v1, "label":Ljava/lang/String;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2294
+    .line 2311
     .local v0, "bundle":Landroid/os/Bundle;
     const-string/jumbo v2, "authTokenLabelKey"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2295
+    .line 2312
     invoke-super {p0, v0}, Lcom/android/server/accounts/AccountManagerService$Session;->onResult(Landroid/os/Bundle;)V
 
-    .line 2296
+    .line 2313
     return-void
 
-    .line 2298
+    .line 2315
     .end local v0    # "bundle":Landroid/os/Bundle;
     .end local v1    # "label":Ljava/lang/String;
     :cond_0
     invoke-super {p0, p1}, Lcom/android/server/accounts/AccountManagerService$Session;->onResult(Landroid/os/Bundle;)V
 
-    .line 2289
+    .line 2306
     return-void
 .end method
 
@@ -132,14 +132,14 @@
     .end annotation
 
     .prologue
-    .line 2285
+    .line 2302
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$7;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$7;->val$authTokenType:Ljava/lang/String;
 
     invoke-interface {v0, p0, v1}, Landroid/accounts/IAccountAuthenticator;->getAuthTokenLabel(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;)V
 
-    .line 2284
+    .line 2301
     return-void
 .end method
 
@@ -148,7 +148,7 @@
     .param p1, "now"    # J
 
     .prologue
-    .line 2278
+    .line 2295
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -167,34 +167,34 @@
 
     move-result-object v0
 
-    .line 2279
+    .line 2296
     const-string/jumbo v1, ", "
 
-    .line 2278
+    .line 2295
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2279
+    .line 2296
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$7;->val$accountType:Ljava/lang/String;
 
-    .line 2278
+    .line 2295
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2280
+    .line 2297
     const-string/jumbo v1, ", authTokenType "
 
-    .line 2278
+    .line 2295
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2280
+    .line 2297
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$7;->val$authTokenType:Ljava/lang/String;
 
-    .line 2278
+    .line 2295
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

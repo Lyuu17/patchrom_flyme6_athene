@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiStateMachine;
 
     .prologue
-    .line 1101
+    .line 1149
     iput-object p1, p0, Lcom/android/server/wifi/WifiStateMachine$1;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const v3, 0x2005f
 
-    .line 1104
+    .line 1152
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1106
+    .line 1154
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.SCREEN_ON"
 
@@ -57,19 +57,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 1107
+    .line 1155
     iget-object v1, p0, Lcom/android/server/wifi/WifiStateMachine$1;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v3, v2}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(II)V
 
-    .line 1103
+    .line 1151
     :cond_0
     :goto_0
     return-void
 
-    .line 1108
+    .line 1156
     :cond_1
     const-string/jumbo v1, "android.intent.action.SCREEN_OFF"
 
@@ -79,7 +79,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1109
+    .line 1157
     iget-object v1, p0, Lcom/android/server/wifi/WifiStateMachine$1;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const/4 v2, 0x0

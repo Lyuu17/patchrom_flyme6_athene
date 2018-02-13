@@ -90,6 +90,8 @@
 
 .field public static final AUTHENTICATE_ACCOUNTS:Ljava/lang/String; = "android.permission.AUTHENTICATE_ACCOUNTS"
 
+.field public static final AUTHORIZE_OUTGOING_SMS:Ljava/lang/String; = "android.permission.AUTHORIZE_OUTGOING_SMS"
+
 .field public static final BACKUP:Ljava/lang/String; = "android.permission.BACKUP"
 
 .field public static final BATTERY_STATS:Ljava/lang/String; = "android.permission.BATTERY_STATS"
@@ -347,6 +349,8 @@
 
 .field public static final HDMI_CEC:Ljava/lang/String; = "android.permission.HDMI_CEC"
 
+.field public static final HIDE_NON_SYSTEM_OVERLAY_WINDOWS:Ljava/lang/String; = "android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS"
+
 .field public static final INJECT_EVENTS:Ljava/lang/String; = "android.permission.INJECT_EVENTS"
 
 .field public static final INSTALL_GRANT_RUNTIME_PERMISSIONS:Ljava/lang/String; = "android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS"
@@ -471,6 +475,8 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
+
+.field public static final PREVENT_POWER_KEY:Ljava/lang/String; = "android.permission.PREVENT_POWER_KEY"
 
 .field public static final PROCESS_OUTGOING_CALLS:Ljava/lang/String; = "android.permission.PROCESS_OUTGOING_CALLS"
 

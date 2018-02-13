@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 2007
+    .line 2010
     const-string/jumbo v0, "content://com.android.calendar/instances/groupbyday"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -37,7 +37,7 @@
 
     sput-object v0, Landroid/provider/CalendarContract$EventDays;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2006
+    .line 2009
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .locals 0
 
     .prologue
-    .line 2014
+    .line 2017
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -61,21 +61,26 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2032
+    .line 2035
+    const/16 v0, 0x36
+
+    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
+
+    .line 2036
     const/4 v0, 0x1
 
     if-ge p2, v0, :cond_0
 
-    .line 2033
+    .line 2037
     return-object v4
 
-    .line 2035
+    .line 2039
     :cond_0
     add-int v0, p1, p2
 
     add-int/lit8 v7, v0, -0x1
 
-    .line 2036
+    .line 2040
     .local v7, "endDay":I
     sget-object v0, Landroid/provider/CalendarContract$EventDays;->CONTENT_URI:Landroid/net/Uri;
 
@@ -83,32 +88,32 @@
 
     move-result-object v6
 
-    .line 2037
+    .line 2041
     .local v6, "builder":Landroid/net/Uri$Builder;
     int-to-long v0, p1
 
     invoke-static {v6, v0, v1}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 2038
+    .line 2042
     int-to-long v0, v7
 
     invoke-static {v6, v0, v1}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 2039
+    .line 2043
     invoke-virtual {v6}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
 
     const-string/jumbo v3, "selected=1"
 
-    .line 2040
+    .line 2044
     const-string/jumbo v5, "startDay"
 
     move-object v0, p0
 
     move-object v2, p3
 
-    .line 2039
+    .line 2043
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0

@@ -87,51 +87,51 @@
 
     const/4 v2, 0x0
 
-    .line 572
+    .line 573
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 534
+    .line 535
     const-string/jumbo v1, ""
 
     iput-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->name:Ljava/lang/String;
 
-    .line 560
+    .line 561
     new-instance v1, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v1}, Landroid/os/RemoteCallbackList;-><init>()V
 
-    .line 559
+    .line 560
     iput-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->callbacks:Landroid/os/RemoteCallbackList;
 
-    .line 562
+    .line 563
     iput v3, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->width:I
 
-    .line 563
+    .line 564
     iput v3, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->height:I
 
-    .line 568
+    .line 569
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1, v2, v2, v2, v2}, Landroid/graphics/Rect;-><init>(IIII)V
 
     iput-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->cropHint:Landroid/graphics/Rect;
 
-    .line 570
+    .line 571
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1, v2, v2, v2, v2}, Landroid/graphics/Rect;-><init>(IIII)V
 
     iput-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->padding:Landroid/graphics/Rect;
 
-    .line 573
+    .line 574
     iput p1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->userId:I
 
-    .line 574
+    .line 575
     invoke-static {p1}, Lcom/android/server/wallpaper/WallpaperManagerService;->-wrap0(I)Ljava/io/File;
 
     move-result-object v0
 
-    .line 575
+    .line 576
     .local v0, "wallpaperDir":Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
@@ -139,7 +139,6 @@
 
     iput-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->wallpaperFile:Ljava/io/File;
 
-    .line 576
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
@@ -148,7 +147,6 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->initFlymeWallpaperData()V
 
-    .line 572
     return-void
 .end method
 
@@ -158,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 581
+    .line 582
     iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->cropFile:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
@@ -172,13 +170,11 @@
     .locals 1
 
     .prologue
-    .line 611
     new-instance v0, Lcom/android/server/wallpaper/FlymeWallpaperService$FlymeWallpaperData;
 
     invoke-direct {v0}, Lcom/android/server/wallpaper/FlymeWallpaperService$FlymeWallpaperData;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->mFlymeData:Lcom/android/server/wallpaper/FlymeWallpaperService$FlymeWallpaperData;
 
-    .line 610
     return-void
 .end method

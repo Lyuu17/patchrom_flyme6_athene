@@ -30,7 +30,7 @@
     .param p2, "val$lowPowerModeEnabled"    # Z
 
     .prologue
-    .line 844
+    .line 967
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/power/PowerManagerService$3;->val$lowPowerModeEnabled:Z
@@ -48,23 +48,23 @@
     .prologue
     const/high16 v6, 0x40000000    # 2.0f
 
-    .line 847
+    .line 970
     new-instance v3, Landroid/content/Intent;
 
     const-string/jumbo v4, "android.os.action.POWER_SAVE_MODE_CHANGING"
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 848
+    .line 971
     const-string/jumbo v4, "mode"
 
     iget-object v5, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v5}, Lcom/android/server/power/PowerManagerService;->-get9(Lcom/android/server/power/PowerManagerService;)Z
+    invoke-static {v5}, Lcom/android/server/power/PowerManagerService;->-get12(Lcom/android/server/power/PowerManagerService;)Z
 
     move-result v5
 
-    .line 847
+    .line 970
     invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object v3
@@ -73,37 +73,37 @@
 
     move-result-object v1
 
-    .line 850
+    .line 973
     .local v1, "intent":Landroid/content/Intent;
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get0(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get1(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v3
 
     invoke-virtual {v3, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 852
+    .line 975
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get8(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
+    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get11(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
 
     move-result-object v4
 
     monitor-enter v4
 
-    .line 853
+    .line 976
     :try_start_0
     new-instance v2, Ljava/util/ArrayList;
 
-    .line 854
+    .line 977
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get10(Lcom/android/server/power/PowerManagerService;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get13(Lcom/android/server/power/PowerManagerService;)Ljava/util/ArrayList;
 
     move-result-object v3
 
-    .line 853
+    .line 976
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -111,7 +111,7 @@
     .local v2, "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/PowerManagerInternal$LowPowerModeListener;>;"
     monitor-exit v4
 
-    .line 856
+    .line 979
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -122,7 +122,7 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 857
+    .line 980
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -133,12 +133,12 @@
 
     invoke-interface {v3, v4}, Landroid/os/PowerManagerInternal$LowPowerModeListener;->onLowPowerModeChanged(Z)V
 
-    .line 856
+    .line 979
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 852
+    .line 975
     .end local v0    # "i":I
     .end local v2    # "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/PowerManagerInternal$LowPowerModeListener;>;"
     :catchall_0
@@ -148,7 +148,7 @@
 
     throw v3
 
-    .line 859
+    .line 982
     .restart local v0    # "i":I
     .restart local v2    # "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/PowerManagerInternal$LowPowerModeListener;>;"
     :cond_0
@@ -159,43 +159,43 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 860
+    .line 983
     .restart local v1    # "intent":Landroid/content/Intent;
     invoke-virtual {v1, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 861
+    .line 984
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get0(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get1(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v3
 
     invoke-virtual {v3, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 863
+    .line 986
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get0(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/server/power/PowerManagerService;->-get1(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v3
 
     new-instance v4, Landroid/content/Intent;
 
-    .line 864
+    .line 987
     const-string/jumbo v5, "android.os.action.POWER_SAVE_MODE_CHANGED_INTERNAL"
 
-    .line 863
+    .line 986
     invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 864
+    .line 987
     sget-object v5, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 865
+    .line 988
     const-string/jumbo v6, "android.permission.DEVICE_POWER"
 
-    .line 863
+    .line 986
     invoke-virtual {v3, v4, v5, v6}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
 
-    .line 846
+    .line 969
     return-void
 .end method

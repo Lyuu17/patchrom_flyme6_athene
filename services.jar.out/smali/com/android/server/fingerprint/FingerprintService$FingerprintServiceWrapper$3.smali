@@ -57,7 +57,7 @@
     .param p12, "val$restricted"    # Z
 
     .prologue
-    .line 815
+    .line 817
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iput-object p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$opPackageName:Ljava/lang/String;
@@ -97,26 +97,26 @@
 
     const/4 v0, 0x1
 
-    .line 818
+    .line 820
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iget-object v1, v1, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$opPackageName:Ljava/lang/String;
 
-    .line 819
+    .line 821
     iget v3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$callingUid:I
 
     iget v4, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$pid:I
 
-    .line 818
+    .line 820
     invoke-static {v1, v2, v0, v3, v4}, Lcom/android/server/fingerprint/FingerprintService;->-wrap0(Lcom/android/server/fingerprint/FingerprintService;Ljava/lang/String;ZII)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 820
+    .line 822
     const-string/jumbo v0, "FingerprintService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -141,10 +141,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 821
+    .line 823
     return-void
 
-    .line 824
+    .line 826
     :cond_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
@@ -165,7 +165,7 @@
     :goto_0
     invoke-static {v1, v2, v0}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 828
+    .line 830
     iget-wide v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$opId:J
 
     cmp-long v0, v0, v8
@@ -180,7 +180,7 @@
 
     move-result-object v10
 
-    .line 829
+    .line 831
     .local v10, "pmap":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;>;"
     :goto_1
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
@@ -201,11 +201,11 @@
 
     check-cast v11, Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
 
-    .line 830
+    .line 832
     .local v11, "stats":Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
     if-nez v11, :cond_1
 
-    .line 831
+    .line 833
     new-instance v11, Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
 
     .end local v11    # "stats":Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
@@ -215,7 +215,7 @@
 
     invoke-direct {v11, v0, v6}, Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;-><init>(Lcom/android/server/fingerprint/FingerprintService;Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;)V
 
-    .line 832
+    .line 834
     .restart local v11    # "stats":Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
@@ -231,7 +231,7 @@
 
     invoke-virtual {v10, v0, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 834
+    .line 836
     :cond_1
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
@@ -239,7 +239,7 @@
 
     invoke-static {v0, v11}, Lcom/android/server/fingerprint/FingerprintService;->-set2(Lcom/android/server/fingerprint/FingerprintService;Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;)Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
 
-    .line 836
+    .line 838
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iget-object v0, v0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -254,20 +254,20 @@
 
     iget-object v6, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
-    .line 837
+    .line 839
     iget v7, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$flags:I
 
     iget-boolean v8, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$restricted:Z
 
     iget-object v9, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->val$opPackageName:Ljava/lang/String;
 
-    .line 836
+    .line 838
     invoke-static/range {v0 .. v9}, Lcom/android/server/fingerprint/FingerprintService;->-wrap6(Lcom/android/server/fingerprint/FingerprintService;Landroid/os/IBinder;JIILandroid/hardware/fingerprint/IFingerprintServiceReceiver;IZLjava/lang/String;)V
 
-    .line 817
+    .line 819
     return-void
 
-    .line 824
+    .line 826
     .end local v10    # "pmap":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;>;"
     .end local v11    # "stats":Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;
     :cond_2
@@ -275,7 +275,7 @@
 
     goto :goto_0
 
-    .line 828
+    .line 830
     :cond_3
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$3;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 

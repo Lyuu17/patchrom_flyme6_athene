@@ -776,51 +776,41 @@
 
     iput v8, p0, Lcom/android/server/am/ActivityRecord;->icon:I
 
-    .line 682
     invoke-virtual/range {p7 .. p7}, Landroid/content/pm/ActivityInfo;->getLogoResource()I
 
     move-result v8
 
     iput v8, p0, Lcom/android/server/am/ActivityRecord;->logo:I
 
-    .line 683
     invoke-virtual/range {p7 .. p7}, Landroid/content/pm/ActivityInfo;->getThemeResource()I
 
     move-result v8
 
     iput v8, p0, Lcom/android/server/am/ActivityRecord;->theme:I
 
-    .line 684
     iget v8, p0, Lcom/android/server/am/ActivityRecord;->theme:I
 
     iput v8, p0, Lcom/android/server/am/ActivityRecord;->realTheme:I
 
-    .line 685
     iget v8, p0, Lcom/android/server/am/ActivityRecord;->realTheme:I
 
     if-nez v8, :cond_3
 
-    .line 686
     move-object/from16 v0, p7
 
     iget-object v8, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v8, v8, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 687
     const/16 v9, 0xb
 
-    .line 686
     if-ge v8, v9, :cond_a
 
-    .line 688
-    const v8, 0x1030005
+    const v8, #android:style@Theme#t
 
-    .line 686
     :goto_2
     iput v8, p0, Lcom/android/server/am/ActivityRecord;->realTheme:I
 
-    .line 691
     :cond_3
     move-object/from16 v0, p7
 
@@ -1059,19 +1049,16 @@
 
     goto/16 :goto_0
 
-    .line 671
     :cond_9
     const/4 v8, 0x0
 
     goto/16 :goto_1
 
-    .line 689
     :cond_a
-    const v8, 0x103006b
+    const v8, #android:style@Theme.Holo#t
 
     goto/16 :goto_2
 
-    .line 700
     :cond_b
     move-object/from16 v0, p7
 
@@ -8089,8 +8076,7 @@
     .locals 2
 
     .prologue
-    .line 608
-    const-string/jumbo v0, "com.android.internal.app.MzResolverActivity"
+    const-string v0, "com.android.internal.app.MzResolverActivity"
 
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->realActivity:Landroid/content/ComponentName;
 

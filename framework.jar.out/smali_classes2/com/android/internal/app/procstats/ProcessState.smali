@@ -6735,6 +6735,10 @@
     invoke-direct {p0}, Lcom/android/internal/app/procstats/ProcessState;->ensureNotDead()V
 
     .line 382
+    iget-boolean v0, p0, Lcom/android/internal/app/procstats/ProcessState;->mDead:Z
+
+    if-nez v0, :cond_0
+
     iget v0, p0, Lcom/android/internal/app/procstats/ProcessState;->mCurState:I
 
     if-eq v0, p1, :cond_0

@@ -171,7 +171,7 @@
 
     .line 126
     .local v1, "e":Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     .line 127
     const/4 v4, 0x0
@@ -230,9 +230,7 @@
     move-object v0, p1
 
     .line 147
-    nop
-
-    nop
+    check-cast v0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceInfo;
 
     .line 148
     .local v0, "servInfo":Landroid/net/wifi/p2p/nsd/WifiP2pServiceInfo;

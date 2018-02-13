@@ -155,9 +155,7 @@
     move-object v1, p1
 
     .line 153
-    nop
-
-    nop
+    check-cast v1, Landroid/net/wifi/nan/PublishData;
 
     .line 155
     .local v1, "lhs":Landroid/net/wifi/nan/PublishData;

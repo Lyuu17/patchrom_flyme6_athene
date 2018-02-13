@@ -38,7 +38,7 @@
 
 .field public static final DEVICE_BIT_IN:I = -0x80000000
 
-.field public static final DEVICE_IN_ALL:I = -0x3fe00001
+.field public static final DEVICE_IN_ALL:I = -0x3de00001
 
 .field public static final DEVICE_IN_ALL_SCO:I = -0x7ffffff8
 
@@ -104,6 +104,8 @@
 
 .field public static final DEVICE_IN_LOOPBACK_NAME:Ljava/lang/String; = "loopback"
 
+.field public static final DEVICE_IN_PROXY:I = -0x7e000000
+
 .field public static final DEVICE_IN_REMOTE_SUBMIX:I = -0x7fffff00
 
 .field public static final DEVICE_IN_REMOTE_SUBMIX_NAME:Ljava/lang/String; = "remote_submix"
@@ -136,7 +138,7 @@
 
 .field public static final DEVICE_NONE:I = 0x0
 
-.field public static final DEVICE_OUT_ALL:I = 0x41ffffff
+.field public static final DEVICE_OUT_ALL:I = 0x43ffffff
 
 .field public static final DEVICE_OUT_ALL_A2DP:I = 0x380
 
@@ -215,6 +217,10 @@
 .field public static final DEVICE_OUT_LINE:I = 0x20000
 
 .field public static final DEVICE_OUT_LINE_NAME:Ljava/lang/String; = "line"
+
+.field public static final DEVICE_OUT_PROXY:I = 0x2000000
+
+.field public static final DEVICE_OUT_PROXY_NAME:Ljava/lang/String; = "proxy"
 
 .field public static final DEVICE_OUT_REMOTE_SUBMIX:I = 0x8000
 
@@ -513,7 +519,7 @@
     .line 73
     sput-object v0, Landroid/media/AudioSystem;->STREAM_NAMES:[Ljava/lang/String;
 
-    .line 764
+    .line 771
     new-array v0, v3, [I
 
     fill-array-data v0, :array_0
@@ -523,7 +529,7 @@
     .line 34
     return-void
 
-    .line 764
+    .line 771
     :array_0
     .array-data 4
         0x4
@@ -700,7 +706,7 @@
     .param p0, "streamType"    # I
 
     .prologue
-    .line 761
+    .line 768
     sget-object v0, Landroid/media/AudioSystem;->DEFAULT_STREAM_VOLUME:[I
 
     aget v0, v0, p0
@@ -722,143 +728,143 @@
     .param p0, "device"    # I
 
     .prologue
-    .line 587
+    .line 594
     sparse-switch p0, :sswitch_data_0
 
-    .line 632
+    .line 639
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 589
+    .line 596
     :sswitch_0
     const-string/jumbo v0, "communication"
 
     return-object v0
 
-    .line 591
+    .line 598
     :sswitch_1
     const-string/jumbo v0, "ambient"
 
     return-object v0
 
-    .line 593
+    .line 600
     :sswitch_2
     const-string/jumbo v0, "mic"
 
     return-object v0
 
-    .line 595
+    .line 602
     :sswitch_3
     const-string/jumbo v0, "bt_sco_hs"
 
     return-object v0
 
-    .line 597
+    .line 604
     :sswitch_4
     const-string/jumbo v0, "headset"
 
     return-object v0
 
-    .line 599
+    .line 606
     :sswitch_5
     const-string/jumbo v0, "aux_digital"
 
     return-object v0
 
-    .line 601
+    .line 608
     :sswitch_6
     const-string/jumbo v0, "telephony_rx"
 
     return-object v0
 
-    .line 603
+    .line 610
     :sswitch_7
     const-string/jumbo v0, "back_mic"
 
     return-object v0
 
-    .line 605
+    .line 612
     :sswitch_8
     const-string/jumbo v0, "remote_submix"
 
     return-object v0
 
-    .line 607
+    .line 614
     :sswitch_9
     const-string/jumbo v0, "analog_dock"
 
     return-object v0
 
-    .line 609
+    .line 616
     :sswitch_a
     const-string/jumbo v0, "digital_dock"
 
     return-object v0
 
-    .line 611
+    .line 618
     :sswitch_b
     const-string/jumbo v0, "usb_accessory"
 
     return-object v0
 
-    .line 613
+    .line 620
     :sswitch_c
     const-string/jumbo v0, "usb_device"
 
     return-object v0
 
-    .line 615
+    .line 622
     :sswitch_d
     const-string/jumbo v0, "fm_tuner"
 
     return-object v0
 
-    .line 617
+    .line 624
     :sswitch_e
     const-string/jumbo v0, "tv_tuner"
 
     return-object v0
 
-    .line 619
+    .line 626
     :sswitch_f
     const-string/jumbo v0, "line"
 
     return-object v0
 
-    .line 621
+    .line 628
     :sswitch_10
     const-string/jumbo v0, "spdif"
 
     return-object v0
 
-    .line 623
+    .line 630
     :sswitch_11
     const-string/jumbo v0, "bt_a2dp"
 
     return-object v0
 
-    .line 625
+    .line 632
     :sswitch_12
     const-string/jumbo v0, "loopback"
 
     return-object v0
 
-    .line 627
+    .line 634
     :sswitch_13
     const-string/jumbo v0, "ip"
 
     return-object v0
 
-    .line 629
+    .line 636
     :sswitch_14
     const-string/jumbo v0, "bus"
 
     return-object v0
 
-    .line 587
+    .line 594
     :sswitch_data_0
     .sparse-switch
         -0x7fffffff -> :sswitch_0
@@ -909,167 +915,173 @@
     .param p0, "device"    # I
 
     .prologue
-    .line 528
+    .line 533
     sparse-switch p0, :sswitch_data_0
 
-    .line 581
+    .line 588
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 530
+    .line 535
     :sswitch_0
     const-string/jumbo v0, "earpiece"
 
     return-object v0
 
-    .line 532
+    .line 537
     :sswitch_1
     const-string/jumbo v0, "speaker"
 
     return-object v0
 
-    .line 534
+    .line 539
     :sswitch_2
     const-string/jumbo v0, "headset"
 
     return-object v0
 
-    .line 536
+    .line 541
     :sswitch_3
     const-string/jumbo v0, "headphone"
 
     return-object v0
 
-    .line 538
+    .line 543
     :sswitch_4
     const-string/jumbo v0, "bt_sco"
 
     return-object v0
 
-    .line 540
+    .line 545
     :sswitch_5
     const-string/jumbo v0, "bt_sco_hs"
 
     return-object v0
 
-    .line 542
+    .line 547
     :sswitch_6
     const-string/jumbo v0, "bt_sco_carkit"
 
     return-object v0
 
-    .line 544
+    .line 549
     :sswitch_7
     const-string/jumbo v0, "bt_a2dp"
 
     return-object v0
 
-    .line 546
+    .line 551
     :sswitch_8
     const-string/jumbo v0, "bt_a2dp_hp"
 
     return-object v0
 
-    .line 548
+    .line 553
     :sswitch_9
     const-string/jumbo v0, "bt_a2dp_spk"
 
     return-object v0
 
-    .line 550
+    .line 555
     :sswitch_a
     const-string/jumbo v0, "hdmi"
 
     return-object v0
 
-    .line 552
+    .line 557
     :sswitch_b
     const-string/jumbo v0, "analog_dock"
 
     return-object v0
 
-    .line 554
+    .line 559
     :sswitch_c
     const-string/jumbo v0, "digital_dock"
 
     return-object v0
 
-    .line 556
+    .line 561
     :sswitch_d
     const-string/jumbo v0, "usb_accessory"
 
     return-object v0
 
-    .line 558
+    .line 563
     :sswitch_e
     const-string/jumbo v0, "usb_device"
 
     return-object v0
 
-    .line 560
+    .line 565
     :sswitch_f
     const-string/jumbo v0, "remote_submix"
 
     return-object v0
 
-    .line 562
+    .line 567
     :sswitch_10
     const-string/jumbo v0, "telephony_tx"
 
     return-object v0
 
-    .line 564
+    .line 569
     :sswitch_11
     const-string/jumbo v0, "line"
 
     return-object v0
 
-    .line 566
+    .line 571
     :sswitch_12
     const-string/jumbo v0, "hmdi_arc"
 
     return-object v0
 
-    .line 568
+    .line 573
     :sswitch_13
     const-string/jumbo v0, "spdif"
 
     return-object v0
 
-    .line 570
+    .line 575
     :sswitch_14
     const-string/jumbo v0, "fm_transmitter"
 
     return-object v0
 
-    .line 572
+    .line 577
     :sswitch_15
     const-string/jumbo v0, "aux_line"
 
     return-object v0
 
-    .line 574
+    .line 579
     :sswitch_16
     const-string/jumbo v0, "speaker_safe"
 
     return-object v0
 
-    .line 576
+    .line 581
     :sswitch_17
     const-string/jumbo v0, "ip"
 
     return-object v0
 
-    .line 578
+    .line 583
     :sswitch_18
     const-string/jumbo v0, "bus"
 
     return-object v0
 
-    .line 528
+    .line 585
+    :sswitch_19
+    const-string/jumbo v0, "proxy"
+
+    return-object v0
+
+    .line 533
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -1097,6 +1109,7 @@
         0x400000 -> :sswitch_16
         0x800000 -> :sswitch_17
         0x1000000 -> :sswitch_18
+        0x2000000 -> :sswitch_19
     .end sparse-switch
 .end method
 
@@ -1111,7 +1124,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 799
+    .line 806
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1124,12 +1137,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 800
+    .line 807
     const/4 v0, 0x1
 
     return v0
 
-    .line 801
+    .line 808
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -1143,12 +1156,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 802
+    .line 809
     const/4 v0, 0x2
 
     return v0
 
-    .line 804
+    .line 811
     :cond_1
     const/4 v0, 0x0
 
@@ -1171,7 +1184,7 @@
     .param p2, "vibrateSetting"    # I
 
     .prologue
-    .line 752
+    .line 759
     mul-int/lit8 v0, p1, 0x2
 
     const/4 v1, 0x3
@@ -1182,7 +1195,7 @@
 
     and-int/2addr p0, v0
 
-    .line 755
+    .line 762
     and-int/lit8 v0, p2, 0x3
 
     mul-int/lit8 v1, p1, 0x2
@@ -1191,7 +1204,7 @@
 
     or-int/2addr p0, v0
 
-    .line 757
+    .line 764
     return p0
 .end method
 
@@ -1449,7 +1462,7 @@
     .param p0, "stream"    # I
 
     .prologue
-    .line 778
+    .line 785
     if-ltz p0, :cond_0
 
     sget-object v0, Landroid/media/AudioSystem;->STREAM_NAMES:[Ljava/lang/String;
@@ -1464,7 +1477,7 @@
 
     return-object v0
 
-    .line 779
+    .line 786
     :cond_0
     const/high16 v0, -0x80000000
 
@@ -1474,7 +1487,7 @@
 
     return-object v0
 
-    .line 780
+    .line 787
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 

@@ -315,7 +315,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get10(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
+.method static synthetic -get10(Lcom/android/server/DeviceIdleController;)Landroid/hardware/Sensor;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
+
+    return-object v0
+.end method
+
+.method static synthetic -get11(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mNetworkPolicyManager:Landroid/net/INetworkPolicyManager;
@@ -323,7 +331,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get11(Lcom/android/server/DeviceIdleController;)Landroid/hardware/SensorManager;
+.method static synthetic -get12(Lcom/android/server/DeviceIdleController;)Landroid/hardware/SensorManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mSensorManager:Landroid/hardware/SensorManager;
@@ -331,7 +339,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get12(Lcom/android/server/DeviceIdleController;)I
+.method static synthetic -get13(Lcom/android/server/DeviceIdleController;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
@@ -371,7 +379,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get6(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+.method static synthetic -get6(Lcom/android/server/DeviceIdleController;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
+
+    return v0
+.end method
+
+.method static synthetic -get7(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
@@ -379,7 +395,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get7(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
+.method static synthetic -get8(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceActivityListeners:Landroid/os/RemoteCallbackList;
@@ -387,18 +403,10 @@
     return-object v0
 .end method
 
-.method static synthetic -get8(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$MotionListener;
+.method static synthetic -get9(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$MotionListener;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionListener:Lcom/android/server/DeviceIdleController$MotionListener;
-
-    return-object v0
-.end method
-
-.method static synthetic -get9(Lcom/android/server/DeviceIdleController;)Landroid/hardware/Sensor;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
     return-object v0
 .end method
@@ -412,159 +420,159 @@
 
     const/4 v1, 0x0
 
-    .line 1287
+    .line 1301
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 225
+    .line 227
     new-instance v0, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v0}, Landroid/os/RemoteCallbackList;-><init>()V
 
-    .line 224
+    .line 226
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceActivityListeners:Landroid/os/RemoteCallbackList;
 
-    .line 231
+    .line 233
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
-    .line 237
+    .line 239
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
-    .line 242
+    .line 244
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
-    .line 248
+    .line 250
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
-    .line 247
+    .line 249
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistSystemAppIdsExceptIdle:Landroid/util/SparseBooleanArray;
 
-    .line 253
+    .line 255
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistSystemAppIds:Landroid/util/SparseBooleanArray;
 
-    .line 259
+    .line 261
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistExceptIdleAppIds:Landroid/util/SparseBooleanArray;
 
-    .line 266
+    .line 268
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistExceptIdleAppIdArray:[I
 
-    .line 271
+    .line 273
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIds:Landroid/util/SparseBooleanArray;
 
-    .line 277
+    .line 279
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIdArray:[I
 
-    .line 282
+    .line 284
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIds:Landroid/util/SparseBooleanArray;
 
-    .line 288
+    .line 290
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIdArray:[I
 
-    .line 295
+    .line 297
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 294
+    .line 296
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
-    .line 305
+    .line 307
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
 
-    .line 314
+    .line 316
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mEventCmds:[I
 
-    .line 315
+    .line 317
     new-array v0, v2, [J
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mEventTimes:[J
 
-    .line 326
+    .line 328
     new-instance v0, Lcom/android/server/DeviceIdleController$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$1;-><init>(Lcom/android/server/DeviceIdleController;)V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 352
+    .line 354
     new-instance v0, Lcom/android/server/DeviceIdleController$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$2;-><init>(Lcom/android/server/DeviceIdleController;)V
 
-    .line 351
+    .line 353
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLightAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
 
-    .line 362
+    .line 364
     new-instance v0, Lcom/android/server/DeviceIdleController$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$3;-><init>(Lcom/android/server/DeviceIdleController;)V
 
-    .line 361
+    .line 363
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mSensingTimeoutAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
 
-    .line 374
+    .line 376
     new-instance v0, Lcom/android/server/DeviceIdleController$4;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$4;-><init>(Lcom/android/server/DeviceIdleController;)V
 
-    .line 373
+    .line 375
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mDeepAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
 
-    .line 383
+    .line 385
     new-instance v0, Lcom/android/server/DeviceIdleController$5;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$5;-><init>(Lcom/android/server/DeviceIdleController;)V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mIdleStartedDoneReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 399
+    .line 401
     new-instance v0, Lcom/android/server/DeviceIdleController$6;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$6;-><init>(Lcom/android/server/DeviceIdleController;)V
 
-    .line 398
+    .line 400
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mDisplayListener:Landroid/hardware/display/DisplayManager$DisplayListener;
 
-    .line 465
+    .line 467
     new-instance v0, Lcom/android/server/DeviceIdleController$MotionListener;
 
     const/4 v1, 0x0
@@ -573,21 +581,21 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionListener:Lcom/android/server/DeviceIdleController$MotionListener;
 
-    .line 467
+    .line 469
     new-instance v0, Lcom/android/server/DeviceIdleController$7;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$7;-><init>(Lcom/android/server/DeviceIdleController;)V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mGenericLocationListener:Landroid/location/LocationListener;
 
-    .line 488
+    .line 490
     new-instance v0, Lcom/android/server/DeviceIdleController$8;
 
     invoke-direct {v0, p0}, Lcom/android/server/DeviceIdleController$8;-><init>(Lcom/android/server/DeviceIdleController;)V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mGpsLocationListener:Landroid/location/LocationListener;
 
-    .line 1288
+    .line 1302
     new-instance v0, Lcom/android/internal/os/AtomicFile;
 
     new-instance v1, Ljava/io/File;
@@ -604,7 +612,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mConfigFile:Lcom/android/internal/os/AtomicFile;
 
-    .line 1289
+    .line 1303
     new-instance v0, Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-static {}, Lcom/android/internal/os/BackgroundThread;->getHandler()Landroid/os/Handler;
@@ -619,7 +627,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 1286
+    .line 1300
     return-void
 .end method
 
@@ -634,33 +642,33 @@
 
     const/4 v4, 0x0
 
-    .line 318
+    .line 320
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mEventCmds:[I
 
     aget v0, v0, v4
 
     if-eq v0, p1, :cond_0
 
-    .line 319
+    .line 321
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mEventCmds:[I
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mEventCmds:[I
 
     invoke-static {v0, v4, v1, v2, v3}, Ljava/lang/System;->arraycopy([II[III)V
 
-    .line 320
+    .line 322
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mEventTimes:[J
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mEventTimes:[J
 
     invoke-static {v0, v4, v1, v2, v3}, Ljava/lang/System;->arraycopy([JI[JII)V
 
-    .line 321
+    .line 323
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mEventCmds:[I
 
     aput p1, v0, v4
 
-    .line 322
+    .line 324
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mEventTimes:[J
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -669,7 +677,7 @@
 
     aput-wide v2, v0, v4
 
-    .line 317
+    .line 319
     :cond_0
     return-void
 .end method
@@ -700,13 +708,13 @@
     .local p1, "userApps":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     const/4 v4, 0x1
 
-    .line 2295
+    .line 2310
     invoke-virtual {p2}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 2296
+    .line 2311
     if-eqz p0, :cond_0
 
-    .line 2297
+    .line 2312
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -717,7 +725,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 2298
+    .line 2313
     invoke-virtual {p0, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -730,17 +738,17 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 2297
+    .line 2312
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2301
+    .line 2316
     .end local v1    # "i":I
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2302
+    .line 2317
     const/4 v1, 0x0
 
     .restart local v1    # "i":I
@@ -751,7 +759,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 2303
+    .line 2318
     invoke-virtual {p1, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -764,23 +772,23 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 2302
+    .line 2317
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 2306
+    .line 2321
     .end local v1    # "i":I
     :cond_1
     invoke-virtual {p2}, Landroid/util/SparseBooleanArray;->size()I
 
     move-result v2
 
-    .line 2307
+    .line 2322
     .local v2, "size":I
     new-array v0, v2, [I
 
-    .line 2308
+    .line 2323
     .local v0, "appids":[I
     const/4 v1, 0x0
 
@@ -788,19 +796,19 @@
     :goto_2
     if-ge v1, v2, :cond_2
 
-    .line 2309
+    .line 2324
     invoke-virtual {p2, v1}, Landroid/util/SparseBooleanArray;->keyAt(I)I
 
     move-result v3
 
     aput v3, v0, v1
 
-    .line 2308
+    .line 2323
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 2311
+    .line 2326
     :cond_2
     return-object v0
 .end method
@@ -810,142 +818,142 @@
     .param p0, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 2490
+    .line 2505
     const-string/jumbo v0, "Device idle controller (deviceidle) commands:"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2491
+    .line 2506
     const-string/jumbo v0, "  help"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2492
+    .line 2507
     const-string/jumbo v0, "    Print this help text."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2493
+    .line 2508
     const-string/jumbo v0, "  step [light|deep]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2494
+    .line 2509
     const-string/jumbo v0, "    Immediately step to next state, without waiting for alarm."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2495
+    .line 2510
     const-string/jumbo v0, "  force-idle [light|deep]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2496
+    .line 2511
     const-string/jumbo v0, "    Force directly into idle mode, regardless of other device state."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2497
+    .line 2512
     const-string/jumbo v0, "  force-inactive"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2498
+    .line 2513
     const-string/jumbo v0, "    Force to be inactive, ready to freely step idle states."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2499
+    .line 2514
     const-string/jumbo v0, "  unforce"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2500
+    .line 2515
     const-string/jumbo v0, "    Resume normal functioning after force-idle or force-inactive."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2501
+    .line 2516
     const-string/jumbo v0, "  get [light|deep|force|screen|charging|network]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2502
+    .line 2517
     const-string/jumbo v0, "    Retrieve the current given state."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2503
+    .line 2518
     const-string/jumbo v0, "  disable [light|deep|all]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2504
+    .line 2519
     const-string/jumbo v0, "    Completely disable device idle mode."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2505
+    .line 2520
     const-string/jumbo v0, "  enable [light|deep|all]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2506
+    .line 2521
     const-string/jumbo v0, "    Re-enable device idle mode after it had previously been disabled."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2507
+    .line 2522
     const-string/jumbo v0, "  enabled [light|deep|all]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2508
+    .line 2523
     const-string/jumbo v0, "    Print 1 if device idle mode is currently enabled, else 0."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2509
+    .line 2524
     const-string/jumbo v0, "  whitelist"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2510
+    .line 2525
     const-string/jumbo v0, "    Print currently whitelisted apps."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2511
+    .line 2526
     const-string/jumbo v0, "  whitelist [package ...]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2512
+    .line 2527
     const-string/jumbo v0, "    Add (prefix with +) or remove (prefix with -) packages."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2513
+    .line 2528
     const-string/jumbo v0, "  tempwhitelist"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2514
+    .line 2529
     const-string/jumbo v0, "    Print packages that are temporarily whitelisted."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2515
+    .line 2530
     const-string/jumbo v0, "  tempwhitelist [-u] [package ..]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2516
+    .line 2531
     const-string/jumbo v0, "    Temporarily place packages in whitelist for 10 seconds."
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2489
+    .line 2504
     return-void
 .end method
 
@@ -953,7 +961,7 @@
     .locals 3
 
     .prologue
-    .line 1299
+    .line 1313
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
@@ -972,10 +980,10 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 188
+    .line 190
     packed-switch p0, :pswitch_data_0
 
-    .line 196
+    .line 198
     :pswitch_0
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -983,49 +991,49 @@
 
     return-object v0
 
-    .line 189
+    .line 191
     :pswitch_1
     const-string/jumbo v0, "ACTIVE"
 
     return-object v0
 
-    .line 190
+    .line 192
     :pswitch_2
     const-string/jumbo v0, "INACTIVE"
 
     return-object v0
 
-    .line 191
+    .line 193
     :pswitch_3
     const-string/jumbo v0, "PRE_IDLE"
 
     return-object v0
 
-    .line 192
+    .line 194
     :pswitch_4
     const-string/jumbo v0, "IDLE"
 
     return-object v0
 
-    .line 193
+    .line 195
     :pswitch_5
     const-string/jumbo v0, "WAITING_FOR_NETWORK"
 
     return-object v0
 
-    .line 194
+    .line 196
     :pswitch_6
     const-string/jumbo v0, "IDLE_MAINTENANCE"
 
     return-object v0
 
-    .line 195
+    .line 197
     :pswitch_7
     const-string/jumbo v0, "OVERRIDE"
 
     return-object v0
 
-    .line 188
+    .line 190
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -1045,7 +1053,7 @@
     .param p2, "delay"    # J
 
     .prologue
-    .line 1681
+    .line 1696
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
@@ -1060,7 +1068,7 @@
 
     invoke-virtual {v0, v1, p2, p3}, Lcom/android/server/DeviceIdleController$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1677
+    .line 1692
     return-void
 .end method
 
@@ -1069,7 +1077,7 @@
     .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
 
     .prologue
-    .line 2389
+    .line 2404
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v14
@@ -1078,7 +1086,7 @@
 
     move-result-object v11
 
-    .line 2393
+    .line 2408
     .local v11, "pm":Landroid/content/pm/PackageManager;
     :cond_0
     :try_start_0
@@ -1091,18 +1099,18 @@
 
     if-eq v13, v14, :cond_1
 
-    .line 2394
+    .line 2409
     const/4 v14, 0x1
 
     if-ne v13, v14, :cond_0
 
-    .line 2398
+    .line 2413
     :cond_1
     const/4 v14, 0x2
 
     if-eq v13, v14, :cond_3
 
-    .line 2399
+    .line 2414
     new-instance v14, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v15, "no start tag found"
@@ -1118,12 +1126,12 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 2428
+    .line 2443
     .end local v13    # "type":I
     :catch_0
     move-exception v4
 
-    .line 2429
+    .line 2444
     .local v4, "e":Ljava/lang/IllegalStateException;
     const-string/jumbo v14, "DeviceIdleController"
 
@@ -1147,13 +1155,13 @@
 
     invoke-static {v14, v15}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2388
+    .line 2403
     .end local v4    # "e":Ljava/lang/IllegalStateException;
     :cond_2
     :goto_0
     return-void
 
-    .line 2402
+    .line 2417
     .restart local v13    # "type":I
     :cond_3
     :try_start_1
@@ -1161,7 +1169,7 @@
 
     move-result v10
 
-    .line 2403
+    .line 2418
     .local v10, "outerDepth":I
     :cond_4
     :goto_1
@@ -1173,7 +1181,7 @@
 
     if-eq v13, v14, :cond_2
 
-    .line 2404
+    .line 2419
     const/4 v14, 0x3
 
     if-ne v13, v14, :cond_5
@@ -1184,7 +1192,7 @@
 
     if-le v14, v10, :cond_2
 
-    .line 2405
+    .line 2420
     :cond_5
     const/4 v14, 0x3
 
@@ -1194,12 +1202,12 @@
 
     if-eq v13, v14, :cond_4
 
-    .line 2409
+    .line 2424
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 2410
+    .line 2425
     .local v12, "tagName":Ljava/lang/String;
     const-string/jumbo v14, "wl"
 
@@ -1209,7 +1217,7 @@
 
     if-eqz v14, :cond_6
 
-    .line 2411
+    .line 2426
     const-string/jumbo v14, "n"
 
     const/4 v15, 0x0
@@ -1227,20 +1235,20 @@
 
     move-result-object v9
 
-    .line 2412
+    .line 2427
     .local v9, "name":Ljava/lang/String;
     if-eqz v9, :cond_4
 
-    .line 2415
+    .line 2430
     const/16 v14, 0x2000
 
-    .line 2414
+    .line 2429
     :try_start_2
     invoke-virtual {v11, v9, v14}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v1
 
-    .line 2416
+    .line 2431
     .local v1, "ai":Landroid/content/pm/ApplicationInfo;
     move-object/from16 v0, p0
 
@@ -1248,7 +1256,7 @@
 
     iget-object v15, v1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .line 2417
+    .line 2432
     iget v0, v1, Landroid/content/pm/ApplicationInfo;->uid:I
 
     move/from16 v16, v0
@@ -1261,7 +1269,7 @@
 
     move-result-object v16
 
-    .line 2416
+    .line 2431
     invoke-virtual/range {v14 .. v16}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_1
@@ -1274,7 +1282,7 @@
 
     goto :goto_1
 
-    .line 2418
+    .line 2433
     .end local v1    # "ai":Landroid/content/pm/ApplicationInfo;
     :catch_1
     move-exception v2
@@ -1282,7 +1290,7 @@
     .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     goto :goto_1
 
-    .line 2422
+    .line 2437
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v9    # "name":Ljava/lang/String;
     :cond_6
@@ -1299,12 +1307,12 @@
 
     move-result-object v15
 
-    .line 2423
+    .line 2438
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v16
 
-    .line 2422
+    .line 2437
     invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v15
@@ -1315,7 +1323,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2424
+    .line 2439
     invoke-static/range {p1 .. p1}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_3
     .catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_3} :catch_0
@@ -1327,14 +1335,14 @@
 
     goto :goto_1
 
-    .line 2430
+    .line 2445
     .end local v10    # "outerDepth":I
     .end local v12    # "tagName":Ljava/lang/String;
     .end local v13    # "type":I
     :catch_2
     move-exception v6
 
-    .line 2431
+    .line 2446
     .local v6, "e":Ljava/lang/NullPointerException;
     const-string/jumbo v14, "DeviceIdleController"
 
@@ -1360,12 +1368,12 @@
 
     goto/16 :goto_0
 
-    .line 2438
+    .line 2453
     .end local v6    # "e":Ljava/lang/NullPointerException;
     :catch_3
     move-exception v5
 
-    .line 2439
+    .line 2454
     .local v5, "e":Ljava/lang/IndexOutOfBoundsException;
     const-string/jumbo v14, "DeviceIdleController"
 
@@ -1391,12 +1399,12 @@
 
     goto/16 :goto_0
 
-    .line 2436
+    .line 2451
     .end local v5    # "e":Ljava/lang/IndexOutOfBoundsException;
     :catch_4
     move-exception v3
 
-    .line 2437
+    .line 2452
     .local v3, "e":Ljava/io/IOException;
     const-string/jumbo v14, "DeviceIdleController"
 
@@ -1422,12 +1430,12 @@
 
     goto/16 :goto_0
 
-    .line 2434
+    .line 2449
     .end local v3    # "e":Ljava/io/IOException;
     :catch_5
     move-exception v8
 
-    .line 2435
+    .line 2450
     .local v8, "e":Lorg/xmlpull/v1/XmlPullParserException;
     const-string/jumbo v14, "DeviceIdleController"
 
@@ -1453,12 +1461,12 @@
 
     goto/16 :goto_0
 
-    .line 2432
+    .line 2447
     .end local v8    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     :catch_6
     move-exception v7
 
-    .line 2433
+    .line 2448
     .local v7, "e":Ljava/lang/NumberFormatException;
     const-string/jumbo v14, "DeviceIdleController"
 
@@ -1489,20 +1497,20 @@
     .locals 3
 
     .prologue
-    .line 2355
+    .line 2370
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.os.action.POWER_SAVE_WHITELIST_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2356
+    .line 2371
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x40000000    # 2.0f
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2357
+    .line 2372
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1511,7 +1519,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 2354
+    .line 2369
     return-void
 .end method
 
@@ -1519,20 +1527,20 @@
     .locals 3
 
     .prologue
-    .line 2361
+    .line 2376
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.os.action.POWER_SAVE_TEMP_WHITELIST_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2362
+    .line 2377
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x40000000    # 2.0f
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2363
+    .line 2378
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1541,7 +1549,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 2360
+    .line 2375
     return-void
 .end method
 
@@ -1550,59 +1558,59 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 160
+    .line 162
     packed-switch p0, :pswitch_data_0
 
-    .line 168
+    .line 170
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 161
+    .line 163
     :pswitch_0
     const-string/jumbo v0, "ACTIVE"
 
     return-object v0
 
-    .line 162
+    .line 164
     :pswitch_1
     const-string/jumbo v0, "INACTIVE"
 
     return-object v0
 
-    .line 163
+    .line 165
     :pswitch_2
     const-string/jumbo v0, "IDLE_PENDING"
 
     return-object v0
 
-    .line 164
+    .line 166
     :pswitch_3
     const-string/jumbo v0, "SENSING"
 
     return-object v0
 
-    .line 165
+    .line 167
     :pswitch_4
     const-string/jumbo v0, "LOCATING"
 
     return-object v0
 
-    .line 166
+    .line 168
     :pswitch_5
     const-string/jumbo v0, "IDLE"
 
     return-object v0
 
-    .line 167
+    .line 169
     :pswitch_6
     const-string/jumbo v0, "IDLE_MAINTENANCE"
 
     return-object v0
 
-    .line 160
+    .line 162
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1619,14 +1627,14 @@
     .locals 4
 
     .prologue
-    .line 2338
+    .line 2353
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 2339
+    .line 2354
     .local v1, "size":I
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
 
@@ -1634,12 +1642,12 @@
 
     if-eq v2, v1, :cond_0
 
-    .line 2340
+    .line 2355
     new-array v2, v1, [I
 
     iput-object v2, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
 
-    .line 2342
+    .line 2357
     :cond_0
     const/4 v0, 0x0
 
@@ -1647,7 +1655,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 2343
+    .line 2358
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
 
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
@@ -1658,25 +1666,25 @@
 
     aput v3, v2, v0
 
-    .line 2342
+    .line 2357
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2345
+    .line 2360
     :cond_1
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
     if-eqz v2, :cond_2
 
-    .line 2350
+    .line 2365
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
 
     invoke-virtual {v2, v3}, Landroid/os/PowerManagerInternal;->setDeviceIdleTempWhitelist([I)V
 
-    .line 2337
+    .line 2352
     :cond_2
     return-void
 .end method
@@ -1687,74 +1695,74 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2315
+    .line 2330
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
-    .line 2316
+    .line 2331
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistExceptIdleAppIds:Landroid/util/SparseBooleanArray;
 
-    .line 2315
+    .line 2330
     invoke-static {v0, v1, v2}, Lcom/android/server/DeviceIdleController;->buildAppIdArray(Landroid/util/ArrayMap;Landroid/util/ArrayMap;Landroid/util/SparseBooleanArray;)[I
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistExceptIdleAppIdArray:[I
 
-    .line 2317
+    .line 2332
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
-    .line 2318
+    .line 2333
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIds:Landroid/util/SparseBooleanArray;
 
-    .line 2317
+    .line 2332
     invoke-static {v0, v1, v2}, Lcom/android/server/DeviceIdleController;->buildAppIdArray(Landroid/util/ArrayMap;Landroid/util/ArrayMap;Landroid/util/SparseBooleanArray;)[I
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIdArray:[I
 
-    .line 2320
+    .line 2335
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIds:Landroid/util/SparseBooleanArray;
 
-    .line 2319
+    .line 2334
     invoke-static {v3, v0, v1}, Lcom/android/server/DeviceIdleController;->buildAppIdArray(Landroid/util/ArrayMap;Landroid/util/ArrayMap;Landroid/util/SparseBooleanArray;)[I
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIdArray:[I
 
-    .line 2321
+    .line 2336
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
     if-eqz v0, :cond_0
 
-    .line 2326
+    .line 2341
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIdArray:[I
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManagerInternal;->setDeviceIdleWhitelist([I)V
 
-    .line 2328
+    .line 2343
     :cond_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalAlarmManager:Lcom/android/server/AlarmManagerService$LocalService;
 
     if-eqz v0, :cond_1
 
-    .line 2333
+    .line 2348
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalAlarmManager:Lcom/android/server/AlarmManagerService$LocalService;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIdArray:[I
 
     invoke-virtual {v0, v1}, Lcom/android/server/AlarmManagerService$LocalService;->setDeviceIdleUserWhitelist([I)V
 
-    .line 2314
+    .line 2329
     :cond_1
     return-void
 .end method
@@ -1774,61 +1782,61 @@
     .end annotation
 
     .prologue
-    .line 1585
+    .line 1600
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 1586
+    .line 1601
     const-string/jumbo v1, "android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST"
 
-    .line 1587
+    .line 1602
     const-string/jumbo v3, "No permission to change device idle whitelist"
 
-    .line 1585
+    .line 1600
     invoke-virtual {v0, v1, v3}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1588
+    .line 1603
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 1589
+    .line 1604
     .local v2, "callingUid":I
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
-    .line 1590
+    .line 1605
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
-    .line 1595
+    .line 1610
     const-string/jumbo v6, "addPowerSaveTempWhitelistApp"
 
-    .line 1593
+    .line 1608
     const/4 v4, 0x0
 
-    .line 1594
+    .line 1609
     const/4 v5, 0x0
 
-    .line 1595
+    .line 1610
     const/4 v7, 0x0
 
     move/from16 v3, p4
 
-    .line 1589
+    .line 1604
     invoke-interface/range {v0 .. v7}, Landroid/app/IActivityManager;->handleIncomingUser(IIIZZLjava/lang/String;Ljava/lang/String;)I
 
     move-result p4
 
-    .line 1596
+    .line 1611
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v10
 
-    .line 1599
+    .line 1614
     .local v10, "token":J
     const/4 v7, 0x1
 
@@ -1842,26 +1850,26 @@
 
     move-object/from16 v8, p5
 
-    .line 1598
+    .line 1613
     :try_start_0
     invoke-virtual/range {v1 .. v8}, Lcom/android/server/DeviceIdleController;->addPowerSaveTempWhitelistAppInternal(ILjava/lang/String;JIZLjava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1601
+    .line 1616
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1584
+    .line 1599
     return-void
 
-    .line 1600
+    .line 1615
     :catchall_0
     move-exception v0
 
-    .line 1601
+    .line 1616
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1600
+    .line 1615
     throw v0
 .end method
 
@@ -1874,32 +1882,32 @@
     .param p6, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 1625
+    .line 1640
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v8
 
-    .line 1626
+    .line 1641
     .local v8, "timeNow":J
     const/4 v5, 0x0
 
-    .line 1627
+    .line 1642
     .local v5, "networkPolicyTempWhitelistCallback":Ljava/lang/Runnable;
     monitor-enter p0
 
-    .line 1628
+    .line 1643
     :try_start_0
     invoke-static {p1}, Landroid/os/UserHandle;->getAppId(I)I
 
     move-result v2
 
-    .line 1629
+    .line 1644
     .local v2, "callingAppId":I
     const/16 v7, 0x2710
 
     if-lt v2, v7, :cond_0
 
-    .line 1630
+    .line 1645
     iget-object v7, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistSystemAppIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v7, v2}, Landroid/util/SparseBooleanArray;->get(I)Z
@@ -1908,7 +1916,7 @@
 
     if-nez v7, :cond_0
 
-    .line 1631
+    .line 1646
     new-instance v7, Ljava/lang/SecurityException;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1929,10 +1937,10 @@
 
     move-result-object v10
 
-    .line 1632
+    .line 1647
     const-string/jumbo v11, " is not on whitelist"
 
-    .line 1631
+    .line 1646
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -1947,7 +1955,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1627
+    .line 1642
     .end local v2    # "callingAppId":I
     .end local v5    # "networkPolicyTempWhitelistCallback":Ljava/lang/Runnable;
     :catchall_0
@@ -1957,7 +1965,7 @@
 
     throw v7
 
-    .line 1635
+    .line 1650
     .restart local v2    # "callingAppId":I
     .restart local v5    # "networkPolicyTempWhitelistCallback":Ljava/lang/Runnable;
     :cond_0
@@ -1972,7 +1980,7 @@
 
     move-result-wide p3
 
-    .line 1636
+    .line 1651
     iget-object v7, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
     invoke-virtual {v7, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1981,18 +1989,18 @@
 
     check-cast v4, Landroid/util/Pair;
 
-    .line 1637
+    .line 1652
     .local v4, "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
     if-nez v4, :cond_5
 
     const/4 v6, 0x1
 
-    .line 1639
+    .line 1654
     .local v6, "newEntry":Z
     :goto_0
     if-eqz v6, :cond_1
 
-    .line 1640
+    .line 1655
     new-instance v4, Landroid/util/Pair;
 
     .end local v4    # "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
@@ -2006,13 +2014,13 @@
 
     invoke-direct {v4, v7, v0}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 1641
+    .line 1656
     .restart local v4    # "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
     iget-object v7, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
     invoke-virtual {v7, p2, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1643
+    .line 1658
     :cond_1
     iget-object v7, v4, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -2024,10 +2032,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1647
+    .line 1662
     if-eqz v6, :cond_3
 
-    .line 1650
+    .line 1665
     :try_start_2
     iget-object v7, p0, Lcom/android/server/DeviceIdleController;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
@@ -2040,32 +2048,32 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1654
+    .line 1669
     :goto_1
     :try_start_3
     move-wide/from16 v0, p3
 
     invoke-direct {p0, p2, v0, v1}, Lcom/android/server/DeviceIdleController;->postTempActiveTimeoutMessage(IJ)V
 
-    .line 1655
+    .line 1670
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->updateTempWhitelistAppIdsLocked()V
 
-    .line 1656
+    .line 1671
     iget-object v7, p0, Lcom/android/server/DeviceIdleController;->mNetworkPolicyTempWhitelistCallback:Ljava/lang/Runnable;
 
     if-eqz v7, :cond_2
 
-    .line 1657
+    .line 1672
     if-nez p5, :cond_6
 
-    .line 1658
+    .line 1673
     iget-object v7, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     iget-object v10, p0, Lcom/android/server/DeviceIdleController;->mNetworkPolicyTempWhitelistCallback:Ljava/lang/Runnable;
 
     invoke-virtual {v7, v10}, Lcom/android/server/DeviceIdleController$MyHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1663
+    .line 1678
     .end local v5    # "networkPolicyTempWhitelistCallback":Ljava/lang/Runnable;
     :cond_2
     :goto_2
@@ -2076,17 +2084,17 @@
     :cond_3
     monitor-exit p0
 
-    .line 1666
+    .line 1681
     if-eqz v5, :cond_4
 
-    .line 1667
+    .line 1682
     invoke-interface {v5}, Ljava/lang/Runnable;->run()V
 
-    .line 1624
+    .line 1639
     :cond_4
     return-void
 
-    .line 1637
+    .line 1652
     .end local v6    # "newEntry":Z
     .restart local v5    # "networkPolicyTempWhitelistCallback":Ljava/lang/Runnable;
     :cond_5
@@ -2094,7 +2102,7 @@
 
     goto :goto_0
 
-    .line 1660
+    .line 1675
     .restart local v6    # "newEntry":Z
     :cond_6
     :try_start_4
@@ -2105,7 +2113,7 @@
     .local v5, "networkPolicyTempWhitelistCallback":Ljava/lang/Runnable;
     goto :goto_2
 
-    .line 1652
+    .line 1667
     .local v5, "networkPolicyTempWhitelistCallback":Ljava/lang/Runnable;
     :catch_0
     move-exception v3
@@ -2124,7 +2132,7 @@
     .param p7, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 1612
+    .line 1627
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
@@ -2138,7 +2146,7 @@
 
     move-result v8
 
-    .line 1613
+    .line 1628
     .local v8, "uid":I
     invoke-static {v8}, Landroid/os/UserHandle;->getAppId(I)I
 
@@ -2155,18 +2163,18 @@
 
     move-object/from16 v7, p7
 
-    .line 1614
+    .line 1629
     invoke-virtual/range {v1 .. v7}, Lcom/android/server/DeviceIdleController;->addPowerSaveTempWhitelistAppDirectInternal(IIJZLjava/lang/String;)V
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1610
+    .line 1625
     .end local v3    # "appId":I
     .end local v8    # "uid":I
     :goto_0
     return-void
 
-    .line 1615
+    .line 1630
     :catch_0
     move-exception v0
 
@@ -2179,10 +2187,10 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1444
+    .line 1459
     monitor-enter p0
 
-    .line 1446
+    .line 1461
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
@@ -2192,15 +2200,15 @@
 
     move-result-object v2
 
-    .line 1447
+    .line 1462
     const/16 v3, 0x2000
 
-    .line 1446
+    .line 1461
     invoke-virtual {v2, p1, v3}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
-    .line 1448
+    .line 1463
     .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
@@ -2220,19 +2228,19 @@
 
     if-nez v2, :cond_0
 
-    .line 1449
+    .line 1464
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->reportPowerSaveWhitelistChangedLocked()V
 
-    .line 1450
+    .line 1465
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->updateWhitelistAppIdsLocked()V
 
-    .line 1451
+    .line 1466
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->writeConfigFileLocked()V
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1453
+    .line 1468
     :cond_0
     const/4 v2, 0x1
 
@@ -2240,12 +2248,12 @@
 
     return v2
 
-    .line 1454
+    .line 1469
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :catch_0
     move-exception v1
 
-    .line 1455
+    .line 1470
     .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v2, 0x0
 
@@ -2253,7 +2261,7 @@
 
     return v2
 
-    .line 1444
+    .line 1459
     .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catchall_0
     move-exception v2
@@ -2273,7 +2281,7 @@
 
     const/4 v1, 0x0
 
-    .line 1806
+    .line 1821
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     if-nez v0, :cond_0
@@ -2282,47 +2290,47 @@
 
     if-eqz v0, :cond_1
 
-    .line 1807
+    .line 1822
     :cond_0
     invoke-static {v1, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
-    .line 1808
+    .line 1823
     invoke-static {v1, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdleLight(ILjava/lang/String;)V
 
-    .line 1809
+    .line 1824
     invoke-virtual {p0, p1, p2}, Lcom/android/server/DeviceIdleController;->scheduleReportActiveLocked(Ljava/lang/String;I)V
 
-    .line 1810
+    .line 1825
     iput v1, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 1811
+    .line 1826
     iput v1, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 1812
+    .line 1827
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->INACTIVE_TIMEOUT:J
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mInactiveTimeout:J
 
-    .line 1813
+    .line 1828
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
-    .line 1814
+    .line 1829
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
 
-    .line 1815
+    .line 1830
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->resetIdleManagementLocked()V
 
-    .line 1816
+    .line 1831
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->resetLightIdleManagementLocked()V
 
-    .line 1817
+    .line 1832
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/server/DeviceIdleController;->addEvent(I)V
 
-    .line 1804
+    .line 1819
     :cond_1
     return-void
 .end method
@@ -2335,7 +2343,7 @@
 
     const/4 v2, 0x0
 
-    .line 1823
+    .line 1838
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mScreenOn:Z
 
     if-nez v0, :cond_0
@@ -2349,7 +2357,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1826
+    .line 1841
     :cond_1
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
@@ -2359,25 +2367,25 @@
 
     if-eqz v0, :cond_2
 
-    .line 1827
+    .line 1842
     iput v3, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 1829
+    .line 1844
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->resetIdleManagementLocked()V
 
-    .line 1830
+    .line 1845
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mInactiveTimeout:J
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/server/DeviceIdleController;->scheduleAlarmLocked(JZ)V
 
-    .line 1831
+    .line 1846
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     const-string/jumbo v1, "no activity"
 
     invoke-static {v0, v1}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
-    .line 1833
+    .line 1848
     :cond_2
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
@@ -2387,27 +2395,27 @@
 
     if-eqz v0, :cond_3
 
-    .line 1834
+    .line 1849
     iput v3, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 1836
+    .line 1851
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->resetLightIdleManagementLocked()V
 
-    .line 1837
+    .line 1852
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_AFTER_INACTIVE_TIMEOUT:J
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/DeviceIdleController;->scheduleLightAlarmLocked(J)V
 
-    .line 1838
+    .line 1853
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     const-string/jumbo v1, "no activity"
 
     invoke-static {v0, v1}, Lcom/android/server/EventLogTags;->writeDeviceIdleLight(ILjava/lang/String;)V
 
-    .line 1821
+    .line 1836
     :cond_3
     return-void
 .end method
@@ -2418,24 +2426,24 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 2232
+    .line 2247
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextAlarmTime:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
-    .line 2233
+    .line 2248
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextAlarmTime:J
 
-    .line 2234
+    .line 2249
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mDeepAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 2231
+    .line 2246
     :cond_0
     return-void
 .end method
@@ -2446,24 +2454,24 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 2239
+    .line 2254
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextLightAlarmTime:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
-    .line 2240
+    .line 2255
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightAlarmTime:J
 
-    .line 2241
+    .line 2256
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mLightAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 2238
+    .line 2253
     :cond_0
     return-void
 .end method
@@ -2472,31 +2480,31 @@
     .locals 2
 
     .prologue
-    .line 2246
+    .line 2261
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mLocating:Z
 
     if-eqz v0, :cond_0
 
-    .line 2247
+    .line 2262
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mGenericLocationListener:Landroid/location/LocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 2248
+    .line 2263
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mGpsLocationListener:Landroid/location/LocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 2249
+    .line 2264
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mLocating:Z
 
-    .line 2245
+    .line 2260
     :cond_0
     return-void
 .end method
@@ -2507,24 +2515,24 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 2254
+    .line 2269
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextSensingTimeoutAlarmTime:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
-    .line 2255
+    .line 2270
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextSensingTimeoutAlarmTime:J
 
-    .line 2256
+    .line 2271
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mSensingTimeoutAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 2253
+    .line 2268
     :cond_0
     return-void
 .end method
@@ -2534,16 +2542,16 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 1686
+    .line 1701
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    .line 1690
+    .line 1705
     .local v2, "timeNow":J
     monitor-enter p0
 
-    .line 1691
+    .line 1706
     :try_start_0
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
@@ -2555,16 +2563,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1692
+    .line 1707
     .local v1, "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
     if-nez v1, :cond_0
 
     monitor-exit p0
 
-    .line 1694
+    .line 1709
     return-void
 
-    .line 1696
+    .line 1711
     :cond_0
     :try_start_1
     iget-object v4, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -2577,42 +2585,42 @@
 
     if-ltz v4, :cond_2
 
-    .line 1697
+    .line 1712
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
     invoke-virtual {v4, p1}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 1701
+    .line 1716
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->updateTempWhitelistAppIdsLocked()V
 
-    .line 1702
+    .line 1717
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mNetworkPolicyTempWhitelistCallback:Ljava/lang/Runnable;
 
     if-eqz v4, :cond_1
 
-    .line 1703
+    .line 1718
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     iget-object v5, p0, Lcom/android/server/DeviceIdleController;->mNetworkPolicyTempWhitelistCallback:Ljava/lang/Runnable;
 
     invoke-virtual {v4, v5}, Lcom/android/server/DeviceIdleController$MyHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1705
+    .line 1720
     :cond_1
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->reportTempWhitelistChangedLocked()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1707
+    .line 1722
     :try_start_2
     iget-object v5, p0, Lcom/android/server/DeviceIdleController;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
-    .line 1708
+    .line 1723
     iget-object v4, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
 
-    .line 1707
+    .line 1722
     const/16 v6, 0x4011
 
     invoke-interface {v5, v6, v4, p1}, Lcom/android/internal/app/IBatteryStats;->noteEvent(ILjava/lang/String;I)V
@@ -2623,10 +2631,10 @@
     :goto_0
     monitor-exit p0
 
-    .line 1685
+    .line 1700
     return-void
 
-    .line 1716
+    .line 1731
     :cond_2
     :try_start_3
     iget-object v4, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -2643,7 +2651,7 @@
 
     goto :goto_0
 
-    .line 1690
+    .line 1705
     .end local v1    # "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
     :catchall_0
     move-exception v4
@@ -2652,7 +2660,7 @@
 
     throw v4
 
-    .line 1709
+    .line 1724
     .restart local v1    # "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
     :catch_0
     move-exception v0
@@ -2665,10 +2673,10 @@
     .locals 1
 
     .prologue
-    .line 2072
+    .line 2087
     monitor-enter p0
 
-    .line 2073
+    .line 2088
     :try_start_0
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
@@ -2676,15 +2684,15 @@
 
     iput v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
-    .line 2074
+    .line 2089
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
     if-gtz v0, :cond_0
 
-    .line 2075
+    .line 2090
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->exitMaintenanceEarlyIfNeededLocked()V
 
-    .line 2076
+    .line 2091
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
@@ -2694,10 +2702,10 @@
     :cond_0
     monitor-exit p0
 
-    .line 2071
+    .line 2086
     return-void
 
-    .line 2072
+    .line 2087
     :catchall_0
     move-exception v0
 
@@ -2713,7 +2721,7 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 2827
+    .line 2842
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v5
@@ -2726,7 +2734,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 2829
+    .line 2844
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -2737,46 +2745,46 @@
 
     move-result-object v5
 
-    .line 2830
+    .line 2845
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v6
 
-    .line 2829
+    .line 2844
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 2830
+    .line 2845
     const-string/jumbo v6, ", uid="
 
-    .line 2829
+    .line 2844
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 2830
+    .line 2845
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v6
 
-    .line 2829
+    .line 2844
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 2831
+    .line 2846
     const-string/jumbo v6, " without permission "
 
-    .line 2829
+    .line 2844
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 2831
+    .line 2846
     const-string/jumbo v6, "android.permission.DUMP"
 
-    .line 2829
+    .line 2844
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -2789,17 +2797,17 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2832
+    .line 2847
     return-void
 
-    .line 2835
+    .line 2850
     :cond_0
     if-eqz p3, :cond_5
 
-    .line 2836
+    .line 2851
     const/16 v18, 0x0
 
-    .line 2837
+    .line 2852
     .local v18, "userId":I
     const/4 v13, 0x0
 
@@ -2811,10 +2819,10 @@
 
     if-ge v13, v5, :cond_5
 
-    .line 2838
+    .line 2853
     aget-object v11, p3, v13
 
-    .line 2839
+    .line 2854
     .local v11, "arg":Ljava/lang/String;
     const-string/jumbo v5, "-h"
 
@@ -2824,13 +2832,13 @@
 
     if-eqz v5, :cond_1
 
-    .line 2840
+    .line 2855
     invoke-static/range {p2 .. p2}, Lcom/android/server/DeviceIdleController;->dumpHelp(Ljava/io/PrintWriter;)V
 
-    .line 2841
+    .line 2856
     return-void
 
-    .line 2842
+    .line 2857
     :cond_1
     const-string/jumbo v5, "-u"
 
@@ -2840,31 +2848,31 @@
 
     if-eqz v5, :cond_3
 
-    .line 2843
+    .line 2858
     add-int/lit8 v13, v13, 0x1
 
-    .line 2844
+    .line 2859
     move-object/from16 v0, p3
 
     array-length v5, v0
 
     if-ge v13, v5, :cond_2
 
-    .line 2845
+    .line 2860
     aget-object v11, p3, v13
 
-    .line 2846
+    .line 2861
     invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v18
 
-    .line 2837
+    .line 2852
     :cond_2
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_0
 
-    .line 2848
+    .line 2863
     :cond_3
     const-string/jumbo v5, "-a"
 
@@ -2874,7 +2882,7 @@
 
     if-nez v5, :cond_2
 
-    .line 2850
+    .line 2865
     invoke-virtual {v11}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -2891,7 +2899,7 @@
 
     if-ne v5, v6, :cond_4
 
-    .line 2851
+    .line 2866
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -2914,10 +2922,10 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2852
+    .line 2867
     return-void
 
-    .line 2854
+    .line 2869
     :cond_4
     new-instance v4, Lcom/android/server/DeviceIdleController$Shell;
 
@@ -2925,13 +2933,13 @@
 
     invoke-direct {v4, v0}, Lcom/android/server/DeviceIdleController$Shell;-><init>(Lcom/android/server/DeviceIdleController;)V
 
-    .line 2855
+    .line 2870
     .local v4, "shell":Lcom/android/server/DeviceIdleController$Shell;
     move/from16 v0, v18
 
     iput v0, v4, Lcom/android/server/DeviceIdleController$Shell;->userId:I
 
-    .line 2856
+    .line 2871
     move-object/from16 v0, p3
 
     array-length v5, v0
@@ -2940,7 +2948,7 @@
 
     new-array v9, v5, [Ljava/lang/String;
 
-    .line 2857
+    .line 2872
     .local v9, "newArgs":[Ljava/lang/String;
     move-object/from16 v0, p3
 
@@ -2954,7 +2962,7 @@
 
     invoke-static {v0, v13, v9, v6, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 2858
+    .line 2873
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mBinderService:Lcom/android/server/DeviceIdleController$BinderService;
@@ -2973,10 +2981,10 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/android/server/DeviceIdleController$Shell;->exec(Landroid/os/Binder;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ResultReceiver;)I
 
-    .line 2859
+    .line 2874
     return-void
 
-    .line 2864
+    .line 2879
     .end local v4    # "shell":Lcom/android/server/DeviceIdleController$Shell;
     .end local v9    # "newArgs":[Ljava/lang/String;
     .end local v11    # "arg":Ljava/lang/String;
@@ -2985,7 +2993,7 @@
     :cond_5
     monitor-enter p0
 
-    .line 2865
+    .line 2880
     :try_start_0
     move-object/from16 v0, p0
 
@@ -2995,7 +3003,7 @@
 
     invoke-virtual {v5, v0}, Lcom/android/server/DeviceIdleController$Constants;->dump(Ljava/io/PrintWriter;)V
 
-    .line 2867
+    .line 2882
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mEventCmds:[I
@@ -3006,19 +3014,19 @@
 
     if-eqz v5, :cond_7
 
-    .line 2868
+    .line 2883
     const-string/jumbo v5, "  Idling history:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2869
+    .line 2884
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v16
 
-    .line 2870
+    .line 2885
     .local v16, "now":J
     const/16 v13, 0x63
 
@@ -3026,24 +3034,24 @@
     :goto_1
     if-ltz v13, :cond_7
 
-    .line 2871
+    .line 2886
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mEventCmds:[I
 
     aget v12, v5, v13
 
-    .line 2872
+    .line 2887
     .local v12, "cmd":I
     if-nez v12, :cond_6
 
-    .line 2870
+    .line 2885
     :goto_2
     add-int/lit8 v13, v13, -0x1
 
     goto :goto_1
 
-    .line 2876
+    .line 2891
     :cond_6
     move-object/from16 v0, p0
 
@@ -3053,10 +3061,10 @@
 
     packed-switch v5, :pswitch_data_0
 
-    .line 2882
+    .line 2897
     const-string/jumbo v14, "         ??"
 
-    .line 2884
+    .line 2899
     .local v14, "label":Ljava/lang/String;
     :goto_3
     const-string/jumbo v5, "    "
@@ -3065,19 +3073,19 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2885
+    .line 2900
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v14}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2886
+    .line 2901
     const-string/jumbo v5, ": "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2887
+    .line 2902
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mEventTimes:[J
@@ -3090,14 +3098,14 @@
 
     invoke-static {v6, v7, v0, v1, v2}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    .line 2888
+    .line 2903
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_2
 
-    .line 2864
+    .line 2879
     .end local v12    # "cmd":I
     .end local v13    # "i":I
     .end local v14    # "label":Ljava/lang/String;
@@ -3109,7 +3117,7 @@
 
     throw v5
 
-    .line 2877
+    .line 2892
     .restart local v12    # "cmd":I
     .restart local v13    # "i":I
     .restart local v16    # "now":J
@@ -3120,7 +3128,7 @@
     .restart local v14    # "label":Ljava/lang/String;
     goto :goto_3
 
-    .line 2878
+    .line 2893
     .end local v14    # "label":Ljava/lang/String;
     :pswitch_1
     const-string/jumbo v14, " light-idle"
@@ -3128,7 +3136,7 @@
     .restart local v14    # "label":Ljava/lang/String;
     goto :goto_3
 
-    .line 2879
+    .line 2894
     .end local v14    # "label":Ljava/lang/String;
     :pswitch_2
     const-string/jumbo v14, "light-maint"
@@ -3136,7 +3144,7 @@
     .restart local v14    # "label":Ljava/lang/String;
     goto :goto_3
 
-    .line 2880
+    .line 2895
     .end local v14    # "label":Ljava/lang/String;
     :pswitch_3
     const-string/jumbo v14, "  deep-idle"
@@ -3144,7 +3152,7 @@
     .restart local v14    # "label":Ljava/lang/String;
     goto :goto_3
 
-    .line 2881
+    .line 2896
     .end local v14    # "label":Ljava/lang/String;
     :pswitch_4
     const-string/jumbo v14, " deep-maint"
@@ -3152,7 +3160,7 @@
     .restart local v14    # "label":Ljava/lang/String;
     goto :goto_3
 
-    .line 2892
+    .line 2907
     .end local v12    # "cmd":I
     .end local v13    # "i":I
     .end local v14    # "label":Ljava/lang/String;
@@ -3166,32 +3174,32 @@
 
     move-result v15
 
-    .line 2893
+    .line 2908
     .local v15, "size":I
     if-lez v15, :cond_8
 
-    .line 2894
+    .line 2909
     const-string/jumbo v5, "  Whitelist (except idle) system apps:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2895
+    .line 2910
     const/4 v13, 0x0
 
     .restart local v13    # "i":I
     :goto_4
     if-ge v13, v15, :cond_8
 
-    .line 2896
+    .line 2911
     const-string/jumbo v5, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2897
+    .line 2912
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
@@ -3206,12 +3214,12 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2895
+    .line 2910
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_4
 
-    .line 2900
+    .line 2915
     .end local v13    # "i":I
     :cond_8
     move-object/from16 v0, p0
@@ -3222,31 +3230,31 @@
 
     move-result v15
 
-    .line 2901
+    .line 2916
     if-lez v15, :cond_9
 
-    .line 2902
+    .line 2917
     const-string/jumbo v5, "  Whitelist system apps:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2903
+    .line 2918
     const/4 v13, 0x0
 
     .restart local v13    # "i":I
     :goto_5
     if-ge v13, v15, :cond_9
 
-    .line 2904
+    .line 2919
     const-string/jumbo v5, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2905
+    .line 2920
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
@@ -3261,12 +3269,12 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2903
+    .line 2918
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_5
 
-    .line 2908
+    .line 2923
     .end local v13    # "i":I
     :cond_9
     move-object/from16 v0, p0
@@ -3277,31 +3285,31 @@
 
     move-result v15
 
-    .line 2909
+    .line 2924
     if-lez v15, :cond_a
 
-    .line 2910
+    .line 2925
     const-string/jumbo v5, "  Whitelist user apps:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2911
+    .line 2926
     const/4 v13, 0x0
 
     .restart local v13    # "i":I
     :goto_6
     if-ge v13, v15, :cond_a
 
-    .line 2912
+    .line 2927
     const-string/jumbo v5, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2913
+    .line 2928
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
@@ -3316,12 +3324,12 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2911
+    .line 2926
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_6
 
-    .line 2916
+    .line 2931
     .end local v13    # "i":I
     :cond_a
     move-object/from16 v0, p0
@@ -3332,31 +3340,31 @@
 
     move-result v15
 
-    .line 2917
+    .line 2932
     if-lez v15, :cond_b
 
-    .line 2918
+    .line 2933
     const-string/jumbo v5, "  Whitelist (except idle) all app ids:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2919
+    .line 2934
     const/4 v13, 0x0
 
     .restart local v13    # "i":I
     :goto_7
     if-ge v13, v15, :cond_b
 
-    .line 2920
+    .line 2935
     const-string/jumbo v5, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2921
+    .line 2936
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistExceptIdleAppIds:Landroid/util/SparseBooleanArray;
@@ -3369,15 +3377,15 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2922
+    .line 2937
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2919
+    .line 2934
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_7
 
-    .line 2925
+    .line 2940
     .end local v13    # "i":I
     :cond_b
     move-object/from16 v0, p0
@@ -3388,31 +3396,31 @@
 
     move-result v15
 
-    .line 2926
+    .line 2941
     if-lez v15, :cond_c
 
-    .line 2927
+    .line 2942
     const-string/jumbo v5, "  Whitelist user app ids:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2928
+    .line 2943
     const/4 v13, 0x0
 
     .restart local v13    # "i":I
     :goto_8
     if-ge v13, v15, :cond_c
 
-    .line 2929
+    .line 2944
     const-string/jumbo v5, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2930
+    .line 2945
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIds:Landroid/util/SparseBooleanArray;
@@ -3425,15 +3433,15 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2931
+    .line 2946
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2928
+    .line 2943
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_8
 
-    .line 2934
+    .line 2949
     .end local v13    # "i":I
     :cond_c
     move-object/from16 v0, p0
@@ -3444,31 +3452,31 @@
 
     move-result v15
 
-    .line 2935
+    .line 2950
     if-lez v15, :cond_d
 
-    .line 2936
+    .line 2951
     const-string/jumbo v5, "  Whitelist all app ids:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2937
+    .line 2952
     const/4 v13, 0x0
 
     .restart local v13    # "i":I
     :goto_9
     if-ge v13, v15, :cond_d
 
-    .line 2938
+    .line 2953
     const-string/jumbo v5, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2939
+    .line 2954
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIds:Landroid/util/SparseBooleanArray;
@@ -3481,15 +3489,15 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2940
+    .line 2955
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2937
+    .line 2952
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_9
 
-    .line 2943
+    .line 2958
     .end local v13    # "i":I
     :cond_d
     const/4 v5, 0x1
@@ -3500,7 +3508,7 @@
 
     invoke-virtual {v0, v1, v5}, Lcom/android/server/DeviceIdleController;->dumpTempWhitelistSchedule(Ljava/io/PrintWriter;Z)V
 
-    .line 2945
+    .line 2960
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
@@ -3513,32 +3521,32 @@
 
     array-length v15, v5
 
-    .line 2946
+    .line 2961
     :goto_a
     if-lez v15, :cond_f
 
-    .line 2947
+    .line 2962
     const-string/jumbo v5, "  Temp whitelist app ids:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2948
+    .line 2963
     const/4 v13, 0x0
 
     .restart local v13    # "i":I
     :goto_b
     if-ge v13, v15, :cond_f
 
-    .line 2949
+    .line 2964
     const-string/jumbo v5, "    "
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2950
+    .line 2965
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
@@ -3549,22 +3557,22 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2951
+    .line 2966
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2948
+    .line 2963
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_b
 
-    .line 2945
+    .line 2960
     .end local v13    # "i":I
     :cond_e
     const/4 v15, 0x0
 
     goto :goto_a
 
-    .line 2955
+    .line 2970
     :cond_f
     const-string/jumbo v5, "  mLightEnabled="
 
@@ -3580,7 +3588,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 2956
+    .line 2971
     const-string/jumbo v5, "  mDeepEnabled="
 
     move-object/from16 v0, p2
@@ -3595,7 +3603,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2957
+    .line 2972
     const-string/jumbo v5, "  mForceIdle="
 
     move-object/from16 v0, p2
@@ -3610,7 +3618,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2958
+    .line 2973
     const-string/jumbo v5, "  mMotionSensor="
 
     move-object/from16 v0, p2
@@ -3625,7 +3633,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2959
+    .line 2974
     const-string/jumbo v5, "  mCurDisplay="
 
     move-object/from16 v0, p2
@@ -3640,7 +3648,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2960
+    .line 2975
     const-string/jumbo v5, "  mScreenOn="
 
     move-object/from16 v0, p2
@@ -3655,7 +3663,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2961
+    .line 2976
     const-string/jumbo v5, "  mNetworkConnected="
 
     move-object/from16 v0, p2
@@ -3670,7 +3678,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2962
+    .line 2977
     const-string/jumbo v5, "  mCharging="
 
     move-object/from16 v0, p2
@@ -3685,7 +3693,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2963
+    .line 2978
     const-string/jumbo v5, "  mMotionActive="
 
     move-object/from16 v0, p2
@@ -3702,7 +3710,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2964
+    .line 2979
     const-string/jumbo v5, "  mNotMoving="
 
     move-object/from16 v0, p2
@@ -3717,7 +3725,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2965
+    .line 2980
     const-string/jumbo v5, "  mLocating="
 
     move-object/from16 v0, p2
@@ -3738,7 +3746,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2966
+    .line 2981
     move-object/from16 v0, p0
 
     iget-boolean v5, v0, Lcom/android/server/DeviceIdleController;->mHasGps:Z
@@ -3753,7 +3761,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2967
+    .line 2982
     move-object/from16 v0, p0
 
     iget-boolean v5, v0, Lcom/android/server/DeviceIdleController;->mHasNetworkLocation:Z
@@ -3776,14 +3784,14 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 2968
+    .line 2983
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/DeviceIdleController;->mLastGenericLocation:Landroid/location/Location;
 
     if-eqz v5, :cond_10
 
-    .line 2969
+    .line 2984
     const-string/jumbo v5, "  mLastGenericLocation="
 
     move-object/from16 v0, p2
@@ -3798,7 +3806,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2971
+    .line 2986
     :cond_10
     move-object/from16 v0, p0
 
@@ -3806,7 +3814,7 @@
 
     if-eqz v5, :cond_11
 
-    .line 2972
+    .line 2987
     const-string/jumbo v5, "  mLastGpsLocation="
 
     move-object/from16 v0, p2
@@ -3821,7 +3829,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2974
+    .line 2989
     :cond_11
     const-string/jumbo v5, "  mState="
 
@@ -3841,14 +3849,14 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2975
+    .line 2990
     const-string/jumbo v5, " mLightState="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2976
+    .line 2991
     move-object/from16 v0, p0
 
     iget v5, v0, Lcom/android/server/DeviceIdleController;->mLightState:I
@@ -3861,7 +3869,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2977
+    .line 2992
     const-string/jumbo v5, "  mInactiveTimeout="
 
     move-object/from16 v0, p2
@@ -3876,17 +3884,17 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 2978
+    .line 2993
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2979
+    .line 2994
     move-object/from16 v0, p0
 
     iget v5, v0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
     if-eqz v5, :cond_12
 
-    .line 2980
+    .line 2995
     const-string/jumbo v5, "  mActiveIdleOpCount="
 
     move-object/from16 v0, p2
@@ -3901,7 +3909,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 2982
+    .line 2997
     :cond_12
     move-object/from16 v0, p0
 
@@ -3913,14 +3921,14 @@
 
     if-eqz v5, :cond_13
 
-    .line 2983
+    .line 2998
     const-string/jumbo v5, "  mNextAlarmTime="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2984
+    .line 2999
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Lcom/android/server/DeviceIdleController;->mNextAlarmTime:J
@@ -3935,10 +3943,10 @@
 
     invoke-static {v6, v7, v0, v1, v2}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    .line 2985
+    .line 3000
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2987
+    .line 3002
     :cond_13
     move-object/from16 v0, p0
 
@@ -3950,14 +3958,14 @@
 
     if-eqz v5, :cond_14
 
-    .line 2988
+    .line 3003
     const-string/jumbo v5, "  mNextIdlePendingDelay="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2989
+    .line 3004
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
@@ -3966,10 +3974,10 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 2990
+    .line 3005
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2992
+    .line 3007
     :cond_14
     move-object/from16 v0, p0
 
@@ -3981,14 +3989,14 @@
 
     if-eqz v5, :cond_15
 
-    .line 2993
+    .line 3008
     const-string/jumbo v5, "  mNextIdleDelay="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2994
+    .line 3009
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
@@ -3997,10 +4005,10 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 2995
+    .line 3010
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 2997
+    .line 3012
     :cond_15
     move-object/from16 v0, p0
 
@@ -4012,14 +4020,14 @@
 
     if-eqz v5, :cond_16
 
-    .line 2998
+    .line 3013
     const-string/jumbo v5, "  mNextIdleDelay="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2999
+    .line 3014
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
@@ -4028,10 +4036,10 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 3000
+    .line 3015
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 3002
+    .line 3017
     :cond_16
     move-object/from16 v0, p0
 
@@ -4043,14 +4051,14 @@
 
     if-eqz v5, :cond_17
 
-    .line 3003
+    .line 3018
     const-string/jumbo v5, "  mNextLightAlarmTime="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3004
+    .line 3019
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Lcom/android/server/DeviceIdleController;->mNextLightAlarmTime:J
@@ -4065,10 +4073,10 @@
 
     invoke-static {v6, v7, v0, v1, v2}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    .line 3005
+    .line 3020
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 3007
+    .line 3022
     :cond_17
     move-object/from16 v0, p0
 
@@ -4080,14 +4088,14 @@
 
     if-eqz v5, :cond_18
 
-    .line 3008
+    .line 3023
     const-string/jumbo v5, "  mCurIdleBudget="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3009
+    .line 3024
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
@@ -4096,10 +4104,10 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 3010
+    .line 3025
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 3012
+    .line 3027
     :cond_18
     move-object/from16 v0, p0
 
@@ -4111,14 +4119,14 @@
 
     if-eqz v5, :cond_19
 
-    .line 3013
+    .line 3028
     const-string/jumbo v5, "  mMaintenanceStartTime="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3014
+    .line 3029
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
@@ -4133,10 +4141,10 @@
 
     invoke-static {v6, v7, v0, v1, v2}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    .line 3015
+    .line 3030
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 3017
+    .line 3032
     :cond_19
     move-object/from16 v0, p0
 
@@ -4144,7 +4152,7 @@
 
     if-eqz v5, :cond_1a
 
-    .line 3018
+    .line 3033
     const-string/jumbo v5, "  mJobsActive="
 
     move-object/from16 v0, p2
@@ -4159,7 +4167,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 3020
+    .line 3035
     :cond_1a
     move-object/from16 v0, p0
 
@@ -4167,7 +4175,7 @@
 
     if-eqz v5, :cond_1b
 
-    .line 3021
+    .line 3036
     const-string/jumbo v5, "  mAlarmsActive="
 
     move-object/from16 v0, p2
@@ -4187,10 +4195,10 @@
     :cond_1b
     monitor-exit p0
 
-    .line 2826
+    .line 2841
     return-void
 
-    .line 2876
+    .line 2891
     nop
 
     :pswitch_data_0
@@ -4209,39 +4217,39 @@
     .param p2, "printTitle"    # Z
 
     .prologue
-    .line 3027
+    .line 3042
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
     invoke-virtual {v6}, Landroid/util/SparseArray;->size()I
 
     move-result v3
 
-    .line 3028
+    .line 3043
     .local v3, "size":I
     if-lez v3, :cond_1
 
-    .line 3029
+    .line 3044
     const-string/jumbo v2, ""
 
-    .line 3030
+    .line 3045
     .local v2, "prefix":Ljava/lang/String;
     if-eqz p2, :cond_0
 
-    .line 3031
+    .line 3046
     const-string/jumbo v6, "  Temp whitelist schedule:"
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3032
+    .line 3047
     const-string/jumbo v2, "    "
 
-    .line 3034
+    .line 3049
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 3035
+    .line 3050
     .local v4, "timeNow":J
     const/4 v1, 0x0
 
@@ -4249,15 +4257,15 @@
     :goto_0
     if-ge v1, v3, :cond_1
 
-    .line 3036
+    .line 3051
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3037
+    .line 3052
     const-string/jumbo v6, "UID="
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3038
+    .line 3053
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v1}, Landroid/util/SparseArray;->keyAt(I)I
@@ -4266,12 +4274,12 @@
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 3039
+    .line 3054
     const-string/jumbo v6, ": "
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3040
+    .line 3055
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -4280,7 +4288,7 @@
 
     check-cast v0, Landroid/util/Pair;
 
-    .line 3041
+    .line 3056
     .local v0, "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
     iget-object v6, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -4290,24 +4298,24 @@
 
     invoke-static {v6, v7, v4, v5, p1}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    .line 3042
+    .line 3057
     const-string/jumbo v6, " - "
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3043
+    .line 3058
     iget-object v6, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v6, Ljava/lang/String;
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3035
+    .line 3050
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3026
+    .line 3041
     .end local v0    # "entry":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/util/MutableLong;Ljava/lang/String;>;"
     .end local v1    # "i":I
     .end local v2    # "prefix":Ljava/lang/String;
@@ -4320,17 +4328,17 @@
     .locals 2
 
     .prologue
-    .line 1859
+    .line 1874
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
     if-eqz v0, :cond_1
 
-    .line 1860
+    .line 1875
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
-    .line 1861
+    .line 1876
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mScreenOn:Z
 
     if-nez v0, :cond_0
@@ -4339,7 +4347,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1862
+    .line 1877
     :cond_0
     const-string/jumbo v0, "exit-force"
 
@@ -4349,7 +4357,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/DeviceIdleController;->becomeActiveLocked(Ljava/lang/String;I)V
 
-    .line 1858
+    .line 1873
     :cond_1
     return-void
 .end method
@@ -4359,10 +4367,10 @@
     .param p1, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 1722
+    .line 1737
     monitor-enter p0
 
-    .line 1723
+    .line 1738
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -4374,10 +4382,10 @@
 
     monitor-exit p0
 
-    .line 1721
+    .line 1736
     return-void
 
-    .line 1722
+    .line 1737
     :catchall_0
     move-exception v0
 
@@ -4394,7 +4402,7 @@
 
     const/4 v3, 0x6
 
-    .line 2129
+    .line 2144
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     if-eq v2, v3, :cond_0
@@ -4403,7 +4411,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 2131
+    .line 2146
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->isOpsInactiveLocked()Z
@@ -4412,29 +4420,29 @@
 
     if-eqz v2, :cond_1
 
-    .line 2132
+    .line 2147
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 2141
+    .line 2156
     .local v0, "now":J
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     if-ne v2, v3, :cond_3
 
-    .line 2142
+    .line 2157
     const-string/jumbo v2, "s:early"
 
     invoke-virtual {p0, v2}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
 
-    .line 2128
+    .line 2143
     .end local v0    # "now":J
     :cond_1
     :goto_1
     return-void
 
-    .line 2130
+    .line 2145
     :cond_2
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
@@ -4442,21 +4450,21 @@
 
     goto :goto_0
 
-    .line 2143
+    .line 2158
     .restart local v0    # "now":J
     :cond_3
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     if-ne v2, v4, :cond_4
 
-    .line 2144
+    .line 2159
     const-string/jumbo v2, "s:predone"
 
     invoke-virtual {p0, v2}, Lcom/android/server/DeviceIdleController;->stepLightIdleStateLocked(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 2146
+    .line 2161
     :cond_4
     const-string/jumbo v2, "s:early"
 
@@ -4469,10 +4477,10 @@
     .locals 1
 
     .prologue
-    .line 1578
+    .line 1593
     monitor-enter p0
 
-    .line 1579
+    .line 1594
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mTempWhitelistAppIdArray:[I
     :try_end_0
@@ -4482,7 +4490,7 @@
 
     return-object v0
 
-    .line 1578
+    .line 1593
     :catchall_0
     move-exception v0
 
@@ -4495,10 +4503,10 @@
     .locals 1
 
     .prologue
-    .line 1572
+    .line 1587
     monitor-enter p0
 
-    .line 1573
+    .line 1588
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIdArray:[I
     :try_end_0
@@ -4508,7 +4516,7 @@
 
     return-object v0
 
-    .line 1572
+    .line 1587
     :catchall_0
     move-exception v0
 
@@ -4521,10 +4529,10 @@
     .locals 1
 
     .prologue
-    .line 1560
+    .line 1575
     monitor-enter p0
 
-    .line 1561
+    .line 1576
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistExceptIdleAppIdArray:[I
     :try_end_0
@@ -4534,7 +4542,7 @@
 
     return-object v0
 
-    .line 1560
+    .line 1575
     :catchall_0
     move-exception v0
 
@@ -4547,10 +4555,10 @@
     .locals 1
 
     .prologue
-    .line 1566
+    .line 1581
     monitor-enter p0
 
-    .line 1567
+    .line 1582
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIdArray:[I
     :try_end_0
@@ -4560,7 +4568,7 @@
 
     return-object v0
 
-    .line 1566
+    .line 1581
     :catchall_0
     move-exception v0
 
@@ -4573,10 +4581,10 @@
     .locals 6
 
     .prologue
-    .line 1512
+    .line 1527
     monitor-enter p0
 
-    .line 1513
+    .line 1528
     :try_start_0
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
@@ -4592,15 +4600,15 @@
 
     add-int v3, v4, v5
 
-    .line 1514
+    .line 1529
     .local v3, "size":I
     new-array v0, v3, [Ljava/lang/String;
 
-    .line 1515
+    .line 1530
     .local v0, "apps":[Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1516
+    .line 1531
     .local v1, "cur":I
     const/4 v2, 0x0
 
@@ -4614,7 +4622,7 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 1517
+    .line 1532
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
     invoke-virtual {v4, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -4625,15 +4633,15 @@
 
     aput-object v4, v0, v1
 
-    .line 1518
+    .line 1533
     add-int/lit8 v1, v1, 0x1
 
-    .line 1516
+    .line 1531
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1520
+    .line 1535
     :cond_0
     const/4 v2, 0x0
 
@@ -4646,7 +4654,7 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 1521
+    .line 1536
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v4, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -4659,10 +4667,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1522
+    .line 1537
     add-int/lit8 v1, v1, 0x1
 
-    .line 1520
+    .line 1535
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
@@ -4670,10 +4678,10 @@
     :cond_1
     monitor-exit p0
 
-    .line 1524
+    .line 1539
     return-object v0
 
-    .line 1512
+    .line 1527
     .end local v0    # "apps":[Ljava/lang/String;
     .end local v1    # "cur":I
     .end local v2    # "i":I
@@ -4690,10 +4698,10 @@
     .locals 6
 
     .prologue
-    .line 1529
+    .line 1544
     monitor-enter p0
 
-    .line 1530
+    .line 1545
     :try_start_0
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
@@ -4709,15 +4717,15 @@
 
     add-int v3, v4, v5
 
-    .line 1531
+    .line 1546
     .local v3, "size":I
     new-array v0, v3, [Ljava/lang/String;
 
-    .line 1532
+    .line 1547
     .local v0, "apps":[Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1533
+    .line 1548
     .local v1, "cur":I
     const/4 v2, 0x0
 
@@ -4731,7 +4739,7 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 1534
+    .line 1549
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v4, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -4742,15 +4750,15 @@
 
     aput-object v4, v0, v1
 
-    .line 1535
+    .line 1550
     add-int/lit8 v1, v1, 0x1
 
-    .line 1533
+    .line 1548
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1537
+    .line 1552
     :cond_0
     const/4 v2, 0x0
 
@@ -4763,7 +4771,7 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 1538
+    .line 1553
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v4, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -4776,10 +4784,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1539
+    .line 1554
     add-int/lit8 v1, v1, 0x1
 
-    .line 1537
+    .line 1552
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
@@ -4787,10 +4795,10 @@
     :cond_1
     monitor-exit p0
 
-    .line 1541
+    .line 1556
     return-object v0
 
-    .line 1529
+    .line 1544
     .end local v0    # "apps":[Ljava/lang/String;
     .end local v1    # "cur":I
     .end local v2    # "i":I
@@ -4808,10 +4816,10 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1473
+    .line 1488
     monitor-enter p0
 
-    .line 1474
+    .line 1489
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
@@ -4825,7 +4833,7 @@
 
     return v0
 
-    .line 1473
+    .line 1488
     :catchall_0
     move-exception v0
 
@@ -4838,10 +4846,10 @@
     .locals 1
 
     .prologue
-    .line 1293
+    .line 1307
     monitor-enter p0
 
-    .line 1294
+    .line 1308
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIdArray:[I
     :try_end_0
@@ -4851,7 +4859,7 @@
 
     return-object v0
 
-    .line 1293
+    .line 1307
     :catchall_0
     move-exception v0
 
@@ -4864,10 +4872,10 @@
     .locals 4
 
     .prologue
-    .line 1479
+    .line 1494
     monitor-enter p0
 
-    .line 1480
+    .line 1495
     :try_start_0
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
@@ -4875,11 +4883,11 @@
 
     move-result v2
 
-    .line 1481
+    .line 1496
     .local v2, "size":I
     new-array v0, v2, [Ljava/lang/String;
 
-    .line 1482
+    .line 1497
     .local v0, "apps":[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -4887,7 +4895,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 1483
+    .line 1498
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v1}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -4900,7 +4908,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1482
+    .line 1497
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -4908,10 +4916,10 @@
     :cond_0
     monitor-exit p0
 
-    .line 1485
+    .line 1500
     return-object v0
 
-    .line 1479
+    .line 1494
     .end local v0    # "apps":[Ljava/lang/String;
     .end local v1    # "i":I
     .end local v2    # "size":I
@@ -4927,10 +4935,10 @@
     .locals 4
 
     .prologue
-    .line 1490
+    .line 1505
     monitor-enter p0
 
-    .line 1491
+    .line 1506
     :try_start_0
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
@@ -4938,11 +4946,11 @@
 
     move-result v2
 
-    .line 1492
+    .line 1507
     .local v2, "size":I
     new-array v0, v2, [Ljava/lang/String;
 
-    .line 1493
+    .line 1508
     .local v0, "apps":[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -4950,7 +4958,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 1494
+    .line 1509
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v1}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -4963,7 +4971,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1493
+    .line 1508
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -4971,10 +4979,10 @@
     :cond_0
     monitor-exit p0
 
-    .line 1496
+    .line 1511
     return-object v0
 
-    .line 1490
+    .line 1505
     .end local v0    # "apps":[Ljava/lang/String;
     .end local v1    # "i":I
     .end local v2    # "size":I
@@ -4990,10 +4998,10 @@
     .locals 4
 
     .prologue
-    .line 1501
+    .line 1516
     monitor-enter p0
 
-    .line 1502
+    .line 1517
     :try_start_0
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
@@ -5001,11 +5009,11 @@
 
     move-result v2
 
-    .line 1503
+    .line 1518
     .local v2, "size":I
     new-array v0, v2, [Ljava/lang/String;
 
-    .line 1504
+    .line 1519
     .local v0, "apps":[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -5019,7 +5027,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 1505
+    .line 1520
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v1}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -5032,7 +5040,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1504
+    .line 1519
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -5040,10 +5048,10 @@
     :cond_0
     monitor-exit p0
 
-    .line 1507
+    .line 1522
     return-object v0
 
-    .line 1501
+    .line 1516
     .end local v0    # "apps":[Ljava/lang/String;
     .end local v1    # "i":I
     .end local v2    # "size":I
@@ -5065,48 +5073,48 @@
 
     const/4 v3, 0x0
 
-    .line 2162
+    .line 2177
     const/4 v0, 0x0
 
-    .line 2163
+    .line 2178
     .local v0, "becomeInactive":Z
     iget v1, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     if-eqz v1, :cond_0
 
-    .line 2164
+    .line 2179
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v1
 
     invoke-virtual {p0, p3, v1}, Lcom/android/server/DeviceIdleController;->scheduleReportActiveLocked(Ljava/lang/String;I)V
 
-    .line 2165
+    .line 2180
     iput v3, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 2166
+    .line 2181
     iput-wide p1, p0, Lcom/android/server/DeviceIdleController;->mInactiveTimeout:J
 
-    .line 2167
+    .line 2182
     iput-wide v4, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
-    .line 2168
+    .line 2183
     iput-wide v4, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
 
-    .line 2169
+    .line 2184
     iget v1, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     invoke-static {v1, p3}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
-    .line 2170
+    .line 2185
     const/4 v1, 0x1
 
     invoke-direct {p0, v1}, Lcom/android/server/DeviceIdleController;->addEvent(I)V
 
-    .line 2171
+    .line 2186
     const/4 v0, 0x1
 
-    .line 2173
+    .line 2188
     :cond_0
     iget v1, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
@@ -5114,25 +5122,25 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 2176
+    .line 2191
     iput v3, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 2177
+    .line 2192
     iget v1, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     invoke-static {v1, p3}, Lcom/android/server/EventLogTags;->writeDeviceIdleLight(ILjava/lang/String;)V
 
-    .line 2178
+    .line 2193
     const/4 v0, 0x1
 
-    .line 2180
+    .line 2195
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 2181
+    .line 2196
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
-    .line 2158
+    .line 2173
     :cond_2
     return-void
 .end method
@@ -5141,25 +5149,25 @@
     .locals 7
 
     .prologue
-    .line 2449
+    .line 2464
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 2452
+    .line 2467
     .local v1, "memStream":Ljava/io/ByteArrayOutputStream;
     :try_start_0
     monitor-enter p0
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2453
+    .line 2468
     :try_start_1
     new-instance v2, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v2}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 2454
+    .line 2469
     .local v2, "out":Lorg/xmlpull/v1/XmlSerializer;
     sget-object v4, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -5169,7 +5177,7 @@
 
     invoke-interface {v2, v1, v4}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 2455
+    .line 2470
     invoke-virtual {p0, v2}, Lcom/android/server/DeviceIdleController;->writeConfigFileLocked(Lorg/xmlpull/v1/XmlSerializer;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -5179,17 +5187,17 @@
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 2460
+    .line 2475
     .end local v2    # "out":Lorg/xmlpull/v1/XmlSerializer;
     :goto_0
     iget-object v5, p0, Lcom/android/server/DeviceIdleController;->mConfigFile:Lcom/android/internal/os/AtomicFile;
 
     monitor-enter v5
 
-    .line 2461
+    .line 2476
     const/4 v3, 0x0
 
-    .line 2463
+    .line 2478
     .local v3, "stream":Ljava/io/FileOutputStream;
     :try_start_3
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mConfigFile:Lcom/android/internal/os/AtomicFile;
@@ -5198,20 +5206,20 @@
 
     move-result-object v3
 
-    .line 2464
+    .line 2479
     .local v3, "stream":Ljava/io/FileOutputStream;
     invoke-virtual {v1, v3}, Ljava/io/ByteArrayOutputStream;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 2465
+    .line 2480
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->flush()V
 
-    .line 2466
+    .line 2481
     invoke-static {v3}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 
-    .line 2467
+    .line 2482
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
 
-    .line 2468
+    .line 2483
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mConfigFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v4, v3}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
@@ -5223,10 +5231,10 @@
     :goto_1
     monitor-exit v5
 
-    .line 2448
+    .line 2463
     return-void
 
-    .line 2452
+    .line 2467
     :catchall_0
     move-exception v4
 
@@ -5237,19 +5245,19 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 2457
+    .line 2472
     :catch_0
     move-exception v0
 
     .local v0, "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 2469
+    .line 2484
     .end local v0    # "e":Ljava/io/IOException;
     :catch_1
     move-exception v0
 
-    .line 2470
+    .line 2485
     .restart local v0    # "e":Ljava/io/IOException;
     :try_start_5
     const-string/jumbo v4, "DeviceIdleController"
@@ -5258,7 +5266,7 @@
 
     invoke-static {v4, v6, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2471
+    .line 2486
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mConfigFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v4, v3}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
@@ -5267,7 +5275,7 @@
 
     goto :goto_1
 
-    .line 2460
+    .line 2475
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_1
     move-exception v4
@@ -5281,10 +5289,10 @@
     .locals 1
 
     .prologue
-    .line 2066
+    .line 2081
     monitor-enter p0
 
-    .line 2067
+    .line 2082
     :try_start_0
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
@@ -5296,10 +5304,10 @@
 
     monitor-exit p0
 
-    .line 2065
+    .line 2080
     return-void
 
-    .line 2066
+    .line 2081
     :catchall_0
     move-exception v0
 
@@ -5314,7 +5322,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2125
+    .line 2140
     iget v1, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
     if-gtz v1, :cond_0
@@ -5342,10 +5350,10 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 1553
+    .line 1568
     monitor-enter p0
 
-    .line 1554
+    .line 1569
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
@@ -5355,7 +5363,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1555
+    .line 1570
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -5367,7 +5375,7 @@
     :goto_0
     monitor-exit p0
 
-    .line 1554
+    .line 1569
     return v0
 
     :cond_0
@@ -5375,7 +5383,7 @@
 
     goto :goto_0
 
-    .line 1553
+    .line 1568
     :catchall_0
     move-exception v0
 
@@ -5389,10 +5397,10 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 1546
+    .line 1561
     monitor-enter p0
 
-    .line 1547
+    .line 1562
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
@@ -5402,7 +5410,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1548
+    .line 1563
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -5414,7 +5422,7 @@
     :goto_0
     monitor-exit p0
 
-    .line 1547
+    .line 1562
     return v0
 
     :cond_0
@@ -5422,7 +5430,7 @@
 
     goto :goto_0
 
-    .line 1546
+    .line 1561
     :catchall_0
     move-exception v0
 
@@ -5435,7 +5443,7 @@
     .locals 3
 
     .prologue
-    .line 2155
+    .line 2170
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->MOTION_INACTIVE_TIMEOUT:J
@@ -5444,7 +5452,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/server/DeviceIdleController;->handleMotionDetectedLocked(JLjava/lang/String;)V
 
-    .line 2152
+    .line 2167
     return-void
 .end method
 
@@ -5457,13 +5465,13 @@
 
     const/4 v0, 0x1
 
-    .line 974
+    .line 976
     if-eq p1, v1, :cond_0
 
-    .line 975
+    .line 977
     monitor-enter p0
 
-    .line 976
+    .line 978
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelSensingTimeoutAlarmLocked()V
     :try_end_0
@@ -5471,18 +5479,18 @@
 
     monitor-exit p0
 
-    .line 979
+    .line 981
     :cond_0
     if-eq p1, v0, :cond_1
 
-    .line 980
+    .line 982
     if-ne p1, v1, :cond_4
 
-    .line 981
+    .line 983
     :cond_1
     monitor-enter p0
 
-    .line 982
+    .line 984
     :try_start_1
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
@@ -5498,11 +5506,11 @@
     :goto_0
     monitor-exit p0
 
-    .line 972
+    .line 974
     :cond_3
     return-void
 
-    .line 975
+    .line 977
     :catchall_0
     move-exception v0
 
@@ -5510,7 +5518,7 @@
 
     throw v0
 
-    .line 981
+    .line 983
     :catchall_1
     move-exception v0
 
@@ -5518,27 +5526,27 @@
 
     throw v0
 
-    .line 984
+    .line 986
     :cond_4
     if-nez p1, :cond_3
 
-    .line 985
+    .line 987
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_5
 
-    .line 987
+    .line 989
     monitor-enter p0
 
-    .line 988
+    .line 990
     const/4 v0, 0x1
 
     :try_start_2
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mNotMoving:Z
 
-    .line 989
+    .line 991
     const-string/jumbo v0, "s:stationary"
 
     invoke-virtual {p0, v0}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
@@ -5547,7 +5555,7 @@
 
     goto :goto_0
 
-    .line 987
+    .line 989
     :catchall_2
     move-exception v0
 
@@ -5555,7 +5563,7 @@
 
     throw v0
 
-    .line 991
+    .line 993
     :cond_5
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
@@ -5563,21 +5571,21 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 994
+    .line 996
     monitor-enter p0
 
-    .line 995
+    .line 997
     const/4 v0, 0x1
 
     :try_start_3
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mNotMoving:Z
 
-    .line 996
+    .line 998
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mLocated:Z
 
     if-eqz v0, :cond_2
 
-    .line 997
+    .line 999
     const-string/jumbo v0, "s:stationary"
 
     invoke-virtual {p0, v0}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
@@ -5586,7 +5594,7 @@
 
     goto :goto_0
 
-    .line 994
+    .line 996
     :catchall_3
     move-exception v0
 
@@ -5602,15 +5610,15 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 1361
+    .line 1376
     const/16 v0, 0x1f4
 
     if-ne p1, v0, :cond_4
 
-    .line 1362
+    .line 1377
     monitor-enter p0
 
-    .line 1363
+    .line 1378
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
@@ -5626,14 +5634,14 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 1364
+    .line 1379
     invoke-static {}, Lcom/android/server/am/BatteryStatsService;->getService()Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
-    .line 1365
+    .line 1380
     const-class v0, Landroid/os/PowerManagerInternal;
 
     invoke-virtual {p0, v0}, Lcom/android/server/DeviceIdleController;->getLocalService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -5644,7 +5652,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
-    .line 1366
+    .line 1381
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -5659,13 +5667,13 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 1367
+    .line 1382
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 1368
+    .line 1383
     const-string/jumbo v1, "deviceidle_maint"
 
-    .line 1367
+    .line 1382
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2, v1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
@@ -5674,20 +5682,20 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 1369
+    .line 1384
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 1370
+    .line 1385
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 1371
+    .line 1386
     const-string/jumbo v1, "deviceidle_going_idle"
 
-    .line 1370
+    .line 1385
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2, v1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
@@ -5696,17 +5704,17 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mGoingIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 1372
+    .line 1387
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mGoingIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 1374
+    .line 1389
     const-string/jumbo v0, "connectivity"
 
-    .line 1373
+    .line 1388
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
@@ -5715,7 +5723,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mConnectivityService:Lcom/android/server/ConnectivityService;
 
-    .line 1375
+    .line 1390
     const-class v0, Lcom/android/server/AlarmManagerService$LocalService;
 
     invoke-virtual {p0, v0}, Lcom/android/server/DeviceIdleController;->getLocalService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -5726,29 +5734,29 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalAlarmManager:Lcom/android/server/AlarmManagerService$LocalService;
 
-    .line 1377
+    .line 1392
     const-string/jumbo v0, "netpolicy"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 1376
+    .line 1391
     invoke-static {v0}, Landroid/net/INetworkPolicyManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/INetworkPolicyManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mNetworkPolicyManager:Landroid/net/INetworkPolicyManager;
 
-    .line 1378
+    .line 1393
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 1379
+    .line 1394
     const-string/jumbo v1, "display"
 
-    .line 1378
+    .line 1393
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -5757,7 +5765,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    .line 1380
+    .line 1395
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -5772,7 +5780,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 1381
+    .line 1396
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -5781,19 +5789,19 @@
 
     move-result-object v0
 
-    .line 1382
+    .line 1397
     const v1, 0x10e000d
 
-    .line 1381
+    .line 1396
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v7
 
-    .line 1383
+    .line 1398
     .local v7, "sigMotionSensorId":I
     if-lez v7, :cond_0
 
-    .line 1384
+    .line 1399
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mSensorManager:Landroid/hardware/SensorManager;
 
     const/4 v1, 0x1
@@ -5804,7 +5812,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
-    .line 1386
+    .line 1401
     :cond_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
@@ -5818,53 +5826,53 @@
 
     move-result-object v0
 
-    .line 1387
+    .line 1402
     const v1, 0x1120016
 
-    .line 1386
+    .line 1401
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 1388
+    .line 1403
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 1389
+    .line 1404
     const/16 v1, 0x1a
 
     const/4 v2, 0x1
 
-    .line 1388
+    .line 1403
     invoke-virtual {v0, v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(IZ)Landroid/hardware/Sensor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
-    .line 1391
+    .line 1406
     :cond_1
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_2
 
-    .line 1393
+    .line 1408
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 1394
+    .line 1409
     const/16 v1, 0x11
 
     const/4 v2, 0x1
 
-    .line 1393
+    .line 1408
     invoke-virtual {v0, v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(IZ)Landroid/hardware/Sensor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
-    .line 1397
+    .line 1412
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
@@ -5874,25 +5882,25 @@
 
     move-result-object v0
 
-    .line 1398
+    .line 1413
     const v1, 0x1120017
 
-    .line 1397
+    .line 1412
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 1399
+    .line 1414
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 1400
+    .line 1415
     const-string/jumbo v1, "location"
 
-    .line 1399
+    .line 1414
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -5901,46 +5909,46 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
-    .line 1401
+    .line 1416
     new-instance v0, Landroid/location/LocationRequest;
 
     invoke-direct {v0}, Landroid/location/LocationRequest;-><init>()V
 
-    .line 1402
+    .line 1417
     const/16 v1, 0x64
 
-    .line 1401
+    .line 1416
     invoke-virtual {v0, v1}, Landroid/location/LocationRequest;->setQuality(I)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 1403
+    .line 1418
     const-wide/16 v2, 0x0
 
-    .line 1401
+    .line 1416
     invoke-virtual {v0, v2, v3}, Landroid/location/LocationRequest;->setInterval(J)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 1404
+    .line 1419
     const-wide/16 v2, 0x0
 
-    .line 1401
+    .line 1416
     invoke-virtual {v0, v2, v3}, Landroid/location/LocationRequest;->setFastestInterval(J)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 1405
+    .line 1420
     const/4 v1, 0x1
 
-    .line 1401
+    .line 1416
     invoke-virtual {v0, v1}, Landroid/location/LocationRequest;->setNumUpdates(I)Landroid/location/LocationRequest;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationRequest:Landroid/location/LocationRequest;
 
-    .line 1408
+    .line 1423
     :cond_3
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
@@ -5950,27 +5958,27 @@
 
     move-result-object v0
 
-    .line 1409
+    .line 1424
     const v1, 0x10e000c
 
-    .line 1408
+    .line 1423
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    .line 1409
+    .line 1424
     const/high16 v1, 0x42c80000    # 100.0f
 
-    .line 1408
+    .line 1423
     div-float v5, v0, v1
 
-    .line 1410
+    .line 1425
     .local v5, "angleThreshold":F
     new-instance v0, Lcom/android/server/AnyMotionDetector;
 
-    .line 1411
+    .line 1426
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -5983,19 +5991,19 @@
 
     check-cast v1, Landroid/os/PowerManager;
 
-    .line 1412
+    .line 1427
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mSensorManager:Landroid/hardware/SensorManager;
 
     move-object v4, p0
 
-    .line 1410
+    .line 1425
     invoke-direct/range {v0 .. v5}, Lcom/android/server/AnyMotionDetector;-><init>(Landroid/os/PowerManager;Landroid/os/Handler;Landroid/hardware/SensorManager;Lcom/android/server/AnyMotionDetector$DeviceIdleCallback;F)V
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mAnyMotionDetector:Lcom/android/server/AnyMotionDetector;
 
-    .line 1414
+    .line 1429
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.os.action.DEVICE_IDLE_MODE_CHANGED"
@@ -6004,14 +6012,14 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mIdleIntent:Landroid/content/Intent;
 
-    .line 1415
+    .line 1430
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mIdleIntent:Landroid/content/Intent;
 
     const/high16 v1, 0x50000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1417
+    .line 1432
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.os.action.LIGHT_DEVICE_IDLE_MODE_CHANGED"
@@ -6020,25 +6028,25 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLightIdleIntent:Landroid/content/Intent;
 
-    .line 1418
+    .line 1433
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLightIdleIntent:Landroid/content/Intent;
 
     const/high16 v1, 0x50000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1421
+    .line 1436
     new-instance v6, Landroid/content/IntentFilter;
 
     invoke-direct {v6}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1422
+    .line 1437
     .local v6, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v0, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1423
+    .line 1438
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -6047,24 +6055,24 @@
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1425
+    .line 1440
     new-instance v6, Landroid/content/IntentFilter;
 
     .end local v6    # "filter":Landroid/content/IntentFilter;
     invoke-direct {v6}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1426
+    .line 1441
     .restart local v6    # "filter":Landroid/content/IntentFilter;
     const-string/jumbo v0, "android.intent.action.PACKAGE_REMOVED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1427
+    .line 1442
     const-string/jumbo v0, "package"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 1428
+    .line 1443
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -6073,19 +6081,19 @@
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1430
+    .line 1445
     new-instance v6, Landroid/content/IntentFilter;
 
     .end local v6    # "filter":Landroid/content/IntentFilter;
     invoke-direct {v6}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1431
+    .line 1446
     .restart local v6    # "filter":Landroid/content/IntentFilter;
     const-string/jumbo v0, "android.net.conn.CONNECTIVITY_CHANGE"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1432
+    .line 1447
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -6094,21 +6102,21 @@
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1434
+    .line 1449
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAllAppIdArray:[I
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManagerInternal;->setDeviceIdleWhitelist([I)V
 
-    .line 1435
+    .line 1450
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocalAlarmManager:Lcom/android/server/AlarmManagerService$LocalService;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserAppIdArray:[I
 
     invoke-virtual {v0, v1}, Lcom/android/server/AlarmManagerService$LocalService;->setDeviceIdleUserWhitelist([I)V
 
-    .line 1436
+    .line 1451
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mDisplayListener:Landroid/hardware/display/DisplayManager$DisplayListener;
@@ -6117,24 +6125,24 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/display/DisplayManager;->registerDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
 
-    .line 1437
+    .line 1452
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->updateDisplayLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 1439
+    .line 1454
     invoke-virtual {p0, v8}, Lcom/android/server/DeviceIdleController;->updateConnectivityState(Landroid/content/Intent;)V
 
-    .line 1360
+    .line 1375
     .end local v5    # "angleThreshold":F
     .end local v6    # "filter":Landroid/content/IntentFilter;
     .end local v7    # "sigMotionSensorId":I
     :cond_4
     return-void
 
-    .line 1362
+    .line 1377
     :catchall_0
     move-exception v0
 
@@ -6149,12 +6157,12 @@
     .param p2, "cmd"    # Ljava/lang/String;
 
     .prologue
-    .line 2535
+    .line 2550
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v16
 
-    .line 2536
+    .line 2551
     .local v16, "pw":Ljava/io/PrintWriter;
     const-string/jumbo v2, "step"
 
@@ -6166,29 +6174,29 @@
 
     if-eqz v2, :cond_4
 
-    .line 2537
+    .line 2552
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     const-string/jumbo v4, "android.permission.DEVICE_POWER"
 
-    .line 2538
+    .line 2553
     const/4 v5, 0x0
 
-    .line 2537
+    .line 2552
     invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2539
+    .line 2554
     monitor-enter p0
 
-    .line 2540
+    .line 2555
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v18
 
-    .line 2541
+    .line 2556
     .local v18, "token":J
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
     :try_end_0
@@ -6196,7 +6204,7 @@
 
     move-result-object v3
 
-    .line 2543
+    .line 2558
     .local v3, "arg":Ljava/lang/String;
     if-eqz v3, :cond_0
 
@@ -6209,7 +6217,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2544
+    .line 2559
     :cond_0
     const-string/jumbo v2, "s:shell"
 
@@ -6217,14 +6225,14 @@
 
     invoke-virtual {v0, v2}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
 
-    .line 2545
+    .line 2560
     const-string/jumbo v2, "Stepped to deep: "
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2546
+    .line 2561
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/DeviceIdleController;->mState:I
@@ -6239,7 +6247,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2554
+    .line 2569
     :goto_0
     :try_start_2
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -6252,13 +6260,13 @@
     :goto_1
     monitor-exit p0
 
-    .line 2823
+    .line 2838
     :goto_2
     const/4 v2, 0x0
 
     return v2
 
-    .line 2547
+    .line 2562
     .restart local v3    # "arg":Ljava/lang/String;
     .restart local v18    # "token":J
     :cond_2
@@ -6271,14 +6279,14 @@
 
     if-eqz v2, :cond_3
 
-    .line 2548
+    .line 2563
     const-string/jumbo v2, "s:shell"
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/android/server/DeviceIdleController;->stepLightIdleStateLocked(Ljava/lang/String;)V
 
-    .line 2549
+    .line 2564
     const-string/jumbo v2, "Stepped to light: "
 
     move-object/from16 v0, v16
@@ -6301,20 +6309,20 @@
 
     goto :goto_0
 
-    .line 2553
+    .line 2568
     :catchall_0
     move-exception v2
 
-    .line 2554
+    .line 2569
     :try_start_4
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2553
+    .line 2568
     throw v2
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 2539
+    .line 2554
     .end local v3    # "arg":Ljava/lang/String;
     .end local v18    # "token":J
     :catchall_1
@@ -6324,7 +6332,7 @@
 
     throw v2
 
-    .line 2551
+    .line 2566
     .restart local v3    # "arg":Ljava/lang/String;
     .restart local v18    # "token":J
     :cond_3
@@ -6355,7 +6363,7 @@
 
     goto :goto_0
 
-    .line 2557
+    .line 2572
     .end local v3    # "arg":Ljava/lang/String;
     .end local v18    # "token":J
     :cond_4
@@ -6369,29 +6377,29 @@
 
     if-eqz v2, :cond_d
 
-    .line 2558
+    .line 2573
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     const-string/jumbo v4, "android.permission.DEVICE_POWER"
 
-    .line 2559
+    .line 2574
     const/4 v5, 0x0
 
-    .line 2558
+    .line 2573
     invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2560
+    .line 2575
     monitor-enter p0
 
-    .line 2561
+    .line 2576
     :try_start_6
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v18
 
-    .line 2562
+    .line 2577
     .restart local v18    # "token":J
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
     :try_end_6
@@ -6399,7 +6407,7 @@
 
     move-result-object v3
 
-    .line 2564
+    .line 2579
     .restart local v3    # "arg":Ljava/lang/String;
     if-eqz v3, :cond_5
 
@@ -6412,7 +6420,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 2565
+    .line 2580
     :cond_5
     move-object/from16 v0, p0
 
@@ -6420,7 +6428,7 @@
 
     if-nez v2, :cond_6
 
-    .line 2566
+    .line 2581
     const-string/jumbo v2, "Unable to go deep idle; not enabled"
 
     move-object/from16 v0, v16
@@ -6429,20 +6437,20 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
-    .line 2602
+    .line 2617
     :try_start_8
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    .line 2567
+    .line 2582
     const/4 v2, -0x1
 
     monitor-exit p0
 
     return v2
 
-    .line 2569
+    .line 2584
     :cond_6
     const/4 v2, 0x1
 
@@ -6451,43 +6459,43 @@
 
     iput-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
-    .line 2570
+    .line 2585
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
-    .line 2571
+    .line 2586
     move-object/from16 v0, p0
 
     iget v11, v0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 2572
+    .line 2587
     .local v11, "curState":I
     :goto_3
     const/4 v2, 0x5
 
     if-eq v11, v2, :cond_8
 
-    .line 2573
+    .line 2588
     const-string/jumbo v2, "s:shell"
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
 
-    .line 2574
+    .line 2589
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/DeviceIdleController;->mState:I
 
     if-ne v11, v2, :cond_7
 
-    .line 2575
+    .line 2590
     const-string/jumbo v2, "Unable to go deep idle; stopped at "
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2576
+    .line 2591
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/DeviceIdleController;->mState:I
@@ -6500,25 +6508,25 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2577
+    .line 2592
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->exitForceIdleLocked()V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
-    .line 2602
+    .line 2617
     :try_start_a
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_2
 
-    .line 2578
+    .line 2593
     const/4 v2, -0x1
 
     monitor-exit p0
 
     return v2
 
-    .line 2580
+    .line 2595
     :cond_7
     :try_start_b
     move-object/from16 v0, p0
@@ -6527,7 +6535,7 @@
 
     goto :goto_3
 
-    .line 2582
+    .line 2597
     :cond_8
     const-string/jumbo v2, "Now forced in to deep idle mode"
 
@@ -6537,7 +6545,7 @@
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_3
 
-    .line 2602
+    .line 2617
     .end local v11    # "curState":I
     :goto_4
     :try_start_c
@@ -6547,7 +6555,7 @@
 
     goto/16 :goto_1
 
-    .line 2560
+    .line 2575
     .end local v3    # "arg":Ljava/lang/String;
     .end local v18    # "token":J
     :catchall_2
@@ -6557,7 +6565,7 @@
 
     throw v2
 
-    .line 2583
+    .line 2598
     .restart local v3    # "arg":Ljava/lang/String;
     .restart local v18    # "token":J
     :cond_9
@@ -6570,50 +6578,50 @@
 
     if-eqz v2, :cond_c
 
-    .line 2584
+    .line 2599
     const/4 v2, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
-    .line 2585
+    .line 2600
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
-    .line 2586
+    .line 2601
     move-object/from16 v0, p0
 
     iget v10, v0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 2587
+    .line 2602
     .local v10, "curLightState":I
     :goto_5
     const/4 v2, 0x4
 
     if-eq v10, v2, :cond_b
 
-    .line 2588
+    .line 2603
     const-string/jumbo v2, "s:shell"
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
 
-    .line 2589
+    .line 2604
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     if-ne v10, v2, :cond_a
 
-    .line 2590
+    .line 2605
     const-string/jumbo v2, "Unable to go light idle; stopped at "
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2591
+    .line 2606
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/DeviceIdleController;->mLightState:I
@@ -6626,25 +6634,25 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2592
+    .line 2607
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->exitForceIdleLocked()V
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_3
 
-    .line 2602
+    .line 2617
     :try_start_e
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_2
 
-    .line 2593
+    .line 2608
     const/4 v2, -0x1
 
     monitor-exit p0
 
     return v2
 
-    .line 2595
+    .line 2610
     :cond_a
     :try_start_f
     move-object/from16 v0, p0
@@ -6653,7 +6661,7 @@
 
     goto :goto_5
 
-    .line 2597
+    .line 2612
     :cond_b
     const-string/jumbo v2, "Now forced in to light idle mode"
 
@@ -6665,21 +6673,21 @@
 
     goto :goto_4
 
-    .line 2601
+    .line 2616
     .end local v10    # "curLightState":I
     :catchall_3
     move-exception v2
 
-    .line 2602
+    .line 2617
     :try_start_10
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2601
+    .line 2616
     throw v2
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_2
 
-    .line 2599
+    .line 2614
     :cond_c
     :try_start_11
     new-instance v2, Ljava/lang/StringBuilder;
@@ -6708,7 +6716,7 @@
 
     goto :goto_4
 
-    .line 2605
+    .line 2620
     .end local v3    # "arg":Ljava/lang/String;
     .end local v18    # "token":J
     :cond_d
@@ -6722,23 +6730,23 @@
 
     if-eqz v2, :cond_e
 
-    .line 2606
+    .line 2621
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     const-string/jumbo v4, "android.permission.DEVICE_POWER"
 
-    .line 2607
+    .line 2622
     const/4 v5, 0x0
 
-    .line 2606
+    .line 2621
     invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2608
+    .line 2623
     monitor-enter p0
 
-    .line 2609
+    .line 2624
     :try_start_12
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_12
@@ -6746,7 +6754,7 @@
 
     move-result-wide v18
 
-    .line 2611
+    .line 2626
     .restart local v18    # "token":J
     const/4 v2, 0x1
 
@@ -6755,123 +6763,8 @@
 
     iput-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
-    .line 2612
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
-
-    .line 2613
-    const-string/jumbo v2, "Light state: "
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 2614
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/server/DeviceIdleController;->mLightState:I
-
-    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->lightStateToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 2615
-    const-string/jumbo v2, ", deep state: "
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 2616
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/server/DeviceIdleController;->mState:I
-
-    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->stateToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-    :try_end_13
-    .catchall {:try_start_13 .. :try_end_13} :catchall_5
-
-    .line 2618
-    :try_start_14
-    invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-    :try_end_14
-    .catchall {:try_start_14 .. :try_end_14} :catchall_4
-
-    goto/16 :goto_1
-
-    .line 2608
-    .end local v18    # "token":J
-    :catchall_4
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
-
-    .line 2617
-    .restart local v18    # "token":J
-    :catchall_5
-    move-exception v2
-
-    .line 2618
-    :try_start_15
-    invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    .line 2617
-    throw v2
-    :try_end_15
-    .catchall {:try_start_15 .. :try_end_15} :catchall_4
-
-    .line 2621
-    .end local v18    # "token":J
-    :cond_e
-    const-string/jumbo v2, "unforce"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_f
-
-    .line 2622
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-string/jumbo v4, "android.permission.DEVICE_POWER"
-
-    .line 2623
-    const/4 v5, 0x0
-
-    .line 2622
-    invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2624
-    monitor-enter p0
-
-    .line 2625
-    :try_start_16
-    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
-    :try_end_16
-    .catchall {:try_start_16 .. :try_end_16} :catchall_6
-
-    move-result-wide v18
-
     .line 2627
-    .restart local v18    # "token":J
-    :try_start_17
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->exitForceIdleLocked()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
     .line 2628
     const-string/jumbo v2, "Light state: "
@@ -6912,20 +6805,20 @@
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-    :try_end_17
-    .catchall {:try_start_17 .. :try_end_17} :catchall_7
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_5
 
     .line 2633
-    :try_start_18
+    :try_start_14
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-    :try_end_18
-    .catchall {:try_start_18 .. :try_end_18} :catchall_6
+    :try_end_14
+    .catchall {:try_start_14 .. :try_end_14} :catchall_4
 
     goto/16 :goto_1
 
-    .line 2624
+    .line 2623
     .end local v18    # "token":J
-    :catchall_6
+    :catchall_4
     move-exception v2
 
     monitor-exit p0
@@ -6934,22 +6827,22 @@
 
     .line 2632
     .restart local v18    # "token":J
-    :catchall_7
+    :catchall_5
     move-exception v2
 
     .line 2633
-    :try_start_19
+    :try_start_15
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 2632
     throw v2
-    :try_end_19
-    .catchall {:try_start_19 .. :try_end_19} :catchall_6
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_4
 
     .line 2636
     .end local v18    # "token":J
-    :cond_f
-    const-string/jumbo v2, "get"
+    :cond_e
+    const-string/jumbo v2, "unforce"
 
     move-object/from16 v0, p2
 
@@ -6957,7 +6850,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_f
 
     .line 2637
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
@@ -6976,23 +6869,138 @@
     monitor-enter p0
 
     .line 2640
+    :try_start_16
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+    :try_end_16
+    .catchall {:try_start_16 .. :try_end_16} :catchall_6
+
+    move-result-wide v18
+
+    .line 2642
+    .restart local v18    # "token":J
+    :try_start_17
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->exitForceIdleLocked()V
+
+    .line 2643
+    const-string/jumbo v2, "Light state: "
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 2644
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lcom/android/server/DeviceIdleController;->mLightState:I
+
+    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->lightStateToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 2645
+    const-string/jumbo v2, ", deep state: "
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 2646
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lcom/android/server/DeviceIdleController;->mState:I
+
+    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->stateToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_7
+
+    .line 2648
+    :try_start_18
+    invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_6
+
+    goto/16 :goto_1
+
+    .line 2639
+    .end local v18    # "token":J
+    :catchall_6
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
+
+    .line 2647
+    .restart local v18    # "token":J
+    :catchall_7
+    move-exception v2
+
+    .line 2648
+    :try_start_19
+    invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    .line 2647
+    throw v2
+    :try_end_19
+    .catchall {:try_start_19 .. :try_end_19} :catchall_6
+
+    .line 2651
+    .end local v18    # "token":J
+    :cond_f
+    const-string/jumbo v2, "get"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_17
+
+    .line 2652
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "android.permission.DEVICE_POWER"
+
+    .line 2653
+    const/4 v5, 0x0
+
+    .line 2652
+    invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2654
+    monitor-enter p0
+
+    .line 2655
     :try_start_1a
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2641
+    .line 2656
     .restart local v3    # "arg":Ljava/lang/String;
     if-eqz v3, :cond_16
 
-    .line 2642
+    .line 2657
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_1a
     .catchall {:try_start_1a .. :try_end_1a} :catchall_8
 
     move-result-wide v18
 
-    .line 2644
+    .line 2659
     .restart local v18    # "token":J
     :try_start_1b
     const-string/jumbo v2, "light"
@@ -7003,7 +7011,7 @@
 
     if-eqz v2, :cond_10
 
-    .line 2645
+    .line 2660
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/DeviceIdleController;->mLightState:I
@@ -7018,7 +7026,7 @@
     :try_end_1b
     .catchall {:try_start_1b .. :try_end_1b} :catchall_9
 
-    .line 2654
+    .line 2669
     :goto_6
     :try_start_1c
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -7027,7 +7035,7 @@
 
     goto/16 :goto_1
 
-    .line 2639
+    .line 2654
     .end local v3    # "arg":Ljava/lang/String;
     .end local v18    # "token":J
     :catchall_8
@@ -7037,7 +7045,7 @@
 
     throw v2
 
-    .line 2644
+    .line 2659
     .restart local v3    # "arg":Ljava/lang/String;
     .restart local v18    # "token":J
     :cond_10
@@ -7050,7 +7058,7 @@
 
     if-eqz v2, :cond_11
 
-    .line 2646
+    .line 2661
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/DeviceIdleController;->mState:I
@@ -7067,20 +7075,20 @@
 
     goto :goto_6
 
-    .line 2653
+    .line 2668
     :catchall_9
     move-exception v2
 
-    .line 2654
+    .line 2669
     :try_start_1e
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2653
+    .line 2668
     throw v2
     :try_end_1e
     .catchall {:try_start_1e .. :try_end_1e} :catchall_8
 
-    .line 2644
+    .line 2659
     :cond_11
     :try_start_1f
     const-string/jumbo v2, "force"
@@ -7091,7 +7099,7 @@
 
     if-eqz v2, :cond_12
 
-    .line 2647
+    .line 2662
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
@@ -7102,7 +7110,7 @@
 
     goto :goto_6
 
-    .line 2644
+    .line 2659
     :cond_12
     const-string/jumbo v2, "screen"
 
@@ -7112,7 +7120,7 @@
 
     if-eqz v2, :cond_13
 
-    .line 2648
+    .line 2663
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mScreenOn:Z
@@ -7123,7 +7131,7 @@
 
     goto :goto_6
 
-    .line 2644
+    .line 2659
     :cond_13
     const-string/jumbo v2, "charging"
 
@@ -7133,7 +7141,7 @@
 
     if-eqz v2, :cond_14
 
-    .line 2649
+    .line 2664
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mCharging:Z
@@ -7144,7 +7152,7 @@
 
     goto :goto_6
 
-    .line 2644
+    .line 2659
     :cond_14
     const-string/jumbo v2, "network"
 
@@ -7154,7 +7162,7 @@
 
     if-eqz v2, :cond_15
 
-    .line 2650
+    .line 2665
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mNetworkConnected:Z
@@ -7165,7 +7173,7 @@
 
     goto :goto_6
 
-    .line 2651
+    .line 2666
     :cond_15
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -7193,7 +7201,7 @@
 
     goto/16 :goto_6
 
-    .line 2657
+    .line 2672
     .end local v18    # "token":J
     :cond_16
     :try_start_20
@@ -7207,7 +7215,7 @@
 
     goto/16 :goto_1
 
-    .line 2660
+    .line 2675
     .end local v3    # "arg":Ljava/lang/String;
     :cond_17
     const-string/jumbo v2, "disable"
@@ -7220,29 +7228,29 @@
 
     if-eqz v2, :cond_1f
 
-    .line 2661
+    .line 2676
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     const-string/jumbo v4, "android.permission.DEVICE_POWER"
 
-    .line 2662
+    .line 2677
     const/4 v5, 0x0
 
-    .line 2661
+    .line 2676
     invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2663
+    .line 2678
     monitor-enter p0
 
-    .line 2664
+    .line 2679
     :try_start_21
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v18
 
-    .line 2665
+    .line 2680
     .restart local v18    # "token":J
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
     :try_end_21
@@ -7250,15 +7258,15 @@
 
     move-result-object v3
 
-    .line 2667
+    .line 2682
     .restart local v3    # "arg":Ljava/lang/String;
     const/4 v8, 0x0
 
-    .line 2668
+    .line 2683
     .local v8, "becomeActive":Z
     const/16 v20, 0x0
 
-    .line 2669
+    .line 2684
     .local v20, "valid":Z
     if-eqz v3, :cond_18
 
@@ -7279,35 +7287,35 @@
 
     if-eqz v2, :cond_19
 
-    .line 2670
+    .line 2685
     :cond_18
     const/16 v20, 0x1
 
-    .line 2671
+    .line 2686
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mDeepEnabled:Z
 
     if-eqz v2, :cond_19
 
-    .line 2672
+    .line 2687
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mDeepEnabled:Z
 
-    .line 2673
+    .line 2688
     const/4 v8, 0x1
 
-    .line 2674
+    .line 2689
     const-string/jumbo v2, "Deep idle mode disabled"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2677
+    .line 2692
     :cond_19
     if-eqz v3, :cond_1a
 
@@ -7327,39 +7335,39 @@
 
     if-eqz v2, :cond_1b
 
-    .line 2678
+    .line 2693
     :cond_1a
     const/16 v20, 0x1
 
-    .line 2679
+    .line 2694
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mLightEnabled:Z
 
     if-eqz v2, :cond_1b
 
-    .line 2680
+    .line 2695
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mLightEnabled:Z
 
-    .line 2681
+    .line 2696
     const/4 v8, 0x1
 
-    .line 2682
+    .line 2697
     const-string/jumbo v2, "Light idle mode disabled"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2685
+    .line 2700
     :cond_1b
     if-eqz v8, :cond_1c
 
-    .line 2686
+    .line 2701
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7383,21 +7391,21 @@
 
     move-result-object v2
 
-    .line 2687
+    .line 2702
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v4
 
-    .line 2686
+    .line 2701
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2, v4}, Lcom/android/server/DeviceIdleController;->becomeActiveLocked(Ljava/lang/String;I)V
 
-    .line 2689
+    .line 2704
     :cond_1c
     if-nez v20, :cond_1d
 
-    .line 2690
+    .line 2705
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -7422,7 +7430,7 @@
     :try_end_22
     .catchall {:try_start_22 .. :try_end_22} :catchall_b
 
-    .line 2693
+    .line 2708
     :cond_1d
     :try_start_23
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -7431,7 +7439,7 @@
 
     goto/16 :goto_1
 
-    .line 2663
+    .line 2678
     .end local v3    # "arg":Ljava/lang/String;
     .end local v8    # "becomeActive":Z
     .end local v18    # "token":J
@@ -7450,23 +7458,23 @@
     :cond_1e
     move-object v2, v3
 
-    .line 2686
+    .line 2701
     goto :goto_7
 
-    .line 2692
+    .line 2707
     :catchall_b
     move-exception v2
 
-    .line 2693
+    .line 2708
     :try_start_24
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2692
+    .line 2707
     throw v2
     :try_end_24
     .catchall {:try_start_24 .. :try_end_24} :catchall_a
 
-    .line 2696
+    .line 2711
     .end local v3    # "arg":Ljava/lang/String;
     .end local v8    # "becomeActive":Z
     .end local v18    # "token":J
@@ -7482,29 +7490,29 @@
 
     if-eqz v2, :cond_26
 
-    .line 2697
+    .line 2712
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     const-string/jumbo v4, "android.permission.DEVICE_POWER"
 
-    .line 2698
+    .line 2713
     const/4 v5, 0x0
 
-    .line 2697
+    .line 2712
     invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2699
+    .line 2714
     monitor-enter p0
 
-    .line 2700
+    .line 2715
     :try_start_25
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v18
 
-    .line 2701
+    .line 2716
     .restart local v18    # "token":J
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
     :try_end_25
@@ -7512,15 +7520,15 @@
 
     move-result-object v3
 
-    .line 2703
+    .line 2718
     .restart local v3    # "arg":Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 2704
+    .line 2719
     .local v9, "becomeInactive":Z
     const/16 v20, 0x0
 
-    .line 2705
+    .line 2720
     .restart local v20    # "valid":Z
     if-eqz v3, :cond_20
 
@@ -7541,35 +7549,35 @@
 
     if-eqz v2, :cond_21
 
-    .line 2706
+    .line 2721
     :cond_20
     const/16 v20, 0x1
 
-    .line 2707
+    .line 2722
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mDeepEnabled:Z
 
     if-nez v2, :cond_21
 
-    .line 2708
+    .line 2723
     const/4 v2, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mDeepEnabled:Z
 
-    .line 2709
+    .line 2724
     const/4 v9, 0x1
 
-    .line 2710
+    .line 2725
     const-string/jumbo v2, "Deep idle mode enabled"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2713
+    .line 2728
     :cond_21
     if-eqz v3, :cond_22
 
@@ -7589,46 +7597,46 @@
 
     if-eqz v2, :cond_23
 
-    .line 2714
+    .line 2729
     :cond_22
     const/16 v20, 0x1
 
-    .line 2715
+    .line 2730
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mLightEnabled:Z
 
     if-nez v2, :cond_23
 
-    .line 2716
+    .line 2731
     const/4 v2, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mLightEnabled:Z
 
-    .line 2717
+    .line 2732
     const/4 v9, 0x1
 
-    .line 2718
+    .line 2733
     const-string/jumbo v2, "Light idle mode enable"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2721
+    .line 2736
     :cond_23
     if-eqz v9, :cond_24
 
-    .line 2722
+    .line 2737
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
-    .line 2724
+    .line 2739
     :cond_24
     if-nez v20, :cond_25
 
-    .line 2725
+    .line 2740
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -7653,7 +7661,7 @@
     :try_end_26
     .catchall {:try_start_26 .. :try_end_26} :catchall_d
 
-    .line 2728
+    .line 2743
     :cond_25
     :try_start_27
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -7662,7 +7670,7 @@
 
     goto/16 :goto_1
 
-    .line 2699
+    .line 2714
     .end local v3    # "arg":Ljava/lang/String;
     .end local v9    # "becomeInactive":Z
     .end local v18    # "token":J
@@ -7674,7 +7682,7 @@
 
     throw v2
 
-    .line 2727
+    .line 2742
     .restart local v3    # "arg":Ljava/lang/String;
     .restart local v9    # "becomeInactive":Z
     .restart local v18    # "token":J
@@ -7682,16 +7690,16 @@
     :catchall_d
     move-exception v2
 
-    .line 2728
+    .line 2743
     :try_start_28
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2727
+    .line 2742
     throw v2
     :try_end_28
     .catchall {:try_start_28 .. :try_end_28} :catchall_c
 
-    .line 2731
+    .line 2746
     .end local v3    # "arg":Ljava/lang/String;
     .end local v9    # "becomeInactive":Z
     .end local v18    # "token":J
@@ -7707,16 +7715,16 @@
 
     if-eqz v2, :cond_2e
 
-    .line 2732
+    .line 2747
     monitor-enter p0
 
-    .line 2733
+    .line 2748
     :try_start_29
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2734
+    .line 2749
     .restart local v3    # "arg":Ljava/lang/String;
     if-eqz v3, :cond_27
 
@@ -7728,7 +7736,7 @@
 
     if-eqz v2, :cond_29
 
-    .line 2735
+    .line 2750
     :cond_27
     move-object/from16 v0, p0
 
@@ -7753,7 +7761,7 @@
 
     goto/16 :goto_1
 
-    .line 2732
+    .line 2747
     .end local v3    # "arg":Ljava/lang/String;
     :catchall_e
     move-exception v2
@@ -7762,7 +7770,7 @@
 
     throw v2
 
-    .line 2735
+    .line 2750
     .restart local v3    # "arg":Ljava/lang/String;
     :cond_28
     const/4 v2, 0x0
@@ -7774,7 +7782,7 @@
 
     goto :goto_8
 
-    .line 2736
+    .line 2751
     :cond_29
     const-string/jumbo v2, "deep"
 
@@ -7784,7 +7792,7 @@
 
     if-eqz v2, :cond_2b
 
-    .line 2737
+    .line 2752
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mDeepEnabled:Z
@@ -7809,7 +7817,7 @@
 
     goto :goto_9
 
-    .line 2738
+    .line 2753
     :cond_2b
     const-string/jumbo v2, "light"
 
@@ -7819,7 +7827,7 @@
 
     if-eqz v2, :cond_2d
 
-    .line 2739
+    .line 2754
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/DeviceIdleController;->mLightEnabled:Z
@@ -7844,7 +7852,7 @@
 
     goto :goto_a
 
-    .line 2741
+    .line 2756
     :cond_2d
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -7872,7 +7880,7 @@
 
     goto/16 :goto_1
 
-    .line 2744
+    .line 2759
     .end local v3    # "arg":Ljava/lang/String;
     :cond_2e
     const-string/jumbo v2, "whitelist"
@@ -7885,34 +7893,34 @@
 
     if-eqz v2, :cond_39
 
-    .line 2745
+    .line 2760
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2746
+    .line 2761
     .restart local v3    # "arg":Ljava/lang/String;
     if-eqz v3, :cond_36
 
-    .line 2747
+    .line 2762
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    .line 2748
+    .line 2763
     const-string/jumbo v4, "android.permission.DEVICE_POWER"
 
     const/4 v5, 0x0
 
-    .line 2747
+    .line 2762
     invoke-virtual {v2, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2749
+    .line 2764
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v18
 
-    .line 2752
+    .line 2767
     .restart local v18    # "token":J
     :cond_2f
     :try_start_2b
@@ -7934,7 +7942,7 @@
 
     if-eq v2, v4, :cond_31
 
-    .line 2753
+    .line 2768
     const/4 v2, 0x0
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->charAt(I)C
@@ -7955,7 +7963,7 @@
 
     if-eq v2, v4, :cond_31
 
-    .line 2754
+    .line 2769
     :cond_30
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -7981,16 +7989,16 @@
     :try_end_2b
     .catchall {:try_start_2b .. :try_end_2b} :catchall_f
 
-    .line 2755
+    .line 2770
     const/4 v2, -0x1
 
-    .line 2774
+    .line 2789
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2755
+    .line 2770
     return v2
 
-    .line 2757
+    .line 2772
     :cond_31
     const/4 v2, 0x0
 
@@ -7999,7 +8007,7 @@
 
     move-result v13
 
-    .line 2758
+    .line 2773
     .local v13, "op":C
     const/4 v2, 0x1
 
@@ -8007,13 +8015,13 @@
 
     move-result-object v15
 
-    .line 2759
+    .line 2774
     .local v15, "pkg":Ljava/lang/String;
     const/16 v2, 0x2b
 
     if-ne v13, v2, :cond_34
 
-    .line 2760
+    .line 2775
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v15}, Lcom/android/server/DeviceIdleController;->addPowerSaveWhitelistAppInternal(Ljava/lang/String;)Z
@@ -8022,7 +8030,7 @@
 
     if-eqz v2, :cond_33
 
-    .line 2761
+    .line 2776
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -8045,7 +8053,7 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2772
+    .line 2787
     :cond_32
     :goto_b
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
@@ -8056,12 +8064,12 @@
 
     if-nez v3, :cond_2f
 
-    .line 2774
+    .line 2789
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto/16 :goto_2
 
-    .line 2763
+    .line 2778
     :cond_33
     :try_start_2d
     new-instance v2, Ljava/lang/StringBuilder;
@@ -8090,19 +8098,19 @@
 
     goto :goto_b
 
-    .line 2773
+    .line 2788
     .end local v13    # "op":C
     .end local v15    # "pkg":Ljava/lang/String;
     :catchall_f
     move-exception v2
 
-    .line 2774
+    .line 2789
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2773
+    .line 2788
     throw v2
 
-    .line 2765
+    .line 2780
     .restart local v13    # "op":C
     .restart local v15    # "pkg":Ljava/lang/String;
     :cond_34
@@ -8110,7 +8118,7 @@
 
     if-ne v13, v2, :cond_35
 
-    .line 2766
+    .line 2781
     :try_start_2e
     move-object/from16 v0, p0
 
@@ -8120,7 +8128,7 @@
 
     if-eqz v2, :cond_32
 
-    .line 2767
+    .line 2782
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -8145,7 +8153,7 @@
 
     goto :goto_b
 
-    .line 2770
+    .line 2785
     :cond_35
     move-object/from16 v0, p0
 
@@ -8161,14 +8169,14 @@
 
     goto :goto_b
 
-    .line 2777
+    .line 2792
     .end local v13    # "op":C
     .end local v15    # "pkg":Ljava/lang/String;
     .end local v18    # "token":J
     :cond_36
     monitor-enter p0
 
-    .line 2778
+    .line 2793
     const/4 v12, 0x0
 
     .local v12, "j":I
@@ -8184,14 +8192,14 @@
 
     if-ge v12, v2, :cond_37
 
-    .line 2779
+    .line 2794
     const-string/jumbo v2, "system-excidle,"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2780
+    .line 2795
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
@@ -8206,14 +8214,14 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2781
+    .line 2796
     const-string/jumbo v2, ","
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2782
+    .line 2797
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
@@ -8226,12 +8234,12 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2778
+    .line 2793
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_c
 
-    .line 2784
+    .line 2799
     :cond_37
     const/4 v12, 0x0
 
@@ -8246,14 +8254,14 @@
 
     if-ge v12, v2, :cond_38
 
-    .line 2785
+    .line 2800
     const-string/jumbo v2, "system,"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2786
+    .line 2801
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
@@ -8268,14 +8276,14 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2787
+    .line 2802
     const-string/jumbo v2, ","
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2788
+    .line 2803
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
@@ -8288,12 +8296,12 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2784
+    .line 2799
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_d
 
-    .line 2790
+    .line 2805
     :cond_38
     const/4 v12, 0x0
 
@@ -8308,14 +8316,14 @@
 
     if-ge v12, v2, :cond_1
 
-    .line 2791
+    .line 2806
     const-string/jumbo v2, "user,"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2792
+    .line 2807
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
@@ -8330,14 +8338,14 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2793
+    .line 2808
     const-string/jumbo v2, ","
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2794
+    .line 2809
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
@@ -8352,12 +8360,12 @@
     :try_end_2f
     .catchall {:try_start_2f .. :try_end_2f} :catchall_10
 
-    .line 2790
+    .line 2805
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_e
 
-    .line 2777
+    .line 2792
     :catchall_10
     move-exception v2
 
@@ -8365,7 +8373,7 @@
 
     throw v2
 
-    .line 2798
+    .line 2813
     .end local v3    # "arg":Ljava/lang/String;
     .end local v12    # "j":I
     :cond_39
@@ -8379,7 +8387,7 @@
 
     if-eqz v2, :cond_3e
 
-    .line 2800
+    .line 2815
     :cond_3a
     :goto_f
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextOption()Ljava/lang/String;
@@ -8389,7 +8397,7 @@
     .local v14, "opt":Ljava/lang/String;
     if-eqz v14, :cond_3c
 
-    .line 2801
+    .line 2816
     const-string/jumbo v2, "-u"
 
     invoke-virtual {v2, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8398,27 +8406,27 @@
 
     if-eqz v2, :cond_3a
 
-    .line 2802
+    .line 2817
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 2803
+    .line 2818
     if-nez v14, :cond_3b
 
-    .line 2804
+    .line 2819
     const-string/jumbo v2, "-u requires a user number"
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2805
+    .line 2820
     const/4 v2, -0x1
 
     return v2
 
-    .line 2807
+    .line 2822
     :cond_3b
     invoke-static {v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -8430,17 +8438,17 @@
 
     goto :goto_f
 
-    .line 2810
+    .line 2825
     :cond_3c
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2811
+    .line 2826
     .restart local v3    # "arg":Ljava/lang/String;
     if-eqz v3, :cond_3d
 
-    .line 2813
+    .line 2828
     :try_start_30
     move-object/from16 v0, p1
 
@@ -8458,11 +8466,11 @@
 
     goto/16 :goto_2
 
-    .line 2814
+    .line 2829
     :catch_0
     move-exception v17
 
-    .line 2815
+    .line 2830
     .local v17, "re":Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -8490,7 +8498,7 @@
 
     goto/16 :goto_2
 
-    .line 2818
+    .line 2833
     .end local v17    # "re":Landroid/os/RemoteException;
     :cond_3d
     const/4 v2, 0x0
@@ -8503,7 +8511,7 @@
 
     goto/16 :goto_2
 
-    .line 2821
+    .line 2836
     .end local v3    # "arg":Ljava/lang/String;
     .end local v14    # "opt":Ljava/lang/String;
     :cond_3e
@@ -8518,53 +8526,70 @@
     .locals 12
 
     .prologue
-    .line 1304
+    const/4 v9, 0x0
+
+    .line 1318
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v10
 
-    invoke-virtual {v9}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v10}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v7
 
-    .line 1306
+    .line 1320
     .local v7, "pm":Landroid/content/pm/PackageManager;
     monitor-enter p0
 
-    .line 1307
+    .line 1321
     :try_start_0
+    invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v10
+
+    .line 1322
+    const v11, 0x1120015
+
+    .line 1321
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_0
+
+    .line 1323
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v9
 
-    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    const-string/jumbo v10, "com.google.android.gms"
 
-    move-result-object v9
-
-    .line 1308
-    const v10, 0x1120015
-
-    .line 1307
-    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getBoolean(I)Z
+    invoke-static {v9, v10}, Lorg/cyanogenmod/internal/util/PackageManagerUtils;->isAppInstalled(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v9
 
+    .line 1321
+    :cond_0
     iput-boolean v9, p0, Lcom/android/server/DeviceIdleController;->mDeepEnabled:Z
 
     iput-boolean v9, p0, Lcom/android/server/DeviceIdleController;->mLightEnabled:Z
 
-    .line 1309
+    .line 1324
     invoke-static {}, Lcom/android/server/SystemConfig;->getInstance()Lcom/android/server/SystemConfig;
 
     move-result-object v8
 
-    .line 1310
+    .line 1325
     .local v8, "sysConfig":Lcom/android/server/SystemConfig;
     invoke-virtual {v8}, Lcom/android/server/SystemConfig;->getAllowInPowerSaveExceptIdle()Landroid/util/ArraySet;
 
     move-result-object v2
 
-    .line 1311
+    .line 1326
     .local v2, "allowPowerExceptIdle":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     const/4 v5, 0x0
 
@@ -8574,9 +8599,9 @@
 
     move-result v9
 
-    if-ge v5, v9, :cond_0
+    if-ge v5, v9, :cond_1
 
-    .line 1312
+    .line 1327
     invoke-virtual {v2, v5}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -8585,17 +8610,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1315
+    .line 1330
     .local v6, "pkg":Ljava/lang/String;
     const/high16 v9, 0x100000
 
-    .line 1314
+    .line 1329
     :try_start_1
     invoke-virtual {v7, v6, v9}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
-    .line 1316
+    .line 1331
     .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     iget v9, v0, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -8603,7 +8628,7 @@
 
     move-result v3
 
-    .line 1317
+    .line 1332
     .local v3, "appid":I
     iget-object v9, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
@@ -8615,7 +8640,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1318
+    .line 1333
     iget-object v9, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistSystemAppIdsExceptIdle:Landroid/util/SparseBooleanArray;
 
     const/4 v10, 0x1
@@ -8625,7 +8650,7 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1311
+    .line 1326
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     .end local v3    # "appid":I
     :goto_1
@@ -8633,15 +8658,15 @@
 
     goto :goto_0
 
-    .line 1322
+    .line 1337
     .end local v6    # "pkg":Ljava/lang/String;
-    :cond_0
+    :cond_1
     :try_start_2
     invoke-virtual {v8}, Lcom/android/server/SystemConfig;->getAllowInPowerSave()Landroid/util/ArraySet;
 
     move-result-object v1
 
-    .line 1323
+    .line 1338
     .local v1, "allowPower":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     const/4 v5, 0x0
 
@@ -8650,9 +8675,9 @@
 
     move-result v9
 
-    if-ge v5, v9, :cond_1
+    if-ge v5, v9, :cond_2
 
-    .line 1324
+    .line 1339
     invoke-virtual {v1, v5}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -8661,17 +8686,17 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1327
+    .line 1342
     .restart local v6    # "pkg":Ljava/lang/String;
     const/high16 v9, 0x100000
 
-    .line 1326
+    .line 1341
     :try_start_3
     invoke-virtual {v7, v6, v9}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
-    .line 1328
+    .line 1343
     .restart local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     iget v9, v0, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -8679,7 +8704,7 @@
 
     move-result v3
 
-    .line 1331
+    .line 1346
     .restart local v3    # "appid":I
     iget-object v9, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistAppsExceptIdle:Landroid/util/ArrayMap;
 
@@ -8691,14 +8716,14 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1332
+    .line 1347
     iget-object v9, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistSystemAppIdsExceptIdle:Landroid/util/SparseBooleanArray;
 
     const/4 v10, 0x1
 
     invoke-virtual {v9, v3, v10}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 1333
+    .line 1348
     iget-object v9, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistApps:Landroid/util/ArrayMap;
 
     iget-object v10, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -8709,7 +8734,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1334
+    .line 1349
     iget-object v9, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistSystemAppIds:Landroid/util/SparseBooleanArray;
 
     const/4 v10, 0x1
@@ -8719,7 +8744,7 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1323
+    .line 1338
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     .end local v3    # "appid":I
     :goto_3
@@ -8727,9 +8752,9 @@
 
     goto :goto_2
 
-    .line 1339
+    .line 1354
     .end local v6    # "pkg":Ljava/lang/String;
-    :cond_1
+    :cond_2
     :try_start_4
     new-instance v9, Lcom/android/server/DeviceIdleController$Constants;
 
@@ -8747,38 +8772,38 @@
 
     iput-object v9, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
-    .line 1341
+    .line 1356
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->readConfigFileLocked()V
 
-    .line 1342
+    .line 1357
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->updateWhitelistAppIdsLocked()V
 
-    .line 1344
+    .line 1359
     const/4 v9, 0x1
 
     iput-boolean v9, p0, Lcom/android/server/DeviceIdleController;->mNetworkConnected:Z
 
-    .line 1345
+    .line 1360
     const/4 v9, 0x1
 
     iput-boolean v9, p0, Lcom/android/server/DeviceIdleController;->mScreenOn:Z
 
-    .line 1348
+    .line 1363
     const/4 v9, 0x1
 
     iput-boolean v9, p0, Lcom/android/server/DeviceIdleController;->mCharging:Z
 
-    .line 1349
+    .line 1364
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 1350
+    .line 1365
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 1351
+    .line 1366
     iget-object v9, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v10, v9, Lcom/android/server/DeviceIdleController$Constants;->INACTIVE_TIMEOUT:J
@@ -8789,7 +8814,7 @@
 
     monitor-exit p0
 
-    .line 1354
+    .line 1369
     new-instance v9, Lcom/android/server/DeviceIdleController$BinderService;
 
     const/4 v10, 0x0
@@ -8798,14 +8823,14 @@
 
     iput-object v9, p0, Lcom/android/server/DeviceIdleController;->mBinderService:Lcom/android/server/DeviceIdleController$BinderService;
 
-    .line 1355
+    .line 1370
     const-string/jumbo v9, "deviceidle"
 
     iget-object v10, p0, Lcom/android/server/DeviceIdleController;->mBinderService:Lcom/android/server/DeviceIdleController$BinderService;
 
     invoke-virtual {p0, v9, v10}, Lcom/android/server/DeviceIdleController;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 1356
+    .line 1371
     const-class v9, Lcom/android/server/DeviceIdleController$LocalService;
 
     new-instance v10, Lcom/android/server/DeviceIdleController$LocalService;
@@ -8814,10 +8839,10 @@
 
     invoke-virtual {p0, v9, v10}, Lcom/android/server/DeviceIdleController;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 1303
+    .line 1317
     return-void
 
-    .line 1306
+    .line 1320
     .end local v1    # "allowPower":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     .end local v2    # "allowPowerExceptIdle":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     .end local v5    # "i":I
@@ -8829,7 +8854,7 @@
 
     throw v9
 
-    .line 1335
+    .line 1350
     .restart local v1    # "allowPower":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     .restart local v2    # "allowPowerExceptIdle":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     .restart local v5    # "i":I
@@ -8841,7 +8866,7 @@
     .local v4, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     goto :goto_3
 
-    .line 1319
+    .line 1334
     .end local v1    # "allowPower":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     .end local v4    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
@@ -8855,12 +8880,12 @@
     .locals 6
 
     .prologue
-    .line 2368
+    .line 2383
     iget-object v5, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v5}, Landroid/util/ArrayMap;->clear()V
 
-    .line 2371
+    .line 2386
     :try_start_0
     iget-object v5, p0, Lcom/android/server/DeviceIdleController;->mConfigFile:Lcom/android/internal/os/AtomicFile;
 
@@ -8870,14 +8895,14 @@
 
     move-result-object v4
 
-    .line 2376
+    .line 2391
     .local v4, "stream":Ljava/io/FileInputStream;
     :try_start_1
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v3
 
-    .line 2377
+    .line 2392
     .local v3, "parser":Lorg/xmlpull/v1/XmlPullParser;
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -8887,33 +8912,33 @@
 
     invoke-interface {v3, v4, v5}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 2378
+    .line 2393
     invoke-direct {p0, v3}, Lcom/android/server/DeviceIdleController;->readConfigFileLocked(Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_2
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2382
+    .line 2397
     :try_start_2
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 2366
+    .line 2381
     .end local v3    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     :goto_0
     return-void
 
-    .line 2372
+    .line 2387
     .end local v4    # "stream":Ljava/io/FileInputStream;
     :catch_0
     move-exception v0
 
-    .line 2373
+    .line 2388
     .local v0, "e":Ljava/io/FileNotFoundException;
     return-void
 
-    .line 2383
+    .line 2398
     .end local v0    # "e":Ljava/io/FileNotFoundException;
     .restart local v3    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .restart local v4    # "stream":Ljava/io/FileInputStream;
@@ -8923,13 +8948,13 @@
     .local v1, "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 2379
+    .line 2394
     .end local v1    # "e":Ljava/io/IOException;
     .end local v3    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     :catch_2
     move-exception v2
 
-    .line 2382
+    .line 2397
     .local v2, "e":Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_3
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
@@ -8938,30 +8963,30 @@
 
     goto :goto_0
 
-    .line 2383
+    .line 2398
     :catch_3
     move-exception v1
 
     .restart local v1    # "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 2380
+    .line 2395
     .end local v1    # "e":Ljava/io/IOException;
     .end local v2    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     :catchall_0
     move-exception v5
 
-    .line 2382
+    .line 2397
     :try_start_4
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 
-    .line 2380
+    .line 2395
     :goto_1
     throw v5
 
-    .line 2383
+    .line 2398
     :catch_4
     move-exception v1
 
@@ -8974,20 +8999,20 @@
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 2186
+    .line 2201
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     const/4 v1, 0x4
 
     if-eq v0, v1, :cond_0
 
-    .line 2187
+    .line 2202
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelLocatingLocked()V
 
-    .line 2188
+    .line 2203
     return-void
 
-    .line 2191
+    .line 2206
     :cond_0
     new-instance v0, Landroid/location/Location;
 
@@ -8995,7 +9020,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLastGenericLocation:Landroid/location/Location;
 
-    .line 2192
+    .line 2207
     invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
 
     move-result v0
@@ -9012,26 +9037,26 @@
 
     if-eqz v0, :cond_1
 
-    .line 2193
+    .line 2208
     return-void
 
-    .line 2195
+    .line 2210
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mLocated:Z
 
-    .line 2196
+    .line 2211
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mNotMoving:Z
 
     if-eqz v0, :cond_2
 
-    .line 2197
+    .line 2212
     const-string/jumbo v0, "s:location"
 
     invoke-virtual {p0, v0}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
 
-    .line 2185
+    .line 2200
     :cond_2
     return-void
 .end method
@@ -9041,20 +9066,20 @@
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 2202
+    .line 2217
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     const/4 v1, 0x4
 
     if-eq v0, v1, :cond_0
 
-    .line 2203
+    .line 2218
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelLocatingLocked()V
 
-    .line 2204
+    .line 2219
     return-void
 
-    .line 2207
+    .line 2222
     :cond_0
     new-instance v0, Landroid/location/Location;
 
@@ -9062,7 +9087,7 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController;->mLastGpsLocation:Landroid/location/Location;
 
-    .line 2208
+    .line 2223
     invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
 
     move-result v0
@@ -9075,26 +9100,26 @@
 
     if-lez v0, :cond_1
 
-    .line 2209
+    .line 2224
     return-void
 
-    .line 2211
+    .line 2226
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mLocated:Z
 
-    .line 2212
+    .line 2227
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mNotMoving:Z
 
     if-eqz v0, :cond_2
 
-    .line 2213
+    .line 2228
     const-string/jumbo v0, "s:gps"
 
     invoke-virtual {p0, v0}, Lcom/android/server/DeviceIdleController;->stepIdleStateLocked(Ljava/lang/String;)V
 
-    .line 2201
+    .line 2216
     :cond_2
     return-void
 .end method
@@ -9104,16 +9129,16 @@
     .param p1, "listener"    # Landroid/os/IMaintenanceActivityListener;
 
     .prologue
-    .line 2101
+    .line 2116
     monitor-enter p0
 
-    .line 2102
+    .line 2117
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceActivityListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->register(Landroid/os/IInterface;)Z
 
-    .line 2103
+    .line 2118
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mReportedMaintenanceActivity:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -9122,7 +9147,7 @@
 
     return v0
 
-    .line 2101
+    .line 2116
     :catchall_0
     move-exception v0
 
@@ -9136,10 +9161,10 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1461
+    .line 1476
     monitor-enter p0
 
-    .line 1462
+    .line 1477
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
@@ -9149,18 +9174,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 1463
+    .line 1478
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->reportPowerSaveWhitelistChangedLocked()V
 
-    .line 1464
+    .line 1479
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController;->updateWhitelistAppIdsLocked()V
 
-    .line 1465
+    .line 1480
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->writeConfigFileLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1466
+    .line 1481
     const/4 v0, 0x1
 
     monitor-exit p0
@@ -9170,12 +9195,12 @@
     :cond_0
     monitor-exit p0
 
-    .line 1469
+    .line 1484
     const/4 v0, 0x0
 
     return v0
 
-    .line 1461
+    .line 1476
     :catchall_0
     move-exception v0
 
@@ -9190,33 +9215,33 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2114
+    .line 2129
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mJobsActive:Z
 
-    .line 2115
+    .line 2130
     .local v0, "active":Z
     iget-boolean v2, p0, Lcom/android/server/DeviceIdleController;->mReportedMaintenanceActivity:Z
 
     if-ne v0, v2, :cond_0
 
-    .line 2116
+    .line 2131
     return-void
 
-    .line 2118
+    .line 2133
     :cond_0
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mReportedMaintenanceActivity:Z
 
-    .line 2119
+    .line 2134
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 2120
+    .line 2135
     iget-boolean v2, p0, Lcom/android/server/DeviceIdleController;->mReportedMaintenanceActivity:Z
 
     if-eqz v2, :cond_1
 
     const/4 v2, 0x1
 
-    .line 2119
+    .line 2134
     :goto_0
     const/4 v5, 0x7
 
@@ -9224,20 +9249,20 @@
 
     move-result-object v1
 
-    .line 2121
+    .line 2136
     .local v1, "msg":Landroid/os/Message;
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-virtual {v2, v1}, Lcom/android/server/DeviceIdleController$MyHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 2113
+    .line 2128
     return-void
 
     .end local v1    # "msg":Landroid/os/Message;
     :cond_1
     move v2, v3
 
-    .line 2120
+    .line 2135
     goto :goto_0
 .end method
 
@@ -9247,33 +9272,33 @@
     .prologue
     const-wide/16 v0, 0x0
 
-    .line 1844
+    .line 1859
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
 
-    .line 1845
+    .line 1860
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
-    .line 1846
+    .line 1861
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
-    .line 1847
+    .line 1862
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelAlarmLocked()V
 
-    .line 1848
+    .line 1863
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelSensingTimeoutAlarmLocked()V
 
-    .line 1849
+    .line 1864
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelLocatingLocked()V
 
-    .line 1850
+    .line 1865
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->stopMonitoringMotionLocked()V
 
-    .line 1851
+    .line 1866
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAnyMotionDetector:Lcom/android/server/AnyMotionDetector;
 
     invoke-virtual {v0}, Lcom/android/server/AnyMotionDetector;->stop()V
 
-    .line 1843
+    .line 1858
     return-void
 .end method
 
@@ -9281,10 +9306,10 @@
     .locals 0
 
     .prologue
-    .line 1855
+    .line 1870
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelLightAlarmLocked()V
 
-    .line 1854
+    .line 1869
     return-void
 .end method
 
@@ -9296,15 +9321,15 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 2262
+    .line 2277
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_0
 
-    .line 2267
+    .line 2282
     return-void
 
-    .line 2269
+    .line 2284
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -9314,13 +9339,13 @@
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextAlarmTime:J
 
-    .line 2270
+    .line 2285
     if-eqz p3, :cond_1
 
-    .line 2271
+    .line 2286
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 2272
+    .line 2287
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextAlarmTime:J
 
     const-string/jumbo v4, "DeviceIdleController.deep"
@@ -9329,18 +9354,18 @@
 
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 2271
+    .line 2286
     invoke-virtual/range {v0 .. v6}, Landroid/app/AlarmManager;->setIdleUntil(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
-    .line 2260
+    .line 2275
     :goto_0
     return-void
 
-    .line 2274
+    .line 2289
     :cond_1
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 2275
+    .line 2290
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextAlarmTime:J
 
     const-string/jumbo v4, "DeviceIdleController.deep"
@@ -9349,7 +9374,7 @@
 
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 2274
+    .line 2289
     invoke-virtual/range {v0 .. v6}, Landroid/app/AlarmManager;->set(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
     goto :goto_0
@@ -9360,7 +9385,7 @@
     .param p1, "delay"    # J
 
     .prologue
-    .line 2281
+    .line 2296
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -9369,10 +9394,10 @@
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextLightAlarmTime:J
 
-    .line 2282
+    .line 2297
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 2283
+    .line 2298
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightAlarmTime:J
 
     const-string/jumbo v4, "DeviceIdleController.light"
@@ -9381,12 +9406,12 @@
 
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 2282
+    .line 2297
     const/4 v1, 0x2
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/AlarmManager;->set(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
-    .line 2279
+    .line 2294
     return-void
 .end method
 
@@ -9396,7 +9421,7 @@
     .param p2, "activeUid"    # I
 
     .prologue
-    .line 1800
+    .line 1815
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     const/4 v2, 0x5
@@ -9407,13 +9432,13 @@
 
     move-result-object v0
 
-    .line 1801
+    .line 1816
     .local v0, "msg":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-virtual {v1, v0}, Lcom/android/server/DeviceIdleController$MyHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1799
+    .line 1814
     return-void
 .end method
 
@@ -9422,7 +9447,7 @@
     .param p1, "delay"    # J
 
     .prologue
-    .line 2288
+    .line 2303
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -9431,24 +9456,24 @@
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextSensingTimeoutAlarmTime:J
 
-    .line 2289
+    .line 2304
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextSensingTimeoutAlarmTime:J
 
-    .line 2290
+    .line 2305
     const-string/jumbo v4, "DeviceIdleController.sensing"
 
     iget-object v5, p0, Lcom/android/server/DeviceIdleController;->mSensingTimeoutAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
 
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 2289
+    .line 2304
     const/4 v1, 0x2
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/AlarmManager;->set(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
-    .line 2286
+    .line 2301
     return-void
 .end method
 
@@ -9457,17 +9482,17 @@
     .param p1, "active"    # Z
 
     .prologue
-    .line 2092
+    .line 2107
     monitor-enter p0
 
-    .line 2093
+    .line 2108
     :try_start_0
     iput-boolean p1, p0, Lcom/android/server/DeviceIdleController;->mAlarmsActive:Z
 
-    .line 2094
+    .line 2109
     if-nez p1, :cond_0
 
-    .line 2095
+    .line 2110
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->exitMaintenanceEarlyIfNeededLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -9475,10 +9500,10 @@
     :cond_0
     monitor-exit p0
 
-    .line 2091
+    .line 2106
     return-void
 
-    .line 2092
+    .line 2107
     :catchall_0
     move-exception v0
 
@@ -9492,20 +9517,20 @@
     .param p1, "active"    # Z
 
     .prologue
-    .line 2082
+    .line 2097
     monitor-enter p0
 
-    .line 2083
+    .line 2098
     :try_start_0
     iput-boolean p1, p0, Lcom/android/server/DeviceIdleController;->mJobsActive:Z
 
-    .line 2084
+    .line 2099
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->reportMaintenanceActivityIfNeededLocked()V
 
-    .line 2085
+    .line 2100
     if-nez p1, :cond_0
 
-    .line 2086
+    .line 2101
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->exitMaintenanceEarlyIfNeededLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -9513,10 +9538,10 @@
     :cond_0
     monitor-exit p0
 
-    .line 2081
+    .line 2096
     return-void
 
-    .line 2082
+    .line 2097
     :catchall_0
     move-exception v0
 
@@ -9530,10 +9555,10 @@
     .param p1, "callback"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 1672
+    .line 1687
     monitor-enter p0
 
-    .line 1673
+    .line 1688
     :try_start_0
     iput-object p1, p0, Lcom/android/server/DeviceIdleController;->mNetworkPolicyTempWhitelistCallback:Ljava/lang/Runnable;
     :try_end_0
@@ -9541,10 +9566,10 @@
 
     monitor-exit p0
 
-    .line 1671
+    .line 1686
     return-void
 
-    .line 1672
+    .line 1687
     :catchall_0
     move-exception v0
 
@@ -9557,7 +9582,7 @@
     .locals 1
 
     .prologue
-    .line 2219
+    .line 2234
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
@@ -9568,12 +9593,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 2217
+    .line 2232
     :cond_0
     :goto_0
     return-void
 
-    .line 2220
+    .line 2235
     :cond_1
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionListener:Lcom/android/server/DeviceIdleController$MotionListener;
 
@@ -9597,15 +9622,15 @@
 
     const/4 v4, 0x0
 
-    .line 1952
+    .line 1967
     invoke-static {}, Lcom/android/server/EventLogTags;->writeDeviceIdleStep()V
 
-    .line 1954
+    .line 1969
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v8
 
-    .line 1955
+    .line 1970
     .local v8, "now":J
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
@@ -9623,12 +9648,12 @@
 
     if-lez v0, :cond_1
 
-    .line 1957
+    .line 1972
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     if-eqz v0, :cond_0
 
-    .line 1958
+    .line 1973
     const-string/jumbo v0, "alarm"
 
     invoke-static {}, Landroid/os/Process;->myUid()I
@@ -9637,124 +9662,124 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/DeviceIdleController;->becomeActiveLocked(Ljava/lang/String;I)V
 
-    .line 1959
+    .line 1974
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
-    .line 1961
+    .line 1976
     :cond_0
     return-void
 
-    .line 1964
+    .line 1979
     :cond_1
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1950
+    .line 1965
     :cond_2
     :goto_0
     return-void
 
-    .line 1968
+    .line 1983
     :pswitch_0
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->startMonitoringMotionLocked()V
 
-    .line 1969
+    .line 1984
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_AFTER_INACTIVE_TIMEOUT:J
 
     invoke-virtual {p0, v0, v1, v4}, Lcom/android/server/DeviceIdleController;->scheduleAlarmLocked(JZ)V
 
-    .line 1971
+    .line 1986
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_PENDING_TIMEOUT:J
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
 
-    .line 1972
+    .line 1987
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_TIMEOUT:J
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
-    .line 1973
+    .line 1988
     iput v11, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 1975
+    .line 1990
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     invoke-static {v0, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
     goto :goto_0
 
-    .line 1978
+    .line 1993
     :pswitch_1
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 1980
+    .line 1995
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     invoke-static {v0, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
-    .line 1981
+    .line 1996
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->SENSING_TIMEOUT:J
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/DeviceIdleController;->scheduleSensingTimeoutAlarmLocked(J)V
 
-    .line 1982
+    .line 1997
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelLocatingLocked()V
 
-    .line 1983
+    .line 1998
     iput-boolean v4, p0, Lcom/android/server/DeviceIdleController;->mNotMoving:Z
 
-    .line 1984
+    .line 1999
     iput-boolean v4, p0, Lcom/android/server/DeviceIdleController;->mLocated:Z
 
-    .line 1985
+    .line 2000
     iput-object v5, p0, Lcom/android/server/DeviceIdleController;->mLastGenericLocation:Landroid/location/Location;
 
-    .line 1986
+    .line 2001
     iput-object v5, p0, Lcom/android/server/DeviceIdleController;->mLastGpsLocation:Landroid/location/Location;
 
-    .line 1987
+    .line 2002
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAnyMotionDetector:Lcom/android/server/AnyMotionDetector;
 
     invoke-virtual {v0}, Lcom/android/server/AnyMotionDetector;->checkForAnyMotion()V
 
     goto :goto_0
 
-    .line 1990
+    .line 2005
     :pswitch_2
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelSensingTimeoutAlarmLocked()V
 
-    .line 1991
+    .line 2006
     iput v10, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 1993
+    .line 2008
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     invoke-static {v0, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
-    .line 1994
+    .line 2009
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->LOCATING_TIMEOUT:J
 
     invoke-virtual {p0, v0, v1, v4}, Lcom/android/server/DeviceIdleController;->scheduleAlarmLocked(JZ)V
 
-    .line 1995
+    .line 2010
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     if-eqz v0, :cond_5
 
-    .line 1996
+    .line 2011
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v1, "network"
@@ -9765,12 +9790,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 1997
+    .line 2012
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController;->mLocationRequest:Landroid/location/LocationRequest;
 
-    .line 1998
+    .line 2013
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mGenericLocationListener:Landroid/location/LocationListener;
 
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
@@ -9779,19 +9804,19 @@
 
     move-result-object v3
 
-    .line 1997
+    .line 2012
     invoke-virtual {v0, v1, v2, v3}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 1999
+    .line 2014
     iput-boolean v7, p0, Lcom/android/server/DeviceIdleController;->mLocating:Z
 
-    .line 2003
+    .line 2018
     :goto_1
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     if-eqz v0, :cond_6
 
-    .line 2004
+    .line 2019
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v1, "gps"
@@ -9802,10 +9827,10 @@
 
     if-eqz v0, :cond_6
 
-    .line 2005
+    .line 2020
     iput-boolean v7, p0, Lcom/android/server/DeviceIdleController;->mHasGps:Z
 
-    .line 2006
+    .line 2021
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v1, "gps"
@@ -9814,7 +9839,7 @@
 
     const/high16 v4, 0x40a00000    # 5.0f
 
-    .line 2007
+    .line 2022
     iget-object v5, p0, Lcom/android/server/DeviceIdleController;->mGpsLocationListener:Landroid/location/LocationListener;
 
     iget-object v6, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
@@ -9823,37 +9848,37 @@
 
     move-result-object v6
 
-    .line 2006
+    .line 2021
     invoke-virtual/range {v0 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 2008
+    .line 2023
     iput-boolean v7, p0, Lcom/android/server/DeviceIdleController;->mLocating:Z
 
-    .line 2014
+    .line 2029
     :goto_2
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mLocating:Z
 
     if-nez v0, :cond_2
 
-    .line 2020
+    .line 2035
     :pswitch_3
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelAlarmLocked()V
 
-    .line 2021
+    .line 2036
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelLocatingLocked()V
 
-    .line 2022
+    .line 2037
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mAnyMotionDetector:Lcom/android/server/AnyMotionDetector;
 
     invoke-virtual {v0}, Lcom/android/server/AnyMotionDetector;->stop()V
 
-    .line 2025
+    .line 2040
     :pswitch_4
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
     invoke-virtual {p0, v0, v1, v7}, Lcom/android/server/DeviceIdleController;->scheduleAlarmLocked(JZ)V
 
-    .line 2028
+    .line 2043
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
     long-to-float v0, v0
@@ -9868,7 +9893,7 @@
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
-    .line 2030
+    .line 2045
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
@@ -9881,7 +9906,7 @@
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
-    .line 2031
+    .line 2046
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
@@ -9892,94 +9917,94 @@
 
     if-gez v0, :cond_3
 
-    .line 2032
+    .line 2047
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_TIMEOUT:J
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdleDelay:J
 
-    .line 2034
+    .line 2049
     :cond_3
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 2035
+    .line 2050
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     const/4 v1, 0x7
 
     if-eq v0, v1, :cond_4
 
-    .line 2036
+    .line 2051
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 2037
+    .line 2052
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->cancelLightAlarmLocked()V
 
-    .line 2039
+    .line 2054
     :cond_4
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     invoke-static {v0, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
-    .line 2040
+    .line 2055
     invoke-direct {p0, v10}, Lcom/android/server/DeviceIdleController;->addEvent(I)V
 
-    .line 2041
+    .line 2056
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mGoingIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 2042
+    .line 2057
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-virtual {v0, v11}, Lcom/android/server/DeviceIdleController$MyHandler;->sendEmptyMessage(I)Z
 
     goto/16 :goto_0
 
-    .line 2001
+    .line 2016
     :cond_5
     iput-boolean v4, p0, Lcom/android/server/DeviceIdleController;->mHasNetworkLocation:Z
 
     goto/16 :goto_1
 
-    .line 2010
+    .line 2025
     :cond_6
     iput-boolean v4, p0, Lcom/android/server/DeviceIdleController;->mHasGps:Z
 
     goto :goto_2
 
-    .line 2046
+    .line 2061
     :pswitch_5
     iput v7, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
-    .line 2047
+    .line 2062
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 2048
+    .line 2063
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
 
     invoke-virtual {p0, v0, v1, v4}, Lcom/android/server/DeviceIdleController;->scheduleAlarmLocked(JZ)V
 
-    .line 2051
+    .line 2066
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
 
-    .line 2052
+    .line 2067
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->MAX_IDLE_PENDING_TIMEOUT:J
 
-    .line 2053
+    .line 2068
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
 
     long-to-float v2, v2
@@ -9992,14 +10017,14 @@
 
     float-to-long v2, v2
 
-    .line 2052
+    .line 2067
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
 
-    .line 2054
+    .line 2069
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
@@ -10010,37 +10035,37 @@
 
     if-gez v0, :cond_7
 
-    .line 2055
+    .line 2070
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v0, v0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_PENDING_TIMEOUT:J
 
     iput-wide v0, p0, Lcom/android/server/DeviceIdleController;->mNextIdlePendingDelay:J
 
-    .line 2057
+    .line 2072
     :cond_7
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
-    .line 2058
+    .line 2073
     iget v0, p0, Lcom/android/server/DeviceIdleController;->mState:I
 
     invoke-static {v0, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdle(ILjava/lang/String;)V
 
-    .line 2059
+    .line 2074
     const/4 v0, 0x5
 
     invoke-direct {p0, v0}, Lcom/android/server/DeviceIdleController;->addEvent(I)V
 
-    .line 2060
+    .line 2075
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-virtual {v0, v10}, Lcom/android/server/DeviceIdleController$MyHandler;->sendEmptyMessage(I)Z
 
     goto/16 :goto_0
 
-    .line 1964
+    .line 1979
     nop
 
     :pswitch_data_0
@@ -10067,31 +10092,31 @@
 
     const/4 v6, 0x3
 
-    .line 1868
+    .line 1883
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     const/4 v3, 0x7
 
     if-ne v2, v3, :cond_0
 
-    .line 1871
+    .line 1886
     return-void
 
-    .line 1875
+    .line 1890
     :cond_0
     invoke-static {}, Lcom/android/server/EventLogTags;->writeDeviceIdleLightStep()V
 
-    .line 1877
+    .line 1892
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 1867
+    .line 1882
     :goto_0
     :pswitch_0
     return-void
 
-    .line 1879
+    .line 1894
     :pswitch_1
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
@@ -10099,32 +10124,32 @@
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
-    .line 1881
+    .line 1896
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v2, v2, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_TIMEOUT:J
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
-    .line 1882
+    .line 1897
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
 
-    .line 1883
+    .line 1898
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->isOpsInactiveLocked()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 1886
+    .line 1901
     iput v6, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 1887
+    .line 1902
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     invoke-static {v2, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdleLight(ILjava/lang/String;)V
 
-    .line 1888
+    .line 1903
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v2, v2, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_PRE_IDLE_TIMEOUT:J
@@ -10133,7 +10158,7 @@
 
     goto :goto_0
 
-    .line 1894
+    .line 1909
     :cond_1
     :pswitch_2
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
@@ -10142,7 +10167,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1895
+    .line 1910
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -10151,7 +10176,7 @@
 
     sub-long v0, v2, v4
 
-    .line 1896
+    .line 1911
     .local v0, "duration":J
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
@@ -10161,7 +10186,7 @@
 
     if-gez v2, :cond_4
 
-    .line 1898
+    .line 1913
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
@@ -10174,23 +10199,23 @@
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
-    .line 1904
+    .line 1919
     .end local v0    # "duration":J
     :cond_2
     :goto_1
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
 
-    .line 1905
+    .line 1920
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
     invoke-virtual {p0, v2, v3}, Lcom/android/server/DeviceIdleController;->scheduleLightAlarmLocked(J)V
 
-    .line 1906
+    .line 1921
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v2, v2, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_MAX_IDLE_TIMEOUT:J
 
-    .line 1907
+    .line 1922
     iget-wide v4, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
     long-to-float v4, v4
@@ -10203,14 +10228,14 @@
 
     float-to-long v4, v4
 
-    .line 1906
+    .line 1921
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
-    .line 1908
+    .line 1923
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
@@ -10221,40 +10246,40 @@
 
     if-gez v2, :cond_3
 
-    .line 1909
+    .line 1924
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v2, v2, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_TIMEOUT:J
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
-    .line 1912
+    .line 1927
     :cond_3
     iput v7, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 1913
+    .line 1928
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     invoke-static {v2, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdleLight(ILjava/lang/String;)V
 
-    .line 1914
+    .line 1929
     const/4 v2, 0x2
 
     invoke-direct {p0, v2}, Lcom/android/server/DeviceIdleController;->addEvent(I)V
 
-    .line 1915
+    .line 1930
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mGoingIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 1916
+    .line 1931
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-virtual {v2, v6}, Lcom/android/server/DeviceIdleController$MyHandler;->sendEmptyMessage(I)Z
 
     goto/16 :goto_0
 
-    .line 1901
+    .line 1916
     .restart local v0    # "duration":J
     :cond_4
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
@@ -10271,7 +10296,7 @@
 
     goto :goto_1
 
-    .line 1920
+    .line 1935
     .end local v0    # "duration":J
     :pswitch_3
     iget-boolean v2, p0, Lcom/android/server/DeviceIdleController;->mNetworkConnected:Z
@@ -10282,25 +10307,25 @@
 
     if-ne v2, v4, :cond_8
 
-    .line 1922
+    .line 1937
     :cond_5
     const/4 v2, 0x1
 
     iput v2, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleOpCount:I
 
-    .line 1923
+    .line 1938
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mActiveIdleWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 1924
+    .line 1939
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceStartTime:J
 
-    .line 1925
+    .line 1940
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
     iget-object v4, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
@@ -10311,41 +10336,41 @@
 
     if-gez v2, :cond_7
 
-    .line 1926
+    .line 1941
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v2, v2, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_MAINTENANCE_MIN_BUDGET:J
 
     iput-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
-    .line 1930
+    .line 1945
     :cond_6
     :goto_2
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
     invoke-virtual {p0, v2, v3}, Lcom/android/server/DeviceIdleController;->scheduleLightAlarmLocked(J)V
 
-    .line 1933
+    .line 1948
     const/4 v2, 0x6
 
     iput v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 1934
+    .line 1949
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     invoke-static {v2, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdleLight(ILjava/lang/String;)V
 
-    .line 1935
+    .line 1950
     invoke-direct {p0, v6}, Lcom/android/server/DeviceIdleController;->addEvent(I)V
 
-    .line 1936
+    .line 1951
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-virtual {v2, v7}, Lcom/android/server/DeviceIdleController$MyHandler;->sendEmptyMessage(I)Z
 
     goto/16 :goto_0
 
-    .line 1927
+    .line 1942
     :cond_7
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mCurIdleBudget:J
 
@@ -10357,7 +10382,7 @@
 
     if-lez v2, :cond_6
 
-    .line 1928
+    .line 1943
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     iget-wide v2, v2, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_MAINTENANCE_MAX_BUDGET:J
@@ -10366,23 +10391,23 @@
 
     goto :goto_2
 
-    .line 1941
+    .line 1956
     :cond_8
     iget-wide v2, p0, Lcom/android/server/DeviceIdleController;->mNextLightIdleDelay:J
 
     invoke-virtual {p0, v2, v3}, Lcom/android/server/DeviceIdleController;->scheduleLightAlarmLocked(J)V
 
-    .line 1943
+    .line 1958
     iput v4, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
-    .line 1944
+    .line 1959
     iget v2, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
 
     invoke-static {v2, p1}, Lcom/android/server/EventLogTags;->writeDeviceIdleLight(ILjava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 1877
+    .line 1892
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -10398,7 +10423,7 @@
     .locals 1
 
     .prologue
-    .line 2226
+    .line 2241
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
@@ -10409,12 +10434,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 2227
+    .line 2242
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMotionListener:Lcom/android/server/DeviceIdleController$MotionListener;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController$MotionListener;->unregisterLocked()V
 
-    .line 2224
+    .line 2239
     :cond_0
     return-void
 .end method
@@ -10424,10 +10449,10 @@
     .param p1, "listener"    # Landroid/os/IMaintenanceActivityListener;
 
     .prologue
-    .line 2108
+    .line 2123
     monitor-enter p0
 
-    .line 2109
+    .line 2124
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mMaintenanceActivityListeners:Landroid/os/RemoteCallbackList;
 
@@ -10437,10 +10462,10 @@
 
     monitor-exit p0
 
-    .line 2107
+    .line 2122
     return-void
 
-    .line 2108
+    .line 2123
     :catchall_0
     move-exception v0
 
@@ -10454,44 +10479,44 @@
     .param p1, "charging"    # Z
 
     .prologue
-    .line 1786
+    .line 1801
     if-nez p1, :cond_1
 
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mCharging:Z
 
     if-eqz v0, :cond_1
 
-    .line 1787
+    .line 1802
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mCharging:Z
 
-    .line 1788
+    .line 1803
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
     if-nez v0, :cond_0
 
-    .line 1789
+    .line 1804
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
-    .line 1784
+    .line 1799
     :cond_0
     :goto_0
     return-void
 
-    .line 1791
+    .line 1806
     :cond_1
     if-eqz p1, :cond_0
 
-    .line 1792
+    .line 1807
     iput-boolean p1, p0, Lcom/android/server/DeviceIdleController;->mCharging:Z
 
-    .line 1793
+    .line 1808
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
     if-nez v0, :cond_0
 
-    .line 1794
+    .line 1809
     const-string/jumbo v0, "charging"
 
     invoke-static {}, Landroid/os/Process;->myUid()I
@@ -10508,10 +10533,10 @@
     .param p1, "connIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1729
+    .line 1744
     monitor-enter p0
 
-    .line 1730
+    .line 1745
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mConnectivityService:Lcom/android/server/ConnectivityService;
     :try_end_0
@@ -10520,13 +10545,13 @@
     .local v0, "cm":Lcom/android/server/ConnectivityService;
     monitor-exit p0
 
-    .line 1732
+    .line 1747
     if-nez v0, :cond_0
 
-    .line 1733
+    .line 1748
     return-void
 
-    .line 1729
+    .line 1744
     .end local v0    # "cm":Lcom/android/server/ConnectivityService;
     :catchall_0
     move-exception v4
@@ -10535,34 +10560,34 @@
 
     throw v4
 
-    .line 1736
+    .line 1751
     .restart local v0    # "cm":Lcom/android/server/ConnectivityService;
     :cond_0
     invoke-virtual {v0}, Lcom/android/server/ConnectivityService;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v3
 
-    .line 1737
+    .line 1752
     .local v3, "ni":Landroid/net/NetworkInfo;
     monitor-enter p0
 
-    .line 1739
+    .line 1754
     if-nez v3, :cond_2
 
-    .line 1740
+    .line 1755
     const/4 v1, 0x0
 
-    .line 1755
+    .line 1770
     :goto_0
     :try_start_1
     iget-boolean v4, p0, Lcom/android/server/DeviceIdleController;->mNetworkConnected:Z
 
     if-eq v1, v4, :cond_1
 
-    .line 1756
+    .line 1771
     iput-boolean v1, p0, Lcom/android/server/DeviceIdleController;->mNetworkConnected:Z
 
-    .line 1757
+    .line 1772
     if-eqz v1, :cond_1
 
     iget v4, p0, Lcom/android/server/DeviceIdleController;->mLightState:I
@@ -10571,7 +10596,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 1758
+    .line 1773
     const-string/jumbo v4, "network"
 
     invoke-virtual {p0, v4}, Lcom/android/server/DeviceIdleController;->stepLightIdleStateLocked(Ljava/lang/String;)V
@@ -10581,14 +10606,14 @@
     :cond_1
     monitor-exit p0
 
-    .line 1727
+    .line 1742
     return-void
 
-    .line 1742
+    .line 1757
     :cond_2
     if-nez p1, :cond_3
 
-    .line 1743
+    .line 1758
     :try_start_2
     invoke-virtual {v3}, Landroid/net/NetworkInfo;->isConnected()Z
 
@@ -10597,20 +10622,20 @@
     .local v1, "conn":Z
     goto :goto_0
 
-    .line 1746
+    .line 1761
     .end local v1    # "conn":Z
     :cond_3
     const-string/jumbo v4, "networkType"
 
-    .line 1747
+    .line 1762
     const/4 v5, -0x1
 
-    .line 1746
+    .line 1761
     invoke-virtual {p1, v4, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 1748
+    .line 1763
     .local v2, "networkType":I
     invoke-virtual {v3}, Landroid/net/NetworkInfo;->getType()I
     :try_end_2
@@ -10622,18 +10647,18 @@
 
     monitor-exit p0
 
-    .line 1749
+    .line 1764
     return-void
 
-    .line 1751
+    .line 1766
     :cond_4
     :try_start_3
     const-string/jumbo v4, "noConnectivity"
 
-    .line 1752
+    .line 1767
     const/4 v5, 0x0
 
-    .line 1751
+    .line 1766
     invoke-virtual {p1, v4, v5}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
@@ -10654,7 +10679,7 @@
     .restart local v1    # "conn":Z
     goto :goto_0
 
-    .line 1737
+    .line 1752
     .end local v1    # "conn":Z
     .end local v2    # "networkType":I
     :catchall_1
@@ -10673,7 +10698,7 @@
 
     const/4 v2, 0x0
 
-    .line 1765
+    .line 1780
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     invoke-virtual {v3, v2}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
@@ -10682,7 +10707,7 @@
 
     iput-object v3, p0, Lcom/android/server/DeviceIdleController;->mCurDisplay:Landroid/view/Display;
 
-    .line 1769
+    .line 1784
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mCurDisplay:Landroid/view/Display;
 
     invoke-virtual {v3}, Landroid/view/Display;->getState()I
@@ -10695,7 +10720,7 @@
 
     move v0, v1
 
-    .line 1771
+    .line 1786
     .local v0, "screenOn":Z
     :goto_0
     if-nez v0, :cond_2
@@ -10704,18 +10729,18 @@
 
     if-eqz v3, :cond_2
 
-    .line 1772
+    .line 1787
     iput-boolean v2, p0, Lcom/android/server/DeviceIdleController;->mScreenOn:Z
 
-    .line 1773
+    .line 1788
     iget-boolean v1, p0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
     if-nez v1, :cond_0
 
-    .line 1774
+    .line 1789
     invoke-virtual {p0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
 
-    .line 1764
+    .line 1779
     :cond_0
     :goto_1
     return-void
@@ -10724,23 +10749,23 @@
     :cond_1
     move v0, v2
 
-    .line 1769
+    .line 1784
     goto :goto_0
 
-    .line 1776
+    .line 1791
     .restart local v0    # "screenOn":Z
     :cond_2
     if-eqz v0, :cond_0
 
-    .line 1777
+    .line 1792
     iput-boolean v1, p0, Lcom/android/server/DeviceIdleController;->mScreenOn:Z
 
-    .line 1778
+    .line 1793
     iget-boolean v1, p0, Lcom/android/server/DeviceIdleController;->mForceIdle:Z
 
     if-nez v1, :cond_0
 
-    .line 1779
+    .line 1794
     const-string/jumbo v1, "screen"
 
     invoke-static {}, Landroid/os/Process;->myUid()I
@@ -10758,19 +10783,19 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2444
+    .line 2459
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-virtual {v0, v1}, Lcom/android/server/DeviceIdleController$MyHandler;->removeMessages(I)V
 
-    .line 2445
+    .line 2460
     iget-object v0, p0, Lcom/android/server/DeviceIdleController;->mHandler:Lcom/android/server/DeviceIdleController$MyHandler;
 
     const-wide/16 v2, 0x1388
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/DeviceIdleController$MyHandler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 2443
+    .line 2458
     return-void
 .end method
 
@@ -10786,7 +10811,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2477
+    .line 2492
     const/4 v2, 0x1
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -10795,12 +10820,12 @@
 
     invoke-interface {p1, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 2478
+    .line 2493
     const-string/jumbo v2, "config"
 
     invoke-interface {p1, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 2479
+    .line 2494
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -10813,7 +10838,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 2480
+    .line 2495
     iget-object v2, p0, Lcom/android/server/DeviceIdleController;->mPowerSaveWhitelistUserApps:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, v0}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -10822,37 +10847,37 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 2481
+    .line 2496
     .local v1, "name":Ljava/lang/String;
     const-string/jumbo v2, "wl"
 
     invoke-interface {p1, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 2482
+    .line 2497
     const-string/jumbo v2, "n"
 
     invoke-interface {p1, v3, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 2483
+    .line 2498
     const-string/jumbo v2, "wl"
 
     invoke-interface {p1, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 2479
+    .line 2494
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2485
+    .line 2500
     .end local v1    # "name":Ljava/lang/String;
     :cond_0
     const-string/jumbo v2, "config"
 
     invoke-interface {p1, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 2486
+    .line 2501
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 2476
+    .line 2491
     return-void
 .end method

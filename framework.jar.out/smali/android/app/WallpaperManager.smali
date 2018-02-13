@@ -199,7 +199,7 @@
     .line 1663
     .end local v0    # "cn":Landroid/content/ComponentName;
     :cond_0
-    const v2, 0x10400a2
+    const v2, #android:string@default_wallpaper_component#t
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -412,29 +412,23 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1619
     const/4 v6, 0x2
 
     if-ne p1, v6, :cond_0
 
-    .line 1624
     return-object v7
 
-    .line 1626
     :cond_0
-    const-string/jumbo v5, "ro.config.wallpaper"
+    const-string v5, "ro.config.wallpaper"
 
-    .line 1627
     .local v5, "whichProp":Ljava/lang/String;
-    const v0, 0x108025b
+    const v0, #android:drawable@default_wallpaper#t
 
-    .line 1629
     .local v0, "defaultResId":I
     invoke-static {v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1630
     .local v4, "path":Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1744,32 +1738,25 @@
 
     if-lez v6, :cond_2
 
-    .line 879
     return-object v0
 
-    .line 884
     .end local v1    # "cropAppList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :cond_2
     iget-object v6, p0, Landroid/app/WallpaperManager;->mContext:Landroid/content/Context;
 
-    .line 885
-    const v7, 0x10400d6
+    const v7, #android:string@config_wallpaperCropperPackage#t
 
-    .line 884
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 886
     .local v2, "cropperPackage":Ljava/lang/String;
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 887
     invoke-virtual {v4, v0, v8}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 889
     .restart local v1    # "cropAppList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -2816,10 +2803,8 @@
 
     :cond_flyme_0
 
-    .line 1058
     invoke-direct {p0, p2}, Landroid/app/WallpaperManager;->validateRect(Landroid/graphics/Rect;)V
 
-    .line 1059
     sget-object v0, Landroid/app/WallpaperManager;->sGlobals:Landroid/app/WallpaperManager$Globals;
 
     invoke-static {v0}, Landroid/app/WallpaperManager$Globals;->-get0(Landroid/app/WallpaperManager$Globals;)Landroid/app/IWallpaperManager;
@@ -3200,7 +3185,6 @@
 
     :cond_flyme_0
 
-    .line 932
     sget-object v1, Landroid/app/WallpaperManager;->sGlobals:Landroid/app/WallpaperManager$Globals;
 
     invoke-static {v1}, Landroid/app/WallpaperManager$Globals;->-get0(Landroid/app/WallpaperManager$Globals;)Landroid/app/IWallpaperManager;
@@ -3492,10 +3476,8 @@
 
     :cond_flyme_0
 
-    .line 1184
     invoke-direct {p0, p2}, Landroid/app/WallpaperManager;->validateRect(Landroid/graphics/Rect;)V
 
-    .line 1185
     sget-object v0, Landroid/app/WallpaperManager;->sGlobals:Landroid/app/WallpaperManager$Globals;
 
     invoke-static {v0}, Landroid/app/WallpaperManager$Globals;->-get0(Landroid/app/WallpaperManager$Globals;)Landroid/app/IWallpaperManager;
@@ -3719,7 +3701,6 @@
 
     :cond_flyme_0
 
-    .line 1442
     sget-object v1, Landroid/app/WallpaperManager;->sGlobals:Landroid/app/WallpaperManager$Globals;
 
     invoke-static {v1}, Landroid/app/WallpaperManager$Globals;->-get0(Landroid/app/WallpaperManager$Globals;)Landroid/app/IWallpaperManager;
@@ -4095,7 +4076,7 @@
     if-eqz v2, :cond_3
 
     :try_start_1
-    const-string/jumbo v2, "/custom/meizu/wallpaper/default_lock_wallpaper.png"
+    const-string v2, "/custom/meizu/wallpaper/default_lock_wallpaper.png"
 
     invoke-static {v2}, Landroid/app/WallpaperManager$FlymeInjector;->checkWallpaperPath(Ljava/lang/String;)Z
 
@@ -4114,7 +4095,7 @@
     .end local v1    # "is":Ljava/io/InputStream;
     new-instance v2, Ljava/io/File;
 
-    const-string/jumbo v3, "/custom/meizu/wallpaper/default_lock_wallpaper.png"
+    const-string v3, "/custom/meizu/wallpaper/default_lock_wallpaper.png"
 
     invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 

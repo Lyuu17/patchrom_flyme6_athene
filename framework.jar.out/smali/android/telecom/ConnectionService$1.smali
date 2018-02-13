@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/telecom/ConnectionService;
 
     .prologue
-    .line 126
+    .line 128
     iput-object p1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-direct {p0}, Lcom/android/internal/telecom/IConnectionService$Stub;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 154
+    .line 156
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 153
+    .line 155
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .param p1, "adapter"    # Lcom/android/internal/telecom/IConnectionServiceAdapter;
 
     .prologue
-    .line 129
+    .line 131
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -78,7 +78,44 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 128
+    .line 130
+    return-void
+.end method
+
+.method public addParticipantWithConference(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+    .param p1, "callId"    # Ljava/lang/String;
+    .param p2, "participant"    # Ljava/lang/String;
+
+    .prologue
+    .line 238
+    invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
+
+    move-result-object v0
+
+    .line 239
+    .local v0, "args":Lcom/android/internal/os/SomeArgs;
+    iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
+
+    .line 240
+    iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
+
+    .line 241
+    iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
+
+    invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    const/16 v2, 0x1e
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+
+    .line 237
     return-void
 .end method
 
@@ -87,7 +124,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 167
+    .line 169
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -102,7 +139,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 166
+    .line 168
     return-void
 .end method
 
@@ -112,19 +149,19 @@
     .param p2, "videoState"    # I
 
     .prologue
-    .line 159
+    .line 161
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 160
+    .line 162
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 161
+    .line 163
     iput p2, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 162
+    .line 164
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -139,7 +176,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 158
+    .line 160
     return-void
 .end method
 
@@ -149,19 +186,19 @@
     .param p2, "callId2"    # Ljava/lang/String;
 
     .prologue
-    .line 223
+    .line 225
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 224
+    .line 226
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 225
+    .line 227
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 226
+    .line 228
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -176,7 +213,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 222
+    .line 224
     return-void
 .end method
 
@@ -193,22 +230,22 @@
 
     const/4 v3, 0x0
 
-    .line 143
+    .line 145
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 144
+    .line 146
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 145
+    .line 147
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 146
+    .line 148
     iput-object p3, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
-    .line 147
+    .line 149
     if-eqz p4, :cond_0
 
     move v1, v2
@@ -216,13 +253,13 @@
     :goto_0
     iput v1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 148
+    .line 150
     if-eqz p5, :cond_1
 
     :goto_1
     iput v2, v0, Lcom/android/internal/os/SomeArgs;->argi2:I
 
-    .line 149
+    .line 151
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -237,19 +274,19 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 142
+    .line 144
     return-void
 
     :cond_0
     move v1, v3
 
-    .line 147
+    .line 149
     goto :goto_0
 
     :cond_1
     move v2, v3
 
-    .line 148
+    .line 150
     goto :goto_1
 .end method
 
@@ -258,7 +295,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 190
+    .line 192
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -273,7 +310,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 189
+    .line 191
     return-void
 .end method
 
@@ -282,7 +319,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 195
+    .line 197
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -297,7 +334,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 194
+    .line 196
     return-void
 .end method
 
@@ -306,7 +343,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 236
+    .line 246
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -321,7 +358,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 235
+    .line 245
     return-void
 .end method
 
@@ -331,19 +368,19 @@
     .param p2, "callAudioState"    # Landroid/telecom/CallAudioState;
 
     .prologue
-    .line 205
+    .line 207
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 206
+    .line 208
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 207
+    .line 209
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 208
+    .line 210
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -358,7 +395,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 204
+    .line 206
     return-void
 .end method
 
@@ -368,19 +405,19 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 268
+    .line 278
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 269
+    .line 279
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 270
+    .line 280
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 271
+    .line 281
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -395,7 +432,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 267
+    .line 277
     return-void
 .end method
 
@@ -405,16 +442,16 @@
     .param p2, "proceed"    # Z
 
     .prologue
-    .line 246
+    .line 256
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 247
+    .line 257
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 248
+    .line 258
     if-eqz p2, :cond_0
 
     const/4 v1, 0x1
@@ -422,7 +459,7 @@
     :goto_0
     iput v1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 249
+    .line 259
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -437,10 +474,10 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 245
+    .line 255
     return-void
 
-    .line 248
+    .line 258
     :cond_0
     const/4 v1, 0x0
 
@@ -453,7 +490,7 @@
     .param p2, "digit"    # C
 
     .prologue
-    .line 213
+    .line 215
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -470,7 +507,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 212
+    .line 214
     return-void
 .end method
 
@@ -479,7 +516,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 254
+    .line 264
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -494,7 +531,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 253
+    .line 263
     return-void
 .end method
 
@@ -503,7 +540,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 172
+    .line 174
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -518,7 +555,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 171
+    .line 173
     return-void
 .end method
 
@@ -528,19 +565,19 @@
     .param p2, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 177
+    .line 179
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 178
+    .line 180
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 179
+    .line 181
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 180
+    .line 182
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -555,7 +592,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 176
+    .line 178
     return-void
 .end method
 
@@ -564,7 +601,7 @@
     .param p1, "adapter"    # Lcom/android/internal/telecom/IConnectionServiceAdapter;
 
     .prologue
-    .line 133
+    .line 135
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -579,7 +616,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 132
+    .line 134
     return-void
 .end method
 
@@ -590,22 +627,22 @@
     .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 259
+    .line 269
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 260
+    .line 270
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 261
+    .line 271
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 262
+    .line 272
     iput-object p3, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
-    .line 263
+    .line 273
     iget-object v1, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v1}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -620,7 +657,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 258
+    .line 268
     return-void
 .end method
 
@@ -629,7 +666,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 185
+    .line 187
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -644,7 +681,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 184
+    .line 186
     return-void
 .end method
 
@@ -653,7 +690,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 231
+    .line 233
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -668,7 +705,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 230
+    .line 232
     return-void
 .end method
 
@@ -677,7 +714,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 218
+    .line 220
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -692,7 +729,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 217
+    .line 219
     return-void
 .end method
 
@@ -701,7 +738,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 241
+    .line 251
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -716,7 +753,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 240
+    .line 250
     return-void
 .end method
 
@@ -725,7 +762,7 @@
     .param p1, "callId"    # Ljava/lang/String;
 
     .prologue
-    .line 200
+    .line 202
     iget-object v0, p0, Landroid/telecom/ConnectionService$1;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->-get2(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -740,6 +777,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 199
+    .line 201
     return-void
 .end method

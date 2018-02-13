@@ -46,7 +46,7 @@
 
 .field static final TRANSACTION_getLastInputMethodSubtype:I = 0x4
 
-.field static final TRANSACTION_getShortcutInputMethodsAndSubtypes:I = 0x5
+.field static final TRANSACTION_getShortcutInputMethodsAndSubtypes_4:I = 0x5
 
 .field static final TRANSACTION_hideMySoftInput:I = 0x10
 

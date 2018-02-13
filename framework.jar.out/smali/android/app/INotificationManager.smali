@@ -114,6 +114,14 @@
     .end annotation
 .end method
 
+.method public abstract doLightsSupport(I)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract enqueueNotificationWithTag(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/app/Notification;[II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -211,6 +219,14 @@
 .end method
 
 .method public abstract getNotificationPolicy(Ljava/lang/String;)Landroid/app/NotificationManager$Policy;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getNotificationSoundTimeout(Ljava/lang/String;I)J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -316,7 +332,7 @@
     .end annotation
 .end method
 
-.method public abstract matchesCallFilter(Landroid/os/Bundle;)Z
+.method public abstract matchesCallFilter(Landroid/os/Bundle;)[Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -413,6 +429,14 @@
 .end method
 
 .method public abstract setNotificationPolicyAccessGranted(Ljava/lang/String;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setNotificationSoundTimeout(Ljava/lang/String;IJ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

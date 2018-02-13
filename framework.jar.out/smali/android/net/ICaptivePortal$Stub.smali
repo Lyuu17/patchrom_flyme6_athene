@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.ICaptivePortal"
 
-.field static final TRANSACTION_appResponse:I = 0x1
+.field static final TRANSACTION_appResponse_0:I = 0x1
 
 
 # direct methods
@@ -40,7 +40,7 @@
     .line 19
     const-string/jumbo v0, "android.net.ICaptivePortal"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/net/ICaptivePortal$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 17
     return-void

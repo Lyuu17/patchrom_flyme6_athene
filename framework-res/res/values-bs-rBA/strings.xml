@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Omogućava aplikaciji izmjenu postavki sinhroniziranja za račun. Naprimjer, ovim se može omogućiti sinhroniziranje aplikacije People sa računom.</string>
     <string name="permlab_readSyncStats">čitanje statistike sinhroniziranja</string>
     <string name="permdesc_readSyncStats">Omogućava aplikaciji čitanje statistike sinhroniziranja za račun, uključujući historiju događaja sinhroniziranja i količinu sinhroniziranih podataka.</string>
-    <string name="permlab_sdcardRead">čitanje sadržaja USB pohrane</string>
-    <string name="permdesc_sdcardRead">Omogućava aplikaciji čitanje sadržaja USB pohrane.</string>
-    <string name="permlab_sdcardWrite">mijenjanje ili brisanje sadržaja USB pohrane</string>
-    <string name="permdesc_sdcardWrite">Dozvoljava pisanje na USB pohranu.</string>
+    <string name="permlab_sdcardRead">čitanje sadržaja SD kartice</string>
+    <string name="permdesc_sdcardRead">Omogućava aplikaciji čitanje sadržaja SD kartice.</string>
+    <string name="permlab_sdcardWrite">mijenjanje ili brisanje sadržaja SD kartice</string>
+    <string name="permdesc_sdcardWrite">Dozvoljava aplikaciji pisanje na SD karticu.</string>
     <string name="permlab_use_sip">Uputi/primi SIP pozive</string>
     <string name="permdesc_use_sip">Dozvoljava aplikaciji upućivanje i prijem SIP poziva.</string>
     <string name="permlab_register_sim_subscription">registriraj nove telekom SMS veze</string>
@@ -1024,7 +1024,7 @@ za račun %s."</string>
     <string name="no_matches">Nema podudaranja</string>
     <string name="find_on_page">Pronađi na stranici</string>
     <string name="action_mode_done">Gotovo</string>
-    <string name="progress_erasing">Brisanje USB pohrane...</string>
+    <string name="progress_erasing">Brisanje SD kartice...</string>
     <string name="share">Podijelite</string>
     <string name="find">Pronađi</string>
     <string name="websearch">Internet pretraga</string>

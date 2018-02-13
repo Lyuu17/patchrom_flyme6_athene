@@ -17,10 +17,10 @@
     .param p1, "phone"    # [Lcom/android/internal/telephony/Phone;
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct {p0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;-><init>()V
 
-    .line 37
+    .line 38
     const-string/jumbo v0, "simphonebook"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -29,16 +29,16 @@
 
     if-nez v0, :cond_0
 
-    .line 38
+    .line 39
     const-string/jumbo v0, "simphonebook"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 40
+    .line 41
     :cond_0
     iput-object p1, p0, Lcom/android/internal/telephony/UiccPhoneBookController;->mPhone:[Lcom/android/internal/telephony/Phone;
 
-    .line 36
+    .line 37
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .locals 1
 
     .prologue
-    .line 151
+    .line 194
     invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getDefaultSubscription()I
 
     move-result v0
@@ -61,7 +61,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 136
+    .line 179
     invoke-static {}, Lcom/android/internal/telephony/SubscriptionController;->getInstance()Lcom/android/internal/telephony/SubscriptionController;
 
     move-result-object v3
@@ -70,7 +70,7 @@
 
     move-result v2
 
-    .line 138
+    .line 181
     .local v2, "phoneId":I
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/telephony/UiccPhoneBookController;->mPhone:[Lcom/android/internal/telephony/Phone;
@@ -86,11 +86,11 @@
 
     return-object v3
 
-    .line 143
+    .line 186
     :catch_0
     move-exception v0
 
-    .line 144
+    .line 187
     .local v0, "e":Ljava/lang/ArrayIndexOutOfBoundsException;
     const-string/jumbo v3, "UiccPhoneBookController"
 
@@ -128,18 +128,18 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 145
+    .line 188
     invoke-virtual {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;->printStackTrace()V
 
-    .line 146
+    .line 189
     return-object v6
 
-    .line 139
+    .line 182
     .end local v0    # "e":Ljava/lang/ArrayIndexOutOfBoundsException;
     :catch_1
     move-exception v1
 
-    .line 140
+    .line 183
     .local v1, "e":Ljava/lang/NullPointerException;
     const-string/jumbo v3, "UiccPhoneBookController"
 
@@ -177,15 +177,92 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 141
+    .line 184
     invoke-virtual {v1}, Ljava/lang/NullPointerException;->printStackTrace()V
 
-    .line 142
+    .line 185
     return-object v6
 .end method
 
 
 # virtual methods
+.method public getAdnRecordsCapacity()[I
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 133
+    invoke-direct {p0}, Lcom/android/internal/telephony/UiccPhoneBookController;->getDefaultSubscription()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/UiccPhoneBookController;->getAdnRecordsCapacityForSubscriber(I)[I
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getAdnRecordsCapacityForSubscriber(I)[I
+    .locals 5
+    .param p1, "subId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 140
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/UiccPhoneBookController;->getIccPhoneBookInterfaceManager(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    move-result-object v0
+
+    .line 141
+    .local v0, "iccPbkIntMgr":Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+    if-eqz v0, :cond_0
+
+    .line 142
+    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnRecordsCapacity()[I
+
+    move-result-object v1
+
+    return-object v1
+
+    .line 144
+    :cond_0
+    const-string/jumbo v1, "UiccPhoneBookController"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "getAdnRecordsCapacity iccPbkIntMgr is null for Subscription:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 146
+    return-object v4
+.end method
+
 .method public getAdnRecordsInEf(I)Ljava/util/List;
     .locals 1
     .param p1, "efid"    # I
@@ -206,7 +283,7 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 114
     invoke-direct {p0}, Lcom/android/internal/telephony/UiccPhoneBookController;->getDefaultSubscription()I
 
     move-result v0
@@ -241,23 +318,23 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 120
+    .line 121
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/UiccPhoneBookController;->getIccPhoneBookInterfaceManager(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move-result-object v0
 
-    .line 121
+    .line 122
     .local v0, "iccPbkIntMgr":Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 122
+    .line 123
     invoke-virtual {v0, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnRecordsInEf(I)Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 
-    .line 124
+    .line 125
     :cond_0
     const-string/jumbo v1, "UiccPhoneBookController"
 
@@ -281,7 +358,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 126
+    .line 127
     return-object v4
 .end method
 
@@ -295,7 +372,7 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 95
     invoke-direct {p0}, Lcom/android/internal/telephony/UiccPhoneBookController;->getDefaultSubscription()I
 
     move-result v0
@@ -320,23 +397,23 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 101
+    .line 102
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/UiccPhoneBookController;->getIccPhoneBookInterfaceManager(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move-result-object v0
 
-    .line 102
+    .line 103
     .local v0, "iccPbkIntMgr":Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 104
     invoke-virtual {v0, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnRecordsSize(I)[I
 
     move-result-object v1
 
     return-object v1
 
-    .line 105
+    .line 106
     :cond_0
     const-string/jumbo v1, "UiccPhoneBookController"
 
@@ -360,7 +437,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
+    .line 108
     return-object v4
 .end method
 
@@ -378,7 +455,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 73
     invoke-direct {p0}, Lcom/android/internal/telephony/UiccPhoneBookController;->getDefaultSubscription()I
 
     move-result v1
@@ -417,12 +494,12 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 82
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/UiccPhoneBookController;->getIccPhoneBookInterfaceManager(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move-result-object v0
 
-    .line 82
+    .line 83
     .local v0, "iccPbkIntMgr":Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
     if-eqz v0, :cond_0
 
@@ -436,14 +513,14 @@
 
     move-object v5, p6
 
-    .line 83
+    .line 84
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateAdnRecordsInEfByIndex(ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;)Z
 
     move-result v1
 
     return v1
 
-    .line 86
+    .line 87
     :cond_0
     const-string/jumbo v1, "UiccPhoneBookController"
 
@@ -467,7 +544,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
+    .line 89
     const/4 v1, 0x0
 
     return v1
@@ -488,7 +565,7 @@
     .end annotation
 
     .prologue
-    .line 47
+    .line 48
     invoke-direct {p0}, Lcom/android/internal/telephony/UiccPhoneBookController;->getDefaultSubscription()I
 
     move-result v1
@@ -530,12 +607,12 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 58
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/UiccPhoneBookController;->getIccPhoneBookInterfaceManager(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move-result-object v0
 
-    .line 58
+    .line 59
     .local v0, "iccPbkIntMgr":Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
     if-eqz v0, :cond_0
 
@@ -551,14 +628,14 @@
 
     move-object v6, p7
 
-    .line 59
+    .line 60
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateAdnRecordsInEfBySearch(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v1
 
     return v1
 
-    .line 62
+    .line 63
     :cond_0
     const-string/jumbo v1, "UiccPhoneBookController"
 
@@ -582,7 +659,91 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
+    .line 65
+    const/4 v1, 0x0
+
+    return v1
+.end method
+
+.method public updateAdnRecordsWithContentValuesInEfBySearch(ILandroid/content/ContentValues;Ljava/lang/String;)Z
+    .locals 1
+    .param p1, "efid"    # I
+    .param p2, "values"    # Landroid/content/ContentValues;
+    .param p3, "pin2"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 154
+    invoke-direct {p0}, Lcom/android/internal/telephony/UiccPhoneBookController;->getDefaultSubscription()I
+
+    move-result v0
+
+    .line 153
+    invoke-virtual {p0, v0, p1, p2, p3}, Lcom/android/internal/telephony/UiccPhoneBookController;->updateAdnRecordsWithContentValuesInEfBySearchUsingSubId(IILandroid/content/ContentValues;Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public updateAdnRecordsWithContentValuesInEfBySearchUsingSubId(IILandroid/content/ContentValues;Ljava/lang/String;)Z
+    .locals 4
+    .param p1, "subId"    # I
+    .param p2, "efid"    # I
+    .param p3, "values"    # Landroid/content/ContentValues;
+    .param p4, "pin2"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 162
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/UiccPhoneBookController;->getIccPhoneBookInterfaceManager(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    move-result-object v0
+
+    .line 163
+    .local v0, "iccPbkIntMgr":Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+    if-eqz v0, :cond_0
+
+    .line 164
+    invoke-virtual {v0, p2, p3, p4}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateAdnRecordsWithContentValuesInEfBySearch(ILandroid/content/ContentValues;Ljava/lang/String;)Z
+
+    move-result v1
+
+    return v1
+
+    .line 167
+    :cond_0
+    const-string/jumbo v1, "UiccPhoneBookController"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "updateAdnRecordsWithContentValuesInEfBySearchUsingSubId iccPbkIntMgr is null for Subscription:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 169
     const/4 v1, 0x0
 
     return v1

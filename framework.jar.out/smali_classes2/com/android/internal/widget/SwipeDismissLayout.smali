@@ -303,7 +303,7 @@
 
     .prologue
     .line 422
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/internal/widget/SwipeDismissLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -320,9 +320,7 @@
     if-eqz v1, :cond_0
 
     .line 425
-    nop
-
-    nop
+    check-cast v0, Landroid/app/Activity;
 
     .end local v0    # "context":Landroid/content/Context;
     return-object v0
@@ -330,9 +328,7 @@
     .line 427
     .restart local v0    # "context":Landroid/content/Context;
     :cond_0
-    nop
-
-    nop
+    check-cast v0, Landroid/content/ContextWrapper;
 
     .end local v0    # "context":Landroid/content/Context;
     invoke-virtual {v0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
@@ -492,7 +488,7 @@
     iget-object v0, p0, Lcom/android/internal/widget/SwipeDismissLayout;->mProgressListener:Lcom/android/internal/widget/SwipeDismissLayout$OnSwipeProgressChangedListener;
 
     .line 276
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/internal/widget/SwipeDismissLayout;->getWidth()I
 
     move-result v1
 
@@ -579,7 +575,7 @@
     if-nez v3, :cond_1
 
     .line 351
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/internal/widget/SwipeDismissLayout;->getWidth()I
 
     move-result v3
 
@@ -836,9 +832,7 @@
     move-object v7, p1
 
     .line 384
-    nop
-
-    nop
+    check-cast v7, Landroid/view/ViewGroup;
 
     .line 385
     .local v7, "group":Landroid/view/ViewGroup;
@@ -1063,7 +1057,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     .line 149
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/internal/widget/SwipeDismissLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1082,7 +1076,7 @@
 
     .prologue
     .line 154
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/internal/widget/SwipeDismissLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

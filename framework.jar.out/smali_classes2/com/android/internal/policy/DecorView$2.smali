@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/policy/DecorView;
 
     .prologue
-    .line 1635
+    .line 1637
     iput-object p1, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,36 +43,36 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1637
+    .line 1639
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-static {v0}, Lcom/android/internal/policy/DecorView;->-get3(Lcom/android/internal/policy/DecorView;)Landroid/widget/PopupWindow;
 
     move-result-object v0
 
-    .line 1638
+    .line 1640
     iget-object v1, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-static {v1}, Lcom/android/internal/policy/DecorView;->-get4(Lcom/android/internal/policy/DecorView;)Lcom/android/internal/widget/ActionBarContextView;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
+    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContextView;->getApplicationWindowToken()Landroid/os/IBinder;
 
     move-result-object v1
 
-    .line 1639
+    .line 1641
     const/16 v2, 0x37
 
-    .line 1637
+    .line 1639
     invoke-virtual {v0, v1, v2, v3, v3}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/os/IBinder;III)V
 
-    .line 1640
+    .line 1642
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-static {v0}, Lcom/android/internal/policy/DecorView;->-wrap1(Lcom/android/internal/policy/DecorView;)V
 
-    .line 1642
+    .line 1644
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/DecorView;->shouldAnimatePrimaryActionModeView()Z
@@ -81,7 +81,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1643
+    .line 1645
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     iget-object v1, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
@@ -104,7 +104,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/DecorView;->-set0(Lcom/android/internal/policy/DecorView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 1645
+    .line 1647
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-static {v0}, Lcom/android/internal/policy/DecorView;->-get1(Lcom/android/internal/policy/DecorView;)Landroid/animation/ObjectAnimator;
@@ -115,9 +115,9 @@
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/DecorView$2$1;-><init>(Lcom/android/internal/policy/DecorView$2;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1657
+    .line 1659
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-static {v0}, Lcom/android/internal/policy/DecorView;->-get1(Lcom/android/internal/policy/DecorView;)Landroid/animation/ObjectAnimator;
@@ -126,11 +126,11 @@
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 1636
+    .line 1638
     :goto_0
     return-void
 
-    .line 1659
+    .line 1661
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
@@ -140,20 +140,20 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarContextView;->setAlpha(F)V
 
-    .line 1660
+    .line 1662
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-static {v0}, Lcom/android/internal/policy/DecorView;->-get4(Lcom/android/internal/policy/DecorView;)Lcom/android/internal/widget/ActionBarContextView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Lcom/android/internal/widget/AbsActionBarView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Lcom/android/internal/widget/ActionBarContextView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 1643
+    .line 1645
     nop
 
     :array_0

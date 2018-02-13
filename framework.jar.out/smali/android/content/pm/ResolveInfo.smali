@@ -1543,7 +1543,7 @@
     const/4 v0, 0x0
 
     .local v0, "dr":Landroid/graphics/drawable/Drawable;
-    const-string/jumbo v1, "com.android.calendar"
+    const-string v1, "com.android.calendar"
 
     iget-object v2, p1, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
 

@@ -71,6 +71,14 @@
     .end annotation
 .end method
 
+.method public abstract getNfcAdapterVendorInterface(Ljava/lang/String;)Landroid/os/IBinder;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getNfcCardEmulationInterface()Landroid/nfc/INfcCardEmulation;
     .annotation system Ldalvik/annotation/Throws;
         value = {

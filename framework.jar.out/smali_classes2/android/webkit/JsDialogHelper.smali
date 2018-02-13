@@ -95,7 +95,7 @@
 
     const-string/jumbo v1, "default"
 
-    invoke-virtual {v0, v1}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -108,7 +108,7 @@
 
     const-string/jumbo v1, "message"
 
-    invoke-virtual {v0, v1}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -121,7 +121,7 @@
 
     const-string/jumbo v1, "type"
 
-    invoke-virtual {v0, v1}, Landroid/os/BaseBundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
@@ -134,7 +134,7 @@
 
     const-string/jumbo v1, "url"
 
-    invoke-virtual {v0, v1}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -394,7 +394,7 @@
     .line 92
     iget-object v7, p0, Landroid/webkit/JsDialogHelper;->mResult:Landroid/webkit/JsPromptResult;
 
-    invoke-virtual {v7}, Landroid/webkit/JsResult;->cancel()V
+    invoke-virtual {v7}, Landroid/webkit/JsPromptResult;->cancel()V
 
     .line 93
     return-void
@@ -550,7 +550,7 @@
     .local v2, "edit":Landroid/widget/EditText;
     iget-object v7, p0, Landroid/webkit/JsDialogHelper;->mDefaultValue:Ljava/lang/String;
 
-    invoke-virtual {v2, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 121
     new-instance v7, Landroid/webkit/JsDialogHelper$PositiveListener;

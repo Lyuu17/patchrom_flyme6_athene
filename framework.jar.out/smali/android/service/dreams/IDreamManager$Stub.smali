@@ -30,19 +30,21 @@
 
 .field static final TRANSACTION_dream:I = 0x1
 
-.field static final TRANSACTION_finishSelf:I = 0x8
+.field static final TRANSACTION_finishSelf:I = 0x9
 
 .field static final TRANSACTION_getDefaultDreamComponent:I = 0x5
 
 .field static final TRANSACTION_getDreamComponents:I = 0x4
 
+.field static final TRANSACTION_isDozing:I = 0x8
+
 .field static final TRANSACTION_isDreaming:I = 0x7
 
 .field static final TRANSACTION_setDreamComponents:I = 0x3
 
-.field static final TRANSACTION_startDozing:I = 0x9
+.field static final TRANSACTION_startDozing:I = 0xa
 
-.field static final TRANSACTION_stopDozing:I = 0xa
+.field static final TRANSACTION_stopDozing:I = 0xb
 
 .field static final TRANSACTION_testDream:I = 0x6
 
@@ -135,7 +137,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 147
+    .line 155
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v9
@@ -367,106 +369,139 @@
 
     invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 116
+    invoke-virtual {p0}, Landroid/service/dreams/IDreamManager$Stub;->isDozing()Z
+
+    move-result v7
+
     .line 117
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    .line 119
-    .local v1, "_arg0":Landroid/os/IBinder;
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v9
-
-    if-eqz v9, :cond_3
-
-    const/4 v4, 0x1
-
-    .line 120
-    .local v4, "_arg1":Z
-    :goto_3
-    invoke-virtual {p0, v1, v4}, Landroid/service/dreams/IDreamManager$Stub;->finishSelf(Landroid/os/IBinder;Z)V
-
-    .line 121
+    .restart local v7    # "_result":Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 122
+    .line 118
+    if-eqz v7, :cond_3
+
+    const/4 v9, 0x1
+
+    :goto_3
+    invoke-virtual {p3, v9}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 119
     const/4 v9, 0x1
 
     return v9
 
-    .line 119
-    .end local v4    # "_arg1":Z
+    .line 118
     :cond_3
-    const/4 v4, 0x0
+    const/4 v9, 0x0
 
     goto :goto_3
 
-    .line 126
-    .end local v1    # "_arg0":Landroid/os/IBinder;
+    .line 123
+    .end local v7    # "_result":Z
     :sswitch_9
     const-string/jumbo v9, "android.service.dreams.IDreamManager"
 
     invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 128
+    .line 125
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
-    .line 130
-    .restart local v1    # "_arg0":Landroid/os/IBinder;
+    .line 127
+    .local v1, "_arg0":Landroid/os/IBinder;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v3
+    move-result v9
 
-    .line 132
-    .local v3, "_arg1":I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    if-eqz v9, :cond_4
 
-    move-result v5
+    const/4 v4, 0x1
 
-    .line 133
-    .local v5, "_arg2":I
-    invoke-virtual {p0, v1, v3, v5}, Landroid/service/dreams/IDreamManager$Stub;->startDozing(Landroid/os/IBinder;II)V
+    .line 128
+    .local v4, "_arg1":Z
+    :goto_4
+    invoke-virtual {p0, v1, v4}, Landroid/service/dreams/IDreamManager$Stub;->finishSelf(Landroid/os/IBinder;Z)V
 
-    .line 134
+    .line 129
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 135
+    .line 130
     const/4 v9, 0x1
 
     return v9
 
-    .line 139
+    .line 127
+    .end local v4    # "_arg1":Z
+    :cond_4
+    const/4 v4, 0x0
+
+    goto :goto_4
+
+    .line 134
     .end local v1    # "_arg0":Landroid/os/IBinder;
-    .end local v3    # "_arg1":I
-    .end local v5    # "_arg2":I
     :sswitch_a
     const-string/jumbo v9, "android.service.dreams.IDreamManager"
 
     invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 141
+    .line 136
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
+    .line 138
+    .restart local v1    # "_arg0":Landroid/os/IBinder;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    .line 140
+    .local v3, "_arg1":I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 141
+    .local v5, "_arg2":I
+    invoke-virtual {p0, v1, v3, v5}, Landroid/service/dreams/IDreamManager$Stub;->startDozing(Landroid/os/IBinder;II)V
+
     .line 142
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 143
+    const/4 v9, 0x1
+
+    return v9
+
+    .line 147
+    .end local v1    # "_arg0":Landroid/os/IBinder;
+    .end local v3    # "_arg1":I
+    .end local v5    # "_arg2":I
+    :sswitch_b
+    const-string/jumbo v9, "android.service.dreams.IDreamManager"
+
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 149
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    .line 150
     .restart local v1    # "_arg0":Landroid/os/IBinder;
     invoke-virtual {p0, v1}, Landroid/service/dreams/IDreamManager$Stub;->stopDozing(Landroid/os/IBinder;)V
 
-    .line 143
+    .line 151
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 144
+    .line 152
     const/4 v9, 0x1
 
     return v9
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -479,6 +514,7 @@
         0x8 -> :sswitch_8
         0x9 -> :sswitch_9
         0xa -> :sswitch_a
+        0xb -> :sswitch_b
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

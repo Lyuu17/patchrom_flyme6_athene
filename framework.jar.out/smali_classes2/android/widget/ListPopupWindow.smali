@@ -152,7 +152,7 @@
     .line 179
     const/4 v0, 0x0
 
-    const v1, 0x10102ff
+    const v1, #android:attr@listPopupWindowStyle#t
 
     const/4 v2, 0x0
 
@@ -168,14 +168,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 190
-    const v0, 0x10102ff
+    const v0, #android:attr@listPopupWindowStyle#t
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/widget/ListPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 189
     return-void
 .end method
 
@@ -309,40 +307,33 @@
 
     iput v1, p0, Landroid/widget/ListPopupWindow;->mDropDownHorizontalOffset:I
 
-    .line 224
     invoke-virtual {v0, v4, v3}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/ListPopupWindow;->mDropDownVerticalOffset:I
 
-    .line 226
     iget v1, p0, Landroid/widget/ListPopupWindow;->mDropDownVerticalOffset:I
 
     if-eqz v1, :cond_0
 
-    .line 227
     iput-boolean v4, p0, Landroid/widget/ListPopupWindow;->mDropDownVerticalOffsetSet:Z
 
-    .line 229
     :cond_0
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 231
     new-instance v1, Landroid/widget/PopupWindow;
 
     invoke-direct {v1, p1, p2, p3, p4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     iput-object v1, p0, Landroid/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
-    .line 232
     iget-object v1, p0, Landroid/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/ListPopupWindow;->initFlymeExtraFields()V
 
-    .line 216
     return-void
 .end method
 
@@ -2257,12 +2248,10 @@
 
     :cond_flyme_0
 
-    .line 728
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 727
     return-void
 .end method
 
@@ -2502,12 +2491,10 @@
 
     const/4 v5, -0x1
 
-    .line 596
     invoke-direct {p0}, Landroid/widget/ListPopupWindow;->buildDropDown()I
 
     move-result v6
 
-    .line 598
     .local v6, "height":I
 
     invoke-direct {p0, v6}, Landroid/widget/ListPopupWindow;->initFlymeContentHeight(I)V
@@ -2516,7 +2503,6 @@
 
     move-result v8
 
-    .line 599
     .local v8, "noInputMethod":Z
     iget-object v3, p0, Landroid/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
@@ -3352,7 +3338,7 @@
 
     new-instance v2, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v3, "HeaderView cannot be null"
+    const-string v3, "HeaderView cannot be null"
 
     invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -3408,15 +3394,15 @@
     move-exception v0
 
     .local v0, "e":Ljava/lang/ClassCastException;
-    const-string/jumbo v2, "ListPopupWindow"
+    const-string v2, "ListPopupWindow"
 
-    const-string/jumbo v3, "You must supply a resource ID for a TextView"
+    const-string v3, "You must supply a resource ID for a TextView"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v3, "HeaderView requires the resource ID to be a TextView"
+    const-string v3, "HeaderView requires the resource ID to be a TextView"
 
     invoke-direct {v2, v3, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 

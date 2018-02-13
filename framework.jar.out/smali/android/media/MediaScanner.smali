@@ -6027,23 +6027,18 @@
     .line 1441
     .local v11, "file":Ljava/io/File;
     invoke-virtual {v11}, Ljava/io/File;->exists()Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 1455
-    invoke-direct {p0}, Landroid/media/MediaScanner;->releaseResources()V
+    invoke-virtual {v11}, Ljava/io/File;->canRead()Z
 
-    .line 1442
-    return-object v12
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     .line 1446
-    :cond_0
-    :try_start_1
     invoke-virtual {v11}, Ljava/io/File;->lastModified()J
 
     move-result-wide v2
@@ -6061,11 +6056,13 @@
     move-result-wide v6
 
     .line 1450
+    invoke-virtual {v11}, Ljava/io/File;->isDirectory()Z
+
+    move-result v8
+
     invoke-static {p1}, Landroid/media/MediaScanner;->isNoMediaPath(Ljava/lang/String;)Z
 
     move-result v10
-
-    const/4 v8, 0x0
 
     const/4 v9, 0x1
 
@@ -6075,9 +6072,9 @@
 
     .line 1449
     invoke-virtual/range {v1 .. v10}, Landroid/media/MediaScanner$MyMediaScannerClient;->doScanFile(Ljava/lang/String;Ljava/lang/String;JJZZZ)Landroid/net/Uri;
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v1
 
@@ -6087,22 +6084,29 @@
     .line 1449
     return-object v1
 
-    .line 1451
+    .line 1455
     .end local v4    # "lastModifiedSeconds":J
+    :cond_0
+    invoke-direct {p0}, Landroid/media/MediaScanner;->releaseResources()V
+
+    .line 1442
+    return-object v12
+
+    .line 1451
     .end local v11    # "file":Ljava/io/File;
     :catch_0
     move-exception v0
 
     .line 1452
     .local v0, "e":Landroid/os/RemoteException;
-    :try_start_2
+    :try_start_1
     const-string/jumbo v1, "MediaScanner"
 
     const-string/jumbo v2, "RemoteException in MediaScanner.scanFile()"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1455
     invoke-direct {p0}, Landroid/media/MediaScanner;->releaseResources()V

@@ -1,4 +1,4 @@
-.class Lcom/android/internal/telephony/PhoneSwitcher$PhoneState;
+.class public Lcom/android/internal/telephony/PhoneSwitcher$PhoneState;
 .super Ljava/lang/Object;
 .source "PhoneSwitcher.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0xc
     name = "PhoneState"
 .end annotation
 
@@ -21,32 +21,23 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method protected constructor <init>()V
     .locals 2
 
     .prologue
-    .line 331
+    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 332
+    .line 337
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/PhoneSwitcher$PhoneState;->active:Z
 
-    .line 333
+    .line 338
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/PhoneSwitcher$PhoneState;->lastRequested:J
 
-    .line 331
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/internal/telephony/PhoneSwitcher$PhoneState;)V
-    .locals 0
-
-    .prologue
-    invoke-direct {p0}, Lcom/android/internal/telephony/PhoneSwitcher$PhoneState;-><init>()V
-
+    .line 336
     return-void
 .end method

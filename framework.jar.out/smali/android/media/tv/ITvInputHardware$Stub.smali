@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.tv.ITvInputHardware"
 
-.field static final TRANSACTION_dispatchKeyEventToHdmi:I = 0x3
+.field static final TRANSACTION_dispatchKeyEventToHdmi_2:I = 0x3
 
-.field static final TRANSACTION_overrideAudioSink:I = 0x4
+.field static final TRANSACTION_overrideAudioSink_3:I = 0x4
 
 .field static final TRANSACTION_setStreamVolume:I = 0x2
 
@@ -46,7 +46,7 @@
     .line 22
     const-string/jumbo v0, "android.media.tv.ITvInputHardware"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/media/tv/ITvInputHardware$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 20
     return-void

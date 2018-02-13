@@ -32,24 +32,33 @@
     .line 58
     sparse-switch p1, :sswitch_data_0
 
-    .line 70
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/IccFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
+    .line 74
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/RuimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 68
+    .line 69
     :sswitch_0
     const-string/jumbo v0, "3F007F25"
+
+    return-object v0
+
+    .line 72
+    :sswitch_1
+    const-string/jumbo v0, "3F007F105F3C"
 
     return-object v0
 
     .line 58
     :sswitch_data_0
     .sparse-switch
+        0x4f20 -> :sswitch_1
+        0x4f21 -> :sswitch_1
         0x6f22 -> :sswitch_0
         0x6f28 -> :sswitch_0
+        0x6f30 -> :sswitch_0
         0x6f32 -> :sswitch_0
         0x6f3a -> :sswitch_0
         0x6f3c -> :sswitch_0
@@ -76,13 +85,13 @@
 
     move-object/from16 v0, p5
 
-    invoke-virtual {p0, v1, p1, v2, v0}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v1, p1, v2, v0}, Lcom/android/internal/telephony/uicc/RuimFileHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v11
 
     .line 51
     .local v11, "response":Landroid/os/Message;
-    iget-object v1, p0, Lcom/android/internal/telephony/uicc/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p0, Lcom/android/internal/telephony/uicc/RuimFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v2, 0x4f20
 
@@ -91,7 +100,7 @@
     move-result-object v4
 
     .line 53
-    iget-object v10, p0, Lcom/android/internal/telephony/uicc/IccFileHandler;->mAid:Ljava/lang/String;
+    iget-object v10, p0, Lcom/android/internal/telephony/uicc/RuimFileHandler;->mAid:Ljava/lang/String;
 
     .line 51
     const/16 v2, 0xc0
@@ -121,7 +130,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 75
+    .line 79
     const-string/jumbo v0, "RuimFH"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -144,7 +153,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 74
+    .line 78
     return-void
 .end method
 
@@ -153,7 +162,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 80
+    .line 84
     const-string/jumbo v0, "RuimFH"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -176,6 +185,6 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
+    .line 83
     return-void
 .end method

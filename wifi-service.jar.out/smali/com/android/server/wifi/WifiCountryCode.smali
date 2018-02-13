@@ -161,28 +161,28 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 195
+    .line 200
     iget-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mTelephonyCountryCode:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 196
+    .line 201
     iget-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mTelephonyCountryCode:Ljava/lang/String;
 
     return-object v0
 
-    .line 198
+    .line 203
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mDefaultCountryCode:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 199
+    .line 204
     iget-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mDefaultCountryCode:Ljava/lang/String;
 
     return-object v0
 
-    .line 202
+    .line 207
     :cond_1
     return-object v1
 .end method
@@ -192,7 +192,7 @@
     .param p1, "country"    # Ljava/lang/String;
 
     .prologue
-    .line 206
+    .line 211
     iget-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mWifiNative:Lcom/android/server/wifi/WifiNative;
 
     invoke-virtual {v0, p1}, Lcom/android/server/wifi/WifiNative;->setCountryCode(Ljava/lang/String;)Z
@@ -201,7 +201,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 207
+    .line 212
     const-string/jumbo v0, "WifiCountryCode"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -224,15 +224,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 208
+    .line 213
     iput-object p1, p0, Lcom/android/server/wifi/WifiCountryCode;->mCurrentCountryCode:Ljava/lang/String;
 
-    .line 209
+    .line 214
     const/4 v0, 0x1
 
     return v0
 
-    .line 211
+    .line 216
     :cond_0
     const-string/jumbo v0, "WifiCountryCode"
 
@@ -256,7 +256,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 217
     const/4 v0, 0x0
 
     return v0
@@ -266,7 +266,7 @@
     .locals 3
 
     .prologue
-    .line 179
+    .line 184
     iget-boolean v1, p0, Lcom/android/server/wifi/WifiCountryCode;->DBG:Z
 
     if-eqz v1, :cond_0
@@ -277,20 +277,20 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
+    .line 185
     :cond_0
     invoke-direct {p0}, Lcom/android/server/wifi/WifiCountryCode;->pickCountryCode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 186
+    .line 191
     .local v0, "country":Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 187
+    .line 192
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiCountryCode;->setCountryCodeNative(Ljava/lang/String;)Z
 
-    .line 178
+    .line 183
     :cond_1
     return-void
 .end method
@@ -379,7 +379,7 @@
     .prologue
     monitor-enter p0
 
-    .line 175
+    .line 180
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/wifi/WifiCountryCode;->pickCountryCode()Ljava/lang/String;
     :try_end_0
@@ -405,8 +405,39 @@
     .prologue
     monitor-enter p0
 
+    .line 169
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mCurrentCountryCode:Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized getCurrentCountryCode()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    monitor-enter p0
+
     .line 164
     :try_start_0
+    invoke-direct {p0}, Lcom/android/server/wifi/WifiCountryCode;->pickCountryCode()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mCurrentCountryCode:Ljava/lang/String;
+
+    .line 165
     iget-object v0, p0, Lcom/android/server/wifi/WifiCountryCode;->mCurrentCountryCode:Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0

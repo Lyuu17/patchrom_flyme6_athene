@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.view.IWindowFocusObserver"
 
-.field static final TRANSACTION_focusGained:I = 0x1
+.field static final TRANSACTION_focusGained_0:I = 0x1
 
-.field static final TRANSACTION_focusLost:I = 0x2
+.field static final TRANSACTION_focusLost_1:I = 0x2
 
 
 # direct methods
@@ -42,7 +42,7 @@
     .line 16
     const-string/jumbo v0, "android.view.IWindowFocusObserver"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/view/IWindowFocusObserver$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 14
     return-void

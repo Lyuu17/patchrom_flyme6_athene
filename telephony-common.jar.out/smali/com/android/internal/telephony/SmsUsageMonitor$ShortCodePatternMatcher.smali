@@ -35,10 +35,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 192
+    .line 193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 194
+    .line 195
     if-eqz p1, :cond_1
 
     invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -48,61 +48,61 @@
     :goto_0
     iput-object v0, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mShortCodePattern:Ljava/util/regex/Pattern;
 
-    .line 195
+    .line 196
     if-eqz p2, :cond_2
 
-    .line 196
+    .line 197
     invoke-static {p2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    .line 195
+    .line 196
     :goto_1
     iput-object v0, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mPremiumShortCodePattern:Ljava/util/regex/Pattern;
 
-    .line 197
+    .line 198
     if-eqz p3, :cond_3
 
-    .line 198
+    .line 199
     invoke-static {p3}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    .line 197
+    .line 198
     :goto_2
     iput-object v0, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mFreeShortCodePattern:Ljava/util/regex/Pattern;
 
-    .line 199
+    .line 200
     if-eqz p4, :cond_0
 
-    .line 200
+    .line 201
     invoke-static {p4}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v1
 
-    .line 199
+    .line 200
     :cond_0
     iput-object v1, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mStandardShortCodePattern:Ljava/util/regex/Pattern;
 
-    .line 193
+    .line 194
     return-void
 
     :cond_1
     move-object v0, v1
 
-    .line 194
+    .line 195
     goto :goto_0
 
     :cond_2
     move-object v0, v1
 
-    .line 196
+    .line 197
     goto :goto_1
 
     :cond_3
     move-object v0, v1
 
-    .line 198
+    .line 199
     goto :goto_2
 .end method
 
@@ -113,7 +113,7 @@
     .param p1, "phoneNumber"    # Ljava/lang/String;
 
     .prologue
-    .line 204
+    .line 205
     iget-object v0, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mFreeShortCodePattern:Ljava/util/regex/Pattern;
 
     if-eqz v0, :cond_0
@@ -130,12 +130,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 206
+    .line 207
     const/4 v0, 0x1
 
     return v0
 
-    .line 208
+    .line 209
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mStandardShortCodePattern:Ljava/util/regex/Pattern;
 
@@ -153,12 +153,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 210
+    .line 211
     const/4 v0, 0x2
 
     return v0
 
-    .line 212
+    .line 213
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mPremiumShortCodePattern:Ljava/util/regex/Pattern;
 
@@ -176,12 +176,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 214
+    .line 215
     const/4 v0, 0x4
 
     return v0
 
-    .line 216
+    .line 217
     :cond_2
     iget-object v0, p0, Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;->mShortCodePattern:Ljava/util/regex/Pattern;
 
@@ -199,12 +199,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 217
+    .line 218
     const/4 v0, 0x3
 
     return v0
 
-    .line 219
+    .line 220
     :cond_3
     const/4 v0, 0x0
 

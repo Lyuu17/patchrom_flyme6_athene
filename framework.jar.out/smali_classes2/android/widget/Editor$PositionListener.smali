@@ -172,14 +172,12 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->getLocationOnScreen([I)V
 
-    .line 2988
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->mTempCoords:[I
 
     aget v0, v0, v2
 
     iput v0, p0, Landroid/widget/Editor$PositionListener;->mPositionXOnScreen:I
 
-    .line 2989
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->mTempCoords:[I
 
     aget v0, v0, v1
@@ -188,13 +186,11 @@
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$PositionListener;->flymeUpdatemScrollHasChanged()V
 
-    .line 2978
     return-void
 
     :cond_1
     move v0, v2
 
-    .line 2981
     goto :goto_0
 .end method
 

@@ -4,7 +4,17 @@
 
 
 # static fields
+.field public static final ADD_PARTICIPANT_KEY:Ljava/lang/String; = "add_participant"
+
 .field public static final CURRENT_ACTIVE_PHONE:Ljava/lang/String; = "gsm.current.phone-type"
+
+.field public static final EXTRAS_IS_CONFERENCE_URI:Ljava/lang/String; = "isConferenceUri"
+
+.field public static final EXTRA_DIAL_CONFERENCE_URI:Ljava/lang/String; = "org.codeaurora.extra.DIAL_CONFERENCE_URI"
+
+.field public static final EXTRA_IS_CALL_PULL:Ljava/lang/String; = "org.codeaurora.extra.IS_CALL_PULL"
+
+.field public static final EXTRA_SKIP_SCHEMA_PARSING:Ljava/lang/String; = "org.codeaurora.extra.SKIP_SCHEMA_PARSING"
 
 .field public static final PROPERTY_BASEBAND_VERSION:Ljava/lang/String; = "gsm.version.baseband"
 
@@ -33,6 +43,8 @@
 .field public static final PROPERTY_LTE_ON_CDMA_DEVICE:Ljava/lang/String; = "telephony.lteOnCdmaDevice"
 
 .field public static final PROPERTY_LTE_ON_CDMA_PRODUCT_TYPE:Ljava/lang/String; = "telephony.lteOnCdmaProductType"
+
+.field public static final PROPERTY_LTE_ON_GSM_DEVICE:Ljava/lang/String; = "telephony.lteOnGsmDevice"
 
 .field public static final PROPERTY_MMS_TRANSACTION:Ljava/lang/String; = "mms.transaction"
 

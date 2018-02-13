@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/display/WifiDisplayController;
 
     .prologue
-    .line 890
+    .line 970
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$1;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 893
+    .line 973
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$1;->this$0:Lcom/android/server/display/WifiDisplayController;
 
-    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->-wrap14(Lcom/android/server/display/WifiDisplayController;)V
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->-wrap15(Lcom/android/server/display/WifiDisplayController;)V
 
-    .line 892
+    .line 972
     return-void
 .end method

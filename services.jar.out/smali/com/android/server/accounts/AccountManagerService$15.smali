@@ -42,7 +42,7 @@
     .param p13, "val$loginOptions"    # Landroid/os/Bundle;
 
     .prologue
-    .line 3279
+    .line 3297
     iput-object p2, p0, Lcom/android/server/accounts/AccountManagerService$15;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     move-object/from16 v0, p11
@@ -79,7 +79,7 @@
 
     invoke-direct/range {v1 .. v10}, Lcom/android/server/accounts/AccountManagerService$StartAccountSession;-><init>(Lcom/android/server/accounts/AccountManagerService;Lcom/android/server/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZLjava/lang/String;ZZZ)V
 
-    .line 3287
+    .line 3305
     return-void
 .end method
 
@@ -94,20 +94,20 @@
     .end annotation
 
     .prologue
-    .line 3290
+    .line 3308
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$15;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$account:Landroid/accounts/Account;
 
     iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$authTokenType:Ljava/lang/String;
 
-    .line 3291
+    .line 3309
     iget-object v3, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$loginOptions:Landroid/os/Bundle;
 
-    .line 3290
+    .line 3308
     invoke-interface {v0, p0, v1, v2, v3}, Landroid/accounts/IAccountAuthenticator;->startUpdateCredentialsSession(Landroid/accounts/IAccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 3289
+    .line 3307
     return-void
 .end method
 
@@ -116,17 +116,17 @@
     .param p1, "now"    # J
 
     .prologue
-    .line 3296
+    .line 3314
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$loginOptions:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    .line 3297
+    .line 3315
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$loginOptions:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
-    .line 3298
+    .line 3316
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -140,58 +140,58 @@
 
     move-result-object v0
 
-    .line 3299
+    .line 3317
     const-string/jumbo v1, ", startUpdateCredentialsSession"
 
-    .line 3298
+    .line 3316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 3300
+    .line 3318
     const-string/jumbo v1, ", "
 
-    .line 3298
+    .line 3316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 3300
+    .line 3318
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$account:Landroid/accounts/Account;
 
-    .line 3298
+    .line 3316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 3301
+    .line 3319
     const-string/jumbo v1, ", authTokenType "
 
-    .line 3298
+    .line 3316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 3301
+    .line 3319
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$authTokenType:Ljava/lang/String;
 
-    .line 3298
+    .line 3316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 3302
+    .line 3320
     const-string/jumbo v1, ", loginOptions "
 
-    .line 3298
+    .line 3316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 3302
+    .line 3320
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$15;->val$loginOptions:Landroid/os/Bundle;
 
-    .line 3298
+    .line 3316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0

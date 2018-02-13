@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onFirstFix:I = 0x3
 
-.field static final TRANSACTION_onGnssStarted:I = 0x1
+.field static final TRANSACTION_onGnssStarted_0:I = 0x1
 
 .field static final TRANSACTION_onGnssStopped:I = 0x2
 

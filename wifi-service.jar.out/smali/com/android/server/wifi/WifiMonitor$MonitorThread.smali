@@ -27,18 +27,18 @@
     .param p2, "localLog"    # Landroid/util/LocalLog;
 
     .prologue
-    .line 728
+    .line 746
     iput-object p1, p0, Lcom/android/server/wifi/WifiMonitor$MonitorThread;->this$0:Lcom/android/server/wifi/WifiMonitor;
 
-    .line 729
+    .line 747
     const-string/jumbo v0, "WifiMonitor"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 730
+    .line 748
     iput-object p2, p0, Lcom/android/server/wifi/WifiMonitor$MonitorThread;->mLocalLog:Landroid/util/LocalLog;
 
-    .line 728
+    .line 746
     return-void
 .end method
 
@@ -48,14 +48,14 @@
     .locals 4
 
     .prologue
-    .line 734
+    .line 752
     invoke-static {}, Lcom/android/server/wifi/WifiMonitor;->-get0()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 735
+    .line 753
     const-string/jumbo v1, "WifiMonitor"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -84,7 +84,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 739
+    .line 757
     :cond_0
     iget-object v1, p0, Lcom/android/server/wifi/WifiMonitor$MonitorThread;->this$0:Lcom/android/server/wifi/WifiMonitor;
 
@@ -94,7 +94,7 @@
 
     if-nez v1, :cond_2
 
-    .line 740
+    .line 758
     invoke-static {}, Lcom/android/server/wifi/WifiMonitor;->-get0()Z
 
     move-result v1
@@ -107,12 +107,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 733
+    .line 751
     :cond_1
     :goto_0
     return-void
 
-    .line 743
+    .line 761
     :cond_2
     iget-object v1, p0, Lcom/android/server/wifi/WifiMonitor$MonitorThread;->this$0:Lcom/android/server/wifi/WifiMonitor;
 
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    .line 746
+    .line 764
     .local v0, "eventStr":Ljava/lang/String;
     const-string/jumbo v1, "BSS-ADDED"
 
@@ -142,7 +142,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 751
+    .line 769
     :cond_3
     :goto_1
     iget-object v1, p0, Lcom/android/server/wifi/WifiMonitor$MonitorThread;->this$0:Lcom/android/server/wifi/WifiMonitor;
@@ -153,7 +153,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 752
+    .line 770
     invoke-static {}, Lcom/android/server/wifi/WifiMonitor;->-get0()Z
 
     move-result v1
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 747
+    .line 765
     :cond_4
     invoke-static {}, Lcom/android/server/wifi/WifiMonitor;->-get0()Z
 
@@ -204,7 +204,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 748
+    .line 766
     :cond_5
     iget-object v1, p0, Lcom/android/server/wifi/WifiMonitor$MonitorThread;->mLocalLog:Landroid/util/LocalLog;
 

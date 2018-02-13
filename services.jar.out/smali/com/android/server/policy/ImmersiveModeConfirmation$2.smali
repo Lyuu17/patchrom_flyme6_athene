@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     .prologue
-    .line 392
+    .line 393
     iput-object p1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$2;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     invoke-direct {p0}, Landroid/service/vr/IVrStateCallbacks$Stub;-><init>()V
@@ -44,19 +44,19 @@
     .end annotation
 
     .prologue
-    .line 395
+    .line 396
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$2;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     iput-boolean p1, v0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mVrModeEnabled:Z
 
-    .line 396
+    .line 397
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$2;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     iget-boolean v0, v0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mVrModeEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 397
+    .line 398
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$2;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->-get1(Lcom/android/server/policy/ImmersiveModeConfirmation;)Lcom/android/server/policy/ImmersiveModeConfirmation$H;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->removeMessages(I)V
 
-    .line 398
+    .line 399
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$2;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->-get1(Lcom/android/server/policy/ImmersiveModeConfirmation;)Lcom/android/server/policy/ImmersiveModeConfirmation$H;
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->sendEmptyMessage(I)Z
 
-    .line 394
+    .line 395
     :cond_0
     return-void
 .end method

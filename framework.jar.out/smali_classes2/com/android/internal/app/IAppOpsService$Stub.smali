@@ -38,7 +38,11 @@
 
 .field static final TRANSACTION_getPackagesForOps:I = 0xb
 
+.field static final TRANSACTION_getPrivacyGuardSettingForPackage:I = 0x16
+
 .field static final TRANSACTION_getToken:I = 0x7
+
+.field static final TRANSACTION_isControlAllowed:I = 0x15
 
 .field static final TRANSACTION_noteOperation:I = 0x2
 
@@ -50,9 +54,13 @@
 
 .field static final TRANSACTION_resetAllModes:I = 0xf
 
+.field static final TRANSACTION_resetCounters:I = 0x18
+
 .field static final TRANSACTION_setAudioRestriction:I = 0x11
 
 .field static final TRANSACTION_setMode:I = 0xe
+
+.field static final TRANSACTION_setPrivacyGuardSettingForPackage:I = 0x17
 
 .field static final TRANSACTION_setUidMode:I = 0xd
 
@@ -140,7 +148,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 29
+    .locals 31
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -155,7 +163,7 @@
     .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 315
+    .line 359
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -208,16 +216,16 @@
 
     invoke-virtual {v0, v4, v5, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->checkOperation(IILjava/lang/String;)I
 
-    move-result v26
+    move-result v27
 
     .line 55
-    .local v26, "_result":I
+    .local v27, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 56
     move-object/from16 v0, p3
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -230,7 +238,7 @@
     .end local v4    # "_arg0":I
     .end local v5    # "_arg1":I
     .end local v23    # "_arg2":Ljava/lang/String;
-    .end local v26    # "_result":I
+    .end local v27    # "_result":I
     :sswitch_2
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -263,16 +271,16 @@
 
     invoke-virtual {v0, v4, v5, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->noteOperation(IILjava/lang/String;)I
 
-    move-result v26
+    move-result v27
 
     .line 69
-    .restart local v26    # "_result":I
+    .restart local v27    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 70
     move-object/from16 v0, p3
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -285,7 +293,7 @@
     .end local v4    # "_arg0":I
     .end local v5    # "_arg1":I
     .end local v23    # "_arg2":Ljava/lang/String;
-    .end local v26    # "_result":I
+    .end local v27    # "_result":I
     :sswitch_3
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -314,28 +322,28 @@
     .local v6, "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v26
 
     .line 84
-    .local v25, "_arg3":Ljava/lang/String;
+    .local v26, "_arg3":Ljava/lang/String;
     move-object/from16 v0, p0
 
     move-object/from16 v1, v16
 
-    move-object/from16 v2, v25
+    move-object/from16 v2, v26
 
     invoke-virtual {v0, v1, v5, v6, v2}, Lcom/android/internal/app/IAppOpsService$Stub;->startOperation(Landroid/os/IBinder;IILjava/lang/String;)I
 
-    move-result v26
+    move-result v27
 
     .line 85
-    .restart local v26    # "_result":I
+    .restart local v27    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 86
     move-object/from16 v0, p3
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -348,8 +356,8 @@
     .end local v5    # "_arg1":I
     .end local v6    # "_arg2":I
     .end local v16    # "_arg0":Landroid/os/IBinder;
-    .end local v25    # "_arg3":Ljava/lang/String;
-    .end local v26    # "_result":I
+    .end local v26    # "_arg3":Ljava/lang/String;
+    .end local v27    # "_result":I
     :sswitch_4
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -378,15 +386,15 @@
     .restart local v6    # "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v26
 
     .line 100
-    .restart local v25    # "_arg3":Ljava/lang/String;
+    .restart local v26    # "_arg3":Ljava/lang/String;
     move-object/from16 v0, p0
 
     move-object/from16 v1, v16
 
-    move-object/from16 v2, v25
+    move-object/from16 v2, v26
 
     invoke-virtual {v0, v1, v5, v6, v2}, Lcom/android/internal/app/IAppOpsService$Stub;->finishOperation(Landroid/os/IBinder;IILjava/lang/String;)V
 
@@ -402,7 +410,7 @@
     .end local v5    # "_arg1":I
     .end local v6    # "_arg2":I
     .end local v16    # "_arg0":Landroid/os/IBinder;
-    .end local v25    # "_arg3":Ljava/lang/String;
+    .end local v26    # "_arg3":Ljava/lang/String;
     :sswitch_5
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -507,16 +515,16 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->getToken(Landroid/os/IBinder;)Landroid/os/IBinder;
 
-    move-result-object v27
+    move-result-object v28
 
     .line 132
-    .local v27, "_result":Landroid/os/IBinder;
+    .local v28, "_result":Landroid/os/IBinder;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 133
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
@@ -527,7 +535,7 @@
 
     .line 138
     .end local v16    # "_arg0":Landroid/os/IBinder;
-    .end local v27    # "_result":Landroid/os/IBinder;
+    .end local v28    # "_result":Landroid/os/IBinder;
     :sswitch_8
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -548,16 +556,16 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->permissionToOpCode(Ljava/lang/String;)I
 
-    move-result v26
+    move-result v27
 
     .line 142
-    .restart local v26    # "_result":I
+    .restart local v27    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 143
     move-object/from16 v0, p3
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -568,7 +576,7 @@
 
     .line 148
     .end local v18    # "_arg0":Ljava/lang/String;
-    .end local v26    # "_result":I
+    .end local v27    # "_result":I
     :sswitch_9
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -597,28 +605,28 @@
     .restart local v6    # "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v26
 
     .line 157
-    .restart local v25    # "_arg3":Ljava/lang/String;
+    .restart local v26    # "_arg3":Ljava/lang/String;
     move-object/from16 v0, p0
 
     move-object/from16 v1, v21
 
-    move-object/from16 v2, v25
+    move-object/from16 v2, v26
 
     invoke-virtual {v0, v4, v1, v6, v2}, Lcom/android/internal/app/IAppOpsService$Stub;->noteProxyOperation(ILjava/lang/String;ILjava/lang/String;)I
 
-    move-result v26
+    move-result v27
 
     .line 158
-    .restart local v26    # "_result":I
+    .restart local v27    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 159
     move-object/from16 v0, p3
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -631,8 +639,8 @@
     .end local v4    # "_arg0":I
     .end local v6    # "_arg2":I
     .end local v21    # "_arg1":Ljava/lang/String;
-    .end local v25    # "_arg3":Ljava/lang/String;
-    .end local v26    # "_result":I
+    .end local v26    # "_arg3":Ljava/lang/String;
+    .end local v27    # "_result":I
     :sswitch_a
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -659,16 +667,16 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->checkPackage(ILjava/lang/String;)I
 
-    move-result v26
+    move-result v27
 
     .line 170
-    .restart local v26    # "_result":I
+    .restart local v27    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 171
     move-object/from16 v0, p3
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -680,7 +688,7 @@
     .line 176
     .end local v4    # "_arg0":I
     .end local v21    # "_arg1":Ljava/lang/String;
-    .end local v26    # "_result":I
+    .end local v27    # "_result":I
     :sswitch_b
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -701,16 +709,16 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->getPackagesForOps([I)Ljava/util/List;
 
-    move-result-object v28
+    move-result-object v29
 
     .line 180
-    .local v28, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
+    .local v29, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 181
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
@@ -721,7 +729,7 @@
 
     .line 186
     .end local v19    # "_arg0":[I
-    .end local v28    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
+    .end local v29    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
     :sswitch_c
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -744,28 +752,28 @@
     .restart local v21    # "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createIntArray()[I
 
-    move-result-object v24
+    move-result-object v25
 
     .line 193
-    .local v24, "_arg2":[I
+    .local v25, "_arg2":[I
     move-object/from16 v0, p0
 
     move-object/from16 v1, v21
 
-    move-object/from16 v2, v24
+    move-object/from16 v2, v25
 
     invoke-virtual {v0, v4, v1, v2}, Lcom/android/internal/app/IAppOpsService$Stub;->getOpsForPackage(ILjava/lang/String;[I)Ljava/util/List;
 
-    move-result-object v28
+    move-result-object v29
 
     .line 194
-    .restart local v28    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
+    .restart local v29    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 195
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
@@ -777,8 +785,8 @@
     .line 200
     .end local v4    # "_arg0":I
     .end local v21    # "_arg1":Ljava/lang/String;
-    .end local v24    # "_arg2":[I
-    .end local v28    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
+    .end local v25    # "_arg2":[I
+    .end local v29    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/app/AppOpsManager$PackageOps;>;"
     :sswitch_d
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -937,26 +945,26 @@
     .restart local v6    # "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v26
 
     .line 248
-    .restart local v25    # "_arg3":Ljava/lang/String;
+    .restart local v26    # "_arg3":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v25
+    move-object/from16 v1, v26
 
     invoke-virtual {v0, v4, v5, v6, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->checkAudioOperation(IIILjava/lang/String;)I
 
-    move-result v26
+    move-result v27
 
     .line 249
-    .restart local v26    # "_result":I
+    .restart local v27    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 250
     move-object/from16 v0, p3
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -969,8 +977,8 @@
     .end local v4    # "_arg0":I
     .end local v5    # "_arg1":I
     .end local v6    # "_arg2":I
-    .end local v25    # "_arg3":Ljava/lang/String;
-    .end local v26    # "_result":I
+    .end local v26    # "_arg3":Ljava/lang/String;
+    .end local v27    # "_result":I
     :sswitch_11
     const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
 
@@ -1192,7 +1200,200 @@
 
     return v3
 
+    .line 316
+    .end local v4    # "_arg0":I
+    :sswitch_15
+    const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 318
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 320
+    .restart local v4    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v21
+
+    .line 321
+    .restart local v21    # "_arg1":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v4, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->isControlAllowed(ILjava/lang/String;)Z
+
+    move-result v30
+
+    .line 322
+    .local v30, "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 323
+    if-eqz v30, :cond_2
+
+    const/4 v3, 0x1
+
+    :goto_2
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 324
+    const/4 v3, 0x1
+
+    return v3
+
+    .line 323
+    :cond_2
+    const/4 v3, 0x0
+
+    goto :goto_2
+
+    .line 328
+    .end local v4    # "_arg0":I
+    .end local v21    # "_arg1":Ljava/lang/String;
+    .end local v30    # "_result":Z
+    :sswitch_16
+    const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 330
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 332
+    .restart local v4    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v21
+
+    .line 333
+    .restart local v21    # "_arg1":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v4, v1}, Lcom/android/internal/app/IAppOpsService$Stub;->getPrivacyGuardSettingForPackage(ILjava/lang/String;)Z
+
+    move-result v30
+
+    .line 334
+    .restart local v30    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 335
+    if-eqz v30, :cond_3
+
+    const/4 v3, 0x1
+
+    :goto_3
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 336
+    const/4 v3, 0x1
+
+    return v3
+
+    .line 335
+    :cond_3
+    const/4 v3, 0x0
+
+    goto :goto_3
+
+    .line 340
+    .end local v4    # "_arg0":I
+    .end local v21    # "_arg1":Ljava/lang/String;
+    .end local v30    # "_result":Z
+    :sswitch_17
+    const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 342
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 344
+    .restart local v4    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v21
+
+    .line 346
+    .restart local v21    # "_arg1":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    const/16 v24, 0x1
+
+    .line 347
+    .local v24, "_arg2":Z
+    :goto_4
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move/from16 v2, v24
+
+    invoke-virtual {v0, v4, v1, v2}, Lcom/android/internal/app/IAppOpsService$Stub;->setPrivacyGuardSettingForPackage(ILjava/lang/String;Z)V
+
+    .line 348
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 349
+    const/4 v3, 0x1
+
+    return v3
+
+    .line 346
+    .end local v24    # "_arg2":Z
+    :cond_4
+    const/16 v24, 0x0
+
+    goto :goto_4
+
+    .line 353
+    .end local v4    # "_arg0":I
+    .end local v21    # "_arg1":Ljava/lang/String;
+    :sswitch_18
+    const-string/jumbo v3, "com.android.internal.app.IAppOpsService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 354
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/IAppOpsService$Stub;->resetCounters()V
+
+    .line 355
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 356
+    const/4 v3, 0x1
+
+    return v3
+
     .line 38
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -1215,6 +1416,10 @@
         0x12 -> :sswitch_12
         0x13 -> :sswitch_13
         0x14 -> :sswitch_14
+        0x15 -> :sswitch_15
+        0x16 -> :sswitch_16
+        0x17 -> :sswitch_17
+        0x18 -> :sswitch_18
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

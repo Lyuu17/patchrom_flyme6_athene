@@ -337,23 +337,20 @@
 
     if-eqz v8, :cond_1
 
-    .line 302
     invoke-direct {p0, p1, v6, v9}, Landroid/content/ContentProvider$Transport;->hook_enforceReadPermission(Ljava/lang/String;Landroid/net/Uri;Landroid/os/IBinder;)I
 
     move-result v8
 
     if-eqz v8, :cond_1
 
-    .line 304
     new-instance v8, Landroid/content/OperationApplicationException;
 
-    const-string/jumbo v9, "App op not allowed"
+    const-string v9, "App op not allowed"
 
     invoke-direct {v8, v9, v10}, Landroid/content/OperationApplicationException;-><init>(Ljava/lang/String;I)V
 
     throw v8
 
-    .line 307
     :cond_1
     invoke-virtual {v2}, Landroid/content/ContentProviderOperation;->isWriteOperation()Z
 
@@ -361,29 +358,25 @@
 
     if-eqz v8, :cond_2
 
-    .line 308
     invoke-direct {p0, p1, v6, v2}, Landroid/content/ContentProvider$Transport;->hook_enforceWritePermission_isWrite(Ljava/lang/String;Landroid/net/Uri;Landroid/content/ContentProviderOperation;)I
 
     move-result v8
 
     if-eqz v8, :cond_2
 
-    .line 310
     new-instance v8, Landroid/content/OperationApplicationException;
 
-    const-string/jumbo v9, "App op not allowed"
+    const-string v9, "App op not allowed"
 
     invoke-direct {v8, v9, v10}, Landroid/content/OperationApplicationException;-><init>(Ljava/lang/String;I)V
 
     throw v8
 
-    .line 291
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 314
     .end local v2    # "operation":Landroid/content/ContentProviderOperation;
     .end local v6    # "uri":Landroid/net/Uri;
     :cond_3

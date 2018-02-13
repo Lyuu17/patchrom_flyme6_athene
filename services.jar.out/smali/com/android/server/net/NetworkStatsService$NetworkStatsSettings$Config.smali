@@ -30,18 +30,18 @@
     .param p5, "deleteAgeMillis"    # J
 
     .prologue
-    .line 201
+    .line 205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 202
+    .line 206
     iput-wide p1, p0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;->bucketDuration:J
 
-    .line 203
+    .line 207
     iput-wide p3, p0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;->rotateAgeMillis:J
 
-    .line 204
+    .line 208
     iput-wide p5, p0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;->deleteAgeMillis:J
 
-    .line 201
+    .line 205
     return-void
 .end method

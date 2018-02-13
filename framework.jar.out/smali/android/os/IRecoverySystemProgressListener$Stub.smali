@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.IRecoverySystemProgressListener"
 
-.field static final TRANSACTION_onProgress:I = 0x1
+.field static final TRANSACTION_onProgress_0:I = 0x1
 
 
 # direct methods
@@ -40,7 +40,7 @@
     .line 16
     const-string/jumbo v0, "android.os.IRecoverySystemProgressListener"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/IRecoverySystemProgressListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 14
     return-void

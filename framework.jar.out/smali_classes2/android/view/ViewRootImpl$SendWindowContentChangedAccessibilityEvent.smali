@@ -33,17 +33,17 @@
     .param p1, "this$0"    # Landroid/view/ViewRootImpl;
 
     .prologue
-    .line 7465
+    .line 7479
     iput-object p1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7466
+    .line 7480
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mChangeTypes:I
 
-    .line 7465
+    .line 7479
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .locals 4
 
     .prologue
-    .line 7474
+    .line 7488
     iget-object v1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mContext:Landroid/content/Context;
@@ -78,55 +78,55 @@
 
     if-eqz v1, :cond_0
 
-    .line 7475
+    .line 7489
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mLastEventTimeMillis:J
 
-    .line 7476
+    .line 7490
     invoke-static {}, Landroid/view/accessibility/AccessibilityEvent;->obtain()Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v0
 
-    .line 7477
+    .line 7491
     .local v0, "event":Landroid/view/accessibility/AccessibilityEvent;
     const/16 v1, 0x800
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityEvent;->setEventType(I)V
 
-    .line 7478
+    .line 7492
     iget v1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mChangeTypes:I
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityEvent;->setContentChangeTypes(I)V
 
-    .line 7479
+    .line 7493
     iget-object v1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 7484
+    .line 7498
     .end local v0    # "event":Landroid/view/accessibility/AccessibilityEvent;
     :goto_0
     iget-object v1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->resetSubtreeAccessibilityStateChanged()V
 
-    .line 7485
+    .line 7499
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
-    .line 7486
+    .line 7500
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mChangeTypes:I
 
-    .line 7472
+    .line 7486
     return-void
 
-    .line 7481
+    .line 7495
     :cond_0
     const-wide/16 v2, 0x0
 
@@ -141,12 +141,12 @@
     .param p2, "changeType"    # I
 
     .prologue
-    .line 7490
+    .line 7504
     iget-object v3, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
     if-eqz v3, :cond_1
 
-    .line 7493
+    .line 7507
     iget-object v3, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v6, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
@@ -155,7 +155,7 @@
 
     move-result-object v2
 
-    .line 7494
+    .line 7508
     .local v2, "predecessor":Landroid/view/View;
     if-eqz v2, :cond_0
 
@@ -163,32 +163,32 @@
     :goto_0
     iput-object v2, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
-    .line 7495
+    .line 7509
     iget v3, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mChangeTypes:I
 
     or-int/2addr v3, p2
 
     iput v3, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mChangeTypes:I
 
-    .line 7496
+    .line 7510
     return-void
 
     .restart local v2    # "predecessor":Landroid/view/View;
     :cond_0
     move-object v2, p1
 
-    .line 7494
+    .line 7508
     goto :goto_0
 
-    .line 7498
+    .line 7512
     .end local v2    # "predecessor":Landroid/view/View;
     :cond_1
     iput-object p1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
-    .line 7499
+    .line 7513
     iput p2, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mChangeTypes:I
 
-    .line 7500
+    .line 7514
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v6
@@ -197,31 +197,31 @@
 
     sub-long v4, v6, v8
 
-    .line 7502
+    .line 7516
     .local v4, "timeSinceLastMillis":J
     invoke-static {}, Landroid/view/ViewConfiguration;->getSendRecurringAccessibilityEventsInterval()J
 
     move-result-wide v0
 
-    .line 7503
+    .line 7517
     .local v0, "minEventIntevalMillis":J
     cmp-long v3, v4, v0
 
     if-ltz v3, :cond_2
 
-    .line 7504
+    .line 7518
     iget-object v3, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
     invoke-virtual {v3, p0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 7505
+    .line 7519
     invoke-virtual {p0}, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->run()V
 
-    .line 7489
+    .line 7503
     :goto_1
     return-void
 
-    .line 7507
+    .line 7521
     :cond_2
     iget-object v3, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 

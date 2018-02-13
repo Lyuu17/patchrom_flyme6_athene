@@ -78,9 +78,7 @@
     move-object v0, p1
 
     .line 53
-    nop
-
-    nop
+    check-cast v0, Landroid/security/net/config/Domain;
 
     .line 54
     .local v0, "otherDomain":Landroid/security/net/config/Domain;

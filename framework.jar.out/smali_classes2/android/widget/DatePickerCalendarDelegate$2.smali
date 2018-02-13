@@ -120,7 +120,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/view/View;->requestFocus()Z
+    invoke-virtual {v3}, Landroid/widget/TextView;->requestFocus()Z
 
     .line 254
     return-void

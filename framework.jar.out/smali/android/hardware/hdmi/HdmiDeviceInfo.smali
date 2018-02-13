@@ -466,9 +466,7 @@
     move-object v0, p1
 
     .line 501
-    nop
-
-    nop
+    check-cast v0, Landroid/hardware/hdmi/HdmiDeviceInfo;
 
     .line 502
     .local v0, "other":Landroid/hardware/hdmi/HdmiDeviceInfo;

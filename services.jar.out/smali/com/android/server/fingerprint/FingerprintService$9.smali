@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/fingerprint/FingerprintService;
 
     .prologue
-    .line 1106
+    .line 1113
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$9;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Landroid/app/SynchronousUserSwitchObserver;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "newProfileId"    # I
 
     .prologue
-    .line 1117
+    .line 1124
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .end annotation
 
     .prologue
-    .line 1113
+    .line 1120
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .end annotation
 
     .prologue
-    .line 1109
+    .line 1116
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$9;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get7(Lcom/android/server/fingerprint/FingerprintService;)Landroid/os/Handler;
@@ -84,6 +84,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1108
+    .line 1115
     return-void
 .end method

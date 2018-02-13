@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
     .prologue
-    .line 3283
+    .line 3284
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +39,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 3287
+    .line 3288
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 3286
+    .line 3287
     :goto_0
     return-void
 
-    .line 3289
+    .line 3290
     :pswitch_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -56,7 +56,7 @@
 
     invoke-virtual {p0, v3, v2}, Lcom/android/server/pm/UserManagerService$MainHandler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 3290
+    .line 3291
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v2}, Lcom/android/server/pm/UserManagerService;->-get5(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -65,7 +65,7 @@
 
     monitor-enter v3
 
-    .line 3291
+    .line 3292
     :try_start_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -75,7 +75,7 @@
 
     iget v1, v2, Landroid/content/pm/UserInfo;->id:I
 
-    .line 3292
+    .line 3293
     .local v1, "userId":I
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -83,11 +83,11 @@
 
     move-result-object v0
 
-    .line 3293
+    .line 3294
     .local v0, "userData":Lcom/android/server/pm/UserManagerService$UserData;
     if-eqz v0, :cond_0
 
-    .line 3294
+    .line 3295
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v2, v0}, Lcom/android/server/pm/UserManagerService;->-wrap8(Lcom/android/server/pm/UserManagerService;Lcom/android/server/pm/UserManagerService$UserData;)V
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 3290
+    .line 3291
     .end local v0    # "userData":Lcom/android/server/pm/UserManagerService$UserData;
     .end local v1    # "userId":I
     :catchall_0
@@ -109,7 +109,7 @@
 
     throw v2
 
-    .line 3287
+    .line 3288
     nop
 
     :pswitch_data_0

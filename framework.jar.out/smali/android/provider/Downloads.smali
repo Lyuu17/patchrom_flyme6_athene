@@ -33,7 +33,7 @@
     .param p2, "notification_class"    # Ljava/lang/String;
 
     .prologue
-    .line 812
+    .line 817
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -42,7 +42,7 @@
 
     const-string/jumbo v2, "notificationpackage=? AND notificationclass=?"
 
-    .line 813
+    .line 818
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/String;
@@ -55,9 +55,9 @@
 
     aput-object p2, v3, v4
 
-    .line 812
+    .line 817
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 811
+    .line 816
     return-void
 .end method

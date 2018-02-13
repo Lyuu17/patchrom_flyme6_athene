@@ -1217,9 +1217,7 @@
     if-eqz v1, :cond_1
 
     .line 440
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/Boolean;
 
     .end local v0    # "value":Ljava/lang/Object;
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -1280,9 +1278,7 @@
     if-eqz v1, :cond_1
 
     .line 460
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/Byte;
 
     .end local v0    # "value":Ljava/lang/Object;
     invoke-virtual {v0}, Ljava/lang/Byte;->byteValue()B
@@ -1343,9 +1339,7 @@
     if-eqz v1, :cond_1
 
     .line 560
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/Double;
 
     .end local v0    # "value":Ljava/lang/Object;
     invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
@@ -1406,9 +1400,7 @@
     if-eqz v1, :cond_1
 
     .line 540
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/Float;
 
     .end local v0    # "value":Ljava/lang/Object;
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
@@ -1469,9 +1461,7 @@
     if-eqz v1, :cond_1
 
     .line 500
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/Integer;
 
     .end local v0    # "value":Ljava/lang/Object;
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1532,9 +1522,7 @@
     if-eqz v1, :cond_1
 
     .line 520
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/Long;
 
     .end local v0    # "value":Ljava/lang/Object;
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
@@ -1595,9 +1583,7 @@
     if-eqz v1, :cond_1
 
     .line 480
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/Short;
 
     .end local v0    # "value":Ljava/lang/Object;
     invoke-virtual {v0}, Ljava/lang/Short;->shortValue()S
@@ -1669,9 +1655,7 @@
     if-eqz v1, :cond_2
 
     .line 582
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/String;
 
     .end local v0    # "value":Ljava/lang/Object;
     return-object v0

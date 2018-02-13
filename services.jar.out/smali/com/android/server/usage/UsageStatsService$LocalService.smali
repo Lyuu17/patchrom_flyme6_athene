@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
     .prologue
-    .line 1389
+    .line 1392
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Landroid/app/usage/UsageStatsManagerInternal;-><init>()V
@@ -49,19 +49,19 @@
     .param p1, "listener"    # Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;
 
     .prologue
-    .line 1498
+    .line 1501
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usage/UsageStatsService;->addListener(Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;)V
 
-    .line 1499
+    .line 1502
     invoke-virtual {p0}, Lcom/android/server/usage/UsageStatsService$LocalService;->isAppIdleParoleOn()Z
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;->onParoleStateChanged(Z)V
 
-    .line 1497
+    .line 1500
     return-void
 .end method
 
@@ -72,10 +72,10 @@
     .param p3, "payload"    # [B
 
     .prologue
-    .line 1522
+    .line 1525
     if-nez p1, :cond_0
 
-    .line 1524
+    .line 1527
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
@@ -88,11 +88,11 @@
 
     move-result-object v0
 
-    .line 1525
+    .line 1528
     .local v0, "userStats":Lcom/android/server/usage/UserUsageStatsService;
     invoke-virtual {v0, p2, p3}, Lcom/android/server/usage/UserUsageStatsService;->applyRestoredPayload(Ljava/lang/String;[B)V
 
-    .line 1521
+    .line 1524
     .end local v0    # "userStats":Lcom/android/server/usage/UserUsageStatsService;
     :cond_0
     return-void
@@ -104,10 +104,10 @@
     .param p2, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 1511
+    .line 1514
     if-nez p1, :cond_0
 
-    .line 1513
+    .line 1516
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
@@ -120,7 +120,7 @@
 
     move-result-object v0
 
-    .line 1514
+    .line 1517
     .local v0, "userStats":Lcom/android/server/usage/UserUsageStatsService;
     invoke-virtual {v0, p2}, Lcom/android/server/usage/UserUsageStatsService;->getBackupPayload(Ljava/lang/String;)[B
 
@@ -128,7 +128,7 @@
 
     return-object v1
 
-    .line 1516
+    .line 1519
     .end local v0    # "userStats":Lcom/android/server/usage/UserUsageStatsService;
     :cond_0
     const/4 v1, 0x0
@@ -141,7 +141,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 1480
+    .line 1483
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usage/UsageStatsService;->getIdleUidsForUser(I)[I
@@ -158,10 +158,10 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 1474
+    .line 1477
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
-    .line 1475
+    .line 1478
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -172,7 +172,7 @@
 
     move v3, p3
 
-    .line 1474
+    .line 1477
     invoke-static/range {v0 .. v5}, Lcom/android/server/usage/UsageStatsService;->-wrap0(Lcom/android/server/usage/UsageStatsService;Ljava/lang/String;IIJ)Z
 
     move-result v0
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 1485
+    .line 1488
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v0}, Lcom/android/server/usage/UsageStatsService;->isParoledOrCharging()Z
@@ -198,12 +198,12 @@
     .locals 1
 
     .prologue
-    .line 1493
+    .line 1496
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v0}, Lcom/android/server/usage/UsageStatsService;->shutdown()V
 
-    .line 1489
+    .line 1492
     return-void
 .end method
 
@@ -212,12 +212,12 @@
     .param p1, "listener"    # Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;
 
     .prologue
-    .line 1505
+    .line 1508
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usage/UsageStatsService;->removeListener(Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;)V
 
-    .line 1504
+    .line 1507
     return-void
 .end method
 
@@ -229,51 +229,51 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1428
+    .line 1431
     if-nez p1, :cond_0
 
-    .line 1429
+    .line 1432
     const-string/jumbo v1, "UsageStatsService"
 
     const-string/jumbo v2, "Configuration event reported with a null config"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1430
+    .line 1433
     return-void
 
-    .line 1433
+    .line 1436
     :cond_0
     new-instance v0, Landroid/app/usage/UsageEvents$Event;
 
     invoke-direct {v0}, Landroid/app/usage/UsageEvents$Event;-><init>()V
 
-    .line 1434
+    .line 1437
     .local v0, "event":Landroid/app/usage/UsageEvents$Event;
     const-string/jumbo v1, "android"
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 1437
+    .line 1440
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     iput-wide v2, v0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
-    .line 1439
+    .line 1442
     const/4 v1, 0x5
 
     iput v1, v0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    .line 1440
+    .line 1443
     new-instance v1, Landroid/content/res/Configuration;
 
     invoke-direct {v1, p1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
 
-    .line 1441
+    .line 1444
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -284,7 +284,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1427
+    .line 1430
     return-void
 .end method
 
@@ -295,26 +295,26 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 1464
+    .line 1467
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 1465
+    .line 1468
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 1466
+    .line 1469
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 1467
+    .line 1470
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
-    .line 1468
+    .line 1471
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -327,7 +327,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1463
+    .line 1466
     return-void
 .end method
 
@@ -340,26 +340,26 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1393
+    .line 1396
     if-nez p1, :cond_0
 
-    .line 1394
+    .line 1397
     const-string/jumbo v1, "UsageStatsService"
 
     const-string/jumbo v2, "Event reported without a component name"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1395
+    .line 1398
     return-void
 
-    .line 1398
+    .line 1401
     :cond_0
     new-instance v0, Landroid/app/usage/UsageEvents$Event;
 
     invoke-direct {v0}, Landroid/app/usage/UsageEvents$Event;-><init>()V
 
-    .line 1399
+    .line 1402
     .local v0, "event":Landroid/app/usage/UsageEvents$Event;
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
@@ -367,24 +367,24 @@
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 1400
+    .line 1403
     invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
-    .line 1403
+    .line 1406
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     iput-wide v2, v0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
-    .line 1405
+    .line 1408
     iput p3, v0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    .line 1406
+    .line 1409
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -395,7 +395,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1392
+    .line 1395
     return-void
 .end method
 
@@ -408,40 +408,40 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1411
+    .line 1414
     if-nez p1, :cond_0
 
-    .line 1412
+    .line 1415
     const-string/jumbo v1, "UsageStatsService"
 
     const-string/jumbo v2, "Event reported without a package name"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1413
+    .line 1416
     return-void
 
-    .line 1416
+    .line 1419
     :cond_0
     new-instance v0, Landroid/app/usage/UsageEvents$Event;
 
     invoke-direct {v0}, Landroid/app/usage/UsageEvents$Event;-><init>()V
 
-    .line 1417
+    .line 1420
     .local v0, "event":Landroid/app/usage/UsageEvents$Event;
     iput-object p1, v0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 1420
+    .line 1423
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     iput-wide v2, v0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
-    .line 1422
+    .line 1425
     iput p3, v0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    .line 1423
+    .line 1426
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -452,7 +452,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1410
+    .line 1413
     return-void
 .end method
 
@@ -465,12 +465,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1446
+    .line 1449
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 1447
+    .line 1450
     :cond_0
     const-string/jumbo v1, "UsageStatsService"
 
@@ -478,16 +478,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1448
+    .line 1451
     return-void
 
-    .line 1451
+    .line 1454
     :cond_1
     new-instance v0, Landroid/app/usage/UsageEvents$Event;
 
     invoke-direct {v0}, Landroid/app/usage/UsageEvents$Event;-><init>()V
 
-    .line 1452
+    .line 1455
     .local v0, "event":Landroid/app/usage/UsageEvents$Event;
     invoke-virtual {p1}, Ljava/lang/String;->intern()Ljava/lang/String;
 
@@ -495,26 +495,26 @@
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 1453
+    .line 1456
     invoke-virtual {p2}, Ljava/lang/String;->intern()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
 
-    .line 1456
+    .line 1459
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     iput-wide v2, v0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
-    .line 1458
+    .line 1461
     const/16 v1, 0x8
 
     iput v1, v0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    .line 1459
+    .line 1462
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$LocalService;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -525,6 +525,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1445
+    .line 1448
     return-void
 .end method

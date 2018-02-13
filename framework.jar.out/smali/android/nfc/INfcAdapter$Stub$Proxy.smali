@@ -27,13 +27,13 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 291
+    .line 301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 293
+    .line 303
     iput-object p1, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 291
+    .line 301
     return-void
 .end method
 
@@ -52,25 +52,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 660
+    .line 688
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 661
+    .line 689
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 663
+    .line 691
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 664
+    .line 692
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/nfc/INfcUnlockHandler;->asBinder()Landroid/os/IBinder;
@@ -80,43 +80,43 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 665
+    .line 693
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 666
+    .line 694
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x15
+    const/16 v3, 0x16
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 667
+    .line 695
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 670
+    .line 698
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 671
+    .line 699
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 658
+    .line 686
     return-void
 
-    .line 669
+    .line 697
     :catchall_0
     move-exception v2
 
-    .line 670
+    .line 698
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 671
+    .line 699
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 669
+    .line 697
     throw v2
 .end method
 
@@ -124,7 +124,7 @@
     .locals 1
 
     .prologue
-    .line 297
+    .line 307
     iget-object v0, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -142,25 +142,25 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 391
+    .line 419
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 392
+    .line 420
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 395
+    .line 423
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v4, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 396
+    .line 424
     if-eqz p1, :cond_0
 
     const/4 v3, 0x1
@@ -168,19 +168,19 @@
     :cond_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 397
+    .line 425
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x6
+    const/4 v4, 0x7
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 398
+    .line 426
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 399
+    .line 427
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -191,18 +191,18 @@
 
     const/4 v2, 0x1
 
-    .line 402
+    .line 430
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 403
+    .line 431
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 405
+    .line 433
     return v2
 
-    .line 399
+    .line 427
     .end local v2    # "_result":Z
     :cond_1
     const/4 v2, 0x0
@@ -210,18 +210,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 401
+    .line 429
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 402
+    .line 430
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 403
+    .line 431
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 401
+    .line 429
     throw v3
 .end method
 
@@ -234,37 +234,37 @@
     .end annotation
 
     .prologue
-    .line 443
+    .line 471
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 444
+    .line 472
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 447
+    .line 475
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 448
+    .line 476
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x9
+    const/16 v4, 0xa
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 449
+    .line 477
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 450
+    .line 478
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -275,18 +275,18 @@
 
     const/4 v2, 0x1
 
-    .line 453
+    .line 481
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 454
+    .line 482
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 456
+    .line 484
     return v2
 
-    .line 450
+    .line 478
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -294,18 +294,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 452
+    .line 480
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 453
+    .line 481
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 454
+    .line 482
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 452
+    .line 480
     throw v3
 .end method
 
@@ -319,62 +319,62 @@
     .end annotation
 
     .prologue
-    .line 599
+    .line 627
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 600
+    .line 628
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 602
+    .line 630
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 603
+    .line 631
     if-eqz p1, :cond_0
 
-    .line 604
+    .line 632
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 605
+    .line 633
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/nfc/Tag;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 610
+    .line 638
     :goto_0
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x12
+    const/16 v3, 0x13
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 611
+    .line 639
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 614
+    .line 642
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 615
+    .line 643
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 597
+    .line 625
     return-void
 
-    .line 608
+    .line 636
     :cond_0
     const/4 v2, 0x0
 
@@ -385,17 +385,17 @@
 
     goto :goto_0
 
-    .line 613
+    .line 641
     :catchall_0
     move-exception v2
 
-    .line 614
+    .line 642
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 615
+    .line 643
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 613
+    .line 641
     throw v2
 .end method
 
@@ -408,37 +408,37 @@
     .end annotation
 
     .prologue
-    .line 409
+    .line 437
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 410
+    .line 438
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 413
+    .line 441
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 414
+    .line 442
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x7
+    const/16 v4, 0x8
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 415
+    .line 443
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 416
+    .line 444
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -449,18 +449,18 @@
 
     const/4 v2, 0x1
 
-    .line 419
+    .line 447
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 420
+    .line 448
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 422
+    .line 450
     return v2
 
-    .line 416
+    .line 444
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -468,18 +468,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 418
+    .line 446
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 419
+    .line 447
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 420
+    .line 448
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 418
+    .line 446
     throw v3
 .end method
 
@@ -492,37 +492,37 @@
     .end annotation
 
     .prologue
-    .line 426
+    .line 454
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 427
+    .line 455
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 430
+    .line 458
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 431
+    .line 459
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x8
+    const/16 v4, 0x9
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 432
+    .line 460
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 433
+    .line 461
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -533,18 +533,18 @@
 
     const/4 v2, 0x1
 
-    .line 436
+    .line 464
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 437
+    .line 465
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 439
+    .line 467
     return v2
 
-    .line 433
+    .line 461
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -552,18 +552,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 435
+    .line 463
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 436
+    .line 464
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 437
+    .line 465
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 435
+    .line 463
     throw v3
 .end method
 
@@ -571,7 +571,7 @@
     .locals 1
 
     .prologue
-    .line 301
+    .line 311
     const-string/jumbo v0, "android.nfc.INfcAdapter"
 
     return-object v0
@@ -587,28 +587,28 @@
     .end annotation
 
     .prologue
-    .line 356
+    .line 366
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 357
+    .line 367
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 360
+    .line 370
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 361
+    .line 371
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 362
+    .line 372
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x4
@@ -617,10 +617,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 363
+    .line 373
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 364
+    .line 374
     invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
@@ -631,28 +631,103 @@
 
     move-result-object v2
 
-    .line 367
+    .line 377
     .local v2, "_result":Landroid/nfc/INfcAdapterExtras;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 368
+    .line 378
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 370
+    .line 380
     return-object v2
 
-    .line 366
+    .line 376
     .end local v2    # "_result":Landroid/nfc/INfcAdapterExtras;
     :catchall_0
     move-exception v3
 
-    .line 367
+    .line 377
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 368
+    .line 378
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 366
+    .line 376
+    throw v3
+.end method
+
+.method public getNfcAdapterVendorInterface(Ljava/lang/String;)Landroid/os/IBinder;
+    .locals 6
+    .param p1, "vendor"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 384
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 385
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 388
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.nfc.INfcAdapter"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 389
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 390
+    iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v4, 0x5
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 391
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 392
+    invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v2
+
+    .line 395
+    .local v2, "_result":Landroid/os/IBinder;
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 396
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 398
+    return-object v2
+
+    .line 394
+    .end local v2    # "_result":Landroid/os/IBinder;
+    :catchall_0
+    move-exception v3
+
+    .line 395
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 396
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 394
     throw v3
 .end method
 
@@ -665,25 +740,25 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 332
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 323
+    .line 333
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 326
+    .line 336
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 327
+    .line 337
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x2
@@ -692,10 +767,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 328
+    .line 338
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 329
+    .line 339
     invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
@@ -706,28 +781,28 @@
 
     move-result-object v2
 
-    .line 332
+    .line 342
     .local v2, "_result":Landroid/nfc/INfcCardEmulation;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 333
+    .line 343
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 335
+    .line 345
     return-object v2
 
-    .line 331
+    .line 341
     .end local v2    # "_result":Landroid/nfc/INfcCardEmulation;
     :catchall_0
     move-exception v3
 
-    .line 332
+    .line 342
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 333
+    .line 343
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 331
+    .line 341
     throw v3
 .end method
 
@@ -740,25 +815,25 @@
     .end annotation
 
     .prologue
-    .line 339
+    .line 349
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 340
+    .line 350
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 343
+    .line 353
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 344
+    .line 354
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x3
@@ -767,10 +842,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 345
+    .line 355
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 346
+    .line 356
     invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
@@ -781,28 +856,28 @@
 
     move-result-object v2
 
-    .line 349
+    .line 359
     .local v2, "_result":Landroid/nfc/INfcFCardEmulation;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 350
+    .line 360
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 352
+    .line 362
     return-object v2
 
-    .line 348
+    .line 358
     .end local v2    # "_result":Landroid/nfc/INfcFCardEmulation;
     :catchall_0
     move-exception v3
 
-    .line 349
+    .line 359
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 350
+    .line 360
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 348
+    .line 358
     throw v3
 .end method
 
@@ -815,25 +890,25 @@
     .end annotation
 
     .prologue
-    .line 305
+    .line 315
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 306
+    .line 316
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 309
+    .line 319
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 310
+    .line 320
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x1
@@ -842,10 +917,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 311
+    .line 321
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 312
+    .line 322
     invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
@@ -856,28 +931,28 @@
 
     move-result-object v2
 
-    .line 315
+    .line 325
     .local v2, "_result":Landroid/nfc/INfcTag;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 316
+    .line 326
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 318
+    .line 328
     return-object v2
 
-    .line 314
+    .line 324
     .end local v2    # "_result":Landroid/nfc/INfcTag;
     :catchall_0
     move-exception v3
 
-    .line 315
+    .line 325
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 316
+    .line 326
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 314
+    .line 324
     throw v3
 .end method
 
@@ -890,65 +965,65 @@
     .end annotation
 
     .prologue
-    .line 374
+    .line 402
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 375
+    .line 403
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 378
+    .line 406
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 379
+    .line 407
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x5
+    const/4 v4, 0x6
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 380
+    .line 408
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 381
+    .line 409
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 384
+    .line 412
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 385
+    .line 413
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 387
+    .line 415
     return v2
 
-    .line 383
+    .line 411
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
-    .line 384
+    .line 412
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 385
+    .line 413
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 383
+    .line 411
     throw v3
 .end method
 
@@ -966,31 +1041,31 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 579
+    .line 607
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 580
+    .line 608
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 583
+    .line 611
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v4, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 584
+    .line 612
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 585
+    .line 613
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 586
+    .line 614
     if-eqz p3, :cond_0
 
     invoke-interface {p3}, Landroid/nfc/ITagRemovedCallback;->asBinder()Landroid/os/IBinder;
@@ -1000,19 +1075,19 @@
     :cond_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 587
+    .line 615
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x11
+    const/16 v4, 0x12
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 588
+    .line 616
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 589
+    .line 617
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1023,18 +1098,18 @@
 
     const/4 v2, 0x1
 
-    .line 592
+    .line 620
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 593
+    .line 621
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 595
+    .line 623
     return v2
 
-    .line 589
+    .line 617
     .end local v2    # "_result":Z
     :cond_1
     const/4 v2, 0x0
@@ -1042,18 +1117,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 591
+    .line 619
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 592
+    .line 620
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 593
+    .line 621
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 591
+    .line 619
     throw v3
 .end method
 
@@ -1066,22 +1141,22 @@
     .end annotation
 
     .prologue
-    .line 550
+    .line 578
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 552
+    .line 580
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 553
+    .line 581
     iget-object v1, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xf
+    const/16 v2, 0x10
 
     const/4 v3, 0x0
 
@@ -1091,20 +1166,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 556
+    .line 584
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 548
+    .line 576
     return-void
 
-    .line 555
+    .line 583
     :catchall_0
     move-exception v1
 
-    .line 556
+    .line 584
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 555
+    .line 583
     throw v1
 .end method
 
@@ -1118,36 +1193,36 @@
     .end annotation
 
     .prologue
-    .line 561
+    .line 589
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 563
+    .line 591
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 564
+    .line 592
     if-eqz p1, :cond_0
 
-    .line 565
+    .line 593
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 566
+    .line 594
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/nfc/BeamShareData;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 571
+    .line 599
     :goto_0
     iget-object v1, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x10
+    const/16 v2, 0x11
 
     const/4 v3, 0x0
 
@@ -1157,13 +1232,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 574
+    .line 602
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 559
+    .line 587
     return-void
 
-    .line 569
+    .line 597
     :cond_0
     const/4 v1, 0x0
 
@@ -1174,14 +1249,14 @@
 
     goto :goto_0
 
-    .line 573
+    .line 601
     :catchall_0
     move-exception v1
 
-    .line 574
+    .line 602
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 573
+    .line 601
     throw v1
 .end method
 
@@ -1194,37 +1269,37 @@
     .end annotation
 
     .prologue
-    .line 460
+    .line 488
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 461
+    .line 489
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 464
+    .line 492
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 465
+    .line 493
     iget-object v3, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0xa
+    const/16 v4, 0xb
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 466
+    .line 494
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 467
+    .line 495
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1235,18 +1310,18 @@
 
     const/4 v2, 0x1
 
-    .line 470
+    .line 498
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 471
+    .line 499
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 473
+    .line 501
     return v2
 
-    .line 467
+    .line 495
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -1254,18 +1329,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 469
+    .line 497
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 470
+    .line 498
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 471
+    .line 499
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 469
+    .line 497
     throw v3
 .end method
 
@@ -1279,61 +1354,61 @@
     .end annotation
 
     .prologue
-    .line 477
+    .line 505
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 478
+    .line 506
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 480
+    .line 508
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 481
+    .line 509
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 482
+    .line 510
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0xb
+    const/16 v3, 0xc
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 483
+    .line 511
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 486
+    .line 514
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 487
+    .line 515
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 475
+    .line 503
     return-void
 
-    .line 485
+    .line 513
     :catchall_0
     move-exception v2
 
-    .line 486
+    .line 514
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 487
+    .line 515
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 485
+    .line 513
     throw v2
 .end method
 
@@ -1349,25 +1424,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 676
+    .line 704
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 677
+    .line 705
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 679
+    .line 707
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 680
+    .line 708
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/nfc/INfcUnlockHandler;->asBinder()Landroid/os/IBinder;
@@ -1377,40 +1452,40 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 681
+    .line 709
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x16
+    const/16 v3, 0x17
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 682
+    .line 710
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 685
+    .line 713
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 686
+    .line 714
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 674
+    .line 702
     return-void
 
-    .line 684
+    .line 712
     :catchall_0
     move-exception v2
 
-    .line 685
+    .line 713
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 686
+    .line 714
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 684
+    .line 712
     throw v2
 .end method
 
@@ -1423,58 +1498,58 @@
     .end annotation
 
     .prologue
-    .line 492
+    .line 520
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 493
+    .line 521
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 495
+    .line 523
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 496
+    .line 524
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0xc
+    const/16 v3, 0xd
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 497
+    .line 525
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 500
+    .line 528
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 501
+    .line 529
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 490
+    .line 518
     return-void
 
-    .line 499
+    .line 527
     :catchall_0
     move-exception v2
 
-    .line 500
+    .line 528
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 501
+    .line 529
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 499
+    .line 527
     throw v2
 .end method
 
@@ -1490,25 +1565,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 535
+    .line 563
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 536
+    .line 564
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 538
+    .line 566
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 539
+    .line 567
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/nfc/IAppCallback;->asBinder()Landroid/os/IBinder;
@@ -1518,40 +1593,40 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 540
+    .line 568
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0xe
+    const/16 v3, 0xf
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 541
+    .line 569
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 544
+    .line 572
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 545
+    .line 573
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 533
+    .line 561
     return-void
 
-    .line 543
+    .line 571
     :catchall_0
     move-exception v2
 
-    .line 544
+    .line 572
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 545
+    .line 573
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 543
+    .line 571
     throw v2
 .end method
 
@@ -1567,81 +1642,81 @@
     .end annotation
 
     .prologue
-    .line 506
+    .line 534
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 507
+    .line 535
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 509
+    .line 537
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 510
+    .line 538
     if-eqz p1, :cond_0
 
-    .line 511
+    .line 539
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 512
+    .line 540
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/app/PendingIntent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 517
+    .line 545
     :goto_0
     const/4 v2, 0x0
 
     invoke-virtual {v0, p2, v2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 518
+    .line 546
     if-eqz p3, :cond_1
 
-    .line 519
+    .line 547
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 520
+    .line 548
     const/4 v2, 0x0
 
     invoke-virtual {p3, v0, v2}, Landroid/nfc/TechListParcel;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 525
+    .line 553
     :goto_1
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0xd
+    const/16 v3, 0xe
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 526
+    .line 554
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 529
+    .line 557
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 530
+    .line 558
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 504
+    .line 532
     return-void
 
-    .line 515
+    .line 543
     :cond_0
     const/4 v2, 0x0
 
@@ -1652,20 +1727,20 @@
 
     goto :goto_0
 
-    .line 528
+    .line 556
     :catchall_0
     move-exception v2
 
-    .line 529
+    .line 557
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 530
+    .line 558
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 528
+    .line 556
     throw v2
 
-    .line 523
+    .line 551
     :cond_1
     const/4 v2, 0x0
 
@@ -1688,64 +1763,64 @@
     .end annotation
 
     .prologue
-    .line 644
+    .line 672
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 645
+    .line 673
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 647
+    .line 675
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 648
+    .line 676
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 649
+    .line 677
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 650
+    .line 678
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x14
+    const/16 v3, 0x15
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 651
+    .line 679
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 654
+    .line 682
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 655
+    .line 683
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 642
+    .line 670
     return-void
 
-    .line 653
+    .line 681
     :catchall_0
     move-exception v2
 
-    .line 654
+    .line 682
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 655
+    .line 683
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 653
+    .line 681
     throw v2
 .end method
 
@@ -1764,28 +1839,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 620
+    .line 648
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 621
+    .line 649
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 623
+    .line 651
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 624
+    .line 652
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 625
+    .line 653
     if-eqz p2, :cond_0
 
     invoke-interface {p2}, Landroid/nfc/IAppCallback;->asBinder()Landroid/os/IBinder;
@@ -1795,47 +1870,47 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 626
+    .line 654
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 627
+    .line 655
     if-eqz p4, :cond_1
 
-    .line 628
+    .line 656
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 629
+    .line 657
     const/4 v2, 0x0
 
     invoke-virtual {p4, v0, v2}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 634
+    .line 662
     :goto_0
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x13
+    const/16 v3, 0x14
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 635
+    .line 663
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 638
+    .line 666
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 639
+    .line 667
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 618
+    .line 646
     return-void
 
-    .line 632
+    .line 660
     :cond_1
     const/4 v2, 0x0
 
@@ -1846,17 +1921,17 @@
 
     goto :goto_0
 
-    .line 637
+    .line 665
     :catchall_0
     move-exception v2
 
-    .line 638
+    .line 666
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 639
+    .line 667
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 637
+    .line 665
     throw v2
 .end method
 
@@ -1869,57 +1944,57 @@
     .end annotation
 
     .prologue
-    .line 691
+    .line 719
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 692
+    .line 720
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 694
+    .line 722
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.nfc.INfcAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 695
+    .line 723
     iget-object v2, p0, Landroid/nfc/INfcAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x17
+    const/16 v3, 0x18
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 696
+    .line 724
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 699
+    .line 727
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 700
+    .line 728
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 689
+    .line 717
     return-void
 
-    .line 698
+    .line 726
     :catchall_0
     move-exception v2
 
-    .line 699
+    .line 727
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 700
+    .line 728
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 698
+    .line 726
     throw v2
 .end method

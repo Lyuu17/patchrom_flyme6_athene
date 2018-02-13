@@ -136,26 +136,22 @@
     .locals 2
 
     .prologue
-    .line 87
-    const-string/jumbo v0, "%1d/%2d"
+    const-string v0, "%1d/%2d"
 
     iput-object v0, p0, Landroid/app/ProgressDialog;->mProgressNumberFormat:Ljava/lang/String;
 
-    .line 88
     invoke-static {}, Ljava/text/NumberFormat;->getPercentInstance()Ljava/text/NumberFormat;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ProgressDialog;->mProgressPercentFormat:Ljava/text/NumberFormat;
 
-    .line 89
     iget-object v0, p0, Landroid/app/ProgressDialog;->mProgressPercentFormat:Ljava/text/NumberFormat;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
 
-    .line 86
 
     invoke-direct/range {p0 .. p0}, Landroid/app/ProgressDialog;->initFlymeExtraFields()V
 
@@ -487,35 +483,29 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    const v8, 0x102000d
+    const v8, #android:id@progress#t
 
     const/4 v7, 0x0
 
     const/4 v6, 0x0
 
-    .line 122
     iget-object v3, p0, Landroid/app/ProgressDialog;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 123
     .local v1, "inflater":Landroid/view/LayoutInflater;
     iget-object v3, p0, Landroid/app/ProgressDialog;->mContext:Landroid/content/Context;
 
-    .line 124
     sget-object v4, Lcom/android/internal/R$styleable;->AlertDialog:[I
 
-    .line 125
-    const v5, 0x101005d
+    const v5, #android:attr@alertDialogStyle#t
 
-    .line 123
     invoke-virtual {v3, v7, v4, v5, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 126
     .local v0, "a":Landroid/content/res/TypedArray;
     iget v3, p0, Landroid/app/ProgressDialog;->mProgressStyle:I
 
@@ -523,20 +513,16 @@
 
     if-ne v3, v4, :cond_8
 
-    .line 131
     new-instance v3, Landroid/app/ProgressDialog$1;
 
     invoke-direct {v3, p0}, Landroid/app/ProgressDialog$1;-><init>(Landroid/app/ProgressDialog;)V
 
     iput-object v3, p0, Landroid/app/ProgressDialog;->mViewUpdateHandler:Landroid/os/Handler;
 
-    .line 157
     const/16 v3, 0x11
 
-    .line 158
-    const v4, 0x109002c
+    const v4, #android:layout@alert_dialog_progress#t
 
-    .line 156
     invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
@@ -555,8 +541,7 @@
 
     iput-object v3, p0, Landroid/app/ProgressDialog;->mProgress:Landroid/widget/ProgressBar;
 
-    .line 160
-    const v3, 0x1020333
+    const v3, #android:id@progress_number#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -566,8 +551,7 @@
 
     iput-object v3, p0, Landroid/app/ProgressDialog;->mProgressNumber:Landroid/widget/TextView;
 
-    .line 161
-    const v3, 0x1020332
+    const v3, #android:id@progress_percent#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -577,124 +561,99 @@
 
     iput-object v3, p0, Landroid/app/ProgressDialog;->mProgressPercent:Landroid/widget/TextView;
 
-    .line 162
     invoke-virtual {p0, v2}, Landroid/app/ProgressDialog;->setView(Landroid/view/View;)V
 
-    .line 171
     :goto_0
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 172
     iget v3, p0, Landroid/app/ProgressDialog;->mMax:I
 
     if-lez v3, :cond_0
 
-    .line 173
     iget v3, p0, Landroid/app/ProgressDialog;->mMax:I
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->setMax(I)V
 
-    .line 175
     :cond_0
     iget v3, p0, Landroid/app/ProgressDialog;->mProgressVal:I
 
     if-lez v3, :cond_1
 
-    .line 176
     iget v3, p0, Landroid/app/ProgressDialog;->mProgressVal:I
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->setProgress(I)V
 
-    .line 178
     :cond_1
     iget v3, p0, Landroid/app/ProgressDialog;->mSecondaryProgressVal:I
 
     if-lez v3, :cond_2
 
-    .line 179
     iget v3, p0, Landroid/app/ProgressDialog;->mSecondaryProgressVal:I
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->setSecondaryProgress(I)V
 
-    .line 181
     :cond_2
     iget v3, p0, Landroid/app/ProgressDialog;->mIncrementBy:I
 
     if-lez v3, :cond_3
 
-    .line 182
     iget v3, p0, Landroid/app/ProgressDialog;->mIncrementBy:I
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->incrementProgressBy(I)V
 
-    .line 184
     :cond_3
     iget v3, p0, Landroid/app/ProgressDialog;->mIncrementSecondaryBy:I
 
     if-lez v3, :cond_4
 
-    .line 185
     iget v3, p0, Landroid/app/ProgressDialog;->mIncrementSecondaryBy:I
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->incrementSecondaryProgressBy(I)V
 
-    .line 187
     :cond_4
     iget-object v3, p0, Landroid/app/ProgressDialog;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v3, :cond_5
 
-    .line 188
     iget-object v3, p0, Landroid/app/ProgressDialog;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 190
     :cond_5
     iget-object v3, p0, Landroid/app/ProgressDialog;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v3, :cond_6
 
-    .line 191
     iget-object v3, p0, Landroid/app/ProgressDialog;->mIndeterminateDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 193
     :cond_6
     iget-object v3, p0, Landroid/app/ProgressDialog;->mMessage:Ljava/lang/CharSequence;
 
     if-eqz v3, :cond_7
 
-    .line 194
     iget-object v3, p0, Landroid/app/ProgressDialog;->mMessage:Ljava/lang/CharSequence;
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 196
     :cond_7
     iget-boolean v3, p0, Landroid/app/ProgressDialog;->mIndeterminate:Z
 
     invoke-virtual {p0, v3}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    .line 197
     invoke-direct {p0}, Landroid/app/ProgressDialog;->onProgressChanged()V
 
-    .line 198
     invoke-super {p0, p1}, Landroid/app/AlertDialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 121
     return-void
 
-    .line 165
     .end local v2    # "view":Landroid/view/View;
     :cond_8
     const/16 v3, 0x10
 
-    .line 166
-    const v4, 0x10900be
+    const v4, #android:layout@progress_dialog#t
 
-    .line 164
     invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
@@ -713,8 +672,7 @@
 
     iput-object v3, p0, Landroid/app/ProgressDialog;->mProgress:Landroid/widget/ProgressBar;
 
-    .line 168
-    const v3, 0x102000b
+    const v3, #android:id@message#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1076,7 +1034,7 @@
     .param p1, "dialog"    # Landroid/app/AlertDialog;
 
     .prologue
-    const v21, 0x102002e
+    const v21, #android:id@mask#t
 
     move-object/from16 v0, p1
 
@@ -1092,7 +1050,7 @@
     return-void
 
     :cond_0
-    const v21, 0x1020322
+    const v21, #android:id@parentPanel#t
 
     move-object/from16 v0, p0
 
@@ -1103,7 +1061,7 @@
     move-result-object v18
 
     .local v18, "parentPanel":Landroid/view/View;
-    const v21, 0x1020327
+    const v21, #android:id@buttonPanel#t
 
     move-object/from16 v0, p0
 
@@ -1114,7 +1072,7 @@
     move-result-object v8
 
     .local v8, "buttonPanel":Landroid/view/View;
-    const v21, 0x102032c
+    const v21, #android:id@customPanel#t
 
     move-object/from16 v0, p0
 
@@ -1125,7 +1083,7 @@
     move-result-object v12
 
     .local v12, "customPanel":Landroid/view/View;
-    const v21, 0x102032a
+    const v21, #android:id@contentPanel#t
 
     move-object/from16 v0, p0
 
@@ -1136,7 +1094,7 @@
     move-result-object v10
 
     .local v10, "contentPanel":Landroid/view/View;
-    const v21, 0x1020323
+    const v21, #android:id@topPanel#t
 
     move-object/from16 v0, p0
 
@@ -1282,7 +1240,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->setPadding(IIII)V
 
-    const v21, 0x102002b
+    const v21, #android:id@custom#t
 
     move/from16 v0, v21
 
@@ -1349,7 +1307,7 @@
     invoke-virtual/range {v21 .. v22}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_7
-    const v21, 0x10203e0
+    const v21, #android:id@body#t
 
     move/from16 v0, v21
 

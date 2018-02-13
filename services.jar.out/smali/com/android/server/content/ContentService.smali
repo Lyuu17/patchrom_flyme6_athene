@@ -3224,11 +3224,14 @@
     if-eqz v30, :cond_5
 
     .line 405
+    if-eqz p1, :cond_6
+
     invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object v4
 
     .line 404
+    :goto_3
     const/4 v5, 0x0
 
     move-object/from16 v0, v30
@@ -3279,8 +3282,16 @@
     .line 345
     return-void
 
-    .line 409
+    .line 405
     .end local v29    # "providerPackageName":Ljava/lang/String;
+    .restart local v30    # "syncManager":Lcom/android/server/content/SyncManager;
+    :cond_6
+    const/4 v4, 0x0
+
+    goto :goto_3
+
+    .line 409
+    .end local v30    # "syncManager":Lcom/android/server/content/SyncManager;
     :catchall_3
     move-exception v4
 

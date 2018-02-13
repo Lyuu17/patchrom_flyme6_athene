@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/VibratorService;
 
     .prologue
-    .line 413
+    .line 438
     iput-object p1, p0, Lcom/android/server/VibratorService$1;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 416
+    .line 441
     iget-object v0, p0, Lcom/android/server/VibratorService$1;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->-get2(Lcom/android/server/VibratorService;)Ljava/util/LinkedList;
@@ -50,13 +50,13 @@
 
     monitor-enter v1
 
-    .line 417
+    .line 442
     :try_start_0
     iget-object v0, p0, Lcom/android/server/VibratorService$1;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap0(Lcom/android/server/VibratorService;)V
 
-    .line 418
+    .line 443
     iget-object v0, p0, Lcom/android/server/VibratorService$1;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap2(Lcom/android/server/VibratorService;)V
@@ -65,10 +65,10 @@
 
     monitor-exit v1
 
-    .line 415
+    .line 440
     return-void
 
-    .line 416
+    .line 441
     :catchall_0
     move-exception v0
 

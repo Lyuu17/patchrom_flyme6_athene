@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IMediaHTTPService"
 
-.field static final TRANSACTION_makeHTTPConnection:I = 0x1
+.field static final TRANSACTION_makeHTTPConnection_0:I = 0x1
 
 
 # direct methods

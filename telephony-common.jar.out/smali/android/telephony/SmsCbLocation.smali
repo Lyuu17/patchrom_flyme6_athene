@@ -193,9 +193,7 @@
     move-object v0, p1
 
     .line 117
-    nop
-
-    nop
+    check-cast v0, Landroid/telephony/SmsCbLocation;
 
     .line 118
     .local v0, "other":Landroid/telephony/SmsCbLocation;

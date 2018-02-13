@@ -119,9 +119,7 @@
     move-object v0, v1
 
     .line 391
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/String;
 
     invoke-static {v0, v3}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -132,9 +130,7 @@
     move-object v0, v1
 
     .line 392
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/String;
 
     invoke-static {v0, v5}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -187,9 +183,7 @@
     move-object v0, v1
 
     .line 400
-    nop
-
-    nop
+    check-cast v0, Ljava/lang/String;
 
     invoke-static {v0, v6}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -198,9 +192,7 @@
     aput-object v0, v2, v6
 
     .line 401
-    nop
-
-    nop
+    check-cast v1, Ljava/lang/String;
 
     invoke-static {v1, v4}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -813,7 +805,6 @@
 
     :cond_flyme_0
 
-    .line 180
     sget-object v0, Landroid/graphics/Typeface;->sDefaults:[Landroid/graphics/Typeface;
 
     aget-object v0, v0, p0
@@ -2010,16 +2001,16 @@
 
     .prologue
     .local p2, "systemFonts":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Landroid/graphics/Typeface;>;"
-    const-string/jumbo v0, "persist.sys.flyme.medium_font"
+    const-string v0, "persist.sys.flyme.medium_font"
 
     .local v0, "PROPERTY_FLYME_MEDIUM_FONT":Ljava/lang/String;
-    const-string/jumbo v2, "true"
+    const-string v2, "true"
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, "true"
+    const-string v3, "true"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2034,7 +2025,7 @@
 
     iget-object v2, p0, Landroid/graphics/FontListParser$Alias;->name:Ljava/lang/String;
 
-    const-string/jumbo v3, "sans-serif-medium"
+    const-string v3, "sans-serif-medium"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
 
@@ -2069,16 +2060,16 @@
 
     .prologue
     .local p2, "systemFonts":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Landroid/graphics/Typeface;>;"
-    const-string/jumbo v0, "persist.sys.flyme.medium_font"
+    const-string v0, "persist.sys.flyme.medium_font"
 
     .local v0, "PROPERTY_FLYME_MEDIUM_FONT":Ljava/lang/String;
-    const-string/jumbo v2, "true"
+    const-string v2, "true"
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, "true"
+    const-string v3, "true"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2089,7 +2080,7 @@
 
     iget-object v2, p0, Landroid/graphics/FontListParser$Family;->name:Ljava/lang/String;
 
-    const-string/jumbo v3, "sans-serif-medium"
+    const-string v3, "sans-serif-medium"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
 

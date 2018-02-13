@@ -33,18 +33,18 @@
     .param p3, "token"    # I
 
     .prologue
-    .line 6547
+    .line 6553
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFinishedRunnable;->this$1:Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6548
+    .line 6554
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFinishedRunnable;->mAgent:Landroid/app/IBackupAgent;
 
-    .line 6549
+    .line 6555
     iput p3, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFinishedRunnable;->mToken:I
 
-    .line 6547
+    .line 6553
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .locals 4
 
     .prologue
-    .line 6555
+    .line 6561
     :try_start_0
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFinishedRunnable;->mAgent:Landroid/app/IBackupAgent;
 
@@ -70,11 +70,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6553
+    .line 6559
     :goto_0
     return-void
 
-    .line 6556
+    .line 6562
     :catch_0
     move-exception v0
 

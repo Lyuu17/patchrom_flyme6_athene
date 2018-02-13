@@ -16,9 +16,13 @@
 
 .field public static final CARD_STATUS:Ljava/lang/String; = "card_status"
 
+.field public static final CAT_ACTIVATE_NOTIFY_ACTION:Ljava/lang/String; = "org.codeaurora.intent.action.stk.activate_notify"
+
 .field public static final CAT_ALPHA_NOTIFY_ACTION:Ljava/lang/String; = "android.intent.action.stk.alpha_notify"
 
 .field public static final CAT_CMD_ACTION:Ljava/lang/String; = "android.intent.action.stk.command"
+
+.field public static final CAT_HCI_CONNECTIVITY_ACTION:Ljava/lang/String; = "org.codeaurora.intent.action.stk.hci_connectivity"
 
 .field public static final CAT_ICC_STATUS_CHANGE:Ljava/lang/String; = "android.intent.action.stk.icc_status_change"
 

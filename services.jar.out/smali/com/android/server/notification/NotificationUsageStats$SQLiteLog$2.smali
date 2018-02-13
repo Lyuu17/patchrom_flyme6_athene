@@ -28,7 +28,7 @@
     .param p5, "$anonymous3"    # I
 
     .prologue
-    .line 1082
+    .line 1083
     iput-object p1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$2;->this$1:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
@@ -43,12 +43,12 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 1085
+    .line 1086
     const-string/jumbo v0, "CREATE TABLE log (_id INTEGER PRIMARY KEY AUTOINCREMENT,event_user_id INT,event_type INT,event_time_ms INT,key TEXT,pkg TEXT,nid INT,tag TEXT,when_ms INT,defaults INT,flags INT,importance_request INT,importance_final INT,noisy INT,muted INT,demoted INT,category TEXT,action_count INT,posttime_ms INT,airtime_ms INT,first_expansion_time_ms INT,expansion_airtime_ms INT,expansion_count INT)"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1084
+    .line 1085
     return-void
 .end method
 
@@ -59,18 +59,18 @@
     .param p3, "newVersion"    # I
 
     .prologue
-    .line 1114
+    .line 1115
     if-eq p2, p3, :cond_0
 
-    .line 1115
+    .line 1116
     const-string/jumbo v0, "DROP TABLE IF EXISTS log"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1116
+    .line 1117
     invoke-virtual {p0, p1}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$2;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1113
+    .line 1114
     :cond_0
     return-void
 .end method

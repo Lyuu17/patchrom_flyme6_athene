@@ -21,11 +21,15 @@
 
 .field public static final ENCRYPTION_STATE_ERROR_INCONSISTENT:I = -0x3
 
+.field public static final ENCRYPTION_STATE_ERROR_MDTP_ACTIVATED:I = -0x5
+
 .field public static final ENCRYPTION_STATE_ERROR_UNKNOWN:I = -0x1
 
 .field public static final ENCRYPTION_STATE_NONE:I = 0x1
 
-.field public static final ENCRYPTION_STATE_OK:I
+.field public static final ENCRYPTION_STATE_OK:I = 0x0
+
+.field public static final ENCRYPTION_STATE_OK_MDTP_ACTIVATED:I = 0x2
 
 
 # virtual methods
@@ -110,6 +114,14 @@
 .end method
 
 .method public abstract encryptStorage(ILjava/lang/String;)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract encryptWipeStorage(ILjava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

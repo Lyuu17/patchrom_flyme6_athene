@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 11423
+    .line 11607
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,18 +50,18 @@
 
     const/4 v2, -0x1
 
-    .line 11425
+    .line 11609
     iget v0, p1, Landroid/content/pm/ResolveInfo;->priority:I
 
-    .line 11426
+    .line 11610
     .local v0, "v1":I
     iget v1, p2, Landroid/content/pm/ResolveInfo;->priority:I
 
-    .line 11428
+    .line 11612
     .local v1, "v2":I
     if-eq v0, v1, :cond_1
 
-    .line 11429
+    .line 11613
     if-le v0, v1, :cond_0
 
     :goto_0
@@ -72,17 +72,17 @@
 
     goto :goto_0
 
-    .line 11431
+    .line 11615
     :cond_1
     iget v0, p1, Landroid/content/pm/ResolveInfo;->preferredOrder:I
 
-    .line 11432
+    .line 11616
     iget v1, p2, Landroid/content/pm/ResolveInfo;->preferredOrder:I
 
-    .line 11433
+    .line 11617
     if-eq v0, v1, :cond_3
 
-    .line 11434
+    .line 11618
     if-le v0, v1, :cond_2
 
     :goto_1
@@ -93,7 +93,7 @@
 
     goto :goto_1
 
-    .line 11436
+    .line 11620
     :cond_3
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
@@ -101,7 +101,7 @@
 
     if-eq v4, v5, :cond_5
 
-    .line 11437
+    .line 11621
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
     if-eqz v4, :cond_4
@@ -114,17 +114,17 @@
 
     goto :goto_2
 
-    .line 11439
+    .line 11623
     :cond_5
     iget v0, p1, Landroid/content/pm/ResolveInfo;->match:I
 
-    .line 11440
+    .line 11624
     iget v1, p2, Landroid/content/pm/ResolveInfo;->match:I
 
-    .line 11442
+    .line 11626
     if-eq v0, v1, :cond_7
 
-    .line 11443
+    .line 11627
     if-le v0, v1, :cond_6
 
     :goto_3
@@ -135,7 +135,7 @@
 
     goto :goto_3
 
-    .line 11445
+    .line 11629
     :cond_7
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->system:Z
 
@@ -143,7 +143,7 @@
 
     if-eq v4, v5, :cond_9
 
-    .line 11446
+    .line 11630
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->system:Z
 
     if-eqz v4, :cond_8
@@ -156,13 +156,13 @@
 
     goto :goto_4
 
-    .line 11448
+    .line 11632
     :cond_9
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     if-eqz v2, :cond_a
 
-    .line 11449
+    .line 11633
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v2, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -177,13 +177,13 @@
 
     return v2
 
-    .line 11451
+    .line 11635
     :cond_a
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     if-eqz v2, :cond_b
 
-    .line 11452
+    .line 11636
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v2, v2, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
@@ -198,13 +198,13 @@
 
     return v2
 
-    .line 11454
+    .line 11638
     :cond_b
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->providerInfo:Landroid/content/pm/ProviderInfo;
 
     if-eqz v2, :cond_c
 
-    .line 11455
+    .line 11639
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->providerInfo:Landroid/content/pm/ProviderInfo;
 
     iget-object v2, v2, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
@@ -219,7 +219,7 @@
 
     return v2
 
-    .line 11457
+    .line 11641
     :cond_c
     const/4 v2, 0x0
 
@@ -232,7 +232,7 @@
     .param p2, "r2"    # Ljava/lang/Object;
 
     .prologue
-    .line 11424
+    .line 11608
     check-cast p1, Landroid/content/pm/ResolveInfo;
 
     .end local p1    # "r1":Ljava/lang/Object;

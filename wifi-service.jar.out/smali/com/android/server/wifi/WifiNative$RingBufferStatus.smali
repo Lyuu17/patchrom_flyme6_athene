@@ -37,7 +37,7 @@
     .locals 0
 
     .prologue
-    .line 2557
+    .line 2570
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
     .locals 2
 
     .prologue
-    .line 2569
+    .line 2582
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -90,82 +90,82 @@
 
     move-result-object v0
 
-    .line 2570
+    .line 2583
     const-string/jumbo v1, " ringBufferByteSize: "
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2570
+    .line 2583
     iget v1, p0, Lcom/android/server/wifi/WifiNative$RingBufferStatus;->ringBufferByteSize:I
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2570
+    .line 2583
     const-string/jumbo v1, " verboseLevel: "
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2570
+    .line 2583
     iget v1, p0, Lcom/android/server/wifi/WifiNative$RingBufferStatus;->verboseLevel:I
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2571
+    .line 2584
     const-string/jumbo v1, " writtenBytes: "
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2571
+    .line 2584
     iget v1, p0, Lcom/android/server/wifi/WifiNative$RingBufferStatus;->writtenBytes:I
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2571
+    .line 2584
     const-string/jumbo v1, " readBytes: "
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2571
+    .line 2584
     iget v1, p0, Lcom/android/server/wifi/WifiNative$RingBufferStatus;->readBytes:I
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2572
+    .line 2585
     const-string/jumbo v1, " writtenRecords: "
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2572
+    .line 2585
     iget v1, p0, Lcom/android/server/wifi/WifiNative$RingBufferStatus;->writtenRecords:I
 
-    .line 2569
+    .line 2582
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0

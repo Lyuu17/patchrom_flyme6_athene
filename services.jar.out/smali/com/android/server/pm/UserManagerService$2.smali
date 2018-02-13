@@ -33,7 +33,7 @@
     .param p3, "val$userId"    # I
 
     .prologue
-    .line 1352
+    .line 1353
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$2;->this$0:Lcom/android/server/pm/UserManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/UserManagerService$2;->val$effective:Landroid/os/Bundle;
@@ -51,7 +51,7 @@
     .locals 5
 
     .prologue
-    .line 1356
+    .line 1357
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$2;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -71,15 +71,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1354
+    .line 1355
     :goto_0
     return-void
 
-    .line 1357
+    .line 1358
     :catch_0
     move-exception v0
 
-    .line 1358
+    .line 1359
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "UserManagerService"
 

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
     .prologue
-    .line 1252
+    .line 1266
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p5, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 1255
+    .line 1269
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
     const/4 v2, 0x0
@@ -57,7 +57,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lcom/android/server/DeviceIdleController;->addPowerSaveTempWhitelistAppDirectInternal(IIJZLjava/lang/String;)V
 
-    .line 1254
+    .line 1268
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 2
 
     .prologue
-    .line 1259
+    .line 1273
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-static {v0}, Lcom/android/server/DeviceIdleController;->-get1(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
@@ -81,7 +81,7 @@
     .locals 1
 
     .prologue
-    .line 1282
+    .line 1296
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->getPowerSaveWhitelistUserAppIds()[I
@@ -96,12 +96,12 @@
     .param p1, "active"    # Z
 
     .prologue
-    .line 1272
+    .line 1286
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0, p1}, Lcom/android/server/DeviceIdleController;->setAlarmsActive(Z)V
 
-    .line 1271
+    .line 1285
     return-void
 .end method
 
@@ -110,12 +110,12 @@
     .param p1, "active"    # Z
 
     .prologue
-    .line 1267
+    .line 1281
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0, p1}, Lcom/android/server/DeviceIdleController;->setJobsActive(Z)V
 
-    .line 1266
+    .line 1280
     return-void
 .end method
 
@@ -124,11 +124,11 @@
     .param p1, "callback"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 1263
+    .line 1277
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-virtual {v0, p1}, Lcom/android/server/DeviceIdleController;->setNetworkPolicyTempWhitelistCallbackInternal(Ljava/lang/Runnable;)V
 
-    .line 1262
+    .line 1276
     return-void
 .end method

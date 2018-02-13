@@ -43,7 +43,7 @@
     .line 121
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$4;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
-    invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-wrap17(Lcom/android/server/dreams/DreamManagerService;)V
+    invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-wrap18(Lcom/android/server/dreams/DreamManagerService;)V
 
     .line 122
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$4;->this$0:Lcom/android/server/dreams/DreamManagerService;
@@ -60,7 +60,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v2}, Lcom/android/server/dreams/DreamManagerService;->-wrap15(Lcom/android/server/dreams/DreamManagerService;Z)V
+    invoke-static {v0, v2}, Lcom/android/server/dreams/DreamManagerService;->-wrap16(Lcom/android/server/dreams/DreamManagerService;Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

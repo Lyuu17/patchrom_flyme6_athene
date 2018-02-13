@@ -337,45 +337,36 @@
 
     move-object v4, v5
 
-    .line 244
     invoke-static/range {v0 .. v5}, Landroid/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
-    .line 249
     :cond_3
     and-int/lit8 v1, p1, 0x4
 
     if-eqz v1, :cond_4
 
-    .line 250
     invoke-static {v0, p0}, Landroid/text/util/Linkify;->flymeGatherTelLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)Z
 
-    .line 253
     :cond_4
     and-int/lit8 v1, p1, 0x8
 
     if-eqz v1, :cond_5
 
-    .line 254
     invoke-static {v0, p0}, Landroid/text/util/Linkify;->gatherMapLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)V
 
-    .line 257
     :cond_5
 
     invoke-static {p0, p1, v0}, Landroid/text/util/Linkify;->flymeGatherLinksDateTime(Landroid/text/Spannable;ILjava/util/ArrayList;)V
 
     invoke-static {v0}, Landroid/text/util/Linkify;->pruneOverlaps(Ljava/util/ArrayList;)V
 
-    .line 259
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-nez v1, :cond_6
 
-    .line 260
     return v10
 
-    .line 263
     :cond_6
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1455,19 +1446,19 @@
 
     new-array v3, v0, [Ljava/lang/String;
 
-    const-string/jumbo v0, "http://"
+    const-string v0, "http://"
 
     const/4 v1, 0x0
 
     aput-object v0, v3, v1
 
-    const-string/jumbo v0, "https://"
+    const-string v0, "https://"
 
     const/4 v1, 0x1
 
     aput-object v0, v3, v1
 
-    const-string/jumbo v0, "rtsp://"
+    const-string v0, "rtsp://"
 
     const/4 v1, 0x2
 
@@ -1553,7 +1544,7 @@
 
     new-array v3, v0, [Ljava/lang/String;
 
-    const-string/jumbo v0, "datetime:"
+    const-string v0, "datetime:"
 
     aput-object v0, v3, v1
 
@@ -1602,7 +1593,7 @@
 
     new-array v3, v6, [Ljava/lang/String;
 
-    const-string/jumbo v0, "tel:"
+    const-string v0, "tel:"
 
     aput-object v0, v3, v1
 

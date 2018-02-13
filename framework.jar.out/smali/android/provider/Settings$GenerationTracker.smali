@@ -33,22 +33,22 @@
     .param p4, "errorHandler"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 1504
+    .line 1520
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1506
+    .line 1522
     iput-object p1, p0, Landroid/provider/Settings$GenerationTracker;->mArray:Landroid/util/MemoryIntArray;
 
-    .line 1507
+    .line 1523
     iput p2, p0, Landroid/provider/Settings$GenerationTracker;->mIndex:I
 
-    .line 1508
+    .line 1524
     iput-object p4, p0, Landroid/provider/Settings$GenerationTracker;->mErrorHandler:Ljava/lang/Runnable;
 
-    .line 1509
+    .line 1525
     iput p3, p0, Landroid/provider/Settings$GenerationTracker;->mCurrentGeneration:I
 
-    .line 1505
+    .line 1521
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .locals 3
 
     .prologue
-    .line 1525
+    .line 1541
     :try_start_0
     iget-object v1, p0, Landroid/provider/Settings$GenerationTracker;->mArray:Landroid/util/MemoryIntArray;
 
@@ -70,11 +70,11 @@
 
     return v1
 
-    .line 1526
+    .line 1542
     :catch_0
     move-exception v0
 
-    .line 1527
+    .line 1543
     .local v0, "e":Ljava/io/IOException;
     const-string/jumbo v1, "Settings"
 
@@ -82,17 +82,17 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1528
+    .line 1544
     iget-object v1, p0, Landroid/provider/Settings$GenerationTracker;->mErrorHandler:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_0
 
-    .line 1529
+    .line 1545
     iget-object v1, p0, Landroid/provider/Settings$GenerationTracker;->mErrorHandler:Ljava/lang/Runnable;
 
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    .line 1532
+    .line 1548
     :cond_0
     const/4 v1, -0x1
 
@@ -105,7 +105,7 @@
     .locals 3
 
     .prologue
-    .line 1537
+    .line 1553
     :try_start_0
     iget-object v1, p0, Landroid/provider/Settings$GenerationTracker;->mArray:Landroid/util/MemoryIntArray;
 
@@ -113,16 +113,16 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1535
+    .line 1551
     :cond_0
     :goto_0
     return-void
 
-    .line 1538
+    .line 1554
     :catch_0
     move-exception v0
 
-    .line 1539
+    .line 1555
     .local v0, "e":Ljava/io/IOException;
     const-string/jumbo v1, "Settings"
 
@@ -130,12 +130,12 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1540
+    .line 1556
     iget-object v1, p0, Landroid/provider/Settings$GenerationTracker;->mErrorHandler:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_0
 
-    .line 1541
+    .line 1557
     iget-object v1, p0, Landroid/provider/Settings$GenerationTracker;->mErrorHandler:Ljava/lang/Runnable;
 
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
@@ -149,28 +149,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1513
+    .line 1529
     invoke-direct {p0}, Landroid/provider/Settings$GenerationTracker;->readCurrentGeneration()I
 
     move-result v0
 
-    .line 1514
+    .line 1530
     .local v0, "currentGeneration":I
     if-ltz v0, :cond_1
 
-    .line 1515
+    .line 1531
     iget v1, p0, Landroid/provider/Settings$GenerationTracker;->mCurrentGeneration:I
 
     if-ne v0, v1, :cond_0
 
-    .line 1516
+    .line 1532
     return v2
 
-    .line 1518
+    .line 1534
     :cond_0
     iput v0, p0, Landroid/provider/Settings$GenerationTracker;->mCurrentGeneration:I
 
-    .line 1520
+    .line 1536
     :cond_1
     const/4 v1, 0x1
 

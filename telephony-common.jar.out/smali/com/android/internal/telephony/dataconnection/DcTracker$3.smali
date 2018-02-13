@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     .prologue
-    .line 329
+    .line 334
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 4
 
     .prologue
-    .line 332
+    .line 337
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    invoke-static {v0}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-wrap10(Lcom/android/internal/telephony/dataconnection/DcTracker;)V
+    invoke-static {v0}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-wrap8(Lcom/android/internal/telephony/dataconnection/DcTracker;)V
 
-    .line 334
+    .line 339
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     invoke-static {v0}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get1(Lcom/android/internal/telephony/dataconnection/DcTracker;)Z
@@ -55,28 +55,28 @@
 
     if-eqz v0, :cond_1
 
-    .line 335
+    .line 340
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get7(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/content/ContentResolver;
+    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get6(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 336
+    .line 341
     const-string/jumbo v2, "pdp_watchdog_poll_interval_ms"
 
     const/16 v3, 0x3e8
 
-    .line 335
+    .line 340
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-set3(Lcom/android/internal/telephony/dataconnection/DcTracker;I)I
 
-    .line 343
+    .line 348
     :goto_0
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
@@ -86,7 +86,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 344
+    .line 349
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     invoke-static {v0}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get0(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/os/Handler;
@@ -103,27 +103,27 @@
 
     invoke-virtual {v0, p0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 331
+    .line 336
     :cond_0
     return-void
 
-    .line 338
+    .line 343
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$3;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get7(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/content/ContentResolver;
+    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get6(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 339
+    .line 344
     const-string/jumbo v2, "pdp_watchdog_long_poll_interval_ms"
 
-    .line 340
+    .line 345
     const v3, 0x927c0
 
-    .line 338
+    .line 343
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1

@@ -33,7 +33,7 @@
     .param p3, "val$accountsCopy"    # [Landroid/accounts/Account;
 
     .prologue
-    .line 1914
+    .line 1939
     iput-object p1, p0, Landroid/accounts/AccountManager$19;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p2, p0, Landroid/accounts/AccountManager$19;->val$listener:Landroid/accounts/OnAccountsUpdateListener;
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 1918
+    .line 1943
     :try_start_0
     iget-object v1, p0, Landroid/accounts/AccountManager$19;->val$listener:Landroid/accounts/OnAccountsUpdateListener;
 
@@ -61,15 +61,15 @@
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1916
+    .line 1941
     :goto_0
     return-void
 
-    .line 1919
+    .line 1944
     :catch_0
     move-exception v0
 
-    .line 1922
+    .line 1947
     .local v0, "e":Landroid/database/SQLException;
     const-string/jumbo v1, "AccountManager"
 

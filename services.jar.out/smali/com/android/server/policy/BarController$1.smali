@@ -30,7 +30,7 @@
     .param p2, "val$state"    # I
 
     .prologue
-    .line 186
+    .line 187
     iput-object p1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
     iput p2, p0, Lcom/android/server/policy/BarController$1;->val$state:I
@@ -46,18 +46,18 @@
     .locals 3
 
     .prologue
-    .line 189
+    .line 190
     iget-object v1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
     invoke-virtual {v1}, Lcom/android/server/policy/BarController;->getStatusBarInternal()Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     move-result-object v0
 
-    .line 190
+    .line 191
     .local v0, "statusbar":Lcom/android/server/statusbar/StatusBarManagerInternal;
     if-eqz v0, :cond_0
 
-    .line 191
+    .line 192
     iget-object v1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
     invoke-static {v1}, Lcom/android/server/policy/BarController;->-get0(Lcom/android/server/policy/BarController;)I
@@ -68,7 +68,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/server/statusbar/StatusBarManagerInternal;->setWindowState(II)V
 
-    .line 188
+    .line 189
     :cond_0
     return-void
 .end method

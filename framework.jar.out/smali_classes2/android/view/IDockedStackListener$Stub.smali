@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.view.IDockedStackListener"
 
-.field static final TRANSACTION_onAdjustedForImeChanged:I = 0x4
+.field static final TRANSACTION_onAdjustedForImeChanged_3:I = 0x4
 
 .field static final TRANSACTION_onDividerVisibilityChanged:I = 0x1
 
@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_onDockedStackExistsChanged:I = 0x2
 
-.field static final TRANSACTION_onDockedStackMinimizedChanged:I = 0x3
+.field static final TRANSACTION_onDockedStackMinimizedChanged_2:I = 0x3
 
 
 # direct methods

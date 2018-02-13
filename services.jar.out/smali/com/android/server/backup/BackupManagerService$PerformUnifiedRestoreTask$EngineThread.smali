@@ -35,18 +35,18 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 8754
+    .line 8760
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->this$1:Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8755
+    .line 8761
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
 
-    .line 8756
+    .line 8762
     invoke-virtual {p2, v2}, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;->setRunning(Z)V
 
-    .line 8760
+    .line 8766
     new-instance v0, Ljava/io/FileInputStream;
 
     invoke-virtual {p3}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -57,7 +57,7 @@
 
     iput-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
 
-    .line 8754
+    .line 8760
     return-void
 .end method
 
@@ -67,17 +67,17 @@
     .locals 1
 
     .prologue
-    .line 8786
+    .line 8792
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
 
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 8787
+    .line 8793
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
 
     invoke-virtual {v0}, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;->handleTimeout()V
 
-    .line 8785
+    .line 8791
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .locals 1
 
     .prologue
-    .line 8764
+    .line 8770
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
 
     invoke-virtual {v0}, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;->isRunning()Z
@@ -99,7 +99,7 @@
     .locals 3
 
     .prologue
-    .line 8774
+    .line 8780
     :goto_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
@@ -110,7 +110,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8776
+    .line 8782
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
 
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
@@ -123,25 +123,25 @@
 
     goto :goto_0
 
-    .line 8778
+    .line 8784
     :catchall_0
     move-exception v0
 
-    .line 8781
+    .line 8787
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
 
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 8778
+    .line 8784
     throw v0
 
-    .line 8781
+    .line 8787
     :cond_0
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
 
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 8772
+    .line 8778
     return-void
 .end method
 
@@ -149,7 +149,7 @@
     .locals 1
 
     .prologue
-    .line 8768
+    .line 8774
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
 
     invoke-virtual {v0}, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;->waitForResult()I

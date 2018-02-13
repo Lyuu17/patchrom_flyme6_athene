@@ -52,25 +52,25 @@
 
 .field static final TRANSACTION_outOfMemory:I = 0xa
 
-.field static final TRANSACTION_performDeferredDestroy:I = 0x9
+.field static final TRANSACTION_performDeferredDestroy_8:I = 0x9
 
 .field static final TRANSACTION_performDrag:I = 0x13
 
 .field static final TRANSACTION_performHapticFeedback:I = 0x11
 
-.field static final TRANSACTION_pokeDrawLock:I = 0x1f
+.field static final TRANSACTION_pokeDrawLock_30:I = 0x1f
 
 .field static final TRANSACTION_prepareDrag:I = 0x12
 
-.field static final TRANSACTION_prepareToReplaceWindows:I = 0x8
+.field static final TRANSACTION_prepareToReplaceWindows_7:I = 0x8
 
-.field static final TRANSACTION_relayout:I = 0x6
+.field static final TRANSACTION_relayout_5:I = 0x6
 
 .field static final TRANSACTION_remove:I = 0x5
 
-.field static final TRANSACTION_reportDropResult:I = 0x14
+.field static final TRANSACTION_reportDropResult_19:I = 0x14
 
-.field static final TRANSACTION_repositionChild:I = 0x7
+.field static final TRANSACTION_repositionChild_6:I = 0x7
 
 .field static final TRANSACTION_sendWallpaperCommand:I = 0x1b
 
@@ -78,7 +78,7 @@
 
 .field static final TRANSACTION_setInsets:I = 0xc
 
-.field static final TRANSACTION_setTransparentRegion:I = 0xb
+.field static final TRANSACTION_setTransparentRegion_10:I = 0xb
 
 .field static final TRANSACTION_setWallpaperDisplayOffset:I = 0x1a
 

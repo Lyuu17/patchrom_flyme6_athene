@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final ACTION_DEVICE_NOT_SELECTED:Ljava/lang/String; = "org.codeaurora.bluetooth.devicepicker.action.DEVICE_NOT_SELECTED"
+
 .field public static final ACTION_DEVICE_SELECTED:Ljava/lang/String; = "android.bluetooth.devicepicker.action.DEVICE_SELECTED"
 
 .field public static final ACTION_LAUNCH:Ljava/lang/String; = "android.bluetooth.devicepicker.action.LAUNCH"

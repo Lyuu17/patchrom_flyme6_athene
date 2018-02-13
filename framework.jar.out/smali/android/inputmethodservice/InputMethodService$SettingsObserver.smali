@@ -36,7 +36,7 @@
     .param p1, "service"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 668
+    .line 673
     new-instance v0, Landroid/os/Handler;
 
     invoke-virtual {p1}, Landroid/inputmethodservice/InputMethodService;->getMainLooper()Landroid/os/Looper;
@@ -47,15 +47,15 @@
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 663
+    .line 668
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mShowImeWithHardKeyboard:I
 
-    .line 669
+    .line 674
     iput-object p1, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mService:Landroid/inputmethodservice/InputMethodService;
 
-    .line 667
+    .line 672
     return-void
 .end method
 
@@ -64,31 +64,31 @@
     .param p0, "service"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 685
+    .line 690
     new-instance v0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;
 
     invoke-direct {v0, p0}, Landroid/inputmethodservice/InputMethodService$SettingsObserver;-><init>(Landroid/inputmethodservice/InputMethodService;)V
 
-    .line 687
+    .line 692
     .local v0, "observer":Landroid/inputmethodservice/InputMethodService$SettingsObserver;
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 688
+    .line 693
     const-string/jumbo v2, "show_ime_with_hard_keyboard"
 
     invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 689
+    .line 694
     const/4 v3, 0x0
 
-    .line 687
+    .line 692
     invoke-virtual {v1, v2, v3, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 690
+    .line 695
     return-object v0
 .end method
 
@@ -100,42 +100,42 @@
 
     const/4 v3, 0x0
 
-    .line 699
+    .line 704
     iget v0, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mShowImeWithHardKeyboard:I
 
     if-nez v0, :cond_0
 
-    .line 700
+    .line 705
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mService:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/InputMethodService;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 701
+    .line 706
     const-string/jumbo v2, "show_ime_with_hard_keyboard"
 
-    .line 700
+    .line 705
     invoke-static {v0, v2, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 702
+    .line 707
     const/4 v0, 0x2
 
-    .line 700
+    .line 705
     :goto_0
     iput v0, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mShowImeWithHardKeyboard:I
 
-    .line 704
+    .line 709
     :cond_0
     iget v0, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mShowImeWithHardKeyboard:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 710
+    .line 715
     const-string/jumbo v0, "InputMethodService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,24 +160,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 711
+    .line 716
     return v3
 
     :cond_1
     move v0, v1
 
-    .line 702
+    .line 707
     goto :goto_0
 
-    .line 706
+    .line 711
     :pswitch_0
     return v1
 
-    .line 708
+    .line 713
     :pswitch_1
     return v3
 
-    .line 704
+    .line 709
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -195,14 +195,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 718
+    .line 723
     const-string/jumbo v1, "show_ime_with_hard_keyboard"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 719
+    .line 724
     .local v0, "showImeWithHardKeyboardUri":Landroid/net/Uri;
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
@@ -210,40 +210,40 @@
 
     if-eqz v1, :cond_0
 
-    .line 720
+    .line 725
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mService:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v1}, Landroid/inputmethodservice/InputMethodService;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 721
+    .line 726
     const-string/jumbo v2, "show_ime_with_hard_keyboard"
 
-    .line 720
+    .line 725
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 722
+    .line 727
     const/4 v1, 0x2
 
-    .line 720
+    .line 725
     :goto_0
     iput v1, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mShowImeWithHardKeyboard:I
 
-    .line 727
+    .line 732
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mService:Landroid/inputmethodservice/InputMethodService;
 
     invoke-static {v1}, Landroid/inputmethodservice/InputMethodService;->-wrap4(Landroid/inputmethodservice/InputMethodService;)V
 
-    .line 716
+    .line 721
     :cond_0
     return-void
 
-    .line 722
+    .line 727
     :cond_1
     const/4 v1, 0x1
 
@@ -254,7 +254,7 @@
     .locals 2
 
     .prologue
-    .line 733
+    .line 738
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -288,7 +288,7 @@
     .locals 1
 
     .prologue
-    .line 694
+    .line 699
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$SettingsObserver;->mService:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/InputMethodService;->getContentResolver()Landroid/content/ContentResolver;
@@ -297,6 +297,6 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 693
+    .line 698
     return-void
 .end method

@@ -33,6 +33,8 @@
 
 .field public static final InterfaceListResult:I = 0x6e
 
+.field public static final InterfaceMessage:I = 0x26a
+
 .field public static final InterfaceRxCounterResult:I = 0xd8
 
 .field public static final InterfaceTxCounterResult:I = 0xd9
@@ -70,7 +72,7 @@
     .param p1, "this$0"    # Lcom/android/server/NetworkManagementService;
 
     .prologue
-    .line 152
+    .line 159
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$NetdResponseCode;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

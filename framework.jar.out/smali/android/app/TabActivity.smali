@@ -50,7 +50,7 @@
     .line 123
     const v0, 0x10900eb
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V
+    invoke-virtual {p0, v0}, Landroid/app/TabActivity;->setContentView(I)V
 
     .line 121
     :cond_0
@@ -93,7 +93,7 @@
 
     .prologue
     .line 131
-    invoke-virtual {p0}, Landroid/app/ActivityGroup;->getLocalActivityManager()Landroid/app/LocalActivityManager;
+    invoke-virtual {p0}, Landroid/app/TabActivity;->getLocalActivityManager()Landroid/app/LocalActivityManager;
 
     move-result-object v1
 
@@ -119,9 +119,7 @@
     if-eqz v1, :cond_0
 
     .line 134
-    nop
-
-    nop
+    check-cast v0, Landroid/widget/TextView;
 
     .end local v0    # "tabView":Landroid/view/View;
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -141,7 +139,7 @@
     .line 111
     const v0, 0x1020012
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/app/TabActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -169,7 +167,7 @@
     :cond_0
     iget-object v0, p0, Landroid/app/TabActivity;->mTabHost:Landroid/widget/TabHost;
 
-    invoke-virtual {p0}, Landroid/app/ActivityGroup;->getLocalActivityManager()Landroid/app/LocalActivityManager;
+    invoke-virtual {p0}, Landroid/app/TabActivity;->getLocalActivityManager()Landroid/app/LocalActivityManager;
 
     move-result-object v1
 
@@ -227,7 +225,7 @@
     .line 69
     const-string/jumbo v1, "currentTab"
 
-    invoke-virtual {p1, v1}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -305,7 +303,7 @@
     .line 98
     const-string/jumbo v1, "currentTab"
 
-    invoke-virtual {p1, v1, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 94
     :cond_0

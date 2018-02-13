@@ -16,7 +16,11 @@
 
 .field public static final BUILT_IN_DISPLAY_ID_MAIN:I = 0x0
 
+.field public static final BUILT_IN_DISPLAY_ID_TERTIARY:I = 0x2
+
 .field public static final CURSOR_WINDOW:I = 0x2000
+
+.field public static final FX_SURFACE_BLUR:I = 0x10000
 
 .field public static final FX_SURFACE_DIM:I = 0x20000
 
@@ -73,7 +77,7 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 293
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 101
@@ -83,10 +87,10 @@
 
     iput-object v0, p0, Landroid/view/SurfaceControl;->mCloseGuard:Ldalvik/system/CloseGuard;
 
-    .line 285
+    .line 296
     if-nez p1, :cond_0
 
-    .line 286
+    .line 297
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "session must not be null"
@@ -95,11 +99,11 @@
 
     throw v0
 
-    .line 288
+    .line 299
     :cond_0
     if-nez p2, :cond_1
 
-    .line 289
+    .line 300
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "name must not be null"
@@ -108,13 +112,13 @@
 
     throw v0
 
-    .line 292
+    .line 303
     :cond_1
     and-int/lit8 v0, p6, 0x4
 
     if-nez v0, :cond_2
 
-    .line 293
+    .line 304
     const-string/jumbo v0, "SurfaceControl"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -135,26 +139,26 @@
 
     move-result-object v1
 
-    .line 298
+    .line 309
     new-instance v2, Ljava/lang/Throwable;
 
     invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
 
-    .line 293
+    .line 304
     invoke-static {v0, v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 301
+    .line 312
     :cond_2
     iput-object p2, p0, Landroid/view/SurfaceControl;->mName:Ljava/lang/String;
 
-    .line 302
+    .line 313
     invoke-static/range {p1 .. p6}, Landroid/view/SurfaceControl;->nativeCreate(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
-    .line 303
+    .line 314
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     const-wide/16 v2, 0x0
@@ -163,18 +167,18 @@
 
     if-nez v0, :cond_3
 
-    .line 304
+    .line 315
     new-instance v0, Landroid/view/Surface$OutOfResourcesException;
 
-    .line 305
+    .line 316
     const-string/jumbo v1, "Couldn\'t allocate SurfaceControl native object"
 
-    .line 304
+    .line 315
     invoke-direct {v0, v1}, Landroid/view/Surface$OutOfResourcesException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 308
+    .line 319
     :cond_3
     iget-object v0, p0, Landroid/view/SurfaceControl;->mCloseGuard:Ldalvik/system/CloseGuard;
 
@@ -182,7 +186,7 @@
 
     invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 284
+    .line 295
     return-void
 .end method
 
@@ -190,7 +194,7 @@
     .locals 4
 
     .prologue
-    .line 366
+    .line 377
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     const-wide/16 v2, 0x0
@@ -201,15 +205,15 @@
 
     new-instance v0, Ljava/lang/NullPointerException;
 
-    .line 367
+    .line 378
     const-string/jumbo v1, "mNativeObject is null. Have you called release() already?"
 
-    .line 366
+    .line 377
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 365
+    .line 376
     :cond_0
     return-void
 .end method
@@ -218,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 464
+    .line 475
     invoke-static {}, Landroid/view/SurfaceControl;->nativeClearAnimationFrameStats()Z
 
     move-result v0
@@ -230,12 +234,12 @@
     .locals 1
 
     .prologue
-    .line 382
+    .line 393
     const/4 v0, 0x0
 
     invoke-static {v0}, Landroid/view/SurfaceControl;->nativeCloseTransaction(Z)V
 
-    .line 381
+    .line 392
     return-void
 .end method
 
@@ -243,12 +247,12 @@
     .locals 1
 
     .prologue
-    .line 386
+    .line 397
     const/4 v0, 0x1
 
     invoke-static {v0}, Landroid/view/SurfaceControl;->nativeCloseTransaction(Z)V
 
-    .line 385
+    .line 396
     return-void
 .end method
 
@@ -258,10 +262,10 @@
     .param p1, "secure"    # Z
 
     .prologue
-    .line 712
+    .line 723
     if-nez p0, :cond_0
 
-    .line 713
+    .line 724
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "name must not be null"
@@ -270,7 +274,7 @@
 
     throw v0
 
-    .line 715
+    .line 726
     :cond_0
     invoke-static {p0, p1}, Landroid/view/SurfaceControl;->nativeCreateDisplay(Ljava/lang/String;Z)Landroid/os/IBinder;
 
@@ -284,10 +288,10 @@
     .param p0, "displayToken"    # Landroid/os/IBinder;
 
     .prologue
-    .line 719
+    .line 730
     if-nez p0, :cond_0
 
-    .line 720
+    .line 731
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -296,11 +300,11 @@
 
     throw v0
 
-    .line 722
+    .line 733
     :cond_0
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeDestroyDisplay(Landroid/os/IBinder;)V
 
-    .line 718
+    .line 729
     return-void
 .end method
 
@@ -309,10 +313,10 @@
     .param p0, "displayToken"    # Landroid/os/IBinder;
 
     .prologue
-    .line 643
+    .line 654
     if-nez p0, :cond_0
 
-    .line 644
+    .line 655
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -321,7 +325,7 @@
 
     throw v0
 
-    .line 646
+    .line 657
     :cond_0
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeGetActiveColorMode(Landroid/os/IBinder;)I
 
@@ -335,10 +339,10 @@
     .param p0, "displayToken"    # Landroid/os/IBinder;
 
     .prologue
-    .line 622
+    .line 633
     if-nez p0, :cond_0
 
-    .line 623
+    .line 634
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -347,7 +351,7 @@
 
     throw v0
 
-    .line 625
+    .line 636
     :cond_0
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeGetActiveConfig(Landroid/os/IBinder;)I
 
@@ -361,7 +365,7 @@
     .param p0, "outStats"    # Landroid/view/WindowAnimationFrameStats;
 
     .prologue
-    .line 468
+    .line 479
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeGetAnimationFrameStats(Landroid/view/WindowAnimationFrameStats;)Z
 
     move-result v0
@@ -374,7 +378,7 @@
     .param p0, "builtInDisplayId"    # I
 
     .prologue
-    .line 726
+    .line 737
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeGetBuiltInDisplay(I)Landroid/os/IBinder;
 
     move-result-object v0
@@ -387,10 +391,10 @@
     .param p0, "displayToken"    # Landroid/os/IBinder;
 
     .prologue
-    .line 636
+    .line 647
     if-nez p0, :cond_0
 
-    .line 637
+    .line 648
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -399,7 +403,7 @@
 
     throw v0
 
-    .line 639
+    .line 650
     :cond_0
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeGetDisplayColorModes(Landroid/os/IBinder;)[I
 
@@ -413,10 +417,10 @@
     .param p0, "displayToken"    # Landroid/os/IBinder;
 
     .prologue
-    .line 615
+    .line 626
     if-nez p0, :cond_0
 
-    .line 616
+    .line 627
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -425,7 +429,7 @@
 
     throw v0
 
-    .line 618
+    .line 629
     :cond_0
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeGetDisplayConfigs(Landroid/os/IBinder;)[Landroid/view/SurfaceControl$PhysicalDisplayInfo;
 
@@ -439,10 +443,10 @@
     .param p0, "displayToken"    # Landroid/os/IBinder;
 
     .prologue
-    .line 705
+    .line 716
     if-nez p0, :cond_0
 
-    .line 706
+    .line 717
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -451,7 +455,7 @@
 
     throw v0
 
-    .line 708
+    .line 719
     :cond_0
     invoke-static {p0}, Landroid/view/SurfaceControl;->nativeGetHdrCapabilities(Landroid/os/IBinder;)Landroid/view/Display$HdrCapabilities;
 
@@ -598,10 +602,10 @@
     .locals 0
 
     .prologue
-    .line 377
+    .line 388
     invoke-static {}, Landroid/view/SurfaceControl;->nativeOpenTransaction()V
 
-    .line 376
+    .line 387
     return-void
 .end method
 
@@ -613,12 +617,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 832
+    .line 843
     invoke-static {v4}, Landroid/view/SurfaceControl;->getBuiltInDisplay(I)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 834
+    .line 845
     .local v0, "displayToken":Landroid/os/IBinder;
     new-instance v1, Landroid/graphics/Rect;
 
@@ -656,7 +660,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 812
+    .line 823
     invoke-static {v6}, Landroid/view/SurfaceControl;->getBuiltInDisplay(I)Landroid/os/IBinder;
 
     move-result-object v0
@@ -676,7 +680,7 @@
 
     move v8, p6
 
-    .line 814
+    .line 825
     invoke-static/range {v0 .. v8}, Landroid/view/SurfaceControl;->nativeScreenshot(Landroid/os/IBinder;Landroid/graphics/Rect;IIIIZZI)Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -692,7 +696,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 775
+    .line 786
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
@@ -713,7 +717,7 @@
 
     invoke-static/range {v0 .. v8}, Landroid/view/SurfaceControl;->screenshot(Landroid/os/IBinder;Landroid/view/Surface;Landroid/graphics/Rect;IIIIZZ)V
 
-    .line 774
+    .line 785
     return-void
 .end method
 
@@ -727,7 +731,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 765
+    .line 776
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
@@ -748,7 +752,7 @@
 
     invoke-static/range {v0 .. v8}, Landroid/view/SurfaceControl;->screenshot(Landroid/os/IBinder;Landroid/view/Surface;Landroid/graphics/Rect;IIIIZZ)V
 
-    .line 764
+    .line 775
     return-void
 .end method
 
@@ -763,12 +767,12 @@
     .param p6, "useIdentityTransform"    # Z
 
     .prologue
-    .line 749
+    .line 760
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 750
+    .line 761
     const/4 v7, 0x0
 
     move-object v0, p0
@@ -785,10 +789,10 @@
 
     move v8, p6
 
-    .line 749
+    .line 760
     invoke-static/range {v0 .. v8}, Landroid/view/SurfaceControl;->screenshot(Landroid/os/IBinder;Landroid/view/Surface;Landroid/graphics/Rect;IIIIZZ)V
 
-    .line 748
+    .line 759
     return-void
 .end method
 
@@ -805,10 +809,10 @@
     .param p8, "useIdentityTransform"    # Z
 
     .prologue
-    .line 841
+    .line 852
     if-nez p0, :cond_0
 
-    .line 842
+    .line 853
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -817,11 +821,11 @@
 
     throw v0
 
-    .line 844
+    .line 855
     :cond_0
     if-nez p1, :cond_1
 
-    .line 845
+    .line 856
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "consumer must not be null"
@@ -830,11 +834,11 @@
 
     throw v0
 
-    .line 847
+    .line 858
     :cond_1
     invoke-static/range {p0 .. p8}, Landroid/view/SurfaceControl;->nativeScreenshot(Landroid/os/IBinder;Landroid/view/Surface;Landroid/graphics/Rect;IIIIZZ)V
 
-    .line 840
+    .line 851
     return-void
 .end method
 
@@ -844,10 +848,10 @@
     .param p1, "colorMode"    # I
 
     .prologue
-    .line 650
+    .line 661
     if-nez p0, :cond_0
 
-    .line 651
+    .line 662
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -856,7 +860,7 @@
 
     throw v0
 
-    .line 653
+    .line 664
     :cond_0
     invoke-static {p0, p1}, Landroid/view/SurfaceControl;->nativeSetActiveColorMode(Landroid/os/IBinder;I)Z
 
@@ -871,10 +875,10 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 629
+    .line 640
     if-nez p0, :cond_0
 
-    .line 630
+    .line 641
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -883,7 +887,7 @@
 
     throw v0
 
-    .line 632
+    .line 643
     :cond_0
     invoke-static {p0, p1}, Landroid/view/SurfaceControl;->nativeSetActiveConfig(Landroid/os/IBinder;I)Z
 
@@ -896,10 +900,10 @@
     .locals 0
 
     .prologue
-    .line 408
+    .line 419
     invoke-static {}, Landroid/view/SurfaceControl;->nativeSetAnimationTransaction()V
 
-    .line 407
+    .line 418
     return-void
 .end method
 
@@ -909,10 +913,10 @@
     .param p1, "layerStack"    # I
 
     .prologue
-    .line 673
+    .line 684
     if-nez p0, :cond_0
 
-    .line 674
+    .line 685
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -921,11 +925,11 @@
 
     throw v0
 
-    .line 676
+    .line 687
     :cond_0
     invoke-static {p0, p1}, Landroid/view/SurfaceControl;->nativeSetDisplayLayerStack(Landroid/os/IBinder;I)V
 
-    .line 672
+    .line 683
     return-void
 .end method
 
@@ -935,10 +939,10 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 608
+    .line 619
     if-nez p0, :cond_0
 
-    .line 609
+    .line 620
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -947,11 +951,11 @@
 
     throw v0
 
-    .line 611
+    .line 622
     :cond_0
     invoke-static {p0, p1}, Landroid/view/SurfaceControl;->nativeSetDisplayPowerMode(Landroid/os/IBinder;I)V
 
-    .line 607
+    .line 618
     return-void
 .end method
 
@@ -963,10 +967,10 @@
     .param p3, "displayRect"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 658
+    .line 669
     if-nez p0, :cond_0
 
-    .line 659
+    .line 670
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -975,11 +979,11 @@
 
     throw v0
 
-    .line 661
+    .line 672
     :cond_0
     if-nez p2, :cond_1
 
-    .line 662
+    .line 673
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "layerStackRect must not be null"
@@ -988,11 +992,11 @@
 
     throw v0
 
-    .line 664
+    .line 675
     :cond_1
     if-nez p3, :cond_2
 
-    .line 665
+    .line 676
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayRect must not be null"
@@ -1001,7 +1005,7 @@
 
     throw v0
 
-    .line 668
+    .line 679
     :cond_2
     iget v2, p2, Landroid/graphics/Rect;->left:I
 
@@ -1011,7 +1015,7 @@
 
     iget v5, p2, Landroid/graphics/Rect;->bottom:I
 
-    .line 669
+    .line 680
     iget v6, p3, Landroid/graphics/Rect;->left:I
 
     iget v7, p3, Landroid/graphics/Rect;->top:I
@@ -1024,10 +1028,10 @@
 
     move v1, p1
 
-    .line 667
+    .line 678
     invoke-static/range {v0 .. v9}, Landroid/view/SurfaceControl;->nativeSetDisplayProjection(Landroid/os/IBinder;IIIIIIIII)V
 
-    .line 657
+    .line 668
     return-void
 .end method
 
@@ -1038,10 +1042,10 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 694
+    .line 705
     if-nez p0, :cond_0
 
-    .line 695
+    .line 706
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -1050,13 +1054,13 @@
 
     throw v0
 
-    .line 697
+    .line 708
     :cond_0
     if-lez p1, :cond_1
 
     if-gtz p2, :cond_2
 
-    .line 698
+    .line 709
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1066,11 +1070,11 @@
 
     throw v0
 
-    .line 701
+    .line 712
     :cond_2
     invoke-static {p0, p1, p2}, Landroid/view/SurfaceControl;->nativeSetDisplaySize(Landroid/os/IBinder;II)V
 
-    .line 693
+    .line 704
     return-void
 .end method
 
@@ -1080,10 +1084,10 @@
     .param p1, "surface"    # Landroid/view/Surface;
 
     .prologue
-    .line 680
+    .line 691
     if-nez p0, :cond_0
 
-    .line 681
+    .line 692
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "displayToken must not be null"
@@ -1092,16 +1096,16 @@
 
     throw v0
 
-    .line 684
+    .line 695
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 685
+    .line 696
     iget-object v1, p1, Landroid/view/Surface;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 686
+    .line 697
     :try_start_0
     iget-wide v2, p1, Landroid/view/Surface;->mNativeObject:J
 
@@ -1111,11 +1115,11 @@
 
     monitor-exit v1
 
-    .line 679
+    .line 690
     :goto_0
     return-void
 
-    .line 685
+    .line 696
     :catchall_0
     move-exception v0
 
@@ -1123,7 +1127,7 @@
 
     throw v0
 
-    .line 689
+    .line 700
     :cond_1
     const-wide/16 v0, 0x0
 
@@ -1138,10 +1142,10 @@
     .locals 2
 
     .prologue
-    .line 454
+    .line 465
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 455
+    .line 466
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeClearContentFrameStats(J)Z
@@ -1157,12 +1161,12 @@
     .param p2, "frame"    # J
 
     .prologue
-    .line 390
+    .line 401
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1, p2, p3}, Landroid/view/SurfaceControl;->nativeDeferTransactionUntil(JLandroid/os/IBinder;J)V
 
-    .line 389
+    .line 400
     return-void
 .end method
 
@@ -1172,39 +1176,8 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 349
-    iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_0
-
-    .line 350
-    iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
-
-    invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeDestroy(J)V
-
-    .line 351
-    iput-wide v2, p0, Landroid/view/SurfaceControl;->mNativeObject:J
-
-    .line 353
-    :cond_0
-    iget-object v0, p0, Landroid/view/SurfaceControl;->mCloseGuard:Ldalvik/system/CloseGuard;
-
-    invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
-
-    .line 348
-    return-void
-.end method
-
-.method public disconnect()V
-    .locals 4
-
-    .prologue
     .line 360
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
-
-    const-wide/16 v2, 0x0
 
     cmp-long v0, v0, v2
 
@@ -1213,9 +1186,40 @@
     .line 361
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
-    invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeDisconnect(J)V
+    invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeDestroy(J)V
+
+    .line 362
+    iput-wide v2, p0, Landroid/view/SurfaceControl;->mNativeObject:J
+
+    .line 364
+    :cond_0
+    iget-object v0, p0, Landroid/view/SurfaceControl;->mCloseGuard:Ldalvik/system/CloseGuard;
+
+    invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
     .line 359
+    return-void
+.end method
+
+.method public disconnect()V
+    .locals 4
+
+    .prologue
+    .line 371
+    iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_0
+
+    .line 372
+    iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
+
+    invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeDisconnect(J)V
+
+    .line 370
     :cond_0
     return-void
 .end method
@@ -1229,18 +1233,18 @@
     .end annotation
 
     .prologue
-    .line 314
+    .line 325
     :try_start_0
     iget-object v0, p0, Landroid/view/SurfaceControl;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
-    .line 315
+    .line 326
     iget-object v0, p0, Landroid/view/SurfaceControl;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
-    .line 317
+    .line 328
     :cond_0
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
@@ -1250,28 +1254,28 @@
 
     if-eqz v0, :cond_1
 
-    .line 318
+    .line 329
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeRelease(J)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 321
+    .line 332
     :cond_1
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 312
+    .line 323
     return-void
 
-    .line 320
+    .line 331
     :catchall_0
     move-exception v0
 
-    .line 321
+    .line 332
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 320
+    .line 331
     throw v0
 .end method
 
@@ -1280,10 +1284,10 @@
     .param p1, "outStats"    # Landroid/view/WindowContentFrameStats;
 
     .prologue
-    .line 459
+    .line 470
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 460
+    .line 471
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1}, Landroid/view/SurfaceControl;->nativeGetContentFrameStats(JLandroid/view/WindowContentFrameStats;)Z
@@ -1297,7 +1301,7 @@
     .locals 2
 
     .prologue
-    .line 399
+    .line 410
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeGetHandle(J)Landroid/os/IBinder;
@@ -1311,7 +1315,7 @@
     .locals 2
 
     .prologue
-    .line 403
+    .line 414
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeGetTransformToDisplayInverse(J)Z
@@ -1327,15 +1331,15 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 439
+    .line 450
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 440
+    .line 451
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, v2, v2}, Landroid/view/SurfaceControl;->nativeSetFlags(JII)V
 
-    .line 438
+    .line 449
     return-void
 .end method
 
@@ -1345,28 +1349,28 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 336
+    .line 347
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
-    .line 337
+    .line 348
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeRelease(J)V
 
-    .line 338
+    .line 349
     iput-wide v2, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
-    .line 340
+    .line 351
     :cond_0
     iget-object v0, p0, Landroid/view/SurfaceControl;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 335
+    .line 346
     return-void
 .end method
 
@@ -1375,15 +1379,15 @@
     .param p1, "alpha"    # F
 
     .prologue
-    .line 476
+    .line 487
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 477
+    .line 488
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1}, Landroid/view/SurfaceControl;->nativeSetAlpha(JF)V
 
-    .line 475
+    .line 486
     return-void
 .end method
 
@@ -1394,16 +1398,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 496
+    .line 507
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 497
+    .line 508
     if-eqz p1, :cond_0
 
-    .line 498
+    .line 509
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
-    .line 499
+    .line 510
     iget v2, p1, Landroid/graphics/Rect;->left:I
 
     iget v3, p1, Landroid/graphics/Rect;->top:I
@@ -1412,14 +1416,14 @@
 
     iget v5, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 498
+    .line 509
     invoke-static/range {v0 .. v5}, Landroid/view/SurfaceControl;->nativeSetFinalCrop(JIIII)V
 
-    .line 495
+    .line 506
     :goto_0
     return-void
 
-    .line 501
+    .line 512
     :cond_0
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
@@ -1438,15 +1442,15 @@
     .locals 2
 
     .prologue
-    .line 429
+    .line 440
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 430
+    .line 441
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/view/SurfaceControl;->nativeSetGeometryAppliesWithResize(J)V
 
-    .line 428
+    .line 439
     return-void
 .end method
 
@@ -1455,15 +1459,15 @@
     .param p1, "zorder"    # I
 
     .prologue
-    .line 412
+    .line 423
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 413
+    .line 424
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1}, Landroid/view/SurfaceControl;->nativeSetLayer(JI)V
 
-    .line 411
+    .line 422
     return-void
 .end method
 
@@ -1472,15 +1476,15 @@
     .param p1, "layerStack"    # I
 
     .prologue
-    .line 506
+    .line 517
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 507
+    .line 518
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1}, Landroid/view/SurfaceControl;->nativeSetLayerStack(JI)V
 
-    .line 505
+    .line 516
     return-void
 .end method
 
@@ -1492,10 +1496,10 @@
     .param p4, "dtdy"    # F
 
     .prologue
-    .line 481
+    .line 492
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 482
+    .line 493
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     move v2, p1
@@ -1508,7 +1512,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/view/SurfaceControl;->nativeSetMatrix(JFFFF)V
 
-    .line 480
+    .line 491
     return-void
 .end method
 
@@ -1519,22 +1523,22 @@
     .prologue
     const/4 v3, 0x2
 
-    .line 515
+    .line 526
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 516
+    .line 527
     if-eqz p1, :cond_0
 
-    .line 517
+    .line 528
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, v3, v3}, Landroid/view/SurfaceControl;->nativeSetFlags(JII)V
 
-    .line 514
+    .line 525
     :goto_0
     return-void
 
-    .line 519
+    .line 530
     :cond_0
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
@@ -1550,15 +1554,15 @@
     .param p1, "scalingMode"    # I
 
     .prologue
-    .line 394
+    .line 405
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 395
+    .line 406
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1}, Landroid/view/SurfaceControl;->nativeSetOverrideScalingMode(JI)V
 
-    .line 393
+    .line 404
     return-void
 .end method
 
@@ -1568,15 +1572,15 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 417
+    .line 428
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 418
+    .line 429
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/view/SurfaceControl;->nativeSetPosition(JFF)V
 
-    .line 416
+    .line 427
     return-void
 .end method
 
@@ -1587,22 +1591,22 @@
     .prologue
     const/16 v3, 0x80
 
-    .line 528
+    .line 539
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 529
+    .line 540
     if-eqz p1, :cond_0
 
-    .line 530
+    .line 541
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, v3, v3}, Landroid/view/SurfaceControl;->nativeSetFlags(JII)V
 
-    .line 527
+    .line 538
     :goto_0
     return-void
 
-    .line 532
+    .line 543
     :cond_0
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
@@ -1619,15 +1623,15 @@
     .param p2, "h"    # I
 
     .prologue
-    .line 434
+    .line 445
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 435
+    .line 446
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/view/SurfaceControl;->nativeSetSize(JII)V
 
-    .line 433
+    .line 444
     return-void
 .end method
 
@@ -1636,15 +1640,15 @@
     .param p1, "region"    # Landroid/graphics/Region;
 
     .prologue
-    .line 449
+    .line 460
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 450
+    .line 461
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     invoke-static {v0, v1, p1}, Landroid/view/SurfaceControl;->nativeSetTransparentRegionHint(JLandroid/graphics/Region;)V
 
-    .line 448
+    .line 459
     return-void
 .end method
 
@@ -1655,16 +1659,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 486
+    .line 497
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 487
+    .line 498
     if-eqz p1, :cond_0
 
-    .line 488
+    .line 499
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
-    .line 489
+    .line 500
     iget v2, p1, Landroid/graphics/Rect;->left:I
 
     iget v3, p1, Landroid/graphics/Rect;->top:I
@@ -1673,14 +1677,14 @@
 
     iget v5, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 488
+    .line 499
     invoke-static/range {v0 .. v5}, Landroid/view/SurfaceControl;->nativeSetWindowCrop(JIIII)V
 
-    .line 485
+    .line 496
     :goto_0
     return-void
 
-    .line 491
+    .line 502
     :cond_0
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
@@ -1699,10 +1703,10 @@
     .locals 4
 
     .prologue
-    .line 444
+    .line 455
     invoke-direct {p0}, Landroid/view/SurfaceControl;->checkNotReleased()V
 
-    .line 445
+    .line 456
     iget-wide v0, p0, Landroid/view/SurfaceControl;->mNativeObject:J
 
     const/4 v2, 0x0
@@ -1711,7 +1715,7 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/SurfaceControl;->nativeSetFlags(JII)V
 
-    .line 443
+    .line 454
     return-void
 .end method
 
@@ -1719,7 +1723,7 @@
     .locals 2
 
     .prologue
-    .line 327
+    .line 338
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

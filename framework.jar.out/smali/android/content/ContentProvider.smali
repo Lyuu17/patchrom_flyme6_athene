@@ -2856,7 +2856,7 @@
 
     iget-object v13, v0, Landroid/content/ContentProvider;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v14, "access_control"
+    const-string v14, "access_control"
 
     invoke-virtual {v13, v14}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -2924,9 +2924,9 @@
 
     move-result-object v13
 
-    const-string/jumbo v14, "ownerPackage"
+    const-string v14, "ownerPackage"
 
-    const-string/jumbo v15, "string"
+    const-string v15, "string"
 
     iget-object v0, v4, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
@@ -2994,7 +2994,7 @@
     return v13
 
     :cond_6
-    const-string/jumbo v13, "com.tencent.mm.sdk.plugin.provider"
+    const-string v13, "com.tencent.mm.sdk.plugin.provider"
 
     invoke-virtual {v13, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -3002,7 +3002,7 @@
 
     if-eqz v13, :cond_7
 
-    const-string/jumbo v13, "com.tencent.mm"
+    const-string v13, "com.tencent.mm"
 
     iget-object v14, v4, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
@@ -3017,7 +3017,7 @@
     return v13
 
     :cond_7
-    const-string/jumbo v13, "com.meizu.safe"
+    const-string v13, "com.meizu.safe"
 
     iget-object v14, v4, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
@@ -3032,7 +3032,7 @@
     return v13
 
     :cond_8
-    const-string/jumbo v13, "com.android.mms"
+    const-string v13, "com.android.mms"
 
     iget-object v14, v4, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
@@ -3042,7 +3042,7 @@
 
     if-nez v13, :cond_9
 
-    const-string/jumbo v13, "com.android.providers.telephony"
+    const-string v13, "com.android.providers.telephony"
 
     iget-object v14, v4, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
@@ -3084,7 +3084,7 @@
 
     iget-object v13, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
 
-    const-string/jumbo v14, "needAccessData"
+    const-string v14, "needAccessData"
 
     const/4 v15, 0x1
 
@@ -3115,9 +3115,9 @@
 
     move-result-object v13
 
-    const-string/jumbo v14, "believePackages"
+    const-string v14, "believePackages"
 
-    const-string/jumbo v15, "array"
+    const-string v15, "array"
 
     iget-object v0, v4, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 

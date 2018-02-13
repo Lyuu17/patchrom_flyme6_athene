@@ -26,10 +26,10 @@
     .param p5, "frameBytes"    # [B
 
     .prologue
-    .line 2755
+    .line 2768
     invoke-direct/range {p0 .. p5}, Lcom/android/server/wifi/WifiNative$FateReport;-><init>(BJB[B)V
 
-    .line 2754
+    .line 2767
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .locals 1
 
     .prologue
-    .line 2760
+    .line 2773
     const-string/jumbo v0, "TX"
 
     return-object v0
@@ -49,12 +49,12 @@
     .locals 1
 
     .prologue
-    .line 2765
+    .line 2778
     iget-byte v0, p0, Lcom/android/server/wifi/WifiNative$TxFateReport;->mFate:B
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2787
+    .line 2800
     iget-byte v0, p0, Lcom/android/server/wifi/WifiNative$TxFateReport;->mFate:B
 
     invoke-static {v0}, Ljava/lang/Byte;->toString(B)Ljava/lang/String;
@@ -63,67 +63,67 @@
 
     return-object v0
 
-    .line 2767
+    .line 2780
     :pswitch_0
     const-string/jumbo v0, "acked"
 
     return-object v0
 
-    .line 2769
+    .line 2782
     :pswitch_1
     const-string/jumbo v0, "sent"
 
     return-object v0
 
-    .line 2771
+    .line 2784
     :pswitch_2
     const-string/jumbo v0, "firmware queued"
 
     return-object v0
 
-    .line 2773
+    .line 2786
     :pswitch_3
     const-string/jumbo v0, "firmware dropped (invalid frame)"
 
     return-object v0
 
-    .line 2775
+    .line 2788
     :pswitch_4
     const-string/jumbo v0, "firmware dropped (no bufs)"
 
     return-object v0
 
-    .line 2777
+    .line 2790
     :pswitch_5
     const-string/jumbo v0, "firmware dropped (other)"
 
     return-object v0
 
-    .line 2779
+    .line 2792
     :pswitch_6
     const-string/jumbo v0, "driver queued"
 
     return-object v0
 
-    .line 2781
+    .line 2794
     :pswitch_7
     const-string/jumbo v0, "driver dropped (invalid frame)"
 
     return-object v0
 
-    .line 2783
+    .line 2796
     :pswitch_8
     const-string/jumbo v0, "driver dropped (no bufs)"
 
     return-object v0
 
-    .line 2785
+    .line 2798
     :pswitch_9
     const-string/jumbo v0, "driver dropped (other)"
 
     return-object v0
 
-    .line 2765
+    .line 2778
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

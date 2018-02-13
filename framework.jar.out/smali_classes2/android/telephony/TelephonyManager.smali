@@ -79,6 +79,8 @@
 
 .field public static final EMERGENCY_ASSISTANCE_ENABLED:Z = true
 
+.field public static final EMR_DIAL_ACCOUNT:Ljava/lang/String; = "emr_dial_account"
+
 .field public static final EVENT_DOWNGRADE_DATA_DISABLED:Ljava/lang/String; = "android.telephony.event.EVENT_DOWNGRADE_DATA_DISABLED"
 
 .field public static final EVENT_DOWNGRADE_DATA_LIMIT_REACHED:Ljava/lang/String; = "android.telephony.event.EVENT_DOWNGRADE_DATA_LIMIT_REACHED"
@@ -110,6 +112,8 @@
 .field public static final EXTRA_FOREGROUND_CALL_STATE:Ljava/lang/String; = "foreground_state"
 
 .field public static final EXTRA_INCOMING_NUMBER:Ljava/lang/String; = "incoming_number"
+
+.field public static final EXTRA_IS_FORWARDED:Ljava/lang/String; = "is_forwarded"
 
 .field public static final EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT:Ljava/lang/String; = "android.telephony.extra.LAUNCH_VOICEMAIL_SETTINGS_INTENT"
 
@@ -350,68 +354,68 @@
     .locals 2
 
     .prologue
-    .line 117
+    .line 121
     const-string/jumbo v0, "persist.radio.multisim.config"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 116
+    .line 120
     sput-object v0, Landroid/telephony/TelephonyManager;->multiSimConfig:Ljava/lang/String;
 
-    .line 160
+    .line 164
     new-instance v0, Landroid/telephony/TelephonyManager;
 
     invoke-direct {v0}, Landroid/telephony/TelephonyManager;-><init>()V
 
     sput-object v0, Landroid/telephony/TelephonyManager;->sInstance:Landroid/telephony/TelephonyManager;
 
-    .line 380
+    .line 384
     sget-object v0, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneConstants$State;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Landroid/telephony/TelephonyManager;->EXTRA_STATE_IDLE:Ljava/lang/String;
 
-    .line 386
+    .line 390
     sget-object v0, Lcom/android/internal/telephony/PhoneConstants$State;->RINGING:Lcom/android/internal/telephony/PhoneConstants$State;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneConstants$State;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Landroid/telephony/TelephonyManager;->EXTRA_STATE_RINGING:Ljava/lang/String;
 
-    .line 392
+    .line 396
     sget-object v0, Lcom/android/internal/telephony/PhoneConstants$State;->OFFHOOK:Lcom/android/internal/telephony/PhoneConstants$State;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneConstants$State;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Landroid/telephony/TelephonyManager;->EXTRA_STATE_OFFHOOK:Ljava/lang/String;
 
-    .line 1270
+    .line 1283
     invoke-static {}, Landroid/telephony/TelephonyManager;->getProcCmdLine()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Landroid/telephony/TelephonyManager;->sKernelCmdLine:Ljava/lang/String;
 
-    .line 1274
+    .line 1287
     const-string/jumbo v0, "\\sproduct_type\\s*=\\s*(\\w+)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    .line 1273
+    .line 1286
     sput-object v0, Landroid/telephony/TelephonyManager;->sProductTypePattern:Ljava/util/regex/Pattern;
 
-    .line 1278
+    .line 1291
     const-string/jumbo v0, "telephony.lteOnCdmaProductType"
 
     const-string/jumbo v1, ""
@@ -420,10 +424,10 @@
 
     move-result-object v0
 
-    .line 1277
+    .line 1290
     sput-object v0, Landroid/telephony/TelephonyManager;->sLteOnCdmaProductType:Ljava/lang/String;
 
-    .line 85
+    .line 89
     return-void
 .end method
 
@@ -431,20 +435,20 @@
     .locals 1
 
     .prologue
-    .line 155
+    .line 159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 156
+    .line 160
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
-    .line 157
+    .line 161
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/telephony/TelephonyManager;->mSubId:I
 
-    .line 155
+    .line 159
     return-void
 .end method
 
@@ -453,12 +457,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 134
+    .line 138
     const v0, 0x7fffffff
 
     invoke-direct {p0, p1, v0}, Landroid/telephony/TelephonyManager;-><init>(Landroid/content/Context;I)V
 
-    .line 133
+    .line 137
     return-void
 .end method
 
@@ -468,25 +472,25 @@
     .param p2, "subId"    # I
 
     .prologue
-    .line 138
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 139
+    .line 143
     iput p2, p0, Landroid/telephony/TelephonyManager;->mSubId:I
 
-    .line 140
+    .line 144
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 141
+    .line 145
     .local v0, "appContext":Landroid/content/Context;
     if-eqz v0, :cond_1
 
-    .line 142
+    .line 146
     iput-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
-    .line 146
+    .line 150
     :goto_0
     iget-object v1, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -496,15 +500,15 @@
 
     iput-object v1, p0, Landroid/telephony/TelephonyManager;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
-    .line 148
+    .line 152
     sget-object v1, Landroid/telephony/TelephonyManager;->sRegistry:Lcom/android/internal/telephony/ITelephonyRegistry;
 
     if-nez v1, :cond_0
 
-    .line 150
+    .line 154
     const-string/jumbo v1, "telephony.registry"
 
-    .line 149
+    .line 153
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
@@ -515,11 +519,11 @@
 
     sput-object v1, Landroid/telephony/TelephonyManager;->sRegistry:Lcom/android/internal/telephony/ITelephonyRegistry;
 
-    .line 138
+    .line 142
     :cond_0
     return-void
 
-    .line 144
+    .line 148
     :cond_1
     iput-object p1, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -531,7 +535,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 248
+    .line 252
     const-string/jumbo v0, "phone"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -547,17 +551,29 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 169
     sget-object v0, Landroid/telephony/TelephonyManager;->sInstance:Landroid/telephony/TelephonyManager;
 
     return-object v0
+.end method
+
+.method private static getDefaultDataSubscriptionId()I
+    .locals 1
+
+    .prologue
+    .line 3726
+    invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private static getDefaultPhone()I
     .locals 1
 
     .prologue
-    .line 3664
+    .line 3733
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSubscriptionId()I
 
     move-result v0
@@ -573,7 +589,7 @@
     .locals 1
 
     .prologue
-    .line 3657
+    .line 3719
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSubscriptionId()I
 
     move-result v0
@@ -585,7 +601,7 @@
     .locals 1
 
     .prologue
-    .line 2952
+    .line 2992
     const-string/jumbo v0, "phone"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -611,23 +627,23 @@
     .end annotation
 
     .prologue
-    .line 3746
+    .line 3815
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3747
+    .line 3816
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 3748
+    .line 3817
     const-string/jumbo v3, ","
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3749
+    .line 3818
     .local v2, "valArray":[Ljava/lang/String;
     if-ltz p2, :cond_0
 
@@ -639,7 +655,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 3751
+    .line 3820
     :try_start_0
     aget-object v3, v2, p2
 
@@ -651,11 +667,11 @@
 
     return v3
 
-    .line 3752
+    .line 3821
     :catch_0
     move-exception v0
 
-    .line 3757
+    .line 3826
     .end local v2    # "valArray":[Ljava/lang/String;
     :cond_0
     new-instance v3, Landroid/provider/Settings$SettingNotFoundException;
@@ -677,7 +693,7 @@
     .end annotation
 
     .prologue
-    .line 4910
+    .line 4986
     :try_start_0
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -703,18 +719,18 @@
 
     return v4
 
-    .line 4911
+    .line 4987
     :catch_0
     move-exception v1
 
-    .line 4913
+    .line 4989
     .local v1, "e":Landroid/provider/Settings$SettingNotFoundException;
     :try_start_1
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
 
     move-result v3
 
-    .line 4914
+    .line 4990
     .local v3, "val":I
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -734,10 +750,10 @@
 
     invoke-static {p0, v4, v3}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 4919
+    .line 4995
     move v0, v3
 
-    .line 4920
+    .line 4996
     .local v0, "default_val":I
     const-string/jumbo v4, "mobile_data"
 
@@ -747,10 +763,10 @@
 
     if-eqz v4, :cond_3
 
-    .line 4921
+    .line 4997
     const-string/jumbo v4, "true"
 
-    .line 4922
+    .line 4998
     const-string/jumbo v5, "ro.com.android.mobiledata"
 
     const-string/jumbo v6, "true"
@@ -759,35 +775,35 @@
 
     move-result-object v5
 
-    .line 4921
+    .line 4997
     invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    .line 4922
+    .line 4998
     const/4 v0, 0x1
 
-    .line 4928
+    .line 5004
     :cond_0
     :goto_0
     if-eq v0, v3, :cond_1
 
-    .line 4929
+    .line 5005
     invoke-static {p0, p1, v0}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 4932
+    .line 5008
     :cond_1
     return v3
 
-    .line 4922
+    .line 4998
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 4923
+    .line 4999
     :cond_3
     const-string/jumbo v4, "data_roaming"
 
@@ -797,10 +813,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 4924
+    .line 5000
     const-string/jumbo v4, "true"
 
-    .line 4925
+    .line 5001
     const-string/jumbo v5, "ro.com.android.dataroaming"
 
     const-string/jumbo v6, "false"
@@ -809,7 +825,7 @@
 
     move-result-object v5
 
-    .line 4924
+    .line 5000
     invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
     :try_end_1
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
@@ -818,7 +834,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 4925
+    .line 5001
     const/4 v0, 0x1
 
     goto :goto_0
@@ -828,13 +844,13 @@
 
     goto :goto_0
 
-    .line 4933
+    .line 5009
     .end local v0    # "default_val":I
     .end local v3    # "val":I
     :catch_1
     move-exception v2
 
-    .line 4934
+    .line 5010
     .local v2, "exc":Landroid/provider/Settings$SettingNotFoundException;
     new-instance v4, Landroid/provider/Settings$SettingNotFoundException;
 
@@ -849,10 +865,10 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 1293
+    .line 1306
     const-string/jumbo v2, ""
 
-    .line 1295
+    .line 1308
     .local v2, "productType":Ljava/lang/String;
     const-string/jumbo v4, "telephony.lteOnCdmaDevice"
 
@@ -860,15 +876,15 @@
 
     move-result v0
 
-    .line 1297
+    .line 1310
     .local v0, "curVal":I
     move v3, v0
 
-    .line 1298
+    .line 1311
     .local v3, "retVal":I
     if-ne v0, v5, :cond_0
 
-    .line 1299
+    .line 1312
     sget-object v4, Landroid/telephony/TelephonyManager;->sProductTypePattern:Ljava/util/regex/Pattern;
 
     sget-object v5, Landroid/telephony/TelephonyManager;->sKernelCmdLine:Ljava/lang/String;
@@ -877,7 +893,7 @@
 
     move-result-object v1
 
-    .line 1300
+    .line 1313
     .local v1, "matcher":Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
@@ -885,14 +901,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 1301
+    .line 1314
     const/4 v4, 0x1
 
     invoke-virtual {v1, v4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1302
+    .line 1315
     sget-object v4, Landroid/telephony/TelephonyManager;->sLteOnCdmaProductType:Ljava/lang/String;
 
     invoke-virtual {v4, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -901,10 +917,10 @@
 
     if-eqz v4, :cond_1
 
-    .line 1303
+    .line 1316
     const/4 v3, 0x1
 
-    .line 1312
+    .line 1325
     .end local v1    # "matcher":Ljava/util/regex/Matcher;
     :cond_0
     :goto_0
@@ -934,10 +950,10 @@
 
     move-result-object v5
 
-    .line 1313
+    .line 1326
     const-string/jumbo v6, " product_type=\'"
 
-    .line 1312
+    .line 1325
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -946,26 +962,26 @@
 
     move-result-object v5
 
-    .line 1314
+    .line 1327
     const-string/jumbo v6, "\' lteOnCdmaProductType=\'"
 
-    .line 1312
+    .line 1325
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 1314
+    .line 1327
     sget-object v6, Landroid/telephony/TelephonyManager;->sLteOnCdmaProductType:Ljava/lang/String;
 
-    .line 1312
+    .line 1325
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 1314
+    .line 1327
     const-string/jumbo v6, "\'"
 
-    .line 1312
+    .line 1325
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -976,21 +992,39 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1315
+    .line 1328
     return v3
 
-    .line 1305
+    .line 1318
     .restart local v1    # "matcher":Ljava/util/regex/Matcher;
     :cond_1
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 1308
+    .line 1321
     :cond_2
     const/4 v3, 0x0
 
     goto :goto_0
+.end method
+
+.method public static getLteOnGsmModeStatic()I
+    .locals 2
+
+    .prologue
+    .line 1336
+    const-string/jumbo v0, "telephony.lteOnGsmDevice"
+
+    .line 1337
+    const/4 v1, 0x0
+
+    .line 1336
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static getNetworkClass(I)I
@@ -998,33 +1032,33 @@
     .param p0, "networkType"    # I
 
     .prologue
-    .line 1688
+    .line 1710
     packed-switch p0, :pswitch_data_0
 
-    .line 1712
+    .line 1734
     const/4 v0, 0x0
 
     return v0
 
-    .line 1695
+    .line 1717
     :pswitch_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 1706
+    .line 1728
     :pswitch_1
     const/4 v0, 0x2
 
     return v0
 
-    .line 1710
+    .line 1732
     :pswitch_2
     const/4 v0, 0x3
 
     return v0
 
-    .line 1688
+    .line 1710
     nop
 
     :pswitch_data_0
@@ -1056,129 +1090,129 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 1736
+    .line 1758
     packed-switch p0, :pswitch_data_0
 
-    .line 1776
+    .line 1798
     const-string/jumbo v0, "UNKNOWN"
 
     return-object v0
 
-    .line 1738
+    .line 1760
     :pswitch_0
     const-string/jumbo v0, "GPRS"
 
     return-object v0
 
-    .line 1740
+    .line 1762
     :pswitch_1
     const-string/jumbo v0, "EDGE"
 
     return-object v0
 
-    .line 1742
+    .line 1764
     :pswitch_2
     const-string/jumbo v0, "UMTS"
 
     return-object v0
 
-    .line 1744
+    .line 1766
     :pswitch_3
     const-string/jumbo v0, "HSDPA"
 
     return-object v0
 
-    .line 1746
+    .line 1768
     :pswitch_4
     const-string/jumbo v0, "HSUPA"
 
     return-object v0
 
-    .line 1748
+    .line 1770
     :pswitch_5
     const-string/jumbo v0, "HSPA"
 
     return-object v0
 
-    .line 1750
+    .line 1772
     :pswitch_6
     const-string/jumbo v0, "CDMA"
 
     return-object v0
 
-    .line 1752
+    .line 1774
     :pswitch_7
     const-string/jumbo v0, "CDMA - EvDo rev. 0"
 
     return-object v0
 
-    .line 1754
+    .line 1776
     :pswitch_8
     const-string/jumbo v0, "CDMA - EvDo rev. A"
 
     return-object v0
 
-    .line 1756
+    .line 1778
     :pswitch_9
     const-string/jumbo v0, "CDMA - EvDo rev. B"
 
     return-object v0
 
-    .line 1758
+    .line 1780
     :pswitch_a
     const-string/jumbo v0, "CDMA - 1xRTT"
 
     return-object v0
 
-    .line 1760
+    .line 1782
     :pswitch_b
     const-string/jumbo v0, "LTE"
 
     return-object v0
 
-    .line 1762
+    .line 1784
     :pswitch_c
     const-string/jumbo v0, "CDMA - eHRPD"
 
     return-object v0
 
-    .line 1764
+    .line 1786
     :pswitch_d
     const-string/jumbo v0, "iDEN"
 
     return-object v0
 
-    .line 1766
+    .line 1788
     :pswitch_e
     const-string/jumbo v0, "HSPA+"
 
     return-object v0
 
-    .line 1768
+    .line 1790
     :pswitch_f
     const-string/jumbo v0, "GSM"
 
     return-object v0
 
-    .line 1770
+    .line 1792
     :pswitch_10
     const-string/jumbo v0, "TD_SCDMA"
 
     return-object v0
 
-    .line 1772
+    .line 1794
     :pswitch_11
     const-string/jumbo v0, "IWLAN"
 
     return-object v0
 
-    .line 1774
+    .line 1796
     :pswitch_12
     const-string/jumbo v0, "LTE_CA"
 
     return-object v0
 
-    .line 1736
+    .line 1758
     nop
 
     :pswitch_data_0
@@ -1209,12 +1243,12 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 177
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     if-eqz v0, :cond_0
 
-    .line 174
+    .line 178
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -1223,7 +1257,7 @@
 
     return-object v0
 
-    .line 176
+    .line 180
     :cond_0
     invoke-static {}, Landroid/app/ActivityThread;->currentOpPackageName()Ljava/lang/String;
 
@@ -1241,25 +1275,25 @@
 
     const/4 v1, 0x1
 
-    .line 1200
+    .line 1213
     packed-switch p0, :pswitch_data_0
 
-    .line 1237
+    .line 1250
     return v1
 
-    .line 1204
+    .line 1217
     :pswitch_0
     return v2
 
-    .line 1222
+    .line 1235
     :pswitch_1
     return v1
 
-    .line 1228
+    .line 1241
     :pswitch_2
     return v2
 
-    .line 1231
+    .line 1244
     :pswitch_3
     invoke-static {}, Landroid/telephony/TelephonyManager;->getLteOnCdmaModeStatic()I
 
@@ -1267,14 +1301,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1232
+    .line 1245
     return v2
 
-    .line 1234
+    .line 1247
     :cond_0
     return v1
 
-    .line 1200
+    .line 1213
     nop
 
     :pswitch_data_0
@@ -1309,7 +1343,7 @@
     .locals 1
 
     .prologue
-    .line 1175
+    .line 1188
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
@@ -1328,18 +1362,31 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1183
+    .line 1196
     const-string/jumbo v1, "ro.telephony.default_network"
 
     invoke-static {p1, v1, v2}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1184
+    .line 1197
     .local v0, "mode":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 1185
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 1200
+    :cond_0
+    const/4 v1, 0x0
+
+    return v1
+
+    .line 1198
+    :cond_1
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
@@ -1349,19 +1396,13 @@
     move-result v1
 
     return v1
-
-    .line 1187
-    :cond_0
-    const/4 v1, 0x0
-
-    return v1
 .end method
 
 .method private getPhoneTypeFromProperty()I
     .locals 1
 
     .prologue
-    .line 1161
+    .line 1174
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
@@ -1380,27 +1421,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1167
+    .line 1180
     const-string/jumbo v1, "gsm.current.phone-type"
 
-    .line 1166
+    .line 1179
     invoke-static {p1, v1, v2}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1168
+    .line 1181
     .local v0, "type":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    const-string/jumbo v1, ""
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1169
+    .line 1182
     :cond_0
     invoke-direct {p0, p1}, Landroid/telephony/TelephonyManager;->getPhoneTypeFromNetworkType(I)I
 
@@ -1408,7 +1447,7 @@
 
     return v1
 
-    .line 1171
+    .line 1184
     :cond_1
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -1421,14 +1460,14 @@
     .locals 10
 
     .prologue
-    .line 1246
+    .line 1259
     const-string/jumbo v1, ""
 
-    .line 1247
+    .line 1260
     .local v1, "cmdline":Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 1249
+    .line 1262
     .local v5, "is":Ljava/io/FileInputStream;
     :try_start_0
     new-instance v6, Ljava/io/FileInputStream;
@@ -1440,7 +1479,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1250
+    .line 1263
     .end local v5    # "is":Ljava/io/FileInputStream;
     .local v6, "is":Ljava/io/FileInputStream;
     const/16 v7, 0x800
@@ -1448,17 +1487,17 @@
     :try_start_1
     new-array v0, v7, [B
 
-    .line 1251
+    .line 1264
     .local v0, "buffer":[B
     invoke-virtual {v6, v0}, Ljava/io/FileInputStream;->read([B)I
 
     move-result v3
 
-    .line 1252
+    .line 1265
     .local v3, "count":I
     if-lez v3, :cond_0
 
-    .line 1253
+    .line 1266
     new-instance v2, Ljava/lang/String;
 
     const/4 v7, 0x0
@@ -1472,13 +1511,13 @@
     .local v2, "cmdline":Ljava/lang/String;
     move-object v1, v2
 
-    .line 1258
+    .line 1271
     .end local v2    # "cmdline":Ljava/lang/String;
     .restart local v1    # "cmdline":Ljava/lang/String;
     :cond_0
     if-eqz v6, :cond_1
 
-    .line 1260
+    .line 1273
     :try_start_2
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
     :try_end_2
@@ -1488,7 +1527,7 @@
     :goto_0
     move-object v5, v6
 
-    .line 1265
+    .line 1278
     .end local v0    # "buffer":[B
     .end local v3    # "count":I
     .end local v6    # "is":Ljava/io/FileInputStream;
@@ -1516,10 +1555,10 @@
 
     invoke-static {v7, v8}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1266
+    .line 1279
     return-object v1
 
-    .line 1261
+    .line 1274
     .restart local v0    # "buffer":[B
     .restart local v3    # "count":I
     .restart local v6    # "is":Ljava/io/FileInputStream;
@@ -1529,7 +1568,7 @@
     .local v4, "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 1255
+    .line 1268
     .end local v0    # "buffer":[B
     .end local v3    # "count":I
     .end local v4    # "e":Ljava/io/IOException;
@@ -1538,7 +1577,7 @@
     :catch_1
     move-exception v4
 
-    .line 1256
+    .line 1269
     .end local v5    # "is":Ljava/io/FileInputStream;
     .restart local v4    # "e":Ljava/io/IOException;
     :goto_2
@@ -1567,10 +1606,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1258
+    .line 1271
     if-eqz v5, :cond_2
 
-    .line 1260
+    .line 1273
     :try_start_4
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_4
@@ -1578,40 +1617,40 @@
 
     goto :goto_1
 
-    .line 1261
+    .line 1274
     :catch_2
     move-exception v4
 
     goto :goto_1
 
-    .line 1257
+    .line 1270
     .end local v4    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v7
 
-    .line 1258
+    .line 1271
     :goto_3
     if-eqz v5, :cond_3
 
-    .line 1260
+    .line 1273
     :try_start_5
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 1257
+    .line 1270
     :cond_3
     :goto_4
     throw v7
 
-    .line 1261
+    .line 1274
     :catch_3
     move-exception v4
 
     .restart local v4    # "e":Ljava/io/IOException;
     goto :goto_4
 
-    .line 1257
+    .line 1270
     .end local v4    # "e":Ljava/io/IOException;
     .restart local v6    # "is":Ljava/io/FileInputStream;
     :catchall_1
@@ -1623,7 +1662,7 @@
     .local v5, "is":Ljava/io/FileInputStream;
     goto :goto_3
 
-    .line 1255
+    .line 1268
     .end local v5    # "is":Ljava/io/FileInputStream;
     .restart local v6    # "is":Ljava/io/FileInputStream;
     :catch_4
@@ -1641,21 +1680,21 @@
     .locals 2
 
     .prologue
-    .line 3647
+    .line 3709
     iget v0, p0, Landroid/telephony/TelephonyManager;->mSubId:I
 
     const v1, 0x7fffffff
 
     if-ne v0, v1, :cond_0
 
-    .line 3648
+    .line 3710
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultSubscription()I
 
     move-result v0
 
     return v0
 
-    .line 3650
+    .line 3712
     :cond_0
     iget v0, p0, Landroid/telephony/TelephonyManager;->mSubId:I
 
@@ -1666,7 +1705,7 @@
     .locals 1
 
     .prologue
-    .line 2804
+    .line 2844
     const-string/jumbo v0, "iphonesubinfo"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1684,7 +1723,7 @@
     .locals 1
 
     .prologue
-    .line 2959
+    .line 2999
     const-string/jumbo v0, "telecom"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1705,16 +1744,16 @@
     .param p2, "defaultVal"    # Ljava/lang/String;
 
     .prologue
-    .line 3817
+    .line 3886
     const/4 v1, 0x0
 
-    .line 3818
+    .line 3887
     .local v1, "propVal":Ljava/lang/String;
     invoke-static {p1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3819
+    .line 3888
     .local v0, "prop":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -1724,14 +1763,14 @@
 
     if-lez v3, :cond_0
 
-    .line 3820
+    .line 3889
     const-string/jumbo v3, ","
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3821
+    .line 3890
     .local v2, "values":[Ljava/lang/String;
     if-ltz p0, :cond_0
 
@@ -1743,10 +1782,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 3822
+    .line 3891
     aget-object v1, v2, p0
 
-    .line 3825
+    .line 3894
     .end local v1    # "propVal":Ljava/lang/String;
     .end local v2    # "values":[Ljava/lang/String;
     :cond_0
@@ -1771,26 +1810,26 @@
     .param p3, "value"    # I
 
     .prologue
-    .line 3777
+    .line 3846
     const-string/jumbo v0, ""
 
-    .line 3778
+    .line 3847
     .local v0, "data":Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 3779
+    .line 3848
     .local v4, "valArray":[Ljava/lang/String;
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3781
+    .line 3850
     .local v3, "v":Ljava/lang/String;
     const v5, 0x7fffffff
 
     if-ne p2, v5, :cond_0
 
-    .line 3782
+    .line 3851
     new-instance v5, Ljava/lang/RuntimeException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1815,11 +1854,11 @@
 
     throw v5
 
-    .line 3784
+    .line 3853
     :cond_0
     if-gez p2, :cond_1
 
-    .line 3785
+    .line 3854
     new-instance v5, Ljava/lang/RuntimeException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1844,18 +1883,18 @@
 
     throw v5
 
-    .line 3787
+    .line 3856
     :cond_1
     if-eqz v3, :cond_2
 
-    .line 3788
+    .line 3857
     const-string/jumbo v5, ","
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 3792
+    .line 3861
     .end local v4    # "valArray":[Ljava/lang/String;
     :cond_2
     const/4 v1, 0x0
@@ -1864,10 +1903,10 @@
     :goto_0
     if-ge v1, p2, :cond_4
 
-    .line 3793
+    .line 3862
     const-string/jumbo v2, ""
 
-    .line 3794
+    .line 3863
     .local v2, "str":Ljava/lang/String;
     if-eqz v4, :cond_3
 
@@ -1875,10 +1914,10 @@
 
     if-ge v1, v5, :cond_3
 
-    .line 3795
+    .line 3864
     aget-object v2, v4, v1
 
-    .line 3797
+    .line 3866
     :cond_3
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1902,12 +1941,12 @@
 
     move-result-object v0
 
-    .line 3792
+    .line 3861
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3800
+    .line 3869
     .end local v2    # "str":Ljava/lang/String;
     :cond_4
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1926,10 +1965,10 @@
 
     move-result-object v0
 
-    .line 3803
+    .line 3872
     if-eqz v4, :cond_5
 
-    .line 3804
+    .line 3873
     add-int/lit8 v1, p2, 0x1
 
     :goto_1
@@ -1937,7 +1976,7 @@
 
     if-ge v1, v5, :cond_5
 
-    .line 3805
+    .line 3874
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1962,12 +2001,12 @@
 
     move-result-object v0
 
-    .line 3804
+    .line 3873
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 3808
+    .line 3877
     :cond_5
     invoke-static {p0, p1, v0}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -1983,38 +2022,38 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 3678
+    .line 3747
     const-string/jumbo v3, ""
 
-    .line 3679
+    .line 3748
     .local v3, "propVal":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 3680
+    .line 3749
     .local v1, "p":[Ljava/lang/String;
     invoke-static {p1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3682
+    .line 3751
     .local v2, "prop":Ljava/lang/String;
     if-nez p2, :cond_0
 
-    .line 3683
+    .line 3752
     const-string/jumbo p2, ""
 
-    .line 3686
+    .line 3755
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 3687
+    .line 3756
     const-string/jumbo v5, ","
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3690
+    .line 3759
     .end local v1    # "p":[Ljava/lang/String;
     :cond_1
     invoke-static {p0}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
@@ -2023,7 +2062,7 @@
 
     if-nez v5, :cond_2
 
-    .line 3691
+    .line 3760
     const-string/jumbo v5, "TelephonyManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2040,10 +2079,10 @@
 
     move-result-object v6
 
-    .line 3692
+    .line 3761
     const-string/jumbo v7, " property="
 
-    .line 3691
+    .line 3760
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2052,10 +2091,10 @@
 
     move-result-object v6
 
-    .line 3692
+    .line 3761
     const-string/jumbo v7, " value: "
 
-    .line 3691
+    .line 3760
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2064,10 +2103,10 @@
 
     move-result-object v6
 
-    .line 3692
+    .line 3761
     const-string/jumbo v7, " prop="
 
-    .line 3691
+    .line 3760
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2082,10 +2121,10 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3693
+    .line 3762
     return-void
 
-    .line 3696
+    .line 3765
     :cond_2
     const/4 v0, 0x0
 
@@ -2093,10 +2132,10 @@
     :goto_0
     if-ge v0, p0, :cond_4
 
-    .line 3697
+    .line 3766
     const-string/jumbo v4, ""
 
-    .line 3698
+    .line 3767
     .local v4, "str":Ljava/lang/String;
     if-eqz v1, :cond_3
 
@@ -2104,10 +2143,10 @@
 
     if-ge v0, v5, :cond_3
 
-    .line 3699
+    .line 3768
     aget-object v4, v1, v0
 
-    .line 3701
+    .line 3770
     :cond_3
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2131,12 +2170,12 @@
 
     move-result-object v3
 
-    .line 3696
+    .line 3765
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3704
+    .line 3773
     .end local v4    # "str":Ljava/lang/String;
     :cond_4
     new-instance v5, Ljava/lang/StringBuilder;
@@ -2155,10 +2194,10 @@
 
     move-result-object v3
 
-    .line 3705
+    .line 3774
     if-eqz v1, :cond_5
 
-    .line 3706
+    .line 3775
     add-int/lit8 v0, p0, 0x1
 
     :goto_1
@@ -2166,7 +2205,7 @@
 
     if-ge v0, v5, :cond_5
 
-    .line 3707
+    .line 3776
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -2191,12 +2230,12 @@
 
     move-result-object v3
 
-    .line 3706
+    .line 3775
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 3711
+    .line 3780
     :cond_5
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -2206,7 +2245,7 @@
 
     if-gt v5, v6, :cond_6
 
-    .line 3712
+    .line 3781
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -2215,7 +2254,7 @@
 
     if-le v5, v6, :cond_7
 
-    .line 3713
+    .line 3782
     :cond_6
     const-string/jumbo v5, "TelephonyManager"
 
@@ -2233,10 +2272,10 @@
 
     move-result-object v6
 
-    .line 3714
+    .line 3783
     const-string/jumbo v7, " property="
 
-    .line 3713
+    .line 3782
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2245,10 +2284,10 @@
 
     move-result-object v6
 
-    .line 3714
+    .line 3783
     const-string/jumbo v7, " value: "
 
-    .line 3713
+    .line 3782
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2257,10 +2296,10 @@
 
     move-result-object v6
 
-    .line 3714
+    .line 3783
     const-string/jumbo v7, " propVal="
 
-    .line 3713
+    .line 3782
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2275,10 +2314,10 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3715
+    .line 3784
     return-void
 
-    .line 3718
+    .line 3787
     :cond_7
     const-string/jumbo v5, "TelephonyManager"
 
@@ -2296,10 +2335,10 @@
 
     move-result-object v6
 
-    .line 3719
+    .line 3788
     const-string/jumbo v7, " property="
 
-    .line 3718
+    .line 3787
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2308,10 +2347,10 @@
 
     move-result-object v6
 
-    .line 3719
+    .line 3788
     const-string/jumbo v7, " value: "
 
-    .line 3718
+    .line 3787
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2320,10 +2359,10 @@
 
     move-result-object v6
 
-    .line 3719
+    .line 3788
     const-string/jumbo v7, " propVal="
 
-    .line 3718
+    .line 3787
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2338,10 +2377,10 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3720
+    .line 3789
     invoke-static {p1, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3677
+    .line 3746
     return-void
 .end method
 
@@ -2351,32 +2390,32 @@
     .locals 4
 
     .prologue
-    .line 4487
+    .line 4556
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4488
+    .line 4557
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4489
+    .line 4558
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->answerRingingCall()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4485
+    .line 4554
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 4490
+    .line 4559
     :catch_0
     move-exception v0
 
-    .line 4491
+    .line 4560
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -2393,32 +2432,32 @@
     .param p2, "number"    # Ljava/lang/String;
 
     .prologue
-    .line 4462
+    .line 4531
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4463
+    .line 4532
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4464
+    .line 4533
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->call(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4460
+    .line 4529
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 4465
+    .line 4534
     :catch_0
     move-exception v0
 
-    .line 4466
+    .line 4535
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -2433,17 +2472,17 @@
     .locals 5
 
     .prologue
-    .line 4830
+    .line 4906
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4831
+    .line 4907
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4832
+    .line 4908
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->canChangeDtmfToneLength()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -2453,12 +2492,12 @@
 
     return v3
 
-    .line 4836
+    .line 4912
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4837
+    .line 4913
     .local v1, "e":Ljava/lang/SecurityException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -2466,7 +2505,7 @@
 
     invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4839
+    .line 4915
     .end local v1    # "e":Ljava/lang/SecurityException;
     :cond_0
     :goto_0
@@ -2474,11 +2513,11 @@
 
     return v3
 
-    .line 4834
+    .line 4910
     :catch_1
     move-exception v0
 
-    .line 4835
+    .line 4911
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -2495,32 +2534,32 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 5630
+    .line 5730
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5631
+    .line 5731
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5632
+    .line 5732
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->carrierActionSetMeteredApnsEnabled(IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5628
+    .line 5728
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 5634
+    .line 5734
     :catch_0
     move-exception v0
 
-    .line 5635
+    .line 5735
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -2537,32 +2576,32 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 5648
+    .line 5748
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5649
+    .line 5749
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5650
+    .line 5750
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->carrierActionSetRadioEnabled(IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5646
+    .line 5746
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 5652
+    .line 5752
     :catch_0
     move-exception v0
 
-    .line 5653
+    .line 5753
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -2578,17 +2617,17 @@
     .param p1, "pkgName"    # Ljava/lang/String;
 
     .prologue
-    .line 4384
+    .line 4453
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4385
+    .line 4454
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4386
+    .line 4455
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->checkCarrierPrivilegesForPackage(Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -2598,12 +2637,12 @@
 
     return v3
 
-    .line 4389
+    .line 4458
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4390
+    .line 4459
     .local v1, "ex":Ljava/lang/NullPointerException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -2611,7 +2650,7 @@
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4392
+    .line 4461
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -2619,11 +2658,11 @@
 
     return v3
 
-    .line 4387
+    .line 4456
     :catch_1
     move-exception v0
 
-    .line 4388
+    .line 4457
     .local v0, "ex":Landroid/os/RemoteException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -2639,17 +2678,17 @@
     .param p1, "pkgName"    # Ljava/lang/String;
 
     .prologue
-    .line 4399
+    .line 4468
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4400
+    .line 4469
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4401
+    .line 4470
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->checkCarrierPrivilegesForPackageAnyPhone(Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -2659,12 +2698,12 @@
 
     return v3
 
-    .line 4404
+    .line 4473
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4405
+    .line 4474
     .local v1, "ex":Ljava/lang/NullPointerException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -2672,7 +2711,7 @@
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4407
+    .line 4476
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -2680,11 +2719,11 @@
 
     return v3
 
-    .line 4402
+    .line 4471
     :catch_1
     move-exception v0
 
-    .line 4403
+    .line 4472
     .local v0, "ex":Landroid/os/RemoteException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -2700,7 +2739,7 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 258
+    .line 262
     new-instance v0, Landroid/telephony/TelephonyManager;
 
     iget-object v1, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
@@ -2715,32 +2754,32 @@
     .param p1, "number"    # Ljava/lang/String;
 
     .prologue
-    .line 4450
+    .line 4519
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4451
+    .line 4520
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4452
+    .line 4521
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->dial(Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4448
+    .line 4517
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 4453
+    .line 4522
     :catch_0
     move-exception v0
 
-    .line 4454
+    .line 4523
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -2755,17 +2794,17 @@
     .locals 4
 
     .prologue
-    .line 4702
+    .line 4771
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4703
+    .line 4772
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4704
+    .line 4773
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->disableDataConnectivity()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -2774,12 +2813,12 @@
 
     return v2
 
-    .line 4705
+    .line 4774
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4706
+    .line 4775
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -2787,7 +2826,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4708
+    .line 4777
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -2799,14 +2838,14 @@
     .locals 1
 
     .prologue
-    .line 1031
+    .line 1043
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->disableLocationUpdates(I)V
 
-    .line 1030
+    .line 1042
     return-void
 .end method
 
@@ -2815,36 +2854,36 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1037
+    .line 1049
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1038
+    .line 1050
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 1039
+    .line 1051
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->disableLocationUpdatesForSubscriber(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1035
+    .line 1047
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 1040
+    .line 1052
     :catch_0
     move-exception v0
 
     .local v0, "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 1041
+    .line 1053
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
@@ -2858,17 +2897,17 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 2617
+    .line 2657
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2618
+    .line 2658
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2619
+    .line 2659
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -2880,20 +2919,20 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 2615
+    .line 2655
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 2621
+    .line 2661
     :catch_0
     move-exception v0
 
     .local v0, "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 2622
+    .line 2662
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
@@ -2906,17 +2945,17 @@
     .locals 4
 
     .prologue
-    .line 4689
+    .line 4758
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4690
+    .line 4759
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4691
+    .line 4760
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->enableDataConnectivity()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -2925,12 +2964,12 @@
 
     return v2
 
-    .line 4692
+    .line 4761
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4693
+    .line 4762
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -2938,7 +2977,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4695
+    .line 4764
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -2950,14 +2989,14 @@
     .locals 1
 
     .prologue
-    .line 997
+    .line 1009
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->enableLocationUpdates(I)V
 
-    .line 996
+    .line 1008
     return-void
 .end method
 
@@ -2966,36 +3005,36 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1013
+    .line 1025
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1014
+    .line 1026
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 1015
+    .line 1027
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->enableLocationUpdatesForSubscriber(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1011
+    .line 1023
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 1016
+    .line 1028
     :catch_0
     move-exception v0
 
     .local v0, "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 1017
+    .line 1029
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
@@ -3009,32 +3048,32 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 4802
+    .line 4878
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4803
+    .line 4879
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4804
+    .line 4880
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->enableVideoCalling(Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4800
+    .line 4876
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 4805
+    .line 4881
     :catch_0
     move-exception v0
 
-    .line 4806
+    .line 4882
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -3051,10 +3090,10 @@
     .param p2, "settings"    # Landroid/telephony/VisualVoicemailSmsFilterSettings;
 
     .prologue
-    .line 2593
+    .line 2633
     if-nez p2, :cond_0
 
-    .line 2594
+    .line 2634
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v4, "Settings cannot be null"
@@ -3063,18 +3102,18 @@
 
     throw v3
 
-    .line 2597
+    .line 2637
     :cond_0
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2598
+    .line 2638
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_1
 
-    .line 2599
+    .line 2639
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -3086,20 +3125,20 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 2592
+    .line 2632
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_1
     :goto_0
     return-void
 
-    .line 2602
+    .line 2642
     :catch_0
     move-exception v0
 
     .local v0, "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 2603
+    .line 2643
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
@@ -3112,17 +3151,17 @@
     .locals 4
 
     .prologue
-    .line 4474
+    .line 4543
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4475
+    .line 4544
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4476
+    .line 4545
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->endCall()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3131,12 +3170,12 @@
 
     return v2
 
-    .line 4477
+    .line 4546
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4478
+    .line 4547
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -3144,7 +3183,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4480
+    .line 4549
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -3157,7 +3196,7 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 5362
+    .line 5462
     :try_start_0
     const-string/jumbo v2, "TelephonyManager"
 
@@ -3181,27 +3220,27 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5363
+    .line 5463
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5364
+    .line 5464
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5365
+    .line 5465
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->factoryReset(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5360
+    .line 5460
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 5366
+    .line 5466
     :catch_0
     move-exception v0
 
@@ -3214,7 +3253,7 @@
     .param p1, "appType"    # I
 
     .prologue
-    .line 5469
+    .line 5569
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultSubscription()I
 
     move-result v0
@@ -3234,17 +3273,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5484
+    .line 5584
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5485
+    .line 5585
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5486
+    .line 5586
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->getAidForAppType(II)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3253,12 +3292,12 @@
 
     return-object v2
 
-    .line 5488
+    .line 5588
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5489
+    .line 5589
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -3266,7 +3305,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5491
+    .line 5591
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v4
@@ -3287,20 +3326,20 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 3183
+    .line 3223
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3184
+    .line 3224
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 3185
+    .line 3225
     return-object v4
 
-    .line 3186
+    .line 3226
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -3315,21 +3354,21 @@
 
     return-object v3
 
-    .line 3189
+    .line 3229
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3190
+    .line 3230
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 3187
+    .line 3227
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3188
+    .line 3228
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -3348,17 +3387,17 @@
     .end annotation
 
     .prologue
-    .line 5611
+    .line 5711
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5612
+    .line 5712
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5613
+    .line 5713
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->getAllowedCarriers(I)Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3367,12 +3406,12 @@
 
     return-object v2
 
-    .line 5615
+    .line 5715
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5616
+    .line 5716
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -3380,7 +3419,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5618
+    .line 5718
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     new-instance v2, Ljava/util/ArrayList;
@@ -3396,17 +3435,17 @@
     .locals 4
 
     .prologue
-    .line 2828
+    .line 2868
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getTelecomService()Lcom/android/internal/telecom/ITelecomService;
 
     move-result-object v1
 
-    .line 2829
+    .line 2869
     .local v1, "telecom":Lcom/android/internal/telecom/ITelecomService;
     if-eqz v1, :cond_0
 
-    .line 2830
+    .line 2870
     invoke-interface {v1}, Lcom/android/internal/telecom/ITelecomService;->getCallState()I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3415,12 +3454,12 @@
 
     return v2
 
-    .line 2832
+    .line 2872
     .end local v1    # "telecom":Lcom/android/internal/telecom/ITelecomService;
     :catch_0
     move-exception v0
 
-    .line 2833
+    .line 2873
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -3428,7 +3467,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2835
+    .line 2875
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -3441,12 +3480,12 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 2846
+    .line 2886
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 2847
+    .line 2887
     .local v0, "phoneId":I
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getCallStateForSlot(I)I
 
@@ -3462,20 +3501,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2857
+    .line 2897
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2858
+    .line 2898
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 2859
+    .line 2899
     return v3
 
-    .line 2860
+    .line 2900
     :cond_0
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getCallStateForSlot(I)I
     :try_end_0
@@ -3486,21 +3525,21 @@
 
     return v3
 
-    .line 2864
+    .line 2904
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 2866
+    .line 2906
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 2861
+    .line 2901
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2863
+    .line 2903
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -3521,7 +3560,7 @@
     .end annotation
 
     .prologue
-    .line 4413
+    .line 4482
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
@@ -3552,17 +3591,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 4420
+    .line 4489
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4421
+    .line 4490
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4422
+    .line 4491
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->getCarrierPackageNamesForIntentAndPhone(Landroid/content/Intent;I)Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -3572,12 +3611,12 @@
 
     return-object v3
 
-    .line 4425
+    .line 4494
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4426
+    .line 4495
     .local v1, "ex":Ljava/lang/NullPointerException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -3585,17 +3624,17 @@
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4428
+    .line 4497
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
     return-object v5
 
-    .line 4423
+    .line 4492
     :catch_1
     move-exception v0
 
-    .line 4424
+    .line 4493
     .local v0, "ex":Landroid/os/RemoteException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -3610,7 +3649,7 @@
     .locals 1
 
     .prologue
-    .line 3013
+    .line 3053
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -3629,20 +3668,20 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 3025
+    .line 3065
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3026
+    .line 3066
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 3027
+    .line 3067
     return v4
 
-    .line 3028
+    .line 3068
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -3657,21 +3696,21 @@
 
     return v3
 
-    .line 3032
+    .line 3072
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3033
+    .line 3073
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v4
 
-    .line 3029
+    .line 3069
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3031
+    .line 3071
     .local v0, "ex":Landroid/os/RemoteException;
     return v4
 .end method
@@ -3680,7 +3719,7 @@
     .locals 1
 
     .prologue
-    .line 3048
+    .line 3088
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -3699,20 +3738,20 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 3063
+    .line 3103
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3064
+    .line 3104
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 3065
+    .line 3105
     return v4
 
-    .line 3066
+    .line 3106
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -3727,21 +3766,21 @@
 
     return v3
 
-    .line 3070
+    .line 3110
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3071
+    .line 3111
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v4
 
-    .line 3067
+    .line 3107
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3069
+    .line 3109
     .local v0, "ex":Landroid/os/RemoteException;
     return v4
 .end method
@@ -3750,7 +3789,7 @@
     .locals 1
 
     .prologue
-    .line 3084
+    .line 3124
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -3769,20 +3808,20 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 3097
+    .line 3137
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3098
+    .line 3138
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 3099
+    .line 3139
     return-object v4
 
-    .line 3100
+    .line 3140
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -3797,21 +3836,21 @@
 
     return-object v3
 
-    .line 3104
+    .line 3144
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3105
+    .line 3145
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 3101
+    .line 3141
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3103
+    .line 3143
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -3820,7 +3859,7 @@
     .locals 1
 
     .prologue
-    .line 4341
+    .line 4410
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -3839,20 +3878,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4348
+    .line 4417
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4349
+    .line 4418
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 4350
+    .line 4419
     return-object v3
 
-    .line 4351
+    .line 4420
     :cond_0
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getCdmaMdn(I)Ljava/lang/String;
     :try_end_0
@@ -3863,21 +3902,21 @@
 
     return-object v3
 
-    .line 4354
+    .line 4423
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4355
+    .line 4424
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 4352
+    .line 4421
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 4353
+    .line 4422
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -3886,7 +3925,7 @@
     .locals 1
 
     .prologue
-    .line 4362
+    .line 4431
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -3905,20 +3944,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4369
+    .line 4438
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4370
+    .line 4439
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 4371
+    .line 4440
     return-object v3
 
-    .line 4372
+    .line 4441
     :cond_0
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getCdmaMin(I)Ljava/lang/String;
     :try_end_0
@@ -3929,21 +3968,21 @@
 
     return-object v3
 
-    .line 4375
+    .line 4444
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4376
+    .line 4445
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 4373
+    .line 4442
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 4374
+    .line 4443
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -3952,7 +3991,7 @@
     .locals 1
 
     .prologue
-    .line 5536
+    .line 5636
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultSubscription()I
 
     move-result v0
@@ -3971,17 +4010,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5550
+    .line 5650
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5551
+    .line 5651
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5552
+    .line 5652
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->getCdmaPrlVersion(I)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3990,12 +4029,12 @@
 
     return-object v2
 
-    .line 5554
+    .line 5654
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5555
+    .line 5655
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "TelephonyManager"
 
@@ -4003,7 +4042,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5557
+    .line 5657
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v4
@@ -4015,27 +4054,32 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 962
+    .line 972
+    const/16 v5, 0x31
+
+    invoke-static {v5}, Landroid/util/SeempLog;->record(I)I
+
+    .line 974
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v4
 
-    .line 963
+    .line 975
     .local v4, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v4, :cond_0
 
-    .line 964
+    .line 976
     const-string/jumbo v5, "TelephonyManager"
 
     const-string/jumbo v6, "getCellLocation returning null because telephony is null"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 965
+    .line 977
     return-object v8
 
-    .line 967
+    .line 979
     :cond_0
     iget-object v5, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -4047,7 +4091,7 @@
 
     move-result-object v0
 
-    .line 968
+    .line 980
     .local v0, "bundle":Landroid/os/Bundle;
     invoke-virtual {v0}, Landroid/os/Bundle;->isEmpty()Z
 
@@ -4055,23 +4099,23 @@
 
     if-eqz v5, :cond_1
 
-    .line 969
+    .line 981
     const-string/jumbo v5, "TelephonyManager"
 
     const-string/jumbo v6, "getCellLocation returning null because bundle is empty"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 970
+    .line 982
     return-object v8
 
-    .line 972
+    .line 984
     :cond_1
     invoke-static {v0}, Landroid/telephony/CellLocation;->newFromBundle(Landroid/os/Bundle;)Landroid/telephony/CellLocation;
 
     move-result-object v1
 
-    .line 973
+    .line 985
     .local v1, "cl":Landroid/telephony/CellLocation;
     invoke-virtual {v1}, Landroid/telephony/CellLocation;->isEmpty()Z
 
@@ -4079,7 +4123,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 974
+    .line 986
     const-string/jumbo v5, "TelephonyManager"
 
     const-string/jumbo v6, "getCellLocation returning null because CellLocation is empty"
@@ -4089,21 +4133,21 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 975
+    .line 987
     return-object v8
 
-    .line 977
+    .line 989
     :cond_2
     return-object v1
 
-    .line 981
+    .line 993
     .end local v0    # "bundle":Landroid/os/Bundle;
     .end local v1    # "cl":Landroid/telephony/CellLocation;
     .end local v4    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v3
 
-    .line 982
+    .line 994
     .local v3, "ex":Ljava/lang/NullPointerException;
     const-string/jumbo v5, "TelephonyManager"
 
@@ -4127,15 +4171,15 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 983
+    .line 995
     return-object v8
 
-    .line 978
+    .line 990
     .end local v3    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v2
 
-    .line 979
+    .line 991
     .local v2, "ex":Landroid/os/RemoteException;
     const-string/jumbo v5, "TelephonyManager"
 
@@ -4159,7 +4203,7 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 980
+    .line 992
     return-object v8
 .end method
 
@@ -4170,17 +4214,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 4063
+    .line 4132
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4064
+    .line 4133
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4065
+    .line 4134
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getCellNetworkScanResults(I)Lcom/android/internal/telephony/CellNetworkScanResult;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -4190,12 +4234,12 @@
 
     return-object v3
 
-    .line 4068
+    .line 4137
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4069
+    .line 4138
     .local v1, "ex":Ljava/lang/NullPointerException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -4203,17 +4247,17 @@
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4071
+    .line 4140
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
     return-object v5
 
-    .line 4066
+    .line 4135
     :catch_1
     move-exception v0
 
-    .line 4067
+    .line 4136
     .local v0, "ex":Landroid/os/RemoteException;
     const-string/jumbo v3, "TelephonyManager"
 
@@ -4228,7 +4272,7 @@
     .locals 1
 
     .prologue
-    .line 2465
+    .line 2505
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -4247,20 +4291,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2479
+    .line 2519
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2480
+    .line 2520
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2481
+    .line 2521
     return-object v3
 
-    .line 2482
+    .line 2522
     :cond_0
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/IPhoneSubInfo;->getCompleteVoiceMailNumberForSubscriber(I)Ljava/lang/String;
     :try_end_0
@@ -4271,21 +4315,21 @@
 
     return-object v3
 
-    .line 2485
+    .line 2525
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2487
+    .line 2527
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 2483
+    .line 2523
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2484
+    .line 2524
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -4294,7 +4338,7 @@
     .locals 1
 
     .prologue
-    .line 1092
+    .line 1105
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -4311,15 +4355,15 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1108
+    .line 1121
     const/4 v1, -0x1
 
     if-ne p1, v1, :cond_0
 
-    .line 1111
+    .line 1124
     const/4 v0, 0x0
 
-    .line 1116
+    .line 1129
     .local v0, "phoneId":I
     :goto_0
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getCurrentPhoneTypeForSlot(I)I
@@ -4328,7 +4372,7 @@
 
     return v1
 
-    .line 1113
+    .line 1126
     .end local v0    # "phoneId":I
     :cond_0
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
@@ -4344,24 +4388,24 @@
     .param p1, "slotId"    # I
 
     .prologue
-    .line 1126
+    .line 1139
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1127
+    .line 1140
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 1128
+    .line 1141
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getActivePhoneTypeForSlot(I)I
 
     move-result v3
 
     return v3
 
-    .line 1131
+    .line 1144
     :cond_0
     invoke-direct {p0, p1}, Landroid/telephony/TelephonyManager;->getPhoneTypeFromProperty(I)I
     :try_end_0
@@ -4372,12 +4416,12 @@
 
     return v3
 
-    .line 1137
+    .line 1150
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 1140
+    .line 1153
     .local v1, "ex":Ljava/lang/NullPointerException;
     invoke-direct {p0, p1}, Landroid/telephony/TelephonyManager;->getPhoneTypeFromProperty(I)I
 
@@ -4385,12 +4429,12 @@
 
     return v3
 
-    .line 1133
+    .line 1146
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 1136
+    .line 1149
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-direct {p0, p1}, Landroid/telephony/TelephonyManager;->getPhoneTypeFromProperty(I)I
 
@@ -4405,20 +4449,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2897
+    .line 2937
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2898
+    .line 2938
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 2899
+    .line 2939
     return v3
 
-    .line 2900
+    .line 2940
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->getDataActivity()I
     :try_end_0
@@ -4429,21 +4473,21 @@
 
     return v3
 
-    .line 2904
+    .line 2944
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 2906
+    .line 2946
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 2901
+    .line 2941
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2903
+    .line 2943
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -4452,8 +4496,8 @@
     .locals 1
 
     .prologue
-    .line 4759
-    invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
+    .line 4835
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultDataSubscriptionId()I
 
     move-result v0
 
@@ -4469,21 +4513,21 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 4765
+    .line 4841
     const/4 v2, 0x0
 
-    .line 4767
+    .line 4843
     .local v2, "retVal":Z
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v3
 
-    .line 4768
+    .line 4844
     .local v3, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v3, :cond_0
 
-    .line 4769
+    .line 4845
     invoke-interface {v3, p1}, Lcom/android/internal/telephony/ITelephony;->getDataEnabled(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4491,19 +4535,19 @@
 
     move-result v2
 
-    .line 4774
+    .line 4850
     .end local v2    # "retVal":Z
     .end local v3    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return v2
 
-    .line 4770
+    .line 4846
     .restart local v2    # "retVal":Z
     :catch_0
     move-exception v0
 
-    .line 4771
+    .line 4847
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v4, "TelephonyManager"
 
@@ -4513,7 +4557,7 @@
 
     goto :goto_0
 
-    .line 4772
+    .line 4848
     .end local v0    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
@@ -4526,8 +4570,8 @@
     .locals 1
 
     .prologue
-    .line 1596
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
+    .line 1618
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultDataSubscriptionId()I
 
     move-result v0
 
@@ -4545,17 +4589,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1613
+    .line 1635
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1614
+    .line 1636
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 1615
+    .line 1637
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v3
@@ -4569,25 +4613,25 @@
 
     return v3
 
-    .line 1618
+    .line 1640
     :cond_0
     return v4
 
-    .line 1623
+    .line 1645
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 1625
+    .line 1647
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v4
 
-    .line 1620
+    .line 1642
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 1622
+    .line 1644
     .local v0, "ex":Landroid/os/RemoteException;
     return v4
 .end method
@@ -4598,20 +4642,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2936
+    .line 2976
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2937
+    .line 2977
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 2938
+    .line 2978
     return v3
 
-    .line 2939
+    .line 2979
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->getDataState()I
     :try_end_0
@@ -4622,21 +4666,21 @@
 
     return v3
 
-    .line 2943
+    .line 2983
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 2944
+    .line 2984
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 2940
+    .line 2980
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2942
+    .line 2982
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -4645,7 +4689,7 @@
     .locals 1
 
     .prologue
-    .line 3669
+    .line 3738
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSubscriptionId()I
 
     move-result v0
@@ -4663,7 +4707,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 845
     :try_start_0
 
     invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceFlymeReadPhoneStatePermission()V
@@ -4672,14 +4715,11 @@
 
     move-result-object v2
 
-    .line 846
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 847
     return-object v4
 
-    .line 848
     :cond_0
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -4696,33 +4736,50 @@
 
     return-object v3
 
-    .line 851
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 852
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 849
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 850
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
 
 .method public getDeviceId(I)Ljava/lang/String;
-    .locals 5
+    .locals 6
     .param p1, "slotId"    # I
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    .line 868
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, ""
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/16 v4, 0x8
+
+    invoke-static {v4, v3}, Landroid/util/SeempLog;->record_str(ILjava/lang/String;)I
+
     :try_start_0
 
     invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceFlymeReadPhoneStatePermission()V
@@ -4731,14 +4788,11 @@
 
     move-result-object v2
 
-    .line 869
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 870
-    return-object v4
+    return-object v5
 
-    .line 871
     :cond_0
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -4755,30 +4809,25 @@
 
     return-object v3
 
-    .line 874
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 875
     .local v1, "ex":Ljava/lang/NullPointerException;
-    return-object v4
+    return-object v5
 
-    .line 872
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 873
     .local v0, "ex":Landroid/os/RemoteException;
-    return-object v4
+    return-object v5
 .end method
 
 .method public getDeviceSoftwareVersion()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 809
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDefaultSim()I
 
     move-result v0
@@ -4797,18 +4846,15 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 824
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 825
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
     return-object v4
 
-    .line 828
     :cond_0
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
@@ -4824,20 +4870,16 @@
 
     return-object v3
 
-    .line 831
     :catch_0
     move-exception v1
 
-    .line 832
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 829
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 830
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -4846,7 +4888,6 @@
     .locals 1
 
     .prologue
-    .line 5503
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultSubscription()I
 
     move-result v0
@@ -4865,17 +4906,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5517
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5518
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5519
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->getEsn(I)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4884,20 +4922,17 @@
 
     return-object v2
 
-    .line 5521
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5522
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#getEsn"
+    const-string v3, "Error calling ITelephony#getEsn"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5524
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v4
@@ -4909,20 +4944,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2184
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2185
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2186
     return-object v4
 
-    .line 2187
     :cond_0
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -4939,21 +4970,17 @@
 
     return-object v3
 
-    .line 2190
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2192
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 2188
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2189
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -4965,20 +4992,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2208
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2209
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2210
     return-object v4
 
-    .line 2211
     :cond_0
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -4995,21 +5018,17 @@
 
     return-object v3
 
-    .line 2214
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2216
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 2212
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2213
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -5024,20 +5043,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3957
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 3958
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 3959
     return-object v3
 
-    .line 3960
     :cond_0
     invoke-interface {v2, p1, p2, p3, p4}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIccSimChallengeResponse(IIILjava/lang/String;)Ljava/lang/String;
     :try_end_0
@@ -5048,21 +5063,17 @@
 
     return-object v3
 
-    .line 3963
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 3965
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 3961
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3962
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -5074,7 +5085,6 @@
     .param p3, "data"    # Ljava/lang/String;
 
     .prologue
-    .line 3935
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -5090,7 +5100,6 @@
     .locals 1
 
     .prologue
-    .line 887
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDefaultSim()I
 
     move-result v0
@@ -5109,18 +5118,15 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 900
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 901
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
     return-object v4
 
-    .line 904
     :cond_0
     :try_start_0
 
@@ -5139,20 +5145,16 @@
 
     return-object v3
 
-    .line 907
     :catch_0
     move-exception v1
 
-    .line 908
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 905
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 906
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -5164,20 +5166,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3888
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 3889
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 3890
     return-object v3
 
-    .line 3891
     :cond_0
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIsimChallengeResponse(Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
@@ -5188,21 +5186,17 @@
 
     return-object v3
 
-    .line 3894
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 3896
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 3892
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3893
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -5213,20 +5207,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2767
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2768
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2769
     return-object v3
 
-    .line 2770
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIsimDomain()Ljava/lang/String;
     :try_end_0
@@ -5237,21 +5227,17 @@
 
     return-object v3
 
-    .line 2773
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2775
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 2771
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2772
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -5262,20 +5248,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2748
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2749
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2750
     return-object v3
 
-    .line 2751
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIsimImpi()Ljava/lang/String;
     :try_end_0
@@ -5286,21 +5268,17 @@
 
     return-object v3
 
-    .line 2754
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2756
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 2752
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2753
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -5311,20 +5289,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2787
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2788
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2789
     return-object v3
 
-    .line 2790
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIsimImpu()[Ljava/lang/String;
     :try_end_0
@@ -5335,21 +5309,17 @@
 
     return-object v3
 
-    .line 2793
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2795
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 2791
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2792
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -5360,20 +5330,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3846
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 3847
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 3848
     return-object v3
 
-    .line 3849
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIsimIst()Ljava/lang/String;
     :try_end_0
@@ -5384,21 +5350,17 @@
 
     return-object v3
 
-    .line 3852
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 3854
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 3850
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3851
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -5409,20 +5371,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3866
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 3867
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 3868
     return-object v3
 
-    .line 3869
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIsimPcscf()[Ljava/lang/String;
     :try_end_0
@@ -5433,21 +5391,17 @@
 
     return-object v3
 
-    .line 3872
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 3874
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v3
 
-    .line 3870
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 3871
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v3
 .end method
@@ -5456,7 +5410,6 @@
     .locals 1
 
     .prologue
-    .line 2327
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -5475,26 +5428,21 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 2342
     const/4 v0, 0x0
 
-    .line 2344
     .local v0, "alphaTag":Ljava/lang/String;
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v4
 
-    .line 2345
     .local v4, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v4, :cond_0
 
-    .line 2347
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 2346
     invoke-interface {v4, p1, v5}, Lcom/android/internal/telephony/ITelephony;->getLine1AlphaTagForDisplay(ILjava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_2
@@ -5502,31 +5450,25 @@
 
     move-result-object v0
 
-    .line 2351
     .end local v0    # "alphaTag":Ljava/lang/String;
     .end local v4    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 2352
     return-object v0
 
-    .line 2355
     :cond_1
     :try_start_1
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v3
 
-    .line 2356
     .local v3, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v3, :cond_2
 
-    .line 2357
     return-object v6
 
-    .line 2358
     :cond_2
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -5541,25 +5483,20 @@
 
     return-object v5
 
-    .line 2361
     .end local v3    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v2
 
-    .line 2363
     .local v2, "ex":Ljava/lang/NullPointerException;
     return-object v6
 
-    .line 2359
     .end local v2    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v1
 
-    .line 2360
     .local v1, "ex":Landroid/os/RemoteException;
     return-object v6
 
-    .line 2348
     .end local v1    # "ex":Landroid/os/RemoteException;
     .restart local v0    # "alphaTag":Ljava/lang/String;
     :catch_2
@@ -5568,7 +5505,6 @@
     .restart local v1    # "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 2349
     .end local v1    # "ex":Landroid/os/RemoteException;
     :catch_3
     move-exception v2
@@ -5581,7 +5517,6 @@
     .locals 1
 
     .prologue
-    .line 2232
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -5594,16 +5529,36 @@
 .end method
 
 .method public getLine1Number(I)Ljava/lang/String;
-    .locals 7
+    .locals 8
     .param p1, "subId"    # I
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    .line 2250
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, ""
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    const/16 v6, 0x9
+
+    invoke-static {v6, v5}, Landroid/util/SeempLog;->record_str(ILjava/lang/String;)I
+
     const/4 v3, 0x0
 
-    .line 2252
     .local v3, "number":Ljava/lang/String;
     :try_start_0
 
@@ -5613,11 +5568,9 @@
 
     move-result-object v4
 
-    .line 2253
     .local v4, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v4, :cond_0
 
-    .line 2254
     iget-object v5, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -5631,17 +5584,14 @@
 
     move-result-object v3
 
-    .line 2258
     .end local v3    # "number":Ljava/lang/String;
     .end local v4    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     if-eqz v3, :cond_1
 
-    .line 2259
     return-object v3
 
-    .line 2262
     :cond_1
     :try_start_1
 
@@ -5651,14 +5601,11 @@
 
     move-result-object v2
 
-    .line 2263
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_2
 
-    .line 2264
-    return-object v6
+    return-object v7
 
-    .line 2265
     :cond_2
     iget-object v5, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -5675,25 +5622,20 @@
 
     return-object v5
 
-    .line 2268
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2270
     .local v1, "ex":Ljava/lang/NullPointerException;
-    return-object v6
+    return-object v7
 
-    .line 2266
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2267
     .local v0, "ex":Landroid/os/RemoteException;
-    return-object v6
+    return-object v7
 
-    .line 2255
     .end local v0    # "ex":Landroid/os/RemoteException;
     .restart local v3    # "number":Ljava/lang/String;
     :catch_2
@@ -5702,7 +5644,6 @@
     .restart local v0    # "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 2256
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catch_3
     move-exception v1
@@ -5717,17 +5658,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 5374
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5375
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5376
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->getLocaleFromDefaultSim()Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -5736,12 +5674,10 @@
 
     return-object v2
 
-    .line 5378
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5380
     :cond_0
     return-object v2
 .end method
@@ -5750,7 +5686,6 @@
     .locals 1
 
     .prologue
-    .line 2101
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -5769,20 +5704,16 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 2120
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2121
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 2122
     return v4
 
-    .line 2123
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -5797,23 +5728,53 @@
 
     return v3
 
-    .line 2127
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 2129
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v4
 
-    .line 2124
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2126
     .local v0, "ex":Landroid/os/RemoteException;
     return v4
+.end method
+
+.method public getLteOnGsmMode()I
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x0
+
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->getLteOnGsmMode()I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v2
+
+    return v2
+
+    :catch_0
+    move-exception v1
+
+    .local v1, "ex":Ljava/lang/NullPointerException;
+    return v3
+
+    .end local v1    # "ex":Ljava/lang/NullPointerException;
+    :catch_1
+    move-exception v0
+
+    .local v0, "ex":Landroid/os/RemoteException;
+    return v3
 .end method
 
 .method public getMergedSubscriberIds()[Ljava/lang/String;
@@ -5822,17 +5783,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2377
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2378
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2379
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v3
@@ -5846,17 +5804,14 @@
 
     return-object v3
 
-    .line 2380
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 2383
     :cond_0
     :goto_0
     return-object v4
 
-    .line 2381
     :catch_1
     move-exception v1
 
@@ -5870,14 +5825,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3229
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0
 
     return-object v1
 
-    .line 3230
     :cond_0
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -5885,10 +5838,8 @@
 
     move-result-object v0
 
-    .line 3231
-    const v1, 0x10400b7
+    const v1, #android:string@config_mms_user_agent_profile_url#t
 
-    .line 3230
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -5902,14 +5853,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3220
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0
 
     return-object v1
 
-    .line 3221
     :cond_0
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -5917,10 +5866,8 @@
 
     move-result-object v0
 
-    .line 3222
-    const v1, 0x10400b6
+    const v1, #android:string@config_mms_user_agent#t
 
-    .line 3221
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -5932,7 +5879,6 @@
     .locals 1
 
     .prologue
-    .line 2396
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -5951,20 +5897,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2411
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2412
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2413
     return-object v4
 
-    .line 2414
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -5979,21 +5921,17 @@
 
     return-object v3
 
-    .line 2417
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2419
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 2415
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2416
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -6002,16 +5940,14 @@
     .locals 2
 
     .prologue
-    .line 189
-    const-string/jumbo v1, "persist.radio.multisim.config"
+    const-string v1, "persist.radio.multisim.config"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 190
     .local v0, "mSimConfig":Ljava/lang/String;
-    const-string/jumbo v1, "dsds"
+    const-string v1, "dsds"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -6019,14 +5955,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 191
     sget-object v1, Landroid/telephony/TelephonyManager$MultiSimVariants;->DSDS:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     return-object v1
 
-    .line 192
     :cond_0
-    const-string/jumbo v1, "dsda"
+    const-string v1, "dsda"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -6034,14 +5968,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 193
     sget-object v1, Landroid/telephony/TelephonyManager$MultiSimVariants;->DSDA:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     return-object v1
 
-    .line 194
     :cond_1
-    const-string/jumbo v1, "tsts"
+    const-string v1, "tsts"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -6049,12 +5981,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 195
     sget-object v1, Landroid/telephony/TelephonyManager$MultiSimVariants;->TSTS:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     return-object v1
 
-    .line 197
     :cond_2
     sget-object v1, Landroid/telephony/TelephonyManager$MultiSimVariants;->UNKNOWN:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
@@ -6065,7 +5995,6 @@
     .locals 1
 
     .prologue
-    .line 918
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDefaultSim()I
 
     move-result v0
@@ -6084,26 +6013,21 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 928
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
 
     move-result-object v4
 
-    .line 930
     .local v4, "subId":[I
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 931
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 932
     return-object v8
 
-    .line 933
     :cond_0
     const/4 v5, 0x0
 
@@ -6119,9 +6043,8 @@
 
     move-result-object v3
 
-    .line 934
     .local v3, "nai":Ljava/lang/String;
-    const-string/jumbo v5, "TelephonyManager"
+    const-string v5, "TelephonyManager"
 
     const/4 v6, 0x2
 
@@ -6131,14 +6054,13 @@
 
     if-eqz v5, :cond_1
 
-    .line 935
-    const-string/jumbo v5, "TelephonyManager"
+    const-string v5, "TelephonyManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Nai = "
+    const-string v7, "Nai = "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6157,26 +6079,21 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 937
     :cond_1
     return-object v3
 
-    .line 940
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     .end local v3    # "nai":Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 941
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v8
 
-    .line 938
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 939
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v8
 .end method
@@ -6199,20 +6116,24 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1059
+    const/16 v3, 0x32
+
+    invoke-static {v3}, Landroid/util/SeempLog;->record(I)I
+
+    .line 855
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1060
+    .line 856
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 1061
+    .line 857
     return-object v4
 
-    .line 1062
+    .line 858
     :cond_0
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -6229,21 +6150,21 @@
 
     return-object v3
 
-    .line 1065
+    .line 861
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 1066
+    .line 862
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 1063
+    .line 859
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 1064
+    .line 860
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -6252,7 +6173,6 @@
     .locals 1
 
     .prologue
-    .line 1426
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
@@ -6269,12 +6189,10 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1441
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 1442
     .local v0, "phoneId":I
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getNetworkCountryIsoForPhone(I)Ljava/lang/String;
 
@@ -6288,10 +6206,9 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 1457
-    const-string/jumbo v0, "gsm.operator.iso-country"
+    const-string v0, "gsm.operator.iso-country"
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -6304,7 +6221,6 @@
     .locals 1
 
     .prologue
-    .line 1358
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
@@ -6321,12 +6237,10 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1373
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 1374
     .local v0, "phoneId":I
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getNetworkOperatorForPhone(I)Ljava/lang/String;
 
@@ -6340,10 +6254,9 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 1389
-    const-string/jumbo v0, "gsm.operator.numeric"
+    const-string v0, "gsm.operator.numeric"
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -6356,7 +6269,6 @@
     .locals 1
 
     .prologue
-    .line 1332
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -6373,16 +6285,14 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1346
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 1347
     .local v0, "phoneId":I
-    const-string/jumbo v1, "gsm.operator.alpha"
+    const-string v1, "gsm.operator.alpha"
 
-    const-string/jumbo v2, ""
+    const-string v2, ""
 
     invoke-static {v0, v1, v2}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -6397,17 +6307,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1505
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1506
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 1507
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->getNetworkType()I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -6417,25 +6324,20 @@
 
     return v3
 
-    .line 1510
     :cond_0
     return v3
 
-    .line 1515
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 1517
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 1512
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 1514
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -6447,17 +6349,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1552
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1553
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 1554
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v3
@@ -6471,25 +6370,20 @@
 
     return v3
 
-    .line 1557
     :cond_0
     return v4
 
-    .line 1562
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 1564
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v4
 
-    .line 1559
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 1561
     .local v0, "ex":Landroid/os/RemoteException;
     return v4
 .end method
@@ -6498,7 +6392,6 @@
     .locals 1
 
     .prologue
-    .line 1724
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getNetworkType()I
 
     move-result v0
@@ -6515,12 +6408,10 @@
     .param p1, "defaultValue"    # Ljava/lang/String;
 
     .prologue
-    .line 5140
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5141
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->getOtaSpNumberSchemaForPhone(ILjava/lang/String;)Ljava/lang/String;
 
@@ -6535,24 +6426,20 @@
     .param p2, "defaultValue"    # Ljava/lang/String;
 
     .prologue
-    .line 5154
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5156
-    const-string/jumbo v0, "ro.cdma.otaspnumschema"
+    const-string v0, "ro.cdma.otaspnumschema"
 
-    .line 5155
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 5159
     :cond_0
     return-object p2
 .end method
@@ -6570,17 +6457,14 @@
     .end annotation
 
     .prologue
-    .line 4434
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4435
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4436
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->getPackagesWithCarrierPrivileges()Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -6590,20 +6474,17 @@
 
     return-object v3
 
-    .line 4440
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4441
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "getPackagesWithCarrierPrivileges NPE"
+    const-string v4, "getPackagesWithCarrierPrivileges NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4443
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -6611,15 +6492,13 @@
 
     return-object v3
 
-    .line 4438
     :catch_1
     move-exception v0
 
-    .line 4439
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "getPackagesWithCarrierPrivileges RemoteException"
+    const-string v4, "getPackagesWithCarrierPrivileges RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -6633,24 +6512,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3977
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 3978
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v1, :cond_0
 
-    .line 3979
     const/4 v2, 0x0
 
     new-array v2, v2, [Ljava/lang/String;
 
     return-object v2
 
-    .line 3980
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -6664,12 +6539,10 @@
 
     return-object v2
 
-    .line 3981
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 3982
     .local v0, "e":Landroid/os/RemoteException;
     new-array v2, v3, [Ljava/lang/String;
 
@@ -6680,10 +6553,8 @@
     .locals 4
 
     .prologue
-    .line 209
     const/4 v1, 0x1
 
-    .line 210
     .local v1, "phoneCount":I
     invoke-static {}, Landroid/telephony/TelephonyManager;->-getandroid-telephony-TelephonyManager$MultiSimVariantsSwitchesValues()[I
 
@@ -6701,11 +6572,9 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 243
     :goto_0
     return v1
 
-    .line 213
     :pswitch_0
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->isVoiceCapable()Z
 
@@ -6719,47 +6588,38 @@
 
     if-eqz v2, :cond_1
 
-    .line 214
     :cond_0
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 217
     :cond_1
     iget-object v2, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     if-nez v2, :cond_2
 
-    .line 218
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 221
     :cond_2
     iget-object v2, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
-    .line 222
-    const-string/jumbo v3, "connectivity"
+    const-string v3, "connectivity"
 
-    .line 221
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 223
     .local v0, "cm":Landroid/net/ConnectivityManager;
     if-nez v0, :cond_3
 
-    .line 224
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 226
     :cond_3
     const/4 v2, 0x0
 
@@ -6769,33 +6629,26 @@
 
     if-eqz v2, :cond_4
 
-    .line 227
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 229
     :cond_4
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 237
     .end local v0    # "cm":Landroid/net/ConnectivityManager;
     :pswitch_1
     const/4 v1, 0x2
 
-    .line 238
     goto :goto_0
 
-    .line 240
     :pswitch_2
     const/4 v1, 0x3
 
-    .line 241
     goto :goto_0
 
-    .line 210
     nop
 
     :pswitch_data_0
@@ -6811,19 +6664,16 @@
     .locals 1
 
     .prologue
-    .line 1154
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->isVoiceCapable()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1155
     const/4 v0, 0x0
 
     return v0
 
-    .line 1157
     :cond_0
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getCurrentPhoneType()I
 
@@ -6837,17 +6687,14 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 4014
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4015
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4016
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getPreferredNetworkType(I)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -6857,20 +6704,17 @@
 
     return v3
 
-    .line 4019
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4020
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "getPreferredNetworkType NPE"
+    const-string v4, "getPreferredNetworkType NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4022
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -6878,15 +6722,13 @@
 
     return v3
 
-    .line 4017
     :catch_1
     move-exception v0
 
-    .line 4018
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "getPreferredNetworkType RemoteException"
+    const-string v4, "getPreferredNetworkType RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -6900,17 +6742,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5410
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5411
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5412
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -6923,20 +6762,17 @@
 
     return-object v2
 
-    .line 5414
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5415
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#getServiceStateForSubscriber"
+    const-string v3, "Error calling ITelephony#getServiceStateForSubscriber"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5417
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v4
@@ -6946,19 +6782,16 @@
     .locals 1
 
     .prologue
-    .line 3832
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->isMultiSimEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3833
     const/4 v0, 0x2
 
     return v0
 
-    .line 3835
     :cond_0
     const/4 v0, 0x1
 
@@ -6969,7 +6802,6 @@
     .locals 1
 
     .prologue
-    .line 2028
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
@@ -6986,12 +6818,10 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 2038
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 2039
     .local v0, "phoneId":I
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getSimCountryIsoForPhone(I)Ljava/lang/String;
 
@@ -7005,12 +6835,10 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 2049
-    const-string/jumbo v0, "gsm.sim.operator.iso-country"
+    const-string v0, "gsm.sim.operator.iso-country"
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
-    .line 2048
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -7022,7 +6850,6 @@
     .locals 1
 
     .prologue
-    .line 1918
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getSimOperatorNumeric()Ljava/lang/String;
 
     move-result-object v0
@@ -7035,7 +6862,6 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1933
     invoke-virtual {p0, p1}, Landroid/telephony/TelephonyManager;->getSimOperatorNumeric(I)Ljava/lang/String;
 
     move-result-object v0
@@ -7047,7 +6873,6 @@
     .locals 1
 
     .prologue
-    .line 1996
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
@@ -7064,12 +6889,10 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 2010
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 2011
     .local v0, "phoneId":I
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getSimOperatorNameForPhone(I)Ljava/lang/String;
 
@@ -7083,12 +6906,10 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 2021
-    const-string/jumbo v0, "gsm.sim.operator.alpha"
+    const-string v0, "gsm.sim.operator.alpha"
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
-    .line 2020
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -7100,12 +6921,10 @@
     .locals 2
 
     .prologue
-    .line 1946
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
 
     move-result v0
 
-    .line 1947
     .local v0, "subId":I
     invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isUsableSubIdValue(I)Z
 
@@ -7113,36 +6932,30 @@
 
     if-nez v1, :cond_0
 
-    .line 1948
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSmsSubscriptionId()I
 
     move-result v0
 
-    .line 1949
     invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isUsableSubIdValue(I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1950
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultVoiceSubscriptionId()I
 
     move-result v0
 
-    .line 1951
     invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isUsableSubIdValue(I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1952
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSubscriptionId()I
 
     move-result v0
 
-    .line 1956
     :cond_0
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getSimOperatorNumeric(I)Ljava/lang/String;
 
@@ -7156,12 +6969,10 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1971
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 1972
     .local v0, "phoneId":I
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getSimOperatorNumericForPhone(I)Ljava/lang/String;
 
@@ -7175,12 +6986,10 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 1985
-    const-string/jumbo v0, "gsm.sim.operator.numeric"
+    const-string v0, "gsm.sim.operator.numeric"
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
-    .line 1984
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -7192,7 +7001,6 @@
     .locals 1
 
     .prologue
-    .line 2060
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -7205,26 +7013,49 @@
 .end method
 
 .method public getSimSerialNumber(I)Ljava/lang/String;
-    .locals 5
+    .locals 6
     .param p1, "subId"    # I
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    .line 2074
+    .line 876
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, ""
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/16 v4, 0x184
+
+    invoke-static {v4, v3}, Landroid/util/SeempLog;->record_str(ILjava/lang/String;)I
+
+    .line 879
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2075
+    .line 880
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2076
-    return-object v4
+    .line 881
+    return-object v5
 
-    .line 2077
+    .line 882
     :cond_0
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -7241,23 +7072,23 @@
 
     return-object v3
 
-    .line 2080
+    .line 885
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2082
+    .line 886
     .local v1, "ex":Ljava/lang/NullPointerException;
-    return-object v4
+    return-object v5
 
-    .line 2078
+    .line 883
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2079
+    .line 884
     .local v0, "ex":Landroid/os/RemoteException;
-    return-object v4
+    return-object v5
 .end method
 
 .method public getSimState()I
@@ -7268,16 +7099,13 @@
 
     const/4 v6, 0x0
 
-    .line 1867
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDefaultSim()I
 
     move-result v2
 
-    .line 1870
     .local v2, "slotIdx":I
     if-gez v2, :cond_2
 
-    .line 1873
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -7288,23 +7116,20 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 1874
     invoke-virtual {p0, v0}, Landroid/telephony/TelephonyManager;->getSimState(I)I
 
     move-result v1
 
-    .line 1875
     .local v1, "simState":I
     if-eq v1, v7, :cond_0
 
-    .line 1876
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "getSimState: default sim:"
+    const-string v5, "getSimState: default sim:"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7314,16 +7139,14 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, ", sim state for "
+    const-string v5, ", sim state for "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 1877
-    const-string/jumbo v5, "slotIdx="
+    const-string v5, "slotIdx="
 
-    .line 1876
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -7332,10 +7155,8 @@
 
     move-result-object v4
 
-    .line 1877
-    const-string/jumbo v5, " is "
+    const-string v5, " is "
 
-    .line 1876
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -7344,10 +7165,8 @@
 
     move-result-object v4
 
-    .line 1877
-    const-string/jumbo v5, ", return state as unknown"
+    const-string v5, ", return state as unknown"
 
-    .line 1876
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -7358,25 +7177,22 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1878
     return v6
 
-    .line 1873
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1881
     .end local v1    # "simState":I
     :cond_1
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "getSimState: default sim:"
+    const-string v5, "getSimState: default sim:"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7386,16 +7202,14 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, ", all SIMs absent, return "
+    const-string v5, ", all SIMs absent, return "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 1882
-    const-string/jumbo v5, "state as absent"
+    const-string v5, "state as absent"
 
-    .line 1881
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -7406,10 +7220,8 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1883
     return v7
 
-    .line 1885
     .end local v0    # "i":I
     :cond_2
     invoke-virtual {p0, v2}, Landroid/telephony/TelephonyManager;->getSimState(I)I
@@ -7424,12 +7236,10 @@
     .param p1, "slotIdx"    # I
 
     .prologue
-    .line 1905
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIdx(I)I
 
     move-result v0
 
-    .line 1906
     .local v0, "simState":I
     return v0
 .end method
@@ -7439,12 +7249,10 @@
     .param p1, "defaultValue"    # Z
 
     .prologue
-    .line 5171
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5172
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->getSmsReceiveCapableForPhone(IZ)Z
 
@@ -7459,21 +7267,18 @@
     .param p2, "defaultValue"    # Z
 
     .prologue
-    .line 5185
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5187
-    const-string/jumbo v0, "telephony.sms.receive"
+    const-string v0, "telephony.sms.receive"
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5186
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -7488,7 +7293,6 @@
 
     return v0
 
-    .line 5190
     :cond_0
     return p2
 .end method
@@ -7498,12 +7302,10 @@
     .param p1, "defaultValue"    # Z
 
     .prologue
-    .line 5202
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5203
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->getSmsSendCapableForPhone(IZ)Z
 
@@ -7518,21 +7320,18 @@
     .param p2, "defaultValue"    # Z
 
     .prologue
-    .line 5216
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5218
-    const-string/jumbo v0, "telephony.sms.send"
+    const-string v0, "telephony.sms.send"
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5217
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -7547,7 +7346,6 @@
 
     return v0
 
-    .line 5221
     :cond_0
     return p2
 .end method
@@ -7557,34 +7355,28 @@
     .param p1, "phoneAccount"    # Landroid/telecom/PhoneAccount;
 
     .prologue
-    .line 5343
     const/4 v1, -0x1
 
-    .line 5345
     .local v1, "retval":I
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 5346
     .local v2, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 5347
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getSubIdForPhoneAccount(Landroid/telecom/PhoneAccount;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 5352
     .end local v2    # "service":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return v1
 
-    .line 5349
     :catch_0
     move-exception v0
 
@@ -7596,7 +7388,6 @@
     .locals 1
 
     .prologue
-    .line 2147
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -7609,13 +7400,34 @@
 .end method
 
 .method public getSubscriberId(I)Ljava/lang/String;
-    .locals 5
+    .locals 6
     .param p1, "subId"    # I
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    .line 2163
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, ""
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/16 v4, 0x185
+
+    invoke-static {v4, v3}, Landroid/util/SeempLog;->record_str(ILjava/lang/String;)I
+
     :try_start_0
 
     invoke-direct/range {p0 .. p0}, Landroid/telephony/TelephonyManager;->enforceFlymeReadPhoneStatePermission()V
@@ -7624,14 +7436,11 @@
 
     move-result-object v2
 
-    .line 2164
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2165
-    return-object v4
+    return-object v5
 
-    .line 2166
     :cond_0
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -7648,23 +7457,19 @@
 
     return-object v3
 
-    .line 2169
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2171
     .local v1, "ex":Ljava/lang/NullPointerException;
-    return-object v4
+    return-object v5
 
-    .line 2167
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2168
     .local v0, "ex":Landroid/os/RemoteException;
-    return-object v4
+    return-object v5
 .end method
 
 .method public getTelephonyHistograms()Ljava/util/List;
@@ -7682,17 +7487,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5571
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5572
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5573
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->getTelephonyHistograms()Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -7701,20 +7503,17 @@
 
     return-object v2
 
-    .line 5575
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5576
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#getTelephonyHistograms"
+    const-string v3, "Error calling ITelephony#getTelephonyHistograms"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5578
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v4
@@ -7724,17 +7523,14 @@
     .locals 5
 
     .prologue
-    .line 4162
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4163
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4164
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->getTetherApnRequired()I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -7744,20 +7540,17 @@
 
     return v3
 
-    .line 4167
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4168
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "hasMatchedTetherApnSetting NPE"
+    const-string v4, "hasMatchedTetherApnSetting NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4170
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -7765,15 +7558,13 @@
 
     return v3
 
-    .line 4165
     :catch_1
     move-exception v0
 
-    .line 4166
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "hasMatchedTetherApnSetting RemoteException"
+    const-string v4, "hasMatchedTetherApnSetting RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -7787,24 +7578,20 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2638
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2639
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2641
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2640
     invoke-interface {v2, v3, p1}, Lcom/android/internal/telephony/ITelephony;->getVisualVoicemailSmsFilterSettings(Ljava/lang/String;I)Landroid/telephony/VisualVoicemailSmsFilterSettings;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -7814,17 +7601,14 @@
 
     return-object v3
 
-    .line 2643
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 2647
     :cond_0
     :goto_0
     return-object v4
 
-    .line 2644
     :catch_1
     move-exception v1
 
@@ -7840,17 +7624,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2661
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2662
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2663
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->getSystemVisualVoicemailSmsFilterSettings(Ljava/lang/String;I)Landroid/telephony/VisualVoicemailSmsFilterSettings;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -7860,17 +7641,14 @@
 
     return-object v3
 
-    .line 2665
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 2669
     :cond_0
     :goto_0
     return-object v3
 
-    .line 2666
     :catch_1
     move-exception v1
 
@@ -7882,7 +7660,6 @@
     .locals 1
 
     .prologue
-    .line 2714
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -7901,20 +7678,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2729
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2730
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2731
     return-object v4
 
-    .line 2732
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -7929,21 +7702,17 @@
 
     return-object v3
 
-    .line 2735
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2737
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 2733
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2734
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -7952,7 +7721,6 @@
     .locals 1
 
     .prologue
-    .line 2430
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -7971,20 +7739,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2444
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
 
     move-result-object v2
 
-    .line 2445
     .local v2, "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     if-nez v2, :cond_0
 
-    .line 2446
     return-object v4
 
-    .line 2447
     :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
@@ -7999,21 +7763,17 @@
 
     return-object v3
 
-    .line 2450
     .end local v2    # "info":Lcom/android/internal/telephony/IPhoneSubInfo;
     :catch_0
     move-exception v1
 
-    .line 2452
     .local v1, "ex":Ljava/lang/NullPointerException;
     return-object v4
 
-    .line 2448
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2449
     .local v0, "ex":Landroid/os/RemoteException;
     return-object v4
 .end method
@@ -8022,7 +7782,6 @@
     .locals 1
 
     .prologue
-    .line 2681
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -8041,20 +7800,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2694
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2695
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 2696
     return v3
 
-    .line 2697
     :cond_0
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->getVoiceMessageCountForSubscriber(I)I
     :try_end_0
@@ -8065,21 +7820,17 @@
 
     return v3
 
-    .line 2700
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 2702
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 2698
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 2699
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -8088,7 +7839,6 @@
     .locals 1
 
     .prologue
-    .line 1637
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -8107,17 +7857,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1650
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1651
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 1652
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v3
@@ -8131,25 +7878,20 @@
 
     return v3
 
-    .line 1655
     :cond_0
     return v4
 
-    .line 1660
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 1662
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v4
 
-    .line 1657
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 1659
     .local v0, "ex":Landroid/os/RemoteException;
     return v4
 .end method
@@ -8161,17 +7903,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5430
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5431
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5432
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->getVoicemailRingtoneUri(Landroid/telecom/PhoneAccountHandle;)Landroid/net/Uri;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8180,20 +7919,17 @@
 
     return-object v2
 
-    .line 5434
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5435
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#getVoicemailRingtoneUri"
+    const-string v3, "Error calling ITelephony#getVoicemailRingtoneUri"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5437
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v4
@@ -8203,17 +7939,14 @@
     .locals 4
 
     .prologue
-    .line 5666
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5667
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5668
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->getVtDataUsage()J
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8222,20 +7955,17 @@
 
     return-wide v2
 
-    .line 5670
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5671
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling getVtDataUsage"
+    const-string v3, "Error calling getVtDataUsage"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5673
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const-wide/16 v2, 0x0
@@ -8248,17 +7978,14 @@
     .param p1, "dialString"    # Ljava/lang/String;
 
     .prologue
-    .line 4613
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4614
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4615
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->handlePinMmi(Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8267,20 +7994,17 @@
 
     return v2
 
-    .line 4616
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4617
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#handlePinMmi"
+    const-string v3, "Error calling ITelephony#handlePinMmi"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4619
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -8294,17 +8018,14 @@
     .param p2, "dialString"    # Ljava/lang/String;
 
     .prologue
-    .line 4626
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4627
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4628
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->handlePinMmiForSubscriber(ILjava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8313,20 +8034,17 @@
 
     return v2
 
-    .line 4629
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4630
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#handlePinMmi"
+    const-string v3, "Error calling ITelephony#handlePinMmi"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4632
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -8338,7 +8056,6 @@
     .locals 1
 
     .prologue
-    .line 4196
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -8359,17 +8076,14 @@
 
     const/4 v4, 0x0
 
-    .line 4212
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4213
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_1
 
-    .line 4214
     iget v5, p0, Landroid/telephony/TelephonyManager;->mSubId:I
 
     invoke-interface {v2, v5}, Lcom/android/internal/telephony/ITelephony;->getCarrierPrivilegeStatus(I)I
@@ -8389,34 +8103,29 @@
 
     goto :goto_0
 
-    .line 4219
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4220
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v5, "hasCarrierPrivileges NPE"
+    const-string v5, "hasCarrierPrivileges NPE"
 
     invoke-static {v3, v5, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4222
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_1
     :goto_1
     return v4
 
-    .line 4217
     :catch_1
     move-exception v0
 
-    .line 4218
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v5, "hasCarrierPrivileges RemoteException"
+    const-string v5, "hasCarrierPrivileges RemoteException"
 
     invoke-static {v3, v5, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -8427,7 +8136,7 @@
     .locals 1
 
     .prologue
-    .line 1827
+    .line 819
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDefaultSim()I
 
     move-result v0
@@ -8446,20 +8155,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1840
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 1841
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 1842
     return v3
 
-    .line 1843
     :cond_0
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->hasIccCardUsingSlotId(I)Z
     :try_end_0
@@ -8470,21 +8175,17 @@
 
     return v3
 
-    .line 1847
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 1849
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 1844
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 1846
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -8494,7 +8195,6 @@
     .param p1, "channel"    # I
 
     .prologue
-    .line 3289
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -8512,17 +8212,14 @@
     .param p2, "channel"    # I
 
     .prologue
-    .line 3309
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3310
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3311
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->iccCloseLogicalChannel(II)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8532,19 +8229,16 @@
 
     return v3
 
-    .line 3312
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 3315
     :cond_0
     :goto_0
     const/4 v3, 0x0
 
     return v3
 
-    .line 3313
     :catch_1
     move-exception v1
 
@@ -8563,13 +8257,11 @@
     .param p7, "filePath"    # Ljava/lang/String;
 
     .prologue
-    .line 3480
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v0
 
-    .line 3481
     .local v0, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v0, :cond_0
 
@@ -8587,7 +8279,6 @@
 
     move-object/from16 v7, p7
 
-    .line 3482
     invoke-interface/range {v0 .. v7}, Lcom/android/internal/telephony/ITelephony;->iccExchangeSimIO(IIIIIILjava/lang/String;)[B
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8597,19 +8288,16 @@
 
     return-object v1
 
-    .line 3483
     .end local v0    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v8
 
-    .line 3486
     :cond_0
     :goto_0
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 3484
     :catch_1
     move-exception v9
 
@@ -8627,7 +8315,6 @@
     .param p6, "filePath"    # Ljava/lang/String;
 
     .prologue
-    .line 3457
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v1
@@ -8661,17 +8348,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3266
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3267
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3268
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->iccOpenLogicalChannel(ILjava/lang/String;)Landroid/telephony/IccOpenLogicalChannelResponse;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8681,17 +8365,55 @@
 
     return-object v3
 
-    .line 3269
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 3272
     :cond_0
     :goto_0
     return-object v3
 
-    .line 3270
+    :catch_1
+    move-exception v1
+
+    .local v1, "ex":Ljava/lang/NullPointerException;
+    goto :goto_0
+.end method
+
+.method public iccOpenLogicalChannel(ILjava/lang/String;B)Landroid/telephony/IccOpenLogicalChannelResponse;
+    .locals 4
+    .param p1, "subId"    # I
+    .param p2, "AID"    # Ljava/lang/String;
+    .param p3, "p2"    # B
+
+    .prologue
+    const/4 v3, 0x0
+
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v2
+
+    .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
+    if-eqz v2, :cond_0
+
+    invoke-interface {v2, p1, p2, p3}, Lcom/android/internal/telephony/ITelephony;->iccOpenLogicalChannelWithP2(ILjava/lang/String;B)Landroid/telephony/IccOpenLogicalChannelResponse;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v3
+
+    return-object v3
+
+    .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
+    :catch_0
+    move-exception v0
+
+    :cond_0
+    :goto_0
+    return-object v3
+
     :catch_1
     move-exception v1
 
@@ -8704,7 +8426,7 @@
     .param p1, "AID"    # Ljava/lang/String;
 
     .prologue
-    .line 3247
+    .line 4004
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -8727,13 +8449,11 @@
     .param p7, "data"    # Ljava/lang/String;
 
     .prologue
-    .line 3430
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v0
 
-    .line 3431
     .local v0, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v0, :cond_0
 
@@ -8751,7 +8471,6 @@
 
     move-object/from16 v7, p7
 
-    .line 3432
     invoke-interface/range {v0 .. v7}, Lcom/android/internal/telephony/ITelephony;->iccTransmitApduBasicChannel(IIIIIILjava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8761,19 +8480,16 @@
 
     return-object v1
 
-    .line 3434
     .end local v0    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v8
 
-    .line 3437
     :cond_0
     :goto_0
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
     return-object v1
 
-    .line 3435
     :catch_1
     move-exception v9
 
@@ -8791,7 +8507,6 @@
     .param p6, "data"    # Ljava/lang/String;
 
     .prologue
-    .line 3402
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v1
@@ -8829,13 +8544,11 @@
     .param p8, "data"    # Ljava/lang/String;
 
     .prologue
-    .line 3371
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v0
 
-    .line 3372
     .local v0, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v0, :cond_0
 
@@ -8855,7 +8568,6 @@
 
     move-object/from16 v8, p8
 
-    .line 3373
     invoke-interface/range {v0 .. v8}, Lcom/android/internal/telephony/ITelephony;->iccTransmitApduLogicalChannel(IIIIIIILjava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8865,19 +8577,16 @@
 
     return-object v1
 
-    .line 3375
     .end local v0    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v9
 
-    .line 3378
     :cond_0
     :goto_0
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
     return-object v1
 
-    .line 3376
     :catch_1
     move-exception v10
 
@@ -8896,7 +8605,6 @@
     .param p7, "data"    # Ljava/lang/String;
 
     .prologue
-    .line 3341
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v1
@@ -8930,17 +8638,14 @@
     .param p2, "oemResp"    # [B
 
     .prologue
-    .line 4789
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4790
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4791
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->invokeOemRilRequestRaw([B[B)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8950,19 +8655,16 @@
 
     return v3
 
-    .line 4792
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4795
     :cond_0
     :goto_0
     const/4 v3, -0x1
 
     return v3
 
-    .line 4793
     :catch_1
     move-exception v1
 
@@ -8974,17 +8676,14 @@
     .locals 4
 
     .prologue
-    .line 4715
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4716
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4717
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->isDataConnectivityPossible()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -8993,20 +8692,17 @@
 
     return v2
 
-    .line 4718
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4719
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#isDataConnectivityPossible"
+    const-string v3, "Error calling ITelephony#isDataConnectivityPossible"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4721
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -9018,17 +8714,14 @@
     .locals 5
 
     .prologue
-    .line 4888
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4889
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4890
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->isHearingAidCompatibilitySupported()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -9038,20 +8731,17 @@
 
     return v3
 
-    .line 4894
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4895
     .local v1, "e":Ljava/lang/SecurityException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "Permission error calling ITelephony#isHearingAidCompatibilitySupported"
+    const-string v4, "Permission error calling ITelephony#isHearingAidCompatibilitySupported"
 
     invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4897
     .end local v1    # "e":Ljava/lang/SecurityException;
     :cond_0
     :goto_0
@@ -9059,15 +8749,13 @@
 
     return v3
 
-    .line 4892
     :catch_1
     move-exception v0
 
-    .line 4893
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "Error calling ITelephony#isHearingAidCompatibilitySupported"
+    const-string v4, "Error calling ITelephony#isHearingAidCompatibilitySupported"
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -9078,17 +8766,14 @@
     .locals 4
 
     .prologue
-    .line 4535
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4536
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4537
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -9101,20 +8786,17 @@
 
     return v2
 
-    .line 4538
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4539
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#isIdle"
+    const-string v3, "Error calling ITelephony#isIdle"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4541
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x1
@@ -9128,20 +8810,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4945
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4946
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-nez v2, :cond_0
 
-    .line 4947
     return v3
 
-    .line 4948
     :cond_0
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->isImsRegistered()Z
     :try_end_0
@@ -9152,21 +8830,59 @@
 
     return v3
 
-    .line 4951
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4952
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 4949
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 4950
+    .local v0, "ex":Landroid/os/RemoteException;
+    return v3
+.end method
+
+.method public isImsRegisteredForSubscriber(I)Z
+    .locals 4
+    .param p1, "subId"    # I
+
+    .prologue
+    const/4 v3, 0x0
+
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v2
+
+    .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
+    if-nez v2, :cond_0
+
+    return v3
+
+    :cond_0
+    invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->isImsRegisteredForSubscriber(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v3
+
+    return v3
+
+    .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
+    :catch_0
+    move-exception v1
+
+    .local v1, "ex":Ljava/lang/NullPointerException;
+    return v3
+
+    .end local v1    # "ex":Ljava/lang/NullPointerException;
+    :catch_1
+    move-exception v0
+
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -9175,10 +8891,9 @@
     .locals 2
 
     .prologue
-    .line 263
     sget-object v0, Landroid/telephony/TelephonyManager;->multiSimConfig:Ljava/lang/String;
 
-    const-string/jumbo v1, "dsds"
+    const-string v1, "dsds"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -9188,7 +8903,7 @@
 
     sget-object v0, Landroid/telephony/TelephonyManager;->multiSimConfig:Ljava/lang/String;
 
-    const-string/jumbo v1, "dsda"
+    const-string v1, "dsda"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -9196,16 +8911,14 @@
 
     if-nez v0, :cond_0
 
-    .line 264
     sget-object v0, Landroid/telephony/TelephonyManager;->multiSimConfig:Ljava/lang/String;
 
-    const-string/jumbo v1, "tsts"
+    const-string v1, "tsts"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 263
     :goto_0
     return v0
 
@@ -9219,7 +8932,8 @@
     .locals 1
 
     .prologue
-    .line 1399
+    .line 2367
+    .line 2271
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -9236,18 +8950,15 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 1412
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v0
 
-    .line 1414
     .local v0, "phoneId":I
-    const-string/jumbo v1, "gsm.operator.isroaming"
+    const-string v1, "gsm.operator.isroaming"
 
     const/4 v2, 0x0
 
-    .line 1413
     invoke-static {v0, v1, v2}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -9263,17 +8974,14 @@
     .locals 4
 
     .prologue
-    .line 4509
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4510
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4511
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -9286,20 +8994,17 @@
 
     return v2
 
-    .line 4512
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4513
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#isOffhook"
+    const-string v3, "Error calling ITelephony#isOffhook"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4515
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -9311,17 +9016,14 @@
     .locals 4
 
     .prologue
-    .line 4548
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4549
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4550
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -9334,20 +9036,17 @@
 
     return v2
 
-    .line 4551
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4552
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#isRadioOn"
+    const-string v3, "Error calling ITelephony#isRadioOn"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4554
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -9359,17 +9058,14 @@
     .locals 4
 
     .prologue
-    .line 4522
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4523
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4524
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -9382,20 +9078,17 @@
 
     return v2
 
-    .line 4525
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4526
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#isRinging"
+    const-string v3, "Error calling ITelephony#isRinging"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4528
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -9407,7 +9100,6 @@
     .locals 2
 
     .prologue
-    .line 3139
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0
@@ -9416,7 +9108,6 @@
 
     return v0
 
-    .line 3140
     :cond_0
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -9424,10 +9115,8 @@
 
     move-result-object v0
 
-    .line 3141
-    const v1, 0x1120068
+    const v1, #android:bool@config_sms_capable#t
 
-    .line 3140
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
@@ -9439,17 +9128,14 @@
     .locals 5
 
     .prologue
-    .line 4868
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4869
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4870
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->isTtyModeSupported()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -9459,20 +9145,17 @@
 
     return v3
 
-    .line 4874
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4875
     .local v1, "e":Ljava/lang/SecurityException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "Permission error calling ITelephony#isTtyModeSupported"
+    const-string v4, "Permission error calling ITelephony#isTtyModeSupported"
 
     invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4877
     .end local v1    # "e":Ljava/lang/SecurityException;
     :cond_0
     :goto_0
@@ -9480,15 +9163,13 @@
 
     return v3
 
-    .line 4872
     :catch_1
     move-exception v0
 
-    .line 4873
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "Error calling ITelephony#isTtyModeSupported"
+    const-string v4, "Error calling ITelephony#isTtyModeSupported"
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -9499,17 +9180,14 @@
     .locals 4
 
     .prologue
-    .line 4814
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4815
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4816
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -9522,20 +9200,17 @@
 
     return v2
 
-    .line 4817
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4818
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#isVideoCallingEnabled"
+    const-string v3, "Error calling ITelephony#isVideoCallingEnabled"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4820
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -9549,7 +9224,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4976
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -9564,20 +9238,16 @@
 
     return v2
 
-    .line 4979
     :catch_0
     move-exception v1
 
-    .line 4980
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 4977
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 4978
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -9587,24 +9257,20 @@
     .param p1, "phoneAccountHandle"    # Landroid/telecom/PhoneAccountHandle;
 
     .prologue
-    .line 2564
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2565
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2567
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2566
     invoke-interface {v2, v3, p1}, Lcom/android/internal/telephony/ITelephony;->isVisualVoicemailEnabled(Ljava/lang/String;Landroid/telecom/PhoneAccountHandle;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -9614,19 +9280,16 @@
 
     return v3
 
-    .line 2569
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 2573
     :cond_0
     :goto_0
     const/4 v3, 0x0
 
     return v3
 
-    .line 2570
     :catch_1
     move-exception v1
 
@@ -9638,7 +9301,6 @@
     .locals 2
 
     .prologue
-    .line 3124
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0
@@ -9647,7 +9309,6 @@
 
     return v0
 
-    .line 3125
     :cond_0
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
@@ -9655,10 +9316,8 @@
 
     move-result-object v0
 
-    .line 3126
-    const v1, 0x1120065
+    const v1, #android:bool@config_voice_capable#t
 
-    .line 3125
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
@@ -9671,17 +9330,14 @@
     .param p1, "accountHandle"    # Landroid/telecom/PhoneAccountHandle;
 
     .prologue
-    .line 5449
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5450
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5451
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->isVoicemailVibrationEnabled(Landroid/telecom/PhoneAccountHandle;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -9690,20 +9346,17 @@
 
     return v2
 
-    .line 5453
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5454
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#isVoicemailVibrationEnabled"
+    const-string v3, "Error calling ITelephony#isVoicemailVibrationEnabled"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5456
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -9717,7 +9370,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4962
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -9732,20 +9384,16 @@
 
     return v2
 
-    .line 4965
     :catch_0
     move-exception v1
 
-    .line 4966
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 4963
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 4964
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -9756,7 +9404,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4990
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -9771,20 +9418,16 @@
 
     return v2
 
-    .line 4993
     :catch_0
     move-exception v1
 
-    .line 4994
     .local v1, "ex":Ljava/lang/NullPointerException;
     return v3
 
-    .line 4991
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 4992
     .local v0, "ex":Landroid/os/RemoteException;
     return v3
 .end method
@@ -9793,17 +9436,14 @@
     .locals 5
 
     .prologue
-    .line 4849
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4850
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4851
     invoke-interface {v2}, Lcom/android/internal/telephony/ITelephony;->isWorldPhone()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -9813,20 +9453,17 @@
 
     return v3
 
-    .line 4855
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4856
     .local v1, "e":Ljava/lang/SecurityException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "Permission error calling ITelephony#isWorldPhone"
+    const-string v4, "Permission error calling ITelephony#isWorldPhone"
 
     invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4858
     .end local v1    # "e":Ljava/lang/SecurityException;
     :cond_0
     :goto_0
@@ -9834,15 +9471,13 @@
 
     return v3
 
-    .line 4853
     :catch_1
     move-exception v0
 
-    .line 4854
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "Error calling ITelephony#isWorldPhone"
+    const-string v4, "Error calling ITelephony#isWorldPhone"
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -9855,14 +9490,12 @@
     .param p2, "events"    # I
 
     .prologue
-    .line 2992
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2994
     :cond_0
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
@@ -9878,7 +9511,6 @@
 
     move-result-object v8
 
-    .line 2995
     .local v8, "notifyNow":Ljava/lang/Boolean;
     sget-object v0, Landroid/telephony/TelephonyManager;->sRegistry:Lcom/android/internal/telephony/ITelephonyRegistry;
 
@@ -9888,7 +9520,6 @@
 
     move-result-object v2
 
-    .line 2996
     iget-object v3, p1, Landroid/telephony/PhoneStateListener;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
 
     invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
@@ -9897,31 +9528,26 @@
 
     move v4, p2
 
-    .line 2995
     invoke-interface/range {v0 .. v5}, Lcom/android/internal/telephony/ITelephonyRegistry;->listenForSubscriber(ILjava/lang/String;Lcom/android/internal/telephony/IPhoneStateListener;IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 2991
     .end local v8    # "notifyNow":Ljava/lang/Boolean;
     :goto_1
     return-void
 
-    .line 2994
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 2997
     :catch_0
     move-exception v6
 
     .local v6, "ex":Landroid/os/RemoteException;
     goto :goto_1
 
-    .line 2999
     .end local v6    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v7
@@ -9934,17 +9560,14 @@
     .locals 4
 
     .prologue
-    .line 4728
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4729
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4730
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->needsOtaServiceProvisioning()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -9953,20 +9576,17 @@
 
     return v2
 
-    .line 4731
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4732
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#needsOtaServiceProvisioning"
+    const-string v3, "Error calling ITelephony#needsOtaServiceProvisioning"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4734
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -9979,17 +9599,14 @@
     .param p1, "itemID"    # I
 
     .prologue
-    .line 3549
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3550
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3551
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->nvReadItem(I)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -9999,36 +9616,31 @@
 
     return-object v3
 
-    .line 3554
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3555
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvReadItem NPE"
+    const-string v4, "nvReadItem NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 3557
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
-    const-string/jumbo v3, ""
+    const-string v3, ""
 
     return-object v3
 
-    .line 3552
     :catch_1
     move-exception v0
 
-    .line 3553
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvReadItem RemoteException"
+    const-string v4, "nvReadItem RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -10040,17 +9652,14 @@
     .param p1, "resetType"    # I
 
     .prologue
-    .line 3629
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3630
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3631
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->nvResetConfig(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -10060,20 +9669,17 @@
 
     return v3
 
-    .line 3634
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3635
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvResetConfig NPE"
+    const-string v4, "nvResetConfig NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 3637
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -10081,15 +9687,13 @@
 
     return v3
 
-    .line 3632
     :catch_1
     move-exception v0
 
-    .line 3633
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvResetConfig RemoteException"
+    const-string v4, "nvResetConfig RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -10101,17 +9705,14 @@
     .param p1, "preferredRoamingList"    # [B
 
     .prologue
-    .line 3602
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3603
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3604
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->nvWriteCdmaPrl([B)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -10121,20 +9722,17 @@
 
     return v3
 
-    .line 3607
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3608
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvWriteCdmaPrl NPE"
+    const-string v4, "nvWriteCdmaPrl NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 3610
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -10142,15 +9740,13 @@
 
     return v3
 
-    .line 3605
     :catch_1
     move-exception v0
 
-    .line 3606
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvWriteCdmaPrl RemoteException"
+    const-string v4, "nvWriteCdmaPrl RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -10163,17 +9759,14 @@
     .param p2, "itemValue"    # Ljava/lang/String;
 
     .prologue
-    .line 3576
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3577
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3578
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->nvWriteItem(ILjava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -10183,20 +9776,17 @@
 
     return v3
 
-    .line 3581
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 3582
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvWriteItem NPE"
+    const-string v4, "nvWriteItem NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 3584
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -10204,15 +9794,13 @@
 
     return v3
 
-    .line 3579
     :catch_1
     move-exception v0
 
-    .line 3580
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "nvWriteItem RemoteException"
+    const-string v4, "nvWriteItem RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -10226,45 +9814,37 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5392
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5393
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5394
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->requestModemActivityInfo(Landroid/os/ResultReceiver;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5395
     return-void
 
-    .line 5397
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5398
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#getModemActivityInfo"
+    const-string v3, "Error calling ITelephony#getModemActivityInfo"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5400
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2, v4}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    .line 5390
     return-void
 .end method
 
@@ -10274,17 +9854,14 @@
     .param p2, "content"    # Ljava/lang/String;
 
     .prologue
-    .line 3525
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3526
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3527
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->sendEnvelopeWithStatus(ILjava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -10294,19 +9871,16 @@
 
     return-object v3
 
-    .line 3528
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 3531
     :cond_0
     :goto_0
-    const-string/jumbo v3, ""
+    const-string v3, ""
 
     return-object v3
 
-    .line 3529
     :catch_1
     move-exception v1
 
@@ -10319,7 +9893,6 @@
     .param p1, "content"    # Ljava/lang/String;
 
     .prologue
-    .line 3504
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -10345,18 +9918,15 @@
     .end annotation
 
     .prologue
-    .line 5591
     .local p2, "carriers":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5592
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5593
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->setAllowedCarriers(ILjava/util/List;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -10365,20 +9935,17 @@
 
     return v2
 
-    .line 5595
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 5596
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#setAllowedCarriers"
+    const-string v3, "Error calling ITelephony#setAllowedCarriers"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5598
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, -0x1
@@ -10391,49 +9958,46 @@
     .param p1, "version"    # Ljava/lang/String;
 
     .prologue
-    .line 5085
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5086
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setBasebandVersionForPhone(ILjava/lang/String;)V
 
-    .line 5084
     return-void
 .end method
 
 .method public setBasebandVersionForPhone(ILjava/lang/String;)V
-    .locals 3
+    .locals 6
     .param p1, "phoneId"    # I
     .param p2, "version"    # Ljava/lang/String;
 
     .prologue
-    .line 5097
+    const/4 v5, 0x0
+
+    const/16 v4, 0x5b
+
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    .line 5098
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "gsm.version.baseband"
+    const-string v2, "gsm.version.baseband"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 5099
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
-    .line 5098
     :goto_0
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10443,17 +10007,79 @@
 
     move-result-object v0
 
-    .line 5100
     .local v0, "prop":Ljava/lang/String;
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-le v1, v4, :cond_0
+
+    const-string v1, "TelephonyManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "setBasebandVersionForPhone(): version string \'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "\' too long! ("
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " > "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ")"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {p2, v5, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p2
+
+    :cond_0
     invoke-static {v0, p2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5096
     .end local v0    # "prop":Ljava/lang/String;
-    :cond_0
+    :cond_1
     return-void
 
-    .line 5099
-    :cond_1
+    :cond_2
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -10466,36 +10092,31 @@
     .param p1, "rateInMillis"    # I
 
     .prologue
-    .line 3208
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 3209
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 3210
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->setCellInfoListRate(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 3206
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 3211
     :catch_0
     move-exception v0
 
     .local v0, "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 3212
+    .line 2296
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
@@ -10505,66 +10126,90 @@
 .end method
 
 .method public setDataEnabled(IZ)V
-    .locals 5
+    .locals 6
     .param p1, "subId"    # I
     .param p2, "enable"    # Z
 
     .prologue
-    .line 4747
     :try_start_0
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "setDataEnabled: enabled="
+    const-string v5, "setDataEnabled: enabled="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4748
+    iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
+
+    const-string v4, "appops"
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/AppOpsManager;
+
+    .local v0, "appOps":Landroid/app/AppOpsManager;
+    if-eqz p2, :cond_0
+
+    const/16 v3, 0x44
+
+    invoke-virtual {v0, v3}, Landroid/app/AppOpsManager;->noteOp(I)I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const-string v3, "TelephonyManager"
+
+    const-string v4, "Permission denied by user."
+
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 4749
-    .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
-    if-eqz v1, :cond_0
+    .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
+    if-eqz v2, :cond_1
 
-    .line 4750
-    invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->setDataEnabled(IZ)V
+    invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->setDataEnabled(IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4745
-    .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
-    :cond_0
+    .end local v0    # "appOps":Landroid/app/AppOpsManager;
+    .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
+    :cond_1
     :goto_0
     return-void
 
-    .line 4751
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 4752
-    .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    .local v1, "e":Landroid/os/RemoteException;
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#setDataEnabled"
+    const-string v4, "Error calling setDataEnabled"
 
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
@@ -10574,14 +10219,12 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 4740
-    invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultDataSubscriptionId()I
 
     move-result v0
 
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setDataEnabled(IZ)V
 
-    .line 4739
     return-void
 .end method
 
@@ -10590,16 +10233,13 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 5320
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5321
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setDataNetworkTypeForPhone(II)V
 
-    .line 5319
     return-void
 .end method
 
@@ -10609,25 +10249,20 @@
     .param p2, "type"    # I
 
     .prologue
-    .line 5331
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5333
-    const-string/jumbo v0, "gsm.network.type"
+    const-string v0, "gsm.network.type"
 
-    .line 5334
     invoke-static {p2}, Landroid/telephony/ServiceState;->rilRadioTechnologyToString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5332
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5330
     :cond_0
     return-void
 .end method
@@ -10637,28 +10272,23 @@
     .param p1, "registered"    # Z
 
     .prologue
-    .line 3994
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 3995
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 3996
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->setImsRegistrationState(Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3992
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 3997
     :catch_0
     move-exception v0
 
@@ -10673,17 +10303,14 @@
     .param p3, "number"    # Ljava/lang/String;
 
     .prologue
-    .line 2308
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2309
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2310
     invoke-interface {v2, p1, p2, p3}, Lcom/android/internal/telephony/ITelephony;->setLine1NumberForDisplayForSubscriber(ILjava/lang/String;Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -10693,19 +10320,16 @@
 
     return v3
 
-    .line 2311
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 2314
     :cond_0
     :goto_0
     const/4 v3, 0x0
 
     return v3
 
-    .line 2312
     :catch_1
     move-exception v1
 
@@ -10719,7 +10343,6 @@
     .param p2, "number"    # Ljava/lang/String;
 
     .prologue
-    .line 2288
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -10736,16 +10359,13 @@
     .param p1, "iso"    # Ljava/lang/String;
 
     .prologue
-    .line 5296
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5297
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setNetworkCountryIsoForPhone(ILjava/lang/String;)V
 
-    .line 5295
     return-void
 .end method
 
@@ -10755,20 +10375,16 @@
     .param p2, "iso"    # Ljava/lang/String;
 
     .prologue
-    .line 5308
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5310
-    const-string/jumbo v0, "gsm.operator.iso-country"
+    const-string v0, "gsm.operator.iso-country"
 
-    .line 5309
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5307
     :cond_0
     return-void
 .end method
@@ -10778,16 +10394,13 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 5230
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5231
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setNetworkOperatorNameForPhone(ILjava/lang/String;)V
 
-    .line 5229
     return-void
 .end method
 
@@ -10797,19 +10410,16 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 5241
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5242
-    const-string/jumbo v0, "gsm.operator.alpha"
+    const-string v0, "gsm.operator.alpha"
 
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5240
     :cond_0
     return-void
 .end method
@@ -10819,16 +10429,13 @@
     .param p1, "numeric"    # Ljava/lang/String;
 
     .prologue
-    .line 5252
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5253
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setNetworkOperatorNumericForPhone(ILjava/lang/String;)V
 
-    .line 5251
     return-void
 .end method
 
@@ -10838,12 +10445,10 @@
     .param p2, "numeric"    # Ljava/lang/String;
 
     .prologue
-    .line 5263
-    const-string/jumbo v0, "gsm.operator.numeric"
+    const-string v0, "gsm.operator.numeric"
 
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5262
     return-void
 .end method
 
@@ -10852,16 +10457,13 @@
     .param p1, "isRoaming"    # Z
 
     .prologue
-    .line 5272
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5273
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setNetworkRoamingForPhone(IZ)V
 
-    .line 5271
     return-void
 .end method
 
@@ -10871,32 +10473,26 @@
     .param p2, "isRoaming"    # Z
 
     .prologue
-    .line 5283
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5284
-    const-string/jumbo v1, "gsm.operator.isroaming"
+    const-string v1, "gsm.operator.isroaming"
 
-    .line 5285
     if-eqz p2, :cond_1
 
-    const-string/jumbo v0, "true"
+    const-string v0, "true"
 
-    .line 5284
     :goto_0
     invoke-static {p1, v1, v0}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5282
     :cond_0
     return-void
 
-    .line 5285
     :cond_1
-    const-string/jumbo v0, "false"
+    const-string v0, "false"
 
     goto :goto_0
 .end method
@@ -10906,52 +10502,44 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 4037
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4038
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4039
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->setNetworkSelectionModeAutomatic(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4035
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 4042
     :catch_0
     move-exception v1
 
-    .line 4043
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setNetworkSelectionModeAutomatic NPE"
+    const-string v4, "setNetworkSelectionModeAutomatic NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 
-    .line 4040
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 4041
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setNetworkSelectionModeAutomatic RemoteException"
+    const-string v4, "setNetworkSelectionModeAutomatic RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -10965,17 +10553,14 @@
     .param p3, "persistSelection"    # Z
 
     .prologue
-    .line 4088
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4089
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4090
     invoke-interface {v2, p1, p2, p3}, Lcom/android/internal/telephony/ITelephony;->setNetworkSelectionModeManual(ILcom/android/internal/telephony/OperatorInfo;Z)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -10985,20 +10570,17 @@
 
     return v3
 
-    .line 4093
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4094
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setNetworkSelectionModeManual NPE"
+    const-string v4, "setNetworkSelectionModeManual NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4096
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -11006,15 +10588,13 @@
 
     return v3
 
-    .line 4091
     :catch_1
     move-exception v0
 
-    .line 4092
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setNetworkSelectionModeManual RemoteException"
+    const-string v4, "setNetworkSelectionModeManual RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -11027,17 +10607,14 @@
     .param p2, "brand"    # Ljava/lang/String;
 
     .prologue
-    .line 4261
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4262
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4263
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->setOperatorBrandOverride(ILjava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -11047,20 +10624,17 @@
 
     return v3
 
-    .line 4266
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4267
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setOperatorBrandOverride NPE"
+    const-string v4, "setOperatorBrandOverride NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4269
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -11068,15 +10642,13 @@
 
     return v3
 
-    .line 4264
     :catch_1
     move-exception v0
 
-    .line 4265
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setOperatorBrandOverride RemoteException"
+    const-string v4, "setOperatorBrandOverride RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -11088,7 +10660,6 @@
     .param p1, "brand"    # Ljava/lang/String;
 
     .prologue
-    .line 4240
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -11105,16 +10676,13 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 5112
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5113
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setPhoneType(II)V
 
-    .line 5111
     return-void
 .end method
 
@@ -11124,24 +10692,20 @@
     .param p2, "type"    # I
 
     .prologue
-    .line 5125
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5127
-    const-string/jumbo v0, "gsm.current.phone-type"
+    const-string v0, "gsm.current.phone-type"
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5126
     invoke-static {p1, v0, v1}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5124
     :cond_0
     return-void
 .end method
@@ -11152,36 +10716,30 @@
     .param p2, "subId"    # I
 
     .prologue
-    .line 5684
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 5685
     .local v1, "service":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 5686
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->setPolicyDataEnabled(ZI)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5682
     .end local v1    # "service":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 5688
     :catch_0
     move-exception v0
 
-    .line 5689
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#setPolicyDataEnabled"
+    const-string v3, "Error calling ITelephony#setPolicyDataEnabled"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -11194,17 +10752,14 @@
     .param p2, "networkType"    # I
 
     .prologue
-    .line 4114
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 4115
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 4116
     invoke-interface {v2, p1, p2}, Lcom/android/internal/telephony/ITelephony;->setPreferredNetworkType(II)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -11214,20 +10769,17 @@
 
     return v3
 
-    .line 4119
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v1
 
-    .line 4120
     .local v1, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setPreferredNetworkType NPE"
+    const-string v4, "setPreferredNetworkType NPE"
 
     invoke-static {v3, v4, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4122
     .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -11235,15 +10787,13 @@
 
     return v3
 
-    .line 4117
     :catch_1
     move-exception v0
 
-    .line 4118
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "TelephonyManager"
+    const-string v3, "TelephonyManager"
 
-    const-string/jumbo v4, "setPreferredNetworkType RemoteException"
+    const-string v4, "setPreferredNetworkType RemoteException"
 
     invoke-static {v3, v4, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -11254,7 +10804,8 @@
     .locals 1
 
     .prologue
-    .line 4135
+    .line 2124
+    .line 2436
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -11271,7 +10822,6 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 4149
     const/16 v0, 0xa
 
     invoke-virtual {p0, p1, v0}, Landroid/telephony/TelephonyManager;->setPreferredNetworkType(II)Z
@@ -11286,17 +10836,14 @@
     .param p1, "turnOn"    # Z
 
     .prologue
-    .line 4651
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4652
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4653
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->setRadio(Z)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -11305,20 +10852,17 @@
 
     return v2
 
-    .line 4654
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4655
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#setRadio"
+    const-string v3, "Error calling ITelephony#setRadio"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4657
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -11331,17 +10875,14 @@
     .param p1, "turnOn"    # Z
 
     .prologue
-    .line 4664
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4665
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4666
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->setRadioPower(Z)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -11350,20 +10891,17 @@
 
     return v2
 
-    .line 4667
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4668
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#setRadioPower"
+    const-string v3, "Error calling ITelephony#setRadioPower"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4670
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -11397,7 +10935,6 @@
     .end annotation
 
     .prologue
-    .line 4322
     .local p2, "gsmRoamingList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p3, "gsmNonRoamingList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p4, "cdmaRoamingList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -11407,7 +10944,6 @@
 
     move-result-object v0
 
-    .line 4323
     .local v0, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v0, :cond_0
 
@@ -11421,7 +10957,6 @@
 
     move-object v5, p5
 
-    .line 4324
     invoke-interface/range {v0 .. v5}, Lcom/android/internal/telephony/ITelephony;->setRoamingOverride(ILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -11431,20 +10966,17 @@
 
     return v1
 
-    .line 4328
     .end local v0    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v7
 
-    .line 4329
     .local v7, "ex":Ljava/lang/NullPointerException;
-    const-string/jumbo v1, "TelephonyManager"
+    const-string v1, "TelephonyManager"
 
-    const-string/jumbo v2, "setRoamingOverride NPE"
+    const-string v2, "setRoamingOverride NPE"
 
     invoke-static {v1, v2, v7}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4331
     .end local v7    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
@@ -11452,15 +10984,13 @@
 
     return v1
 
-    .line 4326
     :catch_1
     move-exception v6
 
-    .line 4327
     .local v6, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v1, "TelephonyManager"
+    const-string v1, "TelephonyManager"
 
-    const-string/jumbo v2, "setRoamingOverride RemoteException"
+    const-string v2, "setRoamingOverride RemoteException"
 
     invoke-static {v1, v2, v6}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -11492,7 +11022,6 @@
     .end annotation
 
     .prologue
-    .line 4294
     .local p1, "gsmRoamingList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p2, "gsmNonRoamingList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p3, "cdmaRoamingList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -11523,16 +11052,13 @@
     .param p1, "iso"    # Ljava/lang/String;
 
     .prologue
-    .line 5044
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5045
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setSimCountryIsoForPhone(ILjava/lang/String;)V
 
-    .line 5043
     return-void
 .end method
 
@@ -11542,13 +11068,10 @@
     .param p2, "iso"    # Ljava/lang/String;
 
     .prologue
-    .line 5055
-    const-string/jumbo v0, "gsm.sim.operator.iso-country"
+    const-string v0, "gsm.sim.operator.iso-country"
 
-    .line 5054
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5053
     return-void
 .end method
 
@@ -11557,16 +11080,14 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 5024
+    .line 1448
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5025
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setSimOperatorNameForPhone(ILjava/lang/String;)V
 
-    .line 5023
     return-void
 .end method
 
@@ -11576,13 +11097,10 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 5035
-    const-string/jumbo v0, "gsm.sim.operator.alpha"
+    const-string v0, "gsm.sim.operator.alpha"
 
-    .line 5034
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5033
     return-void
 .end method
 
@@ -11591,16 +11109,13 @@
     .param p1, "numeric"    # Ljava/lang/String;
 
     .prologue
-    .line 5004
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5005
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setSimOperatorNumericForPhone(ILjava/lang/String;)V
 
-    .line 5003
     return-void
 .end method
 
@@ -11610,13 +11125,10 @@
     .param p2, "numeric"    # Ljava/lang/String;
 
     .prologue
-    .line 5015
-    const-string/jumbo v0, "gsm.sim.operator.numeric"
+    const-string v0, "gsm.sim.operator.numeric"
 
-    .line 5014
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5013
     return-void
 .end method
 
@@ -11625,16 +11137,14 @@
     .param p1, "state"    # Ljava/lang/String;
 
     .prologue
-    .line 5064
+    .line 1380
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefaultPhone()I
 
     move-result v0
 
-    .line 5065
     .local v0, "phoneId":I
     invoke-virtual {p0, v0, p1}, Landroid/telephony/TelephonyManager;->setSimStateForPhone(ILjava/lang/String;)V
 
-    .line 5063
     return-void
 .end method
 
@@ -11644,13 +11154,10 @@
     .param p2, "state"    # Ljava/lang/String;
 
     .prologue
-    .line 5075
-    const-string/jumbo v0, "gsm.sim.state"
+    const-string v0, "gsm.sim.state"
 
-    .line 5074
     invoke-static {p1, v0, p2}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 5073
     return-void
 .end method
 
@@ -11660,17 +11167,14 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 2540
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2541
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2542
     iget-object v3, p0, Landroid/telephony/TelephonyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -11682,20 +11186,17 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 2538
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 2545
     :catch_0
     move-exception v0
 
     .local v0, "ex":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 2546
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
@@ -11711,17 +11212,14 @@
     .param p3, "number"    # Ljava/lang/String;
 
     .prologue
-    .line 2517
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v2
 
-    .line 2518
     .local v2, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v2, :cond_0
 
-    .line 2519
     invoke-interface {v2, p1, p2, p3}, Lcom/android/internal/telephony/ITelephony;->setVoiceMailNumber(ILjava/lang/String;Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -11731,19 +11229,16 @@
 
     return v3
 
-    .line 2520
     .end local v2    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 2523
     :cond_0
     :goto_0
     const/4 v3, 0x0
 
     return v3
 
-    .line 2521
     :catch_1
     move-exception v1
 
@@ -11757,7 +11252,7 @@
     .param p2, "number"    # Ljava/lang/String;
 
     .prologue
-    .line 2501
+    .line 1354
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubId()I
 
     move-result v0
@@ -11773,7 +11268,6 @@
     .locals 3
 
     .prologue
-    .line 4499
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getTelecomService()Lcom/android/internal/telecom/ITelecomService;
 
@@ -11787,19 +11281,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4497
     :goto_0
     return-void
 
-    .line 4500
     :catch_0
     move-exception v0
 
-    .line 4501
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "TelephonyManager"
+    const-string v1, "TelephonyManager"
 
-    const-string/jumbo v2, "Error calling ITelecomService#silenceRinger"
+    const-string v2, "Error calling ITelecomService#silenceRinger"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -11811,17 +11302,14 @@
     .param p1, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 4561
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4562
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4563
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->supplyPin(Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -11830,20 +11318,17 @@
 
     return v2
 
-    .line 4564
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4565
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#supplyPin"
+    const-string v3, "Error calling ITelephony#supplyPin"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4567
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -11856,17 +11341,14 @@
     .param p1, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 4587
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4588
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4589
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->supplyPinReportResult(Ljava/lang/String;)[I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -11875,20 +11357,17 @@
 
     return-object v2
 
-    .line 4590
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4591
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#supplyPinReportResult"
+    const-string v3, "Error calling ITelephony#supplyPinReportResult"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4593
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -11904,17 +11383,14 @@
     .param p2, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 4574
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4575
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4576
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->supplyPuk(Ljava/lang/String;Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -11923,20 +11399,17 @@
 
     return v2
 
-    .line 4577
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4578
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#supplyPuk"
+    const-string v3, "Error calling ITelephony#supplyPuk"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4580
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -11950,17 +11423,14 @@
     .param p2, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 4600
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4601
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4602
     invoke-interface {v1, p1, p2}, Lcom/android/internal/telephony/ITelephony;->supplyPukReportResult(Ljava/lang/String;Ljava/lang/String;)[I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -11969,20 +11439,19 @@
 
     return-object v2
 
-    .line 4603
+    .line 4050
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 4604
+    .line 4051
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#]"
+    const-string v3, "Error calling ITelephony#]"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4606
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -11996,36 +11465,30 @@
     .locals 4
 
     .prologue
-    .line 4639
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4640
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4641
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->toggleRadioOnOff()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4637
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 4642
     :catch_0
     move-exception v0
 
-    .line 4643
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#toggleRadioOnOff"
+    const-string v3, "Error calling ITelephony#toggleRadioOnOff"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -12036,36 +11499,30 @@
     .locals 4
 
     .prologue
-    .line 4677
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
     move-result-object v1
 
-    .line 4678
     .local v1, "telephony":Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_0
 
-    .line 4679
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->updateServiceLocation()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4675
     .end local v1    # "telephony":Lcom/android/internal/telephony/ITelephony;
     :cond_0
     :goto_0
     return-void
 
-    .line 4680
     :catch_0
     move-exception v0
 
-    .line 4681
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "TelephonyManager"
+    const-string v2, "TelephonyManager"
 
-    const-string/jumbo v3, "Error calling ITelephony#updateServiceLocation"
+    const-string v3, "Error calling ITelephony#updateServiceLocation"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -12095,6 +11552,7 @@
 
     throw v0
 
+    .line 5290
     :cond_0
     return-void
 .end method

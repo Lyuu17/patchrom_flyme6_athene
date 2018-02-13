@@ -67,9 +67,7 @@
     move-object v6, p2
 
     .line 549
-    nop
-
-    nop
+    check-cast v6, Landroid/view/ViewGroup;
 
     .line 553
     .local v6, "vg":Landroid/view/ViewGroup;
@@ -132,9 +130,7 @@
     move-object v1, v5
 
     .line 563
-    nop
-
-    nop
+    check-cast v1, Landroid/content/Intent;
 
     .line 567
     .end local v1    # "fillInIntent":Landroid/content/Intent;

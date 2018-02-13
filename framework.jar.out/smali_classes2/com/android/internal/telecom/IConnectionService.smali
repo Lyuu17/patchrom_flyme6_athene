@@ -31,6 +31,14 @@
     .end annotation
 .end method
 
+.method public abstract addParticipantWithConference(Ljava/lang/String;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract answer(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

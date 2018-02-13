@@ -30,15 +30,15 @@
     .param p2, "netId"    # I
 
     .prologue
-    .line 1328
+    .line 1344
     iput-object p1, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantLoader;->this$0:Lcom/android/server/wifi/WifiConfigStore;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1329
+    .line 1345
     iput p2, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantLoader;->mNetId:I
 
-    .line 1328
+    .line 1344
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 1349
+    .line 1365
     const-string/jumbo v0, "eap"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -56,13 +56,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 1352
+    .line 1368
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 1349
+    .line 1365
     :cond_1
     const-string/jumbo v0, "engine"
 
@@ -72,7 +72,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1354
+    .line 1370
     const/4 v0, 0x1
 
     return v0
@@ -85,7 +85,7 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 1334
+    .line 1350
     iget-object v1, p0, Lcom/android/server/wifi/WifiConfigStore$SupplicantLoader;->this$0:Lcom/android/server/wifi/WifiConfigStore;
 
     invoke-static {v1}, Lcom/android/server/wifi/WifiConfigStore;->-get1(Lcom/android/server/wifi/WifiConfigStore;)Lcom/android/server/wifi/WifiNative;
@@ -98,7 +98,7 @@
 
     move-result-object v0
 
-    .line 1335
+    .line 1351
     .local v0, "value":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -106,23 +106,23 @@
 
     if-nez v1, :cond_1
 
-    .line 1336
+    .line 1352
     invoke-direct {p0, p1}, Lcom/android/server/wifi/WifiConfigStore$SupplicantLoader;->enterpriseConfigKeyShouldBeQuoted(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1337
+    .line 1353
     invoke-static {v0}, Lcom/android/server/wifi/WifiConfigStore;->-wrap0(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1339
+    .line 1355
     :cond_0
     return-object v0
 
-    .line 1341
+    .line 1357
     :cond_1
     const/4 v1, 0x0
 

@@ -30,15 +30,15 @@
     .param p2, "callback"    # Lcom/android/internal/app/IAppOpsCallback;
 
     .prologue
-    .line 180
+    .line 217
     iput-object p1, p0, Lcom/android/server/AppOpsService$Callback;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 181
+    .line 218
     iput-object p2, p0, Lcom/android/server/AppOpsService$Callback;->mCallback:Lcom/android/internal/app/IAppOpsCallback;
 
-    .line 183
+    .line 220
     :try_start_0
     iget-object v1, p0, Lcom/android/server/AppOpsService$Callback;->mCallback:Lcom/android/internal/app/IAppOpsCallback;
 
@@ -52,11 +52,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 180
+    .line 217
     :goto_0
     return-void
 
-    .line 184
+    .line 221
     :catch_0
     move-exception v0
 
@@ -70,14 +70,14 @@
     .locals 2
 
     .prologue
-    .line 194
+    .line 231
     iget-object v0, p0, Lcom/android/server/AppOpsService$Callback;->this$0:Lcom/android/server/AppOpsService;
 
     iget-object v1, p0, Lcom/android/server/AppOpsService$Callback;->mCallback:Lcom/android/internal/app/IAppOpsCallback;
 
     invoke-virtual {v0, v1}, Lcom/android/server/AppOpsService;->stopWatchingMode(Lcom/android/internal/app/IAppOpsCallback;)V
 
-    .line 193
+    .line 230
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .locals 2
 
     .prologue
-    .line 189
+    .line 226
     iget-object v0, p0, Lcom/android/server/AppOpsService$Callback;->mCallback:Lcom/android/internal/app/IAppOpsCallback;
 
     invoke-interface {v0}, Lcom/android/internal/app/IAppOpsCallback;->asBinder()Landroid/os/IBinder;
@@ -96,6 +96,6 @@
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 188
+    .line 225
     return-void
 .end method

@@ -30,7 +30,7 @@
     .param p2, "val$c"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 660
+    .line 656
     iput-object p1, p0, Lcom/android/server/vr/VrManagerService$4;->this$0:Lcom/android/server/vr/VrManagerService;
 
     iput-object p2, p0, Lcom/android/server/vr/VrManagerService$4;->val$c:Landroid/content/ComponentName;
@@ -54,15 +54,15 @@
     .prologue
     move-object v0, p1
 
-    .line 663
+    .line 659
     check-cast v0, Landroid/service/vr/IVrListener;
 
-    .line 664
+    .line 660
     .local v0, "l":Landroid/service/vr/IVrListener;
     iget-object v1, p0, Lcom/android/server/vr/VrManagerService$4;->val$c:Landroid/content/ComponentName;
 
     invoke-interface {v0, v1}, Landroid/service/vr/IVrListener;->focusedActivityChanged(Landroid/content/ComponentName;)V
 
-    .line 662
+    .line 658
     return-void
 .end method

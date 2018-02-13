@@ -57,9 +57,7 @@
     move-object v0, p1
 
     .line 217
-    nop
-
-    nop
+    check-cast v0, Lcom/android/internal/telephony/gsm/GsmCellBroadcastHandler$SmsCbConcatInfo;
 
     .line 222
     .local v0, "other":Lcom/android/internal/telephony/gsm/GsmCellBroadcastHandler$SmsCbConcatInfo;

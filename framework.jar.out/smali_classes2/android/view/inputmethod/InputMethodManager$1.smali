@@ -162,7 +162,6 @@
 
     :cond_flyme_0
 
-    .line 608
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v0, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -179,7 +178,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 607
     return-void
 .end method
 
@@ -190,7 +188,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 613
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v2, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -212,13 +209,11 @@
 
     invoke-virtual {v2, v0}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 612
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 613
     goto :goto_0
 .end method
 
@@ -227,7 +222,7 @@
     .param p1, "sequenceNumber"    # I
 
     .prologue
-    .line 618
+    .line 608
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$1;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v0, v0, Landroid/view/inputmethod/InputMethodManager;->mH:Landroid/view/inputmethod/InputMethodManager$H;
@@ -238,17 +233,15 @@
 
     const/16 v2, 0x9
 
-    .line 619
     const/4 v3, 0x0
 
-    .line 618
     invoke-virtual {v1, v2, p1, v3}, Landroid/view/inputmethod/InputMethodManager$H;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 617
+    .line 607
     return-void
 .end method
 

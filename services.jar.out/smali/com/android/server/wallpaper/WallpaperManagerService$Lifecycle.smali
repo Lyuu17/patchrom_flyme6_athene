@@ -115,7 +115,6 @@
     .locals 1
 
     .prologue
-    .line 152
     iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->mService:Lcom/android/server/wallpaper/WallpaperManagerService;
 
     return-object v0

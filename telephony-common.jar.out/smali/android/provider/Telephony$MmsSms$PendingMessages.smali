@@ -44,19 +44,19 @@
     .locals 2
 
     .prologue
-    .line 2427
+    .line 2478
     sget-object v0, Landroid/provider/Telephony$MmsSms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "pending"
 
-    .line 2426
+    .line 2477
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/Telephony$MmsSms$PendingMessages;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2417
+    .line 2468
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .locals 0
 
     .prologue
-    .line 2423
+    .line 2474
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

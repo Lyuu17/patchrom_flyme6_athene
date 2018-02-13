@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/input/InputManagerService;
 
     .prologue
-    .line 340
+    .line 347
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,21 +40,31 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 343
+    .line 350
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updatePointerSpeedFromSettings()V
 
-    .line 344
+    .line 351
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updateShowTouchesFromSettings()V
 
-    .line 345
+    .line 352
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updateAccessibilityLargePointerFromSettings()V
 
-    .line 342
+    .line 353
+    iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updateStylusIconEnabledFromSettings()V
+
+    .line 354
+    iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updateVolumeKeysRotationFromSettings()V
+
+    .line 349
     return-void
 .end method

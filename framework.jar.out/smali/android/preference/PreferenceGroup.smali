@@ -627,7 +627,6 @@
     .param p1, "preference"    # Landroid/preference/Preference;
 
     .prologue
-    .line 213
     invoke-virtual {p0}, Landroid/preference/PreferenceGroup;->shouldDisableDependents()Z
 
     move-result v0
@@ -636,7 +635,6 @@
 
     invoke-direct/range {p0 .. p1}, Landroid/preference/PreferenceGroup;->setFlymePreferenceEnabled(Landroid/preference/Preference;)V
 
-    .line 214
     const/4 v0, 0x1
 
     return v0

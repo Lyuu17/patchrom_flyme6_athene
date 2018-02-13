@@ -40,12 +40,10 @@
     if-eqz v0, :cond_1
 
     .line 301
-    nop
-
-    nop
+    check-cast p2, Landroid/renderscript/Allocation;
 
     .end local p2    # "obj":Ljava/lang/Object;
-    invoke-virtual {p2, p1}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)J
+    invoke-virtual {p2, p1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)J
 
     move-result-wide v0
 
@@ -69,9 +67,7 @@
     if-eqz v0, :cond_3
 
     .line 306
-    nop
-
-    nop
+    check-cast p2, Ljava/lang/Boolean;
 
     .end local p2    # "obj":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
@@ -106,9 +102,7 @@
     if-eqz v0, :cond_4
 
     .line 309
-    nop
-
-    nop
+    check-cast p2, Ljava/lang/Integer;
 
     .end local p2    # "obj":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Integer;->longValue()J
@@ -130,9 +124,7 @@
     if-eqz v0, :cond_5
 
     .line 312
-    nop
-
-    nop
+    check-cast p2, Ljava/lang/Long;
 
     .end local p2    # "obj":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
@@ -154,9 +146,7 @@
     if-eqz v0, :cond_6
 
     .line 315
-    nop
-
-    nop
+    check-cast p2, Ljava/lang/Float;
 
     .end local p2    # "obj":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
@@ -184,9 +174,7 @@
     if-eqz v0, :cond_0
 
     .line 318
-    nop
-
-    nop
+    check-cast p2, Ljava/lang/Double;
 
     .end local p2    # "obj":Ljava/lang/Object;
     invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D

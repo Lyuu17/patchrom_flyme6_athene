@@ -25,6 +25,14 @@
 
 .field static final KEY_USAGE_STATS:Ljava/lang/String; = "usage_stats"
 
+.field static final QUERY_FLAG_FETCH_CONFIGURATIONS:I = 0x2
+
+.field static final QUERY_FLAG_FETCH_EVENTS:I = 0x4
+
+.field static final QUERY_FLAG_FETCH_EVERYTHING:I = 0x7
+
+.field static final QUERY_FLAG_FETCH_PACKAGES:I = 0x1
+
 .field private static final TAG:Ljava/lang/String; = "UsageStatsDatabase"
 
 
@@ -60,22 +68,22 @@
     .param p1, "dir"    # Ljava/io/File;
 
     .prologue
-    .line 67
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
+    .line 66
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
-    .line 68
+    .line 75
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/io/File;
 
-    .line 69
+    .line 76
     new-instance v1, Ljava/io/File;
 
     const-string/jumbo v2, "daily"
@@ -86,7 +94,7 @@
 
     aput-object v1, v0, v2
 
-    .line 70
+    .line 77
     new-instance v1, Ljava/io/File;
 
     const-string/jumbo v2, "weekly"
@@ -97,7 +105,7 @@
 
     aput-object v1, v0, v2
 
-    .line 71
+    .line 78
     new-instance v1, Ljava/io/File;
 
     const-string/jumbo v2, "monthly"
@@ -108,7 +116,7 @@
 
     aput-object v1, v0, v2
 
-    .line 72
+    .line 79
     new-instance v1, Ljava/io/File;
 
     const-string/jumbo v2, "yearly"
@@ -119,10 +127,10 @@
 
     aput-object v1, v0, v2
 
-    .line 68
+    .line 75
     iput-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
-    .line 74
+    .line 81
     new-instance v0, Ljava/io/File;
 
     const-string/jumbo v1, "version"
@@ -131,7 +139,7 @@
 
     iput-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mVersionFile:Ljava/io/File;
 
-    .line 75
+    .line 82
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
     array-length v0, v0
@@ -140,7 +148,7 @@
 
     iput-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
-    .line 76
+    .line 83
     new-instance v0, Lcom/android/server/usage/UnixCalendar;
 
     const-wide/16 v2, 0x0
@@ -149,7 +157,7 @@
 
     iput-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
-    .line 67
+    .line 74
     return-void
 .end method
 
@@ -163,19 +171,19 @@
 
     const/4 v11, 0x0
 
-    .line 234
+    .line 241
     invoke-direct {p0}, Lcom/android/server/usage/UsageStatsDatabase;->getBuildFingerprint()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 235
+    .line 242
     .local v1, "currentFingerprint":Ljava/lang/String;
     iput-boolean v9, p0, Lcom/android/server/usage/UsageStatsDatabase;->mFirstUpdate:Z
 
-    .line 236
+    .line 243
     iput-boolean v9, p0, Lcom/android/server/usage/UsageStatsDatabase;->mNewUpdate:Z
 
-    .line 237
+    .line 244
     const/4 v4, 0x0
 
     .local v4, "reader":Ljava/io/BufferedReader;
@@ -193,7 +201,7 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
-    .line 238
+    .line 245
     .end local v4    # "reader":Ljava/io/BufferedReader;
     .local v5, "reader":Ljava/io/BufferedReader;
     :try_start_1
@@ -205,22 +213,22 @@
 
     move-result v6
 
-    .line 239
+    .line 246
     .local v6, "version":I
     invoke-virtual {v5}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 240
+    .line 247
     .local v0, "buildFingerprint":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 241
+    .line 248
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/android/server/usage/UsageStatsDatabase;->mFirstUpdate:Z
 
-    .line 243
+    .line 250
     :cond_0
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -228,7 +236,7 @@
 
     if-eqz v9, :cond_1
 
-    .line 244
+    .line 251
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/android/server/usage/UsageStatsDatabase;->mNewUpdate:Z
@@ -236,7 +244,7 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_b
     .catchall {:try_start_1 .. :try_end_1} :catchall_5
 
-    .line 248
+    .line 255
     :cond_1
     if-eqz v5, :cond_2
 
@@ -259,27 +267,27 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 246
+    .line 253
     :catch_0
     move-exception v3
 
     .local v3, "e":Ljava/lang/Exception;
     move-object v4, v5
 
-    .line 247
+    .line 254
     .end local v0    # "buildFingerprint":Ljava/lang/String;
     .end local v5    # "reader":Ljava/io/BufferedReader;
     .end local v6    # "version":I
     :goto_1
     const/4 v6, 0x0
 
-    .line 250
+    .line 257
     .end local v3    # "e":Ljava/lang/Exception;
     .restart local v6    # "version":I
     :goto_2
     if-eq v6, v13, :cond_3
 
-    .line 251
+    .line 258
     const-string/jumbo v9, "UsageStatsDatabase"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -312,10 +320,10 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 252
+    .line 259
     invoke-direct {p0, v6}, Lcom/android/server/usage/UsageStatsDatabase;->doUpgradeLocked(I)V
 
-    .line 255
+    .line 262
     :cond_3
     if-ne v6, v13, :cond_4
 
@@ -323,7 +331,7 @@
 
     if-eqz v9, :cond_d
 
-    .line 256
+    .line 263
     :cond_4
     const/4 v7, 0x0
 
@@ -342,7 +350,7 @@
     .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_7
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 257
+    .line 264
     .end local v7    # "writer":Ljava/io/BufferedWriter;
     .local v8, "writer":Ljava/io/BufferedWriter;
     const/4 v9, 0x3
@@ -354,26 +362,26 @@
 
     invoke-virtual {v8, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 258
+    .line 265
     const-string/jumbo v9, "\n"
 
     invoke-virtual {v8, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 259
+    .line 266
     invoke-virtual {v8, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 260
+    .line 267
     const-string/jumbo v9, "\n"
 
     invoke-virtual {v8, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 261
+    .line 268
     invoke-virtual {v8}, Ljava/io/BufferedWriter;->flush()V
     :try_end_5
     .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_a
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
-    .line 265
+    .line 272
     if-eqz v8, :cond_5
 
     :try_start_6
@@ -391,14 +399,14 @@
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
 
-    .line 262
+    .line 269
     :catch_1
     move-exception v2
 
     .local v2, "e":Ljava/io/IOException;
     move-object v7, v8
 
-    .line 263
+    .line 270
     .end local v8    # "writer":Ljava/io/BufferedWriter;
     :goto_4
     const-string/jumbo v9, "UsageStatsDatabase"
@@ -407,14 +415,14 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
+    .line 271
     new-instance v9, Ljava/lang/RuntimeException;
 
     invoke-direct {v9, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v9
 
-    .line 248
+    .line 255
     .end local v2    # "e":Ljava/io/IOException;
     .restart local v0    # "buildFingerprint":Ljava/lang/String;
     .restart local v5    # "reader":Ljava/io/BufferedReader;
@@ -469,14 +477,14 @@
     :try_start_a
     throw v10
 
-    .line 246
+    .line 253
     :catch_4
     move-exception v3
 
     .restart local v3    # "e":Ljava/lang/Exception;
     goto/16 :goto_1
 
-    .line 248
+    .line 255
     .end local v3    # "e":Ljava/lang/Exception;
     :catch_5
     move-exception v12
@@ -500,7 +508,7 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_a .. :try_end_a} :catch_4
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_4
 
-    .line 265
+    .line 272
     .restart local v6    # "version":I
     .restart local v8    # "writer":Ljava/io/BufferedWriter;
     :catch_6
@@ -543,14 +551,14 @@
     :try_start_d
     throw v11
 
-    .line 262
+    .line 269
     :catch_8
     move-exception v2
 
     .restart local v2    # "e":Ljava/io/IOException;
     goto :goto_4
 
-    .line 265
+    .line 272
     .end local v2    # "e":Ljava/io/IOException;
     :catch_9
     move-exception v10
@@ -573,11 +581,11 @@
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_8
 
-    .line 231
+    .line 238
     :cond_d
     return-void
 
-    .line 265
+    .line 272
     .restart local v7    # "writer":Ljava/io/BufferedWriter;
     :catchall_2
     move-exception v9
@@ -606,7 +614,7 @@
     .restart local v7    # "writer":Ljava/io/BufferedWriter;
     goto :goto_8
 
-    .line 248
+    .line 255
     .end local v6    # "version":I
     .end local v7    # "writer":Ljava/io/BufferedWriter;
     .restart local v4    # "reader":Ljava/io/BufferedReader;
@@ -647,16 +655,16 @@
     .param p0, "directory"    # Ljava/io/File;
 
     .prologue
-    .line 746
+    .line 753
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v1
 
-    .line 747
+    .line 754
     .local v1, "files":[Ljava/io/File;
     if-eqz v1, :cond_1
 
-    .line 748
+    .line 755
     const/4 v2, 0x0
 
     array-length v3, v1
@@ -666,7 +674,7 @@
 
     aget-object v0, v1, v2
 
-    .line 749
+    .line 756
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
 
@@ -674,27 +682,27 @@
 
     if-nez v4, :cond_0
 
-    .line 750
+    .line 757
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 748
+    .line 755
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 752
+    .line 759
     :cond_0
     invoke-static {v0}, Lcom/android/server/usage/UsageStatsDatabase;->deleteDirectory(Ljava/io/File;)V
 
     goto :goto_1
 
-    .line 756
+    .line 763
     .end local v0    # "file":Ljava/io/File;
     :cond_1
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
-    .line 745
+    .line 752
     return-void
 .end method
 
@@ -703,12 +711,12 @@
     .param p0, "directory"    # Ljava/io/File;
 
     .prologue
-    .line 739
+    .line 746
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v1
 
-    .line 740
+    .line 747
     .local v1, "files":[Ljava/io/File;
     const/4 v2, 0x0
 
@@ -719,16 +727,16 @@
 
     aget-object v0, v1, v2
 
-    .line 741
+    .line 748
     .local v0, "file":Ljava/io/File;
     invoke-static {v0}, Lcom/android/server/usage/UsageStatsDatabase;->deleteDirectory(Ljava/io/File;)V
 
-    .line 740
+    .line 747
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 738
+    .line 745
     .end local v0    # "file":Ljava/io/File;
     :cond_0
     return-void
@@ -739,24 +747,24 @@
     .param p0, "data"    # [B
 
     .prologue
-    .line 725
+    .line 732
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v0, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 726
+    .line 733
     .local v0, "bais":Ljava/io/ByteArrayInputStream;
     new-instance v1, Ljava/io/DataInputStream;
 
     invoke-direct {v1, v0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 727
+    .line 734
     .local v1, "in":Ljava/io/DataInputStream;
     new-instance v3, Lcom/android/server/usage/IntervalStats;
 
     invoke-direct {v3}, Lcom/android/server/usage/IntervalStats;-><init>()V
 
-    .line 729
+    .line 736
     .local v3, "stats":Lcom/android/server/usage/IntervalStats;
     :try_start_0
     invoke-virtual {v1}, Ljava/io/DataInputStream;->readLong()J
@@ -765,22 +773,24 @@
 
     iput-wide v4, v3, Lcom/android/server/usage/IntervalStats;->beginTime:J
 
-    .line 730
-    invoke-static {v1, v3}, Lcom/android/server/usage/UsageStatsXml;->read(Ljava/io/InputStream;Lcom/android/server/usage/IntervalStats;)V
+    .line 737
+    const/4 v4, 0x7
+
+    invoke-static {v1, v3, v4}, Lcom/android/server/usage/UsageStatsXml;->read(Ljava/io/InputStream;Lcom/android/server/usage/IntervalStats;I)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 735
+    .line 742
     .end local v3    # "stats":Lcom/android/server/usage/IntervalStats;
     :goto_0
     return-object v3
 
-    .line 731
+    .line 738
     .restart local v3    # "stats":Lcom/android/server/usage/IntervalStats;
     :catch_0
     move-exception v2
 
-    .line 732
+    .line 739
     .local v2, "ioe":Ljava/io/IOException;
     const-string/jumbo v4, "UsageStatsDatabase"
 
@@ -788,7 +798,7 @@
 
     invoke-static {v4, v5, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 733
+    .line 740
     const/4 v3, 0x0
 
     .local v3, "stats":Lcom/android/server/usage/IntervalStats;
@@ -800,19 +810,19 @@
     .param p1, "thisVersion"    # I
 
     .prologue
-    .line 276
+    .line 283
     const/4 v3, 0x2
 
     if-ge p1, v3, :cond_1
 
-    .line 279
+    .line 286
     const-string/jumbo v3, "UsageStatsDatabase"
 
     const-string/jumbo v4, "Deleting all usage stats files"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 280
+    .line 287
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -823,7 +833,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 281
+    .line 288
     iget-object v3, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
     aget-object v3, v3, v2
@@ -832,11 +842,11 @@
 
     move-result-object v1
 
-    .line 282
+    .line 289
     .local v1, "files":[Ljava/io/File;
     if-eqz v1, :cond_0
 
-    .line 283
+    .line 290
     const/4 v3, 0x0
 
     array-length v4, v1
@@ -846,23 +856,23 @@
 
     aget-object v0, v1, v3
 
-    .line 284
+    .line 291
     .local v0, "f":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 283
+    .line 290
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 280
+    .line 287
     .end local v0    # "f":Ljava/io/File;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 275
+    .line 282
     .end local v1    # "files":[Ljava/io/File;
     .end local v2    # "i":I
     :cond_1
@@ -873,7 +883,7 @@
     .locals 2
 
     .prologue
-    .line 270
+    .line 277
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -890,26 +900,26 @@
 
     move-result-object v0
 
-    .line 271
+    .line 278
     sget-object v1, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
 
-    .line 270
+    .line 277
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 271
+    .line 278
     const-string/jumbo v1, ";"
 
-    .line 270
+    .line 277
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 272
+    .line 279
     sget-object v1, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
 
-    .line 270
+    .line 277
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -931,22 +941,22 @@
     .end annotation
 
     .prologue
-    .line 698
+    .line 705
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v1
 
-    .line 699
+    .line 706
     .local v1, "length":I
     new-array v0, v1, [B
 
-    .line 700
+    .line 707
     .local v0, "buffer":[B
     const/4 v2, 0x0
 
     invoke-virtual {p0, v0, v2, v1}, Ljava/io/DataInputStream;->read([BII)I
 
-    .line 701
+    .line 708
     return-object v0
 .end method
 
@@ -954,12 +964,12 @@
     .locals 12
 
     .prologue
-    .line 185
+    .line 192
     new-instance v1, Lcom/android/server/usage/UsageStatsDatabase$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/usage/UsageStatsDatabase$1;-><init>(Lcom/android/server/usage/UsageStatsDatabase;)V
 
-    .line 193
+    .line 200
     .local v1, "backupFileFilter":Ljava/io/FilenameFilter;
     const/4 v5, 0x0
 
@@ -971,14 +981,14 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 194
+    .line 201
     iget-object v6, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     aget-object v6, v6, v5
 
     if-nez v6, :cond_0
 
-    .line 195
+    .line 202
     iget-object v6, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     new-instance v7, Landroid/app/usage/TimeSparseArray;
@@ -987,7 +997,7 @@
 
     aput-object v7, v6, v5
 
-    .line 199
+    .line 206
     :goto_1
     iget-object v6, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
@@ -997,11 +1007,11 @@
 
     move-result-object v4
 
-    .line 200
+    .line 207
     .local v4, "files":[Ljava/io/File;
     if-eqz v4, :cond_1
 
-    .line 205
+    .line 212
     const/4 v6, 0x0
 
     array-length v7, v4
@@ -1011,13 +1021,13 @@
 
     aget-object v3, v4, v6
 
-    .line 206
+    .line 213
     .local v3, "f":Ljava/io/File;
     new-instance v0, Landroid/util/AtomicFile;
 
     invoke-direct {v0, v3}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 208
+    .line 215
     .local v0, "af":Landroid/util/AtomicFile;
     :try_start_0
     iget-object v8, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
@@ -1032,13 +1042,13 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 205
+    .line 212
     :goto_3
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
-    .line 197
+    .line 204
     .end local v0    # "af":Landroid/util/AtomicFile;
     .end local v3    # "f":Ljava/io/File;
     .end local v4    # "files":[Ljava/io/File;
@@ -1051,14 +1061,14 @@
 
     goto :goto_1
 
-    .line 209
+    .line 216
     .restart local v0    # "af":Landroid/util/AtomicFile;
     .restart local v3    # "f":Ljava/io/File;
     .restart local v4    # "files":[Ljava/io/File;
     :catch_0
     move-exception v2
 
-    .line 210
+    .line 217
     .local v2, "e":Ljava/io/IOException;
     const-string/jumbo v8, "UsageStatsDatabase"
 
@@ -1084,7 +1094,7 @@
 
     goto :goto_3
 
-    .line 193
+    .line 200
     .end local v0    # "af":Landroid/util/AtomicFile;
     .end local v2    # "e":Ljava/io/IOException;
     .end local v3    # "f":Ljava/io/File;
@@ -1093,7 +1103,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 191
     .end local v4    # "files":[Ljava/io/File;
     :cond_2
     return-void
@@ -1107,36 +1117,36 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 673
+    .line 680
     if-nez p2, :cond_0
 
     return-object p1
 
-    .line 674
+    .line 681
     :cond_0
     if-nez p1, :cond_1
 
     return-object v0
 
-    .line 675
+    .line 682
     :cond_1
     iget-object v0, p2, Lcom/android/server/usage/IntervalStats;->activeConfiguration:Landroid/content/res/Configuration;
 
     iput-object v0, p1, Lcom/android/server/usage/IntervalStats;->activeConfiguration:Landroid/content/res/Configuration;
 
-    .line 676
+    .line 683
     iget-object v0, p1, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
 
     iget-object v1, p2, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, v1}, Landroid/util/ArrayMap;->putAll(Landroid/util/ArrayMap;)V
 
-    .line 677
+    .line 684
     iget-object v0, p2, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/TimeSparseArray;
 
     iput-object v0, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/TimeSparseArray;
 
-    .line 678
+    .line 685
     return-object p1
 .end method
 
@@ -1148,16 +1158,16 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 512
+    .line 519
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v4
 
-    .line 513
+    .line 520
     .local v4, "files":[Ljava/io/File;
     if-eqz v4, :cond_2
 
-    .line 514
+    .line 521
     array-length v8, v4
 
     move v6, v7
@@ -1167,13 +1177,13 @@
 
     aget-object v3, v4, v6
 
-    .line 515
+    .line 522
     .local v3, "f":Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 516
+    .line 523
     .local v5, "path":Ljava/lang/String;
     const-string/jumbo v9, ".bak"
 
@@ -1183,7 +1193,7 @@
 
     if-eqz v9, :cond_0
 
-    .line 517
+    .line 524
     new-instance v3, Ljava/io/File;
 
     .end local v3    # "f":Ljava/io/File;
@@ -1205,7 +1215,7 @@
 
     invoke-direct {v3, v9}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 522
+    .line 529
     .restart local v3    # "f":Ljava/io/File;
     :cond_0
     :try_start_0
@@ -1215,39 +1225,39 @@
 
     move-result-wide v0
 
-    .line 527
+    .line 534
     .local v0, "beginTime":J
     :goto_1
     cmp-long v9, v0, p1
 
     if-gez v9, :cond_1
 
-    .line 528
+    .line 535
     new-instance v9, Landroid/util/AtomicFile;
 
     invoke-direct {v9, v3}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
     invoke-virtual {v9}, Landroid/util/AtomicFile;->delete()V
 
-    .line 514
+    .line 521
     :cond_1
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 523
+    .line 530
     .end local v0    # "beginTime":J
     :catch_0
     move-exception v2
 
-    .line 524
+    .line 531
     .local v2, "e":Ljava/io/IOException;
     const-wide/16 v0, 0x0
 
     .restart local v0    # "beginTime":J
     goto :goto_1
 
-    .line 511
+    .line 518
     .end local v0    # "beginTime":J
     .end local v2    # "e":Ljava/io/IOException;
     .end local v3    # "f":Ljava/io/File;
@@ -1263,21 +1273,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 705
+    .line 712
     if-nez p0, :cond_0
 
     return-void
 
-    .line 706
+    .line 713
     :cond_0
     iput-object v0, p0, Lcom/android/server/usage/IntervalStats;->activeConfiguration:Landroid/content/res/Configuration;
 
-    .line 707
+    .line 714
     iget-object v0, p0, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->clear()V
 
-    .line 708
+    .line 715
     iget-object v0, p0, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/TimeSparseArray;
 
     if-eqz v0, :cond_1
@@ -1286,7 +1296,7 @@
 
     invoke-virtual {v0}, Landroid/app/usage/TimeSparseArray;->clear()V
 
-    .line 704
+    .line 711
     :cond_1
     return-void
 .end method
@@ -1296,30 +1306,30 @@
     .param p0, "stats"    # Lcom/android/server/usage/IntervalStats;
 
     .prologue
-    .line 712
+    .line 719
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 713
+    .line 720
     .local v0, "baos":Ljava/io/ByteArrayOutputStream;
     new-instance v2, Ljava/io/DataOutputStream;
 
     invoke-direct {v2, v0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 715
+    .line 722
     .local v2, "out":Ljava/io/DataOutputStream;
     :try_start_0
     iget-wide v4, p0, Lcom/android/server/usage/IntervalStats;->beginTime:J
 
     invoke-virtual {v2, v4, v5}, Ljava/io/DataOutputStream;->writeLong(J)V
 
-    .line 716
+    .line 723
     invoke-static {v2, p0}, Lcom/android/server/usage/UsageStatsXml;->write(Ljava/io/OutputStream;Lcom/android/server/usage/IntervalStats;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 721
+    .line 728
     :goto_0
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -1327,11 +1337,11 @@
 
     return-object v3
 
-    .line 717
+    .line 724
     :catch_0
     move-exception v1
 
-    .line 718
+    .line 725
     .local v1, "ioe":Ljava/io/IOException;
     const-string/jumbo v3, "UsageStatsDatabase"
 
@@ -1339,7 +1349,7 @@
 
     invoke-static {v3, v4, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 719
+    .line 726
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->reset()V
 
     goto :goto_0
@@ -1356,44 +1366,46 @@
     .end annotation
 
     .prologue
-    .line 683
+    .line 690
     new-instance v2, Lcom/android/server/usage/IntervalStats;
 
     invoke-direct {v2}, Lcom/android/server/usage/IntervalStats;-><init>()V
 
-    .line 685
+    .line 692
     .local v2, "stats":Lcom/android/server/usage/IntervalStats;
+    const/4 v3, 0x7
+
     :try_start_0
-    invoke-static {p2, v2}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;)V
+    invoke-static {p2, v2, v3}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;I)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 691
+    .line 698
     invoke-static {v2}, Lcom/android/server/usage/UsageStatsDatabase;->sanitizeIntervalStatsForBackup(Lcom/android/server/usage/IntervalStats;)V
 
-    .line 692
+    .line 699
     invoke-static {v2}, Lcom/android/server/usage/UsageStatsDatabase;->serializeIntervalStats(Lcom/android/server/usage/IntervalStats;)[B
 
     move-result-object v0
 
-    .line 693
+    .line 700
     .local v0, "data":[B
     array-length v3, v0
 
     invoke-virtual {p1, v3}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 694
+    .line 701
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->write([B)V
 
-    .line 682
+    .line 689
     return-void
 
-    .line 686
+    .line 693
     .end local v0    # "data":[B
     :catch_0
     move-exception v1
 
-    .line 687
+    .line 694
     .local v1, "e":Ljava/io/IOException;
     const-string/jumbo v3, "UsageStatsDatabase"
 
@@ -1401,12 +1413,12 @@
 
     invoke-static {v3, v4, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 688
+    .line 695
     const/4 v3, 0x0
 
     invoke-virtual {p1, v3}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 689
+    .line 696
     return-void
 .end method
 
@@ -1420,12 +1432,12 @@
     .prologue
     const/4 v12, 0x1
 
-    .line 606
+    .line 613
     iget-object v11, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v11
 
-    .line 607
+    .line 614
     :try_start_0
     const-string/jumbo v10, "usage_stats"
 
@@ -1435,14 +1447,14 @@
 
     if-eqz v10, :cond_7
 
-    .line 610
+    .line 617
     const/4 v10, 0x0
 
     invoke-virtual {p0, v10}, Lcom/android/server/usage/UsageStatsDatabase;->getLatestUsageStats(I)Lcom/android/server/usage/IntervalStats;
 
     move-result-object v1
 
-    .line 612
+    .line 619
     .local v1, "dailyConfigSource":Lcom/android/server/usage/IntervalStats;
     const/4 v10, 0x1
 
@@ -1450,7 +1462,7 @@
 
     move-result-object v8
 
-    .line 614
+    .line 621
     .local v8, "weeklyConfigSource":Lcom/android/server/usage/IntervalStats;
     const/4 v10, 0x2
 
@@ -1458,7 +1470,7 @@
 
     move-result-object v6
 
-    .line 616
+    .line 623
     .local v6, "monthlyConfigSource":Lcom/android/server/usage/IntervalStats;
     const/4 v10, 0x3
 
@@ -1468,7 +1480,7 @@
 
     move-result-object v9
 
-    .line 619
+    .line 626
     .local v9, "yearlyConfigSource":Lcom/android/server/usage/IntervalStats;
     :try_start_1
     new-instance v4, Ljava/io/DataInputStream;
@@ -1479,7 +1491,7 @@
 
     invoke-direct {v4, v10}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 620
+    .line 627
     .local v4, "in":Ljava/io/DataInputStream;
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
     :try_end_1
@@ -1488,13 +1500,13 @@
 
     move-result v0
 
-    .line 623
+    .line 630
     .local v0, "backupDataVersion":I
     if-lt v0, v12, :cond_0
 
     if-le v0, v12, :cond_1
 
-    .line 662
+    .line 669
     :cond_0
     :try_start_2
     invoke-direct {p0}, Lcom/android/server/usage/UsageStatsDatabase;->indexFilesLocked()V
@@ -1503,10 +1515,10 @@
 
     monitor-exit v11
 
-    .line 623
+    .line 630
     return-void
 
-    .line 627
+    .line 634
     :cond_1
     const/4 v3, 0x0
 
@@ -1519,68 +1531,30 @@
 
     if-ge v3, v10, :cond_2
 
-    .line 628
+    .line 635
     iget-object v10, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
     aget-object v10, v10, v3
 
     invoke-static {v10}, Lcom/android/server/usage/UsageStatsDatabase;->deleteDirectoryContents(Ljava/io/File;)V
 
-    .line 627
+    .line 634
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 631
+    .line 638
     :cond_2
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v2
 
-    .line 632
+    .line 639
     .local v2, "fileCount":I
     const/4 v3, 0x0
 
     :goto_1
     if-ge v3, v2, :cond_3
-
-    .line 633
-    invoke-static {v4}, Lcom/android/server/usage/UsageStatsDatabase;->getIntervalStatsBytes(Ljava/io/DataInputStream;)[B
-
-    move-result-object v10
-
-    invoke-static {v10}, Lcom/android/server/usage/UsageStatsDatabase;->deserializeIntervalStats([B)Lcom/android/server/usage/IntervalStats;
-
-    move-result-object v7
-
-    .line 634
-    .local v7, "stats":Lcom/android/server/usage/IntervalStats;
-    invoke-direct {p0, v7, v1}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
-
-    move-result-object v7
-
-    .line 635
-    const/4 v10, 0x0
-
-    invoke-virtual {p0, v10, v7}, Lcom/android/server/usage/UsageStatsDatabase;->putUsageStats(ILcom/android/server/usage/IntervalStats;)V
-
-    .line 632
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
-
-    .line 638
-    .end local v7    # "stats":Lcom/android/server/usage/IntervalStats;
-    :cond_3
-    invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v2
-
-    .line 639
-    const/4 v3, 0x0
-
-    :goto_2
-    if-ge v3, v2, :cond_4
 
     .line 640
     invoke-static {v4}, Lcom/android/server/usage/UsageStatsDatabase;->getIntervalStatsBytes(Ljava/io/DataInputStream;)[B
@@ -1592,24 +1566,24 @@
     move-result-object v7
 
     .line 641
-    .restart local v7    # "stats":Lcom/android/server/usage/IntervalStats;
-    invoke-direct {p0, v7, v8}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
+    .local v7, "stats":Lcom/android/server/usage/IntervalStats;
+    invoke-direct {p0, v7, v1}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
 
     move-result-object v7
 
     .line 642
-    const/4 v10, 0x1
+    const/4 v10, 0x0
 
     invoke-virtual {p0, v10, v7}, Lcom/android/server/usage/UsageStatsDatabase;->putUsageStats(ILcom/android/server/usage/IntervalStats;)V
 
     .line 639
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2
+    goto :goto_1
 
     .line 645
     .end local v7    # "stats":Lcom/android/server/usage/IntervalStats;
-    :cond_4
+    :cond_3
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v2
@@ -1617,8 +1591,8 @@
     .line 646
     const/4 v3, 0x0
 
-    :goto_3
-    if-ge v3, v2, :cond_5
+    :goto_2
+    if-ge v3, v2, :cond_4
 
     .line 647
     invoke-static {v4}, Lcom/android/server/usage/UsageStatsDatabase;->getIntervalStatsBytes(Ljava/io/DataInputStream;)[B
@@ -1631,23 +1605,23 @@
 
     .line 648
     .restart local v7    # "stats":Lcom/android/server/usage/IntervalStats;
-    invoke-direct {p0, v7, v6}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
+    invoke-direct {p0, v7, v8}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
 
     move-result-object v7
 
     .line 649
-    const/4 v10, 0x2
+    const/4 v10, 0x1
 
     invoke-virtual {p0, v10, v7}, Lcom/android/server/usage/UsageStatsDatabase;->putUsageStats(ILcom/android/server/usage/IntervalStats;)V
 
     .line 646
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_3
+    goto :goto_2
 
     .line 652
     .end local v7    # "stats":Lcom/android/server/usage/IntervalStats;
-    :cond_5
+    :cond_4
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v2
@@ -1655,8 +1629,8 @@
     .line 653
     const/4 v3, 0x0
 
-    :goto_4
-    if-ge v3, v2, :cond_6
+    :goto_3
+    if-ge v3, v2, :cond_5
 
     .line 654
     invoke-static {v4}, Lcom/android/server/usage/UsageStatsDatabase;->getIntervalStatsBytes(Ljava/io/DataInputStream;)[B
@@ -1669,11 +1643,49 @@
 
     .line 655
     .restart local v7    # "stats":Lcom/android/server/usage/IntervalStats;
-    invoke-direct {p0, v7, v9}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
+    invoke-direct {p0, v7, v6}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
 
     move-result-object v7
 
     .line 656
+    const/4 v10, 0x2
+
+    invoke-virtual {p0, v10, v7}, Lcom/android/server/usage/UsageStatsDatabase;->putUsageStats(ILcom/android/server/usage/IntervalStats;)V
+
+    .line 653
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_3
+
+    .line 659
+    .end local v7    # "stats":Lcom/android/server/usage/IntervalStats;
+    :cond_5
+    invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v2
+
+    .line 660
+    const/4 v3, 0x0
+
+    :goto_4
+    if-ge v3, v2, :cond_6
+
+    .line 661
+    invoke-static {v4}, Lcom/android/server/usage/UsageStatsDatabase;->getIntervalStatsBytes(Ljava/io/DataInputStream;)[B
+
+    move-result-object v10
+
+    invoke-static {v10}, Lcom/android/server/usage/UsageStatsDatabase;->deserializeIntervalStats([B)Lcom/android/server/usage/IntervalStats;
+
+    move-result-object v7
+
+    .line 662
+    .restart local v7    # "stats":Lcom/android/server/usage/IntervalStats;
+    invoke-direct {p0, v7, v9}, Lcom/android/server/usage/UsageStatsDatabase;->mergeStats(Lcom/android/server/usage/IntervalStats;Lcom/android/server/usage/IntervalStats;)Lcom/android/server/usage/IntervalStats;
+
+    move-result-object v7
+
+    .line 663
     const/4 v10, 0x3
 
     invoke-virtual {p0, v10, v7}, Lcom/android/server/usage/UsageStatsDatabase;->putUsageStats(ILcom/android/server/usage/IntervalStats;)V
@@ -1681,12 +1693,12 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 653
+    .line 660
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_4
 
-    .line 662
+    .line 669
     .end local v7    # "stats":Lcom/android/server/usage/IntervalStats;
     :cond_6
     :try_start_4
@@ -1706,10 +1718,10 @@
     :goto_5
     monitor-exit v11
 
-    .line 605
+    .line 612
     return-void
 
-    .line 659
+    .line 666
     .restart local v1    # "dailyConfigSource":Lcom/android/server/usage/IntervalStats;
     .restart local v6    # "monthlyConfigSource":Lcom/android/server/usage/IntervalStats;
     .restart local v8    # "weeklyConfigSource":Lcom/android/server/usage/IntervalStats;
@@ -1717,7 +1729,7 @@
     :catch_0
     move-exception v5
 
-    .line 660
+    .line 667
     .local v5, "ioe":Ljava/io/IOException;
     :try_start_5
     const-string/jumbo v10, "UsageStatsDatabase"
@@ -1728,7 +1740,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 662
+    .line 669
     :try_start_6
     invoke-direct {p0}, Lcom/android/server/usage/UsageStatsDatabase;->indexFilesLocked()V
     :try_end_6
@@ -1736,7 +1748,7 @@
 
     goto :goto_5
 
-    .line 606
+    .line 613
     .end local v1    # "dailyConfigSource":Lcom/android/server/usage/IntervalStats;
     .end local v5    # "ioe":Ljava/io/IOException;
     .end local v6    # "monthlyConfigSource":Lcom/android/server/usage/IntervalStats;
@@ -1749,7 +1761,7 @@
 
     throw v10
 
-    .line 661
+    .line 668
     .restart local v1    # "dailyConfigSource":Lcom/android/server/usage/IntervalStats;
     .restart local v6    # "monthlyConfigSource":Lcom/android/server/usage/IntervalStats;
     .restart local v8    # "weeklyConfigSource":Lcom/android/server/usage/IntervalStats;
@@ -1757,11 +1769,11 @@
     :catchall_1
     move-exception v10
 
-    .line 662
+    .line 669
     :try_start_7
     invoke-direct {p0}, Lcom/android/server/usage/UsageStatsDatabase;->indexFilesLocked()V
 
-    .line 661
+    .line 668
     throw v10
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
@@ -1776,31 +1788,31 @@
 
     const/4 v12, 0x0
 
-    .line 130
+    .line 137
     iget-object v10, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v10
 
-    .line 132
+    .line 139
     :try_start_0
     iget-object v9, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     const/4 v11, 0x0
 
-    .line 131
+    .line 138
     aget-object v4, v9, v11
 
-    .line 133
+    .line 140
     .local v4, "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
     invoke-virtual {v4}, Landroid/app/usage/TimeSparseArray;->size()I
 
     move-result v3
 
-    .line 137
+    .line 144
     .local v3, "fileCount":I
     const/4 v6, -0x1
 
-    .line 138
+    .line 145
     .local v6, "lastCheckin":I
     const/4 v5, 0x0
 
@@ -1810,7 +1822,7 @@
 
     if-ge v5, v9, :cond_1
 
-    .line 139
+    .line 146
     invoke-virtual {v4, v5}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -1835,20 +1847,20 @@
 
     if-eqz v9, :cond_0
 
-    .line 140
+    .line 147
     move v6, v5
 
-    .line 138
+    .line 145
     :cond_0
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 144
+    .line 151
     :cond_1
     add-int/lit8 v7, v6, 0x1
 
-    .line 145
+    .line 152
     .local v7, "start":I
     add-int/lit8 v9, v3, -0x1
 
@@ -1856,17 +1868,17 @@
 
     monitor-exit v10
 
-    .line 146
+    .line 153
     return v13
 
-    .line 150
+    .line 157
     :cond_2
     :try_start_1
     new-instance v8, Lcom/android/server/usage/IntervalStats;
 
     invoke-direct {v8}, Lcom/android/server/usage/IntervalStats;-><init>()V
 
-    .line 151
+    .line 158
     .local v8, "stats":Lcom/android/server/usage/IntervalStats;
     move v5, v7
 
@@ -1875,16 +1887,18 @@
 
     if-ge v5, v9, :cond_4
 
-    .line 152
+    .line 159
     invoke-virtual {v4, v5}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Landroid/util/AtomicFile;
 
-    invoke-static {v9, v8}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;)V
+    const/4 v11, 0x7
 
-    .line 153
+    invoke-static {v9, v8, v11}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;I)V
+
+    .line 160
     invoke-interface {p1, v8}, Lcom/android/server/usage/UsageStatsDatabase$CheckinAction;->checkin(Lcom/android/server/usage/IntervalStats;)Z
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
@@ -1896,21 +1910,21 @@
 
     monitor-exit v10
 
-    .line 154
+    .line 161
     return v12
 
-    .line 151
+    .line 158
     :cond_3
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 157
+    .line 164
     .end local v8    # "stats":Lcom/android/server/usage/IntervalStats;
     :catch_0
     move-exception v1
 
-    .line 158
+    .line 165
     .local v1, "e":Ljava/io/IOException;
     :try_start_2
     const-string/jumbo v9, "UsageStatsDatabase"
@@ -1923,10 +1937,10 @@
 
     monitor-exit v10
 
-    .line 159
+    .line 166
     return v12
 
-    .line 164
+    .line 171
     .end local v1    # "e":Ljava/io/IOException;
     .restart local v8    # "stats":Lcom/android/server/usage/IntervalStats;
     :cond_4
@@ -1937,7 +1951,7 @@
 
     if-ge v5, v9, :cond_6
 
-    .line 165
+    .line 172
     :try_start_3
     invoke-virtual {v4, v5}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
 
@@ -1945,11 +1959,11 @@
 
     check-cast v2, Landroid/util/AtomicFile;
 
-    .line 166
+    .line 173
     .local v2, "file":Landroid/util/AtomicFile;
     new-instance v0, Ljava/io/File;
 
-    .line 167
+    .line 174
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -1976,10 +1990,10 @@
 
     move-result-object v9
 
-    .line 166
+    .line 173
     invoke-direct {v0, v9}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 168
+    .line 175
     .local v0, "checkedInFile":Ljava/io/File;
     invoke-virtual {v2}, Landroid/util/AtomicFile;->getBaseFile()Ljava/io/File;
 
@@ -1991,7 +2005,7 @@
 
     if-nez v9, :cond_5
 
-    .line 171
+    .line 178
     const-string/jumbo v9, "UsageStatsDatabase"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -2016,10 +2030,10 @@
 
     move-result-object v11
 
-    .line 172
+    .line 179
     const-string/jumbo v12, " as checked-in"
 
-    .line 171
+    .line 178
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
@@ -2034,10 +2048,10 @@
 
     monitor-exit v10
 
-    .line 173
+    .line 180
     return v13
 
-    .line 178
+    .line 185
     :cond_5
     :try_start_4
     new-instance v9, Landroid/util/AtomicFile;
@@ -2048,7 +2062,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 164
+    .line 171
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
@@ -2058,10 +2072,10 @@
     :cond_6
     monitor-exit v10
 
-    .line 181
+    .line 188
     return v13
 
-    .line 130
+    .line 137
     .end local v3    # "fileCount":I
     .end local v4    # "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
     .end local v5    # "i":I
@@ -2082,19 +2096,19 @@
     .param p3, "endTimeStamp"    # J
 
     .prologue
-    .line 461
+    .line 468
     iget-object v9, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 462
+    .line 469
     const/4 v0, -0x1
 
-    .line 463
+    .line 470
     .local v0, "bestBucket":I
     const-wide v6, 0x7fffffffffffffffL
 
-    .line 464
+    .line 471
     .local v6, "smallestDiff":J
     :try_start_0
     iget-object v8, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
@@ -2107,7 +2121,7 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    .line 465
+    .line 472
     iget-object v8, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     aget-object v8, v8, v1
@@ -2116,7 +2130,7 @@
 
     move-result v4
 
-    .line 466
+    .line 473
     .local v4, "index":I
     iget-object v8, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
@@ -2126,13 +2140,13 @@
 
     move-result v5
 
-    .line 467
+    .line 474
     .local v5, "size":I
     if-ltz v4, :cond_0
 
     if-ge v4, v5, :cond_0
 
-    .line 469
+    .line 476
     iget-object v8, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     aget-object v8, v8, v1
@@ -2149,19 +2163,19 @@
 
     move-result-wide v2
 
-    .line 470
+    .line 477
     .local v2, "diff":J
     cmp-long v8, v2, v6
 
     if-gez v8, :cond_0
 
-    .line 471
+    .line 478
     move-wide v6, v2
 
-    .line 472
+    .line 479
     move v0, v1
 
-    .line 464
+    .line 471
     .end local v2    # "diff":J
     :cond_0
     add-int/lit8 v1, v1, -0x1
@@ -2173,10 +2187,10 @@
     :cond_1
     monitor-exit v9
 
-    .line 476
+    .line 483
     return v0
 
-    .line 461
+    .line 468
     .end local v1    # "i":I
     :catchall_0
     move-exception v8
@@ -2191,18 +2205,18 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 559
+    .line 566
     iget-object v5, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 560
+    .line 567
     :try_start_0
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 561
+    .line 568
     .local v0, "baos":Ljava/io/ByteArrayOutputStream;
     const-string/jumbo v4, "usage_stats"
 
@@ -2212,28 +2226,28 @@
 
     if-eqz v4, :cond_3
 
-    .line 562
+    .line 569
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
     invoke-virtual {p0, v6, v7}, Lcom/android/server/usage/UsageStatsDatabase;->prune(J)V
 
-    .line 563
+    .line 570
     new-instance v3, Ljava/io/DataOutputStream;
 
     invoke-direct {v3, v0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 565
+    .line 572
     .local v3, "out":Ljava/io/DataOutputStream;
     const/4 v4, 0x1
 
     :try_start_1
     invoke-virtual {v3, v4}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 567
+    .line 574
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     const/4 v6, 0x0
@@ -2246,7 +2260,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 568
+    .line 575
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -2263,61 +2277,10 @@
 
     if-ge v1, v4, :cond_0
 
-    .line 571
-    iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
-
-    const/4 v6, 0x0
-
-    aget-object v4, v4, v6
-
-    invoke-virtual {v4, v1}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/util/AtomicFile;
-
-    .line 570
-    invoke-direct {p0, v3, v4}, Lcom/android/server/usage/UsageStatsDatabase;->writeIntervalStatsToStream(Ljava/io/DataOutputStream;Landroid/util/AtomicFile;)V
-
-    .line 569
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 574
-    :cond_0
-    iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
-
-    const/4 v6, 0x1
-
-    aget-object v4, v4, v6
-
-    invoke-virtual {v4}, Landroid/app/usage/TimeSparseArray;->size()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 575
-    const/4 v1, 0x0
-
-    :goto_1
-    iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
-
-    const/4 v6, 0x1
-
-    aget-object v4, v4, v6
-
-    invoke-virtual {v4}, Landroid/app/usage/TimeSparseArray;->size()I
-
-    move-result v4
-
-    if-ge v1, v4, :cond_1
-
     .line 578
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
     aget-object v4, v4, v6
 
@@ -2333,13 +2296,13 @@
     .line 576
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 581
-    :cond_1
+    :cond_0
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
-    const/4 v6, 0x2
+    const/4 v6, 0x1
 
     aget-object v4, v4, v6
 
@@ -2352,10 +2315,10 @@
     .line 582
     const/4 v1, 0x0
 
-    :goto_2
+    :goto_1
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
-    const/4 v6, 0x2
+    const/4 v6, 0x1
 
     aget-object v4, v4, v6
 
@@ -2363,12 +2326,12 @@
 
     move-result v4
 
-    if-ge v1, v4, :cond_2
+    if-ge v1, v4, :cond_1
 
     .line 585
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
-    const/4 v6, 0x2
+    const/4 v6, 0x1
 
     aget-object v4, v4, v6
 
@@ -2384,9 +2347,60 @@
     .line 583
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_1
 
     .line 588
+    :cond_1
+    iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
+
+    const/4 v6, 0x2
+
+    aget-object v4, v4, v6
+
+    invoke-virtual {v4}, Landroid/app/usage/TimeSparseArray;->size()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    .line 589
+    const/4 v1, 0x0
+
+    :goto_2
+    iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
+
+    const/4 v6, 0x2
+
+    aget-object v4, v4, v6
+
+    invoke-virtual {v4}, Landroid/app/usage/TimeSparseArray;->size()I
+
+    move-result v4
+
+    if-ge v1, v4, :cond_2
+
+    .line 592
+    iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
+
+    const/4 v6, 0x2
+
+    aget-object v4, v4, v6
+
+    invoke-virtual {v4, v1}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/util/AtomicFile;
+
+    .line 591
+    invoke-direct {p0, v3, v4}, Lcom/android/server/usage/UsageStatsDatabase;->writeIntervalStatsToStream(Ljava/io/DataOutputStream;Landroid/util/AtomicFile;)V
+
+    .line 590
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    .line 595
     :cond_2
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
@@ -2400,7 +2414,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 589
+    .line 596
     const/4 v1, 0x0
 
     :goto_3
@@ -2416,7 +2430,7 @@
 
     if-ge v1, v4, :cond_3
 
-    .line 592
+    .line 599
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     const/4 v6, 0x3
@@ -2429,23 +2443,23 @@
 
     check-cast v4, Landroid/util/AtomicFile;
 
-    .line 591
+    .line 598
     invoke-direct {p0, v3, v4}, Lcom/android/server/usage/UsageStatsDatabase;->writeIntervalStatsToStream(Ljava/io/DataOutputStream;Landroid/util/AtomicFile;)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 590
+    .line 597
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 595
+    .line 602
     .end local v1    # "i":I
     :catch_0
     move-exception v2
 
-    .line 596
+    .line 603
     .local v2, "ioe":Ljava/io/IOException;
     :try_start_2
     const-string/jumbo v4, "UsageStatsDatabase"
@@ -2454,10 +2468,10 @@
 
     invoke-static {v4, v6, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 597
+    .line 604
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->reset()V
 
-    .line 600
+    .line 607
     .end local v2    # "ioe":Ljava/io/IOException;
     .end local v3    # "out":Ljava/io/DataOutputStream;
     :cond_3
@@ -2471,7 +2485,7 @@
 
     return-object v4
 
-    .line 559
+    .line 566
     .end local v0    # "baos":Ljava/io/ByteArrayOutputStream;
     :catchall_0
     move-exception v4
@@ -2488,12 +2502,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 342
+    .line 349
     iget-object v5, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 343
+    .line 350
     if-ltz p1, :cond_0
 
     :try_start_0
@@ -2503,7 +2517,7 @@
 
     if-lt p1, v4, :cond_1
 
-    .line 344
+    .line 351
     :cond_0
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
@@ -2531,7 +2545,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 342
+    .line 349
     :catchall_0
     move-exception v4
 
@@ -2539,7 +2553,7 @@
 
     throw v4
 
-    .line 347
+    .line 354
     :cond_1
     :try_start_1
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
@@ -2552,16 +2566,16 @@
 
     move-result v2
 
-    .line 348
+    .line 355
     .local v2, "fileCount":I
     if-nez v2, :cond_2
 
     monitor-exit v5
 
-    .line 349
+    .line 356
     return-object v7
 
-    .line 353
+    .line 360
     :cond_2
     :try_start_2
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
@@ -2576,31 +2590,33 @@
 
     check-cast v1, Landroid/util/AtomicFile;
 
-    .line 354
+    .line 361
     .local v1, "f":Landroid/util/AtomicFile;
     new-instance v3, Lcom/android/server/usage/IntervalStats;
 
     invoke-direct {v3}, Lcom/android/server/usage/IntervalStats;-><init>()V
 
-    .line 355
+    .line 362
     .local v3, "stats":Lcom/android/server/usage/IntervalStats;
-    invoke-static {v1, v3}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;)V
+    const/4 v4, 0x7
+
+    invoke-static {v1, v3, v4}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;I)V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     monitor-exit v5
 
-    .line 356
+    .line 363
     return-object v3
 
-    .line 357
+    .line 364
     .end local v1    # "f":Landroid/util/AtomicFile;
     .end local v3    # "stats":Lcom/android/server/usage/IntervalStats;
     :catch_0
     move-exception v0
 
-    .line 358
+    .line 365
     .local v0, "e":Ljava/io/IOException;
     :try_start_3
     const-string/jumbo v4, "UsageStatsDatabase"
@@ -2613,7 +2629,7 @@
 
     monitor-exit v5
 
-    .line 361
+    .line 368
     return-object v7
 .end method
 
@@ -2624,12 +2640,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 83
+    .line 90
     iget-object v7, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v7
 
-    .line 84
+    .line 91
     :try_start_0
     iget-object v8, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
@@ -2642,18 +2658,18 @@
 
     aget-object v0, v8, v6
 
-    .line 85
+    .line 92
     .local v0, "f":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 86
+    .line 93
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v10
 
     if-nez v10, :cond_0
 
-    .line 87
+    .line 94
     new-instance v5, Ljava/lang/IllegalStateException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2666,12 +2682,12 @@
 
     move-result-object v6
 
-    .line 88
+    .line 95
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 87
+    .line 94
     invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -2686,7 +2702,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 83
+    .line 90
     .end local v0    # "f":Ljava/io/File;
     :catchall_0
     move-exception v5
@@ -2695,23 +2711,23 @@
 
     throw v5
 
-    .line 84
+    .line 91
     .restart local v0    # "f":Ljava/io/File;
     :cond_0
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 92
+    .line 99
     .end local v0    # "f":Ljava/io/File;
     :cond_1
     :try_start_1
     invoke-direct {p0}, Lcom/android/server/usage/UsageStatsDatabase;->checkVersionAndBuildLocked()V
 
-    .line 93
+    .line 100
     invoke-direct {p0}, Lcom/android/server/usage/UsageStatsDatabase;->indexFilesLocked()V
 
-    .line 96
+    .line 103
     iget-object v8, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
     array-length v9, v8
@@ -2723,17 +2739,17 @@
 
     aget-object v2, v8, v6
 
-    .line 97
+    .line 104
     .local v2, "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
     invoke-virtual {v2, p1, p2}, Landroid/app/usage/TimeSparseArray;->closestIndexOnOrAfter(J)I
 
     move-result v4
 
-    .line 98
+    .line 105
     .local v4, "startIndex":I
     if-gez v4, :cond_3
 
-    .line 96
+    .line 103
     :cond_2
     add-int/lit8 v5, v6, 0x1
 
@@ -2741,13 +2757,13 @@
 
     goto :goto_1
 
-    .line 102
+    .line 109
     :cond_3
     invoke-virtual {v2}, Landroid/app/usage/TimeSparseArray;->size()I
 
     move-result v1
 
-    .line 103
+    .line 110
     .local v1, "fileCount":I
     move v3, v4
 
@@ -2755,7 +2771,7 @@
     :goto_2
     if-ge v3, v1, :cond_4
 
-    .line 104
+    .line 111
     invoke-virtual {v2, v3}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -2764,24 +2780,24 @@
 
     invoke-virtual {v5}, Landroid/util/AtomicFile;->delete()V
 
-    .line 103
+    .line 110
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 109
+    .line 116
     :cond_4
     move v3, v4
 
     :goto_3
     if-ge v3, v1, :cond_2
 
-    .line 110
+    .line 117
     invoke-virtual {v2, v3}, Landroid/app/usage/TimeSparseArray;->removeAt(I)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 109
+    .line 116
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
@@ -2793,7 +2809,7 @@
     :cond_5
     monitor-exit v7
 
-    .line 82
+    .line 89
     return-void
 .end method
 
@@ -2801,7 +2817,7 @@
     .locals 1
 
     .prologue
-    .line 221
+    .line 228
     iget-boolean v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mFirstUpdate:Z
 
     return v0
@@ -2811,7 +2827,7 @@
     .locals 1
 
     .prologue
-    .line 228
+    .line 235
     iget-boolean v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mNewUpdate:Z
 
     return v0
@@ -2822,43 +2838,43 @@
     .param p1, "timeDiffMillis"    # J
 
     .prologue
-    .line 292
+    .line 299
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v15
 
-    .line 293
+    .line 300
     :try_start_0
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 294
+    .line 301
     .local v9, "logBuilder":Ljava/lang/StringBuilder;
     const-string/jumbo v14, "Time changed by "
 
     invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 295
+    .line 302
     move-wide/from16 v0, p1
 
     invoke-static {v0, v1, v9}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 296
+    .line 303
     const-string/jumbo v14, "."
 
     invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 298
+    .line 305
     const/4 v6, 0x0
 
-    .line 299
+    .line 306
     .local v6, "filesDeleted":I
     const/4 v7, 0x0
 
-    .line 301
+    .line 308
     .local v7, "filesMoved":I
     move-object/from16 v0, p0
 
@@ -2881,13 +2897,13 @@
 
     aget-object v5, v16, v14
 
-    .line 302
+    .line 309
     .local v5, "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
     invoke-virtual {v5}, Landroid/app/usage/TimeSparseArray;->size()I
 
     move-result v4
 
-    .line 303
+    .line 310
     .local v4, "fileCount":I
     const/4 v8, 0x0
 
@@ -2895,14 +2911,14 @@
     :goto_1
     if-ge v8, v4, :cond_2
 
-    .line 304
+    .line 311
     invoke-virtual {v5, v8}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/util/AtomicFile;
 
-    .line 305
+    .line 312
     .local v3, "file":Landroid/util/AtomicFile;
     invoke-virtual {v5, v8}, Landroid/app/usage/TimeSparseArray;->keyAt(I)J
 
@@ -2910,7 +2926,7 @@
 
     add-long v12, v18, p1
 
-    .line 306
+    .line 313
     .local v12, "newTime":J
     const-wide/16 v18, 0x0
 
@@ -2918,21 +2934,21 @@
 
     if-gez v18, :cond_0
 
-    .line 307
+    .line 314
     add-int/lit8 v6, v6, 0x1
 
-    .line 308
+    .line 315
     invoke-virtual {v3}, Landroid/util/AtomicFile;->delete()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 303
+    .line 310
     :goto_2
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 311
+    .line 318
     :cond_0
     :try_start_1
     invoke-virtual {v3}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
@@ -2944,14 +2960,14 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 316
+    .line 323
     :goto_3
     :try_start_2
     invoke-static {v12, v13}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 317
+    .line 324
     .local v11, "newName":Ljava/lang/String;
     invoke-virtual {v3}, Landroid/util/AtomicFile;->getBaseFile()Ljava/io/File;
 
@@ -2969,7 +2985,7 @@
 
     if-eqz v18, :cond_1
 
-    .line 318
+    .line 325
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -2990,7 +3006,7 @@
 
     move-result-object v11
 
-    .line 321
+    .line 328
     :cond_1
     new-instance v10, Ljava/io/File;
 
@@ -3006,11 +3022,11 @@
 
     invoke-direct {v10, v0, v11}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 322
+    .line 329
     .local v10, "newFile":Ljava/io/File;
     add-int/lit8 v7, v7, 0x1
 
-    .line 323
+    .line 330
     invoke-virtual {v3}, Landroid/util/AtomicFile;->getBaseFile()Ljava/io/File;
 
     move-result-object v18
@@ -3023,7 +3039,7 @@
 
     goto :goto_2
 
-    .line 292
+    .line 299
     .end local v3    # "file":Landroid/util/AtomicFile;
     .end local v4    # "fileCount":I
     .end local v5    # "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
@@ -3041,7 +3057,7 @@
 
     throw v14
 
-    .line 326
+    .line 333
     .restart local v4    # "fileCount":I
     .restart local v5    # "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
     .restart local v6    # "filesDeleted":I
@@ -3052,12 +3068,12 @@
     :try_start_3
     invoke-virtual {v5}, Landroid/app/usage/TimeSparseArray;->clear()V
 
-    .line 301
+    .line 308
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_0
 
-    .line 329
+    .line 336
     .end local v4    # "fileCount":I
     .end local v5    # "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
     .end local v8    # "i":I
@@ -3070,7 +3086,7 @@
 
     invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 330
+    .line 337
     const-string/jumbo v14, " files moved: "
 
     invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -3079,7 +3095,7 @@
 
     invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 331
+    .line 338
     const-string/jumbo v14, "UsageStatsDatabase"
 
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -3090,17 +3106,17 @@
 
     invoke-static {v14, v0}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
+    .line 341
     invoke-direct/range {p0 .. p0}, Lcom/android/server/usage/UsageStatsDatabase;->indexFilesLocked()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     monitor-exit v15
 
-    .line 291
+    .line 298
     return-void
 
-    .line 312
+    .line 319
     .restart local v3    # "file":Landroid/util/AtomicFile;
     .restart local v4    # "fileCount":I
     .restart local v5    # "files":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
@@ -3118,139 +3134,139 @@
     .param p1, "currentTimeMillis"    # J
 
     .prologue
-    .line 484
+    .line 491
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 485
+    .line 492
     :try_start_0
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usage/UnixCalendar;->setTimeInMillis(J)V
 
-    .line 486
+    .line 493
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     const/4 v2, -0x3
 
     invoke-virtual {v0, v2}, Lcom/android/server/usage/UnixCalendar;->addYears(I)V
 
-    .line 487
+    .line 494
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
     const/4 v2, 0x3
 
     aget-object v0, v0, v2
 
-    .line 488
+    .line 495
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v2}, Lcom/android/server/usage/UnixCalendar;->getTimeInMillis()J
 
     move-result-wide v2
 
-    .line 487
+    .line 494
     invoke-static {v0, v2, v3}, Lcom/android/server/usage/UsageStatsDatabase;->pruneFilesOlderThan(Ljava/io/File;J)V
 
-    .line 490
+    .line 497
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usage/UnixCalendar;->setTimeInMillis(J)V
 
-    .line 491
+    .line 498
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     const/4 v2, -0x6
 
     invoke-virtual {v0, v2}, Lcom/android/server/usage/UnixCalendar;->addMonths(I)V
 
-    .line 492
+    .line 499
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
     const/4 v2, 0x2
 
     aget-object v0, v0, v2
 
-    .line 493
+    .line 500
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v2}, Lcom/android/server/usage/UnixCalendar;->getTimeInMillis()J
 
     move-result-wide v2
 
-    .line 492
+    .line 499
     invoke-static {v0, v2, v3}, Lcom/android/server/usage/UsageStatsDatabase;->pruneFilesOlderThan(Ljava/io/File;J)V
 
-    .line 495
+    .line 502
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usage/UnixCalendar;->setTimeInMillis(J)V
 
-    .line 496
+    .line 503
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     const/4 v2, -0x4
 
     invoke-virtual {v0, v2}, Lcom/android/server/usage/UnixCalendar;->addWeeks(I)V
 
-    .line 497
+    .line 504
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
     const/4 v2, 0x1
 
     aget-object v0, v0, v2
 
-    .line 498
+    .line 505
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v2}, Lcom/android/server/usage/UnixCalendar;->getTimeInMillis()J
 
     move-result-wide v2
 
-    .line 497
+    .line 504
     invoke-static {v0, v2, v3}, Lcom/android/server/usage/UsageStatsDatabase;->pruneFilesOlderThan(Ljava/io/File;J)V
 
-    .line 500
+    .line 507
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usage/UnixCalendar;->setTimeInMillis(J)V
 
-    .line 501
+    .line 508
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     const/4 v2, -0x7
 
     invoke-virtual {v0, v2}, Lcom/android/server/usage/UnixCalendar;->addDays(I)V
 
-    .line 502
+    .line 509
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsDatabase;->mIntervalDirs:[Ljava/io/File;
 
     const/4 v2, 0x0
 
     aget-object v0, v0, v2
 
-    .line 503
+    .line 510
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsDatabase;->mCal:Lcom/android/server/usage/UnixCalendar;
 
     invoke-virtual {v2}, Lcom/android/server/usage/UnixCalendar;->getTimeInMillis()J
 
     move-result-wide v2
 
-    .line 502
+    .line 509
     invoke-static {v0, v2, v3}, Lcom/android/server/usage/UsageStatsDatabase;->pruneFilesOlderThan(Ljava/io/File;J)V
 
-    .line 507
+    .line 514
     invoke-direct {p0}, Lcom/android/server/usage/UsageStatsDatabase;->indexFilesLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 483
+    .line 490
     return-void
 
-    .line 484
+    .line 491
     :catchall_0
     move-exception v0
 
@@ -3270,18 +3286,18 @@
     .end annotation
 
     .prologue
-    .line 538
+    .line 545
     if-nez p2, :cond_0
 
     return-void
 
-    .line 539
+    .line 546
     :cond_0
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 540
+    .line 547
     if-ltz p1, :cond_1
 
     :try_start_0
@@ -3291,7 +3307,7 @@
 
     if-lt p1, v1, :cond_2
 
-    .line 541
+    .line 548
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -3319,7 +3335,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 539
+    .line 546
     :catchall_0
     move-exception v1
 
@@ -3327,7 +3343,7 @@
 
     throw v1
 
-    .line 544
+    .line 551
     :cond_2
     :try_start_1
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
@@ -3342,11 +3358,11 @@
 
     check-cast v0, Landroid/util/AtomicFile;
 
-    .line 545
+    .line 552
     .local v0, "f":Landroid/util/AtomicFile;
     if-nez v0, :cond_3
 
-    .line 546
+    .line 553
     new-instance v0, Landroid/util/AtomicFile;
 
     .end local v0    # "f":Landroid/util/AtomicFile;
@@ -3356,19 +3372,19 @@
 
     aget-object v3, v3, p1
 
-    .line 547
+    .line 554
     iget-wide v4, p2, Lcom/android/server/usage/IntervalStats;->beginTime:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 546
+    .line 553
     invoke-direct {v1, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     invoke-direct {v0, v1}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 548
+    .line 555
     .restart local v0    # "f":Landroid/util/AtomicFile;
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
 
@@ -3378,11 +3394,11 @@
 
     invoke-virtual {v1, v4, v5, v0}, Landroid/app/usage/TimeSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 551
+    .line 558
     :cond_3
     invoke-static {v0, p2}, Lcom/android/server/usage/UsageStatsXml;->write(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;)V
 
-    .line 552
+    .line 559
     invoke-virtual {v0}, Landroid/util/AtomicFile;->getLastModifiedTime()J
 
     move-result-wide v4
@@ -3393,20 +3409,21 @@
 
     monitor-exit v2
 
-    .line 537
+    .line 544
     return-void
 .end method
 
-.method public queryUsageStats(IJJLcom/android/server/usage/UsageStatsDatabase$StatCombiner;)Ljava/util/List;
+.method public queryUsageStats(IJJILcom/android/server/usage/UsageStatsDatabase$StatCombiner;)Ljava/util/List;
     .locals 14
     .param p1, "intervalType"    # I
     .param p2, "beginTime"    # J
     .param p4, "endTime"    # J
+    .param p6, "flags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
-            ">(IJJ",
+            ">(IJJI",
             "Lcom/android/server/usage/UsageStatsDatabase$StatCombiner",
             "<TT;>;)",
             "Ljava/util/List",
@@ -3415,13 +3432,13 @@
     .end annotation
 
     .prologue
-    .line 389
-    .local p6, "combiner":Lcom/android/server/usage/UsageStatsDatabase$StatCombiner;, "Lcom/android/server/usage/UsageStatsDatabase$StatCombiner<TT;>;"
+    .line 396
+    .local p7, "combiner":Lcom/android/server/usage/UsageStatsDatabase$StatCombiner;, "Lcom/android/server/usage/UsageStatsDatabase$StatCombiner<TT;>;"
     iget-object v11, p0, Lcom/android/server/usage/UsageStatsDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v11
 
-    .line 390
+    .line 397
     if-ltz p1, :cond_0
 
     :try_start_0
@@ -3431,7 +3448,7 @@
 
     if-lt p1, v10, :cond_1
 
-    .line 391
+    .line 398
     :cond_0
     new-instance v10, Ljava/lang/IllegalArgumentException;
 
@@ -3459,7 +3476,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 389
+    .line 396
     :catchall_0
     move-exception v10
 
@@ -3467,7 +3484,7 @@
 
     throw v10
 
-    .line 394
+    .line 401
     :cond_1
     :try_start_1
     iget-object v10, p0, Lcom/android/server/usage/UsageStatsDatabase;->mSortedStatFiles:[Landroid/app/usage/TimeSparseArray;
@@ -3476,20 +3493,20 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 396
+    .line 403
     .local v6, "intervalStats":Landroid/app/usage/TimeSparseArray;, "Landroid/app/usage/TimeSparseArray<Landroid/util/AtomicFile;>;"
     cmp-long v10, p4, p2
 
     if-gtz v10, :cond_2
 
-    .line 400
+    .line 407
     const/4 v10, 0x0
 
     monitor-exit v11
 
     return-object v10
 
-    .line 403
+    .line 410
     :cond_2
     :try_start_2
     move-wide/from16 v0, p2
@@ -3498,14 +3515,14 @@
 
     move-result v8
 
-    .line 404
+    .line 411
     .local v8, "startIndex":I
     if-gez v8, :cond_3
 
-    .line 407
+    .line 414
     const/4 v8, 0x0
 
-    .line 410
+    .line 417
     :cond_3
     move-wide/from16 v0, p4
 
@@ -3515,18 +3532,18 @@
 
     move-result v3
 
-    .line 411
+    .line 418
     .local v3, "endIndex":I
     if-gez v3, :cond_4
 
-    .line 416
+    .line 423
     const/4 v10, 0x0
 
     monitor-exit v11
 
     return-object v10
 
-    .line 419
+    .line 426
     :cond_4
     :try_start_3
     invoke-virtual {v6, v3}, Landroid/app/usage/TimeSparseArray;->keyAt(I)J
@@ -3539,33 +3556,33 @@
 
     if-nez v10, :cond_5
 
-    .line 421
+    .line 428
     add-int/lit8 v3, v3, -0x1
 
-    .line 422
+    .line 429
     if-gez v3, :cond_5
 
-    .line 427
+    .line 434
     const/4 v10, 0x0
 
     monitor-exit v11
 
     return-object v10
 
-    .line 431
+    .line 438
     :cond_5
     :try_start_4
     new-instance v9, Lcom/android/server/usage/IntervalStats;
 
     invoke-direct {v9}, Lcom/android/server/usage/IntervalStats;-><init>()V
 
-    .line 432
+    .line 439
     .local v9, "stats":Lcom/android/server/usage/IntervalStats;
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 433
+    .line 440
     .local v7, "results":Ljava/util/ArrayList;, "Ljava/util/ArrayList<TT;>;"
     move v5, v8
 
@@ -3573,7 +3590,7 @@
     :goto_0
     if-gt v5, v3, :cond_7
 
-    .line 434
+    .line 441
     invoke-virtual {v6, v5}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -3582,40 +3599,42 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 441
+    .line 448
     .local v4, "f":Landroid/util/AtomicFile;
     :try_start_5
-    invoke-static {v4, v9}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;)V
+    move/from16 v0, p6
 
-    .line 442
+    invoke-static {v4, v9, v0}, Lcom/android/server/usage/UsageStatsXml;->read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;I)V
+
+    .line 449
     iget-wide v12, v9, Lcom/android/server/usage/IntervalStats;->endTime:J
 
     cmp-long v10, p2, v12
 
     if-gez v10, :cond_6
 
-    .line 443
+    .line 450
     const/4 v10, 0x0
 
-    move-object/from16 v0, p6
+    move-object/from16 v0, p7
 
     invoke-interface {v0, v9, v10, v7}, Lcom/android/server/usage/UsageStatsDatabase$StatCombiner;->combine(Lcom/android/server/usage/IntervalStats;ZLjava/util/List;)V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 433
+    .line 440
     :cond_6
     :goto_1
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 445
+    .line 452
     :catch_0
     move-exception v2
 
-    .line 446
+    .line 453
     .local v2, "e":Ljava/io/IOException;
     :try_start_6
     const-string/jumbo v10, "UsageStatsDatabase"
@@ -3633,6 +3652,6 @@
     :cond_7
     monitor-exit v11
 
-    .line 451
+    .line 458
     return-object v7
 .end method

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/bluetooth/BluetoothHeadset;
 
     .prologue
-    .line 274
+    .line 255
     iput-object p1, p0, Landroid/bluetooth/BluetoothHeadset$1;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothStateChangeCallback$Stub;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "up"    # Z
 
     .prologue
-    .line 276
+    .line 257
     const-string/jumbo v1, "BluetoothHeadset"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -62,19 +62,26 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 277
+    .line 258
     if-nez p1, :cond_0
 
-    .line 279
+    .line 259
+    const-string/jumbo v1, "BluetoothHeadset"
+
+    const-string/jumbo v2, "Unbinding service..."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 260
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadset$1;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v1}, Landroid/bluetooth/BluetoothHeadset;->doUnbind()V
 
-    .line 275
+    .line 256
     :goto_0
     return-void
 
-    .line 281
+    .line 262
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadset$1;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
@@ -84,7 +91,7 @@
 
     monitor-enter v2
 
-    .line 283
+    .line 264
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadset$1;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
@@ -94,7 +101,14 @@
 
     if-nez v1, :cond_1
 
-    .line 285
+    .line 265
+    const-string/jumbo v1, "BluetoothHeadset"
+
+    const-string/jumbo v3, "Binding service..."
+
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 266
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadset$1;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v1}, Landroid/bluetooth/BluetoothHeadset;->doBind()Z
@@ -108,11 +122,11 @@
 
     goto :goto_0
 
-    .line 287
+    .line 268
     :catch_0
     move-exception v0
 
-    .line 288
+    .line 269
     .local v0, "re":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v1, "BluetoothHeadset"
@@ -125,7 +139,7 @@
 
     goto :goto_1
 
-    .line 281
+    .line 262
     .end local v0    # "re":Ljava/lang/Exception;
     :catchall_0
     move-exception v1

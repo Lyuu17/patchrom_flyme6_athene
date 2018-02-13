@@ -195,17 +195,14 @@
 
     move-result-object v1
 
-    .line 123
-    const v2, 0x10403b9
+    const v2, #android:string@prepend_shortcut_label#t
 
-    .line 122
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     sput-object v1, Lcom/android/internal/view/menu/MenuItemImpl;->sPrependShortcutLabel:Ljava/lang/String;
 
-    .line 124
     invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -214,17 +211,14 @@
 
     move-result-object v1
 
-    .line 125
-    const v2, 0x10403bb
+    const v2, #android:string@menu_enter_shortcut_label#t
 
-    .line 124
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     sput-object v1, Lcom/android/internal/view/menu/MenuItemImpl;->sEnterShortcutLabel:Ljava/lang/String;
 
-    .line 126
     invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -233,17 +227,14 @@
 
     move-result-object v1
 
-    .line 127
-    const v2, 0x10403bc
+    const v2, #android:string@menu_delete_shortcut_label#t
 
-    .line 126
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     sput-object v1, Lcom/android/internal/view/menu/MenuItemImpl;->sDeleteShortcutLabel:Ljava/lang/String;
 
-    .line 128
     invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -252,10 +243,8 @@
 
     move-result-object v1
 
-    .line 129
-    const v2, 0x10403ba
+    const v2, #android:string@menu_space_shortcut_label#t
 
-    .line 128
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1

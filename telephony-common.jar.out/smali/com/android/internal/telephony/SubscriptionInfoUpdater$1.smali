@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     .prologue
-    .line 180
+    .line 193
     iput-object p1, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,19 +42,19 @@
     .prologue
     const/4 v10, -0x1
 
-    .line 183
+    .line 196
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     const-string/jumbo v8, "[Receiver]+"
 
     invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-wrap0(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Ljava/lang/String;)V
 
-    .line 184
+    .line 197
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 185
+    .line 198
     .local v0, "action":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
@@ -78,7 +78,7 @@
 
     invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-wrap0(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Ljava/lang/String;)V
 
-    .line 187
+    .line 200
     const-string/jumbo v7, "android.intent.action.USER_UNLOCKED"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -87,7 +87,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 189
+    .line 202
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     invoke-static {v7}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-get3(Lcom/android/internal/telephony/SubscriptionInfoUpdater;)Ljava/util/Map;
@@ -102,7 +102,7 @@
 
     move-result-object v2
 
-    .line 190
+    .line 203
     .local v2, "iterator":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -111,14 +111,14 @@
 
     if-eqz v7, :cond_0
 
-    .line 191
+    .line 204
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 192
+    .line 205
     .local v3, "pair":Ljava/util/Map$Entry;
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -126,11 +126,11 @@
 
     check-cast v1, Landroid/content/Intent;
 
-    .line 193
+    .line 206
     .local v1, "i":Landroid/content/Intent;
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
-    .line 194
+    .line 207
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -143,12 +143,12 @@
 
     move-result-object v8
 
-    .line 195
+    .line 208
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v9
 
-    .line 194
+    .line 207
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v8
@@ -159,14 +159,14 @@
 
     invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-wrap0(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Ljava/lang/String;)V
 
-    .line 196
+    .line 209
     const-string/jumbo v7, "android.permission.READ_PHONE_STATE"
 
     invoke-static {v1, v7, v10}, Landroid/app/ActivityManagerNative;->broadcastStickyIntent(Landroid/content/Intent;Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 199
+    .line 212
     .end local v1    # "i":Landroid/content/Intent;
     .end local v3    # "pair":Ljava/util/Map$Entry;
     :cond_0
@@ -176,38 +176,58 @@
 
     invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-wrap0(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Ljava/lang/String;)V
 
-    .line 200
+    .line 213
     return-void
 
-    .line 203
+    .line 216
     .end local v2    # "iterator":Ljava/util/Iterator;
     :cond_1
+    const-string/jumbo v7, "android.intent.action.ACTION_SHUTDOWN"
+
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    .line 217
+    iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
+
+    const/4 v8, 0x1
+
+    invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-set1(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Z)Z
+
+    .line 218
+    return-void
+
+    .line 221
+    :cond_2
     const-string/jumbo v7, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-nez v7, :cond_2
+    if-nez v7, :cond_3
 
-    .line 204
+    .line 222
     const-string/jumbo v7, "android.intent.action.internal_sim_state_changed"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
-    .line 208
-    :cond_2
+    .line 226
+    :cond_3
     const-string/jumbo v7, "phone"
 
     invoke-virtual {p2, v7, v10}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v6
 
-    .line 210
+    .line 228
     .local v6, "slotId":I
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
@@ -231,27 +251,27 @@
 
     invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-wrap0(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Ljava/lang/String;)V
 
-    .line 211
-    if-ne v6, v10, :cond_4
+    .line 229
+    if-ne v6, v10, :cond_5
 
-    .line 212
+    .line 230
     return-void
 
-    .line 205
+    .line 223
     .end local v6    # "slotId":I
-    :cond_3
+    :cond_4
     return-void
 
-    .line 215
+    .line 233
     .restart local v6    # "slotId":I
-    :cond_4
+    :cond_5
     const-string/jumbo v7, "ss"
 
     invoke-virtual {p2, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 216
+    .line 234
     .local v5, "simStatus":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
@@ -275,16 +295,16 @@
 
     invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-wrap0(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Ljava/lang/String;)V
 
-    .line 218
+    .line 236
     const-string/jumbo v7, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_a
+    if-eqz v7, :cond_b
 
-    .line 219
+    .line 237
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     invoke-static {v7}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-get3(Lcom/android/internal/telephony/SubscriptionInfoUpdater;)Ljava/util/Map;
@@ -297,16 +317,16 @@
 
     invoke-interface {v7, v8, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 220
+    .line 238
     const-string/jumbo v7, "ABSENT"
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_6
+    if-eqz v7, :cond_7
 
-    .line 221
+    .line 239
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     iget-object v8, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
@@ -319,8 +339,8 @@
 
     invoke-virtual {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->sendMessage(Landroid/os/Message;)Z
 
-    .line 242
-    :cond_5
+    .line 260
+    :cond_6
     :goto_1
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
@@ -328,20 +348,20 @@
 
     invoke-static {v7, v8}, Lcom/android/internal/telephony/SubscriptionInfoUpdater;->-wrap0(Lcom/android/internal/telephony/SubscriptionInfoUpdater;Ljava/lang/String;)V
 
-    .line 182
+    .line 195
     return-void
 
-    .line 222
-    :cond_6
+    .line 240
+    :cond_7
     const-string/jumbo v7, "UNKNOWN"
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_8
 
-    .line 223
+    .line 241
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     iget-object v8, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
@@ -356,17 +376,17 @@
 
     goto :goto_1
 
-    .line 224
-    :cond_7
+    .line 242
+    :cond_8
     const-string/jumbo v7, "CARD_IO_ERROR"
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_9
 
-    .line 225
+    .line 243
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     iget-object v8, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
@@ -381,17 +401,17 @@
 
     goto :goto_1
 
-    .line 226
-    :cond_8
+    .line 244
+    :cond_9
     const-string/jumbo v7, "CARD_RESTRICTED"
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_a
 
-    .line 227
+    .line 245
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     iget-object v8, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
@@ -406,8 +426,8 @@
 
     goto :goto_1
 
-    .line 229
-    :cond_9
+    .line 247
+    :cond_a
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -432,34 +452,34 @@
 
     goto :goto_1
 
-    .line 231
-    :cond_a
+    .line 249
+    :cond_b
     const-string/jumbo v7, "android.intent.action.internal_sim_state_changed"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_5
+    if-eqz v7, :cond_6
 
-    .line 232
+    .line 250
     const-string/jumbo v7, "LOCKED"
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_b
+    if-eqz v7, :cond_c
 
-    .line 234
+    .line 252
     const-string/jumbo v7, "reason"
 
-    .line 233
+    .line 251
     invoke-virtual {p2, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 235
+    .line 253
     .local v4, "reason":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
@@ -475,18 +495,18 @@
 
     goto/16 :goto_1
 
-    .line 236
+    .line 254
     .end local v4    # "reason":Ljava/lang/String;
-    :cond_b
+    :cond_c
     const-string/jumbo v7, "LOADED"
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_c
+    if-eqz v7, :cond_d
 
-    .line 237
+    .line 255
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     iget-object v8, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
@@ -501,8 +521,8 @@
 
     goto/16 :goto_1
 
-    .line 239
-    :cond_c
+    .line 257
+    :cond_d
     iget-object v7, p0, Lcom/android/internal/telephony/SubscriptionInfoUpdater$1;->this$0:Lcom/android/internal/telephony/SubscriptionInfoUpdater;
 
     new-instance v8, Ljava/lang/StringBuilder;

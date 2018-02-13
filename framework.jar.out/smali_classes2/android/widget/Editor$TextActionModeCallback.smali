@@ -193,30 +193,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 3718
-    const v0, 0x1020020
+    const v0, #android:id@cut#t
 
     const/4 v1, 0x3
 
-    .line 3719
-    const v2, 0x1040003
+    const v2, #android:string@cut#t
 
-    .line 3718
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 3720
     const/16 v1, 0x78
 
-    .line 3718
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;
 
     move-result-object v0
 
     invoke-interface {v0, v4}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 3724
     :cond_0
     iget-object v0, p0, Landroid/widget/Editor$TextActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -230,30 +224,24 @@
 
     if-eqz v0, :cond_1
 
-    .line 3725
-    const v0, 0x1020021
+    const v0, #android:id@copy#t
 
     const/4 v1, 0x4
 
-    .line 3726
-    const v2, 0x1040001
+    const v2, #android:string@copy#t
 
-    .line 3725
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 3727
     const/16 v1, 0x63
 
-    .line 3725
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;
 
     move-result-object v0
 
     invoke-interface {v0, v4}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 3731
     :cond_1
     iget-object v0, p0, Landroid/widget/Editor$TextActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -267,30 +255,24 @@
 
     if-eqz v0, :cond_2
 
-    .line 3732
-    const v0, 0x1020022
+    const v0, #android:id@paste#t
 
     const/4 v1, 0x5
 
-    .line 3733
-    const v2, 0x104000b
+    const v2, #android:string@paste#t
 
-    .line 3732
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 3734
     const/16 v1, 0x76
 
-    .line 3732
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;
 
     move-result-object v0
 
     invoke-interface {v0, v4}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 3738
     :cond_2
     iget-object v0, p0, Landroid/widget/Editor$TextActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -304,33 +286,25 @@
 
     if-eqz v0, :cond_3
 
-    .line 3739
-    const v0, 0x1020035
+    const v0, #android:id@shareText#t
 
     const/4 v1, 0x7
 
-    .line 3740
-    const v2, 0x104050d
+    const v2, #android:string@share#t
 
-    .line 3739
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 3741
     const/4 v1, 0x1
 
-    .line 3739
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 3744
     :cond_3
     invoke-direct {p0, p1}, Landroid/widget/Editor$TextActionModeCallback;->updateSelectAllItem(Landroid/view/Menu;)V
 
-    .line 3745
     invoke-direct {p0, p1}, Landroid/widget/Editor$TextActionModeCallback;->updateReplaceItem(Landroid/view/Menu;)V
 
-    .line 3716
     return-void
 .end method
 
@@ -339,7 +313,7 @@
     .param p1, "menu"    # Landroid/view/Menu;
 
     .prologue
-    const v5, 0x1020034
+    const v5, #android:id@replaceText#t
 
     .line 3773
     iget-object v2, p0, Landroid/widget/Editor$TextActionModeCallback;->this$0:Landroid/widget/Editor;
@@ -407,24 +381,19 @@
     .restart local v1    # "replaceItemExists":Z
     goto :goto_1
 
-    .line 3776
     :cond_4
     const/4 v2, 0x0
 
     const/16 v3, 0x9
 
-    .line 3777
-    const v4, 0x10403e1
+    const v4, #android:string@replace#t
 
-    .line 3776
     invoke-interface {p1, v2, v5, v3, v4}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    .line 3778
     const/4 v3, 0x1
 
-    .line 3776
     invoke-interface {v2, v3}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
     goto :goto_2
@@ -435,7 +404,7 @@
     .param p1, "menu"    # Landroid/view/Menu;
 
     .prologue
-    const v5, 0x102001f
+    const v5, #android:id@selectAll#t
 
     .line 3761
     iget-object v2, p0, Landroid/widget/Editor$TextActionModeCallback;->this$0:Landroid/widget/Editor;
@@ -487,24 +456,19 @@
     .restart local v1    # "selectAllItemExists":Z
     goto :goto_0
 
-    .line 3764
     :cond_3
     const/4 v2, 0x0
 
     const/16 v3, 0x8
 
-    .line 3765
-    const v4, 0x104000d
+    const v4, #android:string@selectAll#t
 
-    .line 3764
     invoke-interface {p1, v2, v5, v3, v4}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    .line 3766
     const/4 v3, 0x1
 
-    .line 3764
     invoke-interface {v2, v3}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
     goto :goto_1
@@ -700,7 +664,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->hasTransientState()Z
+    invoke-virtual {v1}, Landroid/widget/TextView;->hasTransientState()Z
 
     move-result v1
 
@@ -719,7 +683,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setHasTransientState(Z)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setHasTransientState(Z)V
 
     goto :goto_0
 
@@ -835,7 +799,7 @@
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v9}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v9}, Landroid/view/View;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
@@ -1336,9 +1300,9 @@
     .param p2, "menu"    # Landroid/view/Menu;
 
     .prologue
-    const v4, 0x1020020
+    const v4, #android:id@cut#t
 
-    const v8, 0x102001f
+    const v8, #android:id@selectAll#t
 
     const/4 v7, 0x1
 
@@ -1393,7 +1357,7 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x1040003
+    const v2, #android:string@cut#t
 
     invoke-interface {p2, v4, v4, v5, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1428,11 +1392,11 @@
 
     if-eqz v2, :cond_1
 
-    const v2, 0x1020021
+    const v2, #android:id@copy#t
 
-    const v3, 0x1020021
+    const v3, #android:id@copy#t
 
-    const v4, 0x1040001
+    const v4, #android:string@copy#t
 
     invoke-interface {p2, v2, v3, v5, v4}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1468,11 +1432,11 @@
 
     if-eqz v2, :cond_2
 
-    const v2, 0x1020022
+    const v2, #android:id@paste#t
 
-    const v3, 0x1020022
+    const v3, #android:id@paste#t
 
-    const v4, 0x104000b
+    const v4, #android:string@paste#t
 
     invoke-interface {p2, v2, v3, v5, v4}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1641,7 +1605,7 @@
 
     if-eqz v2, :cond_1
 
-    const v2, 0x104000d
+    const v2, #android:string@selectAll#t
 
     invoke-interface {p2, v8, v8, v5, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1704,9 +1668,9 @@
     :cond_7
     sget v2, Lcom/flyme/internal/R$string;->mz_undo:I
 
-    const v3, 0x1020032
+    const v3, #android:id@undo#t
 
-    const v4, 0x1020032
+    const v4, #android:id@undo#t
 
     invoke-interface {p2, v3, v4, v5, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1725,9 +1689,9 @@
     :cond_8
     sget v2, Lcom/flyme/internal/R$string;->mz_redo:I
 
-    const v3, 0x1020033
+    const v3, #android:id@redo#t
 
-    const v4, 0x1020033
+    const v4, #android:id@redo#t
 
     invoke-interface {p2, v3, v4, v5, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

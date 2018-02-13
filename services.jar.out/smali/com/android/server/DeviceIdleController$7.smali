@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
     .prologue
-    .line 467
+    .line 469
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$7;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 470
+    .line 472
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$7;->this$0:Lcom/android/server/DeviceIdleController;
 
     monitor-enter v1
 
-    .line 471
+    .line 473
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$7;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -57,10 +57,10 @@
 
     monitor-exit v1
 
-    .line 469
+    .line 471
     return-void
 
-    .line 470
+    .line 472
     :catchall_0
     move-exception v0
 
@@ -74,7 +74,7 @@
     .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
-    .line 484
+    .line 486
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
-    .line 480
+    .line 482
     return-void
 .end method
 
@@ -94,6 +94,6 @@
     .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 476
+    .line 478
     return-void
 .end method

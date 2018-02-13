@@ -103,6 +103,14 @@
     .end annotation
 .end method
 
+.method public abstract getRemoteControlClientNowPlayingEntries()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getTag()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -264,6 +272,22 @@
 .end method
 
 .method public abstract sendMediaButton(Landroid/view/KeyEvent;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setRemoteControlClientBrowsedPlayer()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setRemoteControlClientPlayItem(JI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

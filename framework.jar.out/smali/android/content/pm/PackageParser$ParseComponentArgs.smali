@@ -43,21 +43,21 @@
     .param p12, "_enabledRes"    # I
 
     .prologue
-    .line 306
+    .line 310
     invoke-direct/range {p0 .. p8}, Landroid/content/pm/PackageParser$ParsePackageItemArgs;-><init>(Landroid/content/pm/PackageParser$Package;[Ljava/lang/String;IIIIII)V
 
-    .line 308
+    .line 312
     iput-object p9, p0, Landroid/content/pm/PackageParser$ParseComponentArgs;->sepProcesses:[Ljava/lang/String;
 
-    .line 309
+    .line 313
     iput p10, p0, Landroid/content/pm/PackageParser$ParseComponentArgs;->processRes:I
 
-    .line 310
+    .line 314
     iput p11, p0, Landroid/content/pm/PackageParser$ParseComponentArgs;->descriptionRes:I
 
-    .line 311
+    .line 315
     iput p12, p0, Landroid/content/pm/PackageParser$ParseComponentArgs;->enabledRes:I
 
-    .line 305
+    .line 309
     return-void
 .end method

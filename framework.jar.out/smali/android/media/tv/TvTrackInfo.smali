@@ -303,9 +303,7 @@
     move-object v0, p1
 
     .line 271
-    nop
-
-    nop
+    check-cast v0, Landroid/media/tv/TvTrackInfo;
 
     .line 272
     .local v0, "obj":Landroid/media/tv/TvTrackInfo;

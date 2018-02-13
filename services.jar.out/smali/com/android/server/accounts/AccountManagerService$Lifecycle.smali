@@ -24,10 +24,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 152
+    .line 153
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 151
+    .line 152
     return-void
 .end method
 
@@ -37,7 +37,7 @@
     .locals 2
 
     .prologue
-    .line 157
+    .line 158
     new-instance v0, Lcom/android/server/accounts/AccountManagerService;
 
     invoke-virtual {p0}, Lcom/android/server/accounts/AccountManagerService$Lifecycle;->getContext()Landroid/content/Context;
@@ -48,14 +48,14 @@
 
     iput-object v0, p0, Lcom/android/server/accounts/AccountManagerService$Lifecycle;->mService:Lcom/android/server/accounts/AccountManagerService;
 
-    .line 158
+    .line 159
     const-string/jumbo v0, "account"
 
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$Lifecycle;->mService:Lcom/android/server/accounts/AccountManagerService;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/accounts/AccountManagerService$Lifecycle;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 156
+    .line 157
     return-void
 .end method
 
@@ -64,11 +64,11 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 163
+    .line 164
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$Lifecycle;->mService:Lcom/android/server/accounts/AccountManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/accounts/AccountManagerService;->onUnlockUser(I)V
 
-    .line 162
+    .line 163
     return-void
 .end method

@@ -26,67 +26,67 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.backup.IBackupManager"
 
-.field static final TRANSACTION_acknowledgeFullBackupOrRestore:I = 0x10
+.field static final TRANSACTION_acknowledgeFullBackupOrRestore_15:I = 0x10
 
 .field static final TRANSACTION_agentConnected:I = 0x3
 
 .field static final TRANSACTION_agentDisconnected:I = 0x4
 
-.field static final TRANSACTION_backupNow:I = 0xc
+.field static final TRANSACTION_backupNow_11:I = 0xc
 
-.field static final TRANSACTION_beginRestoreSession:I = 0x19
+.field static final TRANSACTION_beginRestoreSession_24:I = 0x19
 
-.field static final TRANSACTION_clearBackupData:I = 0x2
+.field static final TRANSACTION_clearBackupData_1:I = 0x2
 
-.field static final TRANSACTION_dataChanged:I = 0x1
+.field static final TRANSACTION_dataChanged_0:I = 0x1
 
-.field static final TRANSACTION_fullBackup:I = 0xd
+.field static final TRANSACTION_fullBackup_12:I = 0xd
 
-.field static final TRANSACTION_fullRestore:I = 0xf
+.field static final TRANSACTION_fullRestore_14:I = 0xf
 
-.field static final TRANSACTION_fullTransportBackup:I = 0xe
+.field static final TRANSACTION_fullTransportBackup_13:I = 0xe
 
-.field static final TRANSACTION_getAvailableRestoreToken:I = 0x1d
+.field static final TRANSACTION_getAvailableRestoreToken_28:I = 0x1d
 
-.field static final TRANSACTION_getConfigurationIntent:I = 0x15
+.field static final TRANSACTION_getConfigurationIntent_20:I = 0x15
 
-.field static final TRANSACTION_getCurrentTransport:I = 0x11
+.field static final TRANSACTION_getCurrentTransport_16:I = 0x11
 
 .field static final TRANSACTION_getDataManagementIntent:I = 0x17
 
 .field static final TRANSACTION_getDataManagementLabel:I = 0x18
 
-.field static final TRANSACTION_getDestinationString:I = 0x16
+.field static final TRANSACTION_getDestinationString_21:I = 0x16
 
-.field static final TRANSACTION_getTransportWhitelist:I = 0x13
+.field static final TRANSACTION_getTransportWhitelist_18:I = 0x13
 
-.field static final TRANSACTION_hasBackupPassword:I = 0xb
+.field static final TRANSACTION_hasBackupPassword_10:I = 0xb
 
-.field static final TRANSACTION_isAppEligibleForBackup:I = 0x1e
+.field static final TRANSACTION_isAppEligibleForBackup_29:I = 0x1e
 
-.field static final TRANSACTION_isBackupEnabled:I = 0x9
+.field static final TRANSACTION_isBackupEnabled_8:I = 0x9
 
-.field static final TRANSACTION_isBackupServiceActive:I = 0x1c
+.field static final TRANSACTION_isBackupServiceActive_27:I = 0x1c
 
-.field static final TRANSACTION_listAllTransports:I = 0x12
+.field static final TRANSACTION_listAllTransports_17:I = 0x12
 
-.field static final TRANSACTION_opComplete:I = 0x1a
+.field static final TRANSACTION_opComplete_25:I = 0x1a
 
 .field static final TRANSACTION_requestBackup:I = 0x1f
 
 .field static final TRANSACTION_restoreAtInstall:I = 0x5
 
-.field static final TRANSACTION_selectBackupTransport:I = 0x14
+.field static final TRANSACTION_selectBackupTransport_19:I = 0x14
 
-.field static final TRANSACTION_setAutoRestore:I = 0x7
+.field static final TRANSACTION_setAutoRestore_6:I = 0x7
 
-.field static final TRANSACTION_setBackupEnabled:I = 0x6
+.field static final TRANSACTION_setBackupEnabled_5:I = 0x6
 
-.field static final TRANSACTION_setBackupPassword:I = 0xa
+.field static final TRANSACTION_setBackupPassword_9:I = 0xa
 
-.field static final TRANSACTION_setBackupProvisioned:I = 0x8
+.field static final TRANSACTION_setBackupProvisioned_7:I = 0x8
 
-.field static final TRANSACTION_setBackupServiceActive:I = 0x1b
+.field static final TRANSACTION_setBackupServiceActive_26:I = 0x1b
 
 
 # direct methods

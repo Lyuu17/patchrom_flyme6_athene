@@ -110,9 +110,7 @@
     move-object v0, v2
 
     .line 423
-    nop
-
-    nop
+    check-cast v0, Landroid/widget/AdapterView;
 
     .line 425
     .local v0, "adapterView":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"

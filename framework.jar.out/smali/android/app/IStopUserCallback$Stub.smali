@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IStopUserCallback"
 
-.field static final TRANSACTION_userStopAborted:I = 0x2
+.field static final TRANSACTION_userStopAborted_1:I = 0x2
 
-.field static final TRANSACTION_userStopped:I = 0x1
+.field static final TRANSACTION_userStopped_0:I = 0x1
 
 
 # direct methods
@@ -42,7 +42,7 @@
     .line 19
     const-string/jumbo v0, "android.app.IStopUserCallback"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/app/IStopUserCallback$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 17
     return-void

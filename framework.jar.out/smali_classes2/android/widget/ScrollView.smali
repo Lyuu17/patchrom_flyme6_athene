@@ -103,12 +103,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 175
-    const v0, 0x1010080
+    const v0, #android:attr@scrollViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 174
     return-void
 .end method
 
@@ -2171,7 +2169,6 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 1737
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/ScrollView;->isFlymeThemeLight()Z
@@ -2184,21 +2181,17 @@
 
     :cond_flyme_0
 
-    .line 1738
     iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
     if-eqz v7, :cond_3
 
-    .line 1739
     iget v3, p0, Landroid/widget/ScrollView;->mScrollY:I
 
-    .line 1740
     .local v3, "scrollY":I
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getClipToPadding()Z
 
     move-result v0
 
-    .line 1741
     .local v0, "clipToPadding":Z
     iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 

@@ -19,7 +19,7 @@
     .locals 1
 
     .prologue
-    .line 1058
+    .line 1085
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiConfigManager$PnoListComparator;-><init>(Lcom/android/server/wifi/WifiConfigManager$PnoListComparator;)V
@@ -35,14 +35,14 @@
     .param p2, "b"    # Landroid/net/wifi/WifiConfiguration;
 
     .prologue
-    .line 1061
+    .line 1088
     iget v0, p1, Landroid/net/wifi/WifiConfiguration;->numAssociation:I
 
     iget v1, p2, Landroid/net/wifi/WifiConfiguration;->numAssociation:I
 
     if-eq v0, v1, :cond_0
 
-    .line 1062
+    .line 1089
     iget v0, p2, Landroid/net/wifi/WifiConfiguration;->numAssociation:I
 
     int-to-long v0, v0
@@ -57,7 +57,7 @@
 
     return v0
 
-    .line 1064
+    .line 1091
     :cond_0
     iget v0, p2, Landroid/net/wifi/WifiConfiguration;->priority:I
 

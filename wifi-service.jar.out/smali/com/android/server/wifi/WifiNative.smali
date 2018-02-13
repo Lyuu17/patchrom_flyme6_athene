@@ -230,39 +230,39 @@
     .line 131
     sput-object v0, Lcom/android/server/wifi/WifiNative;->p2pNativeInterface:Lcom/android/server/wifi/WifiNative;
 
-    .line 1544
+    .line 1557
     sput v5, Lcom/android/server/wifi/WifiNative;->sCmdId:I
 
-    .line 1550
+    .line 1563
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lcom/android/server/wifi/WifiNative;->sWifiHalHandle:J
 
-    .line 1551
+    .line 1564
     sput-object v6, Lcom/android/server/wifi/WifiNative;->sWifiIfaceHandles:[J
 
-    .line 1552
+    .line 1565
     sput v4, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
-    .line 1912
+    .line 1925
     sput v3, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
-    .line 2010
+    .line 2023
     sput v3, Lcom/android/server/wifi/WifiNative;->sHotlistCmdId:I
 
-    .line 2232
+    .line 2245
     sput v3, Lcom/android/server/wifi/WifiNative;->sRttResponderCmdId:I
 
-    .line 2453
+    .line 2466
     sput-object v6, Lcom/android/server/wifi/WifiNative;->sWifiLoggerEventHandler:Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;
 
-    .line 2469
+    .line 2482
     sput v4, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
 
-    .line 2894
+    .line 2907
     sput v3, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
 
-    .line 3053
+    .line 3066
     sput v3, Lcom/android/server/wifi/WifiNative;->sRssiMonitorCmdId:I
 
     .line 95
@@ -441,7 +441,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1801
+    .line 1814
     invoke-static {p0}, Llibcore/util/HexEncoding;->encode([B)[C
 
     move-result-object v2
@@ -450,20 +450,20 @@
 
     move-result-object v0
 
-    .line 1803
+    .line 1816
     .local v0, "ssidHexString":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 1804
+    .line 1817
     return-object v3
 
-    .line 1807
+    .line 1820
     :cond_0
     invoke-static {v0}, Landroid/net/wifi/WifiSsid;->createFromHex(Ljava/lang/String;)Landroid/net/wifi/WifiSsid;
 
     move-result-object v1
 
-    .line 1809
+    .line 1822
     .local v1, "wifiSsid":Landroid/net/wifi/WifiSsid;
     return-object v1
 .end method
@@ -1240,7 +1240,7 @@
     .locals 2
 
     .prologue
-    .line 1546
+    .line 1559
     sget v0, Lcom/android/server/wifi/WifiNative;->sCmdId:I
 
     add-int/lit8 v1, v0, 0x1
@@ -1620,7 +1620,7 @@
     .param p3, "beaconCap"    # I
 
     .prologue
-    .line 1903
+    .line 1916
     sget-boolean v1, Lcom/android/server/wifi/WifiNative;->DBG:Z
 
     if-eqz v1, :cond_0
@@ -1649,23 +1649,23 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1905
+    .line 1918
     :cond_0
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 1906
+    .line 1919
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$ScanEventHandler;
     if-eqz v0, :cond_1
 
-    .line 1907
+    .line 1920
     const-string/jumbo v1, " onFullScanResult "
 
     invoke-static {p1, p3, v1}, Lcom/android/server/wifi/WifiNative;->populateScanResult(Landroid/net/wifi/ScanResult;ILjava/lang/String;)V
 
-    .line 1908
+    .line 1921
     invoke-interface {v0, p1, p2}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onFullScanResult(Landroid/net/wifi/ScanResult;I)V
 
-    .line 1902
+    .line 1915
     :cond_1
     return-void
 .end method
@@ -1676,21 +1676,21 @@
     .param p1, "results"    # [Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 2054
+    .line 2067
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sHotlistEventHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
 
-    .line 2055
+    .line 2068
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
     if-eqz v0, :cond_0
 
-    .line 2056
+    .line 2069
     invoke-interface {v0, p1}, Lcom/android/server/wifi/WifiNative$HotlistEventHandler;->onHotlistApFound([Landroid/net/wifi/ScanResult;)V
 
-    .line 2053
+    .line 2066
     :goto_0
     return-void
 
-    .line 2059
+    .line 2072
     :cond_0
     const-string/jumbo v1, "WifiNative-HAL"
 
@@ -1707,21 +1707,21 @@
     .param p1, "results"    # [Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 2065
+    .line 2078
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sHotlistEventHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
 
-    .line 2066
+    .line 2079
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
     if-eqz v0, :cond_0
 
-    .line 2067
+    .line 2080
     invoke-interface {v0, p1}, Lcom/android/server/wifi/WifiNative$HotlistEventHandler;->onHotlistApLost([Landroid/net/wifi/ScanResult;)V
 
-    .line 2064
+    .line 2077
     :goto_0
     return-void
 
-    .line 2070
+    .line 2083
     :cond_0
     const-string/jumbo v1, "WifiNative-HAL"
 
@@ -1739,20 +1739,20 @@
     .param p2, "beaconCaps"    # [I
 
     .prologue
-    .line 2955
+    .line 2968
     if-nez p1, :cond_0
 
-    .line 2956
+    .line 2969
     const-string/jumbo v2, "WifiNative-HAL"
 
     const-string/jumbo v3, "onPnoNetworkFound null results"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2957
+    .line 2970
     return-void
 
-    .line 2960
+    .line 2973
     :cond_0
     const-string/jumbo v2, "WifiNative-HAL"
 
@@ -1778,10 +1778,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2962
+    .line 2975
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sPnoEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 2963
+    .line 2976
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$PnoEventHandler;
     sget v2, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
 
@@ -1789,7 +1789,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2964
+    .line 2977
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -1798,7 +1798,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 2965
+    .line 2978
     const-string/jumbo v2, "WifiNative-HAL"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1819,38 +1819,38 @@
 
     move-result-object v3
 
-    .line 2966
+    .line 2979
     const-string/jumbo v4, " "
 
-    .line 2965
+    .line 2978
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 2966
+    .line 2979
     aget-object v4, p1, v1
 
     iget v4, v4, Landroid/net/wifi/ScanResult;->level:I
 
-    .line 2965
+    .line 2978
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 2966
+    .line 2979
     const-string/jumbo v4, " "
 
-    .line 2965
+    .line 2978
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 2966
+    .line 2979
     aget-object v4, p1, v1
 
     iget v4, v4, Landroid/net/wifi/ScanResult;->frequency:I
 
-    .line 2965
+    .line 2978
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -1861,7 +1861,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2968
+    .line 2981
     aget-object v2, p1, v1
 
     aget v3, p2, v1
@@ -1870,7 +1870,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/server/wifi/WifiNative;->populateScanResult(Landroid/net/wifi/ScanResult;ILjava/lang/String;)V
 
-    .line 2969
+    .line 2982
     aget-object v2, p1, v1
 
     aget-object v3, p1, v1
@@ -1883,21 +1883,21 @@
 
     iput-object v3, v2, Landroid/net/wifi/ScanResult;->wifiSsid:Landroid/net/wifi/WifiSsid;
 
-    .line 2964
+    .line 2977
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2972
+    .line 2985
     :cond_1
     invoke-interface {v0, p1}, Lcom/android/server/wifi/WifiNative$PnoEventHandler;->onPnoNetworkFound([Landroid/net/wifi/ScanResult;)V
 
-    .line 2954
+    .line 2967
     .end local v1    # "i":I
     :goto_1
     return-void
 
-    .line 2975
+    .line 2988
     :cond_2
     const-string/jumbo v2, "WifiNative-HAL"
 
@@ -1914,17 +1914,17 @@
     .param p1, "buffer"    # [B
 
     .prologue
-    .line 2457
+    .line 2470
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sWifiLoggerEventHandler:Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;
 
-    .line 2458
+    .line 2471
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;
     if-eqz v0, :cond_0
 
-    .line 2459
+    .line 2472
     invoke-interface {v0, p0, p1}, Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;->onRingBufferData(Lcom/android/server/wifi/WifiNative$RingBufferStatus;[B)V
 
-    .line 2456
+    .line 2469
     :cond_0
     return-void
 .end method
@@ -1935,17 +1935,17 @@
     .param p1, "curRssi"    # B
 
     .prologue
-    .line 3044
+    .line 3057
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sWifiRssiEventHandler:Lcom/android/server/wifi/WifiNative$WifiRssiEventHandler;
 
-    .line 3045
+    .line 3058
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$WifiRssiEventHandler;
     if-eqz v0, :cond_0
 
-    .line 3046
+    .line 3059
     invoke-interface {v0, p1}, Lcom/android/server/wifi/WifiNative$WifiRssiEventHandler;->onRssiThresholdBreached(B)V
 
-    .line 3043
+    .line 3056
     :cond_0
     return-void
 .end method
@@ -1956,10 +1956,10 @@
     .param p1, "results"    # [Landroid/net/wifi/RttManager$RttResult;
 
     .prologue
-    .line 2176
+    .line 2189
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sRttEventHandler:Lcom/android/server/wifi/WifiNative$RttEventHandler;
 
-    .line 2177
+    .line 2190
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$RttEventHandler;
     if-eqz v0, :cond_0
 
@@ -1967,7 +1967,7 @@
 
     if-ne p0, v1, :cond_0
 
-    .line 2178
+    .line 2191
     const-string/jumbo v1, "WifiNative-HAL"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1998,19 +1998,19 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2179
+    .line 2192
     invoke-interface {v0, p1}, Lcom/android/server/wifi/WifiNative$RttEventHandler;->onRttResults([Landroid/net/wifi/RttManager$RttResult;)V
 
-    .line 2180
+    .line 2193
     const/4 v1, 0x0
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
 
-    .line 2175
+    .line 2188
     :goto_0
     return-void
 
-    .line 2182
+    .line 2195
     :cond_0
     const-string/jumbo v1, "WifiNative-HAL"
 
@@ -2028,18 +2028,18 @@
 
     move-result-object v2
 
-    .line 2183
+    .line 2196
     const-string/jumbo v3, ", current id = "
 
-    .line 2182
+    .line 2195
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 2183
+    .line 2196
     sget v3, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
 
-    .line 2182
+    .line 2195
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -2059,17 +2059,17 @@
     .param p1, "event"    # I
 
     .prologue
-    .line 1794
+    .line 1807
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 1795
+    .line 1808
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$ScanEventHandler;
     if-eqz v0, :cond_0
 
-    .line 1796
+    .line 1809
     invoke-interface {v0, p1}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanStatus(I)V
 
-    .line 1793
+    .line 1806
     :cond_0
     return-void
 .end method
@@ -2080,21 +2080,21 @@
     .param p1, "results"    # [Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 2124
+    .line 2137
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeHandler:Lcom/android/server/wifi/WifiNative$SignificantWifiChangeEventHandler;
 
-    .line 2125
+    .line 2138
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$SignificantWifiChangeEventHandler;
     if-eqz v0, :cond_0
 
-    .line 2126
+    .line 2139
     invoke-interface {v0, p1}, Lcom/android/server/wifi/WifiNative$SignificantWifiChangeEventHandler;->onChangesFound([Landroid/net/wifi/ScanResult;)V
 
-    .line 2123
+    .line 2136
     :goto_0
     return-void
 
-    .line 2129
+    .line 2142
     :cond_0
     const-string/jumbo v1, "WifiNative-HAL"
 
@@ -2112,23 +2112,23 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 2435
+    .line 2448
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sTdlsEventHandler:Lcom/android/server/wifi/WifiNative$TdlsEventHandler;
 
-    .line 2436
+    .line 2449
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$TdlsEventHandler;
     if-nez v0, :cond_0
 
-    .line 2437
+    .line 2450
     const/4 v1, 0x0
 
     return v1
 
-    .line 2439
+    .line 2452
     :cond_0
     invoke-virtual {v0, p0, p1, p2}, Lcom/android/server/wifi/WifiNative$TdlsEventHandler;->onTdlsStatus(Ljava/lang/String;II)V
 
-    .line 2440
+    .line 2453
     const/4 v1, 0x1
 
     return v1
@@ -2140,17 +2140,17 @@
     .param p1, "errorCode"    # I
 
     .prologue
-    .line 2464
+    .line 2477
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sWifiLoggerEventHandler:Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;
 
-    .line 2465
+    .line 2478
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;
     if-eqz v0, :cond_0
 
-    .line 2466
+    .line 2479
     invoke-interface {v0, p1, p0}, Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;->onWifiAlert(I[B)V
 
-    .line 2463
+    .line 2476
     :cond_0
     return-void
 .end method
@@ -2160,15 +2160,15 @@
     .param p0, "buffer"    # [B
 
     .prologue
-    .line 2601
+    .line 2614
     sput-object p0, Lcom/android/server/wifi/WifiNative;->mFwMemoryDump:[B
 
-    .line 2602
+    .line 2615
     sget-boolean v0, Lcom/android/server/wifi/WifiNative;->DBG:Z
 
     if-eqz v0, :cond_0
 
-    .line 2603
+    .line 2616
     const-string/jumbo v1, "WifiNative-HAL"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2181,12 +2181,12 @@
 
     move-result-object v2
 
-    .line 2604
+    .line 2617
     if-nez p0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 2603
+    .line 2616
     :goto_0
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2198,11 +2198,11 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2600
+    .line 2613
     :cond_0
     return-void
 
-    .line 2604
+    .line 2617
     :cond_1
     array-length v0, p0
 
@@ -2217,24 +2217,24 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1390
+    .line 1401
     if-nez p1, :cond_0
 
     return-object v7
 
-    .line 1392
+    .line 1403
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/wifi/WifiNative;->p2pPeer(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1393
+    .line 1404
     .local v1, "peerInfo":Ljava/lang/String;
     if-nez v1, :cond_1
 
     return-object v7
 
-    .line 1394
+    .line 1405
     :cond_1
     const-string/jumbo v4, "\n"
 
@@ -2242,7 +2242,7 @@
 
     move-result-object v3
 
-    .line 1396
+    .line 1407
     .local v3, "tokens":[Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2262,7 +2262,7 @@
 
     move-result-object p2
 
-    .line 1397
+    .line 1408
     const/4 v4, 0x0
 
     array-length v5, v3
@@ -2272,7 +2272,7 @@
 
     aget-object v2, v3, v4
 
-    .line 1398
+    .line 1409
     .local v2, "token":Ljava/lang/String;
     invoke-virtual {v2, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -2280,14 +2280,14 @@
 
     if-eqz v6, :cond_4
 
-    .line 1399
+    .line 1410
     const-string/jumbo v4, "="
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1400
+    .line 1411
     .local v0, "nameValue":[Ljava/lang/String;
     array-length v4, v0
 
@@ -2295,13 +2295,13 @@
 
     if-eq v4, v5, :cond_3
 
-    .line 1404
+    .line 1415
     .end local v0    # "nameValue":[Ljava/lang/String;
     .end local v2    # "token":Ljava/lang/String;
     :cond_2
     return-object v7
 
-    .line 1401
+    .line 1412
     .restart local v0    # "nameValue":[Ljava/lang/String;
     .restart local v2    # "token":Ljava/lang/String;
     :cond_3
@@ -2311,7 +2311,7 @@
 
     return-object v4
 
-    .line 1397
+    .line 1408
     .end local v0    # "nameValue":[Ljava/lang/String;
     :cond_4
     add-int/lit8 v4, v4, 0x1
@@ -2326,30 +2326,30 @@
     .param p2, "dbg"    # Ljava/lang/String;
 
     .prologue
-    .line 1842
+    .line 1855
     if-nez p2, :cond_0
 
     const-string/jumbo p2, ""
 
-    .line 1844
+    .line 1857
     :cond_0
     new-instance v3, Lcom/android/server/wifi/util/InformationElementUtil$HtOperation;
 
     invoke-direct {v3}, Lcom/android/server/wifi/util/InformationElementUtil$HtOperation;-><init>()V
 
-    .line 1846
+    .line 1859
     .local v3, "htOperation":Lcom/android/server/wifi/util/InformationElementUtil$HtOperation;
     new-instance v6, Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;
 
     invoke-direct {v6}, Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;-><init>()V
 
-    .line 1848
+    .line 1861
     .local v6, "vhtOperation":Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;
     new-instance v2, Lcom/android/server/wifi/util/InformationElementUtil$ExtendedCapabilities;
 
     invoke-direct {v2}, Lcom/android/server/wifi/util/InformationElementUtil$ExtendedCapabilities;-><init>()V
 
-    .line 1851
+    .line 1864
     .local v2, "extendedCaps":Lcom/android/server/wifi/util/InformationElementUtil$ExtendedCapabilities;
     iget-object v7, p0, Landroid/net/wifi/ScanResult;->bytes:[B
 
@@ -2357,7 +2357,7 @@
 
     move-result-object v1
 
-    .line 1852
+    .line 1865
     .local v1, "elements":[Landroid/net/wifi/ScanResult$InformationElement;
     const/4 v7, 0x0
 
@@ -2368,7 +2368,7 @@
 
     aget-object v5, v1, v7
 
-    .line 1853
+    .line 1866
     .local v5, "ie":Landroid/net/wifi/ScanResult$InformationElement;
     iget v9, v5, Landroid/net/wifi/ScanResult$InformationElement;->id:I
 
@@ -2376,17 +2376,17 @@
 
     if-ne v9, v10, :cond_2
 
-    .line 1854
+    .line 1867
     invoke-virtual {v3, v5}, Lcom/android/server/wifi/util/InformationElementUtil$HtOperation;->from(Landroid/net/wifi/ScanResult$InformationElement;)V
 
-    .line 1852
+    .line 1865
     :cond_1
     :goto_1
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 1855
+    .line 1868
     :cond_2
     iget v9, v5, Landroid/net/wifi/ScanResult$InformationElement;->id:I
 
@@ -2394,12 +2394,12 @@
 
     if-ne v9, v10, :cond_3
 
-    .line 1856
+    .line 1869
     invoke-virtual {v6, v5}, Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;->from(Landroid/net/wifi/ScanResult$InformationElement;)V
 
     goto :goto_1
 
-    .line 1857
+    .line 1870
     :cond_3
     iget v9, v5, Landroid/net/wifi/ScanResult$InformationElement;->id:I
 
@@ -2407,24 +2407,24 @@
 
     if-ne v9, v10, :cond_1
 
-    .line 1858
+    .line 1871
     invoke-virtual {v2, v5}, Lcom/android/server/wifi/util/InformationElementUtil$ExtendedCapabilities;->from(Landroid/net/wifi/ScanResult$InformationElement;)V
 
     goto :goto_1
 
-    .line 1862
+    .line 1875
     .end local v5    # "ie":Landroid/net/wifi/ScanResult$InformationElement;
     :cond_4
     iget-boolean v7, v2, Lcom/android/server/wifi/util/InformationElementUtil$ExtendedCapabilities;->is80211McRTTResponder:Z
 
     if-eqz v7, :cond_6
 
-    .line 1863
+    .line 1876
     const-wide/16 v8, 0x2
 
     invoke-virtual {p0, v8, v9}, Landroid/net/wifi/ScanResult;->setFlag(J)V
 
-    .line 1869
+    .line 1882
     :goto_2
     invoke-virtual {v6}, Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;->isValid()Z
 
@@ -2432,28 +2432,28 @@
 
     if-eqz v7, :cond_7
 
-    .line 1870
+    .line 1883
     invoke-virtual {v6}, Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;->getChannelWidth()I
 
     move-result v7
 
     iput v7, p0, Landroid/net/wifi/ScanResult;->channelWidth:I
 
-    .line 1871
+    .line 1884
     invoke-virtual {v6}, Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;->getCenterFreq0()I
 
     move-result v7
 
     iput v7, p0, Landroid/net/wifi/ScanResult;->centerFreq0:I
 
-    .line 1872
+    .line 1885
     invoke-virtual {v6}, Lcom/android/server/wifi/util/InformationElementUtil$VhtOperation;->getCenterFreq1()I
 
     move-result v7
 
     iput v7, p0, Landroid/net/wifi/ScanResult;->centerFreq1:I
 
-    .line 1880
+    .line 1893
     :goto_3
     new-instance v0, Ljava/util/BitSet;
 
@@ -2461,7 +2461,7 @@
 
     invoke-direct {v0, v7}, Ljava/util/BitSet;-><init>(I)V
 
-    .line 1881
+    .line 1894
     .local v0, "beaconCapBits":Ljava/util/BitSet;
     const/4 v4, 0x0
 
@@ -2471,7 +2471,7 @@
 
     if-ge v4, v7, :cond_8
 
-    .line 1882
+    .line 1895
     const/4 v7, 0x1
 
     shl-int/2addr v7, v4
@@ -2480,16 +2480,16 @@
 
     if-eqz v7, :cond_5
 
-    .line 1883
+    .line 1896
     invoke-virtual {v0, v4}, Ljava/util/BitSet;->set(I)V
 
-    .line 1881
+    .line 1894
     :cond_5
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_4
 
-    .line 1865
+    .line 1878
     .end local v0    # "beaconCapBits":Ljava/util/BitSet;
     .end local v4    # "i":I
     :cond_6
@@ -2499,7 +2499,7 @@
 
     goto :goto_2
 
-    .line 1874
+    .line 1887
     :cond_7
     invoke-virtual {v3}, Lcom/android/server/wifi/util/InformationElementUtil$HtOperation;->getChannelWidth()I
 
@@ -2507,7 +2507,7 @@
 
     iput v7, p0, Landroid/net/wifi/ScanResult;->channelWidth:I
 
-    .line 1875
+    .line 1888
     iget v7, p0, Landroid/net/wifi/ScanResult;->frequency:I
 
     invoke-virtual {v3, v7}, Lcom/android/server/wifi/util/InformationElementUtil$HtOperation;->getCenterFreq0(I)I
@@ -2516,14 +2516,14 @@
 
     iput v7, p0, Landroid/net/wifi/ScanResult;->centerFreq0:I
 
-    .line 1876
+    .line 1889
     const/4 v7, 0x0
 
     iput v7, p0, Landroid/net/wifi/ScanResult;->centerFreq1:I
 
     goto :goto_3
 
-    .line 1886
+    .line 1899
     .restart local v0    # "beaconCapBits":Ljava/util/BitSet;
     .restart local v4    # "i":I
     :cond_8
@@ -2533,12 +2533,12 @@
 
     iput-object v7, p0, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 1889
+    .line 1902
     sget-boolean v7, Lcom/android/server/wifi/WifiNative;->DBG:Z
 
     if-eqz v7, :cond_9
 
-    .line 1890
+    .line 1903
     const-string/jumbo v8, "WifiNative-HAL"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -2573,80 +2573,80 @@
 
     move-result-object v7
 
-    .line 1891
+    .line 1904
     const-string/jumbo v9, " PrimaryFreq: "
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    .line 1891
+    .line 1904
     iget v9, p0, Landroid/net/wifi/ScanResult;->frequency:I
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    .line 1891
+    .line 1904
     const-string/jumbo v9, " mCenterfreq0: "
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    .line 1891
+    .line 1904
     iget v9, p0, Landroid/net/wifi/ScanResult;->centerFreq0:I
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    .line 1892
+    .line 1905
     const-string/jumbo v9, " mCenterfreq1: "
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    .line 1892
+    .line 1905
     iget v9, p0, Landroid/net/wifi/ScanResult;->centerFreq1:I
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    .line 1892
+    .line 1905
     iget-boolean v7, v2, Lcom/android/server/wifi/util/InformationElementUtil$ExtendedCapabilities;->is80211McRTTResponder:Z
 
     if-eqz v7, :cond_a
 
-    .line 1893
+    .line 1906
     const-string/jumbo v7, "Support RTT reponder: "
 
-    .line 1890
+    .line 1903
     :goto_5
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    .line 1894
+    .line 1907
     const-string/jumbo v9, " Capabilities: "
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    .line 1894
+    .line 1907
     iget-object v9, p0, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 1890
+    .line 1903
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
@@ -2657,14 +2657,14 @@
 
     invoke-static {v8, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1897
+    .line 1910
     :cond_9
     iput-object v1, p0, Landroid/net/wifi/ScanResult;->informationElements:[Landroid/net/wifi/ScanResult$InformationElement;
 
-    .line 1841
+    .line 1854
     return-void
 
-    .line 1893
+    .line 1906
     :cond_a
     const-string/jumbo v7, "Do not support RTT responder"
 
@@ -2744,6 +2744,9 @@
     return v1
 .end method
 
+.method public static native setApMode(Z)Z
+.end method
+
 .method private static native setBssidBlacklistNative(II[Ljava/lang/String;)Z
 .end method
 
@@ -2776,36 +2779,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1832
+    .line 1845
     if-eqz p0, :cond_0
 
     array-length v0, p0
 
     if-nez v0, :cond_1
 
-    .line 1833
+    .line 1846
     :cond_0
     return v1
 
-    .line 1832
+    .line 1845
     :cond_1
     if-eqz p1, :cond_0
 
-    .line 1836
+    .line 1849
     invoke-static {p0}, Lcom/android/server/wifi/WifiNative;->ssidConvert([B)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p1, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    .line 1837
+    .line 1850
     invoke-static {p0}, Lcom/android/server/wifi/WifiNative;->createWifiSsid([B)Landroid/net/wifi/WifiSsid;
 
     move-result-object v0
 
     iput-object v0, p1, Landroid/net/wifi/ScanResult;->wifiSsid:Landroid/net/wifi/WifiSsid;
 
-    .line 1838
+    .line 1851
     const/4 v0, 0x1
 
     return v0
@@ -2819,14 +2822,14 @@
     .param p0, "rawSsid"    # [B
 
     .prologue
-    .line 1815
+    .line 1828
     sget-object v4, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v4}, Ljava/nio/charset/Charset;->newDecoder()Ljava/nio/charset/CharsetDecoder;
 
     move-result-object v2
 
-    .line 1817
+    .line 1830
     .local v2, "decoder":Ljava/nio/charset/CharsetDecoder;
     :try_start_0
     invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
@@ -2837,7 +2840,7 @@
 
     move-result-object v1
 
-    .line 1818
+    .line 1831
     .local v1, "decoded":Ljava/nio/CharBuffer;
     invoke-virtual {v1}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
     :try_end_0
@@ -2845,27 +2848,27 @@
 
     move-result-object v3
 
-    .line 1823
+    .line 1836
     .end local v1    # "decoded":Ljava/nio/CharBuffer;
     :goto_0
     if-nez v3, :cond_0
 
-    .line 1824
+    .line 1837
     new-instance v3, Ljava/lang/String;
 
     sget-object v4, Ljava/nio/charset/StandardCharsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
     invoke-direct {v3, p0, v4}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
-    .line 1827
+    .line 1840
     :cond_0
     return-object v3
 
-    .line 1819
+    .line 1832
     :catch_0
     move-exception v0
 
-    .line 1820
+    .line 1833
     .local v0, "cce":Ljava/nio/charset/CharacterCodingException;
     const/4 v3, 0x0
 
@@ -2942,7 +2945,7 @@
     .param p1, "bssid"    # Ljava/lang/String;
 
     .prologue
-    .line 906
+    .line 917
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -2953,7 +2956,7 @@
 
     return v0
 
-    .line 907
+    .line 918
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2984,12 +2987,12 @@
     .locals 1
 
     .prologue
-    .line 988
+    .line 999
     const-string/jumbo v0, "BSS_FLUSH 0"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
-    .line 987
+    .line 998
     return-void
 .end method
 
@@ -3000,12 +3003,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2211
+    .line 2224
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2212
+    .line 2225
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -3013,7 +3016,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2213
+    .line 2226
     sget v0, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -3022,17 +3025,17 @@
 
     monitor-exit v1
 
-    .line 2214
+    .line 2227
     return v3
 
-    .line 2217
+    .line 2230
     :cond_0
     const/4 v0, 0x0
 
     :try_start_1
     sput v0, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
 
-    .line 2219
+    .line 2232
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
@@ -3043,21 +3046,21 @@
 
     if-eqz v0, :cond_1
 
-    .line 2220
+    .line 2233
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sRttEventHandler:Lcom/android/server/wifi/WifiNative$RttEventHandler;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2221
+    .line 2234
     const/4 v0, 0x1
 
     monitor-exit v1
 
     return v0
 
-    .line 2223
+    .line 2236
     :cond_1
     :try_start_2
     const-string/jumbo v0, "WifiNative-HAL"
@@ -3070,16 +3073,16 @@
 
     monitor-exit v1
 
-    .line 2224
+    .line 2237
     return v3
 
     :cond_2
     monitor-exit v1
 
-    .line 2227
+    .line 2240
     return v3
 
-    .line 2211
+    .line 2224
     :catchall_0
     move-exception v0
 
@@ -3092,7 +3095,7 @@
     .locals 1
 
     .prologue
-    .line 1072
+    .line 1083
     const-string/jumbo v0, "WPS_CANCEL"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -3106,7 +3109,7 @@
     .locals 1
 
     .prologue
-    .line 911
+    .line 922
     const-string/jumbo v0, "BLACKLIST clear"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -3175,7 +3178,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3117
+    .line 3130
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3200,18 +3203,18 @@
 
     move-result-object v0
 
-    .line 3118
+    .line 3131
     .local v0, "logMsg":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/wifi/WifiNative;->mTAG:Ljava/lang/String;
 
     invoke-static {v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3119
+    .line 3132
     sget-object v3, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 3120
+    .line 3133
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -3219,18 +3222,18 @@
 
     if-eqz v4, :cond_2
 
-    .line 3121
+    .line 3134
     sget v4, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v4, p1}, Lcom/android/server/wifi/WifiNative;->configureNeighborDiscoveryOffload(IZ)I
 
     move-result v1
 
-    .line 3122
+    .line 3135
     .local v1, "ret":I
     if-eqz v1, :cond_0
 
-    .line 3123
+    .line 3136
     iget-object v4, p0, Lcom/android/server/wifi/WifiNative;->mTAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -3259,7 +3262,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3125
+    .line 3138
     :cond_0
     if-nez v1, :cond_1
 
@@ -3274,10 +3277,10 @@
     :cond_2
     monitor-exit v3
 
-    .line 3128
+    .line 3141
     return v2
 
-    .line 3119
+    .line 3132
     :catchall_0
     move-exception v2
 
@@ -3406,12 +3409,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2263
+    .line 2276
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2264
+    .line 2277
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
     :try_end_0
@@ -3425,14 +3428,14 @@
 
     return v2
 
-    .line 2265
+    .line 2278
     :cond_0
     :try_start_1
     sget v0, Lcom/android/server/wifi/WifiNative;->sRttResponderCmdId:I
 
     if-nez v0, :cond_1
 
-    .line 2266
+    .line 2279
     iget-object v0, p0, Lcom/android/server/wifi/WifiNative;->mTAG:Ljava/lang/String;
 
     const-string/jumbo v2, "responder role not enabled yet"
@@ -3441,21 +3444,21 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2267
+    .line 2280
     const/4 v0, 0x1
 
     monitor-exit v1
 
     return v0
 
-    .line 2269
+    .line 2282
     :cond_1
     const/4 v0, 0x0
 
     :try_start_2
     sput v0, Lcom/android/server/wifi/WifiNative;->sRttResponderCmdId:I
 
-    .line 2270
+    .line 2283
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sRttResponderCmdId:I
@@ -3470,13 +3473,26 @@
 
     return v0
 
-    .line 2263
+    .line 2276
     :catchall_0
     move-exception v0
 
     monitor-exit v1
 
     throw v0
+.end method
+
+.method public disableScanOffload()V
+    .locals 1
+
+    .prologue
+    .line 906
+    const-string/jumbo v0, "SET disable_scan_offload 1"
+
+    invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
+
+    .line 905
+    return-void
 .end method
 
 .method public disconnect()Z
@@ -3521,19 +3537,19 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 939
+    .line 950
     if-eqz p1, :cond_0
 
-    .line 940
+    .line 951
     const-string/jumbo v0, "STA_AUTOCONNECT 1"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
-    .line 938
+    .line 949
     :goto_0
     return-void
 
-    .line 942
+    .line 953
     :cond_0
     const-string/jumbo v0, "STA_AUTOCONNECT 0"
 
@@ -3549,16 +3565,16 @@
     .param p3, "tdlsCallBack"    # Lcom/android/server/wifi/WifiNative$TdlsEventHandler;
 
     .prologue
-    .line 2386
+    .line 2399
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2387
+    .line 2400
     :try_start_0
     sput-object p3, Lcom/android/server/wifi/WifiNative;->sTdlsEventHandler:Lcom/android/server/wifi/WifiNative$TdlsEventHandler;
 
-    .line 2388
+    .line 2401
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1, p2}, Lcom/android/server/wifi/WifiNative;->enableDisableTdlsNative(IZLjava/lang/String;)Z
@@ -3571,7 +3587,7 @@
 
     return v0
 
-    .line 2386
+    .line 2399
     :catchall_0
     move-exception v0
 
@@ -3723,12 +3739,12 @@
 
     const/4 v5, 0x0
 
-    .line 2242
+    .line 2255
     sget-object v3, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 2243
+    .line 2256
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
     :try_end_0
@@ -3742,14 +3758,14 @@
 
     return-object v5
 
-    .line 2244
+    .line 2257
     :cond_0
     :try_start_1
     sget v4, Lcom/android/server/wifi/WifiNative;->sRttResponderCmdId:I
 
     if-eqz v4, :cond_2
 
-    .line 2245
+    .line 2258
     sget-boolean v2, Lcom/android/server/wifi/WifiNative;->DBG:Z
 
     if-eqz v2, :cond_1
@@ -3765,34 +3781,34 @@
     :cond_1
     monitor-exit v3
 
-    .line 2246
+    .line 2259
     return-object v5
 
-    .line 2248
+    .line 2261
     :cond_2
     :try_start_2
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
 
     move-result v1
 
-    .line 2250
+    .line 2263
     .local v1, "id":I
     sget v4, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     const/4 v5, 0x0
 
-    .line 2249
+    .line 2262
     invoke-static {v4, v1, p1, v5}, Lcom/android/server/wifi/WifiNative;->enableRttResponderNative(IIILcom/android/server/wifi/WifiNative$WifiChannelInfo;)Landroid/net/wifi/RttManager$ResponderConfig;
 
     move-result-object v0
 
-    .line 2251
+    .line 2264
     .local v0, "config":Landroid/net/wifi/RttManager$ResponderConfig;
     if-eqz v0, :cond_3
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sRttResponderCmdId:I
 
-    .line 2252
+    .line 2265
     :cond_3
     sget-boolean v4, Lcom/android/server/wifi/WifiNative;->DBG:Z
 
@@ -3830,10 +3846,10 @@
     :cond_5
     monitor-exit v3
 
-    .line 2253
+    .line 2266
     return-object v0
 
-    .line 2242
+    .line 2255
     .end local v0    # "config":Landroid/net/wifi/RttManager$ResponderConfig;
     .end local v1    # "id":I
     :catchall_0
@@ -3854,6 +3870,19 @@
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
     .line 897
+    return-void
+.end method
+
+.method public enableTdlsExtControl()V
+    .locals 1
+
+    .prologue
+    .line 902
+    const-string/jumbo v0, "SET tdls_external_control 1"
+
+    invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
+
+    .line 901
     return-void
 .end method
 
@@ -3889,7 +3918,7 @@
     .param p2, "subtypes"    # Ljava/lang/String;
 
     .prologue
-    .line 1496
+    .line 1507
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3929,12 +3958,12 @@
     .locals 2
 
     .prologue
-    .line 2345
+    .line 2358
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2346
+    .line 2359
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -3942,7 +3971,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2347
+    .line 2360
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getApfCapabilitiesNative(I)Landroid/net/apf/ApfCapabilities;
@@ -3955,7 +3984,7 @@
 
     return-object v0
 
-    .line 2349
+    .line 2362
     :cond_0
     const/4 v0, 0x0
 
@@ -3963,7 +3992,7 @@
 
     return-object v0
 
-    .line 2345
+    .line 2358
     :catchall_0
     move-exception v0
 
@@ -3977,12 +4006,12 @@
     .param p1, "band"    # I
 
     .prologue
-    .line 2290
+    .line 2303
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2291
+    .line 2304
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -3990,7 +4019,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2292
+    .line 2305
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->getChannelsForBandNative(II)[I
@@ -4003,7 +4032,7 @@
 
     return-object v0
 
-    .line 2294
+    .line 2307
     :cond_0
     const/4 v0, 0x0
 
@@ -4011,7 +4040,7 @@
 
     return-object v0
 
-    .line 2290
+    .line 2303
     :catchall_0
     move-exception v0
 
@@ -4024,12 +4053,12 @@
     .locals 2
 
     .prologue
-    .line 2627
+    .line 2640
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2628
+    .line 2641
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4037,7 +4066,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2629
+    .line 2642
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getDriverStateDumpNative(I)[B
@@ -4050,7 +4079,7 @@
 
     return-object v0
 
-    .line 2631
+    .line 2644
     :cond_0
     const/4 v0, 0x0
 
@@ -4058,7 +4087,7 @@
 
     return-object v0
 
-    .line 2627
+    .line 2640
     :catchall_0
     move-exception v0
 
@@ -4071,12 +4100,12 @@
     .locals 2
 
     .prologue
-    .line 2536
+    .line 2549
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2537
+    .line 2550
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4084,7 +4113,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2538
+    .line 2551
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getDriverVersionNative(I)Ljava/lang/String;
@@ -4097,7 +4126,7 @@
 
     return-object v0
 
-    .line 2540
+    .line 2553
     :cond_0
     :try_start_1
     const-string/jumbo v0, ""
@@ -4108,7 +4137,7 @@
 
     return-object v0
 
-    .line 2536
+    .line 2549
     :catchall_0
     move-exception v0
 
@@ -4121,12 +4150,12 @@
     .locals 2
 
     .prologue
-    .line 2548
+    .line 2561
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2549
+    .line 2562
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4134,7 +4163,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2550
+    .line 2563
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getFirmwareVersionNative(I)Ljava/lang/String;
@@ -4147,7 +4176,7 @@
 
     return-object v0
 
-    .line 2552
+    .line 2565
     :cond_0
     :try_start_1
     const-string/jumbo v0, ""
@@ -4158,7 +4187,7 @@
 
     return-object v0
 
-    .line 2548
+    .line 2561
     :catchall_0
     move-exception v0
 
@@ -4187,12 +4216,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2610
+    .line 2623
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2611
+    .line 2624
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4200,7 +4229,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2612
+    .line 2625
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v1}, Lcom/android/server/wifi/WifiNative;->getFwMemoryDumpNative(I)Z
@@ -4209,10 +4238,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 2613
+    .line 2626
     sget-object v0, Lcom/android/server/wifi/WifiNative;->mFwMemoryDump:[B
 
-    .line 2614
+    .line 2627
     .local v0, "fwMemoryDump":[B
     const/4 v1, 0x0
 
@@ -4222,23 +4251,23 @@
 
     monitor-exit v2
 
-    .line 2615
+    .line 2628
     return-object v0
 
     .end local v0    # "fwMemoryDump":[B
     :cond_0
     monitor-exit v2
 
-    .line 2617
+    .line 2630
     return-object v3
 
     :cond_1
     monitor-exit v2
 
-    .line 2620
+    .line 2633
     return-object v3
 
-    .line 2610
+    .line 2623
     :catchall_0
     move-exception v1
 
@@ -4252,10 +4281,10 @@
     .param p1, "deviceAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 1365
+    .line 1376
     const/4 v1, 0x0
 
-    .line 1366
+    .line 1377
     .local v1, "gc":I
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4265,13 +4294,13 @@
 
     return v1
 
-    .line 1367
+    .line 1378
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/wifi/WifiNative;->p2pPeer(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1368
+    .line 1379
     .local v3, "peerInfo":Ljava/lang/String;
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4281,7 +4310,7 @@
 
     return v1
 
-    .line 1370
+    .line 1381
     :cond_1
     const-string/jumbo v6, "\n"
 
@@ -4289,7 +4318,7 @@
 
     move-result-object v5
 
-    .line 1371
+    .line 1382
     .local v5, "tokens":[Ljava/lang/String;
     const/4 v6, 0x0
 
@@ -4300,7 +4329,7 @@
 
     aget-object v4, v5, v6
 
-    .line 1372
+    .line 1383
     .local v4, "token":Ljava/lang/String;
     const-string/jumbo v8, "group_capab="
 
@@ -4310,14 +4339,14 @@
 
     if-eqz v8, :cond_4
 
-    .line 1373
+    .line 1384
     const-string/jumbo v6, "="
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1374
+    .line 1385
     .local v2, "nameValue":[Ljava/lang/String;
     array-length v6, v2
 
@@ -4325,13 +4354,13 @@
 
     if-eq v6, v7, :cond_3
 
-    .line 1382
+    .line 1393
     .end local v2    # "nameValue":[Ljava/lang/String;
     .end local v4    # "token":Ljava/lang/String;
     :cond_2
     return v1
 
-    .line 1376
+    .line 1387
     .restart local v2    # "nameValue":[Ljava/lang/String;
     .restart local v4    # "token":Ljava/lang/String;
     :cond_3
@@ -4352,15 +4381,15 @@
 
     return v6
 
-    .line 1377
+    .line 1388
     :catch_0
     move-exception v0
 
-    .line 1378
+    .line 1389
     .local v0, "e":Ljava/lang/NumberFormatException;
     return v1
 
-    .line 1371
+    .line 1382
     .end local v0    # "e":Ljava/lang/NumberFormatException;
     .end local v2    # "nameValue":[Ljava/lang/String;
     :cond_4
@@ -4384,12 +4413,12 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 1635
+    .line 1648
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1636
+    .line 1649
     :try_start_0
     invoke-static {p1}, Lcom/android/server/wifi/WifiNative;->getInterfaceNameNative(I)Ljava/lang/String;
     :try_end_0
@@ -4401,7 +4430,7 @@
 
     return-object v1
 
-    .line 1635
+    .line 1648
     :catchall_0
     move-exception v1
 
@@ -4715,7 +4744,7 @@
     .locals 1
 
     .prologue
-    .line 1507
+    .line 1518
     const-string/jumbo v0, "NFC_GET_HANDOVER_REQ NDEF P2P-CR"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doStringCommand(Ljava/lang/String;)Ljava/lang/String;
@@ -4729,7 +4758,7 @@
     .locals 1
 
     .prologue
-    .line 1511
+    .line 1522
     const-string/jumbo v0, "NFC_GET_HANDOVER_SEL NDEF P2P-CR"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doStringCommand(Ljava/lang/String;)Ljava/lang/String;
@@ -4744,7 +4773,7 @@
     .param p1, "netId"    # I
 
     .prologue
-    .line 1503
+    .line 1514
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4775,12 +4804,12 @@
     .param p1, "ringName"    # Ljava/lang/String;
 
     .prologue
-    .line 2589
+    .line 2602
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2590
+    .line 2603
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4788,7 +4817,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2591
+    .line 2604
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->getRingBufferDataNative(ILjava/lang/String;)Z
@@ -4801,7 +4830,7 @@
 
     return v0
 
-    .line 2593
+    .line 2606
     :cond_0
     const/4 v0, 0x0
 
@@ -4809,7 +4838,7 @@
 
     return v0
 
-    .line 2589
+    .line 2602
     :catchall_0
     move-exception v0
 
@@ -4822,12 +4851,12 @@
     .locals 2
 
     .prologue
-    .line 2578
+    .line 2591
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2579
+    .line 2592
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4835,7 +4864,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2580
+    .line 2593
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getRingBufferStatusNative(I)[Lcom/android/server/wifi/WifiNative$RingBufferStatus;
@@ -4848,7 +4877,7 @@
 
     return-object v0
 
-    .line 2582
+    .line 2595
     :cond_0
     const/4 v0, 0x0
 
@@ -4856,7 +4885,7 @@
 
     return-object v0
 
-    .line 2578
+    .line 2591
     :catchall_0
     move-exception v0
 
@@ -4869,12 +4898,12 @@
     .locals 2
 
     .prologue
-    .line 2334
+    .line 2347
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2335
+    .line 2348
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4882,7 +4911,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2336
+    .line 2349
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getRttCapabilitiesNative(I)Landroid/net/wifi/RttManager$RttCapabilities;
@@ -4895,7 +4924,7 @@
 
     return-object v0
 
-    .line 2338
+    .line 2351
     :cond_0
     const/4 v0, 0x0
 
@@ -4903,7 +4932,7 @@
 
     return-object v0
 
-    .line 2334
+    .line 2347
     :catchall_0
     move-exception v0
 
@@ -4919,12 +4948,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2876
+    .line 2889
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2877
+    .line 2890
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -4932,18 +4961,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 2878
+    .line 2891
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v1, p1}, Lcom/android/server/wifi/WifiNative;->getRxPktFatesNative(I[Lcom/android/server/wifi/WifiNative$RxFateReport;)I
 
     move-result v0
 
-    .line 2879
+    .line 2892
     .local v0, "res":I
     if-eqz v0, :cond_0
 
-    .line 2880
+    .line 2893
     const-string/jumbo v1, "WifiNative-HAL"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4970,10 +4999,10 @@
 
     monitor-exit v2
 
-    .line 2881
+    .line 2894
     return v5
 
-    .line 2883
+    .line 2896
     :cond_0
     const/4 v1, 0x1
 
@@ -4985,10 +5014,10 @@
     :cond_1
     monitor-exit v2
 
-    .line 2886
+    .line 2899
     return v5
 
-    .line 2876
+    .line 2889
     :catchall_0
     move-exception v1
 
@@ -5002,12 +5031,12 @@
     .param p1, "capabilities"    # Lcom/android/server/wifi/WifiNative$ScanCapabilities;
 
     .prologue
-    .line 1656
+    .line 1669
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1657
+    .line 1670
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -5033,7 +5062,7 @@
 
     goto :goto_0
 
-    .line 1656
+    .line 1669
     :catchall_0
     move-exception v0
 
@@ -5868,15 +5897,15 @@
     .param p1, "flush"    # Z
 
     .prologue
-    .line 1991
+    .line 2004
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1992
+    .line 2005
     const/4 v0, 0x0
 
-    .line 1993
+    .line 2006
     .local v0, "sd":[Landroid/net/wifi/WifiScanner$ScanData;
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
@@ -5885,7 +5914,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1994
+    .line 2007
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v1, p1}, Lcom/android/server/wifi/WifiNative;->getScanResultsNative(IZ)[Landroid/net/wifi/WifiScanner$ScanData;
@@ -5894,17 +5923,17 @@
 
     move-result-object v0
 
-    .line 1997
+    .line 2010
     .end local v0    # "sd":[Landroid/net/wifi/WifiScanner$ScanData;
     :cond_0
     if-eqz v0, :cond_1
 
     monitor-exit v2
 
-    .line 1998
+    .line 2011
     return-object v0
 
-    .line 2000
+    .line 2013
     :cond_1
     const/4 v1, 0x0
 
@@ -5917,7 +5946,7 @@
 
     return-object v1
 
-    .line 1991
+    .line 2004
     :catchall_0
     move-exception v1
 
@@ -5930,12 +5959,12 @@
     .locals 3
 
     .prologue
-    .line 2156
+    .line 2169
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2157
+    .line 2170
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -5943,7 +5972,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2158
+    .line 2171
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getSupportedFeatureSetNative(I)I
@@ -5956,7 +5985,7 @@
 
     return v0
 
-    .line 2160
+    .line 2173
     :cond_0
     :try_start_1
     const-string/jumbo v0, "WifiNative-HAL"
@@ -5967,14 +5996,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2161
+    .line 2174
     const/4 v0, 0x0
 
     monitor-exit v1
 
     return v0
 
-    .line 2156
+    .line 2169
     :catchall_0
     move-exception v0
 
@@ -5987,12 +6016,12 @@
     .locals 2
 
     .prologue
-    .line 2504
+    .line 2517
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2505
+    .line 2518
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6000,7 +6029,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2506
+    .line 2519
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getSupportedLoggerFeatureSetNative(I)I
@@ -6013,7 +6042,7 @@
 
     return v0
 
-    .line 2508
+    .line 2521
     :cond_0
     const/4 v0, 0x0
 
@@ -6021,7 +6050,7 @@
 
     return v0
 
-    .line 2504
+    .line 2517
     :catchall_0
     move-exception v0
 
@@ -6034,12 +6063,12 @@
     .locals 2
 
     .prologue
-    .line 2425
+    .line 2438
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2426
+    .line 2439
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6047,7 +6076,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2427
+    .line 2440
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getTdlsCapabilitiesNative(I)Lcom/android/server/wifi/WifiNative$TdlsCapabilities;
@@ -6060,7 +6089,7 @@
 
     return-object v0
 
-    .line 2429
+    .line 2442
     :cond_0
     const/4 v0, 0x0
 
@@ -6068,7 +6097,7 @@
 
     return-object v0
 
-    .line 2425
+    .line 2438
     :catchall_0
     move-exception v0
 
@@ -6082,12 +6111,12 @@
     .param p1, "macAdd"    # Ljava/lang/String;
 
     .prologue
-    .line 2402
+    .line 2415
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2403
+    .line 2416
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6095,7 +6124,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2404
+    .line 2417
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->getTdlsStatusNative(ILjava/lang/String;)Lcom/android/server/wifi/WifiNative$TdlsStatus;
@@ -6108,7 +6137,7 @@
 
     return-object v0
 
-    .line 2406
+    .line 2419
     :cond_0
     const/4 v0, 0x0
 
@@ -6116,7 +6145,7 @@
 
     return-object v0
 
-    .line 2402
+    .line 2415
     :catchall_0
     move-exception v0
 
@@ -6132,12 +6161,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2856
+    .line 2869
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2857
+    .line 2870
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6145,18 +6174,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 2858
+    .line 2871
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v1, p1}, Lcom/android/server/wifi/WifiNative;->getTxPktFatesNative(I[Lcom/android/server/wifi/WifiNative$TxFateReport;)I
 
     move-result v0
 
-    .line 2859
+    .line 2872
     .local v0, "res":I
     if-eqz v0, :cond_0
 
-    .line 2860
+    .line 2873
     const-string/jumbo v1, "WifiNative-HAL"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -6183,10 +6212,10 @@
 
     monitor-exit v2
 
-    .line 2861
+    .line 2874
     return v5
 
-    .line 2863
+    .line 2876
     :cond_0
     const/4 v1, 0x1
 
@@ -6198,10 +6227,10 @@
     :cond_1
     monitor-exit v2
 
-    .line 2866
+    .line 2879
     return v5
 
-    .line 2856
+    .line 2869
     :catchall_0
     move-exception v1
 
@@ -6217,18 +6246,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2135
+    .line 2148
     if-nez p1, :cond_0
 
     return-object v2
 
-    .line 2136
+    .line 2149
     :cond_0
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2137
+    .line 2150
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6236,7 +6265,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2138
+    .line 2151
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getWifiLinkLayerStatsNative(I)Landroid/net/wifi/WifiLinkLayerStats;
@@ -6252,10 +6281,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 2140
+    .line 2153
     return-object v2
 
-    .line 2136
+    .line 2149
     :catchall_0
     move-exception v0
 
@@ -6268,7 +6297,7 @@
     .locals 3
 
     .prologue
-    .line 3104
+    .line 3117
     const-string/jumbo v0, "WifiNative-HAL"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6293,12 +6322,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3105
+    .line 3118
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 3106
+    .line 3119
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6306,7 +6335,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3107
+    .line 3120
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getWlanWakeReasonCountNative(I)Landroid/net/wifi/WifiWakeReasonAndCounts;
@@ -6319,7 +6348,7 @@
 
     return-object v0
 
-    .line 3109
+    .line 3122
     :cond_0
     const/4 v0, 0x0
 
@@ -6327,7 +6356,7 @@
 
     return-object v0
 
-    .line 3105
+    .line 3118
     :catchall_0
     move-exception v0
 
@@ -6361,7 +6390,7 @@
     .param p1, "selectMessage"    # Ljava/lang/String;
 
     .prologue
-    .line 1515
+    .line 1526
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6392,12 +6421,12 @@
     .param p1, "filter"    # [B
 
     .prologue
-    .line 2356
+    .line 2369
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2357
+    .line 2370
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6405,7 +6434,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2358
+    .line 2371
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->installPacketFilterNative(I[B)Z
@@ -6418,7 +6447,7 @@
 
     return v0
 
-    .line 2360
+    .line 2373
     :cond_0
     const/4 v0, 0x0
 
@@ -6426,7 +6455,7 @@
 
     return v0
 
-    .line 2356
+    .line 2369
     :catchall_0
     move-exception v0
 
@@ -6469,12 +6498,12 @@
     .locals 2
 
     .prologue
-    .line 2301
+    .line 2314
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2302
+    .line 2315
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -6482,7 +6511,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2303
+    .line 2316
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->isGetChannelsForBandSupportedNative()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -6493,7 +6522,7 @@
 
     return v0
 
-    .line 2305
+    .line 2318
     :cond_0
     const/4 v0, 0x0
 
@@ -6501,7 +6530,7 @@
 
     return v0
 
-    .line 2301
+    .line 2314
     :catchall_0
     move-exception v0
 
@@ -6514,7 +6543,7 @@
     .locals 4
 
     .prologue
-    .line 1614
+    .line 1627
     sget-wide v0, Lcom/android/server/wifi/WifiNative;->sWifiHalHandle:J
 
     const-wide/16 v2, 0x0
@@ -6644,7 +6673,7 @@
     .locals 1
 
     .prologue
-    .line 1269
+    .line 1280
     const-string/jumbo v0, "P2P_CANCEL"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -6662,33 +6691,33 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1218
+    .line 1229
     if-nez p1, :cond_0
 
     return-object v6
 
-    .line 1219
+    .line 1230
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1220
+    .line 1231
     .local v0, "args":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v5, p1, Landroid/net/wifi/p2p/WifiP2pConfig;->wps:Landroid/net/wifi/WpsInfo;
 
-    .line 1221
+    .line 1232
     .local v5, "wps":Landroid/net/wifi/WpsInfo;
     iget-object v6, p1, Landroid/net/wifi/p2p/WifiP2pConfig;->deviceAddress:Ljava/lang/String;
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1223
+    .line 1234
     iget v6, v5, Landroid/net/wifi/WpsInfo;->setup:I
 
     packed-switch v6, :pswitch_data_0
 
-    .line 1246
+    .line 1257
     :goto_0
     iget v6, p1, Landroid/net/wifi/p2p/WifiP2pConfig;->netId:I
 
@@ -6696,25 +6725,25 @@
 
     if-ne v6, v7, :cond_1
 
-    .line 1247
+    .line 1258
     const-string/jumbo v6, "persistent"
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1250
+    .line 1261
     :cond_1
     if-eqz p2, :cond_3
 
-    .line 1251
+    .line 1262
     const-string/jumbo v6, "join"
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1262
+    .line 1273
     :goto_1
     const-string/jumbo v1, "P2P_CONNECT "
 
-    .line 1263
+    .line 1274
     .local v1, "command":Ljava/lang/String;
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -6759,7 +6788,7 @@
 
     goto :goto_2
 
-    .line 1225
+    .line 1236
     .end local v1    # "command":Ljava/lang/String;
     .end local v3    # "s":Ljava/lang/String;
     .end local v4    # "s$iterator":Ljava/util/Iterator;
@@ -6770,7 +6799,7 @@
 
     goto :goto_0
 
-    .line 1228
+    .line 1239
     :pswitch_1
     iget-object v6, v5, Landroid/net/wifi/WpsInfo;->pin:Ljava/lang/String;
 
@@ -6780,12 +6809,12 @@
 
     if-eqz v6, :cond_2
 
-    .line 1229
+    .line 1240
     const-string/jumbo v6, "pin"
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1233
+    .line 1244
     :goto_3
     const-string/jumbo v6, "display"
 
@@ -6793,7 +6822,7 @@
 
     goto :goto_0
 
-    .line 1231
+    .line 1242
     :cond_2
     iget-object v6, v5, Landroid/net/wifi/WpsInfo;->pin:Ljava/lang/String;
 
@@ -6801,37 +6830,37 @@
 
     goto :goto_3
 
-    .line 1236
+    .line 1247
     :pswitch_2
     iget-object v6, v5, Landroid/net/wifi/WpsInfo;->pin:Ljava/lang/String;
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1237
+    .line 1248
     const-string/jumbo v6, "keypad"
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1240
+    .line 1251
     :pswitch_3
     iget-object v6, v5, Landroid/net/wifi/WpsInfo;->pin:Ljava/lang/String;
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1241
+    .line 1252
     const-string/jumbo v6, "label"
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1255
+    .line 1266
     :cond_3
     iget v2, p1, Landroid/net/wifi/p2p/WifiP2pConfig;->groupOwnerIntent:I
 
-    .line 1256
+    .line 1267
     .local v2, "groupOwnerIntent":I
     if-ltz v2, :cond_4
 
@@ -6839,11 +6868,11 @@
 
     if-le v2, v6, :cond_5
 
-    .line 1257
+    .line 1268
     :cond_4
     const/4 v2, 0x6
 
-    .line 1259
+    .line 1270
     :cond_5
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -6867,7 +6896,7 @@
 
     goto/16 :goto_1
 
-    .line 1265
+    .line 1276
     .end local v2    # "groupOwnerIntent":I
     .restart local v1    # "command":Ljava/lang/String;
     .restart local v4    # "s$iterator":Ljava/util/Iterator;
@@ -6878,7 +6907,7 @@
 
     return-object v6
 
-    .line 1223
+    .line 1234
     nop
 
     :pswitch_data_0
@@ -6897,17 +6926,17 @@
     .param p3, "interval"    # I
 
     .prologue
-    .line 1179
+    .line 1190
     if-eqz p1, :cond_0
 
     if-ge p3, p2, :cond_0
 
-    .line 1180
+    .line 1191
     const/4 v0, 0x0
 
     return v0
 
-    .line 1182
+    .line 1193
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -6919,7 +6948,7 @@
 
     move-result-object v1
 
-    .line 1183
+    .line 1194
     if-eqz p1, :cond_1
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -6950,7 +6979,7 @@
 
     move-result-object v0
 
-    .line 1182
+    .line 1193
     :goto_0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6966,7 +6995,7 @@
 
     return v0
 
-    .line 1183
+    .line 1194
     :cond_1
     const-string/jumbo v0, ""
 
@@ -6977,7 +7006,7 @@
     .locals 1
 
     .prologue
-    .line 1153
+    .line 1164
     const-string/jumbo v0, "P2P_FIND"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -6992,17 +7021,17 @@
     .param p1, "timeout"    # I
 
     .prologue
-    .line 1157
+    .line 1168
     if-gtz p1, :cond_0
 
-    .line 1158
+    .line 1169
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->p2pFind()Z
 
     move-result v0
 
     return v0
 
-    .line 1160
+    .line 1171
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7033,7 +7062,7 @@
     .locals 1
 
     .prologue
-    .line 1211
+    .line 1222
     const-string/jumbo v0, "P2P_FLUSH"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -7047,23 +7076,23 @@
     .locals 9
 
     .prologue
-    .line 1336
+    .line 1347
     const-string/jumbo v5, "WifiNative-HAL"
 
     const-string/jumbo v6, "p2pGetDeviceAddress"
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1338
+    .line 1349
     const/4 v2, 0x0
 
-    .line 1343
+    .line 1354
     .local v2, "status":Ljava/lang/String;
     sget-object v6, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 1344
+    .line 1355
     :try_start_0
     const-string/jumbo v5, "STATUS"
 
@@ -7076,21 +7105,21 @@
     .local v2, "status":Ljava/lang/String;
     monitor-exit v6
 
-    .line 1347
+    .line 1358
     const-string/jumbo v1, ""
 
-    .line 1348
+    .line 1359
     .local v1, "result":Ljava/lang/String;
     if-eqz v2, :cond_0
 
-    .line 1349
+    .line 1360
     const-string/jumbo v5, "\n"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1350
+    .line 1361
     .local v4, "tokens":[Ljava/lang/String;
     const/4 v5, 0x0
 
@@ -7101,7 +7130,7 @@
 
     aget-object v3, v4, v5
 
-    .line 1351
+    .line 1362
     .local v3, "token":Ljava/lang/String;
     const-string/jumbo v7, "p2p_device_address="
 
@@ -7111,14 +7140,14 @@
 
     if-eqz v7, :cond_2
 
-    .line 1352
+    .line 1363
     const-string/jumbo v7, "="
 
     invoke-virtual {v3, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1353
+    .line 1364
     .local v0, "nameValue":[Ljava/lang/String;
     array-length v7, v0
 
@@ -7126,7 +7155,7 @@
 
     if-eq v7, v8, :cond_1
 
-    .line 1360
+    .line 1371
     .end local v0    # "nameValue":[Ljava/lang/String;
     .end local v3    # "token":Ljava/lang/String;
     .end local v4    # "tokens":[Ljava/lang/String;
@@ -7153,10 +7182,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1361
+    .line 1372
     return-object v1
 
-    .line 1343
+    .line 1354
     .end local v1    # "result":Ljava/lang/String;
     .local v2, "status":Ljava/lang/String;
     :catchall_0
@@ -7166,7 +7195,7 @@
 
     throw v5
 
-    .line 1355
+    .line 1366
     .restart local v0    # "nameValue":[Ljava/lang/String;
     .restart local v1    # "result":Ljava/lang/String;
     .local v2, "status":Ljava/lang/String;
@@ -7177,7 +7206,7 @@
 
     aget-object v1, v0, v7
 
-    .line 1350
+    .line 1361
     .end local v0    # "nameValue":[Ljava/lang/String;
     :cond_2
     add-int/lit8 v5, v5, 0x1
@@ -7190,7 +7219,7 @@
     .param p1, "deviceAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 1332
+    .line 1343
     const-string/jumbo v0, "oper_ssid"
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/wifi/WifiNative;->p2pGetParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -7205,7 +7234,7 @@
     .param p1, "netId"    # I
 
     .prologue
-    .line 1298
+    .line 1309
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7236,10 +7265,10 @@
     .param p1, "persistent"    # Z
 
     .prologue
-    .line 1291
+    .line 1302
     if-eqz p1, :cond_0
 
-    .line 1292
+    .line 1303
     const-string/jumbo v0, "P2P_GROUP_ADD persistent"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -7248,7 +7277,7 @@
 
     return v0
 
-    .line 1294
+    .line 1305
     :cond_0
     const-string/jumbo v0, "P2P_GROUP_ADD"
 
@@ -7264,7 +7293,7 @@
     .param p1, "iface"    # Ljava/lang/String;
 
     .prologue
-    .line 1302
+    .line 1313
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -7275,13 +7304,13 @@
 
     return v0
 
-    .line 1303
+    .line 1314
     :cond_0
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1304
+    .line 1315
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7321,7 +7350,7 @@
 
     return v0
 
-    .line 1303
+    .line 1314
     :catchall_0
     move-exception v0
 
@@ -7336,7 +7365,7 @@
     .param p2, "deviceAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 1314
+    .line 1325
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -7347,11 +7376,11 @@
 
     return v0
 
-    .line 1316
+    .line 1327
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1317
+    .line 1328
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7376,7 +7405,7 @@
 
     return v0
 
-    .line 1319
+    .line 1330
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7396,10 +7425,10 @@
 
     move-result-object v0
 
-    .line 1320
+    .line 1331
     const-string/jumbo v1, " peer="
 
-    .line 1319
+    .line 1330
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -7408,22 +7437,22 @@
 
     move-result-object v0
 
-    .line 1320
+    .line 1331
     const-string/jumbo v1, " go_dev_addr="
 
-    .line 1319
+    .line 1330
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 1320
+    .line 1331
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getOwner()Landroid/net/wifi/p2p/WifiP2pDevice;
 
     move-result-object v1
 
     iget-object v1, v1, Landroid/net/wifi/p2p/WifiP2pDevice;->deviceAddress:Ljava/lang/String;
 
-    .line 1319
+    .line 1330
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -7443,7 +7472,7 @@
     .locals 1
 
     .prologue
-    .line 1168
+    .line 1179
     const-string/jumbo v0, "P2P_LISTEN"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -7458,17 +7487,17 @@
     .param p1, "timeout"    # I
 
     .prologue
-    .line 1172
+    .line 1183
     if-gtz p1, :cond_0
 
-    .line 1173
+    .line 1184
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->p2pListen()Z
 
     move-result v0
 
     return v0
 
-    .line 1175
+    .line 1186
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7500,7 +7529,7 @@
     .param p1, "deviceAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 1386
+    .line 1397
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7533,12 +7562,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1273
+    .line 1284
     if-nez p1, :cond_0
 
     return v1
 
-    .line 1275
+    .line 1286
     :cond_0
     iget-object v0, p1, Landroid/net/wifi/p2p/WifiP2pConfig;->wps:Landroid/net/wifi/WpsInfo;
 
@@ -7546,10 +7575,10 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1287
+    .line 1298
     return v1
 
-    .line 1277
+    .line 1288
     :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7583,7 +7612,7 @@
 
     return v0
 
-    .line 1280
+    .line 1291
     :pswitch_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7617,7 +7646,7 @@
 
     return v0
 
-    .line 1283
+    .line 1294
     :pswitch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7651,7 +7680,7 @@
 
     return v0
 
-    .line 1275
+    .line 1286
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -7668,7 +7697,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1326
+    .line 1337
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -7680,7 +7709,7 @@
     :cond_0
     return v1
 
-    .line 1328
+    .line 1339
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7722,7 +7751,7 @@
     .param p1, "deviceAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 1309
+    .line 1320
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7753,7 +7782,7 @@
     .param p1, "id"    # Ljava/lang/String;
 
     .prologue
-    .line 1482
+    .line 1493
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7785,10 +7814,10 @@
     .param p2, "query"    # Ljava/lang/String;
 
     .prologue
-    .line 1474
+    .line 1485
     const-string/jumbo v0, "P2P_SERV_DISC_REQ"
 
-    .line 1475
+    .line 1486
     .local v0, "command":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -7812,7 +7841,7 @@
 
     move-result-object v0
 
-    .line 1476
+    .line 1487
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -7835,7 +7864,7 @@
 
     move-result-object v0
 
-    .line 1478
+    .line 1489
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doStringCommand(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -7848,12 +7877,12 @@
     .param p1, "servInfo"    # Landroid/net/wifi/p2p/nsd/WifiP2pServiceInfo;
 
     .prologue
-    .line 1428
+    .line 1439
     sget-object v4, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 1429
+    .line 1440
     :try_start_0
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceInfo;->getSupplicantQueryList()Ljava/util/List;
 
@@ -7877,11 +7906,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1430
+    .line 1441
     .local v1, "s":Ljava/lang/String;
     const-string/jumbo v0, "P2P_SERVICE_ADD"
 
-    .line 1431
+    .line 1442
     .local v0, "command":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -7905,7 +7934,7 @@
 
     move-result-object v0
 
-    .line 1432
+    .line 1443
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -7914,7 +7943,7 @@
 
     if-nez v3, :cond_0
 
-    .line 1433
+    .line 1444
     const/4 v3, 0x0
 
     monitor-exit v4
@@ -7926,12 +7955,12 @@
     :cond_1
     monitor-exit v4
 
-    .line 1437
+    .line 1448
     const/4 v3, 0x1
 
     return v3
 
-    .line 1428
+    .line 1439
     .end local v2    # "s$iterator":Ljava/util/Iterator;
     :catchall_0
     move-exception v3
@@ -7950,12 +7979,12 @@
 
     const/4 v7, 0x0
 
-    .line 1445
+    .line 1456
     sget-object v5, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 1446
+    .line 1457
     :try_start_0
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceInfo;->getSupplicantQueryList()Ljava/util/List;
 
@@ -7979,11 +8008,11 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 1447
+    .line 1458
     .local v2, "s":Ljava/lang/String;
     const-string/jumbo v0, "P2P_SERVICE_DEL "
 
-    .line 1449
+    .line 1460
     .local v0, "command":Ljava/lang/String;
     const-string/jumbo v4, " "
 
@@ -7991,7 +8020,7 @@
 
     move-result-object v1
 
-    .line 1450
+    .line 1461
     .local v1, "data":[Ljava/lang/String;
     array-length v4, v1
     :try_end_0
@@ -8003,10 +8032,10 @@
 
     monitor-exit v5
 
-    .line 1451
+    .line 1462
     return v7
 
-    .line 1453
+    .line 1464
     :cond_1
     :try_start_1
     const-string/jumbo v4, "upnp"
@@ -8021,7 +8050,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 1454
+    .line 1465
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -8038,7 +8067,7 @@
 
     move-result-object v0
 
-    .line 1461
+    .line 1472
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
     :try_end_1
@@ -8050,10 +8079,10 @@
 
     monitor-exit v5
 
-    .line 1462
+    .line 1473
     return v7
 
-    .line 1455
+    .line 1466
     :cond_2
     :try_start_2
     const-string/jumbo v4, "bonjour"
@@ -8068,7 +8097,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 1456
+    .line 1467
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -8089,7 +8118,7 @@
 
     move-result-object v0
 
-    .line 1457
+    .line 1468
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -8123,7 +8152,7 @@
     :cond_3
     monitor-exit v5
 
-    .line 1459
+    .line 1470
     return v7
 
     .end local v0    # "command":Ljava/lang/String;
@@ -8132,10 +8161,10 @@
     :cond_4
     monitor-exit v5
 
-    .line 1466
+    .line 1477
     return v8
 
-    .line 1445
+    .line 1456
     .end local v3    # "s$iterator":Ljava/util/Iterator;
     :catchall_0
     move-exception v4
@@ -8149,7 +8178,7 @@
     .locals 1
 
     .prologue
-    .line 1470
+    .line 1481
     const-string/jumbo v0, "P2P_SERVICE_FLUSH"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -8169,7 +8198,7 @@
 
     const/4 v4, 0x0
 
-    .line 1187
+    .line 1198
     sget-boolean v1, Lcom/android/server/wifi/WifiNative;->DBG:Z
 
     if-eqz v1, :cond_0
@@ -8206,20 +8235,20 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1189
+    .line 1200
     :cond_0
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1190
+    .line 1201
     if-lt p1, v5, :cond_1
 
     const/16 v1, 0xb
 
     if-gt p1, v1, :cond_1
 
-    .line 1191
+    .line 1202
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -8249,19 +8278,19 @@
 
     monitor-exit v2
 
-    .line 1192
+    .line 1203
     return v4
 
-    .line 1194
+    .line 1205
     :cond_1
     if-eqz p1, :cond_2
 
     monitor-exit v2
 
-    .line 1195
+    .line 1206
     return v4
 
-    .line 1198
+    .line 1209
     :cond_2
     if-lt p2, v5, :cond_4
 
@@ -8269,7 +8298,7 @@
 
     if-gt p2, v1, :cond_4
 
-    .line 1199
+    .line 1210
     const/16 v1, 0xe
 
     if-gt p2, v1, :cond_3
@@ -8281,7 +8310,7 @@
 
     add-int v0, v1, v3
 
-    .line 1200
+    .line 1211
     .local v0, "freq":I
     :try_start_1
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8294,34 +8323,34 @@
 
     move-result-object v1
 
-    .line 1201
+    .line 1212
     add-int/lit8 v3, v0, -0x5
 
-    .line 1200
+    .line 1211
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1201
+    .line 1212
     const-string/jumbo v3, ","
 
-    .line 1200
+    .line 1211
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1201
+    .line 1212
     add-int/lit8 v3, v0, 0x5
 
-    .line 1200
+    .line 1211
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1201
+    .line 1212
     const-string/jumbo v3, "-6000"
 
-    .line 1200
+    .line 1211
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -8340,18 +8369,18 @@
 
     return v1
 
-    .line 1199
+    .line 1210
     .end local v0    # "freq":I
     :cond_3
     const/16 v1, 0x1388
 
     goto :goto_0
 
-    .line 1202
+    .line 1213
     :cond_4
     if-nez p2, :cond_5
 
-    .line 1204
+    .line 1215
     :try_start_2
     const-string/jumbo v1, "P2P_SET disallow_freq \"\""
 
@@ -8368,10 +8397,10 @@
     :cond_5
     monitor-exit v2
 
-    .line 1207
+    .line 1218
     return v4
 
-    .line 1189
+    .line 1200
     :catchall_0
     move-exception v1
 
@@ -8384,7 +8413,7 @@
     .locals 1
 
     .prologue
-    .line 1164
+    .line 1175
     const-string/jumbo v0, "P2P_STOP_FIND"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -8398,12 +8427,12 @@
     .locals 4
 
     .prologue
-    .line 1958
+    .line 1971
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1959
+    .line 1972
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -8411,7 +8440,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1960
+    .line 1973
     sget v1, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
     if-eqz v1, :cond_0
@@ -8424,14 +8453,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 1961
+    .line 1974
     const-string/jumbo v1, "WifiNative-HAL"
 
     const-string/jumbo v3, "Pausing scan"
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1962
+    .line 1975
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     const/4 v3, 0x1
@@ -8440,7 +8469,7 @@
 
     move-result-object v0
 
-    .line 1963
+    .line 1976
     .local v0, "scanData":[Landroid/net/wifi/WifiScanner$ScanData;
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
@@ -8448,12 +8477,12 @@
 
     invoke-static {v1, v3}, Lcom/android/server/wifi/WifiNative;->stopScanNative(II)Z
 
-    .line 1964
+    .line 1977
     const/4 v1, 0x0
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
-    .line 1965
+    .line 1978
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     invoke-interface {v1, v0}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanPaused([Landroid/net/wifi/WifiScanner$ScanData;)V
@@ -8464,10 +8493,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 1957
+    .line 1970
     return-void
 
-    .line 1958
+    .line 1971
     :catchall_0
     move-exception v1
 
@@ -8510,7 +8539,7 @@
     .locals 1
 
     .prologue
-    .line 984
+    .line 995
     const-string/jumbo v0, "PKTCNT_POLL"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doStringCommand(Ljava/lang/String;)Ljava/lang/String;
@@ -8525,12 +8554,12 @@
     .param p1, "interfaceName"    # Ljava/lang/String;
 
     .prologue
-    .line 1619
+    .line 1632
     sget-object v4, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 1620
+    .line 1633
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -8538,12 +8567,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 1621
+    .line 1634
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getInterfacesNative()I
 
     move-result v2
 
-    .line 1622
+    .line 1635
     .local v2, "num":I
     const/4 v0, 0x0
 
@@ -8551,12 +8580,12 @@
     :goto_0
     if-ge v0, v2, :cond_1
 
-    .line 1623
+    .line 1636
     invoke-static {v0}, Lcom/android/server/wifi/WifiNative;->getInterfaceNameNative(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1624
+    .line 1637
     .local v1, "name":Ljava/lang/String;
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_0
@@ -8568,10 +8597,10 @@
 
     monitor-exit v4
 
-    .line 1625
+    .line 1638
     return v0
 
-    .line 1622
+    .line 1635
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -8583,12 +8612,12 @@
     :cond_1
     monitor-exit v4
 
-    .line 1630
+    .line 1643
     const/4 v3, -0x1
 
     return v3
 
-    .line 1619
+    .line 1632
     :catchall_0
     move-exception v3
 
@@ -8603,17 +8632,17 @@
     .prologue
     monitor-enter p0
 
-    .line 1527
+    .line 1538
     :try_start_0
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->readKernelLogNative()[B
 
     move-result-object v0
 
-    .line 1528
+    .line 1539
     .local v0, "bytes":[B
     if-eqz v0, :cond_0
 
-    .line 1529
+    .line 1540
     sget-object v4, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v4}, Ljava/nio/charset/Charset;->newDecoder()Ljava/nio/charset/CharsetDecoder;
@@ -8622,7 +8651,7 @@
 
     move-result-object v3
 
-    .line 1531
+    .line 1542
     .local v3, "decoder":Ljava/nio/charset/CharsetDecoder;
     :try_start_1
     invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
@@ -8633,7 +8662,7 @@
 
     move-result-object v2
 
-    .line 1532
+    .line 1543
     .local v2, "decoded":Ljava/nio/CharBuffer;
     invoke-virtual {v2}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
     :try_end_1
@@ -8646,12 +8675,12 @@
 
     return-object v4
 
-    .line 1533
+    .line 1544
     .end local v2    # "decoded":Ljava/nio/CharBuffer;
     :catch_0
     move-exception v1
 
-    .line 1534
+    .line 1545
     .local v1, "cce":Ljava/nio/charset/CharacterCodingException;
     :try_start_2
     new-instance v4, Ljava/lang/String;
@@ -8666,7 +8695,7 @@
 
     return-object v4
 
-    .line 1537
+    .line 1548
     .end local v1    # "cce":Ljava/nio/charset/CharacterCodingException;
     .end local v3    # "decoder":Ljava/nio/charset/CharsetDecoder;
     :cond_0
@@ -8775,12 +8804,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2194
+    .line 2207
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2195
+    .line 2208
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -8788,12 +8817,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 2196
+    .line 2209
     sget v0, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
 
     if-eqz v0, :cond_0
 
-    .line 2197
+    .line 2210
     const-string/jumbo v0, "WifiNative-HAL"
 
     const-string/jumbo v2, "Last one is still under measurement!"
@@ -8804,10 +8833,10 @@
 
     monitor-exit v1
 
-    .line 2198
+    .line 2211
     return v3
 
-    .line 2200
+    .line 2213
     :cond_0
     :try_start_1
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
@@ -8816,10 +8845,10 @@
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
 
-    .line 2202
+    .line 2215
     sput-object p2, Lcom/android/server/wifi/WifiNative;->sRttEventHandler:Lcom/android/server/wifi/WifiNative$RttEventHandler;
 
-    .line 2203
+    .line 2216
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sRttCmdId:I
@@ -8837,10 +8866,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 2205
+    .line 2218
     return v3
 
-    .line 2194
+    .line 2207
     :catchall_0
     move-exception v0
 
@@ -8853,12 +8882,12 @@
     .locals 3
 
     .prologue
-    .line 2041
+    .line 2054
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2042
+    .line 2055
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -8866,24 +8895,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 2043
+    .line 2056
     sget v0, Lcom/android/server/wifi/WifiNative;->sHotlistCmdId:I
 
     if-eqz v0, :cond_0
 
-    .line 2044
+    .line 2057
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sHotlistCmdId:I
 
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiNative;->resetHotlistNative(II)Z
 
-    .line 2045
+    .line 2058
     const/4 v0, 0x0
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sHotlistCmdId:I
 
-    .line 2046
+    .line 2059
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sHotlistEventHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
@@ -8893,10 +8922,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 2040
+    .line 2053
     return-void
 
-    .line 2041
+    .line 2054
     :catchall_0
     move-exception v0
 
@@ -8913,12 +8942,12 @@
 
     const/4 v3, 0x0
 
-    .line 2515
+    .line 2528
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2516
+    .line 2529
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -8926,12 +8955,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 2517
+    .line 2530
     sget v0, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
 
     if-ne v0, v2, :cond_0
 
-    .line 2518
+    .line 2531
     const-string/jumbo v0, "WifiNative-HAL"
 
     const-string/jumbo v2, "Can not reset handler Before set any handler"
@@ -8942,17 +8971,17 @@
 
     monitor-exit v1
 
-    .line 2519
+    .line 2532
     return v3
 
-    .line 2521
+    .line 2534
     :cond_0
     const/4 v0, 0x0
 
     :try_start_1
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sWifiLoggerEventHandler:Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;
 
-    .line 2522
+    .line 2535
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
@@ -8963,14 +8992,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 2523
+    .line 2536
     const/4 v0, -0x1
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2524
+    .line 2537
     const/4 v0, 0x1
 
     monitor-exit v1
@@ -8980,16 +9009,16 @@
     :cond_1
     monitor-exit v1
 
-    .line 2526
+    .line 2539
     return v3
 
     :cond_2
     monitor-exit v1
 
-    .line 2529
+    .line 2542
     return v3
 
-    .line 2515
+    .line 2528
     :catchall_0
     move-exception v0
 
@@ -9002,7 +9031,7 @@
     .locals 3
 
     .prologue
-    .line 2939
+    .line 2952
     const-string/jumbo v0, "WifiNative-HAL"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9027,12 +9056,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2941
+    .line 2954
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2942
+    .line 2955
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -9040,19 +9069,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 2943
+    .line 2956
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
 
     move-result v0
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
 
-    .line 2944
+    .line 2957
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sPnoEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 2945
+    .line 2958
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
@@ -9065,14 +9094,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 2946
+    .line 2959
     const/4 v0, 0x1
 
     monitor-exit v1
 
     return v0
 
-    .line 2949
+    .line 2962
     :cond_0
     const/4 v0, 0x0
 
@@ -9080,7 +9109,7 @@
 
     return v0
 
-    .line 2941
+    .line 2954
     :catchall_0
     move-exception v0
 
@@ -9094,7 +9123,7 @@
     .param p1, "requestMessage"    # Ljava/lang/String;
 
     .prologue
-    .line 1519
+    .line 1530
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9130,12 +9159,12 @@
     .locals 5
 
     .prologue
-    .line 1972
+    .line 1985
     sget-object v3, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 1973
+    .line 1986
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -9143,7 +9172,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1974
+    .line 1987
     sget v2, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
     if-nez v2, :cond_0
@@ -9156,21 +9185,21 @@
 
     if-eqz v2, :cond_0
 
-    .line 1975
+    .line 1988
     const-string/jumbo v2, "WifiNative-HAL"
 
     const-string/jumbo v4, "Restarting scan"
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1976
+    .line 1989
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 1977
+    .line 1990
     .local v0, "handler":Lcom/android/server/wifi/WifiNative$ScanEventHandler;
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 1978
+    .line 1991
     .local v1, "settings":Lcom/android/server/wifi/WifiNative$ScanSettings;
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
@@ -9182,7 +9211,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1979
+    .line 1992
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     invoke-interface {v2}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanRestarted()V
@@ -9195,24 +9224,24 @@
     :goto_0
     monitor-exit v3
 
-    .line 1971
+    .line 1984
     return-void
 
-    .line 1982
+    .line 1995
     .restart local v0    # "handler":Lcom/android/server/wifi/WifiNative$ScanEventHandler;
     .restart local v1    # "settings":Lcom/android/server/wifi/WifiNative$ScanSettings;
     :cond_1
     :try_start_1
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 1983
+    .line 1996
     sput-object v1, Lcom/android/server/wifi/WifiNative;->sScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 1972
+    .line 1985
     .end local v0    # "handler":Lcom/android/server/wifi/WifiNative$ScanEventHandler;
     .end local v1    # "settings":Lcom/android/server/wifi/WifiNative$ScanSettings;
     :catchall_0
@@ -9227,7 +9256,7 @@
     .locals 1
 
     .prologue
-    .line 902
+    .line 913
     const-string/jumbo v0, "SAVE_CONFIG"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -9522,17 +9551,17 @@
     .param p1, "list"    # [Ljava/lang/String;
 
     .prologue
-    .line 2983
+    .line 2996
     const/4 v0, 0x0
 
-    .line 2984
+    .line 2997
     .local v0, "size":I
     if-eqz p1, :cond_0
 
-    .line 2985
+    .line 2998
     array-length v0, p1
 
-    .line 2987
+    .line 3000
     :cond_0
     const-string/jumbo v1, "WifiNative-HAL"
 
@@ -9568,12 +9597,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2989
+    .line 3002
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2990
+    .line 3003
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -9581,14 +9610,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 2991
+    .line 3004
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
 
     move-result v1
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
 
-    .line 2992
+    .line 3005
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v3, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
@@ -9603,7 +9632,7 @@
 
     return v1
 
-    .line 2994
+    .line 3007
     :cond_1
     const/4 v1, 0x0
 
@@ -9611,7 +9640,7 @@
 
     return v1
 
-    .line 2989
+    .line 3002
     :catchall_0
     move-exception v1
 
@@ -9625,7 +9654,7 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 1149
+    .line 1160
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9656,7 +9685,7 @@
     .param p1, "cfg"    # Ljava/lang/String;
 
     .prologue
-    .line 1089
+    .line 1100
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9687,10 +9716,10 @@
     .param p1, "countryCode"    # Ljava/lang/String;
 
     .prologue
-    .line 923
+    .line 934
     if-eqz p1, :cond_0
 
-    .line 924
+    .line 935
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9721,7 +9750,7 @@
 
     return v0
 
-    .line 926
+    .line 937
     :cond_0
     const-string/jumbo v0, "DRIVER COUNTRY"
 
@@ -9737,12 +9766,12 @@
     .param p1, "CountryCode"    # Ljava/lang/String;
 
     .prologue
-    .line 2367
+    .line 2380
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2368
+    .line 2381
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -9750,7 +9779,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2369
+    .line 2382
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->setCountryCodeHalNative(ILjava/lang/String;)Z
@@ -9763,7 +9792,7 @@
 
     return v0
 
-    .line 2371
+    .line 2384
     :cond_0
     const/4 v0, 0x0
 
@@ -9771,7 +9800,7 @@
 
     return v0
 
-    .line 2367
+    .line 2380
     :catchall_0
     move-exception v0
 
@@ -9785,7 +9814,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1081
+    .line 1092
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9816,7 +9845,7 @@
     .param p1, "type"    # Ljava/lang/String;
 
     .prologue
-    .line 1085
+    .line 1096
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9847,12 +9876,12 @@
     .param p1, "dfsOn"    # Z
 
     .prologue
-    .line 2312
+    .line 2325
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2313
+    .line 2326
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -9860,7 +9889,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2314
+    .line 2327
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->setDfsFlagNative(IZ)Z
@@ -9873,7 +9902,7 @@
 
     return v0
 
-    .line 2316
+    .line 2329
     :cond_0
     const/4 v0, 0x0
 
@@ -9881,7 +9910,7 @@
 
     return v0
 
-    .line 2312
+    .line 2325
     :catchall_0
     move-exception v0
 
@@ -9895,12 +9924,12 @@
     .param p1, "external"    # Z
 
     .prologue
-    .line 1041
+    .line 1052
     if-eqz p1, :cond_0
 
     const-string/jumbo v0, "1"
 
-    .line 1042
+    .line 1053
     .local v0, "value":Ljava/lang/String;
     :goto_0
     const-string/jumbo v1, "WifiNative-HAL"
@@ -9925,7 +9954,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1043
+    .line 1054
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -9950,7 +9979,7 @@
 
     return v1
 
-    .line 1041
+    .line 1052
     .end local v0    # "value":Ljava/lang/String;
     :cond_0
     const-string/jumbo v0, "0"
@@ -9967,12 +9996,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2019
+    .line 2032
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2020
+    .line 2033
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -9980,7 +10009,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2021
+    .line 2034
     sget v0, Lcom/android/server/wifi/WifiNative;->sHotlistCmdId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -9989,10 +10018,10 @@
 
     monitor-exit v1
 
-    .line 2022
+    .line 2035
     return v3
 
-    .line 2024
+    .line 2037
     :cond_0
     :try_start_1
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
@@ -10001,10 +10030,10 @@
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sHotlistCmdId:I
 
-    .line 2027
+    .line 2040
     sput-object p2, Lcom/android/server/wifi/WifiNative;->sHotlistEventHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
 
-    .line 2028
+    .line 2041
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sHotlistCmdId:I
@@ -10015,7 +10044,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2029
+    .line 2042
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sHotlistEventHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
@@ -10024,10 +10053,10 @@
 
     monitor-exit v1
 
-    .line 2030
+    .line 2043
     return v3
 
-    .line 2033
+    .line 2046
     :cond_1
     const/4 v0, 0x1
 
@@ -10038,10 +10067,10 @@
     :cond_2
     monitor-exit v1
 
-    .line 2035
+    .line 2048
     return v3
 
-    .line 2019
+    .line 2032
     :catchall_0
     move-exception v0
 
@@ -10055,19 +10084,19 @@
     .param p1, "hs20"    # Z
 
     .prologue
-    .line 951
+    .line 962
     if-eqz p1, :cond_0
 
-    .line 952
+    .line 963
     const-string/jumbo v0, "SET HS20 1"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
-    .line 950
+    .line 961
     :goto_0
     return-void
 
-    .line 954
+    .line 965
     :cond_0
     const-string/jumbo v0, "SET HS20 0"
 
@@ -10081,12 +10110,12 @@
     .param p1, "up"    # Z
 
     .prologue
-    .line 2323
+    .line 2336
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2324
+    .line 2337
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -10094,7 +10123,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2325
+    .line 2338
     invoke-static {p1}, Lcom/android/server/wifi/WifiNative;->setInterfaceUpNative(Z)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -10105,7 +10134,7 @@
 
     return v0
 
-    .line 2327
+    .line 2340
     :cond_0
     const/4 v0, 0x0
 
@@ -10113,7 +10142,7 @@
 
     return v0
 
-    .line 2323
+    .line 2336
     :catchall_0
     move-exception v0
 
@@ -10129,12 +10158,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2472
+    .line 2485
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2473
+    .line 2486
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -10142,10 +10171,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 2474
+    .line 2487
     sget v0, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
 
-    .line 2475
+    .line 2488
     .local v0, "oldId":I
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
 
@@ -10153,7 +10182,7 @@
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
 
-    .line 2476
+    .line 2489
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v3, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
@@ -10164,24 +10193,24 @@
 
     if-nez v1, :cond_0
 
-    .line 2477
+    .line 2490
     sput v0, Lcom/android/server/wifi/WifiNative;->sLogCmdId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v2
 
-    .line 2478
+    .line 2491
     return v4
 
-    .line 2480
+    .line 2493
     :cond_0
     :try_start_1
     sput-object p1, Lcom/android/server/wifi/WifiNative;->sWifiLoggerEventHandler:Lcom/android/server/wifi/WifiNative$WifiLoggerEventHandler;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2481
+    .line 2494
     const/4 v1, 0x1
 
     monitor-exit v2
@@ -10192,10 +10221,10 @@
     :cond_1
     monitor-exit v2
 
-    .line 2483
+    .line 2496
     return v4
 
-    .line 2472
+    .line 2485
     :catchall_0
     move-exception v1
 
@@ -10209,7 +10238,7 @@
     .param p1, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1093
+    .line 1104
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10240,7 +10269,7 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 1492
+    .line 1503
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10261,7 +10290,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
-    .line 1490
+    .line 1501
     return-void
 .end method
 
@@ -10270,7 +10299,7 @@
     .param p1, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1097
+    .line 1108
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10301,7 +10330,7 @@
     .param p1, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1101
+    .line 1112
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10609,18 +10638,31 @@
     return v0
 .end method
 
+.method public setP2pDisable()V
+    .locals 1
+
+    .prologue
+    .line 910
+    const-string/jumbo v0, "SET p2p_disabled 1"
+
+    invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
+
+    .line 909
+    return-void
+.end method
+
 .method public setP2pGroupIdle(Ljava/lang/String;I)Z
     .locals 3
     .param p1, "iface"    # Ljava/lang/String;
     .param p2, "time"    # I
 
     .prologue
-    .line 1113
+    .line 1124
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1114
+    .line 1125
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -10660,7 +10702,7 @@
 
     return v0
 
-    .line 1113
+    .line 1124
     :catchall_0
     move-exception v0
 
@@ -10675,15 +10717,15 @@
     .param p2, "enabled"    # Z
 
     .prologue
-    .line 1127
+    .line 1138
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1128
+    .line 1139
     if-eqz p2, :cond_0
 
-    .line 1129
+    .line 1140
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -10719,7 +10761,7 @@
 
     return v0
 
-    .line 1131
+    .line 1142
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -10756,7 +10798,7 @@
 
     return v0
 
-    .line 1127
+    .line 1138
     :catchall_0
     move-exception v0
 
@@ -10770,7 +10812,7 @@
     .param p1, "postfix"    # Ljava/lang/String;
 
     .prologue
-    .line 1109
+    .line 1120
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10801,12 +10843,12 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1076
+    .line 1087
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    .line 1077
+    .line 1088
     .local v0, "value":I
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10833,7 +10875,7 @@
 
     return v1
 
-    .line 1076
+    .line 1087
     .end local v0    # "value":I
     :cond_0
     const/4 v0, 0x0
@@ -10848,7 +10890,7 @@
     .param p2, "eventHandler"    # Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
     .prologue
-    .line 2905
+    .line 2918
     const-string/jumbo v0, "WifiNative-HAL"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10873,12 +10915,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2907
+    .line 2920
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2908
+    .line 2921
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -10886,17 +10928,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 2909
+    .line 2922
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
 
     move-result v0
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
 
-    .line 2910
+    .line 2923
     sput-object p2, Lcom/android/server/wifi/WifiNative;->sPnoEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 2911
+    .line 2924
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sPnoCmdId:I
@@ -10909,14 +10951,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 2912
+    .line 2925
     const/4 v0, 0x1
 
     monitor-exit v1
 
     return v0
 
-    .line 2915
+    .line 2928
     :cond_0
     const/4 v0, 0x0
 
@@ -10925,14 +10967,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2916
+    .line 2929
     const/4 v0, 0x0
 
     monitor-exit v1
 
     return v0
 
-    .line 2907
+    .line 2920
     :catchall_0
     move-exception v0
 
@@ -10947,16 +10989,16 @@
     .param p2, "eventHandler"    # Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
     .prologue
-    .line 2927
+    .line 2940
     new-instance v0, Lcom/android/server/wifi/WifiNative$PnoSettings;
 
     invoke-direct {v0}, Lcom/android/server/wifi/WifiNative$PnoSettings;-><init>()V
 
-    .line 2928
+    .line 2941
     .local v0, "settings":Lcom/android/server/wifi/WifiNative$PnoSettings;
     iput-object p1, v0, Lcom/android/server/wifi/WifiNative$PnoSettings;->networkList:[Lcom/android/server/wifi/WifiNative$PnoNetwork;
 
-    .line 2929
+    .line 2942
     invoke-virtual {p0, v0, p2}, Lcom/android/server/wifi/WifiNative;->setPnoList(Lcom/android/server/wifi/WifiNative$PnoSettings;Lcom/android/server/wifi/WifiNative$PnoEventHandler;)Z
 
     move-result v1
@@ -10969,12 +11011,12 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 934
+    .line 945
     if-eqz p1, :cond_0
 
     const-string/jumbo v0, "SET pno 1"
 
-    .line 935
+    .line 946
     .local v0, "cmd":Ljava/lang/String;
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -10983,7 +11025,7 @@
 
     return v1
 
-    .line 934
+    .line 945
     .end local v0    # "cmd":Ljava/lang/String;
     :cond_0
     const-string/jumbo v0, "SET pno 0"
@@ -10996,19 +11038,19 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1119
+    .line 1130
     if-eqz p1, :cond_0
 
-    .line 1120
+    .line 1131
     const-string/jumbo v0, "SET ps 1"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
-    .line 1118
+    .line 1129
     :goto_0
     return-void
 
-    .line 1122
+    .line 1133
     :cond_0
     const-string/jumbo v0, "SET ps 0"
 
@@ -11022,7 +11064,7 @@
     .param p1, "scanInterval"    # I
 
     .prologue
-    .line 947
+    .line 958
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11043,7 +11085,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
-    .line 946
+    .line 957
     return-void
 .end method
 
@@ -11052,12 +11094,12 @@
     .param p1, "oui"    # [B
 
     .prologue
-    .line 2277
+    .line 2290
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2278
+    .line 2291
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -11065,7 +11107,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2279
+    .line 2292
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->setScanningMacOuiNative(I[B)Z
@@ -11078,7 +11120,7 @@
 
     return v0
 
-    .line 2281
+    .line 2294
     :cond_0
     const/4 v0, 0x0
 
@@ -11086,7 +11128,7 @@
 
     return v0
 
-    .line 2277
+    .line 2290
     :catchall_0
     move-exception v0
 
@@ -11100,7 +11142,7 @@
     .param p1, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1105
+    .line 1116
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11161,10 +11203,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 915
+    .line 926
     if-eqz p1, :cond_0
 
-    .line 916
+    .line 927
     const-string/jumbo v0, "DRIVER SETSUSPENDMODE 1"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -11173,7 +11215,7 @@
 
     return v0
 
-    .line 918
+    .line 929
     :cond_0
     const-string/jumbo v0, "DRIVER SETSUSPENDMODE 0"
 
@@ -11189,7 +11231,7 @@
     .param p1, "hex"    # Ljava/lang/String;
 
     .prologue
-    .line 1141
+    .line 1152
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11220,7 +11262,7 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 1137
+    .line 1148
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11262,18 +11304,18 @@
     .param p2, "enable"    # I
 
     .prologue
-    .line 2146
+    .line 2159
     if-nez p1, :cond_0
 
     return-void
 
-    .line 2147
+    .line 2160
     :cond_0
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2148
+    .line 2161
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -11281,7 +11323,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2149
+    .line 2162
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p2}, Lcom/android/server/wifi/WifiNative;->setWifiLinkLayerStatsNative(II)V
@@ -11291,10 +11333,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 2145
+    .line 2158
     return-void
 
-    .line 2147
+    .line 2160
     :catchall_0
     move-exception v0
 
@@ -11307,7 +11349,7 @@
     .locals 1
 
     .prologue
-    .line 976
+    .line 987
     const-string/jumbo v0, "SIGNAL_POLL"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doStringCommandWithoutLogging(Ljava/lang/String;)Ljava/lang/String;
@@ -11322,7 +11364,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 1053
+    .line 1064
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11361,7 +11403,7 @@
     .param p3, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 1048
+    .line 1059
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11407,7 +11449,7 @@
     .param p2, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 1062
+    .line 1073
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11543,10 +11585,10 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 1568
+    .line 1581
     const-string/jumbo v0, "startHal stack: "
 
-    .line 1569
+    .line 1582
     .local v0, "debugLog":Ljava/lang/String;
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -11556,7 +11598,7 @@
 
     move-result-object v1
 
-    .line 1570
+    .line 1583
     .local v1, "elements":[Ljava/lang/StackTraceElement;
     const/4 v2, 0x2
 
@@ -11570,7 +11612,7 @@
 
     if-gt v2, v4, :cond_0
 
-    .line 1571
+    .line 1584
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -11599,23 +11641,23 @@
 
     move-result-object v0
 
-    .line 1570
+    .line 1583
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1574
+    .line 1587
     :cond_0
     sget-object v4, Lcom/android/server/wifi/WifiNative;->sLocalLog:Landroid/util/LocalLog;
 
     invoke-virtual {v4, v0}, Landroid/util/LocalLog;->log(Ljava/lang/String;)V
 
-    .line 1576
+    .line 1589
     sget-object v5, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 1577
+    .line 1590
     :try_start_0
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->startHalNative()Z
 
@@ -11623,20 +11665,20 @@
 
     if-eqz v4, :cond_3
 
-    .line 1578
+    .line 1591
     iget-object v4, p0, Lcom/android/server/wifi/WifiNative;->mInterfaceName:Ljava/lang/String;
 
     invoke-virtual {p0, v4}, Lcom/android/server/wifi/WifiNative;->queryInterfaceIndex(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 1579
+    .line 1592
     .local v3, "wlan0Index":I
     const/4 v4, -0x1
 
     if-ne v3, v4, :cond_2
 
-    .line 1580
+    .line 1593
     sget-boolean v4, Lcom/android/server/wifi/WifiNative;->DBG:Z
 
     if-eqz v4, :cond_1
@@ -11670,15 +11712,15 @@
     :cond_1
     monitor-exit v5
 
-    .line 1581
+    .line 1594
     return v8
 
-    .line 1583
+    .line 1596
     :cond_2
     :try_start_1
     sput v3, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
-    .line 1584
+    .line 1597
     new-instance v4, Lcom/android/server/wifi/WifiNative$MonitorThread;
 
     const/4 v6, 0x0
@@ -11687,21 +11729,21 @@
 
     sput-object v4, Lcom/android/server/wifi/WifiNative;->sThread:Lcom/android/server/wifi/WifiNative$MonitorThread;
 
-    .line 1585
+    .line 1598
     sget-object v4, Lcom/android/server/wifi/WifiNative;->sThread:Lcom/android/server/wifi/WifiNative$MonitorThread;
 
     invoke-virtual {v4}, Lcom/android/server/wifi/WifiNative$MonitorThread;->start()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1586
+    .line 1599
     const/4 v4, 0x1
 
     monitor-exit v5
 
     return v4
 
-    .line 1588
+    .line 1601
     .end local v3    # "wlan0Index":I
     :cond_3
     :try_start_2
@@ -11715,7 +11757,7 @@
 
     invoke-virtual {v4, v6}, Landroid/util/LocalLog;->log(Ljava/lang/String;)V
 
-    .line 1589
+    .line 1602
     :cond_4
     const-string/jumbo v4, "WifiNative-HAL"
 
@@ -11727,10 +11769,10 @@
 
     monitor-exit v5
 
-    .line 1590
+    .line 1603
     return v8
 
-    .line 1576
+    .line 1589
     :catchall_0
     move-exception v4
 
@@ -11748,12 +11790,12 @@
     .param p5, "ringName"    # Ljava/lang/String;
 
     .prologue
-    .line 2492
+    .line 2505
     sget-object v6, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 2493
+    .line 2506
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -11761,7 +11803,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2494
+    .line 2507
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     move v1, p1
@@ -11784,7 +11826,7 @@
 
     return v0
 
-    .line 2497
+    .line 2510
     :cond_0
     const/4 v0, 0x0
 
@@ -11792,7 +11834,7 @@
 
     return v0
 
-    .line 2492
+    .line 2505
     :catchall_0
     move-exception v0
 
@@ -11807,12 +11849,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2842
+    .line 2855
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2843
+    .line 2856
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -11820,7 +11862,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2844
+    .line 2857
     sget v2, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v2}, Lcom/android/server/wifi/WifiNative;->startPktFateMonitoringNative(I)I
@@ -11841,10 +11883,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 2846
+    .line 2859
     return v0
 
-    .line 2842
+    .line 2855
     :catchall_0
     move-exception v0
 
@@ -11860,7 +11902,7 @@
     .param p3, "rssiEventHandler"    # Lcom/android/server/wifi/WifiNative$WifiRssiEventHandler;
 
     .prologue
-    .line 3057
+    .line 3070
     const-string/jumbo v1, "WifiNative-HAL"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -11893,31 +11935,31 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3058
+    .line 3071
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 3059
+    .line 3072
     :try_start_0
     sput-object p3, Lcom/android/server/wifi/WifiNative;->sWifiRssiEventHandler:Lcom/android/server/wifi/WifiNative$WifiRssiEventHandler;
 
-    .line 3060
+    .line 3073
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 3061
+    .line 3074
     sget v1, Lcom/android/server/wifi/WifiNative;->sRssiMonitorCmdId:I
 
     if-eqz v1, :cond_0
 
-    .line 3062
+    .line 3075
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->stopRssiMonitoring()I
 
-    .line 3065
+    .line 3078
     :cond_0
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
 
@@ -11925,7 +11967,7 @@
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sRssiMonitorCmdId:I
 
-    .line 3066
+    .line 3079
     const-string/jumbo v1, "WifiNative-HAL"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -11950,7 +11992,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3067
+    .line 3080
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v3, Lcom/android/server/wifi/WifiNative;->sRssiMonitorCmdId:I
@@ -11959,11 +12001,11 @@
 
     move-result v0
 
-    .line 3069
+    .line 3082
     .local v0, "ret":I
     if-eqz v0, :cond_1
 
-    .line 3070
+    .line 3083
     const/4 v1, 0x0
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sRssiMonitorCmdId:I
@@ -11973,10 +12015,10 @@
     :cond_1
     monitor-exit v2
 
-    .line 3072
+    .line 3085
     return v0
 
-    .line 3074
+    .line 3087
     .end local v0    # "ret":I
     :cond_2
     const/4 v1, -0x1
@@ -11985,7 +12027,7 @@
 
     return v1
 
-    .line 3058
+    .line 3071
     :catchall_0
     move-exception v1
 
@@ -12002,12 +12044,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1917
+    .line 1930
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1918
+    .line 1931
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -12015,15 +12057,15 @@
 
     if-eqz v0, :cond_3
 
-    .line 1919
+    .line 1932
     sget v0, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
     if-eqz v0, :cond_1
 
-    .line 1920
+    .line 1933
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->stopScan()V
 
-    .line 1925
+    .line 1938
     :cond_0
     :goto_0
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
@@ -12032,13 +12074,13 @@
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
-    .line 1927
+    .line 1940
     sput-object p1, Lcom/android/server/wifi/WifiNative;->sScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 1928
+    .line 1941
     sput-object p2, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 1930
+    .line 1943
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
@@ -12049,17 +12091,17 @@
 
     if-nez v0, :cond_2
 
-    .line 1931
+    .line 1944
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 1932
+    .line 1945
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 1933
+    .line 1946
     const/4 v0, 0x0
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
@@ -12068,10 +12110,10 @@
 
     monitor-exit v1
 
-    .line 1934
+    .line 1947
     return v3
 
-    .line 1921
+    .line 1934
     :cond_1
     :try_start_1
     sget-object v0, Lcom/android/server/wifi/WifiNative;->sScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
@@ -12086,7 +12128,7 @@
 
     goto :goto_0
 
-    .line 1937
+    .line 1950
     :cond_2
     const/4 v0, 0x1
 
@@ -12097,10 +12139,10 @@
     :cond_3
     monitor-exit v1
 
-    .line 1939
+    .line 1952
     return v3
 
-    .line 1917
+    .line 1930
     :catchall_0
     move-exception v0
 
@@ -12118,7 +12160,7 @@
     .prologue
     const/4 v4, 0x6
 
-    .line 3004
+    .line 3017
     const-string/jumbo v0, "WifiNative-HAL"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -12151,7 +12193,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3006
+    .line 3019
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->getMacAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -12162,11 +12204,11 @@
 
     move-result-object v8
 
-    .line 3007
+    .line 3020
     .local v8, "macAddrStr":[Ljava/lang/String;
     new-array v2, v4, [B
 
-    .line 3008
+    .line 3021
     .local v2, "srcMac":[B
     const/4 v7, 0x0
 
@@ -12174,7 +12216,7 @@
     :goto_0
     if-ge v7, v4, :cond_0
 
-    .line 3009
+    .line 3022
     aget-object v0, v8, v7
 
     const/16 v1, 0x10
@@ -12187,7 +12229,7 @@
 
     move-result-object v6
 
-    .line 3010
+    .line 3023
     .local v6, "hexVal":Ljava/lang/Integer;
     invoke-virtual {v6}, Ljava/lang/Integer;->byteValue()B
 
@@ -12195,19 +12237,19 @@
 
     aput-byte v0, v2, v7
 
-    .line 3008
+    .line 3021
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 3012
+    .line 3025
     .end local v6    # "hexVal":Ljava/lang/Integer;
     :cond_0
     sget-object v9, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 3013
+    .line 3026
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -12215,10 +12257,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 3014
+    .line 3027
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
-    .line 3015
+    .line 3028
     iget-object v3, p2, Lcom/android/server/connectivity/KeepalivePacketData;->dstMac:[B
 
     iget-object v4, p2, Lcom/android/server/connectivity/KeepalivePacketData;->data:[B
@@ -12227,7 +12269,7 @@
 
     move v5, p3
 
-    .line 3014
+    .line 3027
     invoke-static/range {v0 .. v5}, Lcom/android/server/wifi/WifiNative;->startSendingOffloadedPacketNative(II[B[B[BI)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -12238,7 +12280,7 @@
 
     return v0
 
-    .line 3017
+    .line 3030
     :cond_1
     const/4 v0, -0x1
 
@@ -12246,7 +12288,7 @@
 
     return v0
 
-    .line 3012
+    .line 3025
     :catchall_0
     move-exception v0
 
@@ -12292,15 +12334,15 @@
     .param p2, "enable"    # Z
 
     .prologue
-    .line 959
+    .line 970
     if-eqz p2, :cond_0
 
-    .line 960
+    .line 971
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 961
+    .line 972
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12322,7 +12364,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
 
-    .line 962
+    .line 973
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12347,11 +12389,11 @@
 
     monitor-exit v1
 
-    .line 958
+    .line 969
     :goto_0
     return-void
 
-    .line 960
+    .line 971
     :catchall_0
     move-exception v0
 
@@ -12359,7 +12401,7 @@
 
     throw v0
 
-    .line 965
+    .line 976
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12389,14 +12431,14 @@
     .param p1, "bssid"    # Ljava/lang/String;
 
     .prologue
-    .line 992
+    .line 1003
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 993
+    .line 1004
     const-string/jumbo v0, "WPS_PBC"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doBooleanCommand(Ljava/lang/String;)Z
@@ -12405,7 +12447,7 @@
 
     return v0
 
-    .line 995
+    .line 1006
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12438,12 +12480,12 @@
     .param p2, "bssid"    # Ljava/lang/String;
 
     .prologue
-    .line 1000
+    .line 1011
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1001
+    .line 1012
     :try_start_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -12451,7 +12493,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1002
+    .line 1013
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12486,7 +12528,7 @@
 
     return v0
 
-    .line 1004
+    .line 1015
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -12527,7 +12569,7 @@
 
     return v0
 
-    .line 1000
+    .line 1011
     :catchall_0
     move-exception v0
 
@@ -12541,14 +12583,14 @@
     .param p1, "bssid"    # Ljava/lang/String;
 
     .prologue
-    .line 1023
+    .line 1034
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1024
+    .line 1035
     const-string/jumbo v0, "WPS_PIN any"
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/WifiNative;->doStringCommand(Ljava/lang/String;)Ljava/lang/String;
@@ -12557,7 +12599,7 @@
 
     return-object v0
 
-    .line 1026
+    .line 1037
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12590,12 +12632,12 @@
     .param p2, "bssid"    # Ljava/lang/String;
 
     .prologue
-    .line 1031
+    .line 1042
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1032
+    .line 1043
     :try_start_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -12603,7 +12645,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1033
+    .line 1044
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12638,7 +12680,7 @@
 
     return-object v0
 
-    .line 1035
+    .line 1046
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -12679,7 +12721,7 @@
 
     return-object v0
 
-    .line 1031
+    .line 1042
     :catchall_0
     move-exception v0
 
@@ -12693,7 +12735,7 @@
     .param p1, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 1010
+    .line 1021
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -12704,7 +12746,7 @@
 
     return v0
 
-    .line 1011
+    .line 1022
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12737,7 +12779,7 @@
     .param p2, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 1015
+    .line 1026
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -12748,13 +12790,13 @@
 
     return v0
 
-    .line 1016
+    .line 1027
     :cond_0
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1017
+    .line 1028
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12794,7 +12836,7 @@
 
     return v0
 
-    .line 1016
+    .line 1027
     :catchall_0
     move-exception v0
 
@@ -12809,7 +12851,7 @@
     .param p2, "pin"    # Ljava/lang/String;
 
     .prologue
-    .line 1067
+    .line 1078
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -12827,7 +12869,7 @@
 
     return v0
 
-    .line 1068
+    .line 1079
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -13004,12 +13046,12 @@
     .locals 6
 
     .prologue
-    .line 1596
+    .line 1609
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1597
+    .line 1610
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -13017,12 +13059,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 1598
+    .line 1611
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->stopHalNative()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1600
+    .line 1613
     :try_start_1
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sThread:Lcom/android/server/wifi/WifiNative$MonitorThread;
 
@@ -13030,7 +13072,7 @@
 
     invoke-virtual {v1, v4, v5}, Lcom/android/server/wifi/WifiNative$MonitorThread;->join(J)V
 
-    .line 1601
+    .line 1614
     const-string/jumbo v1, "WifiNative-HAL"
 
     const-string/jumbo v3, "HAL event thread stopped successfully"
@@ -13040,24 +13082,24 @@
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1605
+    .line 1618
     :goto_0
     const/4 v1, 0x0
 
     :try_start_2
     sput-object v1, Lcom/android/server/wifi/WifiNative;->sThread:Lcom/android/server/wifi/WifiNative$MonitorThread;
 
-    .line 1606
+    .line 1619
     const-wide/16 v4, 0x0
 
     sput-wide v4, Lcom/android/server/wifi/WifiNative;->sWifiHalHandle:J
 
-    .line 1607
+    .line 1620
     const/4 v1, 0x0
 
     sput-object v1, Lcom/android/server/wifi/WifiNative;->sWifiIfaceHandles:[J
 
-    .line 1608
+    .line 1621
     const/4 v1, -0x1
 
     sput v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
@@ -13067,14 +13109,14 @@
     :cond_0
     monitor-exit v2
 
-    .line 1595
+    .line 1608
     return-void
 
-    .line 1602
+    .line 1615
     :catch_0
     move-exception v0
 
-    .line 1603
+    .line 1616
     .local v0, "e":Ljava/lang/InterruptedException;
     :try_start_3
     const-string/jumbo v1, "WifiNative-HAL"
@@ -13087,7 +13129,7 @@
 
     goto :goto_0
 
-    .line 1596
+    .line 1609
     .end local v0    # "e":Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v1
@@ -13101,7 +13143,7 @@
     .locals 4
 
     .prologue
-    .line 3082
+    .line 3095
     const-string/jumbo v1, "WifiNative-HAL"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -13126,12 +13168,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3083
+    .line 3096
     sget-object v2, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 3084
+    .line 3097
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -13139,16 +13181,16 @@
 
     if-eqz v1, :cond_1
 
-    .line 3085
+    .line 3098
     const/4 v0, 0x0
 
-    .line 3086
+    .line 3099
     .local v0, "ret":I
     sget v1, Lcom/android/server/wifi/WifiNative;->sRssiMonitorCmdId:I
 
     if-eqz v1, :cond_0
 
-    .line 3087
+    .line 3100
     sget v1, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v3, Lcom/android/server/wifi/WifiNative;->sRssiMonitorCmdId:I
@@ -13157,7 +13199,7 @@
 
     move-result v0
 
-    .line 3089
+    .line 3102
     :cond_0
     const/4 v1, 0x0
 
@@ -13167,10 +13209,10 @@
 
     monitor-exit v2
 
-    .line 3090
+    .line 3103
     return v0
 
-    .line 3092
+    .line 3105
     .end local v0    # "ret":I
     :cond_1
     const/4 v1, -0x1
@@ -13179,7 +13221,7 @@
 
     return v1
 
-    .line 3083
+    .line 3096
     :catchall_0
     move-exception v1
 
@@ -13192,12 +13234,12 @@
     .locals 3
 
     .prologue
-    .line 1945
+    .line 1958
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1946
+    .line 1959
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -13205,30 +13247,30 @@
 
     if-eqz v0, :cond_1
 
-    .line 1947
+    .line 1960
     sget v0, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
     if-eqz v0, :cond_0
 
-    .line 1948
+    .line 1961
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
 
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiNative;->stopScanNative(II)Z
 
-    .line 1950
+    .line 1963
     :cond_0
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 1951
+    .line 1964
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 1952
+    .line 1965
     const/4 v0, 0x0
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sScanCmdId:I
@@ -13238,10 +13280,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 1944
+    .line 1957
     return-void
 
-    .line 1945
+    .line 1958
     :catchall_0
     move-exception v0
 
@@ -13255,7 +13297,7 @@
     .param p1, "slot"    # I
 
     .prologue
-    .line 3026
+    .line 3039
     const-string/jumbo v0, "WifiNative-HAL"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -13278,12 +13320,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3027
+    .line 3040
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 3028
+    .line 3041
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -13291,7 +13333,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3029
+    .line 3042
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     invoke-static {v0, p1}, Lcom/android/server/wifi/WifiNative;->stopSendingOffloadedPacketNative(II)I
@@ -13304,7 +13346,7 @@
 
     return v0
 
-    .line 3031
+    .line 3044
     :cond_0
     const/4 v0, -0x1
 
@@ -13312,7 +13354,7 @@
 
     return v0
 
-    .line 3027
+    .line 3040
     :catchall_0
     move-exception v0
 
@@ -13343,12 +13385,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2087
+    .line 2100
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2088
+    .line 2101
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -13356,7 +13398,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2089
+    .line 2102
     sget v0, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeCmdId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -13365,10 +13407,10 @@
 
     monitor-exit v1
 
-    .line 2090
+    .line 2103
     return v3
 
-    .line 2092
+    .line 2105
     :cond_0
     :try_start_1
     invoke-static {}, Lcom/android/server/wifi/WifiNative;->getNewCmdIdLocked()I
@@ -13377,10 +13419,10 @@
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeCmdId:I
 
-    .line 2095
+    .line 2108
     sput-object p2, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeHandler:Lcom/android/server/wifi/WifiNative$SignificantWifiChangeEventHandler;
 
-    .line 2096
+    .line 2109
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeCmdId:I
@@ -13391,7 +13433,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2098
+    .line 2111
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeHandler:Lcom/android/server/wifi/WifiNative$SignificantWifiChangeEventHandler;
@@ -13400,10 +13442,10 @@
 
     monitor-exit v1
 
-    .line 2099
+    .line 2112
     return v3
 
-    .line 2102
+    .line 2115
     :cond_1
     const/4 v0, 0x1
 
@@ -13414,10 +13456,10 @@
     :cond_2
     monitor-exit v1
 
-    .line 2104
+    .line 2117
     return v3
 
-    .line 2087
+    .line 2100
     :catchall_0
     move-exception v0
 
@@ -13431,7 +13473,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 1058
+    .line 1069
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -13497,12 +13539,12 @@
     .locals 3
 
     .prologue
-    .line 2111
+    .line 2124
     sget-object v1, Lcom/android/server/wifi/WifiNative;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2112
+    .line 2125
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiNative;->isHalStarted()Z
 
@@ -13510,24 +13552,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 2113
+    .line 2126
     sget v0, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeCmdId:I
 
     if-eqz v0, :cond_0
 
-    .line 2114
+    .line 2127
     sget v0, Lcom/android/server/wifi/WifiNative;->sWlan0Index:I
 
     sget v2, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeCmdId:I
 
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiNative;->untrackSignificantWifiChangeNative(II)Z
 
-    .line 2115
+    .line 2128
     const/4 v0, 0x0
 
     sput v0, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeCmdId:I
 
-    .line 2116
+    .line 2129
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/wifi/WifiNative;->sSignificantWifiChangeHandler:Lcom/android/server/wifi/WifiNative$SignificantWifiChangeEventHandler;
@@ -13537,10 +13579,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 2110
+    .line 2123
     return-void
 
-    .line 2111
+    .line 2124
     :catchall_0
     move-exception v0
 

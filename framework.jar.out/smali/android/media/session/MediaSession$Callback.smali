@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 731
+    .line 811
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,6 +39,14 @@
 
 
 # virtual methods
+.method public getNowPlayingEntries()V
+    .locals 0
+
+    .prologue
+    .line 1070
+    return-void
+.end method
+
 .method public onCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
     .locals 0
     .param p1, "command"    # Ljava/lang/String;
@@ -46,7 +54,7 @@
     .param p3, "cb"    # Landroid/os/ResultReceiver;
 
     .prologue
-    .line 744
+    .line 824
     return-void
 .end method
 
@@ -56,7 +64,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 972
+    .line 1052
     return-void
 .end method
 
@@ -64,7 +72,7 @@
     .locals 0
 
     .prologue
-    .line 933
+    .line 1013
     return-void
 .end method
 
@@ -79,12 +87,12 @@
 
     const/4 v10, 0x1
 
-    .line 761
+    .line 841
     iget-object v5, p0, Landroid/media/session/MediaSession$Callback;->mSession:Landroid/media/session/MediaSession;
 
     if-eqz v5, :cond_0
 
-    .line 762
+    .line 842
     const-string/jumbo v5, "android.intent.action.MEDIA_BUTTON"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -95,10 +103,10 @@
 
     move-result v5
 
-    .line 761
+    .line 841
     if-eqz v5, :cond_0
 
-    .line 763
+    .line 843
     const-string/jumbo v5, "android.intent.extra.KEY_EVENT"
 
     invoke-virtual {p1, v5}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -107,7 +115,7 @@
 
     check-cast v3, Landroid/view/KeyEvent;
 
-    .line 764
+    .line 844
     .local v3, "ke":Landroid/view/KeyEvent;
     if-eqz v3, :cond_0
 
@@ -117,20 +125,20 @@
 
     if-nez v5, :cond_0
 
-    .line 765
+    .line 845
     iget-object v5, p0, Landroid/media/session/MediaSession$Callback;->mSession:Landroid/media/session/MediaSession;
 
     invoke-static {v5}, Landroid/media/session/MediaSession;->-get1(Landroid/media/session/MediaSession;)Landroid/media/session/PlaybackState;
 
     move-result-object v4
 
-    .line 766
+    .line 846
     .local v4, "state":Landroid/media/session/PlaybackState;
     if-nez v4, :cond_1
 
     const-wide/16 v6, 0x0
 
-    .line 767
+    .line 847
     .local v6, "validActions":J
     :goto_0
     invoke-virtual {v3}, Landroid/view/KeyEvent;->getKeyCode()I
@@ -139,14 +147,14 @@
 
     sparse-switch v5, :sswitch_data_0
 
-    .line 829
+    .line 909
     .end local v3    # "ke":Landroid/view/KeyEvent;
     .end local v4    # "state":Landroid/media/session/PlaybackState;
     .end local v6    # "validActions":J
     :cond_0
     return v11
 
-    .line 766
+    .line 846
     .restart local v3    # "ke":Landroid/view/KeyEvent;
     .restart local v4    # "state":Landroid/media/session/PlaybackState;
     :cond_1
@@ -157,7 +165,7 @@
     .restart local v6    # "validActions":J
     goto :goto_0
 
-    .line 769
+    .line 849
     :sswitch_0
     const-wide/16 v8, 0x4
 
@@ -167,13 +175,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 770
+    .line 850
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onPlay()V
 
-    .line 771
+    .line 851
     return v10
 
-    .line 775
+    .line 855
     :sswitch_1
     const-wide/16 v8, 0x2
 
@@ -183,13 +191,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 776
+    .line 856
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onPause()V
 
-    .line 777
+    .line 857
     return v10
 
-    .line 781
+    .line 861
     :sswitch_2
     const-wide/16 v8, 0x20
 
@@ -199,13 +207,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 782
+    .line 862
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onSkipToNext()V
 
-    .line 783
+    .line 863
     return v10
 
-    .line 787
+    .line 867
     :sswitch_3
     const-wide/16 v8, 0x10
 
@@ -215,13 +223,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 788
+    .line 868
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onSkipToPrevious()V
 
-    .line 789
+    .line 869
     return v10
 
-    .line 793
+    .line 873
     :sswitch_4
     const-wide/16 v8, 0x1
 
@@ -231,13 +239,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 794
+    .line 874
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onStop()V
 
-    .line 795
+    .line 875
     return v10
 
-    .line 799
+    .line 879
     :sswitch_5
     const-wide/16 v8, 0x40
 
@@ -247,13 +255,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 800
+    .line 880
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onFastForward()V
 
-    .line 801
+    .line 881
     return v10
 
-    .line 805
+    .line 885
     :sswitch_6
     const-wide/16 v8, 0x8
 
@@ -263,19 +271,19 @@
 
     if-eqz v5, :cond_0
 
-    .line 806
+    .line 886
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onRewind()V
 
-    .line 807
+    .line 887
     return v10
 
-    .line 812
+    .line 892
     :sswitch_7
     if-nez v4, :cond_2
 
     const/4 v2, 0x0
 
-    .line 814
+    .line 894
     .local v2, "isPlaying":Z
     :goto_1
     const-wide/16 v8, 0x204
@@ -288,7 +296,7 @@
 
     const/4 v1, 0x1
 
-    .line 816
+    .line 896
     .local v1, "canPlay":Z
     :goto_2
     const-wide/16 v8, 0x202
@@ -301,20 +309,20 @@
 
     const/4 v0, 0x1
 
-    .line 818
+    .line 898
     .local v0, "canPause":Z
     :goto_3
     if-eqz v2, :cond_6
 
     if-eqz v0, :cond_6
 
-    .line 819
+    .line 899
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onPause()V
 
-    .line 820
+    .line 900
     return v10
 
-    .line 813
+    .line 893
     .end local v0    # "canPause":Z
     .end local v1    # "canPlay":Z
     .end local v2    # "isPlaying":Z
@@ -339,33 +347,33 @@
     .restart local v2    # "isPlaying":Z
     goto :goto_1
 
-    .line 814
+    .line 894
     :cond_4
     const/4 v1, 0x0
 
     .restart local v1    # "canPlay":Z
     goto :goto_2
 
-    .line 816
+    .line 896
     :cond_5
     const/4 v0, 0x0
 
     .restart local v0    # "canPause":Z
     goto :goto_3
 
-    .line 821
+    .line 901
     :cond_6
     if-nez v2, :cond_0
 
     if-eqz v1, :cond_0
 
-    .line 822
+    .line 902
     invoke-virtual {p0}, Landroid/media/session/MediaSession$Callback;->onPlay()V
 
-    .line 823
+    .line 903
     return v10
 
-    .line 767
+    .line 847
     :sswitch_data_0
     .sparse-switch
         0x4f -> :sswitch_7
@@ -384,7 +392,7 @@
     .locals 0
 
     .prologue
-    .line 915
+    .line 995
     return-void
 .end method
 
@@ -392,7 +400,7 @@
     .locals 0
 
     .prologue
-    .line 880
+    .line 960
     return-void
 .end method
 
@@ -402,7 +410,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 896
+    .line 976
     return-void
 .end method
 
@@ -412,7 +420,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 889
+    .line 969
     return-void
 .end method
 
@@ -422,7 +430,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 902
+    .line 982
     return-void
 .end method
 
@@ -430,7 +438,7 @@
     .locals 0
 
     .prologue
-    .line 838
+    .line 918
     return-void
 .end method
 
@@ -440,7 +448,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 850
+    .line 930
     return-void
 .end method
 
@@ -450,7 +458,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 862
+    .line 942
     return-void
 .end method
 
@@ -460,7 +468,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 874
+    .line 954
     return-void
 .end method
 
@@ -468,7 +476,7 @@
     .locals 0
 
     .prologue
-    .line 939
+    .line 1019
     return-void
 .end method
 
@@ -477,7 +485,7 @@
     .param p1, "pos"    # J
 
     .prologue
-    .line 953
+    .line 1033
     return-void
 .end method
 
@@ -486,7 +494,7 @@
     .param p1, "rating"    # Landroid/media/Rating;
 
     .prologue
-    .line 961
+    .line 1041
     return-void
 .end method
 
@@ -494,7 +502,7 @@
     .locals 0
 
     .prologue
-    .line 921
+    .line 1001
     return-void
 .end method
 
@@ -502,7 +510,7 @@
     .locals 0
 
     .prologue
-    .line 927
+    .line 1007
     return-void
 .end method
 
@@ -511,7 +519,7 @@
     .param p1, "id"    # J
 
     .prologue
-    .line 909
+    .line 989
     return-void
 .end method
 
@@ -519,6 +527,24 @@
     .locals 0
 
     .prologue
-    .line 945
+    .line 1025
+    return-void
+.end method
+
+.method public setBrowsedPlayer()V
+    .locals 0
+
+    .prologue
+    .line 1058
+    return-void
+.end method
+
+.method public setPlayItem(IJ)V
+    .locals 0
+    .param p1, "scope"    # I
+    .param p2, "uid"    # J
+
+    .prologue
+    .line 1064
     return-void
 .end method

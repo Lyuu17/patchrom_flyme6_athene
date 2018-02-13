@@ -496,9 +496,7 @@
     move-object v0, p1
 
     .line 207
-    nop
-
-    nop
+    check-cast v0, Lcom/android/framework/protobuf/nano/FieldArray;
 
     .line 208
     .local v0, "other":Lcom/android/framework/protobuf/nano/FieldArray;

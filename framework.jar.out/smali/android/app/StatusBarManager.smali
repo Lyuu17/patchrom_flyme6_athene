@@ -6,6 +6,8 @@
 # static fields
 .field public static final CAMERA_LAUNCH_SOURCE_POWER_DOUBLE_TAP:I = 0x1
 
+.field public static final CAMERA_LAUNCH_SOURCE_SCREEN_GESTURE:I = 0x2
+
 .field public static final CAMERA_LAUNCH_SOURCE_WIGGLE:I = 0x0
 
 .field public static final DISABLE2_MASK:I = 0x1
@@ -75,20 +77,20 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 100
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
+    .line 99
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Landroid/app/StatusBarManager;->mToken:Landroid/os/IBinder;
 
-    .line 101
+    .line 102
     iput-object p1, p0, Landroid/app/StatusBarManager;->mContext:Landroid/content/Context;
 
-    .line 100
+    .line 101
     return-void
 .end method
 
@@ -98,39 +100,39 @@
     .prologue
     monitor-enter p0
 
-    .line 105
+    .line 106
     :try_start_0
     iget-object v0, p0, Landroid/app/StatusBarManager;->mService:Lcom/android/internal/statusbar/IStatusBarService;
 
     if-nez v0, :cond_0
 
-    .line 107
+    .line 108
     const-string/jumbo v0, "statusbar"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 106
+    .line 107
     invoke-static {v0}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/StatusBarManager;->mService:Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 108
+    .line 109
     iget-object v0, p0, Landroid/app/StatusBarManager;->mService:Lcom/android/internal/statusbar/IStatusBarService;
 
     if-nez v0, :cond_0
 
-    .line 109
+    .line 110
     const-string/jumbo v0, "StatusBarManager"
 
     const-string/jumbo v1, "warning: no STATUS_BAR_SERVICE"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
+    .line 113
     :cond_0
     iget-object v0, p0, Landroid/app/StatusBarManager;->mService:Lcom/android/internal/statusbar/IStatusBarService;
     :try_end_0
@@ -153,7 +155,7 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 232
+    .line 233
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_0
@@ -162,7 +164,7 @@
 
     return-object v0
 
-    .line 233
+    .line 234
     :cond_0
     const/4 v0, 0x2
 
@@ -172,7 +174,7 @@
 
     return-object v0
 
-    .line 234
+    .line 235
     :cond_1
     if-nez p0, :cond_2
 
@@ -180,7 +182,7 @@
 
     return-object v0
 
-    .line 235
+    .line 236
     :cond_2
     const-string/jumbo v0, "WINDOW_STATE_UNKNOWN"
 
@@ -193,31 +195,31 @@
     .locals 3
 
     .prologue
-    .line 166
+    .line 167
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
-    .line 167
+    .line 168
     .local v1, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 168
+    .line 169
     invoke-interface {v1}, Lcom/android/internal/statusbar/IStatusBarService;->collapsePanels()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 164
+    .line 165
     :cond_0
     return-void
 
-    .line 170
+    .line 171
     .end local v1    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v0
 
-    .line 171
+    .line 172
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -231,17 +233,17 @@
     .param p1, "what"    # I
 
     .prologue
-    .line 121
+    .line 122
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
-    .line 122
+    .line 123
     .local v1, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 123
+    .line 124
     iget-object v2, p0, Landroid/app/StatusBarManager;->mToken:Landroid/os/IBinder;
 
     iget-object v3, p0, Landroid/app/StatusBarManager;->mContext:Landroid/content/Context;
@@ -254,16 +256,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 119
+    .line 120
     :cond_0
     return-void
 
-    .line 125
+    .line 126
     .end local v1    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v0
 
-    .line 126
+    .line 127
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -277,17 +279,17 @@
     .param p1, "what"    # I
 
     .prologue
-    .line 138
+    .line 139
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
-    .line 139
+    .line 140
     .local v1, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 140
+    .line 141
     iget-object v2, p0, Landroid/app/StatusBarManager;->mToken:Landroid/os/IBinder;
 
     iget-object v3, p0, Landroid/app/StatusBarManager;->mContext:Landroid/content/Context;
@@ -300,16 +302,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 136
+    .line 137
     :cond_0
     return-void
 
-    .line 142
+    .line 143
     .end local v1    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v0
 
-    .line 143
+    .line 144
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -322,31 +324,31 @@
     .locals 3
 
     .prologue
-    .line 152
+    .line 153
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
-    .line 153
+    .line 154
     .local v1, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 154
+    .line 155
     invoke-interface {v1}, Lcom/android/internal/statusbar/IStatusBarService;->expandNotificationsPanel()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 150
+    .line 151
     :cond_0
     return-void
 
-    .line 156
+    .line 157
     .end local v1    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v0
 
-    .line 157
+    .line 158
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -359,12 +361,12 @@
     .locals 1
 
     .prologue
-    .line 179
+    .line 180
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/app/StatusBarManager;->expandSettingsPanel(Ljava/lang/String;)V
 
-    .line 178
+    .line 179
     return-void
 .end method
 
@@ -373,31 +375,31 @@
     .param p1, "subPanel"    # Ljava/lang/String;
 
     .prologue
-    .line 187
+    .line 188
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
-    .line 188
+    .line 189
     .local v1, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 189
+    .line 190
     invoke-interface {v1, p1}, Lcom/android/internal/statusbar/IStatusBarService;->expandSettingsPanel(Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 185
+    .line 186
     :cond_0
     return-void
 
-    .line 191
+    .line 192
     .end local v1    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v0
 
-    .line 192
+    .line 193
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -411,31 +413,31 @@
     .param p1, "slot"    # Ljava/lang/String;
 
     .prologue
-    .line 210
+    .line 211
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
-    .line 211
+    .line 212
     .local v1, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 212
+    .line 213
     invoke-interface {v1, p1}, Lcom/android/internal/statusbar/IStatusBarService;->removeIcon(Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 208
+    .line 209
     :cond_0
     return-void
 
-    .line 214
+    .line 215
     .end local v1    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v0
 
-    .line 215
+    .line 216
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -452,17 +454,17 @@
     .param p4, "contentDescription"    # Ljava/lang/String;
 
     .prologue
-    .line 198
+    .line 199
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v0
 
-    .line 199
+    .line 200
     .local v0, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 201
     iget-object v1, p0, Landroid/app/StatusBarManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -481,16 +483,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 196
+    .line 197
     :cond_0
     return-void
 
-    .line 203
+    .line 204
     .end local v0    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v6
 
-    .line 204
+    .line 205
     .local v6, "ex":Landroid/os/RemoteException;
     invoke-virtual {v6}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -505,31 +507,31 @@
     .param p2, "visible"    # Z
 
     .prologue
-    .line 221
+    .line 222
     :try_start_0
     invoke-direct {p0}, Landroid/app/StatusBarManager;->getService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
-    .line 222
+    .line 223
     .local v1, "svc":Lcom/android/internal/statusbar/IStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 223
+    .line 224
     invoke-interface {v1, p1, p2}, Lcom/android/internal/statusbar/IStatusBarService;->setIconVisibility(Ljava/lang/String;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 219
+    .line 220
     :cond_0
     return-void
 
-    .line 225
+    .line 226
     .end local v1    # "svc":Lcom/android/internal/statusbar/IStatusBarService;
     :catch_0
     move-exception v0
 
-    .line 226
+    .line 227
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 

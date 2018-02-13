@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.telephony.ISub"
 
-.field static final TRANSACTION_addSubInfoRecord:I = 0x9
+.field static final TRANSACTION_addSubInfoRecord_8:I = 0x9
 
 .field static final TRANSACTION_clearDefaultsForInactiveSubIds:I = 0x1a
 
@@ -34,21 +34,21 @@
 
 .field static final TRANSACTION_getActiveSubIdList:I = 0x1b
 
-.field static final TRANSACTION_getActiveSubInfoCount:I = 0x7
-
 .field static final TRANSACTION_getActiveSubInfoCountMax:I = 0x8
 
-.field static final TRANSACTION_getActiveSubscriptionInfo:I = 0x3
+.field static final TRANSACTION_getActiveSubInfoCount_6:I = 0x7
 
 .field static final TRANSACTION_getActiveSubscriptionInfoForIccId:I = 0x4
 
-.field static final TRANSACTION_getActiveSubscriptionInfoForSimSlotIndex:I = 0x5
+.field static final TRANSACTION_getActiveSubscriptionInfoForSimSlotIndex_4:I = 0x5
 
-.field static final TRANSACTION_getActiveSubscriptionInfoList:I = 0x6
+.field static final TRANSACTION_getActiveSubscriptionInfoList_5:I = 0x6
 
-.field static final TRANSACTION_getAllSubInfoCount:I = 0x2
+.field static final TRANSACTION_getActiveSubscriptionInfo_2:I = 0x3
 
-.field static final TRANSACTION_getAllSubInfoList:I = 0x1
+.field static final TRANSACTION_getAllSubInfoCount_1:I = 0x2
+
+.field static final TRANSACTION_getAllSubInfoList_0:I = 0x1
 
 .field static final TRANSACTION_getDefaultDataSubId:I = 0x14
 

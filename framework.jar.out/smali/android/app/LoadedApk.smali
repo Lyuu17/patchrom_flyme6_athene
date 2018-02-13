@@ -3448,21 +3448,17 @@
 
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 808
     iput-object v1, p0, Landroid/app/LoadedApk;->mApplication:Landroid/app/Application;
 
     invoke-static {}, Landroid/app/LoadedApk$FlymeInjector;->cleanFlymeTypeface()V
 
-    .line 810
     if-eqz p2, :cond_5
 
-    .line 812
     :try_start_1
     invoke-virtual {p2, v1}, Landroid/app/Instrumentation;->callApplicationOnCreate(Landroid/app/Application;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 824
     :cond_5
     iget-object v9, p0, Landroid/app/LoadedApk;->mActivityThread:Landroid/app/ActivityThread;
 
@@ -3651,13 +3647,18 @@
 
     throw v9
 
-    .line 833
+    .line 829
     .end local v5    # "e":Ljava/lang/Exception;
     .restart local v0    # "N":I
     .restart local v6    # "i":I
     .restart local v7    # "id":I
     .restart local v8    # "packageIdentifiers":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/String;>;"
     :cond_7
+    const/16 v9, 0x3f
+
+    if-eq v7, v9, :cond_6
+
+    .line 833
     invoke-virtual {p0}, Landroid/app/LoadedApk;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v10

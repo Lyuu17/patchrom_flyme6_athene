@@ -36,7 +36,7 @@
     .param p4, "val$conditions"    # [Landroid/service/notification/Condition;
 
     .prologue
-    .line 1947
+    .line 2123
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$5$1;->this$1:Lcom/android/server/notification/NotificationManagerService$5;
 
     iput-object p2, p0, Lcom/android/server/notification/NotificationManagerService$5$1;->val$pkg:Ljava/lang/String;
@@ -56,12 +56,12 @@
     .locals 4
 
     .prologue
-    .line 1950
+    .line 2126
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$5$1;->this$1:Lcom/android/server/notification/NotificationManagerService$5;
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService$5;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-get6(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ConditionProviders;
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-get7(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ConditionProviders;
 
     move-result-object v0
 
@@ -73,6 +73,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/notification/ConditionProviders;->notifyConditions(Ljava/lang/String;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;[Landroid/service/notification/Condition;)V
 
-    .line 1949
+    .line 2125
     return-void
 .end method

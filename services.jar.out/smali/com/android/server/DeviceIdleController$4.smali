@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
     .prologue
-    .line 374
+    .line 376
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$4;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 3
 
     .prologue
-    .line 377
+    .line 379
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$4;->this$0:Lcom/android/server/DeviceIdleController;
 
     monitor-enter v1
 
-    .line 378
+    .line 380
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$4;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -58,10 +58,10 @@
 
     monitor-exit v1
 
-    .line 376
+    .line 378
     return-void
 
-    .line 377
+    .line 379
     :catchall_0
     move-exception v0
 

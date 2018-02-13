@@ -179,17 +179,13 @@
     move-object v7, v6
 
     .line 80
-    nop
-
-    nop
+    check-cast v7, Landroid/graphics/drawable/ColorDrawable;
 
     .local v7, "startColor":Landroid/graphics/drawable/ColorDrawable;
     move-object v4, v3
 
     .line 81
-    nop
-
-    nop
+    check-cast v4, Landroid/graphics/drawable/ColorDrawable;
 
     .line 82
     .local v4, "endColor":Landroid/graphics/drawable/ColorDrawable;
@@ -255,9 +251,7 @@
     move-object v8, v9
 
     .line 90
-    nop
-
-    nop
+    check-cast v8, Landroid/widget/TextView;
 
     .line 91
     .local v8, "textView":Landroid/widget/TextView;

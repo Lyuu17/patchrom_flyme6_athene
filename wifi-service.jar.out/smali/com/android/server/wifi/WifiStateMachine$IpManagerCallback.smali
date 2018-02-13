@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiStateMachine;
 
     .prologue
-    .line 1225
+    .line 1281
     iput-object p1, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Landroid/net/ip/IpManager$Callback;-><init>()V
@@ -39,14 +39,14 @@
     .param p1, "filter"    # [B
 
     .prologue
-    .line 1271
+    .line 1327
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x200ca
 
     invoke-virtual {v0, v1, p1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1270
+    .line 1326
     return-void
 .end method
 
@@ -55,14 +55,14 @@
     .param p1, "newLp"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 1261
+    .line 1317
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x2008c
 
     invoke-virtual {v0, v1, p1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1260
+    .line 1316
     return-void
 .end method
 
@@ -71,21 +71,21 @@
     .param p1, "dhcpResults"    # Landroid/net/DhcpResults;
 
     .prologue
-    .line 1238
+    .line 1294
     if-eqz p1, :cond_0
 
-    .line 1239
+    .line 1295
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x200c8
 
     invoke-virtual {v0, v1, p1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1237
+    .line 1293
     :goto_0
     return-void
 
-    .line 1241
+    .line 1297
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
@@ -93,30 +93,30 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1242
+    .line 1298
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
-    invoke-static {v0}, Lcom/android/server/wifi/WifiStateMachine;->-get79(Lcom/android/server/wifi/WifiStateMachine;)Lcom/android/server/wifi/WifiLastResortWatchdog;
+    invoke-static {v0}, Lcom/android/server/wifi/WifiStateMachine;->-get85(Lcom/android/server/wifi/WifiStateMachine;)Lcom/android/server/wifi/WifiLastResortWatchdog;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
-    invoke-static {v1}, Lcom/android/server/wifi/WifiStateMachine;->-wrap10(Lcom/android/server/wifi/WifiStateMachine;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/server/wifi/WifiStateMachine;->-wrap12(Lcom/android/server/wifi/WifiStateMachine;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1243
+    .line 1299
     iget-object v2, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
-    invoke-static {v2}, Lcom/android/server/wifi/WifiStateMachine;->-get66(Lcom/android/server/wifi/WifiStateMachine;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/android/server/wifi/WifiStateMachine;->-get72(Lcom/android/server/wifi/WifiStateMachine;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1244
+    .line 1300
     const/4 v3, 0x3
 
-    .line 1242
+    .line 1298
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/wifi/WifiLastResortWatchdog;->noteConnectionFailureAndTriggerIfNeeded(Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto :goto_0
@@ -126,14 +126,14 @@
     .locals 2
 
     .prologue
-    .line 1233
+    .line 1289
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x30004
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1232
+    .line 1288
     return-void
 .end method
 
@@ -141,14 +141,14 @@
     .locals 2
 
     .prologue
-    .line 1228
+    .line 1284
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x30003
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1227
+    .line 1283
     return-void
 .end method
 
@@ -157,14 +157,14 @@
     .param p1, "newLp"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 1256
+    .line 1312
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x2008b
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1255
+    .line 1311
     return-void
 .end method
 
@@ -173,21 +173,21 @@
     .param p1, "newLp"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 1250
+    .line 1306
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x2008c
 
     invoke-virtual {v0, v1, p1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1251
+    .line 1307
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x2008a
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 1249
+    .line 1305
     return-void
 .end method
 
@@ -196,14 +196,14 @@
     .param p1, "logMsg"    # Ljava/lang/String;
 
     .prologue
-    .line 1266
+    .line 1322
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     const v1, 0x20095
 
     invoke-virtual {v0, v1, p1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1265
+    .line 1321
     return-void
 .end method
 
@@ -212,7 +212,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1276
+    .line 1332
     iget-object v0, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -223,7 +223,7 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 1275
+    .line 1331
     return-void
 .end method
 
@@ -232,7 +232,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1281
+    .line 1337
     iget-object v1, p0, Lcom/android/server/wifi/WifiStateMachine$IpManagerCallback;->this$0:Lcom/android/server/wifi/WifiStateMachine;
 
     if-eqz p1, :cond_0
@@ -244,10 +244,10 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/android/server/wifi/WifiStateMachine;->sendMessage(II)V
 
-    .line 1280
+    .line 1336
     return-void
 
-    .line 1281
+    .line 1337
     :cond_0
     const/4 v0, 0x0
 

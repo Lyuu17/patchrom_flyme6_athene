@@ -40,64 +40,52 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    const v5, 0x101008b
+    const v5, #android:attr@preferenceScreenStyle#t
 
     const/4 v4, 0x1
 
     const/4 v3, 0x0
 
-    .line 107
     invoke-direct {p0, p1, p2, v5}, Landroid/preference/PreferenceGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 98
-    const v1, 0x10900b6
+    const v1, #android:layout@preference_list_fragment#t
 
     iput v1, p0, Landroid/preference/PreferenceScreen;->mLayoutResId:I
 
-    .line 110
     sget-object v1, Lcom/android/internal/R$styleable;->PreferenceScreen:[I
 
-    .line 109
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2, v1, v5, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 116
     .local v0, "a":Landroid/content/res/TypedArray;
     iget v1, p0, Landroid/preference/PreferenceScreen;->mLayoutResId:I
 
-    .line 114
     invoke-virtual {v0, v4, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/preference/PreferenceScreen;->mLayoutResId:I
 
-    .line 117
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValueOrEmpty(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 119
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 118
     iput-object v1, p0, Landroid/preference/PreferenceScreen;->mDividerDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 120
     iput-boolean v4, p0, Landroid/preference/PreferenceScreen;->mDividerSpecified:Z
 
-    .line 123
     :cond_0
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 106
     return-void
 .end method
 
@@ -145,7 +133,7 @@
 
     .line 190
     .local v0, "childPrefScreen":Landroid/view/View;
-    const v6, 0x1020016
+    const v6, #android:id@title#t
 
     invoke-virtual {v0, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -153,7 +141,7 @@
 
     .line 191
     .local v5, "titleView":Landroid/view/View;
-    const v6, 0x102000a
+    const v6, #android:id@list#t
 
     invoke-virtual {v0, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -285,10 +273,8 @@
     .param p1, "listView"    # Landroid/widget/ListView;
 
     .prologue
-    .line 166
     invoke-virtual {p1, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 167
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
@@ -297,10 +283,8 @@
 
     invoke-static/range {p0 .. p1}, Landroid/preference/PreferenceScreen$FlymeInjector;->bindFlymeListView(Landroid/preference/PreferenceScreen;Landroid/widget/ListView;)V
 
-    .line 169
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->onAttachedToActivity()V
 
-    .line 165
     return-void
 .end method
 
@@ -462,17 +446,14 @@
     :cond_1
     move-object v1, v0
 
-    .line 248
     check-cast v1, Landroid/preference/Preference;
 
-    .line 249
     .local v1, "preference":Landroid/preference/Preference;
 
     invoke-static/range {p0 .. p3}, Landroid/preference/PreferenceScreen$FlymeInjector;->setFlymePreferenceView(Landroid/preference/PreferenceScreen;Landroid/widget/AdapterView;Landroid/view/View;I)V
 
     invoke-virtual {v1, p0}, Landroid/preference/Preference;->performClick(Landroid/preference/PreferenceScreen;)V
 
-    .line 240
     return-void
 .end method
 

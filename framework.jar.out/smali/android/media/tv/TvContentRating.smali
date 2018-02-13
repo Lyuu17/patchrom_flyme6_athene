@@ -454,9 +454,7 @@
     move-object v0, p1
 
     .line 963
-    nop
-
-    nop
+    check-cast v0, Landroid/media/tv/TvContentRating;
 
     .line 964
     .local v0, "other":Landroid/media/tv/TvContentRating;

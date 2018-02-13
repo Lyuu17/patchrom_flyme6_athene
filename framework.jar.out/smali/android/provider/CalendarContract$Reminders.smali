@@ -30,7 +30,7 @@
     .locals 1
 
     .prologue
-    .line 2098
+    .line 2102
     const-string/jumbo v0, "content://com.android.calendar/reminders"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -39,7 +39,7 @@
 
     sput-object v0, Landroid/provider/CalendarContract$Reminders;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2095
+    .line 2099
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .locals 0
 
     .prologue
-    .line 2103
+    .line 2107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +60,12 @@
     .param p3, "projection"    # [Ljava/lang/String;
 
     .prologue
-    .line 2115
+    .line 2119
+    const/16 v0, 0x36
+
+    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
+
+    .line 2120
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -73,20 +78,20 @@
 
     aput-object v0, v4, v1
 
-    .line 2116
+    .line 2121
     .local v4, "remArgs":[Ljava/lang/String;
     sget-object v1, Landroid/provider/CalendarContract$Reminders;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v3, "event_id=?"
 
-    .line 2117
+    .line 2122
     const/4 v5, 0x0
 
     move-object v0, p0
 
     move-object v2, p3
 
-    .line 2116
+    .line 2121
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0

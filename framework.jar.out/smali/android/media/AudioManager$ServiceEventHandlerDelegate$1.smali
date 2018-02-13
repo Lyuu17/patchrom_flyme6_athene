@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Looper;
 
     .prologue
-    .line 2146
+    .line 2171
     iput-object p1, p0, Landroid/media/AudioManager$ServiceEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$ServiceEventHandlerDelegate;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -40,12 +40,12 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 2149
+    .line 2174
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 2169
+    .line 2194
     invoke-static {}, Landroid/media/AudioManager;->-get0()Ljava/lang/String;
 
     move-result-object v2
@@ -72,16 +72,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2148
+    .line 2173
     :cond_0
     :goto_0
     return-void
 
-    .line 2151
+    .line 2176
     :pswitch_0
     const/4 v1, 0x0
 
-    .line 2152
+    .line 2177
     .local v1, "listener":Landroid/media/AudioManager$OnAudioFocusChangeListener;
     iget-object v2, p0, Landroid/media/AudioManager$ServiceEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$ServiceEventHandlerDelegate;
 
@@ -93,7 +93,7 @@
 
     monitor-enter v3
 
-    .line 2153
+    .line 2178
     :try_start_0
     iget-object v2, p0, Landroid/media/AudioManager$ServiceEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$ServiceEventHandlerDelegate;
 
@@ -112,10 +112,10 @@
     .local v1, "listener":Landroid/media/AudioManager$OnAudioFocusChangeListener;
     monitor-exit v3
 
-    .line 2155
+    .line 2180
     if-eqz v1, :cond_0
 
-    .line 2156
+    .line 2181
     invoke-static {}, Landroid/media/AudioManager;->-get0()Ljava/lang/String;
 
     move-result-object v2
@@ -130,26 +130,26 @@
 
     move-result-object v3
 
-    .line 2157
+    .line 2182
     iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 2156
+    .line 2181
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 2157
+    .line 2182
     const-string/jumbo v4, ") for "
 
-    .line 2156
+    .line 2181
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 2157
+    .line 2182
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 2156
+    .line 2181
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -160,14 +160,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2158
+    .line 2183
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     invoke-interface {v1, v2}, Landroid/media/AudioManager$OnAudioFocusChangeListener;->onAudioFocusChange(I)V
 
     goto :goto_0
 
-    .line 2152
+    .line 2177
     .local v1, "listener":Landroid/media/AudioManager$OnAudioFocusChangeListener;
     :catchall_0
     move-exception v2
@@ -176,20 +176,20 @@
 
     throw v2
 
-    .line 2163
+    .line 2188
     .end local v1    # "listener":Landroid/media/AudioManager$OnAudioFocusChangeListener;
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;
 
-    .line 2164
+    .line 2189
     .local v0, "cbData":Landroid/media/AudioManager$RecordConfigChangeCallbackData;
     iget-object v2, v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioRecordingCallback;
 
     if-eqz v2, :cond_0
 
-    .line 2165
+    .line 2190
     iget-object v2, v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioRecordingCallback;
 
     iget-object v3, v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mConfigs:Ljava/util/List;
@@ -198,7 +198,7 @@
 
     goto :goto_0
 
-    .line 2149
+    .line 2174
     nop
 
     :pswitch_data_0

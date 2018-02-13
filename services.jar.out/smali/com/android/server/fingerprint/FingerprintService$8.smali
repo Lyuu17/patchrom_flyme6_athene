@@ -33,7 +33,7 @@
     .param p11, "$anonymous8"    # Ljava/lang/String;
 
     .prologue
-    .line 623
+    .line 625
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$8;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     move-object v0, p0
@@ -58,7 +58,7 @@
 
     invoke-direct/range {v0 .. v10}, Lcom/android/server/fingerprint/EnrollClient;-><init>(Landroid/content/Context;JLandroid/os/IBinder;Landroid/hardware/fingerprint/IFingerprintServiceReceiver;II[BZLjava/lang/String;)V
 
-    .line 624
+    .line 626
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 628
+    .line 630
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$8;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0}, Lcom/android/server/fingerprint/FingerprintService;->getFingerprintDaemon()Landroid/hardware/fingerprint/IFingerprintDaemon;
@@ -82,11 +82,11 @@
     .locals 1
 
     .prologue
-    .line 633
+    .line 635
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$8;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-wrap10(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 632
+    .line 634
     return-void
 .end method

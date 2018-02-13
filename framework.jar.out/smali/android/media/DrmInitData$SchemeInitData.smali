@@ -70,9 +70,7 @@
     move-object v0, p1
 
     .line 78
-    nop
-
-    nop
+    check-cast v0, Landroid/media/DrmInitData$SchemeInitData;
 
     .line 79
     .local v0, "other":Landroid/media/DrmInitData$SchemeInitData;

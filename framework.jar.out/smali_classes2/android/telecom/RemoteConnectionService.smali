@@ -189,9 +189,7 @@
 
     move-object v0, v1
 
-    nop
-
-    nop
+    check-cast v0, Landroid/telecom/ConnectionRequest;
 
     invoke-direct {v2, v3, v1, v0}, Landroid/telecom/RemoteConnection;-><init>(Ljava/lang/String;Lcom/android/internal/telecom/IConnectionService;Landroid/telecom/ConnectionRequest;)V
 
@@ -577,7 +575,7 @@
     .local v7, "e":Landroid/os/RemoteException;
     new-instance v0, Landroid/telecom/DisconnectCause;
 
-    invoke-virtual {v7}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
 
     move-result-object v1
 

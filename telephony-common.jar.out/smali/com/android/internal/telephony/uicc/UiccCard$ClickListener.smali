@@ -30,15 +30,15 @@
     .param p2, "pkgName"    # Ljava/lang/String;
 
     .prologue
-    .line 421
+    .line 473
     iput-object p1, p0, Lcom/android/internal/telephony/uicc/UiccCard$ClickListener;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 422
+    .line 474
     iput-object p2, p0, Lcom/android/internal/telephony/uicc/UiccCard$ClickListener;->pkgName:Ljava/lang/String;
 
-    .line 421
+    .line 473
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 426
+    .line 478
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/UiccCard$ClickListener;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
     invoke-static {v1}, Lcom/android/internal/telephony/uicc/UiccCard;->-get1(Lcom/android/internal/telephony/uicc/UiccCard;)Ljava/lang/Object;
@@ -59,12 +59,12 @@
 
     monitor-enter v2
 
-    .line 427
+    .line 479
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_1
 
-    .line 428
+    .line 480
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
@@ -72,7 +72,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 429
+    .line 481
     .local v0, "market":Landroid/content/Intent;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -100,12 +100,12 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 430
+    .line 482
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 431
+    .line 483
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/UiccCard$ClickListener;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
     invoke-static {v1}, Lcom/android/internal/telephony/uicc/UiccCard;->-get0(Lcom/android/internal/telephony/uicc/UiccCard;)Landroid/content/Context;
@@ -121,16 +121,16 @@
     :goto_0
     monitor-exit v2
 
-    .line 425
+    .line 477
     return-void
 
-    .line 432
+    .line 484
     :cond_1
     const/4 v1, -0x2
 
     if-ne p2, v1, :cond_0
 
-    .line 433
+    .line 485
     :try_start_1
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/UiccCard$ClickListener;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 426
+    .line 478
     :catchall_0
     move-exception v1
 

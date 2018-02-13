@@ -1861,7 +1861,7 @@
 
     move-result-object v5
 
-    const-string/jumbo v6, "r"
+    const-string v6, "r"
 
     invoke-virtual {v5, p1, v6}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
 

@@ -7153,6 +7153,64 @@
     return v1
 .end method
 
+.method public requireSecureKeyguard()Z
+    .locals 1
+
+    .prologue
+    .line 6720
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Landroid/app/admin/DevicePolicyManager;->requireSecureKeyguard(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public requireSecureKeyguard(I)Z
+    .locals 3
+    .param p1, "userHandle"    # I
+
+    .prologue
+    .line 6725
+    iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
+
+    if-eqz v1, :cond_0
+
+    .line 6727
+    :try_start_0
+    iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
+
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->requireSecureKeyguard(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    return v1
+
+    .line 6728
+    :catch_0
+    move-exception v0
+
+    .line 6729
+    .local v0, "e":Landroid/os/RemoteException;
+    sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v2, "Failed to get secure keyguard requirement"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 6732
+    .end local v0    # "e":Landroid/os/RemoteException;
+    :cond_0
+    const/4 v1, 0x1
+
+    return v1
+.end method
+
 .method public resetPassword(Ljava/lang/String;I)Z
     .locals 2
     .param p1, "password"    # Ljava/lang/String;

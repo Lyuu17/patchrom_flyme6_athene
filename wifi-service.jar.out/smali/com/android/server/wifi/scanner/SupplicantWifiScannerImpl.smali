@@ -167,7 +167,7 @@
     .param p4, "clock"    # Lcom/android/server/wifi/Clock;
 
     .prologue
-    .line 157
+    .line 158
     new-instance v3, Lcom/android/server/wifi/scanner/NoBandChannelHelper;
 
     invoke-direct {v3}, Lcom/android/server/wifi/scanner/NoBandChannelHelper;-><init>()V
@@ -184,7 +184,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;-><init>(Landroid/content/Context;Lcom/android/server/wifi/WifiNative;Lcom/android/server/wifi/scanner/ChannelHelper;Landroid/os/Looper;Lcom/android/server/wifi/Clock;)V
 
-    .line 155
+    .line 156
     return-void
 .end method
 
@@ -201,47 +201,47 @@
 
     const/4 v2, 0x0
 
-    .line 134
+    .line 135
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/WifiScannerImpl;-><init>()V
 
-    .line 71
+    .line 72
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
-    .line 74
+    .line 75
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 75
+    .line 76
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 76
+    .line 77
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 77
+    .line 78
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 80
+    .line 81
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 81
+    .line 82
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 82
+    .line 83
     iput v3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mNextBackgroundScanPeriod:I
 
-    .line 83
+    .line 84
     iput v3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mNextBackgroundScanId:I
 
-    .line 84
+    .line 85
     iput-boolean v3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPeriodPending:Z
 
-    .line 85
+    .line 86
     iput-boolean v3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPaused:Z
 
-    .line 86
+    .line 87
     new-instance v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
 
     const/16 v1, 0xa
@@ -250,63 +250,63 @@
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
 
-    .line 89
+    .line 90
     new-instance v0, Landroid/net/wifi/WifiScanner$ScanData;
 
     new-array v1, v3, [Landroid/net/wifi/ScanResult;
 
     invoke-direct {v0, v3, v3, v1}, Landroid/net/wifi/WifiScanner$ScanData;-><init>(II[Landroid/net/wifi/ScanResult;)V
 
-    .line 88
+    .line 89
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLatestSingleScanResult:Landroid/net/wifi/WifiScanner$ScanData;
 
-    .line 92
+    .line 93
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
-    .line 95
+    .line 96
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
 
-    .line 96
+    .line 97
     new-instance v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;
 
     invoke-direct {v0, v2}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;-><init>(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;)V
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistChangeBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;
 
-    .line 99
+    .line 100
     iput-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
-    .line 103
+    .line 104
     new-instance v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$1;-><init>(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;)V
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncerListener:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer$Listener;
 
-    .line 118
+    .line 119
     new-instance v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$2;-><init>(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;)V
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mScanPeriodListener:Landroid/app/AlarmManager$OnAlarmListener;
 
-    .line 126
+    .line 127
     new-instance v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$3;-><init>(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;)V
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mScanTimeoutListener:Landroid/app/AlarmManager$OnAlarmListener;
 
-    .line 136
+    .line 137
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mContext:Landroid/content/Context;
 
-    .line 137
+    .line 138
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mWifiNative:Lcom/android/server/wifi/WifiNative;
 
-    .line 138
+    .line 139
     iput-object p3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mChannelHelper:Lcom/android/server/wifi/scanner/ChannelHelper;
 
-    .line 139
+    .line 140
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "alarm"
@@ -319,17 +319,17 @@
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 140
+    .line 141
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p4, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mEventHandler:Landroid/os/Handler;
 
-    .line 141
+    .line 142
     iput-object p5, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mClock:Lcom/android/server/wifi/Clock;
 
-    .line 142
+    .line 143
     new-instance v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;
 
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mWifiNative:Lcom/android/server/wifi/WifiNative;
@@ -344,24 +344,24 @@
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;
 
-    .line 145
+    .line 146
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 146
+    .line 147
     const v1, 0x112001b
 
-    .line 145
+    .line 146
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoScanSupported:Z
 
-    .line 148
+    .line 149
     invoke-static {}, Lcom/android/server/wifi/WifiMonitor;->getInstance()Lcom/android/server/wifi/WifiMonitor;
 
     move-result-object v0
@@ -372,15 +372,15 @@
 
     move-result-object v1
 
-    .line 149
+    .line 150
     iget-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mEventHandler:Landroid/os/Handler;
 
     const v3, 0x24011
 
-    .line 148
+    .line 149
     invoke-virtual {v0, v1, v3, v2}, Lcom/android/server/wifi/WifiMonitor;->registerHandler(Ljava/lang/String;ILandroid/os/Handler;)V
 
-    .line 150
+    .line 151
     invoke-static {}, Lcom/android/server/wifi/WifiMonitor;->getInstance()Lcom/android/server/wifi/WifiMonitor;
 
     move-result-object v0
@@ -391,15 +391,15 @@
 
     move-result-object v1
 
-    .line 151
+    .line 152
     iget-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mEventHandler:Landroid/os/Handler;
 
     const v3, 0x24005
 
-    .line 150
+    .line 151
     invoke-virtual {v0, v1, v3, v2}, Lcom/android/server/wifi/WifiMonitor;->registerHandler(Ljava/lang/String;ILandroid/os/Handler;)V
 
-    .line 135
+    .line 136
     return-void
 .end method
 
@@ -407,28 +407,28 @@
     .locals 2
 
     .prologue
-    .line 320
+    .line 321
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 321
+    .line 322
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPeriodPending:Z
 
-    .line 322
+    .line 323
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 319
+    .line 320
     return-void
 
-    .line 320
+    .line 321
     :catchall_0
     move-exception v0
 
@@ -441,20 +441,20 @@
     .locals 2
 
     .prologue
-    .line 327
+    .line 328
     const-string/jumbo v0, "SupplicantWifiScannerImpl"
 
     const-string/jumbo v1, "Timed out waiting for scan result from supplicant"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 328
+    .line 329
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->reportScanFailure()V
 
-    .line 329
+    .line 330
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
 
-    .line 326
+    .line 327
     return-void
 .end method
 
@@ -465,19 +465,19 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 333
+    .line 334
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     if-eqz v1, :cond_0
 
-    .line 334
+    .line 335
     iget-object v1, p1, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->pnoNetworkList:[Lcom/android/server/wifi/WifiNative$PnoNetwork;
 
     iget-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v2, v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->pnoNetworkList:[Lcom/android/server/wifi/WifiNative$PnoNetwork;
 
-    .line 333
+    .line 334
     invoke-static {v1, v2}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
     move-result v1
@@ -494,7 +494,7 @@
     .locals 1
 
     .prologue
-    .line 718
+    .line 727
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
     if-nez v0, :cond_0
@@ -503,7 +503,7 @@
 
     return v0
 
-    .line 719
+    .line 728
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
@@ -521,7 +521,7 @@
     .param p1, "isConnectedPno"    # Z
 
     .prologue
-    .line 714
+    .line 723
     if-eqz p1, :cond_0
 
     const/4 v0, 0x0
@@ -543,12 +543,12 @@
     .locals 1
 
     .prologue
-    .line 700
+    .line 709
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;
 
     invoke-virtual {v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;->forceStopPnoScan()V
 
-    .line 699
+    .line 708
     return-void
 .end method
 
@@ -556,7 +556,7 @@
     .locals 22
 
     .prologue
-    .line 544
+    .line 545
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
@@ -565,7 +565,7 @@
 
     monitor-enter v19
 
-    .line 545
+    .line 546
     :try_start_0
     move-object/from16 v0, p0
 
@@ -577,10 +577,10 @@
 
     monitor-exit v19
 
-    .line 547
+    .line 548
     return-void
 
-    .line 551
+    .line 552
     :cond_0
     :try_start_1
     move-object/from16 v0, p0
@@ -591,25 +591,25 @@
 
     move-result-object v12
 
-    .line 552
+    .line 553
     .local v12, "nativeResults":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/wifi/ScanDetail;>;"
     new-instance v18, Ljava/util/ArrayList;
 
     invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
 
-    .line 553
+    .line 554
     .local v18, "singleScanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 554
+    .line 555
     .local v8, "backgroundScanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 555
+    .line 556
     .local v10, "hwPnoScanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     const/4 v11, 0x0
 
@@ -621,7 +621,7 @@
 
     if-ge v11, v2, :cond_4
 
-    .line 556
+    .line 557
     invoke-virtual {v12, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -632,7 +632,7 @@
 
     move-result-object v14
 
-    .line 557
+    .line 558
     .local v14, "result":Landroid/net/wifi/ScanResult;
     iget-wide v2, v14, Landroid/net/wifi/ScanResult;->timestamp:J
 
@@ -640,7 +640,7 @@
 
     div-long v20, v2, v4
 
-    .line 558
+    .line 559
     .local v20, "timestamp_ms":J
     move-object/from16 v0, p0
 
@@ -652,7 +652,7 @@
 
     if-lez v2, :cond_3
 
-    .line 559
+    .line 560
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -661,10 +661,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 560
+    .line 561
     invoke-interface {v8, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 562
+    .line 563
     :cond_1
     move-object/from16 v0, p0
 
@@ -674,30 +674,30 @@
 
     if-eqz v2, :cond_2
 
-    .line 563
+    .line 564
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v2, v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanFreqs:Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;
 
-    .line 564
+    .line 565
     iget v3, v14, Landroid/net/wifi/ScanResult;->frequency:I
 
-    .line 563
+    .line 564
     invoke-virtual {v2, v3}, Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;->containsChannel(I)Z
 
     move-result v2
 
-    .line 562
+    .line 563
     if-eqz v2, :cond_2
 
-    .line 565
+    .line 566
     move-object/from16 v0, v18
 
     invoke-interface {v0, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 567
+    .line 568
     :cond_2
     move-object/from16 v0, p0
 
@@ -707,16 +707,16 @@
 
     if-eqz v2, :cond_3
 
-    .line 568
+    .line 569
     invoke-interface {v10, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 555
+    .line 556
     :cond_3
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_0
 
-    .line 575
+    .line 576
     .end local v14    # "result":Landroid/net/wifi/ScanResult;
     .end local v20    # "timestamp_ms":J
     :cond_4
@@ -728,14 +728,14 @@
 
     if-eqz v2, :cond_b
 
-    .line 576
+    .line 577
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     if-eqz v2, :cond_5
 
-    .line 577
+    .line 578
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -746,7 +746,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 579
+    .line 580
     invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v16
@@ -765,7 +765,7 @@
 
     check-cast v15, Landroid/net/wifi/ScanResult;
 
-    .line 581
+    .line 582
     .local v15, "scanResult":Landroid/net/wifi/ScanResult;
     move-object/from16 v0, p0
 
@@ -779,7 +779,7 @@
 
     goto :goto_1
 
-    .line 544
+    .line 545
     .end local v8    # "backgroundScanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     .end local v10    # "hwPnoScanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     .end local v11    # "i":I
@@ -794,7 +794,7 @@
 
     throw v2
 
-    .line 586
+    .line 587
     .restart local v8    # "backgroundScanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     .restart local v10    # "hwPnoScanResults":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     .restart local v11    # "i":I
@@ -806,19 +806,19 @@
 
     invoke-static {v8, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 587
+    .line 588
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget v2, v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->maxAps:I
 
-    .line 588
+    .line 589
     invoke-interface {v8}, Ljava/util/List;->size()I
 
     move-result v3
 
-    .line 587
+    .line 588
     invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v2
@@ -827,7 +827,7 @@
 
     move-object/from16 v17, v0
 
-    .line 589
+    .line 590
     .local v17, "scanResultsArray":[Landroid/net/wifi/ScanResult;
     const/4 v11, 0x0
 
@@ -838,7 +838,7 @@
 
     if-ge v11, v2, :cond_6
 
-    .line 590
+    .line 591
     invoke-interface {v8, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -847,12 +847,12 @@
 
     aput-object v2, v17, v11
 
-    .line 589
+    .line 590
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_2
 
-    .line 593
+    .line 594
     :cond_6
     move-object/from16 v0, p0
 
@@ -864,7 +864,7 @@
 
     if-nez v2, :cond_7
 
-    .line 595
+    .line 596
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
@@ -885,7 +885,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->add(Landroid/net/wifi/WifiScanner$ScanData;)V
 
-    .line 599
+    .line 600
     :cond_7
     move-object/from16 v0, p0
 
@@ -893,7 +893,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 600
+    .line 601
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -904,7 +904,7 @@
 
     if-nez v2, :cond_8
 
-    .line 602
+    .line 603
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -915,20 +915,20 @@
 
     if-eqz v2, :cond_c
 
-    .line 612
+    .line 613
     :cond_8
     :goto_3
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 613
+    .line 614
     const/4 v3, 0x0
 
-    .line 612
+    .line 613
     invoke-interface {v2, v3}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanStatus(I)V
 
-    .line 617
+    .line 618
     :cond_9
     move-object/from16 v0, p0
 
@@ -936,7 +936,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 618
+    .line 619
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistChangeBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;
@@ -945,7 +945,7 @@
 
     move-result v9
 
-    .line 619
+    .line 620
     .local v9, "event":I
     sget v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;->EVENT_FOUND:I
 
@@ -953,12 +953,12 @@
 
     if-eqz v2, :cond_a
 
-    .line 620
+    .line 621
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
 
-    .line 621
+    .line 622
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistChangeBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;
@@ -969,10 +969,10 @@
 
     move-result-object v3
 
-    .line 620
+    .line 621
     invoke-interface {v2, v3}, Lcom/android/server/wifi/WifiNative$HotlistEventHandler;->onHotlistApFound([Landroid/net/wifi/ScanResult;)V
 
-    .line 623
+    .line 624
     :cond_a
     sget v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;->EVENT_LOST:I
 
@@ -980,12 +980,12 @@
 
     if-eqz v2, :cond_b
 
-    .line 624
+    .line 625
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
 
-    .line 625
+    .line 626
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistChangeBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;
@@ -996,10 +996,10 @@
 
     move-result-object v3
 
-    .line 624
+    .line 625
     invoke-interface {v2, v3}, Lcom/android/server/wifi/WifiNative$HotlistEventHandler;->onHotlistApLost([Landroid/net/wifi/ScanResult;)V
 
-    .line 630
+    .line 631
     .end local v9    # "event":I
     .end local v17    # "scanResultsArray":[Landroid/net/wifi/ScanResult;
     :cond_b
@@ -1011,7 +1011,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 631
+    .line 632
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -1020,7 +1020,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 632
+    .line 633
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -1029,7 +1029,7 @@
 
     if-eqz v2, :cond_d
 
-    .line 633
+    .line 634
     invoke-interface/range {v18 .. v18}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v16
@@ -1048,7 +1048,7 @@
 
     check-cast v15, Landroid/net/wifi/ScanResult;
 
-    .line 635
+    .line 636
     .restart local v15    # "scanResult":Landroid/net/wifi/ScanResult;
     move-object/from16 v0, p0
 
@@ -1056,15 +1056,15 @@
 
     iget-object v2, v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 636
+    .line 637
     const/4 v3, 0x0
 
-    .line 635
+    .line 636
     invoke-interface {v2, v15, v3}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onFullScanResult(Landroid/net/wifi/ScanResult;I)V
 
     goto :goto_4
 
-    .line 604
+    .line 605
     .end local v15    # "scanResult":Landroid/net/wifi/ScanResult;
     .end local v16    # "scanResult$iterator":Ljava/util/Iterator;
     .restart local v17    # "scanResultsArray":[Landroid/net/wifi/ScanResult;
@@ -1077,7 +1077,7 @@
 
     if-nez v2, :cond_9
 
-    .line 606
+    .line 607
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
@@ -1086,7 +1086,7 @@
 
     move-result v2
 
-    .line 607
+    .line 608
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
@@ -1095,22 +1095,22 @@
 
     move-result v3
 
-    .line 608
+    .line 609
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget v4, v4, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->reportPercentThreshold:I
 
-    .line 607
+    .line 608
     mul-int/2addr v3, v4
 
     div-int/lit8 v3, v3, 0x64
 
-    .line 606
+    .line 607
     if-ge v2, v3, :cond_8
 
-    .line 610
+    .line 611
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
@@ -1119,19 +1119,19 @@
 
     move-result v2
 
-    .line 611
+    .line 612
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget v3, v3, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->reportNumScansThreshold:I
 
-    .line 610
+    .line 611
     if-lt v2, v3, :cond_9
 
     goto/16 :goto_3
 
-    .line 639
+    .line 640
     .end local v17    # "scanResultsArray":[Landroid/net/wifi/ScanResult;
     :cond_d
     sget-object v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->SCAN_RESULT_SORT_COMPARATOR:Ljava/util/Comparator;
@@ -1140,7 +1140,7 @@
 
     invoke-static {v0, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 640
+    .line 641
     new-instance v2, Landroid/net/wifi/WifiScanner$ScanData;
 
     move-object/from16 v0, p0
@@ -1149,7 +1149,7 @@
 
     iget v3, v3, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->scanId:I
 
-    .line 641
+    .line 642
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -1160,7 +1160,7 @@
 
     move-result v6
 
-    .line 642
+    .line 643
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->size()I
 
     move-result v4
@@ -1175,7 +1175,7 @@
 
     check-cast v7, [Landroid/net/wifi/ScanResult;
 
-    .line 640
+    .line 641
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -1186,20 +1186,20 @@
 
     iput-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLatestSingleScanResult:Landroid/net/wifi/WifiScanner$ScanData;
 
-    .line 643
+    .line 644
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v2, v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 644
+    .line 645
     const/4 v3, 0x0
 
-    .line 643
+    .line 644
     invoke-interface {v2, v3}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanStatus(I)V
 
-    .line 647
+    .line 648
     :cond_e
     move-object/from16 v0, p0
 
@@ -1209,7 +1209,7 @@
 
     if-eqz v2, :cond_10
 
-    .line 648
+    .line 649
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -1218,14 +1218,14 @@
 
     if-eqz v2, :cond_10
 
-    .line 649
+    .line 650
     invoke-interface {v10}, Ljava/util/List;->size()I
 
     move-result v2
 
     new-array v13, v2, [Landroid/net/wifi/ScanResult;
 
-    .line 650
+    .line 651
     .local v13, "pnoScanResultsArray":[Landroid/net/wifi/ScanResult;
     const/4 v11, 0x0
 
@@ -1234,7 +1234,7 @@
 
     if-ge v11, v2, :cond_f
 
-    .line 651
+    .line 652
     invoke-interface {v10, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1243,12 +1243,12 @@
 
     aput-object v2, v13, v11
 
-    .line 650
+    .line 651
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_5
 
-    .line 653
+    .line 654
     :cond_f
     move-object/from16 v0, p0
 
@@ -1258,7 +1258,7 @@
 
     invoke-interface {v2, v13}, Lcom/android/server/wifi/WifiNative$PnoEventHandler;->onPnoNetworkFound([Landroid/net/wifi/ScanResult;)V
 
-    .line 656
+    .line 657
     .end local v13    # "pnoScanResultsArray":[Landroid/net/wifi/ScanResult;
     :cond_10
     const/4 v2, 0x0
@@ -1271,7 +1271,7 @@
 
     monitor-exit v19
 
-    .line 543
+    .line 544
     return-void
 .end method
 
@@ -1279,7 +1279,7 @@
     .locals 27
 
     .prologue
-    .line 338
+    .line 339
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
@@ -1288,7 +1288,7 @@
 
     monitor-enter v26
 
-    .line 342
+    .line 343
     :try_start_0
     move-object/from16 v0, p0
 
@@ -1304,7 +1304,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 346
+    .line 347
     :cond_0
     move-object/from16 v0, p0
 
@@ -1314,13 +1314,13 @@
 
     move-result-object v13
 
-    .line 347
+    .line 348
     .local v13, "allFreqs":Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;
     new-instance v18, Ljava/util/HashSet;
 
     invoke-direct/range {v18 .. v18}, Ljava/util/HashSet;-><init>()V
 
-    .line 349
+    .line 350
     .local v18, "hiddenNetworkIdSet":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     new-instance v2, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
@@ -1334,7 +1334,7 @@
 
     invoke-direct {v2, v6, v7}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;-><init>(J)V
 
-    .line 352
+    .line 353
     .local v2, "newScanSettings":Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
     move-object/from16 v0, p0
 
@@ -1342,14 +1342,14 @@
 
     if-nez v3, :cond_a
 
-    .line 353
+    .line 354
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     if-eqz v3, :cond_1
 
-    .line 354
+    .line 355
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
@@ -1358,7 +1358,7 @@
 
     iput-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 355
+    .line 356
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
@@ -1367,35 +1367,35 @@
 
     iput-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 356
+    .line 357
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
     iput v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mNextBackgroundScanPeriod:I
 
-    .line 357
+    .line 358
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 358
+    .line 359
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 359
+    .line 360
     const/4 v3, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPeriodPending:Z
 
-    .line 361
+    .line 362
     :cond_1
     move-object/from16 v0, p0
 
@@ -1409,10 +1409,10 @@
 
     if-eqz v3, :cond_a
 
-    .line 362
+    .line 363
     const/4 v5, 0x4
 
-    .line 363
+    .line 364
     .local v5, "reportEvents":I
     const/16 v16, 0x0
 
@@ -1428,17 +1428,17 @@
 
     if-ge v0, v3, :cond_7
 
-    .line 366
+    .line 367
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     iget-object v3, v3, Lcom/android/server/wifi/WifiNative$ScanSettings;->buckets:[Lcom/android/server/wifi/WifiNative$BucketSettings;
 
-    .line 365
+    .line 366
     aget-object v14, v3, v16
 
-    .line 367
+    .line 368
     .local v14, "bucket":Lcom/android/server/wifi/WifiNative$BucketSettings;
     move-object/from16 v0, p0
 
@@ -1446,31 +1446,31 @@
 
     iget v4, v14, Lcom/android/server/wifi/WifiNative$BucketSettings;->period_ms:I
 
-    .line 368
+    .line 369
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     iget v6, v6, Lcom/android/server/wifi/WifiNative$ScanSettings;->base_period_ms:I
 
-    .line 367
+    .line 368
     div-int/2addr v4, v6
 
     rem-int/2addr v3, v4
 
     if-nez v3, :cond_5
 
-    .line 369
+    .line 370
     iget v3, v14, Lcom/android/server/wifi/WifiNative$BucketSettings;->report_events:I
 
     and-int/lit8 v3, v3, 0x1
 
     if-eqz v3, :cond_2
 
-    .line 371
+    .line 372
     or-int/lit8 v5, v5, 0x1
 
-    .line 373
+    .line 374
     :cond_2
     iget v3, v14, Lcom/android/server/wifi/WifiNative$BucketSettings;->report_events:I
 
@@ -1478,10 +1478,10 @@
 
     if-eqz v3, :cond_3
 
-    .line 375
+    .line 376
     or-int/lit8 v5, v5, 0x2
 
-    .line 378
+    .line 379
     :cond_3
     iget v3, v14, Lcom/android/server/wifi/WifiNative$BucketSettings;->report_events:I
 
@@ -1489,16 +1489,16 @@
 
     if-nez v3, :cond_4
 
-    .line 380
+    .line 381
     and-int/lit8 v5, v5, -0x5
 
-    .line 383
+    .line 384
     :cond_4
     invoke-virtual {v13, v14}, Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;->addChannels(Lcom/android/server/wifi/WifiNative$BucketSettings;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 364
+    .line 365
     :cond_5
     add-int/lit8 v16, v16, 0x1
 
@@ -1513,10 +1513,10 @@
     :cond_6
     monitor-exit v26
 
-    .line 343
+    .line 344
     return-void
 
-    .line 386
+    .line 387
     .restart local v2    # "newScanSettings":Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
     .restart local v5    # "reportEvents":I
     .restart local v13    # "allFreqs":Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;
@@ -1530,7 +1530,7 @@
 
     if-nez v3, :cond_8
 
-    .line 387
+    .line 388
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mNextBackgroundScanId:I
@@ -1541,31 +1541,31 @@
 
     iput v4, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mNextBackgroundScanId:I
 
-    .line 388
+    .line 389
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     iget v4, v4, Lcom/android/server/wifi/WifiNative$ScanSettings;->max_ap_per_scan:I
 
-    .line 389
+    .line 390
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     iget v6, v6, Lcom/android/server/wifi/WifiNative$ScanSettings;->report_threshold_num_scans:I
 
-    .line 390
+    .line 391
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     iget v7, v7, Lcom/android/server/wifi/WifiNative$ScanSettings;->report_threshold_percent:I
 
-    .line 387
+    .line 388
     invoke-virtual/range {v2 .. v7}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->setBackgroundScan(IIIII)V
 
-    .line 393
+    .line 394
     :cond_8
     move-object/from16 v0, p0
 
@@ -1575,24 +1575,24 @@
 
     move-object/from16 v19, v0
 
-    .line 394
+    .line 395
     .local v19, "hiddenNetworkIds":[I
     if-eqz v19, :cond_9
 
-    .line 395
+    .line 396
     move-object/from16 v0, v19
 
     array-length v3, v0
 
-    .line 396
+    .line 397
     const/16 v4, 0x10
 
-    .line 395
+    .line 396
     invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v21
 
-    .line 397
+    .line 398
     .local v21, "numHiddenNetworkIds":I
     const/16 v20, 0x0
 
@@ -1604,7 +1604,7 @@
 
     if-ge v0, v1, :cond_9
 
-    .line 398
+    .line 399
     aget v3, v19, v20
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1615,12 +1615,12 @@
 
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 397
+    .line 398
     add-int/lit8 v20, v20, 0x1
 
     goto :goto_1
 
-    .line 402
+    .line 403
     .end local v20    # "i":I
     .end local v21    # "numHiddenNetworkIds":I
     :cond_9
@@ -1634,19 +1634,19 @@
 
     iput v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mNextBackgroundScanPeriod:I
 
-    .line 403
+    .line 404
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPeriodPending:Z
 
-    .line 404
+    .line 405
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 405
+    .line 406
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mClock:Lcom/android/server/wifi/Clock;
@@ -1665,7 +1665,7 @@
 
     add-long/2addr v8, v10
 
-    .line 406
+    .line 407
     const-string/jumbo v10, "SupplicantWifiScannerImpl Background Scan Period"
 
     move-object/from16 v0, p0
@@ -1676,12 +1676,12 @@
 
     iget-object v12, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mEventHandler:Landroid/os/Handler;
 
-    .line 404
+    .line 405
     const/4 v7, 0x2
 
     invoke-virtual/range {v6 .. v12}, Landroid/app/AlarmManager;->set(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
-    .line 410
+    .line 411
     .end local v5    # "reportEvents":I
     .end local v16    # "bucket_id":I
     .end local v19    # "hiddenNetworkIds":[I
@@ -1692,10 +1692,10 @@
 
     if-eqz v3, :cond_e
 
-    .line 411
+    .line 412
     const/16 v22, 0x0
 
-    .line 412
+    .line 413
     .local v22, "reportFullResults":Z
     move-object/from16 v0, p0
 
@@ -1705,7 +1705,7 @@
 
     move-result-object v23
 
-    .line 413
+    .line 414
     .local v23, "singleScanFreqs":Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;
     const/16 v20, 0x0
 
@@ -1721,17 +1721,17 @@
 
     if-ge v0, v3, :cond_c
 
-    .line 415
+    .line 416
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     iget-object v3, v3, Lcom/android/server/wifi/WifiNative$ScanSettings;->buckets:[Lcom/android/server/wifi/WifiNative$BucketSettings;
 
-    .line 414
+    .line 415
     aget-object v15, v3, v20
 
-    .line 416
+    .line 417
     .local v15, "bucketSettings":Lcom/android/server/wifi/WifiNative$BucketSettings;
     iget v3, v15, Lcom/android/server/wifi/WifiNative$BucketSettings;->report_events:I
 
@@ -1739,38 +1739,38 @@
 
     if-eqz v3, :cond_b
 
-    .line 418
+    .line 419
     const/16 v22, 0x1
 
-    .line 420
+    .line 421
     :cond_b
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v15}, Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;->addChannels(Lcom/android/server/wifi/WifiNative$BucketSettings;)V
 
-    .line 421
+    .line 422
     invoke-virtual {v13, v15}, Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;->addChannels(Lcom/android/server/wifi/WifiNative$BucketSettings;)V
 
-    .line 413
+    .line 414
     add-int/lit8 v20, v20, 0x1
 
     goto :goto_2
 
-    .line 424
+    .line 425
     .end local v15    # "bucketSettings":Lcom/android/server/wifi/WifiNative$BucketSettings;
     :cond_c
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 423
+    .line 424
     move/from16 v0, v22
 
     move-object/from16 v1, v23
 
     invoke-virtual {v2, v0, v1, v3}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->setSingleScan(ZLcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;Lcom/android/server/wifi/WifiNative$ScanEventHandler;)V
 
-    .line 425
+    .line 426
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
@@ -1779,24 +1779,24 @@
 
     move-object/from16 v19, v0
 
-    .line 426
+    .line 427
     .restart local v19    # "hiddenNetworkIds":[I
     if-eqz v19, :cond_d
 
-    .line 427
+    .line 428
     move-object/from16 v0, v19
 
     array-length v3, v0
 
-    .line 428
+    .line 429
     const/16 v4, 0x10
 
-    .line 427
+    .line 428
     invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v21
 
-    .line 429
+    .line 430
     .restart local v21    # "numHiddenNetworkIds":I
     const/16 v20, 0x0
 
@@ -1807,7 +1807,7 @@
 
     if-ge v0, v1, :cond_d
 
-    .line 430
+    .line 431
     aget v3, v19, v20
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1818,12 +1818,12 @@
 
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 429
+    .line 430
     add-int/lit8 v20, v20, 0x1
 
     goto :goto_3
 
-    .line 433
+    .line 434
     .end local v21    # "numHiddenNetworkIds":I
     :cond_d
     const/4 v3, 0x0
@@ -1832,14 +1832,14 @@
 
     iput-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 434
+    .line 435
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 437
+    .line 438
     .end local v19    # "hiddenNetworkIds":[I
     .end local v20    # "i":I
     .end local v22    # "reportFullResults":Z
@@ -1853,7 +1853,7 @@
 
     if-eqz v3, :cond_10
 
-    .line 438
+    .line 439
     :cond_f
     invoke-virtual {v13}, Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;->isEmpty()Z
 
@@ -1861,7 +1861,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 466
+    .line 467
     :cond_10
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->isHwPnoScanRequired()Z
 
@@ -1869,7 +1869,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 467
+    .line 468
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
@@ -1882,7 +1882,7 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->setHwPnoScan([Lcom/android/server/wifi/WifiNative$PnoNetwork;Lcom/android/server/wifi/WifiNative$PnoEventHandler;)V
 
-    .line 471
+    .line 472
     move-object/from16 v0, p0
 
     invoke-direct {v0, v2}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->isDifferentPnoScanSettings(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;)Z
@@ -1891,17 +1891,17 @@
 
     if-eqz v3, :cond_14
 
-    .line 472
+    .line 473
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->restartHwPnoScan()Z
 
     move-result v24
 
-    .line 476
+    .line 477
     .local v24, "status":Z
     :goto_4
     if-eqz v24, :cond_15
 
-    .line 477
+    .line 478
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -1913,20 +1913,20 @@
     :goto_5
     monitor-exit v26
 
-    .line 337
+    .line 338
     return-void
 
-    .line 439
+    .line 440
     :cond_12
     :try_start_2
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->pauseHwPnoScan()V
 
-    .line 440
+    .line 441
     invoke-virtual {v13}, Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;->getSupplicantScanFreqs()Ljava/util/Set;
 
     move-result-object v17
 
-    .line 441
+    .line 442
     .local v17, "freqs":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     move-object/from16 v0, p0
 
@@ -1940,21 +1940,21 @@
 
     move-result v25
 
-    .line 442
+    .line 443
     .local v25, "success":Z
     if-eqz v25, :cond_13
-
-    .line 449
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     .line 450
     move-object/from16 v0, p0
 
-    iget-object v6, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mAlarmManager:Landroid/app/AlarmManager;
+    iput-object v2, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     .line 451
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mAlarmManager:Landroid/app/AlarmManager;
+
+    .line 452
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mClock:Lcom/android/server/wifi/Clock;
@@ -1967,7 +1967,7 @@
 
     add-long/2addr v8, v10
 
-    .line 452
+    .line 453
     const-string/jumbo v10, "SupplicantWifiScannerImpl Scan Timeout"
 
     move-object/from16 v0, p0
@@ -1978,7 +1978,7 @@
 
     iget-object v12, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mEventHandler:Landroid/os/Handler;
 
-    .line 450
+    .line 451
     const/4 v7, 0x2
 
     invoke-virtual/range {v6 .. v12}, Landroid/app/AlarmManager;->set(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
@@ -1987,7 +1987,7 @@
 
     goto :goto_5
 
-    .line 338
+    .line 339
     .end local v2    # "newScanSettings":Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
     .end local v13    # "allFreqs":Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;
     .end local v17    # "freqs":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
@@ -2000,7 +2000,7 @@
 
     throw v3
 
-    .line 454
+    .line 455
     .restart local v2    # "newScanSettings":Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
     .restart local v13    # "allFreqs":Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;
     .restart local v17    # "freqs":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
@@ -2032,7 +2032,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 456
+    .line 457
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mEventHandler:Landroid/os/Handler;
@@ -2047,7 +2047,7 @@
 
     goto :goto_5
 
-    .line 474
+    .line 475
     .end local v17    # "freqs":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     .end local v25    # "success":Z
     :cond_14
@@ -2058,7 +2058,7 @@
     .restart local v24    # "status":Z
     goto :goto_4
 
-    .line 479
+    .line 480
     :cond_15
     const-string/jumbo v3, "SupplicantWifiScannerImpl"
 
@@ -2066,7 +2066,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 481
+    .line 482
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mEventHandler:Landroid/os/Handler;
@@ -2088,12 +2088,12 @@
     .locals 2
 
     .prologue
-    .line 530
+    .line 531
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 531
+    .line 532
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
@@ -2105,32 +2105,32 @@
 
     if-eqz v0, :cond_1
 
-    .line 532
+    .line 533
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->pnoScanEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
     if-eqz v0, :cond_0
 
-    .line 533
+    .line 534
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->pnoScanEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
     invoke-interface {v0}, Lcom/android/server/wifi/WifiNative$PnoEventHandler;->onPnoScanFailed()V
 
-    .line 536
+    .line 537
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
-    .line 537
+    .line 538
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 538
+    .line 539
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -2140,10 +2140,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 529
+    .line 530
     return-void
 
-    .line 530
+    .line 531
     :catchall_0
     move-exception v0
 
@@ -2156,36 +2156,36 @@
     .locals 3
 
     .prologue
-    .line 517
+    .line 518
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 518
+    .line 519
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     if-eqz v0, :cond_1
 
-    .line 519
+    .line 520
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     if-eqz v0, :cond_0
 
-    .line 520
+    .line 521
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 521
+    .line 522
     const/4 v2, 0x3
 
-    .line 520
+    .line 521
     invoke-interface {v0, v2}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanStatus(I)V
 
-    .line 524
+    .line 525
     :cond_0
     const/4 v0, 0x0
 
@@ -2196,10 +2196,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 516
+    .line 517
     return-void
 
-    .line 517
+    .line 518
     :catchall_0
     move-exception v0
 
@@ -2212,12 +2212,12 @@
     .locals 2
 
     .prologue
-    .line 704
+    .line 713
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;
 
     invoke-virtual {v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;->forceStopPnoScan()V
 
-    .line 705
+    .line 714
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;
 
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncerListener:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer$Listener;
@@ -2230,135 +2230,166 @@
 .end method
 
 .method private setNetworkPriorities([Lcom/android/server/wifi/WifiNative$PnoNetwork;)Z
-    .locals 8
+    .locals 10
     .param p1, "networkList"    # [Lcom/android/server/wifi/WifiNative$PnoNetwork;
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v9, 0x1
 
-    .line 673
-    if-eqz p1, :cond_2
+    const/4 v3, 0x0
 
-    .line 675
-    array-length v3, p1
+    .line 674
+    if-eqz p1, :cond_3
 
-    move v1, v2
+    .line 676
+    array-length v4, p1
+
+    move v2, v3
 
     :goto_0
-    if-ge v1, v3, :cond_2
+    if-ge v2, v4, :cond_3
 
-    aget-object v0, p1, v1
-
-    .line 676
-    .local v0, "network":Lcom/android/server/wifi/WifiNative$PnoNetwork;
-    iget-object v4, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mWifiNative:Lcom/android/server/wifi/WifiNative;
-
-    iget v5, v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
+    aget-object v1, p1, v2
 
     .line 677
-    const-string/jumbo v6, "priority"
+    .local v1, "network":Lcom/android/server/wifi/WifiNative$PnoNetwork;
+    iget-object v5, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mWifiNative:Lcom/android/server/wifi/WifiNative;
+
+    iget v6, v1, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
 
     .line 678
-    iget v7, v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->priority:I
-
-    invoke-static {v7}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 676
-    invoke-virtual {v4, v5, v6, v7}, Lcom/android/server/wifi/WifiNative;->setNetworkVariable(ILjava/lang/String;Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
+    const-string/jumbo v7, "priority"
 
     .line 679
-    const-string/jumbo v1, "SupplicantWifiScannerImpl"
+    iget v8, v1, Lcom/android/server/wifi/WifiNative$PnoNetwork;->priority:I
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-static {v8}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v8
 
-    const-string/jumbo v4, "Set priority failed for: "
+    .line 677
+    invoke-virtual {v5, v6, v7, v8}, Lcom/android/server/wifi/WifiNative;->setNetworkVariable(ILjava/lang/String;Ljava/lang/String;)Z
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v5
 
-    move-result-object v3
-
-    iget v4, v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v5, :cond_0
 
     .line 680
-    return v2
+    const-string/jumbo v2, "SupplicantWifiScannerImpl"
 
-    .line 682
-    :cond_0
-    iget-object v4, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mWifiNative:Lcom/android/server/wifi/WifiNative;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    iget v5, v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wifi/WifiNative;->enableNetworkWithoutConnect(I)Z
+    const-string/jumbo v5, "Set priority failed for: "
 
-    move-result v4
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez v4, :cond_1
+    move-result-object v4
 
-    .line 683
-    const-string/jumbo v1, "SupplicantWifiScannerImpl"
+    iget v5, v1, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    const-string/jumbo v4, "Enable network failed for: "
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v3
+    invoke-static {v2, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget v4, v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .line 681
+    return v3
 
     .line 684
-    return v2
+    :cond_0
+    iget-object v5, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mContext:Landroid/content/Context;
 
-    .line 675
+    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v5
+
+    .line 685
+    const-string/jumbo v6, "wifi_auto_connect_type"
+
+    .line 683
+    invoke-static {v5, v6, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    .line 686
+    .local v0, "autoConnectPolicy":I
+    if-ne v0, v9, :cond_1
+
+    .line 687
+    const-string/jumbo v2, "SupplicantWifiScannerImpl"
+
+    const-string/jumbo v3, "Do not enable network,since auto connect disabled"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 688
+    return v9
+
+    .line 691
     :cond_1
-    add-int/lit8 v1, v1, 0x1
+    iget-object v5, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mWifiNative:Lcom/android/server/wifi/WifiNative;
+
+    iget v6, v1, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
+
+    invoke-virtual {v5, v6}, Lcom/android/server/wifi/WifiNative;->enableNetworkWithoutConnect(I)Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    .line 692
+    const-string/jumbo v2, "SupplicantWifiScannerImpl"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "Enable network failed for: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget v5, v1, Lcom/android/server/wifi/WifiNative$PnoNetwork;->networkId:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 693
+    return v3
+
+    .line 676
+    :cond_2
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 688
-    .end local v0    # "network":Lcom/android/server/wifi/WifiNative$PnoNetwork;
-    :cond_2
-    const/4 v1, 0x1
-
-    return v1
+    .line 697
+    .end local v0    # "autoConnectPolicy":I
+    .end local v1    # "network":Lcom/android/server/wifi/WifiNative$PnoNetwork;
+    :cond_3
+    return v9
 .end method
 
 .method private startHwPnoScan()Z
     .locals 2
 
     .prologue
-    .line 692
+    .line 701
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;
 
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncerListener:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer$Listener;
@@ -2374,12 +2405,12 @@
     .locals 1
 
     .prologue
-    .line 696
+    .line 705
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHwPnoDebouncer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;
 
     invoke-virtual {v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$HwPnoDebouncer;->stopPnoScan()V
 
-    .line 695
+    .line 704
     return-void
 .end method
 
@@ -2387,26 +2418,26 @@
     .locals 2
 
     .prologue
-    .line 313
+    .line 314
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mScanPeriodListener:Landroid/app/AlarmManager$OnAlarmListener;
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 314
+    .line 315
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     if-eqz v0, :cond_0
 
-    .line 315
+    .line 316
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->backgroundScanActive:Z
 
-    .line 312
+    .line 313
     :cond_0
     return-void
 .end method
@@ -2417,35 +2448,35 @@
     .locals 2
 
     .prologue
-    .line 162
+    .line 163
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 163
+    .line 164
     const/4 v0, 0x0
 
     :try_start_0
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 164
+    .line 165
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 165
+    .line 166
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->stopHwPnoScan()V
 
-    .line 166
+    .line 167
     invoke-virtual {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->stopBatchedScan()V
 
-    .line 167
+    .line 168
     invoke-virtual {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->resetHotlist()V
 
-    .line 168
+    .line 169
     invoke-virtual {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->untrackSignificantWifiChange()V
 
-    .line 169
+    .line 170
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -2454,10 +2485,10 @@
 
     monitor-exit v1
 
-    .line 161
+    .line 162
     return-void
 
-    .line 162
+    .line 163
     :catchall_0
     move-exception v0
 
@@ -2470,7 +2501,7 @@
     .locals 1
 
     .prologue
-    .line 187
+    .line 188
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mChannelHelper:Lcom/android/server/wifi/scanner/ChannelHelper;
 
     return-object v0
@@ -2481,12 +2512,12 @@
     .param p1, "flush"    # Z
 
     .prologue
-    .line 663
+    .line 664
     iget-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 664
+    .line 665
     :try_start_0
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
 
@@ -2494,11 +2525,11 @@
 
     move-result-object v0
 
-    .line 665
+    .line 666
     .local v0, "results":[Landroid/net/wifi/WifiScanner$ScanData;
     if-eqz p1, :cond_0
 
-    .line 666
+    .line 667
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;
 
     invoke-virtual {v1}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ScanBuffer;->clear()V
@@ -2508,10 +2539,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 668
+    .line 669
     return-object v0
 
-    .line 663
+    .line 664
     .end local v0    # "results":[Landroid/net/wifi/WifiScanner$ScanData;
     :catchall_0
     move-exception v1
@@ -2525,7 +2556,7 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 214
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLatestSingleScanResult:Landroid/net/wifi/WifiScanner$ScanData;
 
     return-object v0
@@ -2538,38 +2569,38 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 175
+    .line 176
     const v0, 0x7fffffff
 
     iput v0, p1, Lcom/android/server/wifi/WifiNative$ScanCapabilities;->max_scan_cache_size:I
 
-    .line 176
+    .line 177
     const/16 v0, 0x10
 
     iput v0, p1, Lcom/android/server/wifi/WifiNative$ScanCapabilities;->max_scan_buckets:I
 
-    .line 177
+    .line 178
     const/16 v0, 0x20
 
     iput v0, p1, Lcom/android/server/wifi/WifiNative$ScanCapabilities;->max_ap_cache_per_scan:I
 
-    .line 178
+    .line 179
     const/16 v0, 0x8
 
     iput v0, p1, Lcom/android/server/wifi/WifiNative$ScanCapabilities;->max_rssi_sample_size:I
 
-    .line 179
+    .line 180
     const/16 v0, 0xa
 
     iput v0, p1, Lcom/android/server/wifi/WifiNative$ScanCapabilities;->max_scan_reporting_threshold:I
 
-    .line 180
+    .line 181
     iput v1, p1, Lcom/android/server/wifi/WifiNative$ScanCapabilities;->max_hotlist_bssids:I
 
-    .line 181
+    .line 182
     iput v1, p1, Lcom/android/server/wifi/WifiNative$ScanCapabilities;->max_significant_wifi_change_aps:I
 
-    .line 182
+    .line 183
     const/4 v0, 0x1
 
     return v0
@@ -2580,18 +2611,18 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 498
+    .line 499
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 513
+    .line 514
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 500
+    .line 501
     :sswitch_0
     const-string/jumbo v0, "SupplicantWifiScannerImpl"
 
@@ -2599,22 +2630,22 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 501
+    .line 502
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mScanTimeoutListener:Landroid/app/AlarmManager$OnAlarmListener;
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 502
+    .line 503
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->reportScanFailure()V
 
-    .line 503
+    .line 504
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
 
     goto :goto_0
 
-    .line 506
+    .line 507
     :sswitch_1
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
@@ -2622,15 +2653,15 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 507
+    .line 508
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->pollLatestScanData()V
 
-    .line 508
+    .line 509
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
 
     goto :goto_0
 
-    .line 498
+    .line 499
     :sswitch_data_0
     .sparse-switch
         0x24005 -> :sswitch_1
@@ -2643,7 +2674,7 @@
     .param p1, "isConnectedPno"    # Z
 
     .prologue
-    .line 757
+    .line 766
     invoke-direct {p0, p1}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->isHwPnoScanRequired(Z)Z
 
     move-result v0
@@ -2655,65 +2686,65 @@
     .locals 3
 
     .prologue
-    .line 278
+    .line 279
     iget-object v2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 281
+    .line 282
     :try_start_0
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     if-nez v1, :cond_0
 
-    .line 282
+    .line 283
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     iput-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 283
+    .line 284
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     iput-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 285
+    .line 286
     :cond_0
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 286
+    .line 287
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 287
+    .line 288
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPeriodPending:Z
 
-    .line 288
+    .line 289
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPaused:Z
 
-    .line 290
+    .line 291
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->unscheduleScansLocked()V
 
-    .line 292
+    .line 293
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->getLatestBatchedScanResults(Z)[Landroid/net/wifi/WifiScanner$ScanData;
 
     move-result-object v0
 
-    .line 293
+    .line 294
     .local v0, "results":[Landroid/net/wifi/WifiScanner$ScanData;
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     if-eqz v1, :cond_1
 
-    .line 294
+    .line 295
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     invoke-interface {v1, v0}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanPaused([Landroid/net/wifi/WifiScanner$ScanData;)V
@@ -2723,13 +2754,13 @@
     :cond_1
     monitor-exit v2
 
-    .line 297
+    .line 298
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
 
-    .line 277
+    .line 278
     return-void
 
-    .line 278
+    .line 279
     .end local v0    # "results":[Landroid/net/wifi/WifiScanner$ScanData;
     :catchall_0
     move-exception v1
@@ -2743,18 +2774,18 @@
     .locals 2
 
     .prologue
-    .line 780
+    .line 789
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 781
+    .line 790
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistChangeBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;
 
     invoke-virtual {v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;->clearSettings()V
 
-    .line 782
+    .line 791
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
@@ -2763,10 +2794,10 @@
 
     monitor-exit v1
 
-    .line 779
+    .line 788
     return-void
 
-    .line 780
+    .line 789
     :catchall_0
     move-exception v0
 
@@ -2779,18 +2810,18 @@
     .locals 3
 
     .prologue
-    .line 741
+    .line 750
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 742
+    .line 751
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
     if-nez v0, :cond_0
 
-    .line 743
+    .line 752
     const-string/jumbo v0, "SupplicantWifiScannerImpl"
 
     const-string/jumbo v2, "No PNO scan running"
@@ -2799,38 +2830,38 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 744
+    .line 753
     const/4 v0, 0x0
 
     monitor-exit v1
 
     return v0
 
-    .line 746
+    .line 755
     :cond_0
     const/4 v0, 0x0
 
     :try_start_1
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 747
+    .line 756
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
-    .line 749
+    .line 758
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->stopHwPnoScan()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 750
+    .line 759
     const/4 v0, 0x1
 
     monitor-exit v1
 
     return v0
 
-    .line 741
+    .line 750
     :catchall_0
     move-exception v0
 
@@ -2843,39 +2874,39 @@
     .locals 2
 
     .prologue
-    .line 302
+    .line 303
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 304
+    .line 305
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     if-eqz v0, :cond_0
 
-    .line 305
+    .line 306
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     invoke-interface {v0}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanRestarted()V
 
-    .line 307
+    .line 308
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPaused:Z
 
-    .line 308
+    .line 309
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->handleScanPeriod()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 301
+    .line 302
     return-void
 
-    .line 302
+    .line 303
     :catchall_0
     move-exception v0
 
@@ -2892,28 +2923,28 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 768
+    .line 777
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 769
+    .line 778
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 771
+    .line 780
     :cond_1
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 772
+    .line 781
     :try_start_0
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistHandler:Lcom/android/server/wifi/WifiNative$HotlistEventHandler;
 
-    .line 773
+    .line 782
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mHotlistChangeBuffer:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$ChangeBuffer;
 
     iget-object v2, p1, Landroid/net/wifi/WifiScanner$HotlistSettings;->bssidInfos:[Landroid/net/wifi/WifiScanner$BssidInfo;
@@ -2928,10 +2959,10 @@
 
     monitor-exit v1
 
-    .line 774
+    .line 783
     return v5
 
-    .line 771
+    .line 780
     :catchall_0
     move-exception v0
 
@@ -2948,18 +2979,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 725
+    .line 734
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 726
+    .line 735
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
     if-eqz v0, :cond_0
 
-    .line 727
+    .line 736
     const-string/jumbo v0, "SupplicantWifiScannerImpl"
 
     const-string/jumbo v2, "Already running a PNO scan"
@@ -2970,18 +3001,18 @@
 
     monitor-exit v1
 
-    .line 728
+    .line 737
     return v3
 
-    .line 730
+    .line 739
     :cond_0
     :try_start_1
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 731
+    .line 740
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPnoSettings:Lcom/android/server/wifi/WifiNative$PnoSettings;
 
-    .line 732
+    .line 741
     iget-object v0, p1, Lcom/android/server/wifi/WifiNative$PnoSettings;->networkList:[Lcom/android/server/wifi/WifiNative$PnoNetwork;
 
     invoke-direct {p0, v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->setNetworkPriorities([Lcom/android/server/wifi/WifiNative$PnoNetwork;)Z
@@ -2996,21 +3027,21 @@
 
     return v3
 
-    .line 734
+    .line 743
     :cond_1
     :try_start_2
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 735
+    .line 744
     const/4 v0, 0x1
 
     monitor-exit v1
 
     return v0
 
-    .line 725
+    .line 734
     :catchall_0
     move-exception v0
 
@@ -3023,7 +3054,7 @@
     .locals 1
 
     .prologue
-    .line 762
+    .line 771
     const/4 v0, 0x0
 
     return v0
@@ -3037,12 +3068,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 219
+    .line 220
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 220
+    .line 221
     :cond_0
     const-string/jumbo v2, "SupplicantWifiScannerImpl"
 
@@ -3060,10 +3091,10 @@
 
     move-result-object v3
 
-    .line 221
+    .line 222
     const-string/jumbo v4, ",eventHandler="
 
-    .line 220
+    .line 221
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -3078,10 +3109,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 222
+    .line 223
     return v5
 
-    .line 225
+    .line 226
     :cond_1
     iget v2, p1, Lcom/android/server/wifi/WifiNative$ScanSettings;->max_ap_per_scan:I
 
@@ -3093,11 +3124,11 @@
 
     if-le v2, v3, :cond_3
 
-    .line 226
+    .line 227
     :cond_2
     return v5
 
-    .line 228
+    .line 229
     :cond_3
     iget v2, p1, Lcom/android/server/wifi/WifiNative$ScanSettings;->num_buckets:I
 
@@ -3109,28 +3140,28 @@
 
     if-le v2, v3, :cond_5
 
-    .line 229
+    .line 230
     :cond_4
     return v5
 
-    .line 231
+    .line 232
     :cond_5
     iget v2, p1, Lcom/android/server/wifi/WifiNative$ScanSettings;->report_threshold_num_scans:I
 
     if-ltz v2, :cond_6
 
-    .line 232
+    .line 233
     iget v2, p1, Lcom/android/server/wifi/WifiNative$ScanSettings;->report_threshold_num_scans:I
 
     const/16 v3, 0xa
 
     if-le v2, v3, :cond_7
 
-    .line 233
+    .line 234
     :cond_6
     return v5
 
-    .line 235
+    .line 236
     :cond_7
     iget v2, p1, Lcom/android/server/wifi/WifiNative$ScanSettings;->report_threshold_percent:I
 
@@ -3142,20 +3173,20 @@
 
     if-le v2, v3, :cond_9
 
-    .line 236
+    .line 237
     :cond_8
     return v5
 
-    .line 238
+    .line 239
     :cond_9
     iget v2, p1, Lcom/android/server/wifi/WifiNative$ScanSettings;->base_period_ms:I
 
     if-gtz v2, :cond_a
 
-    .line 239
+    .line 240
     return v5
 
-    .line 241
+    .line 242
     :cond_a
     const/4 v1, 0x0
 
@@ -3165,12 +3196,12 @@
 
     if-ge v1, v2, :cond_c
 
-    .line 242
+    .line 243
     iget-object v2, p1, Lcom/android/server/wifi/WifiNative$ScanSettings;->buckets:[Lcom/android/server/wifi/WifiNative$BucketSettings;
 
     aget-object v0, v2, v1
 
-    .line 243
+    .line 244
     .local v0, "bucket":Lcom/android/server/wifi/WifiNative$BucketSettings;
     iget v2, v0, Lcom/android/server/wifi/WifiNative$BucketSettings;->period_ms:I
 
@@ -3180,45 +3211,45 @@
 
     if-eqz v2, :cond_b
 
-    .line 244
+    .line 245
     return v5
 
-    .line 241
+    .line 242
     :cond_b
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 248
+    .line 249
     .end local v0    # "bucket":Lcom/android/server/wifi/WifiNative$BucketSettings;
     :cond_c
     iget-object v3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 249
+    .line 250
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->stopBatchedScan()V
 
-    .line 254
+    .line 255
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 255
+    .line 256
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 256
+    .line 257
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->handleScanPeriod()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 257
+    .line 258
     const/4 v2, 0x1
 
     monitor-exit v3
 
     return v2
 
-    .line 248
+    .line 249
     :catchall_0
     move-exception v2
 
@@ -3235,12 +3266,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 193
+    .line 194
     if-eqz p2, :cond_0
 
     if-nez p1, :cond_1
 
-    .line 194
+    .line 195
     :cond_0
     const-string/jumbo v0, "SupplicantWifiScannerImpl"
 
@@ -3258,10 +3289,10 @@
 
     move-result-object v1
 
-    .line 195
+    .line 196
     const-string/jumbo v2, ",eventHandler="
 
-    .line 194
+    .line 195
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -3276,16 +3307,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 196
+    .line 197
     return v3
 
-    .line 198
+    .line 199
     :cond_1
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
     if-nez v0, :cond_2
 
-    .line 199
+    .line 200
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mLastScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     if-eqz v0, :cond_3
@@ -3294,10 +3325,10 @@
 
     iget-boolean v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanActive:Z
 
-    .line 198
+    .line 199
     if-eqz v0, :cond_3
 
-    .line 200
+    .line 201
     :cond_2
     const-string/jumbo v0, "SupplicantWifiScannerImpl"
 
@@ -3305,35 +3336,35 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 201
+    .line 202
     return v3
 
-    .line 203
+    .line 204
     :cond_3
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 204
+    .line 205
     :try_start_0
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 205
+    .line 206
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingSingleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 206
+    .line 207
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 207
+    .line 208
     const/4 v0, 0x1
 
     monitor-exit v1
 
     return v0
 
-    .line 203
+    .line 204
     :catchall_0
     move-exception v0
 
@@ -3346,56 +3377,56 @@
     .locals 2
 
     .prologue
-    .line 263
+    .line 264
     iget-object v1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mSettingsLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 265
+    .line 266
     const/4 v0, 0x0
 
     :try_start_0
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 266
+    .line 267
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 267
+    .line 268
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanSettings:Lcom/android/server/wifi/WifiNative$ScanSettings;
 
-    .line 268
+    .line 269
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mPendingBackgroundScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 269
+    .line 270
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPaused:Z
 
-    .line 270
+    .line 271
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->mBackgroundScanPeriodPending:Z
 
-    .line 271
+    .line 272
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->unscheduleScansLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 273
+    .line 274
     invoke-direct {p0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->processPendingScans()V
 
-    .line 262
+    .line 263
     return-void
 
-    .line 263
+    .line 264
     :catchall_0
     move-exception v0
 
@@ -3410,7 +3441,7 @@
     .param p2, "handler"    # Lcom/android/server/wifi/WifiNative$SignificantWifiChangeEventHandler;
 
     .prologue
-    .line 792
+    .line 801
     const/4 v0, 0x0
 
     return v0
@@ -3420,6 +3451,6 @@
     .locals 0
 
     .prologue
-    .line 795
+    .line 804
     return-void
 .end method

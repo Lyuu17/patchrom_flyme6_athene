@@ -36,20 +36,20 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 2379
+    .line 2401
     invoke-direct {p0}, Landroid/content/pm/IPackageMoveObserver$Stub;-><init>()V
 
-    .line 2380
+    .line 2402
     iput-object p1, p0, Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;->mCallback:Landroid/content/pm/PackageManager$MoveCallback;
 
-    .line 2381
+    .line 2403
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p2, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
     iput-object v0, p0, Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;->mHandler:Landroid/os/Handler;
 
-    .line 2379
+    .line 2401
     return-void
 .end method
 
@@ -62,23 +62,23 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 2386
+    .line 2408
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 2400
+    .line 2422
     const/4 v1, 0x0
 
     return v1
 
-    .line 2388
+    .line 2410
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 2389
+    .line 2411
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v2, p0, Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;->mCallback:Landroid/content/pm/PackageManager$MoveCallback;
 
@@ -90,20 +90,20 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/content/pm/PackageManager$MoveCallback;->onCreated(ILandroid/os/Bundle;)V
 
-    .line 2390
+    .line 2412
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 2391
+    .line 2413
     return v5
 
-    .line 2394
+    .line 2416
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 2395
+    .line 2417
     .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v2, p0, Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;->mCallback:Landroid/content/pm/PackageManager$MoveCallback;
 
@@ -121,13 +121,13 @@
 
     invoke-virtual {v2, v3, v4, v6, v7}, Landroid/content/pm/PackageManager$MoveCallback;->onStatusChanged(IIJ)V
 
-    .line 2396
+    .line 2418
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 2397
+    .line 2419
     return v5
 
-    .line 2386
+    .line 2408
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -141,19 +141,19 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 2405
+    .line 2427
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 2406
+    .line 2428
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput p1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 2407
+    .line 2429
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 2408
+    .line 2430
     iget-object v1, p0, Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x1
@@ -164,7 +164,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2404
+    .line 2426
     return-void
 .end method
 
@@ -175,26 +175,26 @@
     .param p3, "estMillis"    # J
 
     .prologue
-    .line 2413
+    .line 2435
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 2414
+    .line 2436
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput p1, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 2415
+    .line 2437
     iput p2, v0, Lcom/android/internal/os/SomeArgs;->argi2:I
 
-    .line 2416
+    .line 2438
     invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
-    .line 2417
+    .line 2439
     iget-object v1, p0, Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x2
@@ -205,6 +205,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2412
+    .line 2434
     return-void
 .end method

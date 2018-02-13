@@ -103,6 +103,22 @@
     .end annotation
 .end method
 
+.method public abstract getIdleStateDetailed()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getLightIdleStateDetailed()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getSystemPowerWhitelist()[Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {

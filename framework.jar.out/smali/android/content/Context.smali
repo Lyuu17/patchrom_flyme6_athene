@@ -1275,7 +1275,7 @@
     iput-object v6, p0, Landroid/content/Context;->mFlymeColorThemeCacheMap:Ljava/util/HashMap;
 
     :cond_1
-    const-string/jumbo v6, "android"
+    const-string v6, "android"
 
     invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1286,7 +1286,7 @@
     if-eqz v2, :cond_3
 
     :cond_2
-    const-string/jumbo v3, "flyme"
+    const-string v3, "flyme"
 
     :cond_3
     iget-object v6, p0, Landroid/content/Context;->mFlymeColorThemeCacheMap:Ljava/util/HashMap;
@@ -1342,9 +1342,9 @@
 
     move-result-object v6
 
-    const-string/jumbo v8, "mzThemeColor"
+    const-string v8, "mzThemeColor"
 
-    const-string/jumbo v9, "attr"
+    const-string v9, "attr"
 
     invoke-virtual {v6, v8, v9, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 

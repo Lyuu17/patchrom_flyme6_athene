@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/BatteryService;
 
     .prologue
-    .line 863
+    .line 1028
     iput-object p1, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -51,10 +51,10 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 865
+    .line 1030
     iget-object v0, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->-get2(Lcom/android/server/BatteryService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/BatteryService;->-get7(Lcom/android/server/BatteryService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 868
+    .line 1033
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -77,30 +77,30 @@
 
     move-result-object v0
 
-    .line 869
+    .line 1034
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
-    .line 868
+    .line 1033
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 870
+    .line 1035
     const-string/jumbo v1, ", uid="
 
-    .line 868
+    .line 1033
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 870
+    .line 1035
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
 
-    .line 868
+    .line 1033
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -111,16 +111,16 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 871
+    .line 1036
     return-void
 
-    .line 874
+    .line 1039
     :cond_0
     iget-object v0, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/BatteryService;->-wrap1(Lcom/android/server/BatteryService;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 864
+    .line 1029
     return-void
 .end method
 
@@ -133,7 +133,7 @@
     .param p5, "resultReceiver"    # Landroid/os/ResultReceiver;
 
     .prologue
-    .line 879
+    .line 1044
     new-instance v0, Lcom/android/server/BatteryService$Shell;
 
     iget-object v1, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
@@ -154,6 +154,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/BatteryService$Shell;->exec(Landroid/os/Binder;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ResultReceiver;)I
 
-    .line 878
+    .line 1043
     return-void
 .end method

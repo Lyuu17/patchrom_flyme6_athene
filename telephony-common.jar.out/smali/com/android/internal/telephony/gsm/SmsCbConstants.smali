@@ -76,6 +76,8 @@
 
 .field public static final MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_50:I = 0x32
 
+.field public static final MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_60:I = 0x3c
+
 .field public static final MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_911:I = 0x38f
 
 .field public static final MESSAGE_ID_GSMA_ALLOCATED_CHANNEL_919:I = 0x397

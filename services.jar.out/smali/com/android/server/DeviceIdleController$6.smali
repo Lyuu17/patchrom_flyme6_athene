@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
     .prologue
-    .line 399
+    .line 401
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$6;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 400
+    .line 402
     return-void
 .end method
 
@@ -51,15 +51,15 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 407
+    .line 409
     if-nez p1, :cond_0
 
-    .line 408
+    .line 410
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$6;->this$0:Lcom/android/server/DeviceIdleController;
 
     monitor-enter v1
 
-    .line 409
+    .line 411
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$6;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -69,11 +69,11 @@
 
     monitor-exit v1
 
-    .line 406
+    .line 408
     :cond_0
     return-void
 
-    .line 408
+    .line 410
     :catchall_0
     move-exception v0
 
@@ -87,6 +87,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 403
+    .line 405
     return-void
 .end method

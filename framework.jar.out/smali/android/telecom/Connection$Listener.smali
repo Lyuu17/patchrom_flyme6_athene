@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 712
+    .line 808
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 714
+    .line 810
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .param p2, "isVoip"    # Z
 
     .prologue
-    .line 728
+    .line 824
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 716
+    .line 812
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .param p2, "conference"    # Landroid/telecom/Conference;
 
     .prologue
-    .line 732
+    .line 828
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .param p1, "c"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 737
+    .line 833
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .end annotation
 
     .prologue
-    .line 735
+    .line 831
     .local p2, "participants":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/ConferenceParticipant;>;"
     return-void
 .end method
@@ -102,7 +102,7 @@
     .locals 0
 
     .prologue
-    .line 736
+    .line 832
     return-void
 .end method
 
@@ -112,7 +112,7 @@
     .param p2, "isConferenceSupported"    # Z
 
     .prologue
-    .line 742
+    .line 838
     return-void
 .end method
 
@@ -131,7 +131,7 @@
     .end annotation
 
     .prologue
-    .line 731
+    .line 827
     .local p2, "conferenceables":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/Conferenceable;>;"
     return-void
 .end method
@@ -142,7 +142,7 @@
     .param p2, "capabilities"    # I
 
     .prologue
-    .line 723
+    .line 819
     return-void
 .end method
 
@@ -153,7 +153,7 @@
     .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 740
+    .line 836
     return-void
 .end method
 
@@ -163,7 +163,7 @@
     .param p2, "properties"    # I
 
     .prologue
-    .line 724
+    .line 820
     return-void
 .end method
 
@@ -172,7 +172,7 @@
     .param p1, "c"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 722
+    .line 818
     return-void
 .end method
 
@@ -182,7 +182,7 @@
     .param p2, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
     .prologue
-    .line 718
+    .line 814
     return-void
 .end method
 
@@ -192,7 +192,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 738
+    .line 834
     return-void
 .end method
 
@@ -211,7 +211,7 @@
     .end annotation
 
     .prologue
-    .line 739
+    .line 835
     .local p2, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
@@ -222,7 +222,7 @@
     .param p2, "nextChar"    # C
 
     .prologue
-    .line 720
+    .line 816
     return-void
 .end method
 
@@ -232,7 +232,7 @@
     .param p2, "remaining"    # Ljava/lang/String;
 
     .prologue
-    .line 719
+    .line 815
     return-void
 .end method
 
@@ -242,7 +242,7 @@
     .param p2, "ringback"    # Z
 
     .prologue
-    .line 721
+    .line 817
     return-void
 .end method
 
@@ -252,7 +252,7 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 713
+    .line 809
     return-void
 .end method
 
@@ -262,7 +262,7 @@
     .param p2, "statusHints"    # Landroid/telecom/StatusHints;
 
     .prologue
-    .line 729
+    .line 825
     return-void
 .end method
 
@@ -272,7 +272,7 @@
     .param p2, "supportedAudioRoutes"    # I
 
     .prologue
-    .line 725
+    .line 821
     return-void
 .end method
 
@@ -282,7 +282,7 @@
     .param p2, "videoProvider"    # Landroid/telecom/Connection$VideoProvider;
 
     .prologue
-    .line 727
+    .line 823
     return-void
 .end method
 
@@ -292,6 +292,6 @@
     .param p2, "videoState"    # I
 
     .prologue
-    .line 717
+    .line 813
     return-void
 .end method

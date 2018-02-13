@@ -60,7 +60,7 @@
 
     const/4 v3, 0x0
 
-    .line 206
+    .line 210
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "INITIALIZING"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->INITIALIZING:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 207
+    .line 211
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "RESUMED"
@@ -78,7 +78,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->RESUMED:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 208
+    .line 212
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "PAUSING"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->PAUSING:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 209
+    .line 213
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "PAUSED"
@@ -96,7 +96,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->PAUSED:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 210
+    .line 214
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "STOPPING"
@@ -105,7 +105,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->STOPPING:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 211
+    .line 215
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "STOPPED"
@@ -116,7 +116,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->STOPPED:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 212
+    .line 216
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "FINISHING"
@@ -127,7 +127,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->FINISHING:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 213
+    .line 217
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "DESTROYING"
@@ -138,7 +138,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->DESTROYING:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 214
+    .line 218
     new-instance v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     const-string/jumbo v1, "DESTROYED"
@@ -149,7 +149,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->DESTROYED:Lcom/android/server/am/ActivityStack$ActivityState;
 
-    .line 205
+    .line 209
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/android/server/am/ActivityStack$ActivityState;
@@ -207,7 +207,7 @@
     .locals 0
 
     .prologue
-    .line 205
+    .line 209
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -218,7 +218,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 205
+    .line 209
     const-class v0, Lcom/android/server/am/ActivityStack$ActivityState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -234,7 +234,7 @@
     .locals 1
 
     .prologue
-    .line 205
+    .line 209
     sget-object v0, Lcom/android/server/am/ActivityStack$ActivityState;->$VALUES:[Lcom/android/server/am/ActivityStack$ActivityState;
 
     return-object v0

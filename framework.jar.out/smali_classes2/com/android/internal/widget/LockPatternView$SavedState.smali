@@ -40,9 +40,15 @@
 
 .field private final mInputEnabled:Z
 
+.field private final mPatternSize:B
+
 .field private final mSerializedPattern:Ljava/lang/String;
 
+.field private final mShowErrorPath:Z
+
 .field private final mTactileFeedbackEnabled:Z
+
+.field private final mVisibleDots:Z
 
 
 # direct methods
@@ -50,15 +56,15 @@
     .locals 1
 
     .prologue
-    .line 1330
+    .line 1423
     new-instance v0, Lcom/android/internal/widget/LockPatternView$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/internal/widget/LockPatternView$SavedState$1;-><init>()V
 
-    .line 1329
+    .line 1422
     sput-object v0, Lcom/android/internal/widget/LockPatternView$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 1265
+    .line 1333
     return-void
 .end method
 
@@ -69,24 +75,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1290
+    .line 1365
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1291
+    .line 1366
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mSerializedPattern:Ljava/lang/String;
 
-    .line 1292
+    .line 1367
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mDisplayMode:I
 
-    .line 1293
+    .line 1368
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v0
+
+    iput-byte v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mPatternSize:B
+
+    .line 1369
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     move-result-object v0
@@ -99,7 +112,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInputEnabled:Z
 
-    .line 1294
+    .line 1370
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     move-result-object v0
@@ -112,7 +125,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInStealthMode:Z
 
-    .line 1295
+    .line 1371
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     move-result-object v0
@@ -125,7 +138,33 @@
 
     iput-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mTactileFeedbackEnabled:Z
 
-    .line 1289
+    .line 1372
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mVisibleDots:Z
+
+    .line 1373
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mShowErrorPath:Z
+
+    .line 1364
     return-void
 .end method
 
@@ -139,49 +178,64 @@
     return-void
 .end method
 
-.method private constructor <init>(Landroid/os/Parcelable;Ljava/lang/String;IZZZ)V
+.method private constructor <init>(Landroid/os/Parcelable;Ljava/lang/String;IBZZZZZ)V
     .locals 0
     .param p1, "superState"    # Landroid/os/Parcelable;
     .param p2, "serializedPattern"    # Ljava/lang/String;
     .param p3, "displayMode"    # I
-    .param p4, "inputEnabled"    # Z
-    .param p5, "inStealthMode"    # Z
-    .param p6, "tactileFeedbackEnabled"    # Z
+    .param p4, "patternSize"    # B
+    .param p5, "inputEnabled"    # Z
+    .param p6, "inStealthMode"    # Z
+    .param p7, "tactileFeedbackEnabled"    # Z
+    .param p8, "visibleDots"    # Z
+    .param p9, "showErrorPath"    # Z
 
     .prologue
-    .line 1278
+    .line 1350
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1279
+    .line 1351
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mSerializedPattern:Ljava/lang/String;
 
-    .line 1280
+    .line 1352
     iput p3, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mDisplayMode:I
 
-    .line 1281
-    iput-boolean p4, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInputEnabled:Z
+    .line 1353
+    iput-byte p4, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mPatternSize:B
 
-    .line 1282
-    iput-boolean p5, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInStealthMode:Z
+    .line 1354
+    iput-boolean p5, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInputEnabled:Z
 
-    .line 1283
-    iput-boolean p6, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mTactileFeedbackEnabled:Z
+    .line 1355
+    iput-boolean p6, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInStealthMode:Z
 
-    .line 1277
+    .line 1356
+    iput-boolean p7, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mTactileFeedbackEnabled:Z
+
+    .line 1357
+    iput-boolean p8, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mVisibleDots:Z
+
+    .line 1358
+    iput-boolean p9, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mShowErrorPath:Z
+
+    .line 1349
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/os/Parcelable;Ljava/lang/String;IZZZLcom/android/internal/widget/LockPatternView$SavedState;)V
+.method synthetic constructor <init>(Landroid/os/Parcelable;Ljava/lang/String;IBZZZZZLcom/android/internal/widget/LockPatternView$SavedState;)V
     .locals 0
     .param p1, "superState"    # Landroid/os/Parcelable;
     .param p2, "serializedPattern"    # Ljava/lang/String;
     .param p3, "displayMode"    # I
-    .param p4, "inputEnabled"    # Z
-    .param p5, "inStealthMode"    # Z
-    .param p6, "tactileFeedbackEnabled"    # Z
+    .param p4, "patternSize"    # B
+    .param p5, "inputEnabled"    # Z
+    .param p6, "inStealthMode"    # Z
+    .param p7, "tactileFeedbackEnabled"    # Z
+    .param p8, "visibleDots"    # Z
+    .param p9, "showErrorPath"    # Z
 
     .prologue
-    invoke-direct/range {p0 .. p6}, Lcom/android/internal/widget/LockPatternView$SavedState;-><init>(Landroid/os/Parcelable;Ljava/lang/String;IZZZ)V
+    invoke-direct/range {p0 .. p9}, Lcom/android/internal/widget/LockPatternView$SavedState;-><init>(Landroid/os/Parcelable;Ljava/lang/String;IBZZZZZ)V
 
     return-void
 .end method
@@ -192,8 +246,18 @@
     .locals 1
 
     .prologue
-    .line 1303
+    .line 1381
     iget v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mDisplayMode:I
+
+    return v0
+.end method
+
+.method public getPatternSize()B
+    .locals 1
+
+    .prologue
+    .line 1385
+    iget-byte v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mPatternSize:B
 
     return v0
 .end method
@@ -202,7 +266,7 @@
     .locals 1
 
     .prologue
-    .line 1299
+    .line 1377
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mSerializedPattern:Ljava/lang/String;
 
     return-object v0
@@ -212,7 +276,7 @@
     .locals 1
 
     .prologue
-    .line 1311
+    .line 1393
     iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInStealthMode:Z
 
     return v0
@@ -222,8 +286,18 @@
     .locals 1
 
     .prologue
-    .line 1307
+    .line 1389
     iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInputEnabled:Z
+
+    return v0
+.end method
+
+.method public isShowErrorPath()Z
+    .locals 1
+
+    .prologue
+    .line 1405
+    iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mShowErrorPath:Z
 
     return v0
 .end method
@@ -232,8 +306,18 @@
     .locals 1
 
     .prologue
-    .line 1315
+    .line 1397
     iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mTactileFeedbackEnabled:Z
+
+    return v0
+.end method
+
+.method public isVisibleDots()Z
+    .locals 1
+
+    .prologue
+    .line 1401
+    iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mVisibleDots:Z
 
     return v0
 .end method
@@ -244,20 +328,25 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1320
+    .line 1410
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1321
+    .line 1411
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mSerializedPattern:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1322
+    .line 1412
     iget v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mDisplayMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1323
+    .line 1413
+    iget-byte v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mPatternSize:B
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 1414
     iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInputEnabled:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -266,7 +355,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 1324
+    .line 1415
     iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mInStealthMode:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -275,7 +364,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 1325
+    .line 1416
     iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mTactileFeedbackEnabled:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -284,6 +373,24 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 1319
+    .line 1417
+    iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mVisibleDots:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
+
+    .line 1418
+    iget-boolean v0, p0, Lcom/android/internal/widget/LockPatternView$SavedState;->mShowErrorPath:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
+
+    .line 1409
     return-void
 .end method

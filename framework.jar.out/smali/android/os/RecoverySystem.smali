@@ -3387,7 +3387,7 @@
     .prologue
     const/4 v6, 0x0
 
-    const-string/jumbo v4, "android.intent.action.MZ_UPDATE"
+    const-string v4, "android.intent.action.MZ_UPDATE"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -3399,14 +3399,14 @@
 
     if-eqz v4, :cond_0
 
-    const-string/jumbo v4, "wipe_userdata"
+    const-string v4, "wipe_userdata"
 
     invoke-virtual {p1, v4, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v0
 
     .local v0, "clearData":Z
-    const-string/jumbo v4, "upgrade_locate_filepath"
+    const-string v4, "upgrade_locate_filepath"
 
     invoke-virtual {p1, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3421,14 +3421,14 @@
     return-void
 
     :cond_0
-    const-string/jumbo v4, "shutdown"
+    const-string v4, "shutdown"
 
     invoke-virtual {p1, v4, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v3
 
     .local v3, "shutdown":Z
-    const-string/jumbo v4, "android.intent.extra.REASON"
+    const-string v4, "android.intent.extra.REASON"
 
     invoke-virtual {p1, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3466,7 +3466,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "--update_package="
+    const-string v6, "--update_package="
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3485,7 +3485,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "--locale="
+    const-string v6, "--locale="
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3510,7 +3510,7 @@
     .local v2, "localeArg":Ljava/lang/String;
     if-eqz p1, :cond_0
 
-    const-string/jumbo v4, "--wipe_data"
+    const-string v4, "--wipe_data"
 
     :goto_0
     const/4 v5, 0x3

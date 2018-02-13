@@ -7,6 +7,7 @@
     <item type="dimen" name="dialog_min_width_minor">95.00001%</item>
     <dimen name="notification_large_icon_width">64.0dip</dimen>
     <dimen name="notification_large_icon_height">64.0dip</dimen>
+    <dimen name="global_actions_avatar_size">24.0dip</dimen>
     <item type="dimen" name="hint_alpha_material_dark">0.5</item>
     <item type="dimen" name="hint_alpha_material_light">0.38</item>
     <item type="dimen" name="hint_pressed_alpha_material_dark">0.7</item>
@@ -342,4 +343,5 @@
     <dimen name="progress_bar_size_small">16.0dip</dimen>
     <dimen name="progress_bar_size_medium">48.0dip</dimen>
     <dimen name="progress_bar_size_large">76.0dip</dimen>
+    <item type="dimen" name="APKTOOL_DUMMY_c9">false</item>
 </resources>

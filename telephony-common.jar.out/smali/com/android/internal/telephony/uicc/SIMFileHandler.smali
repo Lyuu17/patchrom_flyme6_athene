@@ -35,23 +35,23 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 68
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/IccFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
+    .line 70
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/SIMFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 69
+    .line 71
     .local v0, "path":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 70
+    .line 72
     const-string/jumbo v1, "SIMFileHandler"
 
     const-string/jumbo v2, "Error: EF Path being returned in null"
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
+    .line 74
     :cond_0
     return-object v0
 
@@ -62,7 +62,7 @@
 
     return-object v1
 
-    .line 66
+    .line 68
     :sswitch_1
     const-string/jumbo v1, "3F007F20"
 
@@ -85,6 +85,8 @@
         0x6f3e -> :sswitch_1
         0x6f3f -> :sswitch_1
         0x6f46 -> :sswitch_1
+        0x6f60 -> :sswitch_1
+        0x6f62 -> :sswitch_1
         0x6fad -> :sswitch_1
         0x6fc5 -> :sswitch_1
         0x6fc7 -> :sswitch_1
@@ -101,12 +103,12 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 77
+    .line 79
     const-string/jumbo v0, "SIMFileHandler"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
+    .line 78
     return-void
 .end method
 
@@ -115,11 +117,11 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 82
+    .line 84
     const-string/jumbo v0, "SIMFileHandler"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
+    .line 83
     return-void
 .end method

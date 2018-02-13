@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.ITransientNotification"
 
-.field static final TRANSACTION_hide:I = 0x2
+.field static final TRANSACTION_hide_1:I = 0x2
 
-.field static final TRANSACTION_show:I = 0x1
+.field static final TRANSACTION_show_0:I = 0x1
 
 
 # direct methods

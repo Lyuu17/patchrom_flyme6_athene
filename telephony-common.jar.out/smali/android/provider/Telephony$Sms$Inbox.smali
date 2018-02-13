@@ -29,7 +29,7 @@
     .locals 1
 
     .prologue
-    .line 504
+    .line 539
     const-string/jumbo v0, "content://sms/inbox"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -38,7 +38,7 @@
 
     sput-object v0, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 492
+    .line 527
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .locals 0
 
     .prologue
-    .line 498
+    .line 533
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,10 +63,10 @@
     .param p6, "read"    # Z
 
     .prologue
-    .line 545
+    .line 580
     sget-object v2, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 546
+    .line 581
     const/4 v8, 0x0
 
     move v0, p0
@@ -83,7 +83,7 @@
 
     move v7, p6
 
-    .line 545
+    .line 580
     invoke-static/range {v0 .. v8}, Landroid/provider/Telephony$Sms;->addMessageToUri(ILandroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZZ)Landroid/net/Uri;
 
     move-result-object v0
@@ -101,12 +101,12 @@
     .param p5, "read"    # Z
 
     .prologue
-    .line 526
+    .line 561
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSmsSubscriptionId()I
 
     move-result v0
 
-    .line 527
+    .line 562
     sget-object v2, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v8, 0x0
@@ -123,7 +123,7 @@
 
     move v7, p5
 
-    .line 526
+    .line 561
     invoke-static/range {v0 .. v8}, Landroid/provider/Telephony$Sms;->addMessageToUri(ILandroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZZ)Landroid/net/Uri;
 
     move-result-object v0

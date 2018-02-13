@@ -201,41 +201,41 @@
     .locals 6
 
     .prologue
-    .line 1199
+    .line 1200
     iget-object v1, p0, Lcom/android/server/wifi/WifiMetrics;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1200
+    .line 1201
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mConnectionEventList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 1201
+    .line 1202
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mCurrentConnectionEvent:Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
 
     if-eqz v0, :cond_0
 
-    .line 1202
+    .line 1203
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mConnectionEventList:Ljava/util/List;
 
     iget-object v2, p0, Lcom/android/server/wifi/WifiMetrics;->mCurrentConnectionEvent:Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1204
+    .line 1205
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mScanReturnEntries:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 1205
+    .line 1206
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mWifiSystemStateEntries:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 1206
+    .line 1207
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mClock:Lcom/android/server/wifi/Clock;
 
     invoke-virtual {v0}, Lcom/android/server/wifi/Clock;->elapsedRealtime()J
@@ -248,22 +248,22 @@
 
     iput-wide v2, p0, Lcom/android/server/wifi/WifiMetrics;->mRecordStartTimeSec:J
 
-    .line 1207
+    .line 1208
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mRssiPollCounts:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 1208
+    .line 1209
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mWifiAlertReasonCounts:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 1209
+    .line 1210
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mWifiScoreCounts:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 1210
+    .line 1211
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     invoke-virtual {v0}, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->clear()Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -272,10 +272,10 @@
 
     monitor-exit v1
 
-    .line 1198
+    .line 1199
     return-void
 
-    .line 1199
+    .line 1200
     :catchall_0
     move-exception v0
 
@@ -289,30 +289,30 @@
     .param p1, "incremental"    # Z
 
     .prologue
-    .line 1108
+    .line 1109
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1109
+    .line 1110
     .local v5, "events":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/wifi/WifiMetricsProto$ConnectionEvent;>;"
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1110
+    .line 1111
     .local v10, "rssis":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;>;"
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1111
+    .line 1112
     .local v2, "alertReasons":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;>;"
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1112
+    .line 1113
     .local v12, "scores":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/wifi/WifiMetricsProto$WifiScoreCount;>;"
     move-object/from16 v0, p0
 
@@ -320,7 +320,7 @@
 
     monitor-enter v14
 
-    .line 1113
+    .line 1114
     :try_start_0
     move-object/from16 v0, p0
 
@@ -345,7 +345,7 @@
 
     check-cast v3, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
 
-    .line 1116
+    .line 1117
     .local v3, "event":Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
     if-eqz p1, :cond_1
 
@@ -355,23 +355,23 @@
 
     if-eq v13, v3, :cond_0
 
-    .line 1117
+    .line 1118
     iget-object v13, v3, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;->mConnectionEvent:Lcom/android/server/wifi/WifiMetricsProto$ConnectionEvent;
 
     iget-boolean v13, v13, Lcom/android/server/wifi/WifiMetricsProto$ConnectionEvent;->automaticBugReportTaken:Z
 
     if-nez v13, :cond_0
 
-    .line 1120
+    .line 1121
     :cond_1
     iget-object v13, v3, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;->mConnectionEvent:Lcom/android/server/wifi/WifiMetricsProto$ConnectionEvent;
 
     invoke-interface {v5, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1121
+    .line 1122
     if-eqz p1, :cond_0
 
-    .line 1122
+    .line 1123
     iget-object v13, v3, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;->mConnectionEvent:Lcom/android/server/wifi/WifiMetricsProto$ConnectionEvent;
 
     const/4 v15, 0x1
@@ -382,7 +382,7 @@
 
     goto :goto_0
 
-    .line 1112
+    .line 1113
     .end local v3    # "event":Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
     .end local v4    # "event$iterator":Ljava/util/Iterator;
     :catchall_0
@@ -392,7 +392,7 @@
 
     throw v13
 
-    .line 1126
+    .line 1127
     .restart local v4    # "event$iterator":Ljava/util/Iterator;
     :cond_2
     :try_start_1
@@ -402,7 +402,7 @@
 
     if-lez v13, :cond_3
 
-    .line 1127
+    .line 1128
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -421,13 +421,13 @@
 
     iput-object v13, v15, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->connectionEvent:[Lcom/android/server/wifi/WifiMetricsProto$ConnectionEvent;
 
-    .line 1131
+    .line 1132
     :cond_3
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
-    .line 1132
+    .line 1133
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/wifi/WifiMetrics;->mScanReturnEntries:Landroid/util/SparseIntArray;
@@ -438,10 +438,10 @@
 
     new-array v15, v15, [Lcom/android/server/wifi/WifiMetricsProto$WifiLog$ScanReturnEntry;
 
-    .line 1131
+    .line 1132
     iput-object v15, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->scanReturnEntries:[Lcom/android/server/wifi/WifiMetricsProto$WifiLog$ScanReturnEntry;
 
-    .line 1133
+    .line 1134
     const/4 v6, 0x0
 
     .local v6, "i":I
@@ -456,7 +456,7 @@
 
     if-ge v6, v13, :cond_4
 
-    .line 1134
+    .line 1135
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -469,7 +469,7 @@
 
     aput-object v15, v13, v6
 
-    .line 1135
+    .line 1136
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -488,7 +488,7 @@
 
     iput v15, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog$ScanReturnEntry;->scanReturnCode:I
 
-    .line 1136
+    .line 1137
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -507,18 +507,18 @@
 
     iput v15, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog$ScanReturnEntry;->scanResultsCount:I
 
-    .line 1133
+    .line 1134
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 1142
+    .line 1143
     :cond_4
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
-    .line 1144
+    .line 1145
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiSystemStateEntries:Landroid/util/SparseIntArray;
@@ -527,13 +527,13 @@
 
     move-result v15
 
-    .line 1143
+    .line 1144
     new-array v15, v15, [Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;
 
-    .line 1142
+    .line 1143
     iput-object v15, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->wifiSystemStateEntries:[Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;
 
-    .line 1145
+    .line 1146
     const/4 v6, 0x0
 
     :goto_2
@@ -547,22 +547,22 @@
 
     if-ge v6, v13, :cond_6
 
-    .line 1146
+    .line 1147
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget-object v13, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->wifiSystemStateEntries:[Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;
 
-    .line 1147
+    .line 1148
     new-instance v15, Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;
 
     invoke-direct {v15}, Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;-><init>()V
 
-    .line 1146
+    .line 1147
     aput-object v15, v13, v6
 
-    .line 1148
+    .line 1149
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -571,7 +571,7 @@
 
     aget-object v13, v13, v6
 
-    .line 1149
+    .line 1150
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiSystemStateEntries:Landroid/util/SparseIntArray;
@@ -582,10 +582,10 @@
 
     div-int/lit8 v15, v15, 0x2
 
-    .line 1148
+    .line 1149
     iput v15, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;->wifiState:I
 
-    .line 1150
+    .line 1151
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -594,7 +594,7 @@
 
     aget-object v13, v13, v6
 
-    .line 1151
+    .line 1152
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiSystemStateEntries:Landroid/util/SparseIntArray;
@@ -603,10 +603,10 @@
 
     move-result v15
 
-    .line 1150
+    .line 1151
     iput v15, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;->wifiStateCount:I
 
-    .line 1152
+    .line 1153
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
@@ -615,7 +615,7 @@
 
     aget-object v15, v13, v6
 
-    .line 1153
+    .line 1154
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiSystemStateEntries:Landroid/util/SparseIntArray;
@@ -630,22 +630,22 @@
 
     const/4 v13, 0x1
 
-    .line 1152
+    .line 1153
     :goto_3
     iput-boolean v13, v15, Lcom/android/server/wifi/WifiMetricsProto$WifiLog$WifiSystemStateEntry;->isScreenOn:Z
 
-    .line 1145
+    .line 1146
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
-    .line 1153
+    .line 1154
     :cond_5
     const/4 v13, 0x0
 
     goto :goto_3
 
-    .line 1155
+    .line 1156
     :cond_6
     move-object/from16 v0, p0
 
@@ -663,14 +663,14 @@
 
     div-long v16, v16, v18
 
-    .line 1156
+    .line 1157
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lcom/android/server/wifi/WifiMetrics;->mRecordStartTimeSec:J
 
     move-wide/from16 v18, v0
 
-    .line 1155
+    .line 1156
     sub-long v16, v16, v18
 
     move-wide/from16 v0, v16
@@ -679,7 +679,7 @@
 
     iput v15, v13, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->recordDurationSec:I
 
-    .line 1162
+    .line 1163
     const/4 v6, 0x0
 
     :goto_4
@@ -693,12 +693,12 @@
 
     if-ge v6, v13, :cond_7
 
-    .line 1163
+    .line 1164
     new-instance v8, Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;
 
     invoke-direct {v8}, Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;-><init>()V
 
-    .line 1164
+    .line 1165
     .local v8, "keyVal":Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;
     move-object/from16 v0, p0
 
@@ -710,7 +710,7 @@
 
     iput v13, v8, Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;->rssi:I
 
-    .line 1165
+    .line 1166
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mRssiPollCounts:Landroid/util/SparseIntArray;
@@ -721,15 +721,15 @@
 
     iput v13, v8, Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;->count:I
 
-    .line 1166
+    .line 1167
     invoke-interface {v10, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1162
+    .line 1163
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_4
 
-    .line 1168
+    .line 1169
     .end local v8    # "keyVal":Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;
     :cond_7
     move-object/from16 v0, p0
@@ -750,7 +750,7 @@
 
     iput-object v13, v15, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->rssiPollRssiCount:[Lcom/android/server/wifi/WifiMetricsProto$RssiPollCount;
 
-    .line 1174
+    .line 1175
     const/4 v6, 0x0
 
     :goto_5
@@ -764,12 +764,12 @@
 
     if-ge v6, v13, :cond_8
 
-    .line 1175
+    .line 1176
     new-instance v7, Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;
 
     invoke-direct {v7}, Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;-><init>()V
 
-    .line 1176
+    .line 1177
     .local v7, "keyVal":Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;
     move-object/from16 v0, p0
 
@@ -781,7 +781,7 @@
 
     iput v13, v7, Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;->reason:I
 
-    .line 1177
+    .line 1178
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiAlertReasonCounts:Landroid/util/SparseIntArray;
@@ -792,15 +792,15 @@
 
     iput v13, v7, Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;->count:I
 
-    .line 1178
+    .line 1179
     invoke-interface {v2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1174
+    .line 1175
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_5
 
-    .line 1180
+    .line 1181
     .end local v7    # "keyVal":Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;
     :cond_8
     move-object/from16 v0, p0
@@ -821,7 +821,7 @@
 
     iput-object v13, v15, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->alertReasonCount:[Lcom/android/server/wifi/WifiMetricsProto$AlertReasonCount;
 
-    .line 1185
+    .line 1186
     const/4 v11, 0x0
 
     .local v11, "score":I
@@ -836,12 +836,12 @@
 
     if-ge v11, v13, :cond_9
 
-    .line 1186
+    .line 1187
     new-instance v9, Lcom/android/server/wifi/WifiMetricsProto$WifiScoreCount;
 
     invoke-direct {v9}, Lcom/android/server/wifi/WifiMetricsProto$WifiScoreCount;-><init>()V
 
-    .line 1187
+    .line 1188
     .local v9, "keyVal":Lcom/android/server/wifi/WifiMetricsProto$WifiScoreCount;
     move-object/from16 v0, p0
 
@@ -853,7 +853,7 @@
 
     iput v13, v9, Lcom/android/server/wifi/WifiMetricsProto$WifiScoreCount;->score:I
 
-    .line 1188
+    .line 1189
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiScoreCounts:Landroid/util/SparseIntArray;
@@ -864,15 +864,15 @@
 
     iput v13, v9, Lcom/android/server/wifi/WifiMetricsProto$WifiScoreCount;->count:I
 
-    .line 1189
+    .line 1190
     invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1185
+    .line 1186
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_6
 
-    .line 1191
+    .line 1192
     .end local v9    # "keyVal":Lcom/android/server/wifi/WifiMetricsProto$WifiScoreCount;
     :cond_9
     move-object/from16 v0, p0
@@ -897,7 +897,7 @@
 
     monitor-exit v14
 
-    .line 1107
+    .line 1108
     return-void
 .end method
 
@@ -1756,6 +1756,15 @@
 
     .line 936
     :try_start_0
+    const-string/jumbo v10, "WifiMetrics:"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    .line 937
+    if-eqz p3, :cond_3
+
     move-object/from16 v0, p3
 
     array-length v10, v0
@@ -1774,14 +1783,14 @@
 
     if-eqz v10, :cond_3
 
-    .line 938
+    .line 939
     const/4 v10, 0x1
 
     move-object/from16 v0, p0
 
     invoke-direct {v0, v10}, Lcom/android/server/wifi/WifiMetrics;->consolidateProto(Z)V
 
-    .line 939
+    .line 940
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/server/wifi/WifiMetrics;->mConnectionEventList:Ljava/util/List;
@@ -1805,7 +1814,7 @@
 
     check-cast v3, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
 
-    .line 940
+    .line 941
     .local v3, "event":Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
     move-object/from16 v0, p0
 
@@ -1813,7 +1822,7 @@
 
     if-eq v10, v3, :cond_0
 
-    .line 943
+    .line 944
     iget-object v10, v3, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;->mConnectionEvent:Lcom/android/server/wifi/WifiMetricsProto$ConnectionEvent;
 
     const/4 v12, 0x1
@@ -1834,7 +1843,7 @@
 
     throw v10
 
-    .line 946
+    .line 947
     .restart local v4    # "event$iterator":Ljava/util/Iterator;
     :cond_1
     :try_start_1
@@ -1846,7 +1855,7 @@
 
     move-result-object v9
 
-    .line 947
+    .line 948
     .local v9, "wifiMetricsProto":[B
     const/4 v10, 0x0
 
@@ -1854,7 +1863,7 @@
 
     move-result-object v7
 
-    .line 948
+    .line 949
     .local v7, "metricsProtoDump":Ljava/lang/String;
     move-object/from16 v0, p3
 
@@ -1876,12 +1885,12 @@
 
     if-eqz v10, :cond_2
 
-    .line 950
+    .line 951
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 957
+    .line 958
     :goto_1
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wifi/WifiMetrics;->clear()V
     :try_end_1
@@ -1895,7 +1904,7 @@
     .line 934
     return-void
 
-    .line 953
+    .line 954
     .restart local v7    # "metricsProtoDump":Ljava/lang/String;
     .restart local v9    # "wifiMetricsProto":[B
     :cond_2
@@ -1906,12 +1915,12 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 954
+    .line 955
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 955
+    .line 956
     const-string/jumbo v10, "EndWifiMetrics"
 
     move-object/from16 v0, p2
@@ -1920,7 +1929,7 @@
 
     goto :goto_1
 
-    .line 959
+    .line 960
     .end local v4    # "event$iterator":Ljava/util/Iterator;
     .end local v7    # "metricsProtoDump":Ljava/lang/String;
     .end local v9    # "wifiMetricsProto":[B
@@ -1931,14 +1940,14 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 960
+    .line 961
     const-string/jumbo v10, "mConnectionEvents:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 961
+    .line 962
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/server/wifi/WifiMetrics;->mConnectionEventList:Ljava/util/List;
@@ -1961,13 +1970,13 @@
 
     check-cast v3, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
 
-    .line 962
+    .line 963
     .restart local v3    # "event":Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
     invoke-virtual {v3}, Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 963
+    .line 964
     .local v5, "eventLine":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1975,7 +1984,7 @@
 
     if-ne v3, v10, :cond_4
 
-    .line 964
+    .line 965
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -1994,7 +2003,7 @@
 
     move-result-object v5
 
-    .line 966
+    .line 967
     :cond_4
     move-object/from16 v0, p2
 
@@ -2002,7 +2011,7 @@
 
     goto :goto_3
 
-    .line 968
+    .line 969
     .end local v3    # "event":Lcom/android/server/wifi/WifiMetrics$ConnectionEvent;
     .end local v5    # "eventLine":Ljava/lang/String;
     :cond_5
@@ -2034,7 +2043,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 969
+    .line 970
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2063,7 +2072,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 970
+    .line 971
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2074,14 +2083,14 @@
 
     move-result-object v10
 
-    .line 971
+    .line 972
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numPersonalNetworks:I
 
-    .line 970
+    .line 971
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2094,7 +2103,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 972
+    .line 973
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2105,14 +2114,14 @@
 
     move-result-object v10
 
-    .line 973
+    .line 974
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numEnterpriseNetworks:I
 
-    .line 972
+    .line 973
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2125,7 +2134,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 974
+    .line 975
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2154,7 +2163,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 975
+    .line 976
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2165,14 +2174,14 @@
 
     move-result-object v10
 
-    .line 976
+    .line 977
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numPasspointNetworks:I
 
-    .line 975
+    .line 976
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2185,7 +2194,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 977
+    .line 978
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2214,7 +2223,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 978
+    .line 979
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2225,14 +2234,14 @@
 
     move-result-object v10
 
-    .line 979
+    .line 980
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget-boolean v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->isScanningAlwaysEnabled:Z
 
-    .line 978
+    .line 979
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2245,7 +2254,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 980
+    .line 981
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2256,14 +2265,14 @@
 
     move-result-object v10
 
-    .line 981
+    .line 982
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numNetworksAddedByUser:I
 
-    .line 980
+    .line 981
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2276,7 +2285,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 982
+    .line 983
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2287,14 +2296,14 @@
 
     move-result-object v10
 
-    .line 983
+    .line 984
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numNetworksAddedByApps:I
 
-    .line 982
+    .line 983
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2307,7 +2316,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 984
+    .line 985
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2318,14 +2327,14 @@
 
     move-result-object v10
 
-    .line 985
+    .line 986
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numNonEmptyScanResults:I
 
-    .line 984
+    .line 985
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2338,7 +2347,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 986
+    .line 987
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2349,14 +2358,14 @@
 
     move-result-object v10
 
-    .line 987
+    .line 988
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numEmptyScanResults:I
 
-    .line 986
+    .line 987
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2369,7 +2378,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 988
+    .line 989
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2380,14 +2389,14 @@
 
     move-result-object v10
 
-    .line 989
+    .line 990
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numOneshotScans:I
 
-    .line 988
+    .line 989
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2400,7 +2409,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 990
+    .line 991
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2411,14 +2420,14 @@
 
     move-result-object v10
 
-    .line 991
+    .line 992
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numBackgroundScans:I
 
-    .line 990
+    .line 991
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2431,14 +2440,14 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 993
+    .line 994
     const-string/jumbo v10, "mScanReturnEntries:"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 994
+    .line 995
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2449,10 +2458,10 @@
 
     move-result-object v10
 
-    .line 995
+    .line 996
     const/4 v12, 0x0
 
-    .line 994
+    .line 995
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/android/server/wifi/WifiMetrics;->getScanReturnEntry(I)I
@@ -2471,7 +2480,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 996
+    .line 997
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2482,10 +2491,10 @@
 
     move-result-object v10
 
-    .line 997
+    .line 998
     const/4 v12, 0x1
 
-    .line 996
+    .line 997
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/android/server/wifi/WifiMetrics;->getScanReturnEntry(I)I
@@ -2504,7 +2513,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 998
+    .line 999
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2515,10 +2524,10 @@
 
     move-result-object v10
 
-    .line 999
+    .line 1000
     const/4 v12, 0x2
 
-    .line 998
+    .line 999
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/android/server/wifi/WifiMetrics;->getScanReturnEntry(I)I
@@ -2537,7 +2546,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1000
+    .line 1001
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2548,10 +2557,10 @@
 
     move-result-object v10
 
-    .line 1001
+    .line 1002
     const/4 v12, 0x3
 
-    .line 1000
+    .line 1001
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/android/server/wifi/WifiMetrics;->getScanReturnEntry(I)I
@@ -2570,7 +2579,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1002
+    .line 1003
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2581,10 +2590,10 @@
 
     move-result-object v10
 
-    .line 1003
+    .line 1004
     const/4 v12, 0x4
 
-    .line 1002
+    .line 1003
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/android/server/wifi/WifiMetrics;->getScanReturnEntry(I)I
@@ -2603,14 +2612,14 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1005
+    .line 1006
     const-string/jumbo v10, "mSystemStateEntries: <state><screenOn> : <scansInitiated>"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1006
+    .line 1007
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2621,7 +2630,7 @@
 
     move-result-object v10
 
-    .line 1007
+    .line 1008
     const/4 v12, 0x0
 
     const/4 v13, 0x1
@@ -2632,7 +2641,7 @@
 
     move-result v12
 
-    .line 1006
+    .line 1007
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2645,7 +2654,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1008
+    .line 1009
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2656,7 +2665,7 @@
 
     move-result-object v10
 
-    .line 1009
+    .line 1010
     const/4 v12, 0x1
 
     const/4 v13, 0x1
@@ -2667,7 +2676,7 @@
 
     move-result v12
 
-    .line 1008
+    .line 1009
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2680,7 +2689,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1010
+    .line 1011
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2691,7 +2700,7 @@
 
     move-result-object v10
 
-    .line 1011
+    .line 1012
     const/4 v12, 0x2
 
     const/4 v13, 0x1
@@ -2702,7 +2711,7 @@
 
     move-result v12
 
-    .line 1010
+    .line 1011
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2715,7 +2724,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1012
+    .line 1013
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2726,7 +2735,7 @@
 
     move-result-object v10
 
-    .line 1013
+    .line 1014
     const/4 v12, 0x3
 
     const/4 v13, 0x1
@@ -2737,7 +2746,7 @@
 
     move-result v12
 
-    .line 1012
+    .line 1013
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2750,7 +2759,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1014
+    .line 1015
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2761,7 +2770,7 @@
 
     move-result-object v10
 
-    .line 1015
+    .line 1016
     const/4 v12, 0x0
 
     const/4 v13, 0x0
@@ -2772,7 +2781,7 @@
 
     move-result v12
 
-    .line 1014
+    .line 1015
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2785,7 +2794,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1016
+    .line 1017
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2796,7 +2805,7 @@
 
     move-result-object v10
 
-    .line 1017
+    .line 1018
     const/4 v12, 0x1
 
     const/4 v13, 0x0
@@ -2807,7 +2816,7 @@
 
     move-result v12
 
-    .line 1016
+    .line 1017
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2820,7 +2829,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1018
+    .line 1019
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2831,7 +2840,7 @@
 
     move-result-object v10
 
-    .line 1019
+    .line 1020
     const/4 v12, 0x2
 
     const/4 v13, 0x0
@@ -2842,7 +2851,7 @@
 
     move-result v12
 
-    .line 1018
+    .line 1019
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2855,7 +2864,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1020
+    .line 1021
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2866,7 +2875,7 @@
 
     move-result-object v10
 
-    .line 1021
+    .line 1022
     const/4 v12, 0x3
 
     const/4 v13, 0x0
@@ -2877,7 +2886,7 @@
 
     move-result v12
 
-    .line 1020
+    .line 1021
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2890,7 +2899,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1022
+    .line 1023
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2901,14 +2910,14 @@
 
     move-result-object v10
 
-    .line 1023
+    .line 1024
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numConnectivityWatchdogPnoGood:I
 
-    .line 1022
+    .line 1023
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2921,7 +2930,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1024
+    .line 1025
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2932,14 +2941,14 @@
 
     move-result-object v10
 
-    .line 1025
+    .line 1026
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numConnectivityWatchdogPnoBad:I
 
-    .line 1024
+    .line 1025
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2952,7 +2961,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1026
+    .line 1027
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2963,14 +2972,14 @@
 
     move-result-object v10
 
-    .line 1027
+    .line 1028
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numConnectivityWatchdogBackgroundGood:I
 
-    .line 1026
+    .line 1027
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -2983,7 +2992,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1028
+    .line 1029
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2994,14 +3003,14 @@
 
     move-result-object v10
 
-    .line 1029
+    .line 1030
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numConnectivityWatchdogBackgroundBad:I
 
-    .line 1028
+    .line 1029
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3014,7 +3023,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1030
+    .line 1031
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3025,14 +3034,14 @@
 
     move-result-object v10
 
-    .line 1031
+    .line 1032
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogTriggers:I
 
-    .line 1030
+    .line 1031
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3045,7 +3054,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1032
+    .line 1033
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3056,14 +3065,14 @@
 
     move-result-object v10
 
-    .line 1033
+    .line 1034
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogBadAssociationNetworksTotal:I
 
-    .line 1032
+    .line 1033
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3076,7 +3085,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1034
+    .line 1035
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3087,14 +3096,14 @@
 
     move-result-object v10
 
-    .line 1035
+    .line 1036
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogBadAuthenticationNetworksTotal:I
 
-    .line 1034
+    .line 1035
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3107,7 +3116,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1036
+    .line 1037
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3118,14 +3127,14 @@
 
     move-result-object v10
 
-    .line 1037
+    .line 1038
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogBadDhcpNetworksTotal:I
 
-    .line 1036
+    .line 1037
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3138,7 +3147,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1038
+    .line 1039
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3149,14 +3158,14 @@
 
     move-result-object v10
 
-    .line 1039
+    .line 1040
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogBadOtherNetworksTotal:I
 
-    .line 1038
+    .line 1039
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3169,7 +3178,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1040
+    .line 1041
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3180,14 +3189,14 @@
 
     move-result-object v10
 
-    .line 1041
+    .line 1042
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogAvailableNetworksTotal:I
 
-    .line 1040
+    .line 1041
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3200,7 +3209,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1042
+    .line 1043
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3211,14 +3220,14 @@
 
     move-result-object v10
 
-    .line 1043
+    .line 1044
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogTriggersWithBadAssociation:I
 
-    .line 1042
+    .line 1043
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3231,7 +3240,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1044
+    .line 1045
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3242,14 +3251,14 @@
 
     move-result-object v10
 
-    .line 1045
+    .line 1046
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogTriggersWithBadAuthentication:I
 
-    .line 1044
+    .line 1045
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3262,7 +3271,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1046
+    .line 1047
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3273,14 +3282,14 @@
 
     move-result-object v10
 
-    .line 1047
+    .line 1048
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogTriggersWithBadDhcp:I
 
-    .line 1046
+    .line 1047
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3293,7 +3302,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1048
+    .line 1049
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3304,14 +3313,14 @@
 
     move-result-object v10
 
-    .line 1049
+    .line 1050
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogTriggersWithBadOther:I
 
-    .line 1048
+    .line 1049
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3324,7 +3333,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1050
+    .line 1051
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3335,14 +3344,14 @@
 
     move-result-object v10
 
-    .line 1051
+    .line 1052
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numLastResortWatchdogSuccesses:I
 
-    .line 1050
+    .line 1051
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3355,7 +3364,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1052
+    .line 1053
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3366,7 +3375,7 @@
 
     move-result-object v10
 
-    .line 1053
+    .line 1054
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mClock:Lcom/android/server/wifi/Clock;
@@ -3385,7 +3394,7 @@
 
     sub-long/2addr v12, v14
 
-    .line 1052
+    .line 1053
     invoke-virtual {v10, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3398,19 +3407,19 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1054
+    .line 1055
     const-string/jumbo v10, "mWifiLogProto.rssiPollRssiCount: Printing counts for [-127, 0]"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1056
+    .line 1057
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1057
+    .line 1058
     .local v8, "sb":Ljava/lang/StringBuilder;
     const/16 v6, -0x7f
 
@@ -3418,7 +3427,7 @@
     :goto_4
     if-gtz v6, :cond_6
 
-    .line 1058
+    .line 1059
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/server/wifi/WifiMetrics;->mRssiPollCounts:Landroid/util/SparseIntArray;
@@ -3435,12 +3444,12 @@
 
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1057
+    .line 1058
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_4
 
-    .line 1060
+    .line 1061
     :cond_6
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -3468,29 +3477,29 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1061
+    .line 1062
     const-string/jumbo v10, "mWifiLogProto.alertReasonCounts="
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1062
+    .line 1063
     const/4 v10, 0x0
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 1063
+    .line 1064
     const/4 v6, 0x0
 
-    .line 1064
+    .line 1065
     :goto_5
     const/16 v10, 0x40
 
-    .line 1063
+    .line 1064
     if-gt v6, v10, :cond_8
 
-    .line 1065
+    .line 1066
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiAlertReasonCounts:Landroid/util/SparseIntArray;
@@ -3499,11 +3508,11 @@
 
     move-result v2
 
-    .line 1066
+    .line 1067
     .local v2, "count":I
     if-lez v2, :cond_7
 
-    .line 1067
+    .line 1068
     const-string/jumbo v10, "("
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -3528,13 +3537,13 @@
 
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1064
+    .line 1065
     :cond_7
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_5
 
-    .line 1070
+    .line 1071
     .end local v2    # "count":I
     :cond_8
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->length()I
@@ -3545,7 +3554,7 @@
 
     if-le v10, v12, :cond_9
 
-    .line 1071
+    .line 1072
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->length()I
 
     move-result v10
@@ -3554,7 +3563,7 @@
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 1072
+    .line 1073
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v10
@@ -3563,7 +3572,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1076
+    .line 1077
     :goto_6
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -3575,14 +3584,14 @@
 
     move-result-object v10
 
-    .line 1077
+    .line 1078
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numTotalScanResults:I
 
-    .line 1076
+    .line 1077
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3595,7 +3604,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1078
+    .line 1079
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3606,14 +3615,14 @@
 
     move-result-object v10
 
-    .line 1079
+    .line 1080
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numOpenNetworkScanResults:I
 
-    .line 1078
+    .line 1079
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3626,7 +3635,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1080
+    .line 1081
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3637,14 +3646,14 @@
 
     move-result-object v10
 
-    .line 1081
+    .line 1082
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numPersonalNetworkScanResults:I
 
-    .line 1080
+    .line 1081
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3657,7 +3666,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1082
+    .line 1083
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3668,14 +3677,14 @@
 
     move-result-object v10
 
-    .line 1083
+    .line 1084
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numEnterpriseNetworkScanResults:I
 
-    .line 1082
+    .line 1083
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3688,7 +3697,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1084
+    .line 1085
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3699,14 +3708,14 @@
 
     move-result-object v10
 
-    .line 1085
+    .line 1086
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numHiddenNetworkScanResults:I
 
-    .line 1084
+    .line 1085
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3719,7 +3728,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1086
+    .line 1087
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3730,14 +3739,14 @@
 
     move-result-object v10
 
-    .line 1087
+    .line 1088
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numHotspot2R1NetworkScanResults:I
 
-    .line 1086
+    .line 1087
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3750,7 +3759,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1088
+    .line 1089
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3761,14 +3770,14 @@
 
     move-result-object v10
 
-    .line 1089
+    .line 1090
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/server/wifi/WifiMetrics;->mWifiLogProto:Lcom/android/server/wifi/WifiMetricsProto$WifiLog;
 
     iget v12, v12, Lcom/android/server/wifi/WifiMetricsProto$WifiLog;->numHotspot2R2NetworkScanResults:I
 
-    .line 1088
+    .line 1089
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -3781,7 +3790,7 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1090
+    .line 1091
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3810,14 +3819,14 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1091
+    .line 1092
     const-string/jumbo v10, "mWifiLogProto.WifiScoreCount: [0, 60]"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1093
+    .line 1094
     const/4 v6, 0x0
 
     :goto_7
@@ -3825,7 +3834,7 @@
 
     if-gt v6, v10, :cond_a
 
-    .line 1094
+    .line 1095
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -3856,12 +3865,12 @@
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1093
+    .line 1094
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_7
 
-    .line 1074
+    .line 1075
     :cond_9
     const-string/jumbo v10, "()"
 
@@ -3871,7 +3880,7 @@
 
     goto/16 :goto_6
 
-    .line 1096
+    .line 1097
     :cond_a
     const-string/jumbo v10, "\n"
 
@@ -5416,12 +5425,12 @@
     .param p1, "screenOn"    # Z
 
     .prologue
-    .line 1218
+    .line 1219
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1219
+    .line 1220
     :try_start_0
     iput-boolean p1, p0, Lcom/android/server/wifi/WifiMetrics;->mScreenOn:Z
     :try_end_0
@@ -5429,10 +5438,10 @@
 
     monitor-exit v0
 
-    .line 1217
+    .line 1218
     return-void
 
-    .line 1218
+    .line 1219
     :catchall_0
     move-exception v1
 
@@ -5446,12 +5455,12 @@
     .param p1, "wifiState"    # I
 
     .prologue
-    .line 1227
+    .line 1228
     iget-object v0, p0, Lcom/android/server/wifi/WifiMetrics;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1228
+    .line 1229
     :try_start_0
     iput p1, p0, Lcom/android/server/wifi/WifiMetrics;->mWifiState:I
     :try_end_0
@@ -5459,10 +5468,10 @@
 
     monitor-exit v0
 
-    .line 1226
+    .line 1227
     return-void
 
-    .line 1227
+    .line 1228
     :catchall_0
     move-exception v1
 

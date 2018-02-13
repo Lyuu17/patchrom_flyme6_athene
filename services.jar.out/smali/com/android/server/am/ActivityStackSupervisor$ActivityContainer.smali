@@ -53,28 +53,28 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 4047
+    .line 4057
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-direct {p0}, Landroid/app/IActivityContainer$Stub;-><init>()V
 
-    .line 4032
+    .line 4042
     iput-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mCallback:Landroid/app/IActivityContainerCallback;
 
-    .line 4034
+    .line 4044
     iput-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mParentActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 4037
+    .line 4047
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mVisible:Z
 
-    .line 4045
+    .line 4055
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mContainerState:I
 
-    .line 4048
+    .line 4058
     iget-object v1, p1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
@@ -82,10 +82,10 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4049
+    .line 4059
     iput p2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStackId:I
 
-    .line 4050
+    .line 4060
     new-instance v0, Lcom/android/server/am/ActivityStack;
 
     invoke-static {p1}, Lcom/android/server/am/ActivityStackSupervisor;->-get4(Lcom/android/server/am/ActivityStackSupervisor;)Lcom/android/server/am/RecentTasks;
@@ -96,7 +96,7 @@
 
     iput-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
-    .line 4051
+    .line 4061
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -129,13 +129,13 @@
 
     monitor-exit v1
 
-    .line 4048
+    .line 4058
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4047
+    .line 4057
     return-void
 
-    .line 4048
+    .line 4058
     :catchall_0
     move-exception v0
 
@@ -152,7 +152,7 @@
     .locals 0
 
     .prologue
-    .line 4173
+    .line 4183
     return-object p0
 .end method
 
@@ -161,7 +161,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 4066
+    .line 4076
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v2, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -171,7 +171,7 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4067
+    .line 4077
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-static {v1}, Lcom/android/server/am/ActivityStackSupervisor;->-get1(Lcom/android/server/am/ActivityStackSupervisor;)Landroid/util/SparseArray;
@@ -186,19 +186,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4068
+    .line 4078
     .local v0, "activityDisplay":Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
     if-nez v0, :cond_0
 
     monitor-exit v2
 
-    .line 4066
+    .line 4076
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4069
+    .line 4079
     return-void
 
-    .line 4071
+    .line 4081
     :cond_0
     const/4 v1, 0x1
 
@@ -209,13 +209,13 @@
 
     monitor-exit v2
 
-    .line 4066
+    .line 4076
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4065
+    .line 4075
     return-void
 
-    .line 4066
+    .line 4076
     .end local v0    # "activityDisplay":Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
     :catchall_0
     move-exception v1
@@ -233,20 +233,20 @@
     .param p2, "onTop"    # Z
 
     .prologue
-    .line 4059
+    .line 4069
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
-    .line 4060
+    .line 4070
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/am/ActivityStack;->attachDisplay(Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;Z)V
 
-    .line 4061
+    .line 4071
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {p1, v0, p2}, Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;->attachActivities(Lcom/android/server/am/ActivityStack;Z)V
 
-    .line 4056
+    .line 4066
     return-void
 .end method
 
@@ -261,7 +261,7 @@
 
     const/4 v3, 0x0
 
-    .line 4164
+    .line 4174
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     move-object v1, p2
@@ -274,7 +274,7 @@
 
     move-result-object v6
 
-    .line 4165
+    .line 4175
     .local v6, "aInfo":Landroid/content/pm/ActivityInfo;
     if-eqz v6, :cond_0
 
@@ -286,18 +286,18 @@
 
     if-nez v0, :cond_0
 
-    .line 4166
+    .line 4176
     new-instance v0, Ljava/lang/SecurityException;
 
-    .line 4167
+    .line 4177
     const-string/jumbo v1, "Attempt to embed activity that has not set allowEmbedded=\"true\""
 
-    .line 4166
+    .line 4176
     invoke-direct {v0, v1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 4163
+    .line 4173
     :cond_0
     return-void
 .end method
@@ -308,27 +308,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 4130
+    .line 4140
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     if-eqz v0, :cond_0
 
-    .line 4131
+    .line 4141
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;->detachActivitiesLocked(Lcom/android/server/am/ActivityStack;)V
 
-    .line 4132
+    .line 4142
     iput-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
-    .line 4133
+    .line 4143
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {v0}, Lcom/android/server/am/ActivityStack;->detachDisplay()V
 
-    .line 4127
+    .line 4137
     :cond_0
     return-void
 .end method
@@ -337,7 +337,7 @@
     .locals 2
 
     .prologue
-    .line 4077
+    .line 4087
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -347,12 +347,12 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4078
+    .line 4088
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     if-eqz v0, :cond_0
 
-    .line 4079
+    .line 4089
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     iget v0, v0, Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;->mDisplayId:I
@@ -361,24 +361,24 @@
 
     monitor-exit v1
 
-    .line 4077
+    .line 4087
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4079
+    .line 4089
     return v0
 
     :cond_0
     monitor-exit v1
 
-    .line 4077
+    .line 4087
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4082
+    .line 4092
     const/4 v0, -0x1
 
     return v0
 
-    .line 4077
+    .line 4087
     :catchall_0
     move-exception v0
 
@@ -393,7 +393,7 @@
     .locals 1
 
     .prologue
-    .line 4182
+    .line 4192
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     return-object v0
@@ -403,7 +403,7 @@
     .locals 2
 
     .prologue
-    .line 4087
+    .line 4097
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -413,20 +413,20 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4088
+    .line 4098
     iget v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStackId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 4087
+    .line 4097
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4088
+    .line 4098
     return v0
 
-    .line 4087
+    .line 4097
     :catchall_0
     move-exception v0
 
@@ -444,12 +444,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 4094
+    .line 4104
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 4096
+    .line 4106
     .local v0, "origId":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
@@ -463,25 +463,25 @@
     :try_start_1
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4097
+    .line 4107
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     if-eqz v2, :cond_0
 
-    .line 4098
+    .line 4108
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStackSupervisor;->mInputManagerInternal:Landroid/hardware/input/InputManagerInternal;
 
-    .line 4099
+    .line 4109
     iget-object v4, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     iget v4, v4, Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;->mDisplayId:I
 
-    .line 4100
+    .line 4110
     const/4 v5, 0x0
 
-    .line 4098
+    .line 4108
     invoke-virtual {v2, p1, v4, v5}, Landroid/hardware/input/InputManagerInternal;->injectInputEvent(Landroid/view/InputEvent;II)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -491,33 +491,33 @@
     :try_start_2
     monitor-exit v3
 
-    .line 4096
+    .line 4106
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 4105
+    .line 4115
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4098
+    .line 4108
     return v2
 
     :cond_0
     :try_start_3
     monitor-exit v3
 
-    .line 4096
+    .line 4106
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 4105
+    .line 4115
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4103
+    .line 4113
     return v4
 
-    .line 4096
+    .line 4106
     :catchall_0
     move-exception v2
 
@@ -530,14 +530,14 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 4104
+    .line 4114
     :catchall_1
     move-exception v2
 
-    .line 4105
+    .line 4115
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4104
+    .line 4114
     throw v2
 .end method
 
@@ -545,7 +545,7 @@
     .locals 1
 
     .prologue
-    .line 4186
+    .line 4196
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mActivityDisplay:Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;
 
     if-eqz v0, :cond_0
@@ -565,7 +565,7 @@
     .locals 1
 
     .prologue
-    .line 4205
+    .line 4215
     const/4 v0, 0x1
 
     return v0
@@ -575,15 +575,15 @@
     .locals 2
 
     .prologue
-    .line 4209
+    .line 4219
     invoke-virtual {p0}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->detachLocked()V
 
-    .line 4210
+    .line 4220
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v0, p0}, Lcom/android/server/am/ActivityStackSupervisor;->deleteActivityContainer(Landroid/app/IActivityContainer;)V
 
-    .line 4211
+    .line 4221
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mHandler:Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;
@@ -596,7 +596,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4208
+    .line 4218
     return-void
 .end method
 
@@ -606,7 +606,7 @@
     .prologue
     const/4 v4, 0x2
 
-    .line 4111
+    .line 4121
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v3, v2, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -616,7 +616,7 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4112
+    .line 4122
     iget v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mContainerState:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
@@ -625,27 +625,27 @@
 
     monitor-exit v3
 
-    .line 4111
+    .line 4121
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4113
+    .line 4123
     return-void
 
-    .line 4115
+    .line 4125
     :cond_0
     const/4 v2, 0x2
 
     :try_start_1
     iput v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mContainerState:I
 
-    .line 4117
+    .line 4127
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-result-wide v0
 
-    .line 4119
+    .line 4129
     .local v0, "origId":J
     :try_start_2
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mStack:Lcom/android/server/am/ActivityStack;
@@ -654,7 +654,7 @@
 
     invoke-virtual {v2, v4}, Lcom/android/server/am/ActivityStack;->finishAllActivitiesLocked(Z)V
 
-    .line 4120
+    .line 4130
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -667,7 +667,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 4122
+    .line 4132
     :try_start_3
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_3
@@ -675,26 +675,26 @@
 
     monitor-exit v3
 
-    .line 4111
+    .line 4121
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4110
+    .line 4120
     return-void
 
-    .line 4121
+    .line 4131
     :catchall_0
     move-exception v2
 
-    .line 4122
+    .line 4132
     :try_start_4
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4121
+    .line 4131
     throw v2
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 4111
+    .line 4121
     .end local v0    # "origId":J
     :catchall_1
     move-exception v2
@@ -710,7 +710,7 @@
     .locals 0
 
     .prologue
-    .line 4200
+    .line 4210
     return-void
 .end method
 
@@ -722,7 +722,7 @@
     .param p4, "density"    # I
 
     .prologue
-    .line 4178
+    .line 4188
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -731,7 +731,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
 
-    .line 4177
+    .line 4187
     return-void
 .end method
 
@@ -742,20 +742,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4191
+    .line 4201
     iget-boolean v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mVisible:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 4192
+    .line 4202
     iput-boolean p1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mVisible:Z
 
-    .line 4193
+    .line 4203
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->mCallback:Landroid/app/IActivityContainerCallback;
 
     if-eqz v0, :cond_0
 
-    .line 4194
+    .line 4204
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v2, v0, Lcom/android/server/am/ActivityStackSupervisor;->mHandler:Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;
@@ -773,14 +773,14 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4190
+    .line 4200
     :cond_0
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 4194
+    .line 4204
     goto :goto_0
 .end method
 
@@ -789,7 +789,7 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 4139
+    .line 4149
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -811,7 +811,7 @@
     .end annotation
 
     .prologue
-    .line 4145
+    .line 4155
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -820,12 +820,12 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
 
-    .line 4147
+    .line 4157
     instance-of v1, p1, Lcom/android/server/am/PendingIntentRecord;
 
     if-nez v1, :cond_0
 
-    .line 4148
+    .line 4158
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "Bad PendingIntent object"
@@ -834,7 +834,7 @@
 
     throw v1
 
-    .line 4151
+    .line 4161
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -846,7 +846,7 @@
 
     move-result v1
 
-    .line 4152
+    .line 4162
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -855,18 +855,18 @@
 
     iget v3, v3, Lcom/android/server/am/ActivityStackSupervisor;->mCurrentUser:I
 
-    .line 4153
+    .line 4163
     const-string/jumbo v6, "ActivityContainer"
 
-    .line 4152
+    .line 4162
     const/4 v4, 0x0
 
-    .line 4153
+    .line 4163
     const/4 v5, 0x2
 
     const/4 v7, 0x0
 
-    .line 4151
+    .line 4161
     invoke-virtual/range {v0 .. v7}, Lcom/android/server/am/UserController;->handleIncomingUser(IIIZILjava/lang/String;Ljava/lang/String;)I
 
     move-result v13
@@ -874,24 +874,24 @@
     .local v13, "userId":I
     move-object v0, p1
 
-    .line 4155
+    .line 4165
     check-cast v0, Lcom/android/server/am/PendingIntentRecord;
 
-    .line 4156
+    .line 4166
     .local v0, "pendingIntent":Lcom/android/server/am/PendingIntentRecord;
     iget-object v1, v0, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
 
     iget-object v1, v1, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
-    .line 4157
+    .line 4167
     iget-object v2, v0, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
 
     iget-object v2, v2, Lcom/android/server/am/PendingIntentRecord$Key;->requestResolvedType:Ljava/lang/String;
 
-    .line 4156
+    .line 4166
     invoke-virtual {p0, v13, v1, v2}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->checkEmbeddedAllowedInner(ILandroid/content/Intent;Ljava/lang/String;)V
 
-    .line 4159
+    .line 4169
     const/4 v1, 0x0
 
     const/4 v2, 0x0
@@ -908,7 +908,7 @@
 
     const/4 v8, 0x0
 
-    .line 4160
+    .line 4170
     const/high16 v9, 0x18010000
 
     const/high16 v10, 0x18010000
@@ -917,7 +917,7 @@
 
     move-object v12, p0
 
-    .line 4159
+    .line 4169
     invoke-virtual/range {v0 .. v12}, Lcom/android/server/am/PendingIntentRecord;->sendInner(ILandroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;Ljava/lang/String;Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;Landroid/app/IActivityContainer;)I
 
     move-result v1
@@ -929,7 +929,7 @@
     .locals 2
 
     .prologue
-    .line 4216
+    .line 4226
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

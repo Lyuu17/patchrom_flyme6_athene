@@ -15,41 +15,71 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicBoolean;)V
-    .locals 4
+.method constructor <init>(Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/util/concurrent/atomic/AtomicInteger;)V
+    .locals 8
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "enabled"    # Ljava/util/concurrent/atomic/AtomicBoolean;
+    .param p3, "limit"    # Ljava/util/concurrent/atomic/AtomicInteger;
+    .param p4, "period"    # Ljava/util/concurrent/atomic/AtomicInteger;
 
     .prologue
-    .line 245
+    const/4 v7, 0x0
+
+    .line 255
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 246
+    .line 257
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v6
+
+    .line 258
+    .local v6, "resolver":Landroid/content/ContentResolver;
+    new-instance v0, Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;-><init>(Landroid/os/Handler;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/util/concurrent/atomic/AtomicInteger;)V
+
+    .line 261
+    .local v0, "globalObserver":Landroid/database/ContentObserver;
+    const-string/jumbo v1, "sms_short_code_confirmation"
+
+    .line 260
+    invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 247
-    .local v1, "resolver":Landroid/content/ContentResolver;
-    new-instance v0, Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;
+    invoke-virtual {v6, v1, v7, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;-><init>(Landroid/os/Handler;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+    .line 263
+    const-string/jumbo v1, "sms_outgoing_check_max_count"
 
-    .line 249
-    .local v0, "globalObserver":Landroid/database/ContentObserver;
-    const-string/jumbo v2, "sms_short_code_confirmation"
+    .line 262
+    invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    .line 248
-    invoke-static {v2}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v6, v1, v7, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 249
-    const/4 v3, 0x0
+    .line 265
+    const-string/jumbo v1, "sms_outgoing_check_interval_ms"
 
-    .line 248
-    invoke-virtual {v1, v2, v3, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+    .line 264
+    invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    .line 245
+    move-result-object v1
+
+    invoke-virtual {v6, v1, v7, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
+    .line 256
     return-void
 .end method
