@@ -1,0 +1,16 @@
+#	mount	point
+/system	ext4	/dev/block/bootdevice/by-name/system
+/data	ext4	/dev/block/bootdevice/by-name/userdata
+/cache	ext4	/dev/block/bootdevice/by-name/cache
+/recovery	emmc	/dev/block/bootdevice/by-name/recovery
+/boot	emmc	/dev/block/bootdevice/by-name/boot
+/misc	emmc	/dev/block/bootdevice/by-name/misc
+/firmware	vfat	/dev/block/bootdevice/by-name/modem
+/persist	ext4	/dev/block/bootdevice/by-name/persist
+		
+/fsg	ext4	/dev/block/bootdevice/by-name/fsg
+/oem	ext4	/dev/block/bootdevice/by-name/oem
+/dsp	ext4	/dev/block/bootdevice/by-name/dsp
+		
+/external_sd	auto	/dev/block/mmcblk1p1
+/usb_otg	auto	/dev/block/sda1
