@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/SystemServer$AdbPortObserver;
+        Lcom/android/server/SystemServer$AdbPortObserver;,
+	Lcom/android/server/SystemServer$FlymeInjector;
     }
 .end annotation
 
@@ -2312,7 +2313,7 @@
 
     .line 830
     :try_start_b
-    new-instance v92, Lcom/android/server/statusbar/StatusBarManagerService;
+    new-instance v92, Lcom/android/server/statusbar/FlymeExtStatusBarManagerService;
 
     move-object/from16 v0, v92
 
@@ -4119,6 +4120,12 @@
     check-cast v20, Lcom/android/server/MmsServiceBroker;
 
     .local v20, "mmsService":Lcom/android/server/MmsServiceBroker;
+    move-object/from16 v4, p0
+
+    move-object/from16 v5, v88
+
+    invoke-static {v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;)V
+
     :try_start_2c
     invoke-static/range {v58 .. v58}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -5369,6 +5376,12 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/String;)Lcom/android/server/SystemService;
 
     .line 1032
+    move-result-object v4
+
+    move-object/from16 v0, p0
+
+    iput-object v4, v0, Lcom/android/server/SystemServer;->mFlymeWallpaperLifeService:Lcom/android/server/SystemService;
+
     const-wide/32 v4, 0x80000
 
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
@@ -5585,6 +5598,8 @@
 
     .line 1193
     :cond_4e
+    goto/16 :goto_flyme_0
+
     const-string/jumbo v4, "StartAssetAtlasService"
 
     invoke-static {v4}, Lcom/android/server/SystemServer;->traceBeginAndSlog(Ljava/lang/String;)V
@@ -5620,6 +5635,7 @@
 
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
 
+    :goto_flyme_0
     goto/16 :goto_25
 
     .line 1197

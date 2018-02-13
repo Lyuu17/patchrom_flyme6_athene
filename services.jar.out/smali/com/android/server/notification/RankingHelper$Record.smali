@@ -70,6 +70,8 @@
 
     iput v1, p0, Lcom/android/server/notification/RankingHelper$Record;->visibility:I
 
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/RankingHelper$Record;->initFlymeExtraFields()V
+
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/notification/RankingHelper$Record;->soundTimeout:J

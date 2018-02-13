@@ -429,6 +429,8 @@
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->setType(I)V
 
+    invoke-static/range {p0 .. p0}, Lcom/android/server/power/ShutdownThread$FlymeInjector;->showShutDownAnimation(Landroid/content/Context;)V
+
     .line 415
     invoke-virtual {v2}, Landroid/app/ProgressDialog;->show()V
 

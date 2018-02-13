@@ -811,3 +811,5 @@
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/modemst1	u:object_r:modem_efs_partition_device:s0
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/modemst2	u:object_r:modem_efs_partition_device:s0
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/userdata	u:object_r:userdata_block_device:s0
+/dev/socket/flymed	u:object_r:flymed_socket:s0
+/system/bin/flymed	u:object_r:flymed_exec:s0
