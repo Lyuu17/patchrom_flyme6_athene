@@ -30,7 +30,7 @@
     .param p2, "val$im"    # Landroid/widget/ImageView;
 
     .prologue
-    .line 157
+    .line 155
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iput-object p2, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$im:Landroid/widget/ImageView;
@@ -51,7 +51,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 160
+    .line 158
     const/4 v0, 0x4
 
     if-eq p2, v0, :cond_2
@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_2
 
-    .line 161
+    .line 159
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity;->mKeyCount:I
@@ -71,7 +71,7 @@
 
     iput v1, v0, Lcom/android/internal/app/PlatLogoActivity;->mKeyCount:I
 
-    .line 162
+    .line 160
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget v0, v0, Lcom/android/internal/app/PlatLogoActivity;->mKeyCount:I
@@ -80,7 +80,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 163
+    .line 161
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget v0, v0, Lcom/android/internal/app/PlatLogoActivity;->mTapCount:I
@@ -89,27 +89,27 @@
 
     if-le v0, v1, :cond_1
 
-    .line 164
+    .line 162
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$im:Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Landroid/widget/ImageView;->performLongClick()Z
+    invoke-virtual {v0}, Landroid/view/View;->performLongClick()Z
 
-    .line 169
+    .line 167
     :cond_0
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 166
+    .line 164
     :cond_1
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->val$im:Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Landroid/widget/ImageView;->performClick()Z
+    invoke-virtual {v0}, Landroid/view/View;->performClick()Z
 
     goto :goto_0
 
-    .line 171
+    .line 169
     :cond_2
     return v1
 .end method

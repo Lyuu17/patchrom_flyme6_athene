@@ -27,7 +27,7 @@
     .param p2, "val$userHandle"    # I
 
     .prologue
-    .line 2543
+    .line 2542
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$6$1;->this$1:Lcom/android/server/pm/UserManagerService$6;
 
     iput p2, p0, Lcom/android/server/pm/UserManagerService$6$1;->val$userHandle:I
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 2547
+    .line 2546
     const-class v0, Landroid/app/ActivityManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -52,13 +52,13 @@
 
     check-cast v0, Landroid/app/ActivityManagerInternal;
 
-    .line 2548
+    .line 2547
     iget v1, p0, Lcom/android/server/pm/UserManagerService$6$1;->val$userHandle:I
 
-    .line 2547
+    .line 2546
     invoke-virtual {v0, v1}, Landroid/app/ActivityManagerInternal;->onUserRemoved(I)V
 
-    .line 2549
+    .line 2548
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$6$1;->this$1:Lcom/android/server/pm/UserManagerService$6;
 
     iget-object v0, v0, Lcom/android/server/pm/UserManagerService$6;->this$0:Lcom/android/server/pm/UserManagerService;
@@ -67,6 +67,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/pm/UserManagerService;->-wrap5(Lcom/android/server/pm/UserManagerService;I)V
 
-    .line 2545
+    .line 2544
     return-void
 .end method

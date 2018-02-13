@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
     .prologue
-    .line 320
+    .line 317
     iput-object p1, p0, Lcom/android/server/LocationManagerService$6;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 323
+    .line 320
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 324
+    .line 321
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.USER_SWITCHED"
 
@@ -55,7 +55,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 325
+    .line 322
     iget-object v1, p0, Lcom/android/server/LocationManagerService$6;->this$0:Lcom/android/server/LocationManagerService;
 
     const-string/jumbo v2, "android.intent.extra.user_handle"
@@ -68,12 +68,12 @@
 
     invoke-static {v1, v2}, Lcom/android/server/LocationManagerService;->-wrap7(Lcom/android/server/LocationManagerService;I)V
 
-    .line 322
+    .line 319
     :cond_0
     :goto_0
     return-void
 
-    .line 326
+    .line 323
     :cond_1
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_ADDED"
 
@@ -83,17 +83,17 @@
 
     if-nez v1, :cond_2
 
-    .line 327
+    .line 324
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 326
+    .line 323
     if-eqz v1, :cond_3
 
-    .line 328
+    .line 325
     :cond_2
     iget-object v1, p0, Lcom/android/server/LocationManagerService$6;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 329
+    .line 326
     :cond_3
     const-string/jumbo v1, "android.intent.action.ACTION_SHUTDOWN"
 
@@ -117,7 +117,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 331
+    .line 328
     sget-boolean v1, Lcom/android/server/LocationManagerService;->D:Z
 
     if-eqz v1, :cond_4
@@ -148,7 +148,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 332
+    .line 329
     :cond_4
     invoke-virtual {p0}, Lcom/android/server/LocationManagerService$6;->getSendingUserId()I
 
@@ -158,7 +158,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 333
+    .line 330
     iget-object v1, p0, Lcom/android/server/LocationManagerService$6;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v1}, Lcom/android/server/LocationManagerService;->-wrap6(Lcom/android/server/LocationManagerService;)V

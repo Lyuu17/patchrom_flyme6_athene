@@ -38,21 +38,21 @@
     .param p4, "_flags"    # I
 
     .prologue
-    .line 832
+    .line 831
     iput-object p1, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->this$0:Landroid/app/Instrumentation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 834
+    .line 833
     iput-object p2, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->activity:Landroid/app/Activity;
 
-    .line 835
+    .line 834
     iput p3, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->identifier:I
 
-    .line 836
+    .line 835
     iput p4, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->flags:I
 
-    .line 833
+    .line 832
     return-void
 .end method
 
@@ -62,27 +62,27 @@
     .locals 3
 
     .prologue
-    .line 840
+    .line 839
     iget-object v1, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->activity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 842
+    .line 841
     .local v0, "win":Landroid/view/Window;
     iget v1, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->identifier:I
 
-    .line 843
+    .line 842
     iget v2, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->flags:I
 
-    .line 841
+    .line 840
     invoke-virtual {v0, v1, v2}, Landroid/view/Window;->performContextMenuIdentifierAction(II)Z
 
     move-result v1
 
     iput-boolean v1, p0, Landroid/app/Instrumentation$1ContextMenuRunnable;->returnValue:Z
 
-    .line 839
+    .line 838
     return-void
 .end method

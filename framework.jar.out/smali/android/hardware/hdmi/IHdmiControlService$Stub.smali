@@ -50,7 +50,7 @@
 
 .field static final TRANSACTION_getPortInfo:I = 0xb
 
-.field static final TRANSACTION_getSupportedTypes_0:I = 0x1
+.field static final TRANSACTION_getSupportedTypes:I = 0x1
 
 .field static final TRANSACTION_getSystemAudioMode:I = 0xd
 

@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 1714
+    .line 1701
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,13 +48,13 @@
 
     const/4 v2, 0x0
 
-    .line 1723
+    .line 1710
     if-ne p0, p1, :cond_0
 
-    .line 1724
+    .line 1711
     return v1
 
-    .line 1725
+    .line 1712
     :cond_0
     if-eqz p1, :cond_1
 
@@ -68,17 +68,17 @@
 
     if-eq v3, v4, :cond_2
 
-    .line 1726
+    .line 1713
     :cond_1
     return v2
 
     :cond_2
     move-object v0, p1
 
-    .line 1728
+    .line 1715
     check-cast v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;
 
-    .line 1729
+    .line 1716
     .local v0, "other":Lcom/android/server/wifi/WifiNative$PnoNetwork;
     iget-object v3, p0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->ssid:Ljava/lang/String;
 
@@ -96,7 +96,7 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 1730
+    .line 1717
     iget v3, p0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->priority:I
 
     iget v4, v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->priority:I
@@ -109,26 +109,26 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 1731
+    .line 1718
     iget-byte v3, p0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->auth_bit_field:B
 
     iget-byte v4, v0, Lcom/android/server/wifi/WifiNative$PnoNetwork;->auth_bit_field:B
 
     if-ne v3, v4, :cond_3
 
-    .line 1729
+    .line 1716
     :goto_0
     return v1
 
     :cond_3
     move v1, v2
 
-    .line 1731
+    .line 1718
     goto :goto_0
 
     :cond_4
     move v1, v2
 
-    .line 1729
+    .line 1716
     goto :goto_0
 .end method

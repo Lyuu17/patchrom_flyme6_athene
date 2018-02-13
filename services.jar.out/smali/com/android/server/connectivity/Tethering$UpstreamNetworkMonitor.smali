@@ -50,19 +50,19 @@
     .param p1, "this$0"    # Lcom/android/server/connectivity/Tethering;
 
     .prologue
-    .line 1368
+    .line 1070
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->this$0:Lcom/android/server/connectivity/Tethering;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1374
+    .line 1076
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
-    .line 1368
+    .line 1070
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1409
+    .line 1111
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
@@ -96,10 +96,10 @@
     .param p2, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 1413
+    .line 1115
     packed-switch p1, :pswitch_data_0
 
-    .line 1492
+    .line 1194
     const/4 v0, 0x0
 
     return-object v0
@@ -107,10 +107,10 @@
     :pswitch_0
     move-object/from16 v4, p2
 
-    .line 1415
+    .line 1117
     check-cast v4, Landroid/net/Network;
 
-    .line 1419
+    .line 1121
     .local v4, "network":Landroid/net/Network;
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
@@ -120,10 +120,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1420
+    .line 1122
     iget-object v7, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
-    .line 1421
+    .line 1123
     new-instance v0, Landroid/net/NetworkState;
 
     const/4 v1, 0x0
@@ -138,10 +138,10 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/net/NetworkState;-><init>(Landroid/net/NetworkInfo;Landroid/net/LinkProperties;Landroid/net/NetworkCapabilities;Landroid/net/Network;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1420
+    .line 1122
     invoke-virtual {v7, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1424
+    .line 1126
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->this$0:Lcom/android/server/connectivity/Tethering;
 
@@ -149,23 +149,23 @@
 
     move-result-object v12
 
-    .line 1426
+    .line 1128
     .local v12, "cm":Landroid/net/ConnectivityManager;
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDefaultNetworkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
     if-eqz v0, :cond_1
 
-    .line 1427
+    .line 1129
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDefaultNetworkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
     invoke-virtual {v12, v0}, Landroid/net/ConnectivityManager;->requestNetworkCapabilities(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 1428
+    .line 1130
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDefaultNetworkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
     invoke-virtual {v12, v0}, Landroid/net/ConnectivityManager;->requestLinkProperties(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 1444
+    .line 1146
     :cond_1
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
@@ -182,10 +182,10 @@
     :pswitch_1
     move-object/from16 v13, p2
 
-    .line 1447
+    .line 1149
     check-cast v13, Landroid/net/NetworkState;
 
-    .line 1448
+    .line 1150
     .local v13, "ns":Landroid/net/NetworkState;
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
@@ -197,12 +197,12 @@
 
     if-nez v0, :cond_2
 
-    .line 1452
+    .line 1154
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1459
+    .line 1161
     :cond_2
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
@@ -214,37 +214,37 @@
 
     check-cast v14, Landroid/net/NetworkState;
 
-    .line 1460
+    .line 1162
     .local v14, "prev":Landroid/net/NetworkState;
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
     iget-object v1, v13, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
-    .line 1461
+    .line 1163
     new-instance v5, Landroid/net/NetworkState;
 
     iget-object v7, v14, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
     iget-object v8, v13, Landroid/net/NetworkState;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
-    .line 1462
+    .line 1164
     iget-object v9, v13, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
-    .line 1461
+    .line 1163
     const/4 v6, 0x0
 
-    .line 1462
+    .line 1164
     const/4 v10, 0x0
 
     const/4 v11, 0x0
 
-    .line 1461
+    .line 1163
     invoke-direct/range {v5 .. v11}, Landroid/net/NetworkState;-><init>(Landroid/net/NetworkInfo;Landroid/net/LinkProperties;Landroid/net/NetworkCapabilities;Landroid/net/Network;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1460
+    .line 1162
     invoke-virtual {v0, v1, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1463
+    .line 1165
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
     iget-object v1, v13, Landroid/net/NetworkState;->network:Landroid/net/Network;
@@ -262,10 +262,10 @@
     :pswitch_2
     move-object/from16 v13, p2
 
-    .line 1466
+    .line 1168
     check-cast v13, Landroid/net/NetworkState;
 
-    .line 1467
+    .line 1169
     .restart local v13    # "ns":Landroid/net/NetworkState;
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
@@ -277,12 +277,12 @@
 
     if-nez v0, :cond_3
 
-    .line 1471
+    .line 1173
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1478
+    .line 1180
     :cond_3
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
@@ -294,37 +294,37 @@
 
     check-cast v14, Landroid/net/NetworkState;
 
-    .line 1479
+    .line 1181
     .restart local v14    # "prev":Landroid/net/NetworkState;
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
     iget-object v1, v13, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
-    .line 1480
+    .line 1182
     new-instance v5, Landroid/net/NetworkState;
 
     iget-object v7, v13, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
     iget-object v8, v14, Landroid/net/NetworkState;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
-    .line 1481
+    .line 1183
     iget-object v9, v13, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
-    .line 1480
+    .line 1182
     const/4 v6, 0x0
 
-    .line 1481
+    .line 1183
     const/4 v10, 0x0
 
     const/4 v11, 0x0
 
-    .line 1480
+    .line 1182
     invoke-direct/range {v5 .. v11}, Landroid/net/NetworkState;-><init>(Landroid/net/NetworkInfo;Landroid/net/LinkProperties;Landroid/net/NetworkCapabilities;Landroid/net/Network;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1479
+    .line 1181
     invoke-virtual {v0, v1, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1482
+    .line 1184
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
     iget-object v1, v13, Landroid/net/NetworkState;->network:Landroid/net/Network;
@@ -342,10 +342,10 @@
     :pswitch_3
     move-object/from16 v4, p2
 
-    .line 1485
+    .line 1187
     check-cast v4, Landroid/net/Network;
 
-    .line 1489
+    .line 1191
     .restart local v4    # "network":Landroid/net/Network;
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
@@ -357,7 +357,7 @@
 
     return-object v0
 
-    .line 1413
+    .line 1115
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -371,10 +371,10 @@
     .locals 3
 
     .prologue
-    .line 1379
+    .line 1081
     invoke-virtual {p0}, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->stop()V
 
-    .line 1381
+    .line 1083
     new-instance v1, Lcom/android/server/connectivity/Tethering$UpstreamNetworkCallback;
 
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -383,7 +383,7 @@
 
     iput-object v1, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDefaultNetworkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 1382
+    .line 1084
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->this$0:Lcom/android/server/connectivity/Tethering;
 
     invoke-static {v1}, Lcom/android/server/connectivity/Tethering;->-wrap0(Lcom/android/server/connectivity/Tethering;)Landroid/net/ConnectivityManager;
@@ -394,31 +394,31 @@
 
     invoke-virtual {v1, v2}, Landroid/net/ConnectivityManager;->registerDefaultNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 1384
+    .line 1086
     new-instance v1, Landroid/net/NetworkRequest$Builder;
 
     invoke-direct {v1}, Landroid/net/NetworkRequest$Builder;-><init>()V
 
-    .line 1385
+    .line 1087
     const/4 v2, 0x0
 
-    .line 1384
+    .line 1086
     invoke-virtual {v1, v2}, Landroid/net/NetworkRequest$Builder;->addTransportType(I)Landroid/net/NetworkRequest$Builder;
 
     move-result-object v1
 
-    .line 1386
+    .line 1088
     const/16 v2, 0xd
 
-    .line 1384
+    .line 1086
     invoke-virtual {v1, v2}, Landroid/net/NetworkRequest$Builder;->removeCapability(I)Landroid/net/NetworkRequest$Builder;
 
     move-result-object v1
 
-    .line 1387
+    .line 1089
     const/4 v2, 0x2
 
-    .line 1384
+    .line 1086
     invoke-virtual {v1, v2}, Landroid/net/NetworkRequest$Builder;->addCapability(I)Landroid/net/NetworkRequest$Builder;
 
     move-result-object v1
@@ -427,7 +427,7 @@
 
     move-result-object v0
 
-    .line 1389
+    .line 1091
     .local v0, "dunTetheringRequest":Landroid/net/NetworkRequest;
     new-instance v1, Lcom/android/server/connectivity/Tethering$UpstreamNetworkCallback;
 
@@ -437,20 +437,20 @@
 
     iput-object v1, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDunTetheringCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 1390
+    .line 1092
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->this$0:Lcom/android/server/connectivity/Tethering;
 
     invoke-static {v1}, Lcom/android/server/connectivity/Tethering;->-wrap0(Lcom/android/server/connectivity/Tethering;)Landroid/net/ConnectivityManager;
 
     move-result-object v1
 
-    .line 1391
+    .line 1093
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDunTetheringCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 1390
+    .line 1092
     invoke-virtual {v1, v0, v2}, Landroid/net/ConnectivityManager;->registerNetworkCallback(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 1378
+    .line 1080
     return-void
 .end method
 
@@ -460,12 +460,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1395
+    .line 1097
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDefaultNetworkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
     if-eqz v0, :cond_0
 
-    .line 1396
+    .line 1098
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->this$0:Lcom/android/server/connectivity/Tethering;
 
     invoke-static {v0}, Lcom/android/server/connectivity/Tethering;->-wrap0(Lcom/android/server/connectivity/Tethering;)Landroid/net/ConnectivityManager;
@@ -476,16 +476,16 @@
 
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->unregisterNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 1397
+    .line 1099
     iput-object v2, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDefaultNetworkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 1400
+    .line 1102
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDunTetheringCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
     if-eqz v0, :cond_1
 
-    .line 1401
+    .line 1103
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->this$0:Lcom/android/server/connectivity/Tethering;
 
     invoke-static {v0}, Lcom/android/server/connectivity/Tethering;->-wrap0(Lcom/android/server/connectivity/Tethering;)Landroid/net/ConnectivityManager;
@@ -496,15 +496,15 @@
 
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->unregisterNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 1402
+    .line 1104
     iput-object v2, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mDunTetheringCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 1405
+    .line 1107
     :cond_1
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$UpstreamNetworkMonitor;->mNetworkMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 1394
+    .line 1096
     return-void
 .end method

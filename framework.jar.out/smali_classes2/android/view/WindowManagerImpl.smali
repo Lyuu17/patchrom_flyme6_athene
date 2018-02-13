@@ -62,7 +62,7 @@
     .param p1, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 106
+    .line 104
     iget-object v1, p0, Landroid/view/WindowManagerImpl;->mDefaultToken:Landroid/os/IBinder;
 
     if-eqz v1, :cond_1
@@ -71,12 +71,12 @@
 
     if-nez v1, :cond_1
 
-    .line 107
+    .line 105
     instance-of v1, p1, Landroid/view/WindowManager$LayoutParams;
 
     if-nez v1, :cond_0
 
-    .line 108
+    .line 106
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "Params must be WindowManager.LayoutParams"
@@ -88,21 +88,21 @@
     :cond_0
     move-object v0, p1
 
-    .line 112
+    .line 110
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 113
+    .line 111
     .local v0, "wparams":Landroid/view/WindowManager$LayoutParams;
     iget-object v1, v0, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
     if-nez v1, :cond_1
 
-    .line 114
+    .line 112
     iget-object v1, p0, Landroid/view/WindowManagerImpl;->mDefaultToken:Landroid/os/IBinder;
 
     iput-object v1, v0, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    .line 104
+    .line 102
     .end local v0    # "wparams":Landroid/view/WindowManager$LayoutParams;
     :cond_1
     return-void
@@ -117,14 +117,9 @@
 
     .prologue
     .line 92
-    const/16 v0, 0x17f
-
-    invoke-static {v0, p2}, Landroid/util/SeempLog;->record_vg_layout(ILandroid/view/ViewGroup$LayoutParams;)I
-
-    .line 93
     invoke-direct {p0, p2}, Landroid/view/WindowManagerImpl;->applyDefaultToken(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 94
+    .line 93
     iget-object v0, p0, Landroid/view/WindowManagerImpl;->mGlobal:Landroid/view/WindowManagerGlobal;
 
     iget-object v1, p0, Landroid/view/WindowManagerImpl;->mContext:Landroid/content/Context;
@@ -175,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 147
     iget-object v0, p0, Landroid/view/WindowManagerImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getDisplay()Landroid/view/Display;
@@ -190,14 +185,14 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 121
+    .line 119
     iget-object v0, p0, Landroid/view/WindowManagerImpl;->mGlobal:Landroid/view/WindowManagerGlobal;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Landroid/view/WindowManagerGlobal;->removeView(Landroid/view/View;Z)V
 
-    .line 120
+    .line 118
     return-void
 .end method
 
@@ -206,14 +201,14 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 126
+    .line 124
     iget-object v0, p0, Landroid/view/WindowManagerImpl;->mGlobal:Landroid/view/WindowManagerGlobal;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Landroid/view/WindowManagerGlobal;->removeView(Landroid/view/View;Z)V
 
-    .line 125
+    .line 123
     return-void
 .end method
 
@@ -223,12 +218,12 @@
     .param p2, "deviceId"    # I
 
     .prologue
-    .line 132
+    .line 130
     new-instance v1, Landroid/view/WindowManagerImpl$1;
 
     invoke-direct {v1, p0, p1}, Landroid/view/WindowManagerImpl$1;-><init>(Landroid/view/WindowManagerImpl;Landroid/view/WindowManager$KeyboardShortcutsReceiver;)V
 
-    .line 141
+    .line 139
     .local v1, "resultReceiver":Lcom/android/internal/os/IResultReceiver;
     :try_start_0
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
@@ -239,11 +234,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 131
+    .line 129
     :goto_0
     return-void
 
-    .line 143
+    .line 141
     :catch_0
     move-exception v0
 
@@ -269,19 +264,14 @@
     .param p2, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 99
-    const/16 v0, 0x180
-
-    invoke-static {v0, p2}, Landroid/util/SeempLog;->record_vg_layout(ILandroid/view/ViewGroup$LayoutParams;)I
-
-    .line 100
+    .line 98
     invoke-direct {p0, p2}, Landroid/view/WindowManagerImpl;->applyDefaultToken(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 101
+    .line 99
     iget-object v0, p0, Landroid/view/WindowManagerImpl;->mGlobal:Landroid/view/WindowManagerGlobal;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/WindowManagerGlobal;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 98
+    .line 97
     return-void
 .end method

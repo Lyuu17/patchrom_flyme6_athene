@@ -28,17 +28,17 @@
     .param p3, "deDatabaseName"    # Ljava/lang/String;
 
     .prologue
-    .line 4838
+    .line 4815
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p1, p3, v0, v1}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 4839
+    .line 4816
     iput p2, p0, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->mUserId:I
 
-    .line 4837
+    .line 4814
     return-void
 .end method
 
@@ -50,24 +50,24 @@
     .param p3, "deDatabaseFile"    # Ljava/io/File;
 
     .prologue
-    .line 4983
+    .line 4960
     invoke-virtual {p3}, Ljava/io/File;->exists()Z
 
     move-result v1
 
-    .line 4984
+    .line 4961
     .local v1, "newDbExists":Z
     new-instance v0, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;
 
-    .line 4985
+    .line 4962
     invoke-virtual {p3}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4984
+    .line 4961
     invoke-direct {v0, p0, p1, v3}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;-><init>(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 4987
+    .line 4964
     .local v0, "deDatabaseHelper":Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;
     if-nez v1, :cond_0
 
@@ -77,28 +77,28 @@
 
     if-eqz v3, :cond_0
 
-    .line 4989
+    .line 4966
     new-instance v2, Lcom/android/server/accounts/AccountManagerService$PreNDatabaseHelper;
 
-    .line 4990
+    .line 4967
     invoke-virtual {p2}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4989
+    .line 4966
     invoke-direct {v2, p0, p1, v3}, Lcom/android/server/accounts/AccountManagerService$PreNDatabaseHelper;-><init>(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 4992
+    .line 4969
     .local v2, "preNDatabaseHelper":Lcom/android/server/accounts/AccountManagerService$PreNDatabaseHelper;
     invoke-virtual {v2}, Lcom/android/server/accounts/AccountManagerService$PreNDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 4993
+    .line 4970
     invoke-virtual {v2}, Lcom/android/server/accounts/AccountManagerService$PreNDatabaseHelper;->close()V
 
-    .line 4995
+    .line 4972
     invoke-direct {v0, p2}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->migratePreNDbToDe(Ljava/io/File;)V
 
-    .line 4997
+    .line 4974
     .end local v2    # "preNDatabaseHelper":Lcom/android/server/accounts/AccountManagerService$PreNDatabaseHelper;
     :cond_0
     return-object v0
@@ -109,12 +109,12 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 4877
+    .line 4854
     const-string/jumbo v0, " CREATE TRIGGER accountsDelete DELETE ON accounts BEGIN   DELETE FROM grants     WHERE accounts_id=OLD._id ; END"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4876
+    .line 4853
     return-void
 .end method
 
@@ -123,12 +123,12 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 4886
+    .line 4863
     const-string/jumbo v0, "CREATE TABLE grants (  accounts_id INTEGER NOT NULL, auth_token_type STRING NOT NULL,  uid INTEGER NOT NULL,  UNIQUE (accounts_id,auth_token_type,uid))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4885
+    .line 4862
     return-void
 .end method
 
@@ -137,12 +137,12 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 4869
+    .line 4846
     const-string/jumbo v0, "CREATE TABLE shared_accounts ( _id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, type TEXT NOT NULL, UNIQUE(name,type))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4868
+    .line 4845
     return-void
 .end method
 
@@ -151,7 +151,7 @@
     .param p1, "preNDbFile"    # Ljava/io/File;
 
     .prologue
-    .line 4936
+    .line 4913
     const-string/jumbo v1, "AccountManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -174,12 +174,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4937
+    .line 4914
     invoke-virtual {p0}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 4938
+    .line 4915
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -211,20 +211,20 @@
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4939
+    .line 4916
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 4941
+    .line 4918
     const-string/jumbo v1, "INSERT INTO accounts(_id,name,type, previous_name, last_password_entry_time_millis_epoch) SELECT _id,name,type, previous_name, last_password_entry_time_millis_epoch FROM preNDb.accounts"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4949
+    .line 4926
     const-string/jumbo v1, "INSERT INTO shared_accounts(_id,name,type) SELECT _id,name,type FROM preNDb.shared_accounts"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4954
+    .line 4931
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -243,240 +243,240 @@
 
     move-result-object v1
 
-    .line 4955
+    .line 4932
     const-string/jumbo v2, "("
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4955
+    .line 4932
     const-string/jumbo v2, "_id"
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4955
+    .line 4932
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4955
+    .line 4932
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get12()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4955
+    .line 4932
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4956
+    .line 4933
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get17()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4956
+    .line 4933
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4956
+    .line 4933
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get13()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4956
+    .line 4933
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4957
+    .line 4934
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get16()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4957
+    .line 4934
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4957
+    .line 4934
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get14()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4957
+    .line 4934
     const-string/jumbo v2, ") "
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4958
+    .line 4935
     const-string/jumbo v2, "SELECT "
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4958
+    .line 4935
     const-string/jumbo v2, "_id"
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4958
+    .line 4935
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4958
+    .line 4935
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get12()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4958
+    .line 4935
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4959
+    .line 4936
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get17()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4959
+    .line 4936
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4959
+    .line 4936
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get13()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4959
+    .line 4936
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4960
+    .line 4937
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get16()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4960
+    .line 4937
     const-string/jumbo v2, ","
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4960
+    .line 4937
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get14()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4961
+    .line 4938
     const-string/jumbo v2, " FROM preNDb."
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 4961
+    .line 4938
     invoke-static {}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-get15()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4954
+    .line 4931
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -487,28 +487,28 @@
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4963
+    .line 4940
     const-string/jumbo v1, "INSERT INTO grants(accounts_id,auth_token_type,uid) SELECT accounts_id,auth_token_type,uid FROM preNDb.grants"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4969
+    .line 4946
     const-string/jumbo v1, "INSERT INTO meta(key,value) SELECT key,value FROM preNDb.meta"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4972
+    .line 4949
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    .line 4973
+    .line 4950
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 4975
+    .line 4952
     const-string/jumbo v1, "DETACH DATABASE preNDb"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4935
+    .line 4912
     return-void
 .end method
 
@@ -519,12 +519,12 @@
     .param p1, "ceDbFile"    # Ljava/io/File;
 
     .prologue
-    .line 4904
+    .line 4881
     invoke-virtual {p0}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 4905
+    .line 4882
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -556,12 +556,12 @@
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4906
+    .line 4883
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->mCeAttached:Z
 
-    .line 4903
+    .line 4880
     return-void
 .end method
 
@@ -569,12 +569,12 @@
     .locals 3
 
     .prologue
-    .line 4915
+    .line 4892
     iget-boolean v0, p0, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->mCeAttached:Z
 
     if-nez v0, :cond_0
 
-    .line 4916
+    .line 4893
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -593,10 +593,10 @@
 
     move-result-object v1
 
-    .line 4917
+    .line 4894
     const-string/jumbo v2, " is still locked. CE database is not yet available."
 
-    .line 4916
+    .line 4893
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -605,15 +605,15 @@
 
     move-result-object v1
 
-    .line 4917
+    .line 4894
     new-instance v2, Ljava/lang/Throwable;
 
     invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
 
-    .line 4916
+    .line 4893
     invoke-static {v0, v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4919
+    .line 4896
     :cond_0
     invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -626,12 +626,12 @@
     .locals 3
 
     .prologue
-    .line 4923
+    .line 4900
     iget-boolean v0, p0, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->mCeAttached:Z
 
     if-nez v0, :cond_0
 
-    .line 4924
+    .line 4901
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -650,10 +650,10 @@
 
     move-result-object v1
 
-    .line 4925
+    .line 4902
     const-string/jumbo v2, " is still locked. CE database is not yet available."
 
-    .line 4924
+    .line 4901
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -662,15 +662,15 @@
 
     move-result-object v1
 
-    .line 4925
+    .line 4902
     new-instance v2, Ljava/lang/Throwable;
 
     invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
 
-    .line 4924
+    .line 4901
     invoke-static {v0, v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4927
+    .line 4904
     :cond_0
     invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -683,7 +683,7 @@
     .locals 1
 
     .prologue
-    .line 4910
+    .line 4887
     iget-boolean v0, p0, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->mCeAttached:Z
 
     return v0
@@ -694,7 +694,7 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 4849
+    .line 4826
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -719,29 +719,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4850
+    .line 4827
     const-string/jumbo v0, "CREATE TABLE accounts ( _id INTEGER PRIMARY KEY, name TEXT NOT NULL, type TEXT NOT NULL, previous_name TEXT, last_password_entry_time_millis_epoch INTEGER DEFAULT 0, UNIQUE(name,type))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4858
+    .line 4835
     const-string/jumbo v0, "CREATE TABLE meta ( key TEXT PRIMARY KEY NOT NULL, value TEXT)"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4862
+    .line 4839
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->createGrantsTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 4863
+    .line 4840
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->createSharedAccountsTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 4864
+    .line 4841
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountManagerService$DeDatabaseHelper;->createAccountsDeletionTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 4865
+    .line 4842
     invoke-static {p1}, Lcom/android/server/accounts/AccountManagerService$DebugDbHelper;->-wrap0(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 4848
+    .line 4825
     return-void
 .end method
 
@@ -750,7 +750,7 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 4932
+    .line 4909
     const-string/jumbo v0, "AccountManagerService"
 
     const/4 v1, 0x2
@@ -767,7 +767,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4931
+    .line 4908
     :cond_0
     return-void
 .end method
@@ -779,7 +779,7 @@
     .param p3, "newVersion"    # I
 
     .prologue
-    .line 4896
+    .line 4873
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -812,10 +812,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4898
+    .line 4875
     if-eq p2, p3, :cond_0
 
-    .line 4899
+    .line 4876
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -848,7 +848,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4895
+    .line 4872
     :cond_0
     return-void
 .end method

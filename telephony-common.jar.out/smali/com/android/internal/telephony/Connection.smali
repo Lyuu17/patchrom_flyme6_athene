@@ -1234,49 +1234,6 @@
     return-void
 .end method
 
-.method public resetConnectionTime()V
-    .locals 2
-
-    .prologue
-    .line 999
-    iget v0, p0, Lcom/android/internal/telephony/Connection;->mPhoneType:I
-
-    const/4 v1, 0x6
-
-    if-eq v0, v1, :cond_0
-
-    .line 1000
-    iget v0, p0, Lcom/android/internal/telephony/Connection;->mPhoneType:I
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_1
-
-    .line 1001
-    :cond_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/internal/telephony/Connection;->mConnectTime:J
-
-    .line 1002
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/internal/telephony/Connection;->mConnectTimeReal:J
-
-    .line 1003
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lcom/android/internal/telephony/Connection;->mDuration:J
-
-    .line 998
-    :cond_1
-    return-void
-.end method
-
 .method public abstract separate()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1733,14 +1690,14 @@
     .locals 4
 
     .prologue
-    .line 1013
+    .line 1001
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1015
+    .line 1003
     .local v0, "str":Ljava/lang/StringBuilder;
     const-string/jumbo v1, " callId: "
 
@@ -1754,7 +1711,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1016
+    .line 1004
     const-string/jumbo v1, " isExternal: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1765,20 +1722,20 @@
 
     and-int/lit8 v1, v1, 0x10
 
-    .line 1017
+    .line 1005
     const/16 v3, 0x10
 
-    .line 1016
+    .line 1004
     if-ne v1, v3, :cond_1
 
-    .line 1017
+    .line 1005
     const-string/jumbo v1, "Y"
 
-    .line 1016
+    .line 1004
     :goto_0
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1018
+    .line 1006
     sget-object v1, Lcom/android/internal/telephony/Connection;->LOG_TAG:Ljava/lang/String;
 
     const/4 v2, 0x3
@@ -1789,7 +1746,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1019
+    .line 1007
     const-string/jumbo v1, "addr: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1804,7 +1761,7 @@
 
     move-result-object v1
 
-    .line 1020
+    .line 1008
     const-string/jumbo v2, " pres.: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1819,7 +1776,7 @@
 
     move-result-object v1
 
-    .line 1021
+    .line 1009
     const-string/jumbo v2, " dial: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1834,7 +1791,7 @@
 
     move-result-object v1
 
-    .line 1022
+    .line 1010
     const-string/jumbo v2, " postdial: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1849,7 +1806,7 @@
 
     move-result-object v1
 
-    .line 1023
+    .line 1011
     const-string/jumbo v2, " cnap name: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1864,7 +1821,7 @@
 
     move-result-object v1
 
-    .line 1024
+    .line 1012
     const-string/jumbo v2, "("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1883,7 +1840,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1026
+    .line 1014
     :cond_0
     const-string/jumbo v1, " incoming: "
 
@@ -1899,7 +1856,7 @@
 
     move-result-object v1
 
-    .line 1027
+    .line 1015
     const-string/jumbo v2, " state: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1914,7 +1871,7 @@
 
     move-result-object v1
 
-    .line 1028
+    .line 1016
     const-string/jumbo v2, " post dial state: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1927,14 +1884,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 1029
+    .line 1017
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 1017
+    .line 1005
     :cond_1
     const-string/jumbo v1, "N"
 

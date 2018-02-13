@@ -56,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 233
+    .line 211
     new-instance v0, Landroid/telephony/SmsCbEtwsInfo$1;
 
     invoke-direct {v0}, Landroid/telephony/SmsCbEtwsInfo$1;-><init>()V
@@ -186,83 +186,10 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 207
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 205
-    if-ne p1, p0, :cond_0
-
-    .line 206
-    return v1
-
-    .line 208
-    :cond_0
-    if-eqz p1, :cond_1
-
-    instance-of v3, p1, Landroid/telephony/SmsCbEtwsInfo;
-
-    if-eqz v3, :cond_1
-
-    move-object v0, p1
-
-    .line 211
-    check-cast v0, Landroid/telephony/SmsCbEtwsInfo;
-
-    .line 212
-    .local v0, "other":Landroid/telephony/SmsCbEtwsInfo;
-    iget v3, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningType:I
-
-    iget v4, v0, Landroid/telephony/SmsCbEtwsInfo;->mWarningType:I
-
-    if-ne v3, v4, :cond_3
-
-    .line 213
-    iget-boolean v3, p0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
-
-    iget-boolean v4, v0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
-
-    if-ne v3, v4, :cond_3
-
-    .line 214
-    iget-boolean v3, p0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
-
-    iget-boolean v4, v0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
-
-    if-ne v3, v4, :cond_2
-
-    .line 212
-    :goto_0
-    return v1
-
-    .line 209
-    .end local v0    # "other":Landroid/telephony/SmsCbEtwsInfo;
-    :cond_1
-    return v2
-
-    .restart local v0    # "other":Landroid/telephony/SmsCbEtwsInfo;
-    :cond_2
-    move v1, v2
-
-    .line 214
-    goto :goto_0
-
-    :cond_3
-    move v1, v2
-
-    .line 212
-    goto :goto_0
 .end method
 
 .method public getPrimaryNotificationSignature()[B
@@ -486,60 +413,6 @@
     return v0
 .end method
 
-.method public hashCode()I
-    .locals 2
-
-    .prologue
-    .line 197
-    iget v1, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningType:I
-
-    mul-int/lit8 v0, v1, 0x4
-
-    .line 198
-    .local v0, "hash":I
-    iget-boolean v1, p0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
-
-    if-eqz v1, :cond_0
-
-    mul-int/lit8 v1, v0, 0x8
-
-    add-int/lit8 v1, v1, 0x7
-
-    :goto_0
-    add-int/2addr v0, v1
-
-    .line 199
-    iget-boolean v1, p0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
-
-    if-eqz v1, :cond_1
-
-    mul-int/lit8 v1, v0, 0xc
-
-    add-int/lit8 v1, v1, 0xf
-
-    :goto_1
-    add-int/2addr v0, v1
-
-    .line 200
-    return v0
-
-    .line 198
-    :cond_0
-    mul-int/lit8 v1, v0, 0x6
-
-    add-int/lit8 v1, v1, 0x5
-
-    goto :goto_0
-
-    .line 199
-    :cond_1
-    mul-int/lit8 v1, v0, 0xa
-
-    add-int/lit8 v1, v1, 0xd
-
-    goto :goto_1
-.end method
-
 .method public isEmergencyUserAlert()Z
     .locals 1
 
@@ -574,7 +447,7 @@
     .locals 2
 
     .prologue
-    .line 219
+    .line 197
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -597,34 +470,34 @@
 
     move-result-object v0
 
-    .line 220
+    .line 198
     iget-boolean v1, p0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
 
-    .line 219
+    .line 197
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 220
+    .line 198
     const-string/jumbo v1, ", activatePopup="
 
-    .line 219
+    .line 197
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 220
+    .line 198
     iget-boolean v1, p0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
 
-    .line 219
+    .line 197
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 220
+    .line 198
     const/16 v1, 0x7d
 
-    .line 219
+    .line 197
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0

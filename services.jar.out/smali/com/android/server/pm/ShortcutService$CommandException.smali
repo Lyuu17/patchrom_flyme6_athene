@@ -20,9 +20,9 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 3389
+    .line 3393
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 3388
+    .line 3392
     return-void
 .end method

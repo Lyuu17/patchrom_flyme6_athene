@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_onSessionBadgingChanged:I = 0x2
 
-.field static final TRANSACTION_onSessionCreated_0:I = 0x1
+.field static final TRANSACTION_onSessionCreated:I = 0x1
 
 .field static final TRANSACTION_onSessionFinished:I = 0x5
 

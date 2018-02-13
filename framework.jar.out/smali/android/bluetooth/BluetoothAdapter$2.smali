@@ -30,7 +30,7 @@
     .param p3, "val$callback"    # Landroid/bluetooth/BluetoothAdapter$LeScanCallback;
 
     .prologue
-    .line 2335
+    .line 2286
     iput-object p1, p0, Landroid/bluetooth/BluetoothAdapter$2;->this$0:Landroid/bluetooth/BluetoothAdapter;
 
     iput-object p2, p0, Landroid/bluetooth/BluetoothAdapter$2;->val$serviceUuids:[Ljava/util/UUID;
@@ -50,46 +50,46 @@
     .param p2, "result"    # Landroid/bluetooth/le/ScanResult;
 
     .prologue
-    .line 2338
+    .line 2289
     const/4 v4, 0x1
 
     if-eq p1, v4, :cond_0
 
-    .line 2340
+    .line 2291
     const-string/jumbo v4, "BluetoothAdapter"
 
     const-string/jumbo v5, "LE Scan has already started"
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2341
+    .line 2292
     return-void
 
-    .line 2343
+    .line 2294
     :cond_0
     invoke-virtual {p2}, Landroid/bluetooth/le/ScanResult;->getScanRecord()Landroid/bluetooth/le/ScanRecord;
 
     move-result-object v0
 
-    .line 2344
+    .line 2295
     .local v0, "scanRecord":Landroid/bluetooth/le/ScanRecord;
     if-nez v0, :cond_1
 
-    .line 2345
+    .line 2296
     return-void
 
-    .line 2347
+    .line 2298
     :cond_1
     iget-object v4, p0, Landroid/bluetooth/BluetoothAdapter$2;->val$serviceUuids:[Ljava/util/UUID;
 
     if-eqz v4, :cond_3
 
-    .line 2348
+    .line 2299
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2349
+    .line 2300
     .local v3, "uuids":Ljava/util/List;, "Ljava/util/List<Landroid/os/ParcelUuid;>;"
     iget-object v5, p0, Landroid/bluetooth/BluetoothAdapter$2;->val$serviceUuids:[Ljava/util/UUID;
 
@@ -102,7 +102,7 @@
 
     aget-object v2, v5, v4
 
-    .line 2350
+    .line 2301
     .local v2, "uuid":Ljava/util/UUID;
     new-instance v7, Landroid/os/ParcelUuid;
 
@@ -110,19 +110,19 @@
 
     invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2349
+    .line 2300
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 2352
+    .line 2303
     .end local v2    # "uuid":Ljava/util/UUID;
     :cond_2
     invoke-virtual {v0}, Landroid/bluetooth/le/ScanRecord;->getServiceUuids()Ljava/util/List;
 
     move-result-object v1
 
-    .line 2353
+    .line 2304
     .local v1, "scanServiceUuids":Ljava/util/List;, "Ljava/util/List<Landroid/os/ParcelUuid;>;"
     if-eqz v1, :cond_4
 
@@ -132,7 +132,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 2358
+    .line 2309
     .end local v1    # "scanServiceUuids":Ljava/util/List;, "Ljava/util/List<Landroid/os/ParcelUuid;>;"
     .end local v3    # "uuids":Ljava/util/List;, "Ljava/util/List<Landroid/os/ParcelUuid;>;"
     :cond_3
@@ -146,20 +146,27 @@
 
     move-result v6
 
-    .line 2359
+    .line 2310
     invoke-virtual {v0}, Landroid/bluetooth/le/ScanRecord;->getBytes()[B
 
     move-result-object v7
 
-    .line 2358
+    .line 2309
     invoke-interface {v4, v5, v6, v7}, Landroid/bluetooth/BluetoothAdapter$LeScanCallback;->onLeScan(Landroid/bluetooth/BluetoothDevice;I[B)V
 
-    .line 2337
+    .line 2288
     return-void
 
-    .line 2355
+    .line 2305
     .restart local v1    # "scanServiceUuids":Ljava/util/List;, "Ljava/util/List<Landroid/os/ParcelUuid;>;"
     .restart local v3    # "uuids":Ljava/util/List;, "Ljava/util/List<Landroid/os/ParcelUuid;>;"
     :cond_4
+    const-string/jumbo v4, "BluetoothAdapter"
+
+    const-string/jumbo v5, "uuids does not match"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2306
     return-void
 .end method

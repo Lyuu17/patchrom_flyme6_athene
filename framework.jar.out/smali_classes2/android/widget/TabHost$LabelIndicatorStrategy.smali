@@ -62,7 +62,7 @@
     .line 570
     iget-object v4, p0, Landroid/widget/TabHost$LabelIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
-    invoke-virtual {v4}, Landroid/widget/TabHost;->getContext()Landroid/content/Context;
+    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

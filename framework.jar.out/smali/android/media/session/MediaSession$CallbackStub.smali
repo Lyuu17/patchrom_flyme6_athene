@@ -33,65 +33,28 @@
     .param p1, "session"    # Landroid/media/session/MediaSession;
 
     .prologue
-    .line 1081
+    .line 982
     invoke-direct {p0}, Landroid/media/session/ISessionCallback$Stub;-><init>()V
 
-    .line 1082
+    .line 983
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
-    .line 1081
+    .line 982
     return-void
 .end method
 
 
 # virtual methods
-.method public getRemoteControlClientNowPlayingEntries()V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1264
-    const-string/jumbo v1, "MediaSession"
-
-    const-string/jumbo v2, "getRemoteControlClientNowPlayingEntries in CallbackStub"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1265
-    iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/media/session/MediaSession;
-
-    .line 1266
-    .local v0, "session":Landroid/media/session/MediaSession;
-    if-eqz v0, :cond_0
-
-    .line 1267
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap3(Landroid/media/session/MediaSession;)V
-
-    .line 1263
-    :cond_0
-    return-void
-.end method
-
 .method public onAdjustVolume(I)V
     .locals 2
     .param p1, "direction"    # I
 
     .prologue
-    .line 1281
+    .line 1155
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -100,14 +63,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1282
+    .line 1156
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1283
+    .line 1157
     invoke-static {v0, p1}, Landroid/media/session/MediaSession;->-wrap0(Landroid/media/session/MediaSession;I)V
 
-    .line 1280
+    .line 1154
     :cond_0
     return-void
 .end method
@@ -119,7 +82,7 @@
     .param p3, "cb"    # Landroid/os/ResultReceiver;
 
     .prologue
-    .line 1087
+    .line 988
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -128,14 +91,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1088
+    .line 989
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1089
-    invoke-static {v0, p1, p2, p3}, Landroid/media/session/MediaSession;->-wrap24(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
+    .line 990
+    invoke-static {v0, p1, p2, p3}, Landroid/media/session/MediaSession;->-wrap21(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
 
-    .line 1086
+    .line 987
     :cond_0
     return-void
 .end method
@@ -146,7 +109,7 @@
     .param p2, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1273
+    .line 1147
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -155,14 +118,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1274
+    .line 1148
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1275
+    .line 1149
     invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap1(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1272
+    .line 1146
     :cond_0
     return-void
 .end method
@@ -171,7 +134,7 @@
     .locals 2
 
     .prologue
-    .line 1214
+    .line 1115
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -180,14 +143,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1215
+    .line 1116
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1216
+    .line 1117
     invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap2(Landroid/media/session/MediaSession;)V
 
-    .line 1213
+    .line 1114
     :cond_0
     return-void
 .end method
@@ -201,7 +164,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1096
+    .line 997
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -210,38 +173,38 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1098
+    .line 999
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1099
+    .line 1000
     :try_start_0
-    invoke-static {v0, p1}, Landroid/media/session/MediaSession;->-wrap4(Landroid/media/session/MediaSession;Landroid/content/Intent;)V
+    invoke-static {v0, p1}, Landroid/media/session/MediaSession;->-wrap3(Landroid/media/session/MediaSession;Landroid/content/Intent;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1102
+    .line 1003
     :cond_0
     if-eqz p3, :cond_1
 
-    .line 1103
+    .line 1004
     invoke-virtual {p3, p2, v2}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    .line 1095
+    .line 996
     :cond_1
     return-void
 
-    .line 1101
+    .line 1002
     :catchall_0
     move-exception v1
 
-    .line 1102
+    .line 1003
     if-eqz p3, :cond_2
 
-    .line 1103
+    .line 1004
     invoke-virtual {p3, p2, v2}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    .line 1101
+    .line 1002
     :cond_2
     throw v1
 .end method
@@ -250,7 +213,7 @@
     .locals 2
 
     .prologue
-    .line 1198
+    .line 1099
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -259,14 +222,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1199
+    .line 1100
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1200
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap5(Landroid/media/session/MediaSession;)V
+    .line 1101
+    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap4(Landroid/media/session/MediaSession;)V
 
-    .line 1197
+    .line 1098
     :cond_0
     return-void
 .end method
@@ -275,7 +238,7 @@
     .locals 2
 
     .prologue
-    .line 1182
+    .line 1083
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -284,14 +247,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1183
+    .line 1084
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1184
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap6(Landroid/media/session/MediaSession;)V
+    .line 1085
+    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap5(Landroid/media/session/MediaSession;)V
 
-    .line 1181
+    .line 1082
     :cond_0
     return-void
 .end method
@@ -300,7 +263,7 @@
     .locals 2
 
     .prologue
-    .line 1142
+    .line 1043
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -309,14 +272,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1143
+    .line 1044
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1144
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap10(Landroid/media/session/MediaSession;)V
+    .line 1045
+    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap9(Landroid/media/session/MediaSession;)V
 
-    .line 1141
+    .line 1042
     :cond_0
     return-void
 .end method
@@ -327,7 +290,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1150
+    .line 1051
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -336,14 +299,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1151
+    .line 1052
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1152
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap7(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
+    .line 1053
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap6(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1149
+    .line 1050
     :cond_0
     return-void
 .end method
@@ -354,7 +317,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1158
+    .line 1059
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -363,14 +326,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1159
+    .line 1060
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1160
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap8(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
+    .line 1061
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap7(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1157
+    .line 1058
     :cond_0
     return-void
 .end method
@@ -381,7 +344,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1166
+    .line 1067
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -390,14 +353,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1167
+    .line 1068
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1168
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap9(Landroid/media/session/MediaSession;Landroid/net/Uri;Landroid/os/Bundle;)V
+    .line 1069
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap8(Landroid/media/session/MediaSession;Landroid/net/Uri;Landroid/os/Bundle;)V
 
-    .line 1165
+    .line 1066
     :cond_0
     return-void
 .end method
@@ -406,7 +369,7 @@
     .locals 2
 
     .prologue
-    .line 1110
+    .line 1011
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -415,14 +378,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1111
+    .line 1012
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1112
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap14(Landroid/media/session/MediaSession;)V
+    .line 1013
+    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap13(Landroid/media/session/MediaSession;)V
 
-    .line 1109
+    .line 1010
     :cond_0
     return-void
 .end method
@@ -433,7 +396,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1118
+    .line 1019
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -442,14 +405,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1119
+    .line 1020
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1120
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap11(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
+    .line 1021
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap10(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1117
+    .line 1018
     :cond_0
     return-void
 .end method
@@ -460,7 +423,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1126
+    .line 1027
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -469,14 +432,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1127
+    .line 1028
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1128
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap12(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
+    .line 1029
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap11(Landroid/media/session/MediaSession;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1125
+    .line 1026
     :cond_0
     return-void
 .end method
@@ -487,7 +450,7 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1134
+    .line 1035
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -496,14 +459,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1135
+    .line 1036
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1136
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap13(Landroid/media/session/MediaSession;Landroid/net/Uri;Landroid/os/Bundle;)V
+    .line 1037
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap12(Landroid/media/session/MediaSession;Landroid/net/Uri;Landroid/os/Bundle;)V
 
-    .line 1133
+    .line 1034
     :cond_0
     return-void
 .end method
@@ -512,7 +475,7 @@
     .locals 2
 
     .prologue
-    .line 1206
+    .line 1107
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -521,14 +484,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1207
+    .line 1108
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1208
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap15(Landroid/media/session/MediaSession;)V
+    .line 1109
+    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap14(Landroid/media/session/MediaSession;)V
 
-    .line 1205
+    .line 1106
     :cond_0
     return-void
 .end method
@@ -538,7 +501,7 @@
     .param p1, "rating"    # Landroid/media/Rating;
 
     .prologue
-    .line 1238
+    .line 1139
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -547,14 +510,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1239
+    .line 1140
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1240
-    invoke-static {v0, p1}, Landroid/media/session/MediaSession;->-wrap16(Landroid/media/session/MediaSession;Landroid/media/Rating;)V
+    .line 1141
+    invoke-static {v0, p1}, Landroid/media/session/MediaSession;->-wrap15(Landroid/media/session/MediaSession;Landroid/media/Rating;)V
 
-    .line 1237
+    .line 1138
     :cond_0
     return-void
 .end method
@@ -563,7 +526,7 @@
     .locals 2
 
     .prologue
-    .line 1222
+    .line 1123
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -572,14 +535,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1223
+    .line 1124
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1224
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap17(Landroid/media/session/MediaSession;)V
+    .line 1125
+    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap16(Landroid/media/session/MediaSession;)V
 
-    .line 1221
+    .line 1122
     :cond_0
     return-void
 .end method
@@ -589,7 +552,7 @@
     .param p1, "pos"    # J
 
     .prologue
-    .line 1230
+    .line 1131
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -598,14 +561,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1231
+    .line 1132
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1232
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap18(Landroid/media/session/MediaSession;J)V
+    .line 1133
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap17(Landroid/media/session/MediaSession;J)V
 
-    .line 1229
+    .line 1130
     :cond_0
     return-void
 .end method
@@ -615,7 +578,7 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 1289
+    .line 1163
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -624,14 +587,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1290
+    .line 1164
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1291
-    invoke-static {v0, p1}, Landroid/media/session/MediaSession;->-wrap21(Landroid/media/session/MediaSession;I)V
+    .line 1165
+    invoke-static {v0, p1}, Landroid/media/session/MediaSession;->-wrap18(Landroid/media/session/MediaSession;I)V
 
-    .line 1288
+    .line 1162
     :cond_0
     return-void
 .end method
@@ -641,7 +604,7 @@
     .param p1, "id"    # J
 
     .prologue
-    .line 1174
+    .line 1075
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -650,14 +613,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1175
+    .line 1076
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1176
-    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap22(Landroid/media/session/MediaSession;J)V
+    .line 1077
+    invoke-static {v0, p1, p2}, Landroid/media/session/MediaSession;->-wrap19(Landroid/media/session/MediaSession;J)V
 
-    .line 1173
+    .line 1074
     :cond_0
     return-void
 .end method
@@ -666,7 +629,7 @@
     .locals 2
 
     .prologue
-    .line 1190
+    .line 1091
     iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -675,90 +638,14 @@
 
     check-cast v0, Landroid/media/session/MediaSession;
 
-    .line 1191
+    .line 1092
     .local v0, "session":Landroid/media/session/MediaSession;
     if-eqz v0, :cond_0
 
-    .line 1192
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap23(Landroid/media/session/MediaSession;)V
+    .line 1093
+    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap20(Landroid/media/session/MediaSession;)V
 
-    .line 1189
-    :cond_0
-    return-void
-.end method
-
-.method public setRemoteControlClientBrowsedPlayer()V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1246
-    const-string/jumbo v1, "MediaSession"
-
-    const-string/jumbo v2, "setRemoteControlClientBrowsedPlayer in CallbackStub"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1247
-    iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/media/session/MediaSession;
-
-    .line 1248
-    .local v0, "session":Landroid/media/session/MediaSession;
-    if-eqz v0, :cond_0
-
-    .line 1249
-    invoke-static {v0}, Landroid/media/session/MediaSession;->-wrap19(Landroid/media/session/MediaSession;)V
-
-    .line 1245
-    :cond_0
-    return-void
-.end method
-
-.method public setRemoteControlClientPlayItem(JI)V
-    .locals 3
-    .param p1, "uid"    # J
-    .param p3, "scope"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1255
-    const-string/jumbo v1, "MediaSession"
-
-    const-string/jumbo v2, "setRemoteControlClientPlayItem in CallbackStub"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1256
-    iget-object v1, p0, Landroid/media/session/MediaSession$CallbackStub;->mMediaSession:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/media/session/MediaSession;
-
-    .line 1257
-    .local v0, "session":Landroid/media/session/MediaSession;
-    if-eqz v0, :cond_0
-
-    .line 1258
-    invoke-static {v0, p1, p2, p3}, Landroid/media/session/MediaSession;->-wrap20(Landroid/media/session/MediaSession;JI)V
-
-    .line 1254
+    .line 1090
     :cond_0
     return-void
 .end method

@@ -36,21 +36,21 @@
     .param p4, "thread"    # Landroid/app/IApplicationThread;
 
     .prologue
-    .line 1480
+    .line 1469
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1485
+    .line 1474
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->mApp:Lcom/android/server/am/ProcessRecord;
 
-    .line 1486
+    .line 1475
     iput p3, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->mPid:I
 
-    .line 1487
+    .line 1476
     iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->mAppThread:Landroid/app/IApplicationThread;
 
-    .line 1481
+    .line 1470
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .locals 6
 
     .prologue
-    .line 1495
+    .line 1484
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
@@ -68,7 +68,7 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 1496
+    .line 1485
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->mApp:Lcom/android/server/am/ProcessRecord;
@@ -85,13 +85,13 @@
 
     monitor-exit v1
 
-    .line 1495
+    .line 1484
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 1491
+    .line 1480
     return-void
 
-    .line 1495
+    .line 1484
     :catchall_0
     move-exception v0
 

@@ -32,9 +32,6 @@
 .method public abstract addInputConsumer(Landroid/os/Looper;Landroid/view/InputEventReceiver$Factory;)Landroid/view/WindowManagerPolicy$InputConsumer;
 .end method
 
-.method public abstract addSystemUIVisibilityFlag(I)V
-.end method
-
 .method public abstract getCameraLensCoverState()I
 .end method
 

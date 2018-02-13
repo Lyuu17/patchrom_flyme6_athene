@@ -27,7 +27,7 @@
     .param p2, "val$response"    # Landroid/os/IBinder;
 
     .prologue
-    .line 4655
+    .line 4652
     iput-object p1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$6;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     iput-object p2, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$6;->val$response:Landroid/os/IBinder;
@@ -45,12 +45,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 4658
+    .line 4655
     invoke-virtual {p0}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$6;->getResultData()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4659
+    .line 4656
     .local v0, "chosenAlias":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$6;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
@@ -58,6 +58,6 @@
 
     invoke-static {v1, v0, v2}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->-wrap18(Lcom/android/server/devicepolicy/DevicePolicyManagerService;Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 4657
+    .line 4654
     return-void
 .end method

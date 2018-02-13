@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 115
+    .line 112
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     return-void
@@ -30,9 +30,9 @@
     .param p1, "windowList"    # Lcom/android/server/wm/WindowList;
 
     .prologue
-    .line 117
+    .line 114
     invoke-direct {p0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 116
+    .line 113
     return-void
 .end method

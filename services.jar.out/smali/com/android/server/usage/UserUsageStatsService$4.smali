@@ -30,7 +30,7 @@
     .param p2, "val$pw"    # Lcom/android/internal/util/IndentingPrintWriter;
 
     .prologue
-    .line 468
+    .line 465
     iput-object p1, p0, Lcom/android/server/usage/UserUsageStatsService$4;->this$0:Lcom/android/server/usage/UserUsageStatsService;
 
     iput-object p2, p0, Lcom/android/server/usage/UserUsageStatsService$4;->val$pw:Lcom/android/internal/util/IndentingPrintWriter;
@@ -47,7 +47,7 @@
     .param p1, "stats"    # Lcom/android/server/usage/IntervalStats;
 
     .prologue
-    .line 471
+    .line 468
     iget-object v0, p0, Lcom/android/server/usage/UserUsageStatsService$4;->this$0:Lcom/android/server/usage/UserUsageStatsService;
 
     iget-object v1, p0, Lcom/android/server/usage/UserUsageStatsService$4;->val$pw:Lcom/android/internal/util/IndentingPrintWriter;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1, p1, v2}, Lcom/android/server/usage/UserUsageStatsService;->printIntervalStats(Lcom/android/internal/util/IndentingPrintWriter;Lcom/android/server/usage/IntervalStats;Z)V
 
-    .line 472
+    .line 469
     const/4 v0, 0x1
 
     return v0

@@ -14,11 +14,7 @@
 
 .field public static final LIGHT_ID_BUTTONS:I = 0x2
 
-.field public static final LIGHT_ID_CAPS:I = 0x8
-
-.field public static final LIGHT_ID_COUNT:I = 0xa
-
-.field public static final LIGHT_ID_FUNC:I = 0x9
+.field public static final LIGHT_ID_COUNT:I = 0x8
 
 .field public static final LIGHT_ID_KEYBOARD:I = 0x1
 

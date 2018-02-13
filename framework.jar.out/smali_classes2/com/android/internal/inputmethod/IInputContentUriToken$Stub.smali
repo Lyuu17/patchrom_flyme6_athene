@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_release:I = 0x2
 
-.field static final TRANSACTION_take_0:I = 0x1
+.field static final TRANSACTION_take:I = 0x1
 
 
 # direct methods
@@ -42,7 +42,7 @@
     .line 18
     const-string/jumbo v0, "com.android.internal.inputmethod.IInputContentUriToken"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/internal/inputmethod/IInputContentUriToken$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

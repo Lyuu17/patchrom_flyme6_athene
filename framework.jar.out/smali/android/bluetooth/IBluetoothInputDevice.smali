@@ -75,14 +75,6 @@
     .end annotation
 .end method
 
-.method public abstract getIdleTime(Landroid/bluetooth/BluetoothDevice;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getPriority(Landroid/bluetooth/BluetoothDevice;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -108,14 +100,6 @@
 .end method
 
 .method public abstract sendData(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setIdleTime(Landroid/bluetooth/BluetoothDevice;B)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

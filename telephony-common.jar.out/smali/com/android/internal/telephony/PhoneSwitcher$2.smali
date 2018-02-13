@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/PhoneSwitcher;
 
     .prologue
-    .line 176
+    .line 171
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneSwitcher$2;->this$0:Lcom/android/internal/telephony/PhoneSwitcher;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/IOnSubscriptionsChangedListener$Stub;-><init>()V
@@ -38,7 +38,7 @@
     .locals 3
 
     .prologue
-    .line 179
+    .line 174
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSwitcher$2;->this$0:Lcom/android/internal/telephony/PhoneSwitcher;
 
     const/16 v2, 0x66
@@ -47,10 +47,10 @@
 
     move-result-object v0
 
-    .line 180
+    .line 175
     .local v0, "msg":Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 178
+    .line 173
     return-void
 .end method

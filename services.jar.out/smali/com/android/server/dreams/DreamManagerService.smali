@@ -146,15 +146,7 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap10(Lcom/android/server/dreams/DreamManagerService;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->requestDreamInternal()V
-
-    return-void
-.end method
-
-.method static synthetic -wrap11(Lcom/android/server/dreams/DreamManagerService;I[Landroid/content/ComponentName;)V
+.method static synthetic -wrap10(Lcom/android/server/dreams/DreamManagerService;I[Landroid/content/ComponentName;)V
     .locals 0
     .param p1, "userId"    # I
     .param p2, "componentNames"    # [Landroid/content/ComponentName;
@@ -165,7 +157,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap12(Lcom/android/server/dreams/DreamManagerService;Landroid/os/IBinder;II)V
+.method static synthetic -wrap11(Lcom/android/server/dreams/DreamManagerService;Landroid/os/IBinder;II)V
     .locals 0
     .param p1, "token"    # Landroid/os/IBinder;
     .param p2, "screenState"    # I
@@ -177,7 +169,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap13(Lcom/android/server/dreams/DreamManagerService;Z)V
+.method static synthetic -wrap12(Lcom/android/server/dreams/DreamManagerService;Z)V
     .locals 0
     .param p1, "doze"    # Z
 
@@ -187,7 +179,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap14(Lcom/android/server/dreams/DreamManagerService;Landroid/os/IBinder;)V
+.method static synthetic -wrap13(Lcom/android/server/dreams/DreamManagerService;Landroid/os/IBinder;)V
     .locals 0
     .param p1, "token"    # Landroid/os/IBinder;
 
@@ -197,7 +189,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap15(Lcom/android/server/dreams/DreamManagerService;Z)V
+.method static synthetic -wrap14(Lcom/android/server/dreams/DreamManagerService;Z)V
     .locals 0
     .param p1, "immediate"    # Z
 
@@ -207,7 +199,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap16(Lcom/android/server/dreams/DreamManagerService;Z)V
+.method static synthetic -wrap15(Lcom/android/server/dreams/DreamManagerService;Z)V
     .locals 0
     .param p1, "immediate"    # Z
 
@@ -217,7 +209,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap17(Lcom/android/server/dreams/DreamManagerService;Landroid/content/ComponentName;I)V
+.method static synthetic -wrap16(Lcom/android/server/dreams/DreamManagerService;Landroid/content/ComponentName;I)V
     .locals 0
     .param p1, "dream"    # Landroid/content/ComponentName;
     .param p2, "userId"    # I
@@ -228,7 +220,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap18(Lcom/android/server/dreams/DreamManagerService;)V
+.method static synthetic -wrap17(Lcom/android/server/dreams/DreamManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->writePulseGestureEnabled()V
@@ -249,16 +241,6 @@
 .method static synthetic -wrap3(Lcom/android/server/dreams/DreamManagerService;)Z
     .locals 1
 
-    invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->isDozingInternal()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic -wrap4(Lcom/android/server/dreams/DreamManagerService;)Z
-    .locals 1
-
     invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->isDreamingInternal()Z
 
     move-result v0
@@ -266,7 +248,7 @@
     return v0
 .end method
 
-.method static synthetic -wrap5(Lcom/android/server/dreams/DreamManagerService;Ljava/lang/String;)V
+.method static synthetic -wrap4(Lcom/android/server/dreams/DreamManagerService;Ljava/lang/String;)V
     .locals 0
     .param p1, "permission"    # Ljava/lang/String;
 
@@ -276,7 +258,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap6(Lcom/android/server/dreams/DreamManagerService;)V
+.method static synthetic -wrap5(Lcom/android/server/dreams/DreamManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->cleanupDreamLocked()V
@@ -284,7 +266,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap7(Lcom/android/server/dreams/DreamManagerService;Ljava/io/PrintWriter;)V
+.method static synthetic -wrap6(Lcom/android/server/dreams/DreamManagerService;Ljava/io/PrintWriter;)V
     .locals 0
     .param p1, "pw"    # Ljava/io/PrintWriter;
 
@@ -294,7 +276,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap8(Lcom/android/server/dreams/DreamManagerService;Landroid/os/IBinder;Z)V
+.method static synthetic -wrap7(Lcom/android/server/dreams/DreamManagerService;Landroid/os/IBinder;Z)V
     .locals 0
     .param p1, "token"    # Landroid/os/IBinder;
     .param p2, "immediate"    # Z
@@ -305,10 +287,18 @@
     return-void
 .end method
 
-.method static synthetic -wrap9(Lcom/android/server/dreams/DreamManagerService;)V
+.method static synthetic -wrap8(Lcom/android/server/dreams/DreamManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->requestAwakenInternal()V
+
+    return-void
+.end method
+
+.method static synthetic -wrap9(Lcom/android/server/dreams/DreamManagerService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->requestDreamInternal()V
 
     return-void
 .end method
@@ -338,14 +328,14 @@
 
     iput v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamDozeScreenBrightness:I
 
-    .line 457
+    .line 451
     new-instance v0, Lcom/android/server/dreams/DreamManagerService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/dreams/DreamManagerService$1;-><init>(Lcom/android/server/dreams/DreamManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mControllerListener:Lcom/android/server/dreams/DreamController$Listener;
 
-    .line 468
+    .line 462
     new-instance v0, Lcom/android/server/dreams/DreamManagerService$2;
 
     const/4 v1, 0x0
@@ -354,7 +344,7 @@
 
     iput-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mDozeEnabledObserver:Landroid/database/ContentObserver;
 
-    .line 683
+    .line 660
     new-instance v0, Lcom/android/server/dreams/DreamManagerService$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/dreams/DreamManagerService$3;-><init>(Lcom/android/server/dreams/DreamManagerService;)V
@@ -443,7 +433,7 @@
     .param p1, "permission"    # Ljava/lang/String;
 
     .prologue
-    .line 419
+    .line 413
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
@@ -452,7 +442,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 421
+    .line 415
     new-instance v0, Ljava/lang/SecurityException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -473,10 +463,10 @@
 
     move-result-object v1
 
-    .line 422
+    .line 416
     const-string/jumbo v2, ", must have permission "
 
-    .line 421
+    .line 415
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -493,7 +483,7 @@
 
     throw v0
 
-    .line 418
+    .line 412
     :cond_0
     return-void
 .end method
@@ -508,15 +498,15 @@
 
     const/4 v2, 0x0
 
-    .line 269
+    .line 263
     if-eqz p1, :cond_1
 
-    .line 270
+    .line 264
     invoke-direct {p0, p2}, Lcom/android/server/dreams/DreamManagerService;->getDozeComponent(I)Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 271
+    .line 265
     .local v0, "dozeComponent":Landroid/content/ComponentName;
     invoke-direct {p0, v0}, Lcom/android/server/dreams/DreamManagerService;->validateDream(Landroid/content/ComponentName;)Z
 
@@ -534,14 +524,14 @@
 
     goto :goto_0
 
-    .line 273
+    .line 267
     .end local v0    # "dozeComponent":Landroid/content/ComponentName;
     :cond_1
     invoke-direct {p0, p2}, Lcom/android/server/dreams/DreamManagerService;->getDreamComponentsForUser(I)[Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 274
+    .line 268
     .local v1, "dreams":[Landroid/content/ComponentName;
     if-eqz v1, :cond_2
 
@@ -563,47 +553,47 @@
 
     const/4 v1, 0x0
 
-    .line 404
+    .line 398
     iput-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
-    .line 405
+    .line 399
     iput-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamName:Landroid/content/ComponentName;
 
-    .line 406
+    .line 400
     iput-boolean v1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsTest:Z
 
-    .line 407
+    .line 401
     iput-boolean v1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamCanDoze:Z
 
-    .line 408
+    .line 402
     iput v1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamUserId:I
 
-    .line 409
+    .line 403
     iput-boolean v1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsWaking:Z
 
-    .line 410
+    .line 404
     iget-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsDozing:Z
 
     if-eqz v0, :cond_0
 
-    .line 411
+    .line 405
     iput-boolean v1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsDozing:Z
 
-    .line 412
+    .line 406
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mDozeWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 414
+    .line 408
     :cond_0
     iput v1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamDozeScreenState:I
 
-    .line 415
+    .line 409
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamDozeScreenBrightness:I
 
-    .line 403
+    .line 397
     return-void
 .end method
 
@@ -614,13 +604,13 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 446
+    .line 440
     if-nez p0, :cond_0
 
-    .line 447
+    .line 441
     return-object v3
 
-    .line 449
+    .line 443
     :cond_0
     const-string/jumbo v3, ","
 
@@ -628,13 +618,13 @@
 
     move-result-object v2
 
-    .line 450
+    .line 444
     .local v2, "namesArray":[Ljava/lang/String;
     array-length v3, v2
 
     new-array v0, v3, [Landroid/content/ComponentName;
 
-    .line 451
+    .line 445
     .local v0, "componentNames":[Landroid/content/ComponentName;
     const/4 v1, 0x0
 
@@ -644,7 +634,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 452
+    .line 446
     aget-object v3, v2, v1
 
     invoke-static {v3}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
@@ -653,12 +643,12 @@
 
     aput-object v3, v0, v1
 
-    .line 451
+    .line 445
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 454
+    .line 448
     :cond_1
     return-object v0
 .end method
@@ -670,16 +660,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 433
+    .line 427
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 434
+    .line 428
     .local v1, "names":Ljava/lang/StringBuilder;
     if-eqz p0, :cond_1
 
-    .line 435
+    .line 429
     array-length v3, p0
 
     :goto_0
@@ -687,7 +677,7 @@
 
     aget-object v0, p0, v2
 
-    .line 436
+    .line 430
     .local v0, "componentName":Landroid/content/ComponentName;
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
@@ -695,12 +685,12 @@
 
     if-lez v4, :cond_0
 
-    .line 437
+    .line 431
     const/16 v4, 0x2c
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 439
+    .line 433
     :cond_0
     invoke-virtual {v0}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
 
@@ -708,12 +698,12 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 435
+    .line 429
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 442
+    .line 436
     .end local v0    # "componentName":Landroid/content/ComponentName;
     :cond_1
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1004,18 +994,18 @@
     .param p2, "immediate"    # Z
 
     .prologue
-    .line 202
+    .line 196
     iget-object v1, p0, Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 203
+    .line 197
     :try_start_0
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
     if-ne v0, p1, :cond_0
 
-    .line 204
+    .line 198
     invoke-direct {p0, p2}, Lcom/android/server/dreams/DreamManagerService;->stopDreamLocked(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1023,10 +1013,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 190
+    .line 184
     return-void
 
-    .line 202
+    .line 196
     :catchall_0
     move-exception v0
 
@@ -1042,22 +1032,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 328
+    .line 322
     iget-object v2, p0, Lcom/android/server/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 329
+    .line 323
     const-string/jumbo v3, "screensaver_default_component"
 
-    .line 328
+    .line 322
     invoke-static {v2, v3, p1}, Landroid/provider/Settings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 331
+    .line 325
     .local v0, "name":Ljava/lang/String;
     if-nez v0, :cond_0
 
@@ -1076,7 +1066,7 @@
     .locals 1
 
     .prologue
-    .line 335
+    .line 329
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
@@ -1093,7 +1083,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 339
+    .line 333
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mDozeConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/hardware/AmbientDisplayConfiguration;->enabled(I)Z
@@ -1102,7 +1092,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 340
+    .line 334
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mDozeConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     invoke-virtual {v0}, Lcom/android/internal/hardware/AmbientDisplayConfiguration;->ambientDisplayComponent()Ljava/lang/String;
@@ -1115,7 +1105,7 @@
 
     return-object v0
 
-    .line 342
+    .line 336
     :cond_0
     const/4 v0, 0x0
 
@@ -1127,38 +1117,38 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 294
+    .line 288
     iget-object v5, p0, Lcom/android/server/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
-    .line 295
+    .line 289
     const-string/jumbo v6, "screensaver_components"
 
-    .line 294
+    .line 288
     invoke-static {v5, v6, p1}, Landroid/provider/Settings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 297
+    .line 291
     .local v3, "names":Ljava/lang/String;
     invoke-static {v3}, Lcom/android/server/dreams/DreamManagerService;->componentsFromString(Ljava/lang/String;)[Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 300
+    .line 294
     .local v1, "components":[Landroid/content/ComponentName;
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 301
+    .line 295
     .local v4, "validComponents":Ljava/util/List;, "Ljava/util/List<Landroid/content/ComponentName;>;"
     if-eqz v1, :cond_1
 
-    .line 302
+    .line 296
     const/4 v5, 0x0
 
     array-length v6, v1
@@ -1168,7 +1158,7 @@
 
     aget-object v0, v1, v5
 
-    .line 303
+    .line 297
     .local v0, "component":Landroid/content/ComponentName;
     invoke-direct {p0, v0}, Lcom/android/server/dreams/DreamManagerService;->validateDream(Landroid/content/ComponentName;)Z
 
@@ -1176,16 +1166,16 @@
 
     if-eqz v7, :cond_0
 
-    .line 304
+    .line 298
     invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 302
+    .line 296
     :cond_0
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 310
+    .line 304
     .end local v0    # "component":Landroid/content/ComponentName;
     :cond_1
     invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
@@ -1194,16 +1184,16 @@
 
     if-eqz v5, :cond_2
 
-    .line 311
+    .line 305
     invoke-direct {p0, p1}, Lcom/android/server/dreams/DreamManagerService;->getDefaultDreamComponentForUser(I)Landroid/content/ComponentName;
 
     move-result-object v2
 
-    .line 312
+    .line 306
     .local v2, "defaultDream":Landroid/content/ComponentName;
     if-eqz v2, :cond_2
 
-    .line 313
+    .line 307
     const-string/jumbo v5, "DreamManagerService"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1226,10 +1216,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 314
+    .line 308
     invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 317
+    .line 311
     .end local v2    # "defaultDream":Landroid/content/ComponentName;
     :cond_2
     invoke-interface {v4}, Ljava/util/List;->size()I
@@ -1254,7 +1244,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 349
+    .line 343
     if-eqz p1, :cond_0
 
     :try_start_0
@@ -1264,10 +1254,10 @@
 
     move-result-object v2
 
-    .line 350
+    .line 344
     const/high16 v3, 0x10000000
 
-    .line 349
+    .line 343
     invoke-virtual {v2, p1, v3}, Landroid/content/pm/PackageManager;->getServiceInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ServiceInfo;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1277,41 +1267,13 @@
     :cond_0
     return-object v1
 
-    .line 351
+    .line 345
     :catch_0
     move-exception v0
 
-    .line 352
+    .line 346
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     return-object v1
-.end method
-
-.method private isDozingInternal()Z
-    .locals 2
-
-    .prologue
-    .line 166
-    iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    .line 167
-    :try_start_0
-    iget-boolean v1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsDozing:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v0
-
-    return v1
-
-    .line 166
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
 .end method
 
 .method private isDreamingInternal()Z
@@ -1371,21 +1333,21 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 185
+    .line 179
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 186
+    .line 180
     .local v0, "time":J
     iget-object v2, p0, Lcom/android/server/dreams/DreamManagerService;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-virtual {v2, v0, v1, v3}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 187
+    .line 181
     invoke-direct {p0, v3}, Lcom/android/server/dreams/DreamManagerService;->stopDreamInternal(Z)V
 
-    .line 181
+    .line 175
     return-void
 .end method
 
@@ -1393,12 +1355,12 @@
     .locals 4
 
     .prologue
-    .line 176
+    .line 170
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 177
+    .line 171
     .local v0, "time":J
     iget-object v2, p0, Lcom/android/server/dreams/DreamManagerService;->mPowerManager:Landroid/os/PowerManager;
 
@@ -1406,12 +1368,12 @@
 
     invoke-virtual {v2, v0, v1, v3}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 178
+    .line 172
     iget-object v2, p0, Lcom/android/server/dreams/DreamManagerService;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-virtual {v2, v0, v1}, Landroid/os/PowerManager;->nap(J)V
 
-    .line 171
+    .line 165
     return-void
 .end method
 
@@ -1421,25 +1383,25 @@
     .param p2, "componentNames"    # [Landroid/content/ComponentName;
 
     .prologue
-    .line 321
+    .line 315
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 322
+    .line 316
     const-string/jumbo v1, "screensaver_components"
 
-    .line 323
+    .line 317
     invoke-static {p2}, Lcom/android/server/dreams/DreamManagerService;->componentsToString([Landroid/content/ComponentName;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 321
+    .line 315
     invoke-static {v0, v1, v2, p1}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 320
+    .line 314
     return-void
 .end method
 
@@ -1450,12 +1412,12 @@
     .param p3, "screenBrightness"    # I
 
     .prologue
-    .line 239
+    .line 233
     iget-object v1, p0, Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 240
+    .line 234
     :try_start_0
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
@@ -1465,28 +1427,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 241
+    .line 235
     iput p2, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamDozeScreenState:I
 
-    .line 242
+    .line 236
     iput p3, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamDozeScreenBrightness:I
 
-    .line 243
+    .line 237
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
 
     invoke-virtual {v0, p2, p3}, Landroid/os/PowerManagerInternal;->setDozeOverrideFromDreamManager(II)V
 
-    .line 245
+    .line 239
     iget-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsDozing:Z
 
     if-nez v0, :cond_0
 
-    .line 246
+    .line 240
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsDozing:Z
 
-    .line 247
+    .line 241
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mDozeWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
@@ -1496,10 +1458,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 232
+    .line 226
     return-void
 
-    .line 239
+    .line 233
     :catchall_0
     move-exception v0
 
@@ -1513,27 +1475,27 @@
     .param p1, "doze"    # Z
 
     .prologue
-    .line 216
+    .line 210
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v1
 
-    .line 217
+    .line 211
     .local v1, "userId":I
     invoke-direct {p0, p1, v1}, Lcom/android/server/dreams/DreamManagerService;->chooseDreamForUser(ZI)Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 218
+    .line 212
     .local v0, "dream":Landroid/content/ComponentName;
     if-eqz v0, :cond_0
 
-    .line 219
+    .line 213
     iget-object v2, p0, Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 220
+    .line 214
     const/4 v3, 0x0
 
     :try_start_0
@@ -1543,11 +1505,11 @@
 
     monitor-exit v2
 
-    .line 215
+    .line 209
     :cond_0
     return-void
 
-    .line 219
+    .line 213
     :catchall_0
     move-exception v3
 
@@ -1566,7 +1528,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 358
+    .line 352
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamName:Landroid/content/ComponentName;
 
     invoke-static {v0, p1}, Llibcore/util/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1575,72 +1537,72 @@
 
     if-eqz v0, :cond_0
 
-    .line 359
+    .line 353
     iget-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsTest:Z
 
     if-ne v0, p2, :cond_0
 
-    .line 360
+    .line 354
     iget-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamCanDoze:Z
 
     if-ne v0, p3, :cond_0
 
-    .line 361
+    .line 355
     iget v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamUserId:I
 
     if-ne v0, p4, :cond_0
 
-    .line 362
+    .line 356
     return-void
 
-    .line 365
+    .line 359
     :cond_0
     invoke-direct {p0, v3}, Lcom/android/server/dreams/DreamManagerService;->stopDreamLocked(Z)V
 
-    .line 367
+    .line 361
     const-string/jumbo v0, "DreamManagerService"
 
     const-string/jumbo v1, "Entering dreamland."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 369
+    .line 363
     new-instance v2, Landroid/os/Binder;
 
     invoke-direct {v2}, Landroid/os/Binder;-><init>()V
 
-    .line 370
+    .line 364
     .local v2, "newToken":Landroid/os/Binder;
     iput-object v2, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
-    .line 371
+    .line 365
     iput-object p1, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamName:Landroid/content/ComponentName;
 
-    .line 372
+    .line 366
     iput-boolean p2, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsTest:Z
 
-    .line 373
+    .line 367
     iput-boolean p3, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamCanDoze:Z
 
-    .line 374
+    .line 368
     iput p4, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamUserId:I
 
-    .line 376
+    .line 370
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 377
+    .line 371
     const-string/jumbo v1, "startDream"
 
-    .line 376
+    .line 370
     invoke-virtual {v0, v3, v1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v7
 
-    .line 378
+    .line 372
     .local v7, "wakeLock":Landroid/os/PowerManager$WakeLock;
     iget-object v8, p0, Lcom/android/server/dreams/DreamManagerService;->mHandler:Lcom/android/server/dreams/DreamManagerService$DreamHandler;
 
-    .line 379
+    .line 373
     new-instance v0, Lcom/android/server/dreams/DreamManagerService$-void_startDreamLocked_android_content_ComponentName_name_boolean_isTest_boolean_canDoze_int_userId_LambdaImpl0;
 
     move-object v1, p0
@@ -1655,14 +1617,14 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/server/dreams/DreamManagerService$-void_startDreamLocked_android_content_ComponentName_name_boolean_isTest_boolean_canDoze_int_userId_LambdaImpl0;-><init>(Lcom/android/server/dreams/DreamManagerService;Landroid/os/Binder;Landroid/content/ComponentName;ZZILandroid/os/PowerManager$WakeLock;)V
 
-    .line 378
+    .line 372
     invoke-virtual {v7, v0}, Landroid/os/PowerManager$WakeLock;->wrap(Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     move-result-object v0
 
     invoke-virtual {v8, v0}, Lcom/android/server/dreams/DreamManagerService$DreamHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 357
+    .line 351
     return-void
 .end method
 
@@ -1671,12 +1633,12 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 258
+    .line 252
     iget-object v1, p0, Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 259
+    .line 253
     :try_start_0
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
@@ -1686,25 +1648,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 260
+    .line 254
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsDozing:Z
 
-    .line 261
+    .line 255
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mDozeWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 262
+    .line 256
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
 
-    .line 263
+    .line 257
     const/4 v2, 0x0
 
     const/4 v3, -0x1
 
-    .line 262
+    .line 256
     invoke-virtual {v0, v2, v3}, Landroid/os/PowerManagerInternal;->setDozeOverrideFromDreamManager(II)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1712,10 +1674,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 253
+    .line 247
     return-void
 
-    .line 258
+    .line 252
     :catchall_0
     move-exception v0
 
@@ -1729,12 +1691,12 @@
     .param p1, "immediate"    # Z
 
     .prologue
-    .line 226
+    .line 220
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 227
+    .line 221
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/server/dreams/DreamManagerService;->stopDreamLocked(Z)V
     :try_end_0
@@ -1742,10 +1704,10 @@
 
     monitor-exit v0
 
-    .line 225
+    .line 219
     return-void
 
-    .line 226
+    .line 220
     :catchall_0
     move-exception v1
 
@@ -1759,25 +1721,25 @@
     .param p1, "immediate"    # Z
 
     .prologue
-    .line 383
+    .line 377
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 378
     if-eqz p1, :cond_1
 
-    .line 385
+    .line 379
     const-string/jumbo v0, "DreamManagerService"
 
     const-string/jumbo v1, "Leaving dreamland."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 386
+    .line 380
     invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->cleanupDreamLocked()V
 
-    .line 394
+    .line 388
     :goto_0
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mHandler:Lcom/android/server/dreams/DreamManagerService$DreamHandler;
 
@@ -1787,20 +1749,20 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/dreams/DreamManagerService$DreamHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 382
+    .line 376
     :cond_0
     return-void
 
-    .line 387
+    .line 381
     :cond_1
     iget-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsWaking:Z
 
     if-eqz v0, :cond_2
 
-    .line 388
+    .line 382
     return-void
 
-    .line 390
+    .line 384
     :cond_2
     const-string/jumbo v0, "DreamManagerService"
 
@@ -1808,7 +1770,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 391
+    .line 385
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/dreams/DreamManagerService;->mCurrentDreamIsWaking:Z
@@ -1822,12 +1784,12 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 210
+    .line 204
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 211
+    .line 205
     const/4 v1, 0x1
 
     const/4 v2, 0x0
@@ -1839,10 +1801,10 @@
 
     monitor-exit v0
 
-    .line 209
+    .line 203
     return-void
 
-    .line 210
+    .line 204
     :catchall_0
     move-exception v1
 
@@ -1858,22 +1820,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 278
+    .line 272
     if-nez p1, :cond_0
 
     return v4
 
-    .line 279
+    .line 273
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/server/dreams/DreamManagerService;->getServiceInfo(Landroid/content/ComponentName;)Landroid/content/pm/ServiceInfo;
 
     move-result-object v0
 
-    .line 280
+    .line 274
     .local v0, "serviceInfo":Landroid/content/pm/ServiceInfo;
     if-nez v0, :cond_1
 
-    .line 281
+    .line 275
     const-string/jumbo v1, "DreamManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1902,10 +1864,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 282
+    .line 276
     return v4
 
-    .line 283
+    .line 277
     :cond_1
     iget-object v1, v0, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -1915,7 +1877,7 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 284
+    .line 278
     const-string/jumbo v1, "android.permission.BIND_DREAM_SERVICE"
 
     iget-object v2, v0, Landroid/content/pm/ServiceInfo;->permission:Ljava/lang/String;
@@ -1926,13 +1888,13 @@
 
     if-eqz v1, :cond_3
 
-    .line 290
+    .line 284
     :cond_2
     const/4 v1, 0x1
 
     return v1
 
-    .line 285
+    .line 279
     :cond_3
     const-string/jumbo v1, "DreamManagerService"
 
@@ -1950,26 +1912,26 @@
 
     move-result-object v2
 
-    .line 286
+    .line 280
     const-string/jumbo v3, " is not available because its manifest is missing the "
 
-    .line 285
+    .line 279
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 286
+    .line 280
     const-string/jumbo v3, "android.permission.BIND_DREAM_SERVICE"
 
-    .line 285
+    .line 279
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 287
+    .line 281
     const-string/jumbo v3, " permission on the dream service declaration."
 
-    .line 285
+    .line 279
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1980,7 +1942,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
+    .line 282
     return v4
 .end method
 
@@ -1988,18 +1950,18 @@
     .locals 3
 
     .prologue
-    .line 427
+    .line 421
     invoke-direct {p0}, Lcom/android/server/dreams/DreamManagerService;->getDozeComponent()Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 428
+    .line 422
     .local v1, "name":Landroid/content/ComponentName;
     invoke-direct {p0, v1}, Lcom/android/server/dreams/DreamManagerService;->validateDream(Landroid/content/ComponentName;)Z
 
     move-result v0
 
-    .line 429
+    .line 423
     .local v0, "dozeEnabled":Z
     const-class v2, Landroid/hardware/input/InputManagerInternal;
 
@@ -2011,7 +1973,7 @@
 
     invoke-virtual {v2, v0}, Landroid/hardware/input/InputManagerInternal;->setPulseGestureEnabled(Z)V
 
-    .line 426
+    .line 420
     return-void
 .end method
 
@@ -2027,7 +1989,7 @@
     .param p6, "wakeLock"    # Landroid/os/PowerManager$WakeLock;
 
     .prologue
-    .line 379
+    .line 373
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService;->mController:Lcom/android/server/dreams/DreamController;
 
     move-object v1, p1

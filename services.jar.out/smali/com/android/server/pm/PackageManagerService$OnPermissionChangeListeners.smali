@@ -37,18 +37,18 @@
     .param p1, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 21282
+    .line 20946
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 21279
+    .line 20943
     new-instance v0, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v0}, Landroid/os/RemoteCallbackList;-><init>()V
 
-    .line 21278
+    .line 20942
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
-    .line 21281
+    .line 20945
     return-void
 .end method
 
@@ -57,14 +57,14 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 21311
+    .line 20975
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v4}, Landroid/os/RemoteCallbackList;->beginBroadcast()I
 
     move-result v1
 
-    .line 21313
+    .line 20977
     .local v1, "count":I
     const/4 v3, 0x0
 
@@ -72,7 +72,7 @@
     :goto_0
     if-ge v3, v1, :cond_0
 
-    .line 21314
+    .line 20978
     :try_start_0
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
@@ -84,7 +84,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 21317
+    .line 20981
     .local v0, "callback":Landroid/content/pm/IOnPermissionsChangeListener;
     :try_start_1
     invoke-interface {v0, p1}, Landroid/content/pm/IOnPermissionsChangeListener;->onPermissionsChanged(I)V
@@ -92,17 +92,17 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 21313
+    .line 20977
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 21318
+    .line 20982
     :catch_0
     move-exception v2
 
-    .line 21319
+    .line 20983
     .local v2, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string/jumbo v4, "PackageManager"
@@ -115,27 +115,27 @@
 
     goto :goto_1
 
-    .line 21322
+    .line 20986
     .end local v0    # "callback":Landroid/content/pm/IOnPermissionsChangeListener;
     .end local v2    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v4
 
-    .line 21323
+    .line 20987
     iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v5}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
-    .line 21322
+    .line 20986
     throw v4
 
-    .line 21323
+    .line 20987
     :cond_0
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v4}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
-    .line 21310
+    .line 20974
     return-void
 .end method
 
@@ -146,12 +146,12 @@
     .param p1, "listener"    # Landroid/content/pm/IOnPermissionsChangeListener;
 
     .prologue
-    .line 21296
+    .line 20960
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->register(Landroid/os/IInterface;)Z
 
-    .line 21295
+    .line 20959
     return-void
 .end method
 
@@ -160,26 +160,26 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 21287
+    .line 20951
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 21286
+    .line 20950
     :goto_0
     return-void
 
-    .line 21289
+    .line 20953
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 21290
+    .line 20954
     .local v0, "uid":I
     invoke-direct {p0, v0}, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->handleOnPermissionsChanged(I)V
 
     goto :goto_0
 
-    .line 21287
+    .line 20951
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -193,7 +193,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 21305
+    .line 20969
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v0}, Landroid/os/RemoteCallbackList;->getRegisteredCallbackCount()I
@@ -202,7 +202,7 @@
 
     if-lez v0, :cond_0
 
-    .line 21306
+    .line 20970
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0, p1, v1}, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->obtainMessage(III)Landroid/os/Message;
@@ -211,7 +211,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 21304
+    .line 20968
     :cond_0
     return-void
 .end method
@@ -221,11 +221,11 @@
     .param p1, "listener"    # Landroid/content/pm/IOnPermissionsChangeListener;
 
     .prologue
-    .line 21301
+    .line 20965
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$OnPermissionChangeListeners;->mPermissionListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->unregister(Landroid/os/IInterface;)Z
 
-    .line 21300
+    .line 20964
     return-void
 .end method

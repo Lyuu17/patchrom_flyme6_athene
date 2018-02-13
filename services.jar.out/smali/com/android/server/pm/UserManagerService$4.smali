@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
     .prologue
-    .line 1418
+    .line 1417
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$4;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 6
 
     .prologue
-    .line 1424
+    .line 1423
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -53,7 +53,7 @@
 
     move-result-object v2
 
-    .line 1433
+    .line 1432
     .local v2, "runningUsers":[I
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$4;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -63,7 +63,7 @@
 
     monitor-enter v4
 
-    .line 1434
+    .line 1433
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -73,7 +73,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 1435
+    .line 1434
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$4;->this$0:Lcom/android/server/pm/UserManagerService;
 
     aget v5, v2, v1
@@ -82,18 +82,18 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1434
+    .line 1433
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1425
+    .line 1424
     .end local v1    # "i":I
     .end local v2    # "runningUsers":[I
     :catch_0
     move-exception v0
 
-    .line 1426
+    .line 1425
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v3, "UserManagerService"
 
@@ -101,7 +101,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1427
+    .line 1426
     return-void
 
     .end local v0    # "e":Landroid/os/RemoteException;
@@ -110,10 +110,10 @@
     :cond_0
     monitor-exit v4
 
-    .line 1420
+    .line 1419
     return-void
 
-    .line 1433
+    .line 1432
     :catchall_0
     move-exception v3
 

@@ -93,98 +93,98 @@
 
     const/4 v2, 0x0
 
-    .line 842
+    .line 827
     new-array v0, v5, [Ljava/lang/String;
 
-    .line 843
+    .line 828
     const-string/jumbo v1, "NETWORK_SELECTION_ENABLED"
 
     aput-object v1, v0, v2
 
-    .line 844
+    .line 829
     const-string/jumbo v1, "NETWORK_SELECTION_TEMPORARY_DISABLED"
 
     aput-object v1, v0, v3
 
-    .line 845
+    .line 830
     const-string/jumbo v1, "NETWORK_SELECTION_PERMANENTLY_DISABLED"
 
     aput-object v1, v0, v4
 
-    .line 842
+    .line 827
     sput-object v0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->QUALITY_NETWORK_SELECTION_STATUS:[Ljava/lang/String;
 
-    .line 897
+    .line 882
     const/16 v0, 0xa
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 898
+    .line 883
     const-string/jumbo v1, "NETWORK_SELECTION_ENABLE"
 
     aput-object v1, v0, v2
 
-    .line 899
+    .line 884
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_BAD_LINK"
 
     aput-object v1, v0, v3
 
-    .line 900
+    .line 885
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_ASSOCIATION_REJECTION "
 
     aput-object v1, v0, v4
 
-    .line 901
+    .line 886
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_AUTHENTICATION_FAILURE"
 
     aput-object v1, v0, v5
 
-    .line 902
+    .line 887
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_DHCP_FAILURE"
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 903
+    .line 888
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_DNS_FAILURE"
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 904
+    .line 889
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_TLS_VERSION"
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 905
+    .line 890
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_AUTHENTICATION_NO_CREDENTIALS"
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 906
+    .line 891
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_NO_INTERNET"
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    .line 907
+    .line 892
     const-string/jumbo v1, "NETWORK_SELECTION_DISABLED_BY_WIFI_MANAGER"
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    .line 897
+    .line 882
     sput-object v0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->QUALITY_NETWORK_SELECTION_DISABLE_REASON:[Ljava/lang/String;
 
-    .line 817
+    .line 802
     return-void
 .end method
 
@@ -194,28 +194,28 @@
     .prologue
     const-wide/16 v2, -0x1
 
-    .line 1091
+    .line 1076
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 939
+    .line 924
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mTemporarilyDisabledTimestamp:J
 
-    .line 944
+    .line 929
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
-    .line 961
+    .line 946
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mConnectChoiceTimestamp:J
 
-    .line 1093
+    .line 1078
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mHasEverConnected:Z
 
-    .line 1091
+    .line 1076
     return-void
 .end method
 
@@ -233,21 +233,21 @@
     .param p0, "reason"    # I
 
     .prologue
-    .line 1101
+    .line 1086
     if-ltz p0, :cond_0
 
     const/16 v0, 0xa
 
     if-ge p0, v0, :cond_0
 
-    .line 1102
+    .line 1087
     sget-object v0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->QUALITY_NETWORK_SELECTION_DISABLE_REASON:[Ljava/lang/String;
 
     aget-object v0, v0, p0
 
     return-object v0
 
-    .line 1104
+    .line 1089
     :cond_0
     const/4 v0, 0x0
 
@@ -260,14 +260,14 @@
     .locals 2
 
     .prologue
-    .line 1257
+    .line 1242
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
 
-    .line 1256
+    .line 1241
     return-void
 .end method
 
@@ -278,22 +278,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1246
+    .line 1231
     if-ltz p1, :cond_0
 
     const/16 v0, 0xa
 
     if-ge p1, v0, :cond_0
 
-    .line 1247
+    .line 1232
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
     aput v1, v0, p1
 
-    .line 1245
+    .line 1230
     return-void
 
-    .line 1249
+    .line 1234
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -325,17 +325,17 @@
     .param p1, "source"    # Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;
 
     .prologue
-    .line 1282
+    .line 1267
     iget v1, p1, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
 
-    .line 1283
+    .line 1268
     iget v1, p1, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionDisableReason:I
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionDisableReason:I
 
-    .line 1284
+    .line 1269
     const/4 v0, 0x0
 
     .local v0, "index":I
@@ -344,55 +344,55 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1286
+    .line 1271
     iget-object v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
-    .line 1287
+    .line 1272
     iget-object v2, p1, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
     aget v2, v2, v0
 
-    .line 1286
+    .line 1271
     aput v2, v1, v0
 
-    .line 1285
+    .line 1270
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1289
+    .line 1274
     :cond_0
     iget-wide v2, p1, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mTemporarilyDisabledTimestamp:J
 
     iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mTemporarilyDisabledTimestamp:J
 
-    .line 1290
+    .line 1275
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionBSSID:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionBSSID:Ljava/lang/String;
 
-    .line 1291
+    .line 1276
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getConnectChoice()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setConnectChoice(Ljava/lang/String;)V
 
-    .line 1292
+    .line 1277
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getConnectChoiceTimestamp()J
 
     move-result-wide v2
 
     invoke-virtual {p0, v2, v3}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setConnectChoiceTimestamp(J)V
 
-    .line 1293
+    .line 1278
     invoke-virtual {p1}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getHasEverConnected()Z
 
     move-result v1
 
     invoke-virtual {p0, v1}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setHasEverConnected(Z)V
 
-    .line 1281
+    .line 1266
     return-void
 .end method
 
@@ -400,7 +400,7 @@
     .locals 1
 
     .prologue
-    .line 1023
+    .line 1008
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mCandidate:Landroid/net/wifi/ScanResult;
 
     return-object v0
@@ -410,7 +410,7 @@
     .locals 1
 
     .prologue
-    .line 1039
+    .line 1024
     iget v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mCandidateScore:I
 
     return v0
@@ -420,7 +420,7 @@
     .locals 1
 
     .prologue
-    .line 1047
+    .line 1032
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mConnectChoice:Ljava/lang/String;
 
     return-object v0
@@ -430,7 +430,7 @@
     .locals 2
 
     .prologue
-    .line 1063
+    .line 1048
     iget-wide v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mConnectChoiceTimestamp:J
 
     return-wide v0
@@ -441,21 +441,21 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 1205
+    .line 1190
     if-ltz p1, :cond_0
 
     const/16 v0, 0xa
 
     if-ge p1, v0, :cond_0
 
-    .line 1206
+    .line 1191
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
     aget v0, v0, p1
 
     return v0
 
-    .line 1208
+    .line 1193
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -486,7 +486,7 @@
     .locals 2
 
     .prologue
-    .line 1195
+    .line 1180
     iget-wide v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mTemporarilyDisabledTimestamp:J
 
     return-wide v0
@@ -496,7 +496,7 @@
     .locals 1
 
     .prologue
-    .line 1088
+    .line 1073
     iget-boolean v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mHasEverConnected:Z
 
     return v0
@@ -506,7 +506,7 @@
     .locals 2
 
     .prologue
-    .line 1112
+    .line 1097
     sget-object v0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->QUALITY_NETWORK_SELECTION_DISABLE_REASON:[Ljava/lang/String;
 
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionDisableReason:I
@@ -520,7 +520,7 @@
     .locals 1
 
     .prologue
-    .line 1270
+    .line 1255
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionBSSID:Ljava/lang/String;
 
     return-object v0
@@ -530,7 +530,7 @@
     .locals 1
 
     .prologue
-    .line 1157
+    .line 1142
     iget v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionDisableReason:I
 
     return v0
@@ -540,7 +540,7 @@
     .locals 1
 
     .prologue
-    .line 1120
+    .line 1105
     iget v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
 
     return v0
@@ -550,7 +550,7 @@
     .locals 2
 
     .prologue
-    .line 1080
+    .line 1065
     sget-object v0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->QUALITY_NETWORK_SELECTION_STATUS:[Ljava/lang/String;
 
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
@@ -564,7 +564,7 @@
     .locals 1
 
     .prologue
-    .line 1007
+    .line 992
     iget-boolean v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mSeenInLastQualifiedNetworkSelection:Z
 
     return v0
@@ -575,14 +575,14 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 1232
+    .line 1217
     if-ltz p1, :cond_0
 
     const/16 v0, 0xa
 
     if-ge p1, v0, :cond_0
 
-    .line 1233
+    .line 1218
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
     aget v1, v0, p1
@@ -591,10 +591,10 @@
 
     aput v1, v0, p1
 
-    .line 1231
+    .line 1216
     return-void
 
-    .line 1235
+    .line 1220
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -626,7 +626,7 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 1179
+    .line 1164
     iget v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionDisableReason:I
 
     if-ne v0, p1, :cond_0
@@ -648,7 +648,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1126
+    .line 1111
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
 
     if-nez v1, :cond_0
@@ -663,7 +663,7 @@
     .locals 2
 
     .prologue
-    .line 1140
+    .line 1125
     iget v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
 
     const/4 v1, 0x2
@@ -687,7 +687,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1133
+    .line 1118
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
 
     if-ne v1, v0, :cond_0
@@ -710,21 +710,21 @@
 
     const/4 v2, 0x0
 
-    .line 1316
+    .line 1301
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     invoke-virtual {p0, v3}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setNetworkSelectionStatus(I)V
 
-    .line 1317
+    .line 1302
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     invoke-virtual {p0, v3}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setNetworkSelectionDisableReason(I)V
 
-    .line 1318
+    .line 1303
     const/4 v0, 0x0
 
     .local v0, "index":I
@@ -733,19 +733,19 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 1320
+    .line 1305
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     invoke-virtual {p0, v0, v3}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setDisableReasonCounter(II)V
 
-    .line 1319
+    .line 1304
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1322
+    .line 1307
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
@@ -753,35 +753,35 @@
 
     invoke-virtual {p0, v4, v5}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setDisableTime(J)V
 
-    .line 1323
+    .line 1308
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {p0, v3}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setNetworkSelectionBSSID(Ljava/lang/String;)V
 
-    .line 1324
+    .line 1309
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-ne v3, v1, :cond_1
 
-    .line 1325
+    .line 1310
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {p0, v3}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setConnectChoice(Ljava/lang/String;)V
 
-    .line 1326
+    .line 1311
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v4
 
     invoke-virtual {p0, v4, v5}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setConnectChoiceTimestamp(J)V
 
-    .line 1331
+    .line 1316
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -792,16 +792,16 @@
     :goto_2
     invoke-virtual {p0, v1}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setHasEverConnected(Z)V
 
-    .line 1315
+    .line 1300
     return-void
 
-    .line 1328
+    .line 1313
     :cond_1
     const/4 v3, 0x0
 
     invoke-virtual {p0, v3}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setConnectChoice(Ljava/lang/String;)V
 
-    .line 1329
+    .line 1314
     const-wide/16 v4, -0x1
 
     invoke-virtual {p0, v4, v5}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->setConnectChoiceTimestamp(J)V
@@ -811,7 +811,7 @@
     :cond_2
     move v1, v2
 
-    .line 1331
+    .line 1316
     goto :goto_2
 .end method
 
@@ -820,10 +820,10 @@
     .param p1, "scanCandidate"    # Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 1014
+    .line 999
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mCandidate:Landroid/net/wifi/ScanResult;
 
-    .line 1013
+    .line 998
     return-void
 .end method
 
@@ -832,10 +832,10 @@
     .param p1, "score"    # I
 
     .prologue
-    .line 1031
+    .line 1016
     iput p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mCandidateScore:I
 
-    .line 1030
+    .line 1015
     return-void
 .end method
 
@@ -844,10 +844,10 @@
     .param p1, "newConnectChoice"    # Ljava/lang/String;
 
     .prologue
-    .line 1055
+    .line 1040
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mConnectChoice:Ljava/lang/String;
 
-    .line 1054
+    .line 1039
     return-void
 .end method
 
@@ -856,10 +856,10 @@
     .param p1, "timeStamp"    # J
 
     .prologue
-    .line 1072
+    .line 1057
     iput-wide p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mConnectChoiceTimestamp:J
 
-    .line 1071
+    .line 1056
     return-void
 .end method
 
@@ -869,22 +869,22 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1219
+    .line 1204
     if-ltz p1, :cond_0
 
     const/16 v0, 0xa
 
     if-ge p1, v0, :cond_0
 
-    .line 1220
+    .line 1205
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSeclectionDisableCounter:[I
 
     aput p2, v0, p1
 
-    .line 1218
+    .line 1203
     return-void
 
-    .line 1222
+    .line 1207
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -916,10 +916,10 @@
     .param p1, "timeStamp"    # J
 
     .prologue
-    .line 1187
+    .line 1172
     iput-wide p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mTemporarilyDisabledTimestamp:J
 
-    .line 1186
+    .line 1171
     return-void
 .end method
 
@@ -928,10 +928,10 @@
     .param p1, "value"    # Z
 
     .prologue
-    .line 1084
+    .line 1069
     iput-boolean p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mHasEverConnected:Z
 
-    .line 1083
+    .line 1068
     return-void
 .end method
 
@@ -940,10 +940,10 @@
     .param p1, "bssid"    # Ljava/lang/String;
 
     .prologue
-    .line 1278
+    .line 1263
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionBSSID:Ljava/lang/String;
 
-    .line 1277
+    .line 1262
     return-void
 .end method
 
@@ -952,20 +952,20 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 1165
+    .line 1150
     if-ltz p1, :cond_0
 
     const/16 v0, 0xa
 
     if-ge p1, v0, :cond_0
 
-    .line 1166
+    .line 1151
     iput p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mNetworkSelectionDisableReason:I
 
-    .line 1164
+    .line 1149
     return-void
 
-    .line 1168
+    .line 1153
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -997,17 +997,17 @@
     .param p1, "status"    # I
 
     .prologue
-    .line 1148
+    .line 1133
     if-ltz p1, :cond_0
 
     const/4 v0, 0x3
 
     if-ge p1, v0, :cond_0
 
-    .line 1149
+    .line 1134
     iput p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mStatus:I
 
-    .line 1147
+    .line 1132
     :cond_0
     return-void
 .end method
@@ -1017,10 +1017,10 @@
     .param p1, "seen"    # Z
 
     .prologue
-    .line 998
+    .line 983
     iput-boolean p1, p0, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->mSeenInLastQualifiedNetworkSelection:Z
 
-    .line 997
+    .line 982
     return-void
 .end method
 
@@ -1031,21 +1031,21 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1297
+    .line 1282
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getNetworkSelectionStatus()I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1298
+    .line 1283
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getNetworkSelectionDisableReason()I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1299
+    .line 1284
     const/4 v0, 0x0
 
     .local v0, "index":I
@@ -1054,19 +1054,19 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 1301
+    .line 1286
     invoke-virtual {p0, v0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getDisableReasonCounter(I)I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1300
+    .line 1285
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1303
+    .line 1288
     :cond_0
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getDisableTime()J
 
@@ -1074,38 +1074,38 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1304
+    .line 1289
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getNetworkSelectionBSSID()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1305
+    .line 1290
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getConnectChoice()Ljava/lang/String;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
 
-    .line 1306
+    .line 1291
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1307
+    .line 1292
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getConnectChoice()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1308
+    .line 1293
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getConnectChoiceTimestamp()J
 
     move-result-wide v2
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1312
+    .line 1297
     :goto_1
     invoke-virtual {p0}, Landroid/net/wifi/WifiConfiguration$NetworkSelectionStatus;->getHasEverConnected()Z
 
@@ -1116,10 +1116,10 @@
     :goto_2
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1296
+    .line 1281
     return-void
 
-    .line 1310
+    .line 1295
     :cond_1
     const/4 v2, -0x1
 
@@ -1127,7 +1127,7 @@
 
     goto :goto_1
 
-    .line 1312
+    .line 1297
     :cond_2
     const/4 v1, 0x0
 

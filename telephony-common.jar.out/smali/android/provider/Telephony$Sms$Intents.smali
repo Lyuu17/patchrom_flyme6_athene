@@ -65,7 +65,7 @@
     .locals 0
 
     .prologue
-    .line 801
+    .line 766
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -78,7 +78,7 @@
     .prologue
     const/4 v11, 0x0
 
-    .line 1179
+    .line 1144
     :try_start_0
     const-string/jumbo v8, "pdus"
 
@@ -90,26 +90,26 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1186
+    .line 1151
     .local v3, "messages":[Ljava/lang/Object;
     if-nez v3, :cond_0
 
-    .line 1187
+    .line 1152
     const-string/jumbo v8, "Telephony"
 
     const-string/jumbo v9, "pdus does not exist in the intent"
 
     invoke-static {v8, v9}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1188
+    .line 1153
     return-object v11
 
-    .line 1181
+    .line 1146
     .end local v3    # "messages":[Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1182
+    .line 1147
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v8, "Telephony"
 
@@ -133,10 +133,10 @@
 
     invoke-static {v8, v9}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1183
+    .line 1148
     return-object v11
 
-    .line 1191
+    .line 1156
     .end local v0    # "e":Ljava/lang/ClassCastException;
     .restart local v3    # "messages":[Ljava/lang/Object;
     :cond_0
@@ -146,21 +146,21 @@
 
     move-result-object v1
 
-    .line 1192
+    .line 1157
     .local v1, "format":Ljava/lang/String;
     const-string/jumbo v8, "subscription"
 
-    .line 1193
+    .line 1158
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSmsSubscriptionId()I
 
     move-result v9
 
-    .line 1192
+    .line 1157
     invoke-virtual {p0, v8, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v7
 
-    .line 1195
+    .line 1160
     .local v7, "subId":I
     const-string/jumbo v8, "Telephony"
 
@@ -184,14 +184,14 @@
 
     invoke-static {v8, v9}, Landroid/telephony/Rlog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1197
+    .line 1162
     array-length v6, v3
 
-    .line 1198
+    .line 1163
     .local v6, "pduCount":I
     new-array v4, v6, [Landroid/telephony/SmsMessage;
 
-    .line 1200
+    .line 1165
     .local v4, "msgs":[Landroid/telephony/SmsMessage;
     const/4 v2, 0x0
 
@@ -199,12 +199,12 @@
     :goto_0
     if-ge v2, v6, :cond_2
 
-    .line 1201
+    .line 1166
     aget-object v5, v3, v2
 
     check-cast v5, [B
 
-    .line 1202
+    .line 1167
     .local v5, "pdu":[B
     invoke-static {v5, v1}, Landroid/telephony/SmsMessage;->createFromPdu([BLjava/lang/String;)Landroid/telephony/SmsMessage;
 
@@ -212,7 +212,7 @@
 
     aput-object v8, v4, v2
 
-    .line 1203
+    .line 1168
     aget-object v8, v4, v2
 
     if-eqz v8, :cond_1
@@ -221,13 +221,13 @@
 
     invoke-virtual {v8, v7}, Landroid/telephony/SmsMessage;->setSubId(I)V
 
-    .line 1200
+    .line 1165
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1205
+    .line 1170
     .end local v5    # "pdu":[B
     :cond_2
     return-object v4

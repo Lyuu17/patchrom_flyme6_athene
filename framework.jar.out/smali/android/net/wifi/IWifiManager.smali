@@ -351,14 +351,6 @@
     .end annotation
 .end method
 
-.method public abstract getWifiStaSapConcurrency()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getWpsNfcConfigurationToken(I)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {

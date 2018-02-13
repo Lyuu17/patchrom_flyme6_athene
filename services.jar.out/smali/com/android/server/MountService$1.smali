@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/MountService;
 
     .prologue
-    .line 726
+    .line 725
     iput-object p1, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v9, 0x0
 
-    .line 729
+    .line 728
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 730
+    .line 729
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v10, "android.intent.extra.user_handle"
 
@@ -59,14 +59,14 @@
 
     move-result v5
 
-    .line 731
+    .line 730
     .local v5, "userId":I
     if-ltz v5, :cond_1
 
     :goto_0
     invoke-static {v8}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
-    .line 734
+    .line 733
     :try_start_0
     const-string/jumbo v8, "android.intent.action.USER_ADDED"
 
@@ -76,7 +76,7 @@
 
     if-eqz v8, :cond_2
 
-    .line 735
+    .line 734
     iget-object v8, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v8}, Lcom/android/server/MountService;->-get2(Lcom/android/server/MountService;)Landroid/content/Context;
@@ -91,13 +91,13 @@
 
     check-cast v4, Landroid/os/UserManager;
 
-    .line 736
+    .line 735
     .local v4, "um":Landroid/os/UserManager;
     invoke-virtual {v4, v5}, Landroid/os/UserManager;->getUserSerialNumber(I)I
 
     move-result v6
 
-    .line 737
+    .line 736
     .local v6, "userSerialNumber":I
     iget-object v8, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
@@ -135,7 +135,7 @@
 
     invoke-virtual {v8, v9, v10}, Lcom/android/server/NativeDaemonConnector;->execute(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/server/NativeDaemonEvent;
 
-    .line 728
+    .line 727
     .end local v4    # "um":Landroid/os/UserManager;
     .end local v6    # "userSerialNumber":I
     :cond_0
@@ -145,10 +145,10 @@
     :cond_1
     move v8, v9
 
-    .line 731
+    .line 730
     goto :goto_0
 
-    .line 738
+    .line 737
     :cond_2
     const-string/jumbo v8, "android.intent.action.USER_REMOVED"
 
@@ -158,7 +158,7 @@
 
     if-eqz v8, :cond_0
 
-    .line 739
+    .line 738
     iget-object v8, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v8}, Lcom/android/server/MountService;->-get11(Lcom/android/server/MountService;)Landroid/util/ArrayMap;
@@ -169,7 +169,7 @@
     :try_end_0
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 740
+    .line 739
     :try_start_1
     iget-object v8, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
@@ -181,7 +181,7 @@
 
     move-result v3
 
-    .line 741
+    .line 740
     .local v3, "size":I
     const/4 v2, 0x0
 
@@ -189,7 +189,7 @@
     :goto_2
     if-ge v2, v3, :cond_4
 
-    .line 742
+    .line 741
     iget-object v8, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v8}, Lcom/android/server/MountService;->-get11(Lcom/android/server/MountService;)Landroid/util/ArrayMap;
@@ -202,18 +202,18 @@
 
     check-cast v7, Landroid/os/storage/VolumeInfo;
 
-    .line 743
+    .line 742
     .local v7, "vol":Landroid/os/storage/VolumeInfo;
     iget v8, v7, Landroid/os/storage/VolumeInfo;->mountUserId:I
 
     if-ne v8, v5, :cond_3
 
-    .line 744
+    .line 743
     const/16 v8, -0x2710
 
     iput v8, v7, Landroid/os/storage/VolumeInfo;->mountUserId:I
 
-    .line 745
+    .line 744
     iget-object v8, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v8}, Lcom/android/server/MountService;->-get5(Lcom/android/server/MountService;)Landroid/os/Handler;
@@ -230,7 +230,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 741
+    .line 740
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
@@ -241,7 +241,7 @@
     :try_start_2
     monitor-exit v9
 
-    .line 749
+    .line 748
     iget-object v8, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v8}, Lcom/android/server/MountService;->-get0(Lcom/android/server/MountService;)Lcom/android/server/NativeDaemonConnector;
@@ -274,13 +274,13 @@
 
     goto :goto_1
 
-    .line 751
+    .line 750
     .end local v2    # "i":I
     .end local v3    # "size":I
     :catch_0
     move-exception v1
 
-    .line 752
+    .line 751
     .local v1, "e":Lcom/android/server/NativeDaemonConnectorException;
     const-string/jumbo v8, "MountService"
 
@@ -290,7 +290,7 @@
 
     goto :goto_1
 
-    .line 739
+    .line 738
     .end local v1    # "e":Lcom/android/server/NativeDaemonConnectorException;
     :catchall_0
     move-exception v8

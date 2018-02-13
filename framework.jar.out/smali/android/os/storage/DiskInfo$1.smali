@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 182
+    .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 185
+    .line 179
     new-instance v0, Landroid/os/storage/DiskInfo;
 
     invoke-direct {v0, p1}, Landroid/os/storage/DiskInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 184
+    .line 178
     invoke-virtual {p0, p1}, Landroid/os/storage/DiskInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/storage/DiskInfo;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 190
+    .line 184
     new-array v0, p1, [Landroid/os/storage/DiskInfo;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 189
+    .line 183
     invoke-virtual {p0, p1}, Landroid/os/storage/DiskInfo$1;->newArray(I)[Landroid/os/storage/DiskInfo;
 
     move-result-object v0

@@ -57,14 +57,14 @@
     .locals 1
 
     .prologue
-    .line 1976
+    .line 1961
     new-instance v0, Landroid/app/ActivityManager$TaskThumbnailInfo$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManager$TaskThumbnailInfo$1;-><init>()V
 
     sput-object v0, Landroid/app/ActivityManager$TaskThumbnailInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 1901
+    .line 1886
     return-void
 .end method
 
@@ -72,15 +72,15 @@
     .locals 1
 
     .prologue
-    .line 1915
+    .line 1900
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1913
+    .line 1898
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
-    .line 1915
+    .line 1900
     return-void
 .end method
 
@@ -89,18 +89,18 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1919
+    .line 1904
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1913
+    .line 1898
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
-    .line 1920
+    .line 1905
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$TaskThumbnailInfo;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 1919
+    .line 1904
     return-void
 .end method
 
@@ -121,22 +121,22 @@
     .param p1, "o"    # Landroid/app/ActivityManager$TaskThumbnailInfo;
 
     .prologue
-    .line 1937
+    .line 1922
     iget v0, p1, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
-    .line 1938
+    .line 1923
     iget v0, p1, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskHeight:I
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskHeight:I
 
-    .line 1939
+    .line 1924
     iget v0, p1, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
-    .line 1936
+    .line 1921
     return-void
 .end method
 
@@ -144,7 +144,7 @@
     .locals 1
 
     .prologue
-    .line 1961
+    .line 1946
     const/4 v0, 0x0
 
     return v0
@@ -155,28 +155,28 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1971
+    .line 1956
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
-    .line 1972
+    .line 1957
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskHeight:I
 
-    .line 1973
+    .line 1958
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
-    .line 1970
+    .line 1955
     return-void
 .end method
 
@@ -186,16 +186,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1928
+    .line 1913
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
-    .line 1929
+    .line 1914
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskHeight:I
 
-    .line 1930
+    .line 1915
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
-    .line 1927
+    .line 1912
     return-void
 .end method
 
@@ -205,7 +205,7 @@
     .param p2, "attrValue"    # Ljava/lang/String;
 
     .prologue
-    .line 1951
+    .line 1936
     const-string/jumbo v0, "task_thumbnailinfo_task_width"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -214,19 +214,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 1952
+    .line 1937
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
-    .line 1950
+    .line 1935
     :cond_0
     :goto_0
     return-void
 
-    .line 1953
+    .line 1938
     :cond_1
     const-string/jumbo v0, "task_thumbnailinfo_task_height"
 
@@ -236,7 +236,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1954
+    .line 1939
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -245,7 +245,7 @@
 
     goto :goto_0
 
-    .line 1955
+    .line 1940
     :cond_2
     const-string/jumbo v0, "task_thumbnailinfo_screen_orientation"
 
@@ -255,7 +255,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1956
+    .line 1941
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -277,7 +277,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1944
+    .line 1929
     const-string/jumbo v0, "task_thumbnailinfo_task_width"
 
     iget v1, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskWidth:I
@@ -288,7 +288,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1945
+    .line 1930
     const-string/jumbo v0, "task_thumbnailinfo_task_height"
 
     iget v1, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskHeight:I
@@ -299,7 +299,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1946
+    .line 1931
     const-string/jumbo v0, "task_thumbnailinfo_screen_orientation"
 
     iget v1, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
@@ -310,7 +310,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1943
+    .line 1928
     return-void
 .end method
 
@@ -320,21 +320,21 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1965
+    .line 1950
     iget v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1966
+    .line 1951
     iget v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->taskHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1967
+    .line 1952
     iget v0, p0, Landroid/app/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1964
+    .line 1949
     return-void
 .end method

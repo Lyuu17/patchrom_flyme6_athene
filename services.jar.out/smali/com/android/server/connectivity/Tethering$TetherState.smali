@@ -28,22 +28,22 @@
     .param p1, "sm"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
     .prologue
-    .line 154
+    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 155
+    .line 136
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$TetherState;->mStateMachine:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 157
+    .line 138
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/connectivity/Tethering$TetherState;->mLastState:I
 
-    .line 158
+    .line 139
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/connectivity/Tethering$TetherState;->mLastError:I
 
-    .line 154
+    .line 135
     return-void
 .end method

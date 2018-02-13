@@ -36,7 +36,7 @@
     .param p4, "val$reason"    # Ljava/lang/String;
 
     .prologue
-    .line 2684
+    .line 2507
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$4;->this$0:Lcom/android/server/power/PowerManagerService;
 
     iput p2, p0, Lcom/android/server/power/PowerManagerService$4;->val$haltMode:I
@@ -56,10 +56,10 @@
     .locals 3
 
     .prologue
-    .line 2687
+    .line 2510
     monitor-enter p0
 
-    .line 2688
+    .line 2511
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$4;->val$haltMode:I
 
@@ -67,10 +67,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2689
+    .line 2512
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$4;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get1(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get0(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -83,10 +83,10 @@
     :goto_0
     monitor-exit p0
 
-    .line 2686
+    .line 2509
     return-void
 
-    .line 2690
+    .line 2513
     :cond_0
     :try_start_1
     iget v0, p0, Lcom/android/server/power/PowerManagerService$4;->val$haltMode:I
@@ -95,10 +95,10 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2691
+    .line 2514
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$4;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get1(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get0(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 2687
+    .line 2510
     :catchall_0
     move-exception v0
 
@@ -120,12 +120,12 @@
 
     throw v0
 
-    .line 2693
+    .line 2516
     :cond_1
     :try_start_2
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$4;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get1(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get0(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v0
 

@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Апп нь бүртгэлийн синк тохиргоог өөрчлөх боломжтой. Жишээ нь энэ нь Хүмүүс апп бүртгэлтэй синк хийхийг идэвхжүүлэх боломжтой.</string>
     <string name="permlab_readSyncStats">синк статистикийг унших</string>
     <string name="permdesc_readSyncStats">Апп нь синк үйлдэлийн түүх болон хэр их дата синк хийгдсэн зэрэг бүртгэлийн синк статусыг унших боломжтой.</string>
-    <string name="permlab_sdcardRead">таны SD картны агуулгыг унших боломжтой</string>
-    <string name="permdesc_sdcardRead">Апп нь таны SD картны агуулгыг унших боломжтой.</string>
-    <string name="permlab_sdcardWrite">SD картны агуулгыг өөрчлөх болон устгах</string>
-    <string name="permdesc_sdcardWrite">Апп нь SD картруу бичих боломжтой.</string>
+    <string name="permlab_sdcardRead">таны USB сангийн агуулгыг унших боломжтой</string>
+    <string name="permdesc_sdcardRead">Апп нь таны USB сангийн агуулгыг унших боломжтой.</string>
+    <string name="permlab_sdcardWrite">USB сангийн агуулгыг өөрчлөх эсвэл устгах</string>
+    <string name="permdesc_sdcardWrite">Апп нь USB санруу бичих боломжтой.</string>
     <string name="permlab_use_sip">SIP дуудлага хийх/хүлээн авах</string>
     <string name="permdesc_use_sip">Апп-д SIP дуудлага хийх болон хүлээн авахыг зөвшөөрөх.</string>
     <string name="permlab_register_sim_subscription">шинэ телеком SIM холболтуудыг бүртгэх</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">Илэрц алга</string>
     <string name="find_on_page">Хуудаснаас олох</string>
     <string name="action_mode_done">Дуусгах</string>
-    <string name="progress_erasing">SD картыг цэвэрлэж байна…</string>
+    <string name="progress_erasing">USB санг арилгаж байна…</string>
     <string name="share">Хуваалцах</string>
     <string name="find">Олох</string>
     <string name="websearch">Веб хайлт</string>

@@ -391,10 +391,10 @@
     <string name="permdesc_writeSyncSettings">መተግበሪያው የመለያ ማመሳሰል ቅንብሮችን እንዲያስተካክል ይፈቅድለታል። ለምሳሌ ይህ የሰዎች መተግበሪያን ከመለያ መመሳሰልን ለማንቃት ጥቅም ላይ ሊውል ይችላል።</string>
     <string name="permlab_readSyncStats">የሥምሪያ ስታስቲክስ አንብብ</string>
     <string name="permdesc_readSyncStats">መተግበሪያው የማመሳሰል ክስተቶችን ታሪክ እና የተመሳሰለውን የውሂብ መጠን ጨምሮ የመለያን የማመሳሰል ስታትስቲክስ እንዲያነብ ይፈቅድለታል።</string>
-    <string name="permlab_sdcardRead">የSD ካርድህን ይዘቶች አንብብ</string>
-    <string name="permdesc_sdcardRead">መተግበሪያው የእርስዎ SD ካርድ ይዘቶችን እንዲያነብ ያስችለዋል።</string>
-    <string name="permlab_sdcardWrite">የSD ካርድህን ይዘቶች ቀይር ወይም ሰርዝ</string>
-    <string name="permdesc_sdcardWrite">መተግበሪያውን ወደ SD ካርድ ለመፃፍ ይፈቅዳል።</string>
+    <string name="permlab_sdcardRead">የUSB ማከማቻዎን ይዘቶች ያንብቡ</string>
+    <string name="permdesc_sdcardRead">መተግበሪያው የእርስዎ USB ማከማቻ ይዘቶችን እንዲያነብ ያስችለዋል።</string>
+    <string name="permlab_sdcardWrite">የUSB ማከማቻዎን ይዘቶች ይቀይሩ ወይም ይሰርዙ</string>
+    <string name="permdesc_sdcardWrite">ወደ USB ማህደረ ትውስታው ለመፃፍ ለመተግበሪያው ይፈቅዳሉ፡፡</string>
     <string name="permlab_use_sip">የSIP ጥሪዎችን ያድርጉ/ይቀበሉ</string>
     <string name="permdesc_use_sip">መተግበሪያው የSIP ጥሪዎችን እንዲያደር እና እንዲቀበል ያስችላል።</string>
     <string name="permlab_register_sim_subscription">አዲስ የቴሌኮም ግንኙነቶችን መዝግብ</string>
@@ -1029,7 +1029,7 @@
     <string name="no_matches">ምንም ተመሳሳይ የለም።</string>
     <string name="find_on_page">በገፅ ላይ አግኝ</string>
     <string name="action_mode_done">ተከናውኗል</string>
-    <string name="progress_erasing">SD ካርድ በማጥፋት ላይ...</string>
+    <string name="progress_erasing">USB ማከማቻ በማጥፋት ላይ...</string>
     <string name="share">አጋራ</string>
     <string name="find">አግኝ</string>
     <string name="websearch">ድረ ፍለጋ</string>

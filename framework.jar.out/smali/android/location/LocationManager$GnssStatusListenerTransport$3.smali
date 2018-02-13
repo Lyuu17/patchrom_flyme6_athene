@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     .prologue
-    .line 1533
+    .line 1519
     iput-object p1, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$3;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-direct {p0}, Landroid/location/GnssStatus$Callback;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "ttff"    # I
 
     .prologue
-    .line 1546
+    .line 1532
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$3;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->-get5(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GnssStatusCallback;
@@ -48,7 +48,7 @@
 
     invoke-virtual {v0, p1}, Landroid/location/GnssStatusCallback;->onFirstFix(I)V
 
-    .line 1545
+    .line 1531
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .param p1, "status"    # Landroid/location/GnssStatus;
 
     .prologue
-    .line 1551
+    .line 1537
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$3;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->-get5(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GnssStatusCallback;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, p1}, Landroid/location/GnssStatusCallback;->onSatelliteStatusChanged(Landroid/location/GnssStatus;)V
 
-    .line 1550
+    .line 1536
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .locals 1
 
     .prologue
-    .line 1536
+    .line 1522
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$3;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->-get5(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GnssStatusCallback;
@@ -83,7 +83,7 @@
 
     invoke-virtual {v0}, Landroid/location/GnssStatusCallback;->onStarted()V
 
-    .line 1535
+    .line 1521
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 1541
+    .line 1527
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$3;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->-get5(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GnssStatusCallback;
@@ -100,6 +100,6 @@
 
     invoke-virtual {v0}, Landroid/location/GnssStatusCallback;->onStopped()V
 
-    .line 1540
+    .line 1526
     return-void
 .end method

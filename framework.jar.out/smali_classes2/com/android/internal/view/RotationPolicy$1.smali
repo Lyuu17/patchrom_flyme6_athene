@@ -30,7 +30,7 @@
     .param p2, "val$rotation"    # I
 
     .prologue
-    .line 171
+    .line 137
     iput-boolean p1, p0, Lcom/android/internal/view/RotationPolicy$1;->val$enabled:Z
 
     iput p2, p0, Lcom/android/internal/view/RotationPolicy$1;->val$rotation:I
@@ -46,29 +46,29 @@
     .locals 4
 
     .prologue
-    .line 175
+    .line 141
     :try_start_0
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
 
     move-result-object v1
 
-    .line 176
+    .line 142
     .local v1, "wm":Landroid/view/IWindowManager;
     iget-boolean v2, p0, Lcom/android/internal/view/RotationPolicy$1;->val$enabled:Z
 
     if-eqz v2, :cond_0
 
-    .line 177
+    .line 143
     iget v2, p0, Lcom/android/internal/view/RotationPolicy$1;->val$rotation:I
 
     invoke-interface {v1, v2}, Landroid/view/IWindowManager;->freezeRotation(I)V
 
-    .line 173
+    .line 139
     .end local v1    # "wm":Landroid/view/IWindowManager;
     :goto_0
     return-void
 
-    .line 179
+    .line 145
     .restart local v1    # "wm":Landroid/view/IWindowManager;
     :cond_0
     invoke-interface {v1}, Landroid/view/IWindowManager;->thawRotation()V
@@ -77,12 +77,12 @@
 
     goto :goto_0
 
-    .line 181
+    .line 147
     .end local v1    # "wm":Landroid/view/IWindowManager;
     :catch_0
     move-exception v0
 
-    .line 182
+    .line 148
     .local v0, "exc":Landroid/os/RemoteException;
     const-string/jumbo v2, "RotationPolicy"
 

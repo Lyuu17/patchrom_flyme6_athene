@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.printservice.IPrintService"
 
-.field static final TRANSACTION_createPrinterDiscoverySession_3:I = 0x4
+.field static final TRANSACTION_createPrinterDiscoverySession:I = 0x4
 
 .field static final TRANSACTION_destroyPrinterDiscoverySession:I = 0xb
 
@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_requestCancelPrintJob:I = 0x2
 
-.field static final TRANSACTION_requestCustomPrinterIcon_8:I = 0x9
+.field static final TRANSACTION_requestCustomPrinterIcon:I = 0x9
 
 .field static final TRANSACTION_setClient:I = 0x1
 
@@ -60,7 +60,7 @@
     .line 20
     const-string/jumbo v0, "android.printservice.IPrintService"
 
-    invoke-virtual {p0, p0, v0}, Landroid/printservice/IPrintService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 18
     return-void

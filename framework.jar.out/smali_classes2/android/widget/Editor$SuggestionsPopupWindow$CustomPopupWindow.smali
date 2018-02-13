@@ -49,7 +49,7 @@
 
     .prologue
     .line 3293
-    invoke-virtual {p0}, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;->isShowing()Z
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->isShowing()Z
 
     move-result v0
 
@@ -151,7 +151,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Editor$InsertionPointCursorController;->show()V
+    #invoke-virtual {v0}, Landroid/widget/Editor$InsertionPointCursorController;->show()V
 
     goto :goto_0
 .end method

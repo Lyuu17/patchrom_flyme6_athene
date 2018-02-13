@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Membenarkan apl mengubah suai tetapan segerak untuk akaun. Sebagai contoh, ini boleh digunakan untuk mendayakan penyegerakan apl Orang dengan akaun.</string>
     <string name="permlab_readSyncStats">baca statistik penyegerakan</string>
     <string name="permdesc_readSyncStats">Membenarkan apl untuk membaca statistik segerak untuk akaun, termasuk sejarah acara segerak dan berapa banyak data disegerakkan.</string>
-    <string name="permlab_sdcardRead">baca kandungan kad SD anda</string>
-    <string name="permdesc_sdcardRead">Membenarkan apl membaca kandungan kad SD anda.</string>
-    <string name="permlab_sdcardWrite">ubah suai atau padam kandungan kad SD anda</string>
-    <string name="permdesc_sdcardWrite">Membenarkan apl menulis ke kad SD.</string>
+    <string name="permlab_sdcardRead">baca kandungan storan USB anda</string>
+    <string name="permdesc_sdcardRead">Membenarkan aplikasi membaca kandungan storan USB anda.</string>
+    <string name="permlab_sdcardWrite">ubah suai atau padam kandungan storan USB anda</string>
+    <string name="permdesc_sdcardWrite">Membenarkan apl menulis ke storan USB.</string>
     <string name="permlab_use_sip">buat/terima panggilan SIP</string>
     <string name="permdesc_use_sip">Membenarkan apl membuat dan menerima panggilan SIP.</string>
     <string name="permlab_register_sim_subscription">daftar sambungan SIM telekom baharu</string>
@@ -1025,7 +1025,7 @@ untuk akaun %s."</string>
     <string name="no_matches">Tiada padanan</string>
     <string name="find_on_page">Cari di halaman</string>
     <string name="action_mode_done">Selesai</string>
-    <string name="progress_erasing">Memadamkan kad SD…</string>
+    <string name="progress_erasing">Memadamkan storan USB…</string>
     <string name="share">Kongsi</string>
     <string name="find">Dapatkan</string>
     <string name="websearch">Carian Web</string>

@@ -68,7 +68,7 @@
 
 .field static final TRANSACTION_getConfigFile:I = 0x31
 
-.field static final TRANSACTION_getConfiguredNetworks_3:I = 0x4
+.field static final TRANSACTION_getConfiguredNetworks:I = 0x4
 
 .field static final TRANSACTION_getConnectionInfo:I = 0x17
 
@@ -102,8 +102,6 @@
 
 .field static final TRANSACTION_getWifiServiceMessenger:I = 0x30
 
-.field static final TRANSACTION_getWifiStaSapConcurrency:I = 0x42
-
 .field static final TRANSACTION_getWpsNfcConfigurationToken:I = 0x34
 
 .field static final TRANSACTION_hasCarrierConfiguredNetworks:I = 0x5
@@ -136,7 +134,7 @@
 
 .field static final TRANSACTION_reportActivityInfo:I = 0x2
 
-.field static final TRANSACTION_requestActivityInfo_2:I = 0x3
+.field static final TRANSACTION_requestActivityInfo:I = 0x3
 
 .field static final TRANSACTION_saveConfiguration:I = 0x1f
 
@@ -247,7 +245,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 754
+    .line 746
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v34
@@ -3268,49 +3266,6 @@
 
     goto :goto_29
 
-    .line 747
-    .end local v24    # "_result":Landroid/net/Network;
-    :sswitch_42
-    const-string/jumbo v34, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v34
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 748
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiStaSapConcurrency()Z
-
-    move-result v33
-
-    .line 749
-    .restart local v33    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 750
-    if-eqz v33, :cond_2a
-
-    const/16 v34, 0x1
-
-    :goto_2a
-    move-object/from16 v0, p3
-
-    move/from16 v1, v34
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 751
-    const/16 v34, 0x1
-
-    return v34
-
-    .line 750
-    :cond_2a
-    const/16 v34, 0x0
-
-    goto :goto_2a
-
     .line 43
     nop
 
@@ -3381,7 +3336,6 @@
         0x3f -> :sswitch_3f
         0x40 -> :sswitch_40
         0x41 -> :sswitch_41
-        0x42 -> :sswitch_42
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

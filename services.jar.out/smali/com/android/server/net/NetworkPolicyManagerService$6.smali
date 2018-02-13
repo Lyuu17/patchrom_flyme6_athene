@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
     .prologue
-    .line 775
+    .line 771
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 781
+    .line 777
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 782
+    .line 778
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v2, "android.intent.extra.user_handle"
 
@@ -55,13 +55,13 @@
 
     move-result v1
 
-    .line 783
+    .line 779
     .local v1, "userId":I
     if-ne v1, v3, :cond_0
 
     return-void
 
-    .line 785
+    .line 781
     :cond_0
     const-string/jumbo v2, "android.intent.action.USER_REMOVED"
 
@@ -71,7 +71,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 788
+    .line 784
     :goto_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -79,7 +79,7 @@
 
     monitor-enter v3
 
-    .line 791
+    .line 787
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -87,17 +87,17 @@
 
     invoke-virtual {v2, v1, v4}, Lcom/android/server/net/NetworkPolicyManagerService;->removeUserStateUL(IZ)Z
 
-    .line 792
+    .line 788
     const-string/jumbo v2, "android.intent.action.USER_ADDED"
 
     if-ne v0, v2, :cond_1
 
-    .line 794
+    .line 790
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->-wrap0(Lcom/android/server/net/NetworkPolicyManagerService;I)Z
 
-    .line 797
+    .line 793
     :cond_1
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -107,7 +107,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 798
+    .line 794
     :try_start_1
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -124,11 +124,11 @@
 
     monitor-exit v3
 
-    .line 777
+    .line 773
     :cond_2
     return-void
 
-    .line 785
+    .line 781
     :cond_3
     const-string/jumbo v2, "android.intent.action.USER_ADDED"
 
@@ -140,7 +140,7 @@
 
     goto :goto_0
 
-    .line 797
+    .line 793
     :catchall_0
     move-exception v2
 
@@ -151,7 +151,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 788
+    .line 784
     :catchall_1
     move-exception v2
 

@@ -58,7 +58,7 @@
     .locals 0
 
     .prologue
-    .line 6942
+    .line 6935
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -71,7 +71,7 @@
     .param p2, "label"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 7001
+    .line 6994
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -80,13 +80,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 7004
+    .line 6997
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Relation;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 7005
+    .line 6998
     .local v0, "labelRes":I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -94,7 +94,7 @@
 
     return-object v1
 
-    .line 7002
+    .line 6995
     .end local v0    # "labelRes":I
     :cond_1
     return-object p2
@@ -105,99 +105,99 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 6973
+    .line 6966
     packed-switch p0, :pswitch_data_0
 
-    .line 6990
+    .line 6983
     const v0, 0x10402e9
 
     return v0
 
-    .line 6974
+    .line 6967
     :pswitch_0
     const v0, 0x10402eb
 
     return v0
 
-    .line 6975
+    .line 6968
     :pswitch_1
     const v0, 0x10402ec
 
     return v0
 
-    .line 6976
+    .line 6969
     :pswitch_2
     const v0, 0x10402ed
 
     return v0
 
-    .line 6978
+    .line 6971
     :pswitch_3
     const v0, 0x10402ee
 
     return v0
 
-    .line 6979
+    .line 6972
     :pswitch_4
     const v0, 0x10402ef
 
     return v0
 
-    .line 6980
+    .line 6973
     :pswitch_5
     const v0, 0x10402f0
 
     return v0
 
-    .line 6981
+    .line 6974
     :pswitch_6
     const v0, 0x10402f1
 
     return v0
 
-    .line 6982
+    .line 6975
     :pswitch_7
     const v0, 0x10402f2
 
     return v0
 
-    .line 6983
+    .line 6976
     :pswitch_8
     const v0, 0x10402f3
 
     return v0
 
-    .line 6984
+    .line 6977
     :pswitch_9
     const v0, 0x10402f4
 
     return v0
 
-    .line 6986
+    .line 6979
     :pswitch_a
     const v0, 0x10402f5
 
     return v0
 
-    .line 6987
+    .line 6980
     :pswitch_b
     const v0, 0x10402f6
 
     return v0
 
-    .line 6988
+    .line 6981
     :pswitch_c
     const v0, 0x10402f7
 
     return v0
 
-    .line 6989
+    .line 6982
     :pswitch_d
     const v0, 0x10402f8
 
     return v0
 
-    .line 6973
+    .line 6966
     nop
 
     :pswitch_data_0

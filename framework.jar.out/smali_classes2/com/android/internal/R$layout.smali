@@ -205,8 +205,6 @@
 
 .field public static final overlay_display_window:I = 0x109009c
 
-.field public static final permission_confirmation_dialog:I = 0x109009d
-
 .field public static final permissions_package_list_item:I = 0x109009f
 
 .field public static final popup_menu_header_item_layout:I = 0x10900a0
@@ -319,8 +317,6 @@
 
 .field public static final simple_spinner_item:I = 0x1090008
 
-.field public static final single_hand_window:I = 0x10900e6
-
 .field public static final sms_short_code_confirmation_dialog:I = 0x10900e7
 
 .field public static final ssl_certificate:I = 0x10900e8
@@ -387,7 +383,7 @@
     .locals 0
 
     .prologue
-    .line 27378
+    .line 18690
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

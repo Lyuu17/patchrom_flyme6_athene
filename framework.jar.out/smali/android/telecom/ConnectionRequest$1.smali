@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 144
+    .line 141
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 147
+    .line 144
     new-instance v0, Landroid/telecom/ConnectionRequest;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 146
+    .line 143
     invoke-virtual {p0, p1}, Landroid/telecom/ConnectionRequest$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telecom/ConnectionRequest;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 152
+    .line 149
     new-array v0, p1, [Landroid/telecom/ConnectionRequest;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 151
+    .line 148
     invoke-virtual {p0, p1}, Landroid/telecom/ConnectionRequest$1;->newArray(I)[Landroid/telecom/ConnectionRequest;
 
     move-result-object v0

@@ -26,13 +26,13 @@
     .param p3, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 1130
+    .line 890
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 1131
+    .line 891
     invoke-direct {p0, p2, p3}, Lcom/android/server/policy/WakeGestureListener;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 1130
+    .line 890
     return-void
 .end method
 
@@ -42,16 +42,16 @@
     .locals 6
 
     .prologue
-    .line 1136
+    .line 896
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-get3(Lcom/android/server/policy/PhoneWindowManager;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-get2(Lcom/android/server/policy/PhoneWindowManager;)Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 1137
+    .line 897
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1138
+    .line 898
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     const/4 v2, 0x0
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v2, v3, v4}, Lcom/android/server/policy/PhoneWindowManager;->performHapticFeedbackLw(Landroid/view/WindowManagerPolicy$WindowState;IZ)Z
 
-    .line 1139
+    .line 899
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -85,21 +85,21 @@
 
     move-result v4
 
-    .line 1140
+    .line 900
     const-string/jumbo v5, "android.policy:GESTURE"
 
-    .line 1139
-    invoke-static {v0, v2, v3, v4, v5}, Lcom/android/server/policy/PhoneWindowManager;->-wrap3(Lcom/android/server/policy/PhoneWindowManager;JZLjava/lang/String;)Z
+    .line 899
+    invoke-static {v0, v2, v3, v4, v5}, Lcom/android/server/policy/PhoneWindowManager;->-wrap2(Lcom/android/server/policy/PhoneWindowManager;JZLjava/lang/String;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
     monitor-exit v1
 
-    .line 1135
+    .line 895
     return-void
 
-    .line 1136
+    .line 896
     :catchall_0
     move-exception v0
 

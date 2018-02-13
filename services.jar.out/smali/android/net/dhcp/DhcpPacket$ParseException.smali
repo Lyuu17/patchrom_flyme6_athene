@@ -26,16 +26,16 @@
     .param p3, "args"    # [Ljava/lang/Object;
 
     .prologue
-    .line 720
+    .line 716
     invoke-static {p2, p3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 721
+    .line 717
     iput p1, p0, Landroid/net/dhcp/DhcpPacket$ParseException;->errorCode:I
 
-    .line 719
+    .line 715
     return-void
 .end method

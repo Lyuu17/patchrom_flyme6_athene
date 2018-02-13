@@ -24,17 +24,17 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     .prologue
-    .line 649
+    .line 644
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    .line 650
+    .line 645
     invoke-static {p1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get0(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/os/Handler;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 649
+    .line 644
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 655
+    .line 650
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 654
+    .line 649
     return-void
 .end method

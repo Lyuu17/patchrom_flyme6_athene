@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     .prologue
-    .line 391
+    .line 381
     iput-object p1, p0, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener$2;->this$1:Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/IOnSubscriptionsChangedListener$Stub;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 395
+    .line 385
     iget-object v0, p0, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener$2;->this$1:Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     invoke-static {v0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;->-get0(Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;)Landroid/os/Handler;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 393
+    .line 383
     return-void
 .end method

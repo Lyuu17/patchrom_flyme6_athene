@@ -33,20 +33,20 @@
     .param p4, "theGrantBits"    # I
 
     .prologue
-    .line 276
+    .line 273
     iput-object p1, p0, Lcom/android/server/pm/Settings$RestoredPermissionGrant;->this$0:Lcom/android/server/pm/Settings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 277
+    .line 274
     iput-object p2, p0, Lcom/android/server/pm/Settings$RestoredPermissionGrant;->permissionName:Ljava/lang/String;
 
-    .line 278
+    .line 275
     iput-boolean p3, p0, Lcom/android/server/pm/Settings$RestoredPermissionGrant;->granted:Z
 
-    .line 279
+    .line 276
     iput p4, p0, Lcom/android/server/pm/Settings$RestoredPermissionGrant;->grantBits:I
 
-    .line 276
+    .line 273
     return-void
 .end method

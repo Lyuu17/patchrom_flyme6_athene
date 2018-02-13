@@ -30,13 +30,13 @@
 
 .field static final TRANSACTION_onActivityForcedResizable:I = 0x5
 
-.field static final TRANSACTION_onActivityPinned_1:I = 0x2
+.field static final TRANSACTION_onActivityPinned:I = 0x2
 
-.field static final TRANSACTION_onPinnedActivityRestartAttempt_2:I = 0x3
+.field static final TRANSACTION_onPinnedActivityRestartAttempt:I = 0x3
 
 .field static final TRANSACTION_onPinnedStackAnimationEnded:I = 0x4
 
-.field static final TRANSACTION_onTaskStackChanged_0:I = 0x1
+.field static final TRANSACTION_onTaskStackChanged:I = 0x1
 
 
 # direct methods

@@ -44,7 +44,7 @@
     .locals 0
 
     .prologue
-    .line 304
+    .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -353,11 +353,10 @@
     return-void
 .end method
 
-.method public static read(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;I)V
+.method public static read(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;)V
     .locals 8
     .param p0, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .param p1, "statsOut"    # Lcom/android/server/usage/IntervalStats;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -421,7 +420,7 @@
     .local v0, "eventCode":I
     const/4 v3, 0x1
 
-    if-eq v0, v3, :cond_8
+    if-eq v0, v3, :cond_5
 
     .line 213
     const/4 v3, 0x3
@@ -432,7 +431,7 @@
 
     move-result v3
 
-    if-le v3, v1, :cond_8
+    if-le v3, v1, :cond_5
 
     .line 214
     :cond_2
@@ -447,7 +446,7 @@
 
     .line 219
     .local v2, "tag":Ljava/lang/String;
-    const-string/jumbo v3, "packages"
+    const-string/jumbo v3, "package"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -456,18 +455,13 @@
     if-eqz v3, :cond_3
 
     .line 221
-    and-int/lit8 v3, p2, 0x1
-
-    if-nez v3, :cond_1
-
-    .line 222
-    invoke-static {p0}, Lcom/android/server/usage/UsageStatsXmlV1;->skip(Lorg/xmlpull/v1/XmlPullParser;)V
+    invoke-static {p0, p1}, Lcom/android/server/usage/UsageStatsXmlV1;->loadUsageStats(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;)V
 
     goto :goto_0
 
     .line 219
     :cond_3
-    const-string/jumbo v3, "package"
+    const-string/jumbo v3, "config"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -475,68 +469,13 @@
 
     if-eqz v3, :cond_4
 
-    .line 227
-    invoke-static {p0, p1}, Lcom/android/server/usage/UsageStatsXmlV1;->loadUsageStats(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;)V
-
-    goto :goto_0
-
-    .line 219
-    :cond_4
-    const-string/jumbo v3, "configurations"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    .line 231
-    and-int/lit8 v3, p2, 0x2
-
-    if-nez v3, :cond_1
-
-    .line 232
-    invoke-static {p0}, Lcom/android/server/usage/UsageStatsXmlV1;->skip(Lorg/xmlpull/v1/XmlPullParser;)V
-
-    goto :goto_0
-
-    .line 219
-    :cond_5
-    const-string/jumbo v3, "config"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    .line 237
+    .line 225
     invoke-static {p0, p1}, Lcom/android/server/usage/UsageStatsXmlV1;->loadConfigStats(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;)V
 
     goto :goto_0
 
     .line 219
-    :cond_6
-    const-string/jumbo v3, "event-log"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_7
-
-    .line 241
-    and-int/lit8 v3, p2, 0x4
-
-    if-nez v3, :cond_1
-
-    .line 242
-    invoke-static {p0}, Lcom/android/server/usage/UsageStatsXmlV1;->skip(Lorg/xmlpull/v1/XmlPullParser;)V
-
-    goto :goto_0
-
-    .line 219
-    :cond_7
+    :cond_4
     const-string/jumbo v3, "event"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -545,88 +484,15 @@
 
     if-eqz v3, :cond_1
 
-    .line 247
+    .line 229
     invoke-static {p0, p1}, Lcom/android/server/usage/UsageStatsXmlV1;->loadEvent(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;)V
 
     goto :goto_0
 
     .line 199
     .end local v2    # "tag":Ljava/lang/String;
-    :cond_8
+    :cond_5
     return-void
-.end method
-
-.method private static skip(Lorg/xmlpull/v1/XmlPullParser;)V
-    .locals 3
-    .param p0, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/xmlpull/v1/XmlPullParserException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 254
-    invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_0
-
-    .line 255
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v1
-
-    .line 257
-    :cond_0
-    const/4 v0, 0x1
-
-    .line 258
-    .local v0, "depth":I
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 259
-    invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
-
-    move-result v1
-
-    packed-switch v1, :pswitch_data_0
-
-    goto :goto_0
-
-    .line 264
-    :pswitch_0
-    add-int/lit8 v0, v0, 0x1
-
-    .line 265
-    goto :goto_0
-
-    .line 261
-    :pswitch_1
-    add-int/lit8 v0, v0, -0x1
-
-    .line 262
-    goto :goto_0
-
-    .line 253
-    :cond_1
-    return-void
-
-    .line 259
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method public static write(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/usage/IntervalStats;)V
@@ -642,7 +508,7 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 279
+    .line 244
     const-string/jumbo v5, "endTime"
 
     iget-wide v6, p1, Lcom/android/server/usage/IntervalStats;->endTime:J
@@ -653,19 +519,19 @@
 
     invoke-static {p0, v5, v6, v7}, Lcom/android/internal/util/XmlUtils;->writeLongAttribute(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;J)V
 
-    .line 281
+    .line 246
     const-string/jumbo v5, "packages"
 
     invoke-interface {p0, v10, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 282
+    .line 247
     iget-object v5, p1, Lcom/android/server/usage/IntervalStats;->packageStats:Landroid/util/ArrayMap;
 
     invoke-virtual {v5}, Landroid/util/ArrayMap;->size()I
 
     move-result v4
 
-    .line 283
+    .line 248
     .local v4, "statsCount":I
     const/4 v3, 0x0
 
@@ -673,7 +539,7 @@
     :goto_0
     if-ge v3, v4, :cond_0
 
-    .line 284
+    .line 249
     iget-object v5, p1, Lcom/android/server/usage/IntervalStats;->packageStats:Landroid/util/ArrayMap;
 
     invoke-virtual {v5, v3}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
@@ -684,37 +550,37 @@
 
     invoke-static {p0, p1, v5}, Lcom/android/server/usage/UsageStatsXmlV1;->writeUsageStats(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/usage/IntervalStats;Landroid/app/usage/UsageStats;)V
 
-    .line 283
+    .line 248
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 286
+    .line 251
     :cond_0
     const-string/jumbo v5, "packages"
 
     invoke-interface {p0, v10, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 288
+    .line 253
     const-string/jumbo v5, "configurations"
 
     invoke-interface {p0, v10, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 289
+    .line 254
     iget-object v5, p1, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
 
     invoke-virtual {v5}, Landroid/util/ArrayMap;->size()I
 
     move-result v1
 
-    .line 290
+    .line 255
     .local v1, "configCount":I
     const/4 v3, 0x0
 
     :goto_1
     if-ge v3, v1, :cond_1
 
-    .line 291
+    .line 256
     iget-object v6, p1, Lcom/android/server/usage/IntervalStats;->activeConfiguration:Landroid/content/res/Configuration;
 
     iget-object v5, p1, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
@@ -729,7 +595,7 @@
 
     move-result v0
 
-    .line 292
+    .line 257
     .local v0, "active":Z
     iget-object v5, p1, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
 
@@ -741,24 +607,24 @@
 
     invoke-static {p0, p1, v5, v0}, Lcom/android/server/usage/UsageStatsXmlV1;->writeConfigStats(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/usage/IntervalStats;Landroid/app/usage/ConfigurationStats;Z)V
 
-    .line 290
+    .line 255
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 294
+    .line 259
     .end local v0    # "active":Z
     :cond_1
     const-string/jumbo v5, "configurations"
 
     invoke-interface {p0, v10, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 296
+    .line 261
     const-string/jumbo v5, "event-log"
 
     invoke-interface {p0, v10, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 297
+    .line 262
     iget-object v5, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/TimeSparseArray;
 
     if-eqz v5, :cond_2
@@ -769,7 +635,7 @@
 
     move-result v2
 
-    .line 298
+    .line 263
     .local v2, "eventCount":I
     :goto_2
     const/4 v3, 0x0
@@ -777,7 +643,7 @@
     :goto_3
     if-ge v3, v2, :cond_3
 
-    .line 299
+    .line 264
     iget-object v5, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/TimeSparseArray;
 
     invoke-virtual {v5, v3}, Landroid/app/usage/TimeSparseArray;->valueAt(I)Ljava/lang/Object;
@@ -788,12 +654,12 @@
 
     invoke-static {p0, p1, v5}, Lcom/android/server/usage/UsageStatsXmlV1;->writeEvent(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/usage/IntervalStats;Landroid/app/usage/UsageEvents$Event;)V
 
-    .line 298
+    .line 263
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 297
+    .line 262
     .end local v2    # "eventCount":I
     :cond_2
     const/4 v2, 0x0
@@ -801,13 +667,13 @@
     .restart local v2    # "eventCount":I
     goto :goto_2
 
-    .line 301
+    .line 266
     :cond_3
     const-string/jumbo v5, "event-log"
 
     invoke-interface {p0, v10, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 278
+    .line 243
     return-void
 .end method
 

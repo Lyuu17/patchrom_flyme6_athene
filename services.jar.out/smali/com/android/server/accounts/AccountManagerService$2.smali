@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/accounts/AccountManagerService;
 
     .prologue
-    .line 387
+    .line 386
     iput-object p1, p0, Lcom/android/server/accounts/AccountManagerService$2;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 390
+    .line 389
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 391
+    .line 390
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.USER_REMOVED"
 
@@ -55,12 +55,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 392
+    .line 391
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$2;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     invoke-static {v1, p2}, Lcom/android/server/accounts/AccountManagerService;->-wrap16(Lcom/android/server/accounts/AccountManagerService;Landroid/content/Intent;)V
 
-    .line 389
+    .line 388
     :cond_0
     return-void
 .end method

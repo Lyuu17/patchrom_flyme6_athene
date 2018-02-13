@@ -27,15 +27,15 @@
     .param p2, "smsSender"    # Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSender;
 
     .prologue
-    .line 558
+    .line 555
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-direct {p0}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;-><init>()V
 
-    .line 559
+    .line 556
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSender;
 
-    .line 558
+    .line 555
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .param p1, "result"    # I
 
     .prologue
-    .line 606
+    .line 603
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,7 +69,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 605
+    .line 602
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .param p1, "result"    # I
 
     .prologue
-    .line 596
+    .line 593
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -101,7 +101,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 595
+    .line 592
     return-void
 .end method
 
@@ -111,7 +111,7 @@
     .param p2, "sendConfPdu"    # [B
 
     .prologue
-    .line 601
+    .line 598
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -134,7 +134,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 600
+    .line 597
     return-void
 .end method
 
@@ -144,44 +144,44 @@
     .param p2, "messageRefs"    # [I
 
     .prologue
-    .line 572
+    .line 569
     iget-object v4, p0, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSender;
 
     iget-object v5, p0, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     iget-object v5, v5, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v4, v5}, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSender;->disposeConnection(Landroid/content/Context;)V
+    invoke-virtual {v4, v5}, Landroid/telephony/CarrierMessagingServiceManager;->disposeConnection(Landroid/content/Context;)V
 
-    .line 574
+    .line 571
     iget-object v4, p0, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSender;
 
     iget-object v4, v4, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSender;->mTrackers:[Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
 
     if-nez v4, :cond_0
 
-    .line 575
+    .line 572
     const-string/jumbo v4, "SMSDispatcher"
 
     const-string/jumbo v5, "Unexpected onSendMultipartSmsComplete call with null trackers."
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 576
+    .line 573
     return-void
 
-    .line 579
+    .line 576
     :cond_0
     iget-object v4, p0, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-static {v4}, Lcom/android/internal/telephony/SMSDispatcher;->-wrap1(Lcom/android/internal/telephony/SMSDispatcher;)V
 
-    .line 580
+    .line 577
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 582
+    .line 579
     .local v2, "identity":J
     const/4 v0, 0x0
 
@@ -196,10 +196,10 @@
 
     if-ge v0, v4, :cond_2
 
-    .line 583
+    .line 580
     const/4 v1, 0x0
 
-    .line 584
+    .line 581
     .local v1, "messageRef":I
     if-eqz p2, :cond_1
 
@@ -207,10 +207,10 @@
 
     if-le v4, v0, :cond_1
 
-    .line 585
+    .line 582
     aget v1, p2, v0
 
-    .line 587
+    .line 584
     :cond_1
     iget-object v4, p0, Lcom/android/internal/telephony/SMSDispatcher$MultipartSmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -224,27 +224,27 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 582
+    .line 579
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 590
+    .line 587
     .end local v1    # "messageRef":I
     :cond_2
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 571
+    .line 568
     return-void
 
-    .line 589
+    .line 586
     :catchall_0
     move-exception v4
 
-    .line 590
+    .line 587
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 589
+    .line 586
     throw v4
 .end method
 
@@ -254,7 +254,7 @@
     .param p2, "messageRef"    # I
 
     .prologue
-    .line 564
+    .line 561
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -277,6 +277,6 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 563
+    .line 560
     return-void
 .end method

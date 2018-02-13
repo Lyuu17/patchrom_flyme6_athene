@@ -162,13 +162,7 @@
 .method public abstract explicitCallTransfer(Landroid/os/Message;)V
 .end method
 
-.method public abstract getAdnRecord(Landroid/os/Message;)V
-.end method
-
 .method public abstract getAllowedCarriers(Landroid/os/Message;)V
-.end method
-
-.method public abstract getAtr(Landroid/os/Message;)V
 .end method
 
 .method public abstract getAvailableNetworks(Landroid/os/Message;)V
@@ -242,9 +236,6 @@
 .method public abstract getLteOnCdmaMode()I
 .end method
 
-.method public abstract getLteOnGsmMode()I
-.end method
-
 .method public abstract getModemActivityInfo(Landroid/os/Message;)V
 .end method
 
@@ -313,9 +304,6 @@
 .method public abstract iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
-.method public abstract iccOpenLogicalChannel(Ljava/lang/String;BLandroid/os/Message;)V
-.end method
-
 .method public abstract iccOpenLogicalChannel(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
@@ -371,12 +359,6 @@
 .end method
 
 .method public abstract registerFoT53ClirlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForAdnInitDone(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForAdnRecordsInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -636,9 +618,6 @@
 .method public abstract setOnCatProactiveCmd(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract setOnCatSendSmsResult(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract setOnCatSessionEnd(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -708,7 +687,7 @@
 .method public abstract setTTYMode(ILandroid/os/Message;)V
 .end method
 
-.method public abstract setUiccSubscription(IZLandroid/os/Message;)V
+.method public abstract setUiccSubscription(IIIILandroid/os/Message;)V
 .end method
 
 .method public abstract setupDataCall(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Landroid/os/Message;)V
@@ -774,9 +753,6 @@
 .method public abstract unSetOnCatProactiveCmd(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unSetOnCatSendSmsResult(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unSetOnCatSessionEnd(Landroid/os/Handler;)V
 .end method
 
@@ -817,12 +793,6 @@
 .end method
 
 .method public abstract unSetOnUnsolOemHookRaw(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForAdnInitDone(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForAdnRecordsInfo(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForAvailable(Landroid/os/Handler;)V
@@ -934,9 +904,6 @@
 .end method
 
 .method public abstract unsetOnIccRefresh(Landroid/os/Handler;)V
-.end method
-
-.method public abstract updateAdnRecord(Lcom/android/internal/telephony/uicc/SimPhoneBookAdnRecord;Landroid/os/Message;)V
 .end method
 
 .method public abstract writeSmsToRuim(ILjava/lang/String;Landroid/os/Message;)V

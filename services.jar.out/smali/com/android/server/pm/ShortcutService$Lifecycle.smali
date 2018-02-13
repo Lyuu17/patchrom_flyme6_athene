@@ -24,17 +24,17 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 525
+    .line 529
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 526
+    .line 530
     new-instance v0, Lcom/android/server/pm/ShortcutService;
 
     invoke-direct {v0, p1}, Lcom/android/server/pm/ShortcutService;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/server/pm/ShortcutService$Lifecycle;->mService:Lcom/android/server/pm/ShortcutService;
 
-    .line 524
+    .line 528
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .param p1, "phase"    # I
 
     .prologue
-    .line 536
+    .line 540
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$Lifecycle;->mService:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/ShortcutService;->onBootPhase(I)V
 
-    .line 535
+    .line 539
     return-void
 .end method
 
@@ -59,12 +59,12 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 541
+    .line 545
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$Lifecycle;->mService:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/ShortcutService;->handleCleanupUser(I)V
 
-    .line 540
+    .line 544
     return-void
 .end method
 
@@ -72,14 +72,14 @@
     .locals 2
 
     .prologue
-    .line 531
+    .line 535
     const-string/jumbo v0, "shortcut"
 
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$Lifecycle;->mService:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/pm/ShortcutService$Lifecycle;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 530
+    .line 534
     return-void
 .end method
 
@@ -88,11 +88,11 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 546
+    .line 550
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$Lifecycle;->mService:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/ShortcutService;->handleUnlockUser(I)V
 
-    .line 545
+    .line 549
     return-void
 .end method

@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IProcessObserver"
 
-.field static final TRANSACTION_onForegroundActivitiesChanged_0:I = 0x1
+.field static final TRANSACTION_onForegroundActivitiesChanged:I = 0x1
 
 .field static final TRANSACTION_onProcessDied:I = 0x3
 

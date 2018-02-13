@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/android/server/am/ActiveServices;
 
     .prologue
-    .line 1255
+    .line 1251
     iput-object p1, p0, Lcom/android/server/am/ActiveServices$ServiceRestarter;->this$0:Lcom/android/server/am/ActiveServices;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .locals 3
 
     .prologue
-    .line 1263
+    .line 1259
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceRestarter;->this$0:Lcom/android/server/am/ActiveServices;
 
     iget-object v1, v0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
@@ -63,7 +63,7 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 1264
+    .line 1260
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceRestarter;->this$0:Lcom/android/server/am/ActiveServices;
 
     iget-object v2, p0, Lcom/android/server/am/ActiveServices$ServiceRestarter;->mService:Lcom/android/server/am/ServiceRecord;
@@ -74,13 +74,13 @@
 
     monitor-exit v1
 
-    .line 1263
+    .line 1259
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 1262
+    .line 1258
     return-void
 
-    .line 1263
+    .line 1259
     :catchall_0
     move-exception v0
 
@@ -96,9 +96,9 @@
     .param p1, "service"    # Lcom/android/server/am/ServiceRecord;
 
     .prologue
-    .line 1259
+    .line 1255
     iput-object p1, p0, Lcom/android/server/am/ActiveServices$ServiceRestarter;->mService:Lcom/android/server/am/ServiceRecord;
 
-    .line 1258
+    .line 1254
     return-void
 .end method

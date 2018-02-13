@@ -44,7 +44,7 @@
 
 .field static final TRANSACTION_setPauseImage:I = 0xb
 
-.field static final TRANSACTION_setPreviewSurface_2:I = 0x3
+.field static final TRANSACTION_setPreviewSurface:I = 0x3
 
 .field static final TRANSACTION_setZoom:I = 0x6
 
@@ -60,7 +60,7 @@
     .line 33
     const-string/jumbo v0, "com.android.ims.internal.IImsVideoCallProvider"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/ims/internal/IImsVideoCallProvider$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 31
     return-void

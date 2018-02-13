@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.policy.IShortcutService"
 
-.field static final TRANSACTION_notifyShortcutKeyPressed_0:I = 0x1
+.field static final TRANSACTION_notifyShortcutKeyPressed:I = 0x1
 
 
 # direct methods

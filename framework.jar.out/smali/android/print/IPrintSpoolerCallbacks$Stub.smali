@@ -30,9 +30,9 @@
 
 .field static final TRANSACTION_onCancelPrintJobResult:I = 0x2
 
-.field static final TRANSACTION_onCustomPrinterIconCached_6:I = 0x7
+.field static final TRANSACTION_onCustomPrinterIconCached:I = 0x7
 
-.field static final TRANSACTION_onGetCustomPrinterIconResult_5:I = 0x6
+.field static final TRANSACTION_onGetCustomPrinterIconResult:I = 0x6
 
 .field static final TRANSACTION_onGetPrintJobInfoResult:I = 0x5
 

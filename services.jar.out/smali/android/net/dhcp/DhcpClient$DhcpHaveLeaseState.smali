@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/net/dhcp/DhcpClient;
 
     .prologue
-    .line 815
+    .line 807
     iput-object p1, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 832
+    .line 824
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->-get18(Landroid/net/dhcp/DhcpClient;)Lcom/android/internal/util/WakeupMessage;
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/util/WakeupMessage;->cancel()V
 
-    .line 833
+    .line 825
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->-get15(Landroid/net/dhcp/DhcpClient;)Lcom/android/internal/util/WakeupMessage;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/util/WakeupMessage;->cancel()V
 
-    .line 834
+    .line 826
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->-get8(Landroid/net/dhcp/DhcpClient;)Lcom/android/internal/util/WakeupMessage;
@@ -65,12 +65,12 @@
 
     invoke-virtual {v0}, Lcom/android/internal/util/WakeupMessage;->cancel()V
 
-    .line 835
+    .line 827
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->-wrap7(Landroid/net/dhcp/DhcpClient;)V
 
-    .line 839
+    .line 831
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->-get1(Landroid/net/dhcp/DhcpClient;)Lcom/android/internal/util/StateMachine;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
-    .line 830
+    .line 822
     return-void
 .end method
 
@@ -90,17 +90,17 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 818
+    .line 810
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 825
+    .line 817
     const/4 v0, 0x0
 
     return v0
 
-    .line 820
+    .line 812
     :pswitch_0
     const-string/jumbo v0, "DhcpClient"
 
@@ -108,12 +108,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 821
+    .line 813
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->-wrap12(Landroid/net/dhcp/DhcpClient;)V
 
-    .line 822
+    .line 814
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     iget-object v1, p0, Landroid/net/dhcp/DhcpClient$DhcpHaveLeaseState;->this$0:Landroid/net/dhcp/DhcpClient;
@@ -124,12 +124,12 @@
 
     invoke-static {v0, v1}, Landroid/net/dhcp/DhcpClient;->-wrap15(Landroid/net/dhcp/DhcpClient;Lcom/android/internal/util/IState;)V
 
-    .line 823
+    .line 815
     const/4 v0, 0x1
 
     return v0
 
-    .line 818
+    .line 810
     :pswitch_data_0
     .packed-switch 0x3006a
         :pswitch_0

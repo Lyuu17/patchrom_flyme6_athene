@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     .prologue
-    .line 119
+    .line 118
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$2;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 121
+    .line 120
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$2;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     invoke-static {v0}, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;->-get1(Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;)Ljava/lang/Object;
@@ -50,7 +50,7 @@
 
     monitor-enter v1
 
-    .line 122
+    .line 121
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$2;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
@@ -60,10 +60,10 @@
 
     monitor-exit v1
 
-    .line 120
+    .line 119
     return-void
 
-    .line 121
+    .line 120
     :catchall_0
     move-exception v0
 

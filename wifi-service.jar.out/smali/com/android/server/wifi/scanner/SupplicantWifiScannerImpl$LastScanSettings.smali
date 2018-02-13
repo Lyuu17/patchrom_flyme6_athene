@@ -52,22 +52,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 810
+    .line 801
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 815
+    .line 806
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->backgroundScanActive:Z
 
-    .line 833
+    .line 824
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanActive:Z
 
-    .line 847
+    .line 838
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->hwPnoScanActive:Z
 
-    .line 811
+    .line 802
     iput-wide p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->startTime:J
 
-    .line 810
+    .line 801
     return-void
 .end method
 
@@ -82,27 +82,27 @@
     .param p5, "reportPercentThreshold"    # I
 
     .prologue
-    .line 824
+    .line 815
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->backgroundScanActive:Z
 
-    .line 825
+    .line 816
     iput p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->scanId:I
 
-    .line 826
+    .line 817
     iput p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->maxAps:I
 
-    .line 827
+    .line 818
     iput p3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->reportEvents:I
 
-    .line 828
+    .line 819
     iput p4, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->reportNumScansThreshold:I
 
-    .line 829
+    .line 820
     iput p5, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->reportPercentThreshold:I
 
-    .line 823
+    .line 814
     return-void
 .end method
 
@@ -112,18 +112,18 @@
     .param p2, "pnoScanEventHandler"    # Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
     .prologue
-    .line 854
+    .line 845
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->hwPnoScanActive:Z
 
-    .line 855
+    .line 846
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->pnoNetworkList:[Lcom/android/server/wifi/WifiNative$PnoNetwork;
 
-    .line 856
+    .line 847
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->pnoScanEventHandler:Lcom/android/server/wifi/WifiNative$PnoEventHandler;
 
-    .line 853
+    .line 844
     return-void
 .end method
 
@@ -134,20 +134,20 @@
     .param p3, "singleScanEventHandler"    # Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     .prologue
-    .line 841
+    .line 832
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanActive:Z
 
-    .line 842
+    .line 833
     iput-boolean p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->reportSingleScanFullResults:Z
 
-    .line 843
+    .line 834
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanFreqs:Lcom/android/server/wifi/scanner/ChannelHelper$ChannelCollection;
 
-    .line 844
+    .line 835
     iput-object p3, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 840
+    .line 831
     return-void
 .end method

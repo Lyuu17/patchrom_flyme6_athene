@@ -38,8 +38,6 @@
 
 .field static final TRANSACTION_setTimeZone:I = 0x3
 
-.field static final TRANSACTION_updateBlockedUids:I = 0x7
-
 
 # direct methods
 .method public constructor <init>()V
@@ -114,7 +112,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 29
+    .locals 28
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -129,7 +127,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 165
+    .line 154
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v5
@@ -336,14 +334,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/IAlarmManager$Stub;->setTime(J)Z
 
-    move-result v28
+    move-result v27
 
     .line 100
-    .local v28, "_result":Z
+    .local v27, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 101
-    if-eqz v28, :cond_3
+    if-eqz v27, :cond_3
 
     const/4 v5, 0x1
 
@@ -365,7 +363,7 @@
 
     .line 106
     .end local v20    # "_arg0":J
-    .end local v28    # "_result":Z
+    .end local v27    # "_result":Z
     :sswitch_3
     const-string/jumbo v5, "android.app.IAlarmManager"
 
@@ -467,16 +465,16 @@
     .line 132
     invoke-virtual/range {p0 .. p0}, Landroid/app/IAlarmManager$Stub;->getNextWakeFromIdleTime()J
 
-    move-result-wide v26
+    move-result-wide v24
 
     .line 133
-    .local v26, "_result":J
+    .local v24, "_result":J
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 134
     move-object/from16 v0, p3
 
-    move-wide/from16 v1, v26
+    move-wide/from16 v1, v24
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Parcel;->writeLong(J)V
 
@@ -486,7 +484,7 @@
     return v5
 
     .line 139
-    .end local v26    # "_result":J
+    .end local v24    # "_result":J
     :sswitch_6
     const-string/jumbo v5, "android.app.IAlarmManager"
 
@@ -505,14 +503,14 @@
 
     invoke-virtual {v0, v4}, Landroid/app/IAlarmManager$Stub;->getNextAlarmClock(I)Landroid/app/AlarmManager$AlarmClockInfo;
 
-    move-result-object v25
+    move-result-object v26
 
     .line 143
-    .local v25, "_result":Landroid/app/AlarmManager$AlarmClockInfo;
+    .local v26, "_result":Landroid/app/AlarmManager$AlarmClockInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 144
-    if-eqz v25, :cond_5
+    if-eqz v26, :cond_5
 
     .line 145
     const/4 v5, 0x1
@@ -524,7 +522,7 @@
     .line 146
     const/4 v5, 0x1
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v26
 
     move-object/from16 v1, p3
 
@@ -546,58 +544,7 @@
 
     goto :goto_5
 
-    .line 155
-    .end local v4    # "_arg0":I
-    .end local v25    # "_result":Landroid/app/AlarmManager$AlarmClockInfo;
-    :sswitch_7
-    const-string/jumbo v5, "android.app.IAlarmManager"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 157
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    .line 159
-    .restart local v4    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    if-eqz v5, :cond_6
-
-    const/16 v24, 0x1
-
-    .line 160
-    .local v24, "_arg1":Z
-    :goto_6
-    move-object/from16 v0, p0
-
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v4, v1}, Landroid/app/IAlarmManager$Stub;->updateBlockedUids(IZ)V
-
-    .line 161
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 162
-    const/4 v5, 0x1
-
-    return v5
-
-    .line 159
-    .end local v24    # "_arg1":Z
-    :cond_6
-    const/16 v24, 0x0
-
-    goto :goto_6
-
     .line 43
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -606,7 +553,6 @@
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
         0x6 -> :sswitch_6
-        0x7 -> :sswitch_7
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

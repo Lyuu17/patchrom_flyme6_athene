@@ -25,10 +25,10 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 1421
+    .line 1407
     iput-object p1, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
-    .line 1422
+    .line 1408
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -38,10 +38,10 @@
     :goto_0
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1421
+    .line 1407
     return-void
 
-    .line 1422
+    .line 1408
     :cond_0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
@@ -57,16 +57,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1427
+    .line 1413
     iget v3, p1, Landroid/os/Message;->what:I
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 1426
+    .line 1412
     :goto_0
     return-void
 
-    .line 1429
+    .line 1415
     :sswitch_0
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
@@ -76,7 +76,7 @@
 
     monitor-enter v4
 
-    .line 1430
+    .line 1416
     :try_start_0
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
@@ -88,7 +88,7 @@
 
     move-result v1
 
-    .line 1431
+    .line 1417
     .local v1, "length":I
     const/4 v0, 0x0
 
@@ -96,7 +96,7 @@
     :goto_1
     if-ge v0, v1, :cond_0
 
-    .line 1432
+    .line 1418
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v3}, Landroid/location/LocationManager$GnssStatusListenerTransport;->-get4(Landroid/location/LocationManager$GnssStatusListenerTransport;)Ljava/util/ArrayList;
@@ -109,7 +109,7 @@
 
     check-cast v2, Landroid/location/LocationManager$GnssStatusListenerTransport$Nmea;
 
-    .line 1433
+    .line 1419
     .local v2, "nmea":Landroid/location/LocationManager$GnssStatusListenerTransport$Nmea;
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
@@ -123,12 +123,12 @@
 
     invoke-interface {v3, v5, v6, v7}, Landroid/location/OnNmeaMessageListener;->onNmeaMessage(Ljava/lang/String;J)V
 
-    .line 1431
+    .line 1417
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1435
+    .line 1421
     .end local v2    # "nmea":Landroid/location/LocationManager$GnssStatusListenerTransport$Nmea;
     :cond_0
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 1429
+    .line 1415
     .end local v0    # "i":I
     .end local v1    # "length":I
     :catchall_0
@@ -155,7 +155,7 @@
 
     throw v3
 
-    .line 1439
+    .line 1425
     :sswitch_1
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
@@ -167,7 +167,7 @@
 
     goto :goto_0
 
-    .line 1442
+    .line 1428
     :sswitch_2
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .line 1445
+    .line 1431
     :sswitch_3
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
@@ -199,7 +199,7 @@
 
     goto :goto_0
 
-    .line 1448
+    .line 1434
     :sswitch_4
     iget-object v3, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$GnssHandler;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
@@ -219,7 +219,7 @@
 
     goto :goto_0
 
-    .line 1427
+    .line 1413
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

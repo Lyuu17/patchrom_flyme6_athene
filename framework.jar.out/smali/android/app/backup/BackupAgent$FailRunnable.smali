@@ -27,13 +27,13 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 1118
+    .line 1115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1119
+    .line 1116
     iput-object p1, p0, Landroid/app/backup/BackupAgent$FailRunnable;->mMessage:Ljava/lang/String;
 
-    .line 1118
+    .line 1115
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 1124
+    .line 1121
     new-instance v0, Ljava/lang/IllegalStateException;
 
     iget-object v1, p0, Landroid/app/backup/BackupAgent$FailRunnable;->mMessage:Ljava/lang/String;

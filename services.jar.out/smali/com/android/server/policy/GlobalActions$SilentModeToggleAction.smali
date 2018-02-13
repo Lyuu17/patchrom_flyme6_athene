@@ -24,30 +24,30 @@
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
 
     .prologue
-    .line 1226
+    .line 998
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    .line 1227
+    .line 999
     const v1, 0x10802f6
 
-    .line 1228
+    .line 1000
     const v2, 0x10802f5
 
-    .line 1229
+    .line 1001
     const v3, 0x10401af
 
-    .line 1230
+    .line 1002
     const v4, 0x10401b0
 
-    .line 1231
+    .line 1003
     const v5, 0x10401b1
 
     move-object v0, p0
 
-    .line 1227
+    .line 999
     invoke-direct/range {v0 .. v5}, Lcom/android/server/policy/GlobalActions$ToggleAction;-><init>(IIIII)V
 
-    .line 1226
+    .line 998
     return-void
 .end method
 
@@ -58,13 +58,13 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 1235
+    .line 1007
     if-eqz p1, :cond_0
 
-    .line 1236
+    .line 1008
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get4(Lcom/android/server/policy/GlobalActions;)Landroid/media/AudioManager;
+    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get3(Lcom/android/server/policy/GlobalActions;)Landroid/media/AudioManager;
 
     move-result-object v0
 
@@ -72,15 +72,15 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 1234
+    .line 1006
     :goto_0
     return-void
 
-    .line 1238
+    .line 1010
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get4(Lcom/android/server/policy/GlobalActions;)Landroid/media/AudioManager;
+    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get3(Lcom/android/server/policy/GlobalActions;)Landroid/media/AudioManager;
 
     move-result-object v0
 
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 1247
+    .line 1019
     const/4 v0, 0x0
 
     return v0
@@ -105,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 1243
+    .line 1015
     const/4 v0, 0x1
 
     return v0

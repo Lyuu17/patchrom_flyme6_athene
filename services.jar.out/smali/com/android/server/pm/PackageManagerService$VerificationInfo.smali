@@ -37,21 +37,21 @@
     .param p4, "installerUid"    # I
 
     .prologue
-    .line 13015
+    .line 12830
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13016
+    .line 12831
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$VerificationInfo;->originatingUri:Landroid/net/Uri;
 
-    .line 13017
+    .line 12832
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$VerificationInfo;->referrer:Landroid/net/Uri;
 
-    .line 13018
+    .line 12833
     iput p3, p0, Lcom/android/server/pm/PackageManagerService$VerificationInfo;->originatingUid:I
 
-    .line 13019
+    .line 12834
     iput p4, p0, Lcom/android/server/pm/PackageManagerService$VerificationInfo;->installerUid:I
 
-    .line 13015
+    .line 12830
     return-void
 .end method

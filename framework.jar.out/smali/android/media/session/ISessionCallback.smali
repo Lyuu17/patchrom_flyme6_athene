@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract getRemoteControlClientNowPlayingEntries()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract onAdjustVolume(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -192,22 +184,6 @@
 .end method
 
 .method public abstract onStop()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setRemoteControlClientBrowsedPlayer()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setRemoteControlClientPlayItem(JI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -321,10 +321,6 @@
 
 .field public static final ic_lock_airplane_mode:I = 0x108036e
 
-.field public static final ic_lock_airplane_mode_disabled:I = 0x1080370
-
-.field public static final ic_lock_airplane_mode_enabled:I = 0x1080371
-
 .field public static final ic_lock_airplane_mode_off:I = 0x1080372
 
 .field public static final ic_lock_bugreport:I = 0x1080374
@@ -341,13 +337,9 @@
 
 .field public static final ic_lock_power_off:I = 0x1080030
 
-.field public static final ic_lock_screenshot:I = 0x108037f
-
 .field public static final ic_lock_silent_mode:I = 0x1080031
 
 .field public static final ic_lock_silent_mode_off:I = 0x1080032
-
-.field public static final ic_lock_user:I = 0x1080381
 
 .field public static final ic_maps_indicator_current_position_anim:I = 0x10803aa
 
@@ -597,8 +589,6 @@
 
 .field public static final platlogo:I = 0x1080560
 
-.field public static final platlogo_lineage:I = 0x1080561
-
 .field public static final platlogo_m:I = 0x1080562
 
 .field public static final popup_bottom_bright:I = 0x10805e1
@@ -714,10 +704,6 @@
 .field public static final stat_notify_missed_call:I = 0x108007f
 
 .field public static final stat_notify_more:I = 0x1080079
-
-.field public static final stat_notify_privacy_guard:I = 0x10806e2
-
-.field public static final stat_notify_protected:I = 0x10806e3
 
 .field public static final stat_notify_rssi_in_range:I = 0x10806e4
 
@@ -878,7 +864,7 @@
     .locals 0
 
     .prologue
-    .line 25402
+    .line 16822
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

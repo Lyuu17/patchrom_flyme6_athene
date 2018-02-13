@@ -30,7 +30,7 @@
     .param p2, "val$lastActionModeView"    # Lcom/android/internal/widget/ActionBarContextView;
 
     .prologue
-    .line 2341
+    .line 2339
     iput-object p1, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->this$1:Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;
 
     iput-object p2, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->val$lastActionModeView:Lcom/android/internal/widget/ActionBarContextView;
@@ -47,7 +47,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2364
+    .line 2362
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2353
+    .line 2351
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->val$lastActionModeView:Lcom/android/internal/widget/ActionBarContextView;
 
     iget-object v1, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->this$1:Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;
@@ -71,14 +71,14 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2354
+    .line 2352
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->val$lastActionModeView:Lcom/android/internal/widget/ActionBarContextView;
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarContextView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/widget/AbsActionBarView;->setVisibility(I)V
 
-    .line 2355
+    .line 2353
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->this$1:Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;->this$0:Lcom/android/internal/policy/DecorView;
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2356
+    .line 2354
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->this$1:Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;->this$0:Lcom/android/internal/policy/DecorView;
@@ -100,20 +100,20 @@
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 2358
+    .line 2356
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->val$lastActionModeView:Lcom/android/internal/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContextView;->killMode()V
 
-    .line 2359
+    .line 2357
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper$1;->this$1:Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$ActionModeCallback2Wrapper;->this$0:Lcom/android/internal/policy/DecorView;
 
     invoke-static {v0, v2}, Lcom/android/internal/policy/DecorView;->-set0(Lcom/android/internal/policy/DecorView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 2349
+    .line 2347
     :cond_1
     return-void
 .end method
@@ -123,7 +123,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2369
+    .line 2367
     return-void
 .end method
 
@@ -132,6 +132,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2344
+    .line 2342
     return-void
 .end method

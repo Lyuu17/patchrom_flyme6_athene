@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="config_gpsParameters">
-        <item>XTRA_SERVER_1=http://xtrapath1.izatcloud.net/xtra2.bin</item>
-        <item>XTRA_SERVER_2=http://xtrapath2.izatcloud.net/xtra2.bin</item>
-        <item>XTRA_SERVER_3=http://xtrapath3.izatcloud.net/xtra2.bin</item>
-        <item>NTP_SERVER=north-america.pool.ntp.org</item>
-        <item>SUPL_MODE=0</item>
-        <item>SUPL_HOST=NONE</item>
-        <item>SUPL_PORT=7275</item>
-        <item>SUPL_VER=0x20000</item>
-        <item>LPP_PROFILE=3</item>
-        <item>NMEA_PROVIDER=0</item>
-        <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
-        <item>ERR_ESTIMATE=0</item>
-        <item>INTERMEDIATE_POS=0</item>
-        <item>SUPL_ES=0</item>
-        <item>GPS_LOCK=2</item>
-    </string-array>
     <string-array name="emailAddressTypes">
         <item>Home</item>
         <item>Work</item>
@@ -244,109 +227,6 @@
         <item>@string/unpin_target</item>
         <item>@string/app_info</item>
     </string-array>
-    <string-array name="power_off_alarm_apps">
-        <item>android</item>
-        <item>com.android.location.fused</item>
-        <item>com.android.settings</item>
-        <item>com.android.defcontainer</item>
-        <item>com.android.shell</item>
-        <item>com.android.deskclock</item>
-        <item>com.android.providers.media</item>
-        <item>com.android.inputdevices</item>
-        <item>com.android.providers.settings</item>
-        <item>com.android.externalstorage</item>
-        <item>com.android.providers.downloads.ui</item>
-        <item>com.android.packageinstaller</item>
-        <item>org.cyanogenmod.cmsettings</item>
-    </string-array>
-    <string-array name="notification_light_package_mapping">
-        <item>com.google.android.gsf|com.google.android.talk</item>
-    </string-array>
-    <string-array name="shutdown_reboot_options">
-        <item>@string/reboot_reboot</item>
-        <item>@string/reboot_soft</item>
-        <item>@string/reboot_recovery</item>
-        <item>@string/reboot_bootloader</item>
-    </string-array>
-    <string-array name="shutdown_reboot_actions">
-        <item></item>
-        <item>soft_reboot</item>
-        <item>recovery</item>
-        <item>bootloader</item>
-    </string-array>
-    <string-array name="app_ops_labels">
-        <item>@string/app_ops_access_location</item>
-        <item>@string/app_ops_access_location</item>
-        <item>@string/app_ops_access_location</item>
-        <item>@string/app_ops_use_vibrate</item>
-        <item>@string/app_ops_read_contacts</item>
-        <item>@string/app_ops_modify_contacts</item>
-        <item>@string/app_ops_read_call_log</item>
-        <item>@string/app_ops_modify_call_log</item>
-        <item>@string/app_ops_read_calendar</item>
-        <item>@string/app_ops_modify_calendar</item>
-        <item>@string/app_ops_scan_wifi</item>
-        <item>@string/app_ops_post_notification</item>
-        <item>@string/app_ops_access_location</item>
-        <item>@string/app_ops_make_phone_call</item>
-        <item>@string/app_ops_read_sms</item>
-        <item>@string/app_ops_write_sms</item>
-        <item>@string/app_ops_receive_sms</item>
-        <item>@string/app_ops_receive_sms</item>
-        <item>@string/app_ops_receive_sms</item>
-        <item>@string/app_ops_receive_sms</item>
-        <item>@string/app_ops_send_sms</item>
-        <item>@string/app_ops_read_sms</item>
-        <item>@string/app_ops_write_sms</item>
-        <item>@string/app_ops_modify_settings</item>
-        <item>@string/app_ops_draw_on_top</item>
-        <item>@string/app_ops_access_notifications</item>
-        <item>@string/app_ops_access_camera</item>
-        <item>@string/app_ops_record_audio</item>
-        <item>@string/app_ops_play_audio</item>
-        <item>@string/app_ops_read_clipboard</item>
-        <item>@string/app_ops_modify_clipboard</item>
-        <item>@string/app_ops_use_media_buttons</item>
-        <item>@string/app_ops_use_audio_focus</item>
-        <item>@string/app_ops_use_master_volume</item>
-        <item>@string/app_ops_use_voice_volume</item>
-        <item>@string/app_ops_use_ring_volume</item>
-        <item>@string/app_ops_use_media_volume</item>
-        <item>@string/app_ops_use_alarm_volume</item>
-        <item>@string/app_ops_use_notification_volume</item>
-        <item>@string/app_ops_use_bluetooth_volume</item>
-        <item>@string/app_ops_keep_device_awake</item>
-        <item>@string/app_ops_access_location</item>
-        <item>@string/app_ops_access_location</item>
-        <item>@string/app_ops_get_usage_stats</item>
-        <item>@string/app_ops_mute_unmute_microphone</item>
-        <item>@string/app_ops_toast_window</item>
-        <item>@string/app_ops_project_media</item>
-        <item>@string/app_ops_activate_vpn</item>
-        <item>@string/app_ops_change_wallpaper</item>
-        <item>@string/app_ops_assist_structure</item>
-        <item>@string/app_ops_assist_screenshot</item>
-        <item>@string/app_ops_read_phone_state</item>
-        <item>@string/app_ops_add_voicemail</item>
-        <item>@string/app_ops_make_phone_call</item>
-        <item>@string/app_ops_make_phone_call</item>
-        <item>@string/app_ops_use_fingerprint</item>
-        <item>@string/app_ops_use_body_sensors</item>
-        <item>@string/app_ops_read_cell_broadcasts</item>
-        <item>@string/app_ops_mock_location</item>
-        <item>@string/app_ops_read_external_storage</item>
-        <item>@string/app_ops_write_external_storage</item>
-        <item>@string/app_ops_turn_on_screen</item>
-        <item>@string/app_ops_get_accounts</item>
-        <item>@string/app_ops_run_in_background</item>
-        <item>@string/app_ops_wifi_change</item>
-        <item>@string/app_ops_toggle_bluetooth</item>
-        <item>@string/app_ops_start_at_bootup</item>
-        <item>@string/app_ops_toggle_nfc</item>
-        <item>@string/app_ops_toggle_mobile_data</item>
-        <item>@string/app_ops_su</item>
-    </string-array>
-    <array name="config_enabledPreinstalledCarrierApps" />
     <string-array name="config_statusBarIcons">
         <item>@string/status_bar_rotate</item>
         <item>@string/status_bar_headset</item>
@@ -374,20 +254,21 @@
         <item>@string/status_bar_alarm_clock</item>
         <item>@string/status_bar_secure</item>
         <item>@string/status_bar_clock</item>
-        <item>@string/status_bar_su</item>
     </string-array>
     <string-array name="networkAttributes">
         <item>wifi,1,1,1,-1,true</item>
         <item>mobile,0,0,0,-1,true</item>
-        <item>mobile_mms,2,0,4,60000,true</item>
+        <item>mobile_mms,2,0,2,60000,true</item>
         <item>mobile_supl,3,0,2,60000,true</item>
         <item>mobile_dun,4,0,2,60000,true</item>
         <item>mobile_hipri,5,0,3,60000,true</item>
         <item>mobile_fota,10,0,2,60000,true</item>
         <item>mobile_ims,11,0,2,60000,true</item>
         <item>mobile_cbs,12,0,2,60000,true</item>
+        <item>mobile_ia,14,0,2,-1,true</item>
         <item>bluetooth,7,7,2,-1,true</item>
-        <item>ethernet,9,9,3,-1,true</item>
+        <item>ethernet,9,9,9,-1,true</item>
+        <item>mobile_emergency,15,0,2,-1,true</item>
     </string-array>
     <integer-array name="config_protectedNetworks">
         <item>10</item>
@@ -404,14 +285,15 @@
     </string-array>
     <array name="config_networkNotifySwitches" />
     <string-array name="config_tether_usb_regexs">
+        <item>usb\\d</item>
         <item>rndis\\d</item>
     </string-array>
     <string-array name="config_tether_wifi_regexs">
         <item>wlan0</item>
+        <item>softap.*</item>
     </string-array>
     <array name="config_tether_wimax_regexs" />
     <string-array name="config_tether_bluetooth_regexs">
-        <item>bnep\\d</item>
         <item>bt-pan</item>
     </string-array>
     <array name="config_tether_dhcp_range" />
@@ -419,7 +301,6 @@
     <integer-array name="config_tether_upstream_types">
         <item>0</item>
         <item>1</item>
-        <item>4</item>
         <item>5</item>
         <item>7</item>
     </integer-array>
@@ -439,15 +320,16 @@
     <array name="config_serialPorts" />
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
-        <item>25</item>
+        <item>7</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
-        <item>34</item>
+        <item>5</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_keyboardTapVibePattern">
-        <item>0</item>
-        <item>25</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_clockTickVibePattern">
         <item>125</item>
@@ -474,8 +356,8 @@
     <integer-array name="config_scrollBarrierVibePattern">
         <item>0</item>
         <item>15</item>
-        <item>30</item>
-        <item>15</item>
+        <item>10</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_contextClickVibePattern">
         <item>0</item>
@@ -484,53 +366,40 @@
         <item>21</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLevels">
-        <item>2</item>
-        <item>10</item>
-        <item>30</item>
+        <item>20</item>
         <item>40</item>
-        <item>50</item>
-        <item>90</item>
         <item>100</item>
-        <item>150</item>
-        <item>200</item>
-        <item>300</item>
-        <item>400</item>
-        <item>500</item>
-        <item>800</item>
-        <item>1000</item>
-        <item>1300</item>
-        <item>2000</item>
-        <item>3000</item>
+        <item>325</item>
+        <item>600</item>
+        <item>1250</item>
+        <item>2200</item>
         <item>4000</item>
-        <item>8000</item>
-        <item>9000</item>
         <item>10000</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>2</item>
-        <item>10</item>
         <item>20</item>
-        <item>37</item>
-        <item>44</item>
-        <item>49</item>
-        <item>69</item>
-        <item>74</item>
-        <item>88</item>
-        <item>88</item>
-        <item>88</item>
-        <item>88</item>
-        <item>110</item>
-        <item>132</item>
-        <item>147</item>
-        <item>154</item>
-        <item>206</item>
-        <item>221</item>
+        <item>45</item>
+        <item>65</item>
+        <item>90</item>
+        <item>120</item>
+        <item>150</item>
+        <item>180</item>
+        <item>210</item>
         <item>230</item>
-        <item>245</item>
         <item>255</item>
-        <item>256</item>
     </integer-array>
-    <array name="config_autoBrightnessButtonBacklightValues" />
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
     <array name="config_autoBrightnessKeyboardBacklightValues" />
     <integer-array name="config_dynamicHysteresisBrightLevels">
         <item>100</item>
@@ -541,7 +410,9 @@
     <array name="config_dynamicHysteresisLuxLevels" />
     <array name="config_dozeSensorLuxLevels" />
     <array name="config_dozeBrightnessBacklightValues" />
-    <array name="config_ephemeralResolverPackage" />
+    <string-array name="config_ephemeralResolverPackage">
+        <item>com.google.android.gms</item>
+    </string-array>
     <string-array name="config_locationProviderPackageNames">
         <item>com.google.android.gms</item>
         <item>com.android.location.fused</item>
@@ -550,19 +421,33 @@
     <array name="config_twoDigitNumberPattern" />
     <array name="config_sms_enabled_single_shift_tables" />
     <array name="config_sms_enabled_locking_shift_tables" />
-    <array name="config_oemUsbModeOverride" />
+    <string-array name="config_oemUsbModeOverride">
+        <item>hw-factory:mtp:manufacture,adb</item>
+        <item>hw-factory:mtp,adb:manufacture,adb</item>
+        <item>hw-factory:ptp:manufacture,adb</item>
+        <item>hw-factory:ptp,adb:manufacture,adb</item>
+        <item>hw-factory:rndis:manufacture,adb</item>
+        <item>hw-factory:rndis,adb:manufacture,adb</item>
+        <item>hw-factory:adb:manufacture,adb</item>
+        <item>bp-tools:mtp:diag,serial_smd,rmnet_ipa,adb</item>
+        <item>bp-tools:mtp,adb:diag,serial_smd,rmnet_ipa,adb</item>
+        <item>bp-tools:ptp:diag,serial_smd,rmnet_ipa,adb</item>
+        <item>bp-tools:ptp,adb:diag,serial_smd,rmnet_ipa,adb</item>
+        <item>bp-tools:adb:diag,serial_smd,rmnet_ipa,adb</item>
+        <item>bp-tools:rndis:rndis,serial,adb</item>
+        <item>bp-tools:rndis,adb:rndis,serial,adb</item>
+    </string-array>
     <string-array name="config_mobile_tcp_buffers">
-        <item>lte:524288,1048576,8388608,262144,524288,4194304</item>
-        <item>lte_ca:524288,1048576,8388608,262144,524288,4194304</item>
         <item>umts:131072,262144,1452032,4096,16384,399360</item>
-        <item>hspa:131072,262144,1452032,4096,16384,399360</item>
-        <item>hsupa:131072,262144,1452032,4096,16384,399360</item>
-        <item>hsdpa:131072,262144,1452032,4096,16384,399360</item>
-        <item>hspap:131072,262144,1452032,4096,16384,399360</item>
+        <item>hspa:131072,262144,2441216,4096,16384,399360</item>
+        <item>hsupa:131072,262144,2441216,4096,16384,399360</item>
+        <item>hsdpa:131072,262144,2441216,4096,16384,399360</item>
+        <item>hspap:131072,262144,2441216,4096,16384,399360</item>
         <item>edge:16384,32768,131072,4096,16384,65536</item>
         <item>gprs:4096,8192,24576,4096,8192,24576</item>
+        <item>1xrtt:16384,32768,131070,4096,16384,102400</item>
         <item>evdo:131072,262144,1048576,4096,16384,524288</item>
-        <item>ehrpd:4094,87380,1048576,4096,16384,262144</item>
+        <item>lte:524288,1048576,8388608,262144,524288,4194304</item>
     </string-array>
     <integer-array name="config_onlySingleDcAllowed">
         <item>4</item>
@@ -584,16 +469,18 @@
         <item>150</item>
         <item>100</item>
     </integer-array>
-    <integer-array name="config_notificationNoAlertsVibePattern">
-        <item>0</item>
-        <item>50</item>
-        <item>100</item>
-        <item>50</item>
-    </integer-array>
     <string-array name="config_disabledUntilUsedPreinstalledImes">
-        <item>com.android.inputmethod.latin</item>
+        <item>com.google.android.inputmethod.latin</item>
+        <item>com.google.android.apps.inputmethod.hindi</item>
+        <item>com.google.android.inputmethod.japanese</item>
+        <item>com.google.android.inputmethod.korean</item>
+        <item>com.google.android.inputmethod.pinyin</item>
+        <item>jp.co.omronsoft.iwnnime.ml</item>
+        <item>com.nuance.xt9.input</item>
     </string-array>
-    <array name="config_disabledUntilUsedPreinstalledCarrierApps" />
+    <string-array name="config_disabledUntilUsedPreinstalledCarrierApps">
+        <item>com.google.android.apps.tycho</item>
+    </string-array>
     <string-array name="config_notificationSignalExtractors">
         <item>com.android.server.notification.ValidateNotificationPeople</item>
         <item>com.android.server.notification.PriorityExtractor</item>
@@ -616,7 +503,6 @@
     <string-array name="config_globalActionsList">
         <item>power</item>
         <item>restart</item>
-        <item>airplane</item>
         <item>bugreport</item>
         <item>users</item>
     </string-array>
@@ -627,6 +513,22 @@
     <array name="config_cdma_home_system" />
     <string-array name="no_ems_support_sim_operators">
         <item>20404;suffix;BAE0000000000000</item>
+    </string-array>
+    <string-array name="config_gpsParameters">
+        <item>SUPL_HOST=supl.google.com</item>
+        <item>SUPL_PORT=7275</item>
+        <item>XTRA_SERVER_1=http://xtrapath1.izatcloud.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_2=http://xtrapath2.izatcloud.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_3=http://xtrapath3.izatcloud.net/xtra3grc.bin</item>
+        <item>NTP_SERVER=north-america.pool.ntp.org</item>
+        <item>SUPL_MODE=1</item>
+        <item>SUPL_VER=0x20000</item>
+        <item>LPP_PROFILE=0</item>
+        <item>NMEA_PROVIDER=0</item>
+        <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
+        <item>ERR_ESTIMATE=0</item>
+        <item>INTERMEDIATE_POS=0</item>
+        <item>SUPL_ES=0</item>
     </string-array>
     <array name="config_default_vm_number" />
     <array name="dial_string_replace" />
@@ -646,50 +548,26 @@
     </string-array>
     <array name="config_cdma_international_roaming_indicators" />
     <array name="config_cell_retries_per_error_code" />
-    <array name="config_defaultPinnerServiceFiles" />
-    <array name="keypress_param_value" />
-    <integer-array name="umts_signal_strength_threshold">
-        <item>-140</item>
-        <item>-113</item>
-        <item>-103</item>
-        <item>-97</item>
-        <item>-89</item>
-        <item>-44</item>
-    </integer-array>
-    <integer-array name="lte_signal_strength_threshold">
-        <item>-140</item>
-        <item>-120</item>
-        <item>-115</item>
-        <item>-110</item>
-        <item>-100</item>
-        <item>-44</item>
-    </integer-array>
-    <array name="config_operatorConsideredDomesticRoaming" />
-    <array name="config_operatorConsideredDomesticRoamingExceptions" />
+    <string-array name="config_defaultPinnerServiceFiles">
+        <item>/system/framework/arm64/boot-framework.oat</item>
+        <item>/system/framework/oat/arm64/services.odex</item>
+        <item>/system/framework/arm64/boot.oat</item>
+        <item>/system/framework/arm64/boot-core-libart.oat</item>
+    </string-array>
     <integer-array name="config_emergency_mcc_codes">
         <item>404</item>
         <item>405</item>
     </integer-array>
-    <array name="config_defaultFirstUserRestrictions" />
+    <string-array name="config_defaultFirstUserRestrictions">
+        <item>no_oem_unlock</item>
+    </string-array>
     <string-array name="config_vvmSmsFilterRegexes">
         <item>310004,310010,310012,310013,310590,310890,310910,311110,311270,311271,311272,311273,311274,311275,311276,311277,311278,311279,311280,311281,311282,311283,311284,311285,311286,311287,311288,311289,311390,311480,311481,311482,311483,311484,311485,311486,311487,311488,311489;^//VZWVVM.*</item>
     </string-array>
     <array name="config_convert_to_emergency_number_map" />
-    <array name="config_nonBlockableNotificationPackages" />
-    <string-array name="config_disabledComponents">
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService$Receiver</item>
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService$SecretCodeReceiver</item>
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateServiceReceiver</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$Receiver</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$ActiveReceiver</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$SecretCodeReceiver</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateServiceReceiver</item>
-    </string-array>
-    <string-array name="config_forceEnabledComponents">
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
+    <string-array name="config_nonBlockableNotificationPackages">
+        <item>com.google.android.dialer</item>
+        <item>com.google.android.deskclock</item>
     </string-array>
     <integer-array name="maps_starting_lat_lng">
         <item>36149777</item>

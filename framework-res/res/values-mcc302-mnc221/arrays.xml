@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="config_tether_apndata">
+        <item>[ApnSettingV3]TELUS ISP,isp.telus.com,,,,,,,,,302,221,,DUN,,,true,0,,,,,,,gid,54</item>
+        <item>[ApnSettingV3]Tethered PC Mobile,isp.mb.com,,,,,,,,,302,221,,DUN,,,true,0,,,,,,,gid,50</item>
+        <item>[ApnSettingV3]Koodo,sp.koodo.com,,,,,,,,,302,221,,DUN,,,true,0,,,,,,,gid,4B</item>
+    </string-array>
     <string-array name="config_gpsParameters">
         <item>SUPL_HOST=supl.telusmobility.com</item>
         <item>SUPL_PORT=7275</item>
@@ -16,10 +21,5 @@
         <item>INTERMEDIATE_POS=0</item>
         <item>GPS_LOCK=0</item>
         <item>SUPL_ES=0</item>
-    </string-array>
-    <string-array name="config_tether_apndata">
-        <item>[ApnSettingV3]TELUS ISP,isp.telus.com,,,,,,,,,302,221,,DUN,,,true,0,,,,,,,gid,54</item>
-        <item>[ApnSettingV3]Tethered PC Mobile,isp.mb.com,,,,,,,,,302,221,,DUN,,,true,0,,,,,,,gid,50</item>
-        <item>[ApnSettingV3]Koodo,sp.koodo.com,,,,,,,,,302,221,,DUN,,,true,0,,,,,,,gid,4B</item>
     </string-array>
 </resources>

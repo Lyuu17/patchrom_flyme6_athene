@@ -34,9 +34,9 @@
 
 .field static final TRANSACTION_changeVideoQuality:I = 0x7
 
-.field static final TRANSACTION_handleCallSessionEvent_2:I = 0x3
+.field static final TRANSACTION_handleCallSessionEvent:I = 0x3
 
-.field static final TRANSACTION_receiveSessionModifyRequest_0:I = 0x1
+.field static final TRANSACTION_receiveSessionModifyRequest:I = 0x1
 
 .field static final TRANSACTION_receiveSessionModifyResponse:I = 0x2
 
@@ -52,7 +52,7 @@
     .line 27
     const-string/jumbo v0, "com.android.ims.internal.IImsVideoCallCallback"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/ims/internal/IImsVideoCallCallback$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 25
     return-void

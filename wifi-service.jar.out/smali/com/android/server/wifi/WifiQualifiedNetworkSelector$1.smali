@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
 
     .prologue
-    .line 260
+    .line 258
     iput-object p1, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$1;->this$0:Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 263
+    .line 261
     iget-object v4, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$1;->this$0:Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -67,10 +67,10 @@
 
     invoke-static {v4, v5}, Lcom/android/server/wifi/WifiQualifiedNetworkSelector;->-wrap1(Lcom/android/server/wifi/WifiQualifiedNetworkSelector;Ljava/lang/String;)V
 
-    .line 264
+    .line 262
     const/4 v3, 0x0
 
-    .line 266
+    .line 264
     .local v3, "wifiArray":[Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$1;->this$0:Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
 
@@ -84,40 +84,40 @@
 
     move-result-object v1
 
-    .line 265
+    .line 263
     check-cast v1, Landroid/telephony/CarrierConfigManager;
 
-    .line 267
+    .line 265
     .local v1, "carrierConfigManager":Landroid/telephony/CarrierConfigManager;
     if-eqz v1, :cond_0
 
-    .line 268
+    .line 266
     invoke-virtual {v1}, Landroid/telephony/CarrierConfigManager;->getConfig()Landroid/os/PersistableBundle;
 
     move-result-object v0
 
-    .line 269
+    .line 267
     .local v0, "b":Landroid/os/PersistableBundle;
     if-eqz v0, :cond_0
 
-    .line 271
+    .line 269
     const-string/jumbo v4, "carrier_wifi_string_array"
 
-    .line 270
+    .line 268
     invoke-virtual {v0, v4}, Landroid/os/PersistableBundle;->getStringArray(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 275
+    .line 273
     .end local v0    # "b":Landroid/os/PersistableBundle;
     .end local v3    # "wifiArray":[Ljava/lang/String;
     :cond_0
     if-nez v3, :cond_1
 
-    .line 276
+    .line 274
     return-void
 
-    .line 278
+    .line 276
     :cond_1
     iget-object v4, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$1;->this$0:Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
 
@@ -129,7 +129,7 @@
 
     invoke-static {v4, v5}, Lcom/android/server/wifi/WifiQualifiedNetworkSelector;->-set0(Lcom/android/server/wifi/WifiQualifiedNetworkSelector;Ljava/util/List;)Ljava/util/List;
 
-    .line 279
+    .line 277
     iget-object v4, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$1;->this$0:Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
 
     invoke-static {v4}, Lcom/android/server/wifi/WifiQualifiedNetworkSelector;->-get0(Lcom/android/server/wifi/WifiQualifiedNetworkSelector;)Ljava/util/List;
@@ -138,7 +138,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 280
+    .line 278
     iget-object v4, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$1;->this$0:Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
 
     invoke-static {v4}, Lcom/android/server/wifi/WifiQualifiedNetworkSelector;->-get0(Lcom/android/server/wifi/WifiQualifiedNetworkSelector;)Ljava/util/List;
@@ -154,7 +154,7 @@
     :cond_2
     const/4 v2, 0x0
 
-    .line 281
+    .line 279
     .local v2, "hasCarrierNetworks":Z
     :goto_0
     iget-object v4, p0, Lcom/android/server/wifi/WifiQualifiedNetworkSelector$1;->this$0:Lcom/android/server/wifi/WifiQualifiedNetworkSelector;
@@ -165,10 +165,10 @@
 
     invoke-virtual {v4, v2}, Lcom/android/server/wifi/WifiConfigManager;->setHasCarrierNetworks(Z)V
 
-    .line 262
+    .line 260
     return-void
 
-    .line 280
+    .line 278
     .end local v2    # "hasCarrierNetworks":Z
     :cond_3
     const/4 v2, 0x1

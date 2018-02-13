@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_onUidIdle:I = 0x4
 
-.field static final TRANSACTION_onUidStateChanged_0:I = 0x1
+.field static final TRANSACTION_onUidStateChanged:I = 0x1
 
 
 # direct methods

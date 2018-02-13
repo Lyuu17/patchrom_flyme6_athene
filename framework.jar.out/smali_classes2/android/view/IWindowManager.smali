@@ -343,14 +343,6 @@
     .end annotation
 .end method
 
-.method public abstract needsNavigationBar()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract notifyAppResumed(Landroid/os/IBinder;ZZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

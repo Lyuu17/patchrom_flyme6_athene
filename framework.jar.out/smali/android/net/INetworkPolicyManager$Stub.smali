@@ -38,7 +38,7 @@
 
 .field static final TRANSACTION_getRestrictBackground:I = 0xe
 
-.field static final TRANSACTION_getRestrictBackgroundByCaller_18:I = 0x13
+.field static final TRANSACTION_getRestrictBackgroundByCaller:I = 0x13
 
 .field static final TRANSACTION_getRestrictBackgroundWhitelistedUids:I = 0x12
 

@@ -70,48 +70,48 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 213
+    .line 181
     iput-object p1, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->this$0:Lcom/android/server/wifi/SoftApManager;
 
-    .line 214
+    .line 182
     const-string/jumbo v0, "SoftApManager"
 
     invoke-direct {p0, v0, p2}, Lcom/android/internal/util/StateMachine;-><init>(Ljava/lang/String;Landroid/os/Looper;)V
 
-    .line 210
+    .line 178
     new-instance v0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;-><init>(Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$IdleState;)V
 
     iput-object v0, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->mIdleState:Lcom/android/internal/util/State;
 
-    .line 211
+    .line 179
     new-instance v0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$StartedState;
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$StartedState;-><init>(Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;Lcom/android/server/wifi/SoftApManager$SoftApStateMachine$StartedState;)V
 
     iput-object v0, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->mStartedState:Lcom/android/internal/util/State;
 
-    .line 216
+    .line 184
     iget-object v0, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->mIdleState:Lcom/android/internal/util/State;
 
     invoke-virtual {p0, v0}, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->addState(Lcom/android/internal/util/State;)V
 
-    .line 217
+    .line 185
     iget-object v0, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->mStartedState:Lcom/android/internal/util/State;
 
     iget-object v1, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->mIdleState:Lcom/android/internal/util/State;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->addState(Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
 
-    .line 219
+    .line 187
     iget-object v0, p0, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->mIdleState:Lcom/android/internal/util/State;
 
     invoke-virtual {p0, v0}, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->setInitialState(Lcom/android/internal/util/State;)V
 
-    .line 220
+    .line 188
     invoke-virtual {p0}, Lcom/android/server/wifi/SoftApManager$SoftApStateMachine;->start()V
 
-    .line 213
+    .line 181
     return-void
 .end method

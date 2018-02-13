@@ -39,14 +39,6 @@
     .end annotation
 .end method
 
-.method public abstract cpuBoost(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract crash(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -159,22 +151,6 @@
     .end annotation
 .end method
 
-.method public abstract setKeyboardLight(ZI)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setKeyboardVisibility(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setPowerSaveMode(Z)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -215,14 +191,6 @@
     .end annotation
 .end method
 
-.method public abstract updateBlockedUids(IZ)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract updateWakeLockUids(Landroid/os/IBinder;[I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -248,14 +216,6 @@
 .end method
 
 .method public abstract wakeUp(JLjava/lang/String;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract wakeUpWithProximityCheck(JLjava/lang/String;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

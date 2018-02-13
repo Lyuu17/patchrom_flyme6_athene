@@ -26,7 +26,7 @@
     .param p1, "this$0"    # Landroid/net/dhcp/DhcpClient;
 
     .prologue
-    .line 506
+    .line 498
     iput-object p1, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "what"    # I
 
     .prologue
-    .line 522
+    .line 514
     invoke-static {}, Landroid/net/dhcp/DhcpClient;->-get24()Landroid/util/SparseArray;
 
     move-result-object v0
@@ -62,12 +62,12 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 526
+    .line 518
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 527
+    .line 519
     .local v2, "now":J
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -75,7 +75,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 528
+    .line 520
     .local v0, "b":Ljava/lang/StringBuilder;
     invoke-virtual {p1}, Landroid/os/Message;->getWhen()J
 
@@ -85,7 +85,7 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 529
+    .line 521
     const-string/jumbo v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -102,53 +102,53 @@
 
     move-result-object v1
 
-    .line 530
+    .line 522
     const-string/jumbo v4, " "
 
-    .line 529
+    .line 521
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 530
+    .line 522
     iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 529
+    .line 521
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 531
+    .line 523
     const-string/jumbo v4, " "
 
-    .line 529
+    .line 521
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 531
+    .line 523
     iget v4, p1, Landroid/os/Message;->arg2:I
 
-    .line 529
+    .line 521
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 532
+    .line 524
     const-string/jumbo v4, " "
 
-    .line 529
+    .line 521
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 532
+    .line 524
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 529
+    .line 521
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 533
+    .line 525
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -162,14 +162,14 @@
     .locals 2
 
     .prologue
-    .line 512
+    .line 504
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->mEnterTimeMs:J
 
-    .line 510
+    .line 502
     return-void
 .end method
 
@@ -177,7 +177,7 @@
     .locals 6
 
     .prologue
-    .line 517
+    .line 509
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -186,7 +186,7 @@
 
     sub-long v0, v2, v4
 
-    .line 518
+    .line 510
     .local v0, "durationMs":J
     iget-object v2, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
@@ -198,7 +198,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/net/dhcp/DhcpClient;->-wrap11(Landroid/net/dhcp/DhcpClient;Ljava/lang/String;I)V
 
-    .line 516
+    .line 508
     return-void
 .end method
 
@@ -206,7 +206,7 @@
     .locals 1
 
     .prologue
-    .line 548
+    .line 540
     invoke-virtual {p0}, Landroid/net/dhcp/DhcpClient$LoggingState;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -223,7 +223,7 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 541
+    .line 533
     const/4 v0, 0x0
 
     return v0

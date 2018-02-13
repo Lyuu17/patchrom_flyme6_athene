@@ -43,7 +43,7 @@
     .locals 0
 
     .prologue
-    .line 4765
+    .line 4630
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,26 +56,26 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 4773
+    .line 4638
     if-eq p0, v0, :cond_0
 
-    .line 4774
+    .line 4639
     const/4 v1, 0x2
 
     if-ne p0, v1, :cond_1
 
-    .line 4773
+    .line 4638
     :cond_0
     :goto_0
     return v0
 
-    .line 4775
+    .line 4640
     :cond_1
     const/4 v1, 0x3
 
     if-eq p0, v1, :cond_0
 
-    .line 4776
+    .line 4641
     const/4 v1, 0x4
 
     if-eq p0, v1, :cond_0

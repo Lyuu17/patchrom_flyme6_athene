@@ -76,29 +76,29 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 395
     .local p7, "verifiers":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/VerifierInfo;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 403
+    .line 399
     iput-object p1, p0, Landroid/content/pm/PackageParser$ApkLite;->codePath:Ljava/lang/String;
 
-    .line 404
+    .line 400
     iput-object p2, p0, Landroid/content/pm/PackageParser$ApkLite;->packageName:Ljava/lang/String;
 
-    .line 405
+    .line 401
     iput-object p3, p0, Landroid/content/pm/PackageParser$ApkLite;->splitName:Ljava/lang/String;
 
-    .line 406
+    .line 402
     iput p4, p0, Landroid/content/pm/PackageParser$ApkLite;->versionCode:I
 
-    .line 407
+    .line 403
     iput p5, p0, Landroid/content/pm/PackageParser$ApkLite;->revisionCode:I
 
-    .line 408
+    .line 404
     iput p6, p0, Landroid/content/pm/PackageParser$ApkLite;->installLocation:I
 
-    .line 409
+    .line 405
     invoke-interface {p7}, Ljava/util/List;->size()I
 
     move-result v0
@@ -113,24 +113,24 @@
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$ApkLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
-    .line 410
+    .line 406
     iput-object p8, p0, Landroid/content/pm/PackageParser$ApkLite;->signatures:[Landroid/content/pm/Signature;
 
-    .line 411
+    .line 407
     iput-object p9, p0, Landroid/content/pm/PackageParser$ApkLite;->certificates:[[Ljava/security/cert/Certificate;
 
-    .line 412
+    .line 408
     iput-boolean p10, p0, Landroid/content/pm/PackageParser$ApkLite;->coreApp:Z
 
-    .line 413
+    .line 409
     iput-boolean p11, p0, Landroid/content/pm/PackageParser$ApkLite;->multiArch:Z
 
-    .line 414
+    .line 410
     iput-boolean p12, p0, Landroid/content/pm/PackageParser$ApkLite;->use32bitAbi:Z
 
-    .line 415
+    .line 411
     iput-boolean p13, p0, Landroid/content/pm/PackageParser$ApkLite;->extractNativeLibs:Z
 
-    .line 402
+    .line 398
     return-void
 .end method

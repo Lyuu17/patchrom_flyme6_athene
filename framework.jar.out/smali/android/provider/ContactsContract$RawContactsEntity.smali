@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 4969
+    .line 4962
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "raw_contact_entities"
@@ -47,10 +47,10 @@
 
     move-result-object v0
 
-    .line 4968
+    .line 4961
     sput-object v0, Landroid/provider/ContactsContract$RawContactsEntity;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 4977
+    .line 4970
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "raw_contact_entities_corp"
@@ -59,10 +59,10 @@
 
     move-result-object v0
 
-    .line 4976
+    .line 4969
     sput-object v0, Landroid/provider/ContactsContract$RawContactsEntity;->CORP_CONTENT_URI:Landroid/net/Uri;
 
-    .line 4983
+    .line 4976
     sget-object v0, Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "raw_contact_entities"
@@ -71,10 +71,10 @@
 
     move-result-object v0
 
-    .line 4982
+    .line 4975
     sput-object v0, Landroid/provider/ContactsContract$RawContactsEntity;->PROFILE_CONTENT_URI:Landroid/net/Uri;
 
-    .line 4958
+    .line 4951
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .locals 0
 
     .prologue
-    .line 4963
+    .line 4956
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

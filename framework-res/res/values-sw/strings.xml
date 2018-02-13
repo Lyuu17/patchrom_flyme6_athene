@@ -391,10 +391,10 @@
     <string name="permdesc_writeSyncSettings">Inaruhusu programu kurekebisha mipangalio ya upatanishi wa akaunti. Kwa mfano, hii inaweza kuwezesha programu ya upatanishi wa Watu na akaunti.</string>
     <string name="permlab_readSyncStats">kusoma takwimu za usawazishaji</string>
     <string name="permdesc_readSyncStats">Inaruhusu programu kusoma takwimu za upatanishi za akaunti, ikiwa ni pamoja na historia ya matukio ya upatanishi na kiasi cha data kimepatanishwa.</string>
-    <string name="permlab_sdcardRead">soma maudhui ya kadi yako ya SD</string>
-    <string name="permdesc_sdcardRead">Huruhusu programu kusoma maudhui ya kadi yako ya SD.</string>
-    <string name="permlab_sdcardWrite">kurekebisha au kufuta maudhui ya kadi yako ya SD</string>
-    <string name="permdesc_sdcardWrite">Inaruhusu programu kuandikia kadi ya SD.</string>
+    <string name="permlab_sdcardRead">kusoma maudhui yaliyo kwenye hifadhi yako ya USB</string>
+    <string name="permdesc_sdcardRead">Huruhusu programu kusoma maudhui ya hifadhi ya USB.</string>
+    <string name="permlab_sdcardWrite">kurekebisha au kufuta maudhui ya hifadhi yako ya USB</string>
+    <string name="permdesc_sdcardWrite">Inaruhusu programu kuandikia hifadhi ya USB.</string>
     <string name="permlab_use_sip">piga/pokea simu za SIP</string>
     <string name="permdesc_use_sip">Ruhusu programu ipige na kupokea simu za SIP.</string>
     <string name="permlab_register_sim_subscription">andikisha miunganisho mipya ya SIM ya mawasiliano ya simu</string>
@@ -1029,7 +1029,7 @@ ya akaunti%s."</string>
     <string name="no_matches">Hakuna vinavyolingana</string>
     <string name="find_on_page">Pata kwenye ukurasa</string>
     <string name="action_mode_done">Nimemaliza</string>
-    <string name="progress_erasing">Inafuta kadi ya SD...</string>
+    <string name="progress_erasing">Inafuta hifadhi ya USB...</string>
     <string name="share">Shiriki</string>
     <string name="find">Tafuta</string>
     <string name="websearch">Utafutaji Wavuti</string>

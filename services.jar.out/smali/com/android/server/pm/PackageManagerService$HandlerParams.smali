@@ -37,20 +37,20 @@
     .param p2, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 12769
+    .line 12584
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12762
+    .line 12577
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->mRetries:I
 
-    .line 12770
+    .line 12585
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->mUser:Landroid/os/UserHandle;
 
-    .line 12769
+    .line 12584
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 12774
+    .line 12589
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->mUser:Landroid/os/UserHandle;
 
     return-object v0
@@ -84,13 +84,13 @@
     .locals 0
 
     .prologue
-    .line 12812
+    .line 12627
     invoke-virtual {p0}, Lcom/android/server/pm/PackageManagerService$HandlerParams;->handleServiceError()V
 
-    .line 12813
+    .line 12628
     invoke-virtual {p0}, Lcom/android/server/pm/PackageManagerService$HandlerParams;->handleReturnCode()V
 
-    .line 12810
+    .line 12625
     return-void
 .end method
 
@@ -99,10 +99,10 @@
     .param p1, "traceCookie"    # I
 
     .prologue
-    .line 12783
+    .line 12598
     iput p1, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->traceCookie:I
 
-    .line 12784
+    .line 12599
     return-object p0
 .end method
 
@@ -111,10 +111,10 @@
     .param p1, "traceMethod"    # Ljava/lang/String;
 
     .prologue
-    .line 12778
+    .line 12593
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->traceMethod:Ljava/lang/String;
 
-    .line 12779
+    .line 12594
     return-object p0
 .end method
 
@@ -122,7 +122,7 @@
     .locals 4
 
     .prologue
-    .line 12792
+    .line 12607
     :try_start_0
     iget v2, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->mRetries:I
 
@@ -134,14 +134,14 @@
 
     if-le v2, v3, :cond_0
 
-    .line 12793
+    .line 12608
     const-string/jumbo v2, "PackageManager"
 
     const-string/jumbo v3, "Failed to invoke remote methods on default container service. Giving up"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 12794
+    .line 12609
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v2, v2, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
@@ -150,37 +150,37 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->sendEmptyMessage(I)Z
 
-    .line 12795
+    .line 12610
     invoke-virtual {p0}, Lcom/android/server/pm/PackageManagerService$HandlerParams;->handleServiceError()V
 
-    .line 12796
+    .line 12611
     const/4 v2, 0x0
 
     return v2
 
-    .line 12798
+    .line 12613
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/pm/PackageManagerService$HandlerParams;->handleStartCopy()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 12799
+    .line 12614
     const/4 v1, 0x1
 
-    .line 12806
+    .line 12621
     .local v1, "res":Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/pm/PackageManagerService$HandlerParams;->handleReturnCode()V
 
-    .line 12807
+    .line 12622
     return v1
 
-    .line 12801
+    .line 12616
     .end local v1    # "res":Z
     :catch_0
     move-exception v0
 
-    .line 12803
+    .line 12618
     .local v0, "e":Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$HandlerParams;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -190,7 +190,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->sendEmptyMessage(I)Z
 
-    .line 12804
+    .line 12619
     const/4 v1, 0x0
 
     .restart local v1    # "res":Z

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 514
+    .line 510
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .param p1, "info"    # Landroid/media/session/MediaController$PlaybackInfo;
 
     .prologue
-    .line 584
+    .line 580
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 576
+    .line 572
     return-void
 .end method
 
@@ -50,16 +50,7 @@
     .param p1, "metadata"    # Landroid/media/MediaMetadata;
 
     .prologue
-    .line 547
-    return-void
-.end method
-
-.method public onPlayItemResponse(Z)V
-    .locals 0
-    .param p1, "success"    # Z
-
-    .prologue
-    .line 608
+    .line 543
     return-void
 .end method
 
@@ -68,7 +59,7 @@
     .param p1, "state"    # Landroid/media/session/PlaybackState;
 
     .prologue
-    .line 538
+    .line 534
     return-void
 .end method
 
@@ -85,7 +76,7 @@
     .end annotation
 
     .prologue
-    .line 558
+    .line 554
     .local p1, "queue":Ljava/util/List;, "Ljava/util/List<Landroid/media/session/MediaSession$QueueItem;>;"
     return-void
 .end method
@@ -95,7 +86,7 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 567
+    .line 563
     return-void
 .end method
 
@@ -103,7 +94,7 @@
     .locals 0
 
     .prologue
-    .line 519
+    .line 515
     return-void
 .end method
 
@@ -113,32 +104,6 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 530
-    return-void
-.end method
-
-.method public onUpdateFolderInfoBrowsedPlayer(Ljava/lang/String;)V
-    .locals 0
-    .param p1, "stringUri"    # Ljava/lang/String;
-
-    .prologue
-    .line 590
-    return-void
-.end method
-
-.method public onUpdateNowPlayingContentChange()V
-    .locals 0
-
-    .prologue
-    .line 602
-    return-void
-.end method
-
-.method public onUpdateNowPlayingEntries([J)V
-    .locals 0
-    .param p1, "playList"    # [J
-
-    .prologue
-    .line 596
+    .line 526
     return-void
 .end method

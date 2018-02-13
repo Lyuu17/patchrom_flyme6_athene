@@ -26,13 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.hdmi.IHdmiRecordListener"
 
-.field static final TRANSACTION_getOneTouchRecordSource_0:I = 0x1
+.field static final TRANSACTION_getOneTouchRecordSource:I = 0x1
 
-.field static final TRANSACTION_onClearTimerRecordingResult_3:I = 0x4
+.field static final TRANSACTION_onClearTimerRecordingResult:I = 0x4
 
-.field static final TRANSACTION_onOneTouchRecordResult_1:I = 0x2
+.field static final TRANSACTION_onOneTouchRecordResult:I = 0x2
 
-.field static final TRANSACTION_onTimerRecordingResult_2:I = 0x3
+.field static final TRANSACTION_onTimerRecordingResult:I = 0x3
 
 
 # direct methods
@@ -46,7 +46,7 @@
     .line 18
     const-string/jumbo v0, "android.hardware.hdmi.IHdmiRecordListener"
 
-    invoke-virtual {p0, p0, v0}, Landroid/hardware/hdmi/IHdmiRecordListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

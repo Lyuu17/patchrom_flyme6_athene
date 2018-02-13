@@ -175,8 +175,6 @@
 
 .field public static final REASON_CONNECTED:Ljava/lang/String; = "connected"
 
-.field public static final REASON_CSS_INDICATOR_CHANGED:Ljava/lang/String; = "cssIndicatorChanged"
-
 .field public static final REASON_DATA_ATTACHED:Ljava/lang/String; = "dataAttached"
 
 .field public static final REASON_DATA_DEPENDENCY_MET:Ljava/lang/String; = "dependencyMet"
@@ -235,7 +233,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 173
     sget v0, Lcom/android/internal/telephony/RILConstants;->PREFERRED_NETWORK_MODE:I
 
     sput v0, Lcom/android/internal/telephony/PhoneInternalInterface;->PREFERRED_NT_MODE:I
@@ -308,9 +306,6 @@
 .end method
 
 .method public abstract getBackgroundCall()Lcom/android/internal/telephony/Call;
-.end method
-
-.method public abstract getCallForwardingOption(IILandroid/os/Message;)V
 .end method
 
 .method public abstract getCallForwardingOption(ILandroid/os/Message;)V
@@ -435,9 +430,6 @@
 .end method
 
 .method public abstract sendUssdResponse(Ljava/lang/String;)V
-.end method
-
-.method public abstract setCallForwardingOption(IILjava/lang/String;IILandroid/os/Message;)V
 .end method
 
 .method public abstract setCallForwardingOption(IILjava/lang/String;ILandroid/os/Message;)V

@@ -36,7 +36,7 @@
     .param p4, "val$name"    # Ljava/lang/String;
 
     .prologue
-    .line 3013
+    .line 2964
     iput-object p1, p0, Lcom/android/server/MountService$3;->this$0:Lcom/android/server/MountService;
 
     iput p2, p0, Lcom/android/server/MountService$3;->val$uid:I
@@ -57,7 +57,7 @@
     .param p1, "e"    # Ljava/io/IOException;
 
     .prologue
-    .line 3017
+    .line 2968
     :try_start_0
     iget-object v2, p0, Lcom/android/server/MountService$3;->this$0:Lcom/android/server/MountService;
 
@@ -65,15 +65,15 @@
 
     move-result-object v2
 
-    .line 3018
+    .line 2969
     const-string/jumbo v3, "appfuse"
 
-    .line 3017
+    .line 2968
     const/4 v4, 0x4
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 3018
+    .line 2969
     const-string/jumbo v5, "unmount"
 
     const/4 v6, 0x0
@@ -106,22 +106,22 @@
 
     aput-object v5, v4, v6
 
-    .line 3017
+    .line 2968
     invoke-virtual {v2, v3, v4}, Lcom/android/server/NativeDaemonConnector;->execute(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/server/NativeDaemonEvent;
     :try_end_0
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    .line 3015
+    .line 2966
     :goto_0
     return-void
 
-    .line 3019
+    .line 2970
     :catch_0
     move-exception v1
 
-    .line 3020
+    .line 2971
     .local v1, "unmountException":Lcom/android/server/NativeDaemonConnectorException;
     const-string/jumbo v2, "MountService"
 

@@ -47,22 +47,22 @@
     .locals 1
 
     .prologue
-    .line 1381
+    .line 1370
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1386
+    .line 1375
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/net/ConnectivityManager$LegacyRequest;->delay:I
 
-    .line 1395
+    .line 1384
     new-instance v0, Landroid/net/ConnectivityManager$LegacyRequest$1;
 
     invoke-direct {v0, p0}, Landroid/net/ConnectivityManager$LegacyRequest$1;-><init>(Landroid/net/ConnectivityManager$LegacyRequest;)V
 
     iput-object v0, p0, Landroid/net/ConnectivityManager$LegacyRequest;->networkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-    .line 1381
+    .line 1370
     return-void
 .end method
 
@@ -81,18 +81,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1389
+    .line 1378
     iget-object v0, p0, Landroid/net/ConnectivityManager$LegacyRequest;->currentNetwork:Landroid/net/Network;
 
     if-eqz v0, :cond_0
 
-    .line 1390
+    .line 1379
     iput-object v1, p0, Landroid/net/ConnectivityManager$LegacyRequest;->currentNetwork:Landroid/net/Network;
 
-    .line 1391
+    .line 1380
     invoke-static {v1}, Landroid/net/ConnectivityManager;->setProcessDefaultNetworkForHostResolution(Landroid/net/Network;)Z
 
-    .line 1388
+    .line 1377
     :cond_0
     return-void
 .end method

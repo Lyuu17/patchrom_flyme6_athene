@@ -124,7 +124,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     .line 177
     iget-object v0, p1, Landroid/net/NetworkState;->subscriberId:Ljava/lang/String;
@@ -206,37 +206,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 190
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    const/4 v6, 0x0
 
-    move-result-object v0
-
-    .line 191
-    const v9, 0x11200c7
-
-    .line 190
-    invoke-virtual {v0, v9}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 192
-    iget-object v0, p1, Landroid/net/NetworkState;->networkCapabilities:Landroid/net/NetworkCapabilities;
-
-    .line 193
-    const/4 v9, 0x4
-
-    .line 192
-    invoke-virtual {v0, v9}, Landroid/net/NetworkCapabilities;->hasCapability(I)Z
-
-    move-result v6
-
-    .line 206
+    .line 202
     .end local v3    # "subscriberId":Ljava/lang/String;
     .end local v4    # "networkId":Ljava/lang/String;
     .end local v5    # "roaming":Z
-    .end local v6    # "metered":Z
     :cond_1
     :goto_0
     new-instance v0, Landroid/net/NetworkIdentity;
@@ -249,58 +224,51 @@
     .restart local v3    # "subscriberId":Ljava/lang/String;
     .restart local v4    # "networkId":Ljava/lang/String;
     .restart local v5    # "roaming":Z
-    .restart local v6    # "metered":Z
     :cond_2
     const/4 v6, 0x1
 
     goto :goto_0
 
-    .line 190
-    :cond_3
-    const/4 v6, 0x0
-
-    goto :goto_0
-
-    .line 195
+    .line 191
     .local v3, "subscriberId":Ljava/lang/String;
     .local v5, "roaming":Z
-    :cond_4
+    :cond_3
     const/4 v0, 0x1
 
     if-ne v1, v0, :cond_1
 
-    .line 196
+    .line 192
     iget-object v0, p1, Landroid/net/NetworkState;->networkId:Ljava/lang/String;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
-    .line 197
+    .line 193
     iget-object v4, p1, Landroid/net/NetworkState;->networkId:Ljava/lang/String;
 
     .local v4, "networkId":Ljava/lang/String;
     goto :goto_0
 
-    .line 200
+    .line 196
     .local v4, "networkId":Ljava/lang/String;
-    :cond_5
+    :cond_4
     const-string/jumbo v0, "wifi"
 
-    .line 199
+    .line 195
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/net/wifi/WifiManager;
 
-    .line 201
+    .line 197
     .local v8, "wifi":Landroid/net/wifi/WifiManager;
     invoke-virtual {v8}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v7
 
-    .line 202
+    .line 198
     .local v7, "info":Landroid/net/wifi/WifiInfo;
-    if-eqz v7, :cond_6
+    if-eqz v7, :cond_5
 
     invoke-virtual {v7}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
 
@@ -310,7 +278,7 @@
     goto :goto_0
 
     .local v4, "networkId":Ljava/lang/String;
-    :cond_6
+    :cond_5
     const/4 v4, 0x0
 
     goto :goto_0
@@ -437,7 +405,7 @@
     .param p1, "another"    # Landroid/net/NetworkIdentity;
 
     .prologue
-    .line 211
+    .line 207
     iget v1, p0, Landroid/net/NetworkIdentity;->mType:I
 
     iget v2, p1, Landroid/net/NetworkIdentity;->mType:I
@@ -446,11 +414,11 @@
 
     move-result v0
 
-    .line 212
+    .line 208
     .local v0, "res":I
     if-nez v0, :cond_0
 
-    .line 213
+    .line 209
     iget v1, p0, Landroid/net/NetworkIdentity;->mSubType:I
 
     iget v2, p1, Landroid/net/NetworkIdentity;->mSubType:I
@@ -459,7 +427,7 @@
 
     move-result v0
 
-    .line 215
+    .line 211
     :cond_0
     if-nez v0, :cond_1
 
@@ -471,7 +439,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 216
+    .line 212
     iget-object v1, p0, Landroid/net/NetworkIdentity;->mSubscriberId:Ljava/lang/String;
 
     iget-object v2, p1, Landroid/net/NetworkIdentity;->mSubscriberId:Ljava/lang/String;
@@ -480,7 +448,7 @@
 
     move-result v0
 
-    .line 218
+    .line 214
     :cond_1
     if-nez v0, :cond_2
 
@@ -492,7 +460,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 219
+    .line 215
     iget-object v1, p0, Landroid/net/NetworkIdentity;->mNetworkId:Ljava/lang/String;
 
     iget-object v2, p1, Landroid/net/NetworkIdentity;->mNetworkId:Ljava/lang/String;
@@ -501,11 +469,11 @@
 
     move-result v0
 
-    .line 221
+    .line 217
     :cond_2
     if-nez v0, :cond_3
 
-    .line 222
+    .line 218
     iget-boolean v1, p0, Landroid/net/NetworkIdentity;->mRoaming:Z
 
     iget-boolean v2, p1, Landroid/net/NetworkIdentity;->mRoaming:Z
@@ -514,11 +482,11 @@
 
     move-result v0
 
-    .line 224
+    .line 220
     :cond_3
     if-nez v0, :cond_4
 
-    .line 225
+    .line 221
     iget-boolean v1, p0, Landroid/net/NetworkIdentity;->mMetered:Z
 
     iget-boolean v2, p1, Landroid/net/NetworkIdentity;->mMetered:Z
@@ -527,7 +495,7 @@
 
     move-result v0
 
-    .line 227
+    .line 223
     :cond_4
     return v0
 .end method
@@ -537,7 +505,7 @@
     .param p1, "another"    # Ljava/lang/Object;
 
     .prologue
-    .line 210
+    .line 206
     check-cast p1, Landroid/net/NetworkIdentity;
 
     .end local p1    # "another":Ljava/lang/Object;

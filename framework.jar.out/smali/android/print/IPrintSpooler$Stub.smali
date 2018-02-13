@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_createPrintJob:I = 0x4
 
-.field static final TRANSACTION_getCustomPrinterIcon_9:I = 0xa
+.field static final TRANSACTION_getCustomPrinterIcon:I = 0xa
 
 .field static final TRANSACTION_getPrintJobInfo:I = 0x3
 

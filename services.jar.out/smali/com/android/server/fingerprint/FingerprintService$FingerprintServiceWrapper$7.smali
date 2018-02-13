@@ -36,7 +36,7 @@
     .param p4, "val$name"    # Ljava/lang/String;
 
     .prologue
-    .line 917
+    .line 910
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$7;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iput p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$7;->val$fingerId:I
@@ -56,7 +56,7 @@
     .locals 5
 
     .prologue
-    .line 920
+    .line 913
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$7;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iget-object v0, v0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -75,14 +75,14 @@
 
     iget v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$7;->val$fingerId:I
 
-    .line 921
+    .line 914
     iget v3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$7;->val$groupId:I
 
     iget-object v4, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$7;->val$name:Ljava/lang/String;
 
-    .line 920
+    .line 913
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/fingerprint/FingerprintUtils;->renameFingerprintForUser(Landroid/content/Context;IILjava/lang/CharSequence;)V
 
-    .line 919
+    .line 912
     return-void
 .end method

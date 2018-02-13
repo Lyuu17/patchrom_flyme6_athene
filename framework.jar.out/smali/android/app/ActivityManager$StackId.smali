@@ -39,7 +39,7 @@
     .locals 0
 
     .prologue
-    .line 547
+    .line 541
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 747
+    .line 741
     if-ne p0, v0, :cond_0
 
     :goto_0
@@ -69,7 +69,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 694
+    .line 688
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_0
@@ -90,7 +90,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 675
+    .line 669
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_0
@@ -111,7 +111,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 763
+    .line 757
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_0
@@ -132,7 +132,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 591
+    .line 585
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_0
@@ -155,7 +155,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 584
+    .line 578
     const/4 v1, 0x2
 
     if-eq p0, v1, :cond_0
@@ -183,7 +183,7 @@
 
     const/4 v0, 0x1
 
-    .line 682
+    .line 676
     if-eqz p0, :cond_0
 
     if-ne p0, v0, :cond_1
@@ -203,7 +203,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 686
+    .line 680
     const/4 v0, 0x4
 
     if-ne p0, v0, :cond_0
@@ -224,7 +224,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 611
+    .line 605
     const/4 v0, 0x4
 
     if-ne p0, v0, :cond_0
@@ -247,7 +247,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 738
+    .line 732
     invoke-static {p0}, Landroid/app/ActivityManager$StackId;->isStaticStack(I)Z
 
     move-result v1
@@ -262,7 +262,7 @@
     :goto_0
     return v0
 
-    .line 739
+    .line 733
     :cond_1
     const/4 v1, 0x2
 
@@ -284,14 +284,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 627
+    .line 621
     invoke-static {p0}, Landroid/app/ActivityManager$StackId;->isStaticStack(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 628
+    .line 622
     const/4 v1, 0x3
 
     if-eq p0, v1, :cond_0
@@ -302,7 +302,7 @@
 
     const/4 v0, 0x1
 
-    .line 627
+    .line 621
     :cond_0
     return v0
 .end method
@@ -314,7 +314,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 576
+    .line 570
     if-ltz p0, :cond_0
 
     const/4 v1, 0x4
@@ -332,7 +332,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 599
+    .line 593
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_0
@@ -355,7 +355,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 636
+    .line 630
     invoke-static {p0}, Landroid/app/ActivityManager$StackId;->isStaticStack(I)Z
 
     move-result v1
@@ -366,7 +366,7 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 637
+    .line 631
     const/4 v1, 0x3
 
     if-eq p0, v1, :cond_0
@@ -377,7 +377,7 @@
 
     const/4 v0, 0x1
 
-    .line 636
+    .line 630
     :cond_0
     return v0
 .end method
@@ -389,22 +389,22 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 619
+    .line 613
     const/4 v1, 0x2
 
     if-eq p0, v1, :cond_0
 
-    .line 620
+    .line 614
     const/4 v1, 0x3
 
     if-ne p0, v1, :cond_1
 
-    .line 619
+    .line 613
     :cond_0
     :goto_0
     return v0
 
-    .line 620
+    .line 614
     :cond_1
     const/4 v1, 0x4
 
@@ -420,7 +420,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 710
+    .line 704
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_0
@@ -443,7 +443,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 728
+    .line 722
     const/4 v1, 0x4
 
     if-eq p0, v1, :cond_0
@@ -452,14 +452,14 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 729
+    .line 723
     const/4 v1, 0x3
 
     if-eq p0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    .line 728
+    .line 722
     :cond_0
     return v0
 .end method
@@ -469,7 +469,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 604
+    .line 598
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_0
@@ -495,18 +495,18 @@
 
     const/4 v0, 0x1
 
-    .line 646
+    .line 640
     if-eq p0, v1, :cond_0
 
-    .line 647
+    .line 641
     if-ne p1, v1, :cond_1
 
-    .line 646
+    .line 640
     :cond_0
     :goto_0
     return v0
 
-    .line 647
+    .line 641
     :cond_1
     const/4 v0, 0x0
 
@@ -518,7 +518,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 702
+    .line 696
     const/4 v0, 0x4
 
     if-ne p0, v0, :cond_0
@@ -541,22 +541,22 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 656
+    .line 650
     const/4 v1, 0x2
 
     if-eq p0, v1, :cond_0
 
-    .line 657
+    .line 651
     const/4 v1, 0x4
 
     if-ne p0, v1, :cond_1
 
-    .line 656
+    .line 650
     :cond_0
     :goto_0
     return v0
 
-    .line 657
+    .line 651
     :cond_1
     const/4 v0, 0x0
 
@@ -570,26 +570,26 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 668
+    .line 662
     const/4 v1, 0x2
 
     if-eq p0, v1, :cond_0
 
-    .line 669
+    .line 663
     if-ne p0, v0, :cond_1
 
-    .line 668
+    .line 662
     :cond_0
     :goto_0
     return v0
 
-    .line 669
+    .line 663
     :cond_1
     const/4 v1, 0x3
 
     if-eq p0, v1, :cond_0
 
-    .line 670
+    .line 664
     const/4 v1, -0x1
 
     if-eq p0, v1, :cond_0
@@ -606,7 +606,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 718
+    .line 712
     const/4 v1, 0x2
 
     if-eq p0, v1, :cond_0
@@ -630,7 +630,7 @@
     .param p0, "stackId"    # I
 
     .prologue
-    .line 755
+    .line 749
     const/4 v0, 0x4
 
     if-ne p0, v0, :cond_0

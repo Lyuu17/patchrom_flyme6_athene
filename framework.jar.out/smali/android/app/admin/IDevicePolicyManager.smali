@@ -1086,14 +1086,6 @@
     .end annotation
 .end method
 
-.method public abstract requireSecureKeyguard(I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract resetPassword(Ljava/lang/String;I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

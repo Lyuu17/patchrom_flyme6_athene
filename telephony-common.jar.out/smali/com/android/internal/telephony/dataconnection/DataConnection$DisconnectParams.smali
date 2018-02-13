@@ -110,7 +110,7 @@
     .line 145
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mOnCompletedMsg:Landroid/os/Message;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->-wrap5(Landroid/os/Message;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->-wrap6(Landroid/os/Message;)Ljava/lang/String;
 
     move-result-object v1
 

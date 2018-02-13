@@ -247,24 +247,6 @@
     .end annotation
 .end method
 
-.method public abstract getTetherConnectedSta()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/net/wifi/WifiDevice;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getTetherableBluetoothRegexs()[Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 482
+    .line 477
     iput-object p1, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-direct {p0, p1}, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;-><init>(Landroid/inputmethodservice/AbstractInputMethodService;)V
@@ -40,23 +40,23 @@
     .param p2, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 552
+    .line 547
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 553
+    .line 548
     return-void
 
-    .line 555
+    .line 550
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
-    invoke-virtual {v0, p1, p2}, Landroid/inputmethodservice/InputMethodService;->onAppPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-static {v0, p1, p2}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->handleSmsVoiceInput(Landroid/inputmethodservice/InputMethodService;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 551
+    .line 546
     return-void
 .end method
 
@@ -65,28 +65,28 @@
     .param p1, "completions"    # [Landroid/view/inputmethod/CompletionInfo;
 
     .prologue
-    .line 496
+    .line 491
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 497
+    .line 492
     return-void
 
-    .line 499
+    .line 494
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     iput-object p1, v0, Landroid/inputmethodservice/InputMethodService;->mCurCompletions:[Landroid/view/inputmethod/CompletionInfo;
 
-    .line 500
+    .line 495
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0, p1}, Landroid/inputmethodservice/InputMethodService;->onDisplayCompletions([Landroid/view/inputmethod/CompletionInfo;)V
 
-    .line 495
+    .line 490
     return-void
 .end method
 
@@ -94,23 +94,23 @@
     .locals 1
 
     .prologue
-    .line 484
+    .line 479
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 485
+    .line 480
     return-void
 
-    .line 488
+    .line 483
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/InputMethodService;->doFinishInput()V
 
-    .line 483
+    .line 478
     return-void
 .end method
 
@@ -120,12 +120,12 @@
     .param p2, "hideFlags"    # I
 
     .prologue
-    .line 562
+    .line 557
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-static {v0, p1, p2}, Landroid/inputmethodservice/InputMethodService;->-wrap3(Landroid/inputmethodservice/InputMethodService;II)V
 
-    .line 561
+    .line 556
     return-void
 .end method
 
@@ -134,23 +134,23 @@
     .param p1, "newCursor"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 541
+    .line 536
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 542
+    .line 537
     return-void
 
-    .line 544
+    .line 539
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0, p1}, Landroid/inputmethodservice/InputMethodService;->onUpdateCursor(Landroid/graphics/Rect;)V
 
-    .line 540
+    .line 535
     return-void
 .end method
 
@@ -159,23 +159,23 @@
     .param p1, "info"    # Landroid/view/inputmethod/CursorAnchorInfo;
 
     .prologue
-    .line 570
+    .line 565
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 571
+    .line 566
     return-void
 
-    .line 573
+    .line 568
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0, p1}, Landroid/inputmethodservice/InputMethodService;->onUpdateCursorAnchorInfo(Landroid/view/inputmethod/CursorAnchorInfo;)V
 
-    .line 569
+    .line 564
     return-void
 .end method
 
@@ -185,23 +185,23 @@
     .param p2, "text"    # Landroid/view/inputmethod/ExtractedText;
 
     .prologue
-    .line 508
+    .line 503
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 509
+    .line 504
     return-void
 
-    .line 511
+    .line 506
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0, p1, p2}, Landroid/inputmethodservice/InputMethodService;->onUpdateExtractedText(ILandroid/view/inputmethod/ExtractedText;)V
 
-    .line 507
+    .line 502
     return-void
 .end method
 
@@ -215,17 +215,17 @@
     .param p6, "candidatesEnd"    # I
 
     .prologue
-    .line 521
+    .line 516
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 522
+    .line 517
     return-void
 
-    .line 524
+    .line 519
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
@@ -243,7 +243,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/inputmethodservice/InputMethodService;->onUpdateSelection(IIIIII)V
 
-    .line 520
+    .line 515
     return-void
 .end method
 
@@ -252,22 +252,22 @@
     .param p1, "focusChanged"    # Z
 
     .prologue
-    .line 530
+    .line 525
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 531
+    .line 526
     return-void
 
-    .line 533
+    .line 528
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v0, p1}, Landroid/inputmethodservice/InputMethodService;->onViewClicked(Z)V
 
-    .line 529
+    .line 524
     return-void
 .end method

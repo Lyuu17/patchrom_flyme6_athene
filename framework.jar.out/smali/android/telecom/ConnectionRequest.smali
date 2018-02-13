@@ -28,7 +28,7 @@
 
 
 # instance fields
-.field private mAccountHandle:Landroid/telecom/PhoneAccountHandle;
+.field private final mAccountHandle:Landroid/telecom/PhoneAccountHandle;
 
 .field private final mAddress:Landroid/net/Uri;
 
@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 141
     new-instance v0, Landroid/telecom/ConnectionRequest$1;
 
     invoke-direct {v0}, Landroid/telecom/ConnectionRequest$1;-><init>()V
@@ -232,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 161
+    .line 158
     const/4 v0, 0x0
 
     return v0
@@ -252,7 +252,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 100
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mAddress:Landroid/net/Uri;
 
     return-object v0
@@ -262,7 +262,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 107
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -272,7 +272,7 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 129
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mTelecomCallId:Ljava/lang/String;
 
     return-object v0
@@ -282,49 +282,38 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 119
     iget v0, p0, Landroid/telecom/ConnectionRequest;->mVideoState:I
 
     return v0
-.end method
-
-.method public setAccountHandle(Landroid/telecom/PhoneAccountHandle;)V
-    .locals 0
-    .param p1, "acc"    # Landroid/telecom/PhoneAccountHandle;
-
-    .prologue
-    .line 98
-    iput-object p1, p0, Landroid/telecom/ConnectionRequest;->mAccountHandle:Landroid/telecom/PhoneAccountHandle;
-
-    return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
     .prologue
-    .line 137
+    .line 134
     const-string/jumbo v1, "ConnectionRequest %s %s"
 
     const/4 v0, 0x2
 
     new-array v2, v0, [Ljava/lang/Object;
 
-    .line 138
+    .line 135
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mAddress:Landroid/net/Uri;
 
     if-nez v0, :cond_0
 
-    .line 139
+    .line 136
     sget-object v0, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
 
-    .line 138
+    .line 135
     :goto_0
     const/4 v3, 0x0
 
     aput-object v0, v2, v3
 
-    .line 141
+    .line 138
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mExtras:Landroid/os/Bundle;
 
     if-nez v0, :cond_1
@@ -336,14 +325,14 @@
 
     aput-object v0, v2, v3
 
-    .line 137
+    .line 134
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 140
+    .line 137
     :cond_0
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mAddress:Landroid/net/Uri;
 
@@ -357,7 +346,7 @@
 
     goto :goto_0
 
-    .line 141
+    .line 138
     :cond_1
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mExtras:Landroid/os/Bundle;
 
@@ -372,31 +361,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 166
+    .line 163
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mAccountHandle:Landroid/telecom/PhoneAccountHandle;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 167
+    .line 164
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mAddress:Landroid/net/Uri;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 168
+    .line 165
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 169
+    .line 166
     iget v0, p0, Landroid/telecom/ConnectionRequest;->mVideoState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 170
+    .line 167
     iget-object v0, p0, Landroid/telecom/ConnectionRequest;->mTelecomCallId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 165
+    .line 162
     return-void
 .end method

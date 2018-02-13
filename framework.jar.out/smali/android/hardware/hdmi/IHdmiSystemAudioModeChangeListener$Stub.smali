@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.hdmi.IHdmiSystemAudioModeChangeListener"
 
-.field static final TRANSACTION_onStatusChanged_0:I = 0x1
+.field static final TRANSACTION_onStatusChanged:I = 0x1
 
 
 # direct methods
@@ -40,7 +40,7 @@
     .line 21
     const-string/jumbo v0, "android.hardware.hdmi.IHdmiSystemAudioModeChangeListener"
 
-    invoke-virtual {p0, p0, v0}, Landroid/hardware/hdmi/IHdmiSystemAudioModeChangeListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 19
     return-void

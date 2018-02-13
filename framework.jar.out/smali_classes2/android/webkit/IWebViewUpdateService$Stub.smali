@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.webkit.IWebViewUpdateService"
 
-.field static final TRANSACTION_changeProviderAndSetting_2:I = 0x3
+.field static final TRANSACTION_changeProviderAndSetting:I = 0x3
 
 .field static final TRANSACTION_enableFallbackLogic:I = 0x8
 
@@ -34,9 +34,9 @@
 
 .field static final TRANSACTION_getCurrentWebViewPackageName:I = 0x6
 
-.field static final TRANSACTION_getValidWebViewPackages_3:I = 0x4
+.field static final TRANSACTION_getValidWebViewPackages:I = 0x4
 
-.field static final TRANSACTION_isFallbackPackage_6:I = 0x7
+.field static final TRANSACTION_isFallbackPackage:I = 0x7
 
 .field static final TRANSACTION_notifyRelroCreationCompleted:I = 0x1
 

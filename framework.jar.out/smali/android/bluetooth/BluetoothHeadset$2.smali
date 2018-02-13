@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/bluetooth/BluetoothHeadset;
 
     .prologue
-    .line 994
+    .line 1036
     iput-object p1, p0, Landroid/bluetooth/BluetoothHeadset$2;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothProfileServiceConnection$Stub;-><init>()V
@@ -40,14 +40,14 @@
     .param p2, "service"    # Landroid/os/IBinder;
 
     .prologue
-    .line 997
+    .line 1039
     const-string/jumbo v0, "BluetoothHeadset"
 
     const-string/jumbo v1, "Proxy object connected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 998
+    .line 1040
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$2;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-static {p2}, Landroid/bluetooth/IBluetoothHeadset$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothHeadset;
@@ -56,7 +56,7 @@
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothHeadset;->-set0(Landroid/bluetooth/BluetoothHeadset;Landroid/bluetooth/IBluetoothHeadset;)Landroid/bluetooth/IBluetoothHeadset;
 
-    .line 999
+    .line 1041
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$2;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadset;->-get1(Landroid/bluetooth/BluetoothHeadset;)Landroid/os/Handler;
@@ -69,17 +69,17 @@
 
     move-result-object v1
 
-    .line 1000
+    .line 1042
     const/16 v2, 0x64
 
-    .line 999
+    .line 1041
     invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 996
+    .line 1038
     return-void
 .end method
 
@@ -88,21 +88,21 @@
     .param p1, "className"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 1004
+    .line 1046
     const-string/jumbo v0, "BluetoothHeadset"
 
     const-string/jumbo v1, "Proxy object disconnected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1005
+    .line 1047
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$2;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothHeadset;->-set0(Landroid/bluetooth/BluetoothHeadset;Landroid/bluetooth/IBluetoothHeadset;)Landroid/bluetooth/IBluetoothHeadset;
 
-    .line 1006
+    .line 1048
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$2;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadset;->-get1(Landroid/bluetooth/BluetoothHeadset;)Landroid/os/Handler;
@@ -115,16 +115,16 @@
 
     move-result-object v1
 
-    .line 1007
+    .line 1049
     const/16 v2, 0x65
 
-    .line 1006
+    .line 1048
     invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1003
+    .line 1045
     return-void
 .end method

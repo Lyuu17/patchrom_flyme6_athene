@@ -36,7 +36,7 @@
     .param p4, "val$userId"    # I
 
     .prologue
-    .line 1542
+    .line 1487
     iput-object p1, p0, Lcom/android/server/LockSettingsService$7;->this$0:Lcom/android/server/LockSettingsService;
 
     iput-object p2, p0, Lcom/android/server/LockSettingsService$7;->val$password:Ljava/lang/String;
@@ -56,61 +56,61 @@
     .locals 12
 
     .prologue
-    .line 1545
+    .line 1490
     const/4 v2, 0x0
 
-    .line 1546
+    .line 1491
     .local v2, "length":I
     const/4 v3, 0x0
 
-    .line 1547
+    .line 1492
     .local v3, "letters":I
     const/4 v4, 0x0
 
-    .line 1548
+    .line 1493
     .local v4, "uppercase":I
     const/4 v5, 0x0
 
-    .line 1549
+    .line 1494
     .local v5, "lowercase":I
     const/4 v6, 0x0
 
-    .line 1550
+    .line 1495
     .local v6, "numbers":I
     const/4 v7, 0x0
 
-    .line 1551
+    .line 1496
     .local v7, "symbols":I
     const/4 v8, 0x0
 
-    .line 1552
+    .line 1497
     .local v8, "nonletter":I
     iget-object v1, p0, Lcom/android/server/LockSettingsService$7;->val$password:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    .line 1553
+    .line 1498
     iget-object v1, p0, Lcom/android/server/LockSettingsService$7;->val$password:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 1554
+    .line 1499
     const/4 v11, 0x0
 
     .local v11, "i":I
     :goto_0
     if-ge v11, v2, :cond_3
 
-    .line 1555
+    .line 1500
     iget-object v1, p0, Lcom/android/server/LockSettingsService$7;->val$password:Ljava/lang/String;
 
     invoke-virtual {v1, v11}, Ljava/lang/String;->charAt(I)C
 
     move-result v10
 
-    .line 1556
+    .line 1501
     .local v10, "c":C
     const/16 v1, 0x41
 
@@ -120,19 +120,19 @@
 
     if-gt v10, v1, :cond_0
 
-    .line 1557
+    .line 1502
     add-int/lit8 v3, v3, 0x1
 
-    .line 1558
+    .line 1503
     add-int/lit8 v4, v4, 0x1
 
-    .line 1554
+    .line 1499
     :goto_1
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_0
 
-    .line 1559
+    .line 1504
     :cond_0
     const/16 v1, 0x61
 
@@ -142,16 +142,16 @@
 
     if-gt v10, v1, :cond_1
 
-    .line 1560
+    .line 1505
     add-int/lit8 v3, v3, 0x1
 
-    .line 1561
+    .line 1506
     add-int/lit8 v5, v5, 0x1
 
-    .line 1559
+    .line 1504
     goto :goto_1
 
-    .line 1562
+    .line 1507
     :cond_1
     const/16 v1, 0x30
 
@@ -161,25 +161,25 @@
 
     if-gt v10, v1, :cond_2
 
-    .line 1563
+    .line 1508
     add-int/lit8 v6, v6, 0x1
 
-    .line 1564
+    .line 1509
     add-int/lit8 v8, v8, 0x1
 
-    .line 1562
+    .line 1507
     goto :goto_1
 
-    .line 1566
+    .line 1511
     :cond_2
     add-int/lit8 v7, v7, 0x1
 
-    .line 1567
+    .line 1512
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 1572
+    .line 1517
     .end local v10    # "c":C
     .end local v11    # "i":I
     :cond_3
@@ -195,19 +195,19 @@
 
     move-result-object v0
 
-    .line 1571
+    .line 1516
     check-cast v0, Landroid/app/admin/DevicePolicyManager;
 
-    .line 1573
+    .line 1518
     .local v0, "dpm":Landroid/app/admin/DevicePolicyManager;
     iget v1, p0, Lcom/android/server/LockSettingsService$7;->val$quality:I
 
-    .line 1574
+    .line 1519
     iget v9, p0, Lcom/android/server/LockSettingsService$7;->val$userId:I
 
-    .line 1573
+    .line 1518
     invoke-virtual/range {v0 .. v9}, Landroid/app/admin/DevicePolicyManager;->setActivePasswordState(IIIIIIIII)V
 
-    .line 1544
+    .line 1489
     return-void
 .end method

@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_keyguardDone:I = 0x4
 
-.field static final TRANSACTION_onActivityDrawn_19:I = 0x14
+.field static final TRANSACTION_onActivityDrawn:I = 0x14
 
 .field static final TRANSACTION_onBootCompleted:I = 0x12
 
@@ -42,7 +42,7 @@
 
 .field static final TRANSACTION_onDreamingStopped:I = 0x7
 
-.field static final TRANSACTION_onFinishedGoingToSleep_8:I = 0x9
+.field static final TRANSACTION_onFinishedGoingToSleep:I = 0x9
 
 .field static final TRANSACTION_onScreenTurnedOff:I = 0xd
 
@@ -50,7 +50,7 @@
 
 .field static final TRANSACTION_onScreenTurningOn:I = 0xb
 
-.field static final TRANSACTION_onStartedGoingToSleep_7:I = 0x8
+.field static final TRANSACTION_onStartedGoingToSleep:I = 0x8
 
 .field static final TRANSACTION_onStartedWakingUp:I = 0xa
 
@@ -60,9 +60,9 @@
 
 .field static final TRANSACTION_setKeyguardEnabled:I = 0xe
 
-.field static final TRANSACTION_setOccluded_0:I = 0x1
+.field static final TRANSACTION_setOccluded:I = 0x1
 
-.field static final TRANSACTION_startKeyguardExitAnimation_18:I = 0x13
+.field static final TRANSACTION_startKeyguardExitAnimation:I = 0x13
 
 .field static final TRANSACTION_verifyUnlock:I = 0x3
 

@@ -30,25 +30,23 @@
 
 .field static final TRANSACTION_fastForward:I = 0x1a
 
-.field static final TRANSACTION_getExtras:I = 0x26
+.field static final TRANSACTION_getExtras:I = 0x23
 
 .field static final TRANSACTION_getFlags:I = 0x9
 
 .field static final TRANSACTION_getLaunchPendingIntent:I = 0x8
 
-.field static final TRANSACTION_getMetadata_33:I = 0x22
+.field static final TRANSACTION_getMetadata:I = 0x1f
 
 .field static final TRANSACTION_getPackageName:I = 0x6
 
-.field static final TRANSACTION_getPlaybackState:I = 0x23
+.field static final TRANSACTION_getPlaybackState:I = 0x20
 
-.field static final TRANSACTION_getQueue:I = 0x24
+.field static final TRANSACTION_getQueue:I = 0x21
 
-.field static final TRANSACTION_getQueueTitle:I = 0x25
+.field static final TRANSACTION_getQueueTitle:I = 0x22
 
-.field static final TRANSACTION_getRatingType:I = 0x27
-
-.field static final TRANSACTION_getRemoteControlClientNowPlayingEntries:I = 0x1f
+.field static final TRANSACTION_getRatingType:I = 0x24
 
 .field static final TRANSACTION_getTag:I = 0x7
 
@@ -78,7 +76,7 @@
 
 .field static final TRANSACTION_previous:I = 0x19
 
-.field static final TRANSACTION_rate:I = 0x20
+.field static final TRANSACTION_rate:I = 0x1d
 
 .field static final TRANSACTION_registerCallbackListener:I = 0x3
 
@@ -88,13 +86,9 @@
 
 .field static final TRANSACTION_sendCommand:I = 0x1
 
-.field static final TRANSACTION_sendCustomAction:I = 0x21
+.field static final TRANSACTION_sendCustomAction:I = 0x1e
 
 .field static final TRANSACTION_sendMediaButton:I = 0x2
-
-.field static final TRANSACTION_setRemoteControlClientBrowsedPlayer:I = 0x1d
-
-.field static final TRANSACTION_setRemoteControlClientPlayItem:I = 0x1e
 
 .field static final TRANSACTION_setVolumeTo:I = 0xc
 
@@ -193,7 +187,7 @@
     .line 42
     sparse-switch p1, :sswitch_data_0
 
-    .line 505
+    .line 480
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v28
@@ -1432,93 +1426,14 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 374
-    invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->setRemoteControlClientBrowsedPlayer()V
-
     .line 375
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 376
-    const/16 v28, 0x1
-
-    return v28
-
-    .line 380
-    :sswitch_1e
-    const-string/jumbo v28, "android.media.session.ISessionController"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 382
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v6
-
-    .line 384
-    .restart local v6    # "_arg0":J
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v12
-
-    .line 385
-    .restart local v12    # "_arg1":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v6, v7, v12}, Landroid/media/session/ISessionController$Stub;->setRemoteControlClientPlayItem(JI)V
-
-    .line 386
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 387
-    const/16 v28, 0x1
-
-    return v28
-
-    .line 391
-    .end local v6    # "_arg0":J
-    .end local v12    # "_arg1":I
-    :sswitch_1f
-    const-string/jumbo v28, "android.media.session.ISessionController"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 392
-    invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->getRemoteControlClientNowPlayingEntries()V
-
-    .line 393
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 394
-    const/16 v28, 0x1
-
-    return v28
-
-    .line 398
-    :sswitch_20
-    const-string/jumbo v28, "android.media.session.ISessionController"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 400
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v28
 
     if-eqz v28, :cond_f
 
-    .line 401
+    .line 376
     sget-object v28, Landroid/media/Rating;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, v28
@@ -1531,30 +1446,30 @@
 
     check-cast v5, Landroid/media/Rating;
 
-    .line 406
+    .line 381
     :goto_f
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/media/session/ISessionController$Stub;->rate(Landroid/media/Rating;)V
 
-    .line 407
+    .line 382
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 408
+    .line 383
     const/16 v28, 0x1
 
     return v28
 
-    .line 404
+    .line 379
     :cond_f
     const/4 v5, 0x0
 
     .local v5, "_arg0":Landroid/media/Rating;
     goto :goto_f
 
-    .line 412
+    .line 387
     .end local v5    # "_arg0":Landroid/media/Rating;
-    :sswitch_21
+    :sswitch_1e
     const-string/jumbo v28, "android.media.session.ISessionController"
 
     move-object/from16 v0, p2
@@ -1563,12 +1478,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 414
+    .line 389
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 416
+    .line 391
     .restart local v11    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -1576,7 +1491,7 @@
 
     if-eqz v28, :cond_10
 
-    .line 417
+    .line 392
     sget-object v28, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, v28
@@ -1589,31 +1504,31 @@
 
     check-cast v13, Landroid/os/Bundle;
 
-    .line 422
+    .line 397
     :goto_10
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v11, v13}, Landroid/media/session/ISessionController$Stub;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 423
+    .line 398
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 424
+    .line 399
     const/16 v28, 0x1
 
     return v28
 
-    .line 420
+    .line 395
     :cond_10
     const/4 v13, 0x0
 
     .restart local v13    # "_arg1":Landroid/os/Bundle;
     goto :goto_10
 
-    .line 428
+    .line 403
     .end local v11    # "_arg0":Ljava/lang/String;
     .end local v13    # "_arg1":Landroid/os/Bundle;
-    :sswitch_22
+    :sswitch_1f
     const-string/jumbo v28, "android.media.session.ISessionController"
 
     move-object/from16 v0, p2
@@ -1622,19 +1537,19 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 429
+    .line 404
     invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->getMetadata()Landroid/media/MediaMetadata;
 
     move-result-object v21
 
-    .line 430
+    .line 405
     .local v21, "_result":Landroid/media/MediaMetadata;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 431
+    .line 406
     if-eqz v21, :cond_11
 
-    .line 432
+    .line 407
     const/16 v28, 0x1
 
     move-object/from16 v0, p3
@@ -1643,7 +1558,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 433
+    .line 408
     const/16 v28, 0x1
 
     move-object/from16 v0, v21
@@ -1654,13 +1569,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaMetadata;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 438
+    .line 413
     :goto_11
     const/16 v28, 0x1
 
     return v28
 
-    .line 436
+    .line 411
     :cond_11
     const/16 v28, 0x0
 
@@ -1672,9 +1587,9 @@
 
     goto :goto_11
 
-    .line 442
+    .line 417
     .end local v21    # "_result":Landroid/media/MediaMetadata;
-    :sswitch_23
+    :sswitch_20
     const-string/jumbo v28, "android.media.session.ISessionController"
 
     move-object/from16 v0, p2
@@ -1683,19 +1598,19 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 443
+    .line 418
     invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->getPlaybackState()Landroid/media/session/PlaybackState;
 
     move-result-object v23
 
-    .line 444
+    .line 419
     .local v23, "_result":Landroid/media/session/PlaybackState;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 445
+    .line 420
     if-eqz v23, :cond_12
 
-    .line 446
+    .line 421
     const/16 v28, 0x1
 
     move-object/from16 v0, p3
@@ -1704,7 +1619,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 447
+    .line 422
     const/16 v28, 0x1
 
     move-object/from16 v0, v23
@@ -1715,13 +1630,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/session/PlaybackState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 452
+    .line 427
     :goto_12
     const/16 v28, 0x1
 
     return v28
 
-    .line 450
+    .line 425
     :cond_12
     const/16 v28, 0x0
 
@@ -1733,9 +1648,9 @@
 
     goto :goto_12
 
-    .line 456
+    .line 431
     .end local v23    # "_result":Landroid/media/session/PlaybackState;
-    :sswitch_24
+    :sswitch_21
     const-string/jumbo v28, "android.media.session.ISessionController"
 
     move-object/from16 v0, p2
@@ -1744,19 +1659,19 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 457
+    .line 432
     invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->getQueue()Landroid/content/pm/ParceledListSlice;
 
     move-result-object v20
 
-    .line 458
+    .line 433
     .local v20, "_result":Landroid/content/pm/ParceledListSlice;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 459
+    .line 434
     if-eqz v20, :cond_13
 
-    .line 460
+    .line 435
     const/16 v28, 0x1
 
     move-object/from16 v0, p3
@@ -1765,7 +1680,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 461
+    .line 436
     const/16 v28, 0x1
 
     move-object/from16 v0, v20
@@ -1776,13 +1691,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/pm/ParceledListSlice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 466
+    .line 441
     :goto_13
     const/16 v28, 0x1
 
     return v28
 
-    .line 464
+    .line 439
     :cond_13
     const/16 v28, 0x0
 
@@ -1794,9 +1709,9 @@
 
     goto :goto_13
 
-    .line 470
+    .line 445
     .end local v20    # "_result":Landroid/content/pm/ParceledListSlice;
-    :sswitch_25
+    :sswitch_22
     const-string/jumbo v28, "android.media.session.ISessionController"
 
     move-object/from16 v0, p2
@@ -1805,19 +1720,19 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 471
+    .line 446
     invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->getQueueTitle()Ljava/lang/CharSequence;
 
     move-result-object v25
 
-    .line 472
+    .line 447
     .local v25, "_result":Ljava/lang/CharSequence;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 473
+    .line 448
     if-eqz v25, :cond_14
 
-    .line 474
+    .line 449
     const/16 v28, 0x1
 
     move-object/from16 v0, p3
@@ -1826,7 +1741,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 475
+    .line 450
     const/16 v28, 0x1
 
     move-object/from16 v0, v25
@@ -1837,13 +1752,13 @@
 
     invoke-static {v0, v1, v2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 480
+    .line 455
     :goto_14
     const/16 v28, 0x1
 
     return v28
 
-    .line 478
+    .line 453
     :cond_14
     const/16 v28, 0x0
 
@@ -1855,9 +1770,9 @@
 
     goto :goto_14
 
-    .line 484
+    .line 459
     .end local v25    # "_result":Ljava/lang/CharSequence;
-    :sswitch_26
+    :sswitch_23
     const-string/jumbo v28, "android.media.session.ISessionController"
 
     move-object/from16 v0, p2
@@ -1866,19 +1781,19 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 485
+    .line 460
     invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->getExtras()Landroid/os/Bundle;
 
     move-result-object v24
 
-    .line 486
+    .line 461
     .local v24, "_result":Landroid/os/Bundle;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 487
+    .line 462
     if-eqz v24, :cond_15
 
-    .line 488
+    .line 463
     const/16 v28, 0x1
 
     move-object/from16 v0, p3
@@ -1887,7 +1802,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 489
+    .line 464
     const/16 v28, 0x1
 
     move-object/from16 v0, v24
@@ -1898,13 +1813,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 494
+    .line 469
     :goto_15
     const/16 v28, 0x1
 
     return v28
 
-    .line 492
+    .line 467
     :cond_15
     const/16 v28, 0x0
 
@@ -1916,9 +1831,9 @@
 
     goto :goto_15
 
-    .line 498
+    .line 473
     .end local v24    # "_result":Landroid/os/Bundle;
-    :sswitch_27
+    :sswitch_24
     const-string/jumbo v28, "android.media.session.ISessionController"
 
     move-object/from16 v0, p2
@@ -1927,30 +1842,28 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 499
+    .line 474
     invoke-virtual/range {p0 .. p0}, Landroid/media/session/ISessionController$Stub;->getRatingType()I
 
     move-result v16
 
-    .line 500
+    .line 475
     .local v16, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 501
+    .line 476
     move-object/from16 v0, p3
 
     move/from16 v1, v16
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 502
+    .line 477
     const/16 v28, 0x1
 
     return v28
 
     .line 42
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -1989,9 +1902,6 @@
         0x22 -> :sswitch_22
         0x23 -> :sswitch_23
         0x24 -> :sswitch_24
-        0x25 -> :sswitch_25
-        0x26 -> :sswitch_26
-        0x27 -> :sswitch_27
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

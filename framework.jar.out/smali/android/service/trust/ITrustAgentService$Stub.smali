@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.service.trust.ITrustAgentService"
 
-.field static final TRANSACTION_onConfigure_4:I = 0x5
+.field static final TRANSACTION_onConfigure:I = 0x5
 
 .field static final TRANSACTION_onDeviceLocked:I = 0x3
 

@@ -29,22 +29,22 @@
     .param p2, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 22390
+    .line 22123
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Landroid/app/ActivityManagerInternal$SleepToken;-><init>()V
 
-    .line 22391
+    .line 22124
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->mTag:Ljava/lang/String;
 
-    .line 22392
+    .line 22125
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->mAcquireTime:J
 
-    .line 22390
+    .line 22123
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .locals 2
 
     .prologue
-    .line 22397
+    .line 22130
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
@@ -62,7 +62,7 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 22398
+    .line 22131
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mSleepTokens:Ljava/util/ArrayList;
@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 22399
+    .line 22132
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/am/ActivityManagerService;->updateSleepIfNeededLocked()V
@@ -83,13 +83,13 @@
     :cond_0
     monitor-exit v1
 
-    .line 22397
+    .line 22130
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 22396
+    .line 22129
     return-void
 
-    .line 22397
+    .line 22130
     :catchall_0
     move-exception v0
 
@@ -104,7 +104,7 @@
     .locals 4
 
     .prologue
-    .line 22406
+    .line 22139
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

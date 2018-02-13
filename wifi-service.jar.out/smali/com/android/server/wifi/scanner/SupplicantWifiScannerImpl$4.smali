@@ -30,7 +30,7 @@
     .param p2, "val$newScanSettings"    # Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     .prologue
-    .line 457
+    .line 456
     iput-object p1, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$4;->this$0:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl;
 
     iput-object p2, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$4;->val$newScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
@@ -46,25 +46,25 @@
     .locals 2
 
     .prologue
-    .line 459
+    .line 458
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$4;->val$newScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
     if-eqz v0, :cond_0
 
-    .line 460
+    .line 459
     iget-object v0, p0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$4;->val$newScanSettings:Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;
 
     iget-object v0, v0, Lcom/android/server/wifi/scanner/SupplicantWifiScannerImpl$LastScanSettings;->singleScanEventHandler:Lcom/android/server/wifi/WifiNative$ScanEventHandler;
 
-    .line 461
+    .line 460
     const/4 v1, 0x3
 
-    .line 460
+    .line 459
     invoke-interface {v0, v1}, Lcom/android/server/wifi/WifiNative$ScanEventHandler;->onScanStatus(I)V
 
-    .line 458
+    .line 457
     :cond_0
     return-void
 .end method

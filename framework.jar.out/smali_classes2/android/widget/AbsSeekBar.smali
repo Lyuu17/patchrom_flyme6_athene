@@ -650,19 +650,19 @@
     .locals 2
 
     .prologue
-    .line 866
+    .line 858
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mParent:Landroid/view/ViewParent;
 
     if-eqz v0, :cond_0
 
-    .line 867
+    .line 859
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mParent:Landroid/view/ViewParent;
 
     const/4 v1, 0x1
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 865
+    .line 857
     :cond_0
     return-void
 .end method
@@ -1027,26 +1027,14 @@
     invoke-direct {p0, v7, v8}, Landroid/widget/AbsSeekBar;->setHotspot(FF)V
 
     .line 850
-    invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->getProgress()I
-
-    move-result v7
-
-    .line 851
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
-    move-result v8
-
-    .line 850
-    invoke-virtual {p0, v7, v8}, Landroid/widget/AbsSeekBar;->updateTouchProgress(II)I
-
     move-result v7
 
-    .line 851
     const/4 v8, 0x1
 
     const/4 v9, 0x0
 
-    .line 850
     invoke-virtual {p0, v7, v8, v9}, Landroid/widget/AbsSeekBar;->setProgressInternal(IZZ)Z
 
     .line 818
@@ -1275,7 +1263,7 @@
     .locals 1
 
     .prologue
-    .line 987
+    .line 979
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->isIndeterminate()Z
 
     move-result v0
@@ -1738,7 +1726,7 @@
     .locals 1
 
     .prologue
-    .line 919
+    .line 911
     const-class v0, Landroid/widget/AbsSeekBar;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1905,31 +1893,31 @@
     .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
-    .line 925
+    .line 917
     invoke-super {p0, p1}, Landroid/widget/ProgressBar;->onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 927
+    .line 919
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->isEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 928
+    .line 920
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->getProgress()I
 
     move-result v0
 
-    .line 929
+    .line 921
     .local v0, "progress":I
     if-lez v0, :cond_0
 
-    .line 930
+    .line 922
     sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_BACKWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 932
+    .line 924
     :cond_0
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->getMax()I
 
@@ -1937,12 +1925,12 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 933
+    .line 925
     sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_FORWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 924
+    .line 916
     .end local v0    # "progress":I
     :cond_1
     return-void
@@ -1952,7 +1940,7 @@
     .locals 0
 
     .prologue
-    .line 889
+    .line 881
     return-void
 .end method
 
@@ -1964,21 +1952,21 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 894
+    .line 886
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->isEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 895
+    .line 887
     iget v0, p0, Landroid/widget/AbsSeekBar;->mKeyProgressIncrement:I
 
-    .line 896
+    .line 888
     .local v0, "increment":I
     sparse-switch p1, :sswitch_data_0
 
-    .line 914
+    .line 906
     .end local v0    # "increment":I
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/ProgressBar;->onKeyDown(ILandroid/view/KeyEvent;)Z
@@ -1987,12 +1975,12 @@
 
     return v1
 
-    .line 899
+    .line 891
     .restart local v0    # "increment":I
     :sswitch_0
     neg-int v0, v0
 
-    .line 904
+    .line 896
     :sswitch_1
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->isLayoutRtl()Z
 
@@ -2002,7 +1990,7 @@
 
     neg-int v0, v0
 
-    .line 906
+    .line 898
     :cond_1
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->getProgress()I
 
@@ -2016,13 +2004,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 907
+    .line 899
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->onKeyChange()V
 
-    .line 908
+    .line 900
     return v2
 
-    .line 896
+    .line 888
     :sswitch_data_0
     .sparse-switch
         0x15 -> :sswitch_0
@@ -2205,17 +2193,17 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 992
+    .line 984
     invoke-super {p0, p1}, Landroid/widget/ProgressBar;->onRtlPropertiesChanged(I)V
 
-    .line 994
+    .line 986
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
 
-    .line 995
+    .line 987
     .local v0, "thumb":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 996
+    .line 988
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->getWidth()I
 
     move-result v1
@@ -2228,10 +2216,10 @@
 
     invoke-direct {p0, v1, v0, v2, v3}, Landroid/widget/AbsSeekBar;->setThumbPos(ILandroid/graphics/drawable/Drawable;FI)V
 
-    .line 1001
+    .line 993
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->invalidate()V
 
-    .line 991
+    .line 983
     :cond_0
     return-void
 .end method
@@ -2258,12 +2246,12 @@
     .locals 1
 
     .prologue
-    .line 875
+    .line 867
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/AbsSeekBar;->mIsDragging:Z
 
-    .line 874
+    .line 866
     return-void
 .end method
 
@@ -2271,12 +2259,12 @@
     .locals 1
 
     .prologue
-    .line 883
+    .line 875
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/AbsSeekBar;->mIsDragging:Z
 
-    .line 882
+    .line 874
     return-void
 .end method
 
@@ -2490,17 +2478,17 @@
 
     const/4 v4, 0x1
 
-    .line 941
+    .line 933
     invoke-super {p0, p1, p2}, Landroid/widget/ProgressBar;->performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 942
+    .line 934
     return v4
 
-    .line 945
+    .line 937
     :cond_0
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->isEnabled()Z
 
@@ -2508,17 +2496,17 @@
 
     if-nez v2, :cond_1
 
-    .line 946
+    .line 938
     return v5
 
-    .line 949
+    .line 941
     :cond_1
     sparse-switch p1, :sswitch_data_0
 
-    .line 980
+    .line 972
     return v5
 
-    .line 951
+    .line 943
     :sswitch_0
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->canUserSetProgress()Z
 
@@ -2526,32 +2514,32 @@
 
     if-nez v2, :cond_2
 
-    .line 952
+    .line 944
     return v5
 
-    .line 954
+    .line 946
     :cond_2
     if-eqz p2, :cond_3
 
-    .line 955
+    .line 947
     const-string/jumbo v2, "android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"
 
-    .line 954
+    .line 946
     invoke-virtual {p2, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 959
+    .line 951
     const-string/jumbo v2, "android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"
 
-    .line 958
+    .line 950
     invoke-virtual {p2, v2}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
 
     move-result v1
 
-    .line 960
+    .line 952
     .local v1, "value":F
     float-to-int v2, v1
 
@@ -2561,12 +2549,12 @@
 
     return v2
 
-    .line 956
+    .line 948
     .end local v1    # "value":F
     :cond_3
     return v5
 
-    .line 964
+    .line 956
     :sswitch_1
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->canUserSetProgress()Z
 
@@ -2574,10 +2562,10 @@
 
     if-nez v2, :cond_4
 
-    .line 965
+    .line 957
     return v5
 
-    .line 967
+    .line 959
     :cond_4
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->getMax()I
 
@@ -2597,16 +2585,16 @@
 
     move-result v0
 
-    .line 968
+    .line 960
     .local v0, "increment":I
     const/16 v2, 0x2000
 
     if-ne p1, v2, :cond_5
 
-    .line 969
+    .line 961
     neg-int v0, v0
 
-    .line 973
+    .line 965
     :cond_5
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->getProgress()I
 
@@ -2620,17 +2608,17 @@
 
     if-eqz v2, :cond_6
 
-    .line 974
+    .line 966
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->onKeyChange()V
 
-    .line 975
+    .line 967
     return v4
 
-    .line 977
+    .line 969
     :cond_6
     return v5
 
-    .line 949
+    .line 941
     :sswitch_data_0
     .sparse-switch
         0x1000 -> :sswitch_1
@@ -3038,16 +3026,6 @@
 
     .line 415
     return-void
-.end method
-
-.method protected updateTouchProgress(II)I
-    .locals 0
-    .param p1, "lastProgress"    # I
-    .param p2, "newProgress"    # I
-
-    .prologue
-    .line 858
-    return p2
 .end method
 
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z

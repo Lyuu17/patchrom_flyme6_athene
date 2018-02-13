@@ -21,14 +21,14 @@
     .param p2, "ceDatabaseName"    # Ljava/lang/String;
 
     .prologue
-    .line 5004
+    .line 4981
     const/4 v0, 0x0
 
     const/16 v1, 0xa
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 5003
+    .line 4980
     return-void
 .end method
 
@@ -40,12 +40,12 @@
     .param p3, "ceDatabaseFile"    # Ljava/io/File;
 
     .prologue
-    .line 5125
+    .line 5102
     invoke-virtual {p3}, Ljava/io/File;->exists()Z
 
     move-result v1
 
-    .line 5126
+    .line 5103
     .local v1, "newDbExists":Z
     const-string/jumbo v3, "AccountManagerService"
 
@@ -57,7 +57,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 5127
+    .line 5104
     const-string/jumbo v3, "AccountManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -80,20 +80,20 @@
 
     move-result-object v4
 
-    .line 5128
+    .line 5105
     invoke-virtual {p2}, Ljava/io/File;->exists()Z
 
     move-result v5
 
-    .line 5127
+    .line 5104
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 5128
+    .line 5105
     const-string/jumbo v5, " newDbExists="
 
-    .line 5127
+    .line 5104
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -108,11 +108,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5130
+    .line 5107
     :cond_0
     const/4 v2, 0x0
 
-    .line 5131
+    .line 5108
     .local v2, "removeOldDb":Z
     if-nez v1, :cond_1
 
@@ -122,12 +122,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 5132
+    .line 5109
     invoke-static {p2, p3}, Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;->migratePreNDbToCe(Ljava/io/File;Ljava/io/File;)Z
 
     move-result v2
 
-    .line 5135
+    .line 5112
     .end local v2    # "removeOldDb":Z
     :cond_1
     new-instance v0, Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;
@@ -138,17 +138,17 @@
 
     invoke-direct {v0, p0, v3}, Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 5136
+    .line 5113
     .local v0, "ceHelper":Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;
     invoke-virtual {v0}, Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 5137
+    .line 5114
     invoke-virtual {v0}, Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;->close()V
 
-    .line 5138
+    .line 5115
     if-eqz v2, :cond_2
 
-    .line 5139
+    .line 5116
     const-string/jumbo v3, "AccountManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -171,14 +171,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5140
+    .line 5117
     invoke-static {p2}, Landroid/database/sqlite/SQLiteDatabase;->deleteDatabase(Ljava/io/File;)Z
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    .line 5141
+    .line 5118
     const-string/jumbo v3, "AccountManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -201,7 +201,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5144
+    .line 5121
     :cond_2
     return-object v0
 .end method
@@ -211,12 +211,12 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 5039
+    .line 5016
     const-string/jumbo v0, " CREATE TRIGGER accountsDelete DELETE ON accounts BEGIN   DELETE FROM authtokens     WHERE accounts_id=OLD._id ;   DELETE FROM extras     WHERE accounts_id=OLD._id ; END"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5038
+    .line 5015
     return-void
 .end method
 
@@ -233,7 +233,7 @@
 
     const/4 v5, 0x0
 
-    .line 5079
+    .line 5056
     const-string/jumbo v1, "ceDb.accounts"
 
     new-array v2, v7, [Ljava/lang/String;
@@ -242,10 +242,10 @@
 
     aput-object v0, v2, v6
 
-    .line 5080
+    .line 5057
     const-string/jumbo v3, "name=? AND type=?"
 
-    .line 5081
+    .line 5058
     const/4 v0, 0x2
 
     new-array v4, v0, [Ljava/lang/String;
@@ -260,12 +260,12 @@
 
     move-object v7, v5
 
-    .line 5079
+    .line 5056
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v8
 
-    .line 5083
+    .line 5060
     .local v8, "cursor":Landroid/database/Cursor;
     :try_start_0
     invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
@@ -274,7 +274,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 5084
+    .line 5061
     const/4 v0, 0x0
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -283,27 +283,27 @@
 
     move-result-object v0
 
-    .line 5088
+    .line 5065
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 5084
+    .line 5061
     return-object v0
 
-    .line 5088
+    .line 5065
     :cond_0
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 5086
+    .line 5063
     return-object v5
 
-    .line 5087
+    .line 5064
     :catchall_0
     move-exception v0
 
-    .line 5088
+    .line 5065
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 5087
+    .line 5064
     throw v0
 .end method
 
@@ -323,18 +323,18 @@
     .end annotation
 
     .prologue
-    .line 5095
+    .line 5072
     const-string/jumbo v4, "SELECT name,type FROM ceDb.accounts WHERE NOT EXISTS  (SELECT _id FROM accounts WHERE _id=ceDb.accounts._id )"
 
-    .line 5100
+    .line 5077
     const/4 v5, 0x0
 
-    .line 5094
+    .line 5071
     invoke-virtual {p0, v4, v5}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v3
 
-    .line 5102
+    .line 5079
     .local v3, "cursor":Landroid/database/Cursor;
     :try_start_0
     new-instance v2, Ljava/util/ArrayList;
@@ -345,7 +345,7 @@
 
     invoke-direct {v2, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 5103
+    .line 5080
     .local v2, "accounts":Ljava/util/List;, "Ljava/util/List<Landroid/accounts/Account;>;"
     :goto_0
     invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
@@ -354,14 +354,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 5104
+    .line 5081
     const/4 v4, 0x0
 
     invoke-interface {v3, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5105
+    .line 5082
     .local v0, "accountName":Ljava/lang/String;
     const/4 v4, 0x1
 
@@ -369,7 +369,7 @@
 
     move-result-object v1
 
-    .line 5106
+    .line 5083
     .local v1, "accountType":Ljava/lang/String;
     new-instance v4, Landroid/accounts/Account;
 
@@ -381,25 +381,25 @@
 
     goto :goto_0
 
-    .line 5109
+    .line 5086
     .end local v0    # "accountName":Ljava/lang/String;
     .end local v1    # "accountType":Ljava/lang/String;
     .end local v2    # "accounts":Ljava/util/List;, "Ljava/util/List<Landroid/accounts/Account;>;"
     :catchall_0
     move-exception v4
 
-    .line 5110
+    .line 5087
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
-    .line 5109
+    .line 5086
     throw v4
 
-    .line 5110
+    .line 5087
     .restart local v2    # "accounts":Ljava/util/List;, "Ljava/util/List<Landroid/accounts/Account;>;"
     :cond_0
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
-    .line 5108
+    .line 5085
     return-object v2
 .end method
 
@@ -409,7 +409,7 @@
     .param p1, "ceDbFile"    # Ljava/io/File;
 
     .prologue
-    .line 5148
+    .line 5125
     const-string/jumbo v1, "AccountManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -442,22 +442,22 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5150
+    .line 5127
     :try_start_0
     invoke-static {p0, p1}, Landroid/os/FileUtils;->copyFileOrThrow(Ljava/io/File;Ljava/io/File;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5157
+    .line 5134
     const/4 v1, 0x1
 
     return v1
 
-    .line 5151
+    .line 5128
     :catch_0
     move-exception v0
 
-    .line 5152
+    .line 5129
     .local v0, "e":Ljava/io/IOException;
     const-string/jumbo v1, "AccountManagerService"
 
@@ -491,10 +491,10 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5154
+    .line 5131
     invoke-static {p1}, Lcom/android/server/accounts/AccountManagerService;->-wrap14(Ljava/io/File;)V
 
-    .line 5155
+    .line 5132
     const/4 v1, 0x0
 
     return v1
@@ -507,7 +507,7 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 5013
+    .line 4990
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -534,25 +534,25 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5014
+    .line 4991
     const-string/jumbo v0, "CREATE TABLE accounts ( _id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, type TEXT NOT NULL, password TEXT, UNIQUE(name,type))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5021
+    .line 4998
     const-string/jumbo v0, "CREATE TABLE authtokens (  _id INTEGER PRIMARY KEY AUTOINCREMENT,  accounts_id INTEGER NOT NULL, type TEXT NOT NULL,  authtoken TEXT,  UNIQUE (accounts_id,type))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5028
+    .line 5005
     const-string/jumbo v0, "CREATE TABLE extras ( _id INTEGER PRIMARY KEY AUTOINCREMENT, accounts_id INTEGER, key TEXT NOT NULL, value TEXT, UNIQUE(accounts_id,key))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5035
+    .line 5012
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;->createAccountsDeletionTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 5012
+    .line 4989
     return-void
 .end method
 
@@ -561,7 +561,7 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 5074
+    .line 5051
     const-string/jumbo v0, "AccountManagerService"
 
     const/4 v1, 0x2
@@ -578,7 +578,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5073
+    .line 5050
     :cond_0
     return-void
 .end method
@@ -590,7 +590,7 @@
     .param p3, "newVersion"    # I
 
     .prologue
-    .line 5051
+    .line 5028
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -623,12 +623,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5053
+    .line 5030
     const/16 v0, 0x9
 
     if-ne p2, v0, :cond_1
 
-    .line 5054
+    .line 5031
     const-string/jumbo v0, "AccountManagerService"
 
     const/4 v1, 0x2
@@ -639,38 +639,38 @@
 
     if-eqz v0, :cond_0
 
-    .line 5055
+    .line 5032
     const-string/jumbo v0, "AccountManagerService"
 
     const-string/jumbo v1, "onUpgrade upgrading to v10"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5057
+    .line 5034
     :cond_0
     const-string/jumbo v0, "DROP TABLE IF EXISTS meta"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5058
+    .line 5035
     const-string/jumbo v0, "DROP TABLE IF EXISTS shared_accounts"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5060
+    .line 5037
     const-string/jumbo v0, "DROP TRIGGER IF EXISTS accountsDelete"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5061
+    .line 5038
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountManagerService$CeDatabaseHelper;->createAccountsDeletionTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 5062
+    .line 5039
     const-string/jumbo v0, "DROP TABLE IF EXISTS grants"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5063
+    .line 5040
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -695,14 +695,14 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 5064
+    .line 5041
     add-int/lit8 p2, p2, 0x1
 
-    .line 5067
+    .line 5044
     :cond_1
     if-eq p2, p3, :cond_2
 
-    .line 5068
+    .line 5045
     const-string/jumbo v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -735,7 +735,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5050
+    .line 5027
     :cond_2
     return-void
 .end method

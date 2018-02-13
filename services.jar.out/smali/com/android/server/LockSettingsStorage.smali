@@ -86,23 +86,23 @@
 
     const/4 v2, 0x0
 
-    .line 56
+    .line 53
     new-array v0, v3, [Ljava/lang/String;
 
-    .line 57
+    .line 54
     const-string/jumbo v1, "value"
 
     aput-object v1, v0, v2
 
-    .line 56
+    .line 53
     sput-object v0, Lcom/android/server/LockSettingsStorage;->COLUMNS_FOR_QUERY:[Ljava/lang/String;
 
-    .line 59
+    .line 56
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 60
+    .line 57
     const-string/jumbo v1, "name"
 
     aput-object v1, v0, v2
@@ -111,17 +111,17 @@
 
     aput-object v1, v0, v3
 
-    .line 59
+    .line 56
     sput-object v0, Lcom/android/server/LockSettingsStorage;->COLUMNS_FOR_PREFETCH:[Ljava/lang/String;
 
-    .line 71
+    .line 68
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/server/LockSettingsStorage;->DEFAULT:Ljava/lang/Object;
 
-    .line 46
+    .line 43
     return-void
 .end method
 
@@ -131,10 +131,10 @@
     .param p2, "callback"    # Lcom/android/server/LockSettingsStorage$Callback;
 
     .prologue
-    .line 105
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 72
     new-instance v0, Lcom/android/server/LockSettingsStorage$Cache;
 
     const/4 v1, 0x0
@@ -143,31 +143,31 @@
 
     iput-object v0, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
-    .line 76
+    .line 73
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/LockSettingsStorage;->mFileWriteLock:Ljava/lang/Object;
 
-    .line 106
+    .line 103
     iput-object p1, p0, Lcom/android/server/LockSettingsStorage;->mContext:Landroid/content/Context;
 
-    .line 107
+    .line 104
     new-instance v0, Lcom/android/server/LockSettingsStorage$DatabaseHelper;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/server/LockSettingsStorage$DatabaseHelper;-><init>(Lcom/android/server/LockSettingsStorage;Landroid/content/Context;Lcom/android/server/LockSettingsStorage$Callback;)V
 
     iput-object v0, p0, Lcom/android/server/LockSettingsStorage;->mOpenHelper:Lcom/android/server/LockSettingsStorage$DatabaseHelper;
 
-    .line 108
+    .line 105
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/LockSettingsStorage;->mStoredCredentialType:Landroid/util/SparseArray;
 
-    .line 105
+    .line 102
     return-void
 .end method
 
@@ -176,7 +176,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 382
+    .line 377
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPasswordFilename(I)Ljava/lang/String;
 
     move-result-object v0
@@ -185,7 +185,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/LockSettingsStorage;->writeFile(Ljava/lang/String;[B)V
 
-    .line 381
+    .line 376
     return-void
 .end method
 
@@ -194,7 +194,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 371
+    .line 366
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPatternFilename(I)Ljava/lang/String;
 
     move-result-object v0
@@ -203,7 +203,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/LockSettingsStorage;->writeFile(Ljava/lang/String;[B)V
 
-    .line 370
+    .line 365
     return-void
 .end method
 
@@ -212,18 +212,18 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 352
+    .line 349
     iget-object v2, p0, Lcom/android/server/LockSettingsStorage;->mFileWriteLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 353
+    .line 350
     :try_start_0
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 354
+    .line 351
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -231,10 +231,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 355
+    .line 352
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 356
+    .line 353
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     const/4 v3, 0x0
@@ -246,10 +246,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 350
+    .line 347
     return-void
 
-    .line 352
+    .line 349
     .end local v0    # "file":Ljava/io/File;
     :catchall_0
     move-exception v1
@@ -264,7 +264,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 419
+    .line 401
     const-string/jumbo v0, "gatekeeper.gesture.key"
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/LockSettingsStorage;->getLockCredentialFilePathForUser(ILjava/lang/String;)Ljava/lang/String;
@@ -280,7 +280,7 @@
     .param p2, "basename"    # Ljava/lang/String;
 
     .prologue
-    .line 429
+    .line 411
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -297,10 +297,10 @@
 
     move-result-object v1
 
-    .line 430
+    .line 412
     const-string/jumbo v2, "/system/"
 
-    .line 429
+    .line 411
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -309,11 +309,11 @@
 
     move-result-object v0
 
-    .line 431
+    .line 413
     .local v0, "dataSystemDirectory":Ljava/lang/String;
     if-nez p1, :cond_0
 
-    .line 433
+    .line 415
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -332,7 +332,7 @@
 
     return-object v1
 
-    .line 435
+    .line 417
     :cond_0
     new-instance v1, Ljava/io/File;
 
@@ -356,12 +356,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 287
+    .line 284
     invoke-direct {p0, p1}, Lcom/android/server/LockSettingsStorage;->readFile(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 288
+    .line 285
     .local v0, "contents":[B
     if-eqz v0, :cond_0
 
@@ -380,12 +380,12 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 293
+    .line 290
     iget-object v6, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     monitor-enter v6
 
-    .line 294
+    .line 291
     :try_start_0
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
@@ -395,7 +395,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 295
+    .line 292
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-virtual {v5, p1}, Lcom/android/server/LockSettingsStorage$Cache;->peekFile(Ljava/lang/String;)[B
@@ -408,7 +408,7 @@
 
     return-object v5
 
-    .line 297
+    .line 294
     :cond_0
     :try_start_1
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
@@ -422,14 +422,14 @@
     .local v4, "version":I
     monitor-exit v6
 
-    .line 300
+    .line 297
     const/4 v1, 0x0
 
-    .line 301
+    .line 298
     .local v1, "raf":Ljava/io/RandomAccessFile;
     const/4 v3, 0x0
 
-    .line 303
+    .line 300
     .local v3, "stored":[B
     :try_start_2
     new-instance v2, Ljava/io/RandomAccessFile;
@@ -441,7 +441,7 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 304
+    .line 301
     .end local v1    # "raf":Ljava/io/RandomAccessFile;
     .local v2, "raf":Ljava/io/RandomAccessFile;
     :try_start_3
@@ -453,7 +453,7 @@
 
     new-array v3, v5, [B
 
-    .line 305
+    .line 302
     .local v3, "stored":[B
     array-length v5, v3
 
@@ -461,16 +461,16 @@
 
     invoke-virtual {v2, v3, v6, v5}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 306
+    .line 303
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_4
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    .line 310
+    .line 307
     if-eqz v2, :cond_1
 
-    .line 312
+    .line 309
     :try_start_4
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_4
@@ -480,7 +480,7 @@
     :goto_0
     move-object v1, v2
 
-    .line 318
+    .line 315
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .end local v3    # "stored":[B
     :cond_2
@@ -489,10 +489,10 @@
 
     invoke-virtual {v5, p1, v3, v4}, Lcom/android/server/LockSettingsStorage$Cache;->putFileIfUnchanged(Ljava/lang/String;[BI)V
 
-    .line 319
+    .line 316
     return-object v3
 
-    .line 293
+    .line 290
     .end local v4    # "version":I
     :catchall_0
     move-exception v5
@@ -501,14 +501,14 @@
 
     throw v5
 
-    .line 313
+    .line 310
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v3    # "stored":[B
     .restart local v4    # "version":I
     :catch_0
     move-exception v0
 
-    .line 314
+    .line 311
     .local v0, "e":Ljava/io/IOException;
     const-string/jumbo v5, "LockSettingsStorage"
 
@@ -534,7 +534,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 304
     .end local v0    # "e":Ljava/io/IOException;
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     .restart local v1    # "raf":Ljava/io/RandomAccessFile;
@@ -542,7 +542,7 @@
     :catch_1
     move-exception v0
 
-    .line 308
+    .line 305
     .end local v1    # "raf":Ljava/io/RandomAccessFile;
     .end local v3    # "stored":[B
     .restart local v0    # "e":Ljava/io/IOException;
@@ -572,10 +572,10 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 310
+    .line 307
     if-eqz v1, :cond_2
 
-    .line 312
+    .line 309
     :try_start_6
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_6
@@ -583,11 +583,11 @@
 
     goto :goto_1
 
-    .line 313
+    .line 310
     :catch_2
     move-exception v0
 
-    .line 314
+    .line 311
     const-string/jumbo v5, "LockSettingsStorage"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -612,31 +612,31 @@
 
     goto :goto_1
 
-    .line 309
+    .line 306
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_1
     move-exception v5
 
-    .line 310
+    .line 307
     :goto_3
     if-eqz v1, :cond_3
 
-    .line 312
+    .line 309
     :try_start_7
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
 
-    .line 309
+    .line 306
     :cond_3
     :goto_4
     throw v5
 
-    .line 313
+    .line 310
     :catch_3
     move-exception v0
 
-    .line 314
+    .line 311
     .restart local v0    # "e":Ljava/io/IOException;
     const-string/jumbo v6, "LockSettingsStorage"
 
@@ -662,7 +662,7 @@
 
     goto :goto_4
 
-    .line 309
+    .line 306
     .end local v0    # "e":Ljava/io/IOException;
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :catchall_2
@@ -674,7 +674,7 @@
     .local v1, "raf":Ljava/io/RandomAccessFile;
     goto :goto_3
 
-    .line 307
+    .line 304
     .end local v1    # "raf":Ljava/io/RandomAccessFile;
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :catch_4
@@ -694,15 +694,15 @@
     .param p2, "hash"    # [B
 
     .prologue
-    .line 323
+    .line 320
     iget-object v4, p0, Lcom/android/server/LockSettingsStorage;->mFileWriteLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 324
+    .line 321
     const/4 v1, 0x0
 
-    .line 327
+    .line 324
     .local v1, "raf":Ljava/io/RandomAccessFile;
     :try_start_0
     new-instance v2, Ljava/io/RandomAccessFile;
@@ -714,7 +714,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 329
+    .line 326
     .end local v1    # "raf":Ljava/io/RandomAccessFile;
     .local v2, "raf":Ljava/io/RandomAccessFile;
     if-eqz p2, :cond_0
@@ -724,23 +724,23 @@
 
     if-nez v3, :cond_3
 
-    .line 330
+    .line 327
     :cond_0
     const-wide/16 v6, 0x0
 
     invoke-virtual {v2, v6, v7}, Ljava/io/RandomAccessFile;->setLength(J)V
 
-    .line 334
+    .line 331
     :goto_0
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
-    .line 338
+    .line 335
     if-eqz v2, :cond_1
 
-    .line 340
+    .line 337
     :try_start_2
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_2
@@ -751,7 +751,7 @@
     :goto_1
     move-object v1, v2
 
-    .line 346
+    .line 343
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     :cond_2
     :goto_2
@@ -764,10 +764,10 @@
 
     monitor-exit v4
 
-    .line 322
+    .line 319
     return-void
 
-    .line 332
+    .line 329
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :cond_3
     :try_start_4
@@ -782,14 +782,14 @@
 
     goto :goto_0
 
-    .line 335
+    .line 332
     :catch_0
     move-exception v0
 
     .local v0, "e":Ljava/io/IOException;
     move-object v1, v2
 
-    .line 336
+    .line 333
     .end local v2    # "raf":Ljava/io/RandomAccessFile;
     :goto_3
     :try_start_5
@@ -817,10 +817,10 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    .line 338
+    .line 335
     if-eqz v1, :cond_2
 
-    .line 340
+    .line 337
     :try_start_6
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_6
@@ -829,11 +829,11 @@
 
     goto :goto_2
 
-    .line 341
+    .line 338
     :catch_1
     move-exception v0
 
-    .line 342
+    .line 339
     :try_start_7
     const-string/jumbo v3, "LockSettingsStorage"
 
@@ -861,7 +861,7 @@
 
     goto :goto_2
 
-    .line 323
+    .line 320
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v3
@@ -871,12 +871,12 @@
 
     throw v3
 
-    .line 341
+    .line 338
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :catch_2
     move-exception v0
 
-    .line 342
+    .line 339
     .restart local v0    # "e":Ljava/io/IOException;
     :try_start_8
     const-string/jumbo v3, "LockSettingsStorage"
@@ -905,7 +905,7 @@
 
     goto :goto_1
 
-    .line 323
+    .line 320
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_1
     move-exception v3
@@ -916,33 +916,33 @@
     .local v1, "raf":Ljava/io/RandomAccessFile;
     goto :goto_4
 
-    .line 337
+    .line 334
     .end local v1    # "raf":Ljava/io/RandomAccessFile;
     :catchall_2
     move-exception v3
 
-    .line 338
+    .line 335
     :goto_5
     if-eqz v1, :cond_4
 
-    .line 340
+    .line 337
     :try_start_9
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_3
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 337
+    .line 334
     :cond_4
     :goto_6
     :try_start_a
     throw v3
 
-    .line 341
+    .line 338
     :catch_3
     move-exception v0
 
-    .line 342
+    .line 339
     .restart local v0    # "e":Ljava/io/IOException;
     const-string/jumbo v5, "LockSettingsStorage"
 
@@ -970,7 +970,7 @@
 
     goto :goto_6
 
-    .line 337
+    .line 334
     .end local v0    # "e":Ljava/io/IOException;
     .restart local v2    # "raf":Ljava/io/RandomAccessFile;
     :catchall_3
@@ -982,7 +982,7 @@
     .restart local v1    # "raf":Ljava/io/RandomAccessFile;
     goto :goto_5
 
-    .line 335
+    .line 332
     .local v1, "raf":Ljava/io/RandomAccessFile;
     :catch_4
     move-exception v0
@@ -997,12 +997,12 @@
     .locals 1
 
     .prologue
-    .line 483
+    .line 465
     iget-object v0, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-virtual {v0}, Lcom/android/server/LockSettingsStorage$Cache;->clear()V
 
-    .line 482
+    .line 464
     return-void
 .end method
 
@@ -1010,12 +1010,12 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 460
     iget-object v0, p0, Lcom/android/server/LockSettingsStorage;->mOpenHelper:Lcom/android/server/LockSettingsStorage$DatabaseHelper;
 
     invoke-virtual {v0}, Lcom/android/server/LockSettingsStorage$DatabaseHelper;->close()V
 
-    .line 477
+    .line 459
     return-void
 .end method
 
@@ -1024,7 +1024,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 424
+    .line 406
     const-string/jumbo v0, "gatekeeper.profile.key"
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/LockSettingsStorage;->getLockCredentialFilePathForUser(ILjava/lang/String;)Ljava/lang/String;
@@ -1039,7 +1039,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 415
+    .line 397
     const-string/jumbo v0, "password.key"
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/LockSettingsStorage;->getLockCredentialFilePathForUser(ILjava/lang/String;)Ljava/lang/String;
@@ -1054,7 +1054,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 410
+    .line 392
     const-string/jumbo v0, "gesture.key"
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/LockSettingsStorage;->getLockCredentialFilePathForUser(ILjava/lang/String;)Ljava/lang/String;
@@ -1069,7 +1069,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 405
+    .line 387
     const-string/jumbo v0, "gatekeeper.password.key"
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/LockSettingsStorage;->getLockCredentialFilePathForUser(ILjava/lang/String;)Ljava/lang/String;
@@ -1080,70 +1080,18 @@
 .end method
 
 .method getLockPatternFilename(I)Ljava/lang/String;
-    .locals 2
+    .locals 1
     .param p1, "userId"    # I
 
     .prologue
-    .line 399
+    .line 382
     const-string/jumbo v0, "gatekeeper.pattern.key"
 
-    .line 400
-    .local v0, "baseFileName":Ljava/lang/String;
     invoke-direct {p0, p1, v0}, Lcom/android/server/LockSettingsStorage;->getLockCredentialFilePathForUser(ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
-.end method
-
-.method public getLockPatternSize(I)B
-    .locals 4
-    .param p1, "userId"    # I
-
-    .prologue
-    .line 386
-    const-string/jumbo v2, "lock_pattern_size"
-
-    const-string/jumbo v3, "-1"
-
-    invoke-virtual {p0, v2, v3, p1}, Lcom/android/server/LockSettingsStorage;->readKeyValue(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    .line 387
-    .local v0, "size":J
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-lez v2, :cond_0
-
-    const-wide/16 v2, 0x80
-
-    cmp-long v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    .line 388
-    long-to-int v2, v0
-
-    int-to-byte v2, v2
-
-    return v2
-
-    .line 390
-    :cond_0
-    const/4 v2, 0x3
-
-    return v2
+    return-object v0
 .end method
 
 .method public getStoredCredentialType(I)I
@@ -1151,7 +1099,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 189
+    .line 186
     iget-object v4, p0, Lcom/android/server/LockSettingsStorage;->mStoredCredentialType:Landroid/util/SparseArray;
 
     invoke-virtual {v4, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1160,38 +1108,38 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 190
+    .line 187
     .local v0, "cachedStoredCredentialType":Ljava/lang/Integer;
     if-eqz v0, :cond_0
 
-    .line 191
+    .line 188
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
     return v4
 
-    .line 195
+    .line 192
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->readPatternHash(I)Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     move-result-object v2
 
-    .line 196
+    .line 193
     .local v2, "pattern":Lcom/android/server/LockSettingsStorage$CredentialHash;
     if-nez v2, :cond_2
 
-    .line 197
+    .line 194
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->readPasswordHash(I)Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     move-result-object v4
 
     if-eqz v4, :cond_1
 
-    .line 198
+    .line 195
     const/4 v3, 0x2
 
-    .line 215
+    .line 212
     .local v3, "storedCredentialType":I
     :goto_0
     iget-object v4, p0, Lcom/android/server/LockSettingsStorage;->mStoredCredentialType:Landroid/util/SparseArray;
@@ -1202,10 +1150,10 @@
 
     invoke-virtual {v4, p1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 216
+    .line 213
     return v3
 
-    .line 200
+    .line 197
     .end local v3    # "storedCredentialType":I
     :cond_1
     const/4 v3, -0x1
@@ -1213,31 +1161,31 @@
     .restart local v3    # "storedCredentialType":I
     goto :goto_0
 
-    .line 203
+    .line 200
     .end local v3    # "storedCredentialType":I
     :cond_2
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->readPasswordHash(I)Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     move-result-object v1
 
-    .line 204
+    .line 201
     .local v1, "password":Lcom/android/server/LockSettingsStorage$CredentialHash;
     if-eqz v1, :cond_4
 
-    .line 206
+    .line 203
     iget v4, v1, Lcom/android/server/LockSettingsStorage$CredentialHash;->version:I
 
     const/4 v5, 0x1
 
     if-ne v4, v5, :cond_3
 
-    .line 207
+    .line 204
     const/4 v3, 0x2
 
     .restart local v3    # "storedCredentialType":I
     goto :goto_0
 
-    .line 209
+    .line 206
     .end local v3    # "storedCredentialType":I
     :cond_3
     const/4 v3, 0x1
@@ -1245,7 +1193,7 @@
     .restart local v3    # "storedCredentialType":I
     goto :goto_0
 
-    .line 212
+    .line 209
     .end local v3    # "storedCredentialType":I
     :cond_4
     const/4 v3, 0x1
@@ -1259,7 +1207,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 272
+    .line 269
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getChildProfileLockFile(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1276,7 +1224,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 276
+    .line 273
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPasswordFilename(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1287,7 +1235,7 @@
 
     if-nez v0, :cond_0
 
-    .line 277
+    .line 274
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLegacyLockPasswordFilename(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1296,7 +1244,7 @@
 
     move-result v0
 
-    .line 276
+    .line 273
     :goto_0
     return v0
 
@@ -1311,7 +1259,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 281
+    .line 278
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPatternFilename(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1322,7 +1270,7 @@
 
     if-nez v0, :cond_0
 
-    .line 282
+    .line 279
     invoke-direct {p0, p1}, Lcom/android/server/LockSettingsStorage;->getBaseZeroLockPatternFilename(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1331,10 +1279,10 @@
 
     move-result v0
 
-    .line 281
+    .line 278
     if-nez v0, :cond_0
 
-    .line 283
+    .line 280
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLegacyLockPatternFilename(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1343,37 +1291,12 @@
 
     move-result v0
 
-    .line 281
+    .line 278
     :goto_0
     return v0
 
     :cond_0
     const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method public isDefaultSize(I)Z
-    .locals 2
-    .param p1, "userId"    # I
-
-    .prologue
-    .line 394
-    invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPatternSize(I)B
-
-    move-result v0
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -1389,12 +1312,12 @@
 
     const/4 v5, 0x0
 
-    .line 161
+    .line 158
     iget-object v2, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     monitor-enter v2
 
-    .line 162
+    .line 159
     :try_start_0
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
@@ -1408,17 +1331,17 @@
 
     monitor-exit v2
 
-    .line 163
+    .line 160
     return-void
 
-    .line 165
+    .line 162
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-virtual {v1, p1}, Lcom/android/server/LockSettingsStorage$Cache;->setFetched(I)V
 
-    .line 166
+    .line 163
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-static {v1}, Lcom/android/server/LockSettingsStorage$Cache;->-wrap0(Lcom/android/server/LockSettingsStorage$Cache;)I
@@ -1430,23 +1353,23 @@
     .local v11, "version":I
     monitor-exit v2
 
-    .line 170
+    .line 167
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mOpenHelper:Lcom/android/server/LockSettingsStorage$DatabaseHelper;
 
     invoke-virtual {v1}, Lcom/android/server/LockSettingsStorage$DatabaseHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 171
+    .line 168
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string/jumbo v1, "locksettings"
 
     sget-object v2, Lcom/android/server/LockSettingsStorage;->COLUMNS_FOR_PREFETCH:[Ljava/lang/String;
 
-    .line 172
+    .line 169
     const-string/jumbo v3, "user=?"
 
-    .line 173
+    .line 170
     new-array v4, v13, [Ljava/lang/String;
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -1459,7 +1382,7 @@
 
     move-object v7, v5
 
-    .line 171
+    .line 168
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v8
@@ -1467,7 +1390,7 @@
     .local v8, "cursor":Landroid/database/Cursor;
     if-eqz v8, :cond_2
 
-    .line 175
+    .line 172
     :goto_0
     invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -1475,18 +1398,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 176
+    .line 173
     invoke-interface {v8, v12}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 177
+    .line 174
     .local v9, "key":Ljava/lang/String;
     invoke-interface {v8, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 178
+    .line 175
     .local v10, "value":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
@@ -1494,7 +1417,7 @@
 
     goto :goto_0
 
-    .line 161
+    .line 158
     .end local v0    # "db":Landroid/database/sqlite/SQLiteDatabase;
     .end local v8    # "cursor":Landroid/database/Cursor;
     .end local v9    # "key":Ljava/lang/String;
@@ -1507,21 +1430,21 @@
 
     throw v1
 
-    .line 180
+    .line 177
     .restart local v0    # "db":Landroid/database/sqlite/SQLiteDatabase;
     .restart local v8    # "cursor":Landroid/database/Cursor;
     .restart local v11    # "version":I
     :cond_1
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 184
+    .line 181
     :cond_2
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->readPasswordHash(I)Lcom/android/server/LockSettingsStorage$CredentialHash;
 
-    .line 185
+    .line 182
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->readPatternHash(I)Lcom/android/server/LockSettingsStorage$CredentialHash;
 
-    .line 159
+    .line 156
     return-void
 .end method
 
@@ -1530,7 +1453,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 268
+    .line 265
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getChildProfileLockFile(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1553,12 +1476,12 @@
 
     const/4 v5, 0x0
 
-    .line 136
+    .line 133
     iget-object v2, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     monitor-enter v2
 
-    .line 137
+    .line 134
     :try_start_0
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
@@ -1568,7 +1491,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 138
+    .line 135
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-virtual {v1, p1, p2, p3}, Lcom/android/server/LockSettingsStorage$Cache;->peekKeyValue(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
@@ -1581,7 +1504,7 @@
 
     return-object v1
 
-    .line 140
+    .line 137
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
@@ -1595,10 +1518,10 @@
     .local v10, "version":I
     monitor-exit v2
 
-    .line 144
+    .line 141
     sget-object v9, Lcom/android/server/LockSettingsStorage;->DEFAULT:Ljava/lang/Object;
 
-    .line 145
+    .line 142
     .local v9, "result":Ljava/lang/Object;
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mOpenHelper:Lcom/android/server/LockSettingsStorage$DatabaseHelper;
 
@@ -1606,16 +1529,16 @@
 
     move-result-object v0
 
-    .line 146
+    .line 143
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string/jumbo v1, "locksettings"
 
     sget-object v2, Lcom/android/server/LockSettingsStorage;->COLUMNS_FOR_QUERY:[Ljava/lang/String;
 
-    .line 147
+    .line 144
     const-string/jumbo v3, "user=? AND name=?"
 
-    .line 148
+    .line 145
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/String;
@@ -1634,7 +1557,7 @@
 
     move-object v7, v5
 
-    .line 146
+    .line 143
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v8
@@ -1642,29 +1565,29 @@
     .local v8, "cursor":Landroid/database/Cursor;
     if-eqz v8, :cond_2
 
-    .line 150
+    .line 147
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 151
+    .line 148
     invoke-interface {v8, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 153
+    .line 150
     :cond_1
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 155
+    .line 152
     :cond_2
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-virtual {v1, p1, v9, p3, v10}, Lcom/android/server/LockSettingsStorage$Cache;->putKeyValueIfUnchanged(Ljava/lang/String;Ljava/lang/Object;II)V
 
-    .line 156
+    .line 153
     sget-object v1, Lcom/android/server/LockSettingsStorage;->DEFAULT:Ljava/lang/Object;
 
     if-ne v9, v1, :cond_3
@@ -1674,7 +1597,7 @@
     :goto_0
     return-object p2
 
-    .line 136
+    .line 133
     .end local v0    # "db":Landroid/database/sqlite/SQLiteDatabase;
     .end local v8    # "cursor":Landroid/database/Cursor;
     .end local v10    # "version":I
@@ -1686,7 +1609,7 @@
 
     throw v1
 
-    .line 156
+    .line 153
     .restart local v0    # "db":Landroid/database/sqlite/SQLiteDatabase;
     .restart local v8    # "cursor":Landroid/database/Cursor;
     .restart local v9    # "result":Ljava/lang/Object;
@@ -1708,7 +1631,7 @@
 
     const/4 v2, 0x0
 
-    .line 221
+    .line 218
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPasswordFilename(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1717,7 +1640,7 @@
 
     move-result-object v0
 
-    .line 222
+    .line 219
     .local v0, "stored":[B
     if-eqz v0, :cond_0
 
@@ -1725,7 +1648,7 @@
 
     if-lez v1, :cond_0
 
-    .line 223
+    .line 220
     new-instance v1, Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     const/4 v2, 0x1
@@ -1734,7 +1657,7 @@
 
     return-object v1
 
-    .line 226
+    .line 223
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLegacyLockPasswordFilename(I)Ljava/lang/String;
 
@@ -1744,21 +1667,21 @@
 
     move-result-object v0
 
-    .line 227
+    .line 224
     if-eqz v0, :cond_1
 
     array-length v1, v0
 
     if-lez v1, :cond_1
 
-    .line 228
+    .line 225
     new-instance v1, Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     invoke-direct {v1, v0, v2}, Lcom/android/server/LockSettingsStorage$CredentialHash;-><init>([BI)V
 
     return-object v1
 
-    .line 231
+    .line 228
     :cond_1
     return-object v3
 .end method
@@ -1774,7 +1697,7 @@
 
     const/4 v2, 0x0
 
-    .line 235
+    .line 232
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPatternFilename(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1783,7 +1706,7 @@
 
     move-result-object v0
 
-    .line 236
+    .line 233
     .local v0, "stored":[B
     if-eqz v0, :cond_0
 
@@ -1791,14 +1714,14 @@
 
     if-lez v1, :cond_0
 
-    .line 237
+    .line 234
     new-instance v1, Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     invoke-direct {v1, v0, v4}, Lcom/android/server/LockSettingsStorage$CredentialHash;-><init>([BI)V
 
     return-object v1
 
-    .line 240
+    .line 237
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/server/LockSettingsStorage;->getBaseZeroLockPatternFilename(I)Ljava/lang/String;
 
@@ -1808,21 +1731,21 @@
 
     move-result-object v0
 
-    .line 241
+    .line 238
     if-eqz v0, :cond_1
 
     array-length v1, v0
 
     if-lez v1, :cond_1
 
-    .line 242
+    .line 239
     new-instance v1, Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     invoke-direct {v1, v0, v4}, Lcom/android/server/LockSettingsStorage$CredentialHash;-><init>([BZ)V
 
     return-object v1
 
-    .line 245
+    .line 242
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLegacyLockPatternFilename(I)Ljava/lang/String;
 
@@ -1832,21 +1755,21 @@
 
     move-result-object v0
 
-    .line 246
+    .line 243
     if-eqz v0, :cond_2
 
     array-length v1, v0
 
     if-lez v1, :cond_2
 
-    .line 247
+    .line 244
     new-instance v1, Lcom/android/server/LockSettingsStorage$CredentialHash;
 
     invoke-direct {v1, v0, v2}, Lcom/android/server/LockSettingsStorage$CredentialHash;-><init>([BI)V
 
     return-object v1
 
-    .line 250
+    .line 247
     :cond_2
     return-object v3
 .end method
@@ -1856,7 +1779,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 257
+    .line 254
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getChildProfileLockFile(I)Ljava/lang/String;
 
@@ -1866,15 +1789,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 253
+    .line 250
     :goto_0
     return-void
 
-    .line 258
+    .line 255
     :catch_0
     move-exception v0
 
-    .line 259
+    .line 256
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -1886,14 +1809,14 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 440
+    .line 422
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mOpenHelper:Lcom/android/server/LockSettingsStorage$DatabaseHelper;
 
     invoke-virtual {v5}, Lcom/android/server/LockSettingsStorage$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 442
+    .line 424
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mContext:Landroid/content/Context;
 
@@ -1905,34 +1828,34 @@
 
     check-cast v4, Landroid/os/UserManager;
 
-    .line 443
+    .line 425
     .local v4, "um":Landroid/os/UserManager;
     invoke-virtual {v4, p1}, Landroid/os/UserManager;->getProfileParent(I)Landroid/content/pm/UserInfo;
 
     move-result-object v3
 
-    .line 445
+    .line 427
     .local v3, "parentInfo":Landroid/content/pm/UserInfo;
     if-nez v3, :cond_2
 
-    .line 447
+    .line 429
     iget-object v6, p0, Lcom/android/server/LockSettingsStorage;->mFileWriteLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 448
+    .line 430
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPasswordFilename(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 449
+    .line 431
     .local v2, "name":Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 450
+    .line 432
     .local v1, "file":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1940,29 +1863,29 @@
 
     if-eqz v5, :cond_0
 
-    .line 451
+    .line 433
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    .line 452
+    .line 434
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     const/4 v7, 0x0
 
     invoke-virtual {v5, v2, v7}, Lcom/android/server/LockSettingsStorage$Cache;->putFile(Ljava/lang/String;[B)V
 
-    .line 454
+    .line 436
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getLockPatternFilename(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 455
+    .line 437
     new-instance v1, Ljava/io/File;
 
     .end local v1    # "file":Ljava/io/File;
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 456
+    .line 438
     .restart local v1    # "file":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1970,10 +1893,10 @@
 
     if-eqz v5, :cond_1
 
-    .line 457
+    .line 439
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    .line 458
+    .line 440
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     const/4 v7, 0x0
@@ -1985,14 +1908,14 @@
     :cond_1
     monitor-exit v6
 
-    .line 467
+    .line 449
     .end local v1    # "file":Ljava/io/File;
     .end local v2    # "name":Ljava/lang/String;
     :goto_0
     :try_start_1
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 468
+    .line 450
     const-string/jumbo v5, "locksettings"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2023,23 +1946,23 @@
 
     invoke-virtual {v0, v5, v6, v7}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 469
+    .line 451
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    .line 470
+    .line 452
     iget-object v5, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-virtual {v5, p1}, Lcom/android/server/LockSettingsStorage$Cache;->removeUser(I)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 472
+    .line 454
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 439
+    .line 421
     return-void
 
-    .line 447
+    .line 429
     :catchall_0
     move-exception v5
 
@@ -2047,20 +1970,20 @@
 
     throw v5
 
-    .line 463
+    .line 445
     :cond_2
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->removeChildProfileLock(I)V
 
     goto :goto_0
 
-    .line 471
+    .line 453
     :catchall_1
     move-exception v5
 
-    .line 472
+    .line 454
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 471
+    .line 453
     throw v5
 .end method
 
@@ -2070,14 +1993,14 @@
     .param p2, "lock"    # [B
 
     .prologue
-    .line 264
+    .line 261
     invoke-virtual {p0, p1}, Lcom/android/server/LockSettingsStorage;->getChildProfileLockFile(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p2}, Lcom/android/server/LockSettingsStorage;->writeFile(Ljava/lang/String;[B)V
 
-    .line 263
+    .line 260
     return-void
 .end method
 
@@ -2089,18 +2012,18 @@
     .param p4, "userId"    # I
 
     .prologue
-    .line 116
+    .line 113
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 117
+    .line 114
     .local v0, "cv":Landroid/content/ContentValues;
     const-string/jumbo v1, "name"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 118
+    .line 115
     const-string/jumbo v1, "user"
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2109,21 +2032,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 119
+    .line 116
     const-string/jumbo v1, "value"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 121
+    .line 118
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 123
+    .line 120
     :try_start_0
     const-string/jumbo v1, "locksettings"
 
     const-string/jumbo v2, "name=? AND user=?"
 
-    .line 124
+    .line 121
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/String;
@@ -2140,40 +2063,40 @@
 
     aput-object v4, v3, v5
 
-    .line 123
+    .line 120
     invoke-virtual {p1, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 125
+    .line 122
     const-string/jumbo v1, "locksettings"
 
     const/4 v2, 0x0
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    .line 126
+    .line 123
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    .line 127
+    .line 124
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mCache:Lcom/android/server/LockSettingsStorage$Cache;
 
     invoke-virtual {v1, p2, p3, p4}, Lcom/android/server/LockSettingsStorage$Cache;->putKeyValue(Ljava/lang/String;Ljava/lang/String;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 129
+    .line 126
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 115
+    .line 112
     return-void
 
-    .line 128
+    .line 125
     :catchall_0
     move-exception v1
 
-    .line 129
+    .line 126
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 128
+    .line 125
     throw v1
 .end method
 
@@ -2184,7 +2107,7 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 112
+    .line 109
     iget-object v0, p0, Lcom/android/server/LockSettingsStorage;->mOpenHelper:Lcom/android/server/LockSettingsStorage$DatabaseHelper;
 
     invoke-virtual {v0}, Lcom/android/server/LockSettingsStorage$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -2193,7 +2116,7 @@
 
     invoke-virtual {p0, v0, p1, p2, p3}, Lcom/android/server/LockSettingsStorage;->writeKeyValue(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 111
+    .line 108
     return-void
 .end method
 
@@ -2203,7 +2126,7 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 375
+    .line 370
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mStoredCredentialType:Landroid/util/SparseArray;
 
     if-nez p1, :cond_0
@@ -2217,20 +2140,20 @@
 
     invoke-virtual {v1, p2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 377
+    .line 372
     invoke-virtual {p0, p2}, Lcom/android/server/LockSettingsStorage;->getLockPasswordFilename(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/LockSettingsStorage;->writeFile(Ljava/lang/String;[B)V
 
-    .line 378
+    .line 373
     invoke-direct {p0, p2}, Lcom/android/server/LockSettingsStorage;->clearPatternHash(I)V
 
-    .line 374
+    .line 369
     return-void
 
-    .line 376
+    .line 371
     :cond_0
     const/4 v0, 0x2
 
@@ -2243,7 +2166,7 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 362
+    .line 359
     iget-object v1, p0, Lcom/android/server/LockSettingsStorage;->mStoredCredentialType:Landroid/util/SparseArray;
 
     if-nez p1, :cond_0
@@ -2257,27 +2180,20 @@
 
     invoke-virtual {v1, p2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 364
+    .line 361
     invoke-virtual {p0, p2}, Lcom/android/server/LockSettingsStorage;->getLockPatternFilename(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/LockSettingsStorage;->writeFile(Ljava/lang/String;[B)V
 
-    .line 366
-    invoke-virtual {p0, p2}, Lcom/android/server/LockSettingsStorage;->getLockPatternFilename(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, p1}, Lcom/android/server/LockSettingsStorage;->writeFile(Ljava/lang/String;[B)V
-
-    .line 367
+    .line 362
     invoke-direct {p0, p2}, Lcom/android/server/LockSettingsStorage;->clearPasswordHash(I)V
 
-    .line 361
+    .line 358
     return-void
 
-    .line 363
+    .line 360
     :cond_0
     const/4 v0, 0x1
 

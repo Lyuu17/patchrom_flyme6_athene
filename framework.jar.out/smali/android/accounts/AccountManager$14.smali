@@ -44,7 +44,7 @@
     .param p7, "val$toUser"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 1637
+    .line 1616
     .local p4, "$anonymous1":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Ljava/lang/Boolean;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$14;->this$0:Landroid/accounts/AccountManager;
 
@@ -71,16 +71,16 @@
     .end annotation
 
     .prologue
-    .line 1646
+    .line 1624
     const-string/jumbo v0, "booleanResult"
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1647
+    .line 1625
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
     const-string/jumbo v1, "no result in response"
@@ -89,11 +89,11 @@
 
     throw v0
 
-    .line 1649
+    .line 1627
     :cond_0
     const-string/jumbo v0, "booleanResult"
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -114,7 +114,7 @@
     .end annotation
 
     .prologue
-    .line 1645
+    .line 1623
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$14;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -131,20 +131,15 @@
     .end annotation
 
     .prologue
-    .line 1640
-    const/16 v0, 0x22
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 1641
+    .line 1619
     iget-object v0, p0, Landroid/accounts/AccountManager$14;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
 
     move-result-object v0
 
-    .line 1642
-    iget-object v1, p0, Landroid/accounts/AccountManager$14;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    .line 1620
+    iget-object v1, p0, Landroid/accounts/AccountManager$BaseFutureTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
     iget-object v2, p0, Landroid/accounts/AccountManager$14;->val$account:Landroid/accounts/Account;
 
@@ -160,9 +155,9 @@
 
     move-result v4
 
-    .line 1641
+    .line 1619
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/accounts/IAccountManager;->copyAccountToUser(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;II)V
 
-    .line 1639
+    .line 1618
     return-void
 .end method

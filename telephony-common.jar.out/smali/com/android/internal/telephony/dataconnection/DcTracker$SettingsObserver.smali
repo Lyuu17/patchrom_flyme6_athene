@@ -43,25 +43,25 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 386
+    .line 381
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 387
+    .line 382
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mUriEventMap:Ljava/util/HashMap;
 
-    .line 388
+    .line 383
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mContext:Landroid/content/Context;
 
-    .line 389
+    .line 384
     iput-object p2, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mHandler:Landroid/os/Handler;
 
-    .line 385
+    .line 380
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .param p2, "what"    # I
 
     .prologue
-    .line 393
+    .line 388
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mUriEventMap:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -82,20 +82,20 @@
 
     invoke-virtual {v1, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 394
+    .line 389
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 395
+    .line 390
     .local v0, "resolver":Landroid/content/ContentResolver;
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 392
+    .line 387
     return-void
 .end method
 
@@ -104,14 +104,14 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 405
+    .line 400
     const-string/jumbo v0, "DcTracker.SettingsObserver"
 
     const-string/jumbo v1, "Should never be reached."
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 404
+    .line 399
     return-void
 .end method
 
@@ -121,7 +121,7 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 410
+    .line 405
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mUriEventMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -130,11 +130,11 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 411
+    .line 406
     .local v0, "what":Ljava/lang/Integer;
     if-eqz v0, :cond_0
 
-    .line 412
+    .line 407
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -147,11 +147,11 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 409
+    .line 404
     :goto_0
     return-void
 
-    .line 414
+    .line 409
     :cond_0
     const-string/jumbo v1, "DcTracker.SettingsObserver"
 
@@ -182,17 +182,17 @@
     .locals 2
 
     .prologue
-    .line 399
+    .line 394
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 400
+    .line 395
     .local v0, "resolver":Landroid/content/ContentResolver;
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 398
+    .line 393
     return-void
 .end method

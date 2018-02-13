@@ -35,33 +35,33 @@
     .locals 2
 
     .prologue
-    .line 5190
+    .line 5183
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
-    .line 5191
+    .line 5184
     const-string/jumbo v1, "phone_lookup"
 
-    .line 5190
+    .line 5183
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$PhoneLookup;->CONTENT_FILTER_URI:Landroid/net/Uri;
 
-    .line 5239
+    .line 5232
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
-    .line 5240
+    .line 5233
     const-string/jumbo v1, "phone_lookup_enterprise"
 
-    .line 5239
+    .line 5232
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$PhoneLookup;->ENTERPRISE_CONTENT_FILTER_URI:Landroid/net/Uri;
 
-    .line 5175
+    .line 5168
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .locals 0
 
     .prologue
-    .line 5180
+    .line 5173
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

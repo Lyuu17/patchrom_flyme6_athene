@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1013
+    .line 957
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "p"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1015
+    .line 959
     new-instance v0, Landroid/media/AudioFormat;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "p"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1014
+    .line 958
     invoke-virtual {p0, p1}, Landroid/media/AudioFormat$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/AudioFormat;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1018
+    .line 962
     new-array v0, p1, [Landroid/media/AudioFormat;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1017
+    .line 961
     invoke-virtual {p0, p1}, Landroid/media/AudioFormat$1;->newArray(I)[Landroid/media/AudioFormat;
 
     move-result-object v0

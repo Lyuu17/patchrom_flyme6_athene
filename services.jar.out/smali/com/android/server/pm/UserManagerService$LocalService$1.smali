@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Lcom/android/server/pm/UserManagerService$LocalService;
 
     .prologue
-    .line 3409
+    .line 3408
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$LocalService$1;->this$1:Lcom/android/server/pm/UserManagerService$LocalService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 3413
+    .line 3412
     const-string/jumbo v1, "android.intent.extra.user_handle"
 
     const/16 v2, -0x2710
@@ -49,14 +49,14 @@
 
     move-result v0
 
-    .line 3414
+    .line 3413
     .local v0, "userId":I
     if-eqz v0, :cond_0
 
-    .line 3415
+    .line 3414
     return-void
 
-    .line 3417
+    .line 3416
     :cond_0
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService$1;->this$1:Lcom/android/server/pm/UserManagerService$LocalService;
 
@@ -68,13 +68,13 @@
 
     invoke-virtual {v1, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 3418
+    .line 3417
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService$1;->this$1:Lcom/android/server/pm/UserManagerService$LocalService;
 
     iget-object v1, v1, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v1}, Lcom/android/server/pm/UserManagerService;->-wrap4(Lcom/android/server/pm/UserManagerService;)V
 
-    .line 3411
+    .line 3410
     return-void
 .end method

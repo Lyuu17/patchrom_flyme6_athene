@@ -39,17 +39,17 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 1483
+    .line 1426
     iput-object p1, p0, Landroid/service/notification/NotificationListenerService$MyHandler;->this$0:Landroid/service/notification/NotificationListenerService;
 
-    .line 1484
+    .line 1427
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 1483
+    .line 1426
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1489
+    .line 1432
     iget-object v5, p0, Landroid/service/notification/NotificationListenerService$MyHandler;->this$0:Landroid/service/notification/NotificationListenerService;
 
     invoke-static {v5}, Landroid/service/notification/NotificationListenerService;->-get1(Landroid/service/notification/NotificationListenerService;)Z
@@ -69,49 +69,49 @@
 
     if-nez v5, :cond_0
 
-    .line 1490
+    .line 1433
     return-void
 
-    .line 1492
+    .line 1435
     :cond_0
     iget v5, p1, Landroid/os/Message;->what:I
 
     packed-switch v5, :pswitch_data_0
 
-    .line 1488
+    .line 1431
     :goto_0
     return-void
 
-    .line 1494
+    .line 1437
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 1495
+    .line 1438
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v4, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v4, Landroid/service/notification/StatusBarNotification;
 
-    .line 1496
+    .line 1439
     .local v4, "sbn":Landroid/service/notification/StatusBarNotification;
     iget-object v3, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v3, Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .line 1497
+    .line 1440
     .local v3, "rankingMap":Landroid/service/notification/NotificationListenerService$RankingMap;
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 1498
+    .line 1441
     iget-object v5, p0, Landroid/service/notification/NotificationListenerService$MyHandler;->this$0:Landroid/service/notification/NotificationListenerService;
 
     invoke-virtual {v5, v4, v3}, Landroid/service/notification/NotificationListenerService;->onNotificationPosted(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
     goto :goto_0
 
-    .line 1502
+    .line 1445
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     .end local v3    # "rankingMap":Landroid/service/notification/NotificationListenerService$RankingMap;
     .end local v4    # "sbn":Landroid/service/notification/StatusBarNotification;
@@ -120,30 +120,30 @@
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 1503
+    .line 1446
     .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v4, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v4, Landroid/service/notification/StatusBarNotification;
 
-    .line 1504
+    .line 1447
     .restart local v4    # "sbn":Landroid/service/notification/StatusBarNotification;
     iget-object v3, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v3, Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .line 1505
+    .line 1448
     .restart local v3    # "rankingMap":Landroid/service/notification/NotificationListenerService$RankingMap;
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 1506
+    .line 1449
     iget-object v5, p0, Landroid/service/notification/NotificationListenerService$MyHandler;->this$0:Landroid/service/notification/NotificationListenerService;
 
     invoke-virtual {v5, v4, v3}, Landroid/service/notification/NotificationListenerService;->onNotificationRemoved(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
     goto :goto_0
 
-    .line 1510
+    .line 1453
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     .end local v3    # "rankingMap":Landroid/service/notification/NotificationListenerService$RankingMap;
     .end local v4    # "sbn":Landroid/service/notification/StatusBarNotification;
@@ -154,13 +154,13 @@
 
     goto :goto_0
 
-    .line 1514
+    .line 1457
     :pswitch_3
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v3, Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .line 1515
+    .line 1458
     .restart local v3    # "rankingMap":Landroid/service/notification/NotificationListenerService$RankingMap;
     iget-object v5, p0, Landroid/service/notification/NotificationListenerService$MyHandler;->this$0:Landroid/service/notification/NotificationListenerService;
 
@@ -168,12 +168,12 @@
 
     goto :goto_0
 
-    .line 1519
+    .line 1462
     .end local v3    # "rankingMap":Landroid/service/notification/NotificationListenerService$RankingMap;
     :pswitch_4
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 1520
+    .line 1463
     .local v1, "hints":I
     iget-object v5, p0, Landroid/service/notification/NotificationListenerService$MyHandler;->this$0:Landroid/service/notification/NotificationListenerService;
 
@@ -181,12 +181,12 @@
 
     goto :goto_0
 
-    .line 1524
+    .line 1467
     .end local v1    # "hints":I
     :pswitch_5
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    .line 1525
+    .line 1468
     .local v2, "interruptionFilter":I
     iget-object v5, p0, Landroid/service/notification/NotificationListenerService$MyHandler;->this$0:Landroid/service/notification/NotificationListenerService;
 
@@ -194,7 +194,7 @@
 
     goto :goto_0
 
-    .line 1492
+    .line 1435
     nop
 
     :pswitch_data_0

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
     .prologue
-    .line 21328
+    .line 20992
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Landroid/content/pm/PackageManagerInternal;-><init>()V
@@ -50,7 +50,7 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 21450
+    .line 21114
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     const/4 v1, 0x0
@@ -77,7 +77,7 @@
     .end annotation
 
     .prologue
-    .line 21456
+    .line 21120
     .local p1, "allHomeCandidates":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -93,7 +93,7 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 21481
+    .line 21145
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/PackageManagerService;->getNameForUid(I)Ljava/lang/String;
@@ -109,14 +109,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 21381
+    .line 21045
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21382
+    .line 21046
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -124,7 +124,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/pm/Settings;->setDefaultDialerPackageNameLPw(Ljava/lang/String;I)Z
 
-    .line 21383
+    .line 21047
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mDefaultPermissionPolicy:Lcom/android/server/pm/DefaultPermissionGrantPolicy;
@@ -135,10 +135,10 @@
 
     monitor-exit v1
 
-    .line 21380
+    .line 21044
     return-void
 
-    .line 21381
+    .line 21045
     :catchall_0
     move-exception v0
 
@@ -153,14 +153,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 21390
+    .line 21054
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21391
+    .line 21055
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -172,10 +172,10 @@
 
     monitor-exit v1
 
-    .line 21389
+    .line 21053
     return-void
 
-    .line 21390
+    .line 21054
     :catchall_0
     move-exception v0
 
@@ -190,14 +190,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 21373
+    .line 21037
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21374
+    .line 21038
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -209,10 +209,10 @@
 
     monitor-exit v1
 
-    .line 21372
+    .line 21036
     return-void
 
-    .line 21373
+    .line 21037
     :catchall_0
     move-exception v0
 
@@ -227,7 +227,7 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 21469
+    .line 21133
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mProtectedPackages:Lcom/android/server/pm/ProtectedPackages;
@@ -247,14 +247,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 21426
+    .line 21090
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v3, v2, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v3
 
-    .line 21428
+    .line 21092
     :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -266,7 +266,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 21432
+    .line 21096
     :cond_0
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -282,23 +282,23 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 21433
+    .line 21097
     .local v0, "packageSetting":Lcom/android/server/pm/PackageSetting;
     if-nez v0, :cond_2
 
     monitor-exit v3
 
-    .line 21434
+    .line 21098
     return v5
 
     .end local v0    # "packageSetting":Lcom/android/server/pm/PackageSetting;
     :cond_1
     monitor-exit v3
 
-    .line 21429
+    .line 21093
     return v5
 
-    .line 21438
+    .line 21102
     .restart local v0    # "packageSetting":Lcom/android/server/pm/PackageSetting;
     :cond_2
     :try_start_1
@@ -316,17 +316,17 @@
 
     monitor-exit v3
 
-    .line 21439
+    .line 21103
     return v5
 
-    .line 21443
+    .line 21107
     :cond_3
     :try_start_2
     invoke-virtual {v0}, Lcom/android/server/pm/PackageSetting;->getPermissionsState()Lcom/android/server/pm/PermissionsState;
 
     move-result-object v1
 
-    .line 21444
+    .line 21108
     .local v1, "permissionsState":Lcom/android/server/pm/PermissionsState;
     invoke-virtual {v1, p2}, Lcom/android/server/pm/PermissionsState;->isPermissionReviewRequired(I)Z
     :try_end_2
@@ -338,7 +338,7 @@
 
     return v2
 
-    .line 21426
+    .line 21090
     .end local v0    # "packageSetting":Lcom/android/server/pm/PackageSetting;
     .end local v1    # "permissionsState":Lcom/android/server/pm/PermissionsState;
     :catchall_0
@@ -365,7 +365,7 @@
     .end annotation
 
     .prologue
-    .line 21463
+    .line 21127
     .local p3, "profileOwnerPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/String;>;"
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -373,7 +373,7 @@
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/pm/ProtectedPackages;->setDeviceAndProfileOwnerPackages(ILjava/lang/String;Landroid/util/SparseArray;)V
 
-    .line 21462
+    .line 21126
     return-void
 .end method
 
@@ -382,14 +382,14 @@
     .param p1, "provider"    # Landroid/content/pm/PackageManagerInternal$PackagesProvider;
 
     .prologue
-    .line 21352
+    .line 21016
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21353
+    .line 21017
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -401,10 +401,10 @@
 
     monitor-exit v1
 
-    .line 21351
+    .line 21015
     return-void
 
-    .line 21352
+    .line 21016
     :catchall_0
     move-exception v0
 
@@ -426,14 +426,14 @@
     .end annotation
 
     .prologue
-    .line 21398
+    .line 21062
     .local p1, "packageList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 21399
+    .line 21063
     const/4 v4, 0x0
 
-    .line 21400
+    .line 21064
     .local v4, "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -441,7 +441,7 @@
 
     monitor-enter v7
 
-    .line 21401
+    .line 21065
     :try_start_0
     iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -451,7 +451,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 21402
+    .line 21066
     iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-static {v6}, Lcom/android/server/pm/PackageManagerService;->-get7(Lcom/android/server/pm/PackageManagerService;)Ljava/util/List;
@@ -464,7 +464,7 @@
 
     move-result v2
 
-    .line 21403
+    .line 21067
     .local v2, "packagesCount":I
     const/4 v0, 0x0
 
@@ -476,7 +476,7 @@
     :goto_0
     if-ge v0, v2, :cond_1
 
-    .line 21404
+    .line 21068
     :try_start_1
     iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -490,7 +490,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 21405
+    .line 21069
     .local v1, "oldPackage":Ljava/lang/String;
     if-eqz p1, :cond_0
 
@@ -502,7 +502,7 @@
 
     move-object v4, v5
 
-    .line 21403
+    .line 21067
     .end local v5    # "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local v4, "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :goto_1
@@ -514,18 +514,18 @@
     .restart local v5    # "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 21408
+    .line 21072
     :cond_0
     if-nez v5, :cond_4
 
-    .line 21409
+    .line 21073
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 21411
+    .line 21075
     .end local v5    # "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .restart local v4    # "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :goto_2
@@ -536,7 +536,7 @@
 
     goto :goto_1
 
-    .line 21400
+    .line 21064
     .end local v0    # "i":I
     .end local v1    # "oldPackage":Ljava/lang/String;
     .end local v2    # "packagesCount":I
@@ -555,7 +555,7 @@
     :cond_1
     move-object v4, v5
 
-    .line 21414
+    .line 21078
     .end local v0    # "i":I
     .end local v2    # "packagesCount":I
     .end local v5    # "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -569,15 +569,15 @@
 
     invoke-static {v6, v8}, Lcom/android/server/pm/PackageManagerService;->-set1(Lcom/android/server/pm/PackageManagerService;Ljava/util/List;)Ljava/util/List;
 
-    .line 21415
+    .line 21079
     if-eqz v4, :cond_3
 
-    .line 21416
+    .line 21080
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v3
 
-    .line 21417
+    .line 21081
     .local v3, "removedCount":I
     const/4 v0, 0x0
 
@@ -585,7 +585,7 @@
     :goto_4
     if-ge v0, v3, :cond_3
 
-    .line 21418
+    .line 21082
     iget-object v8, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -594,11 +594,11 @@
 
     check-cast v6, Ljava/lang/String;
 
-    invoke-static {v8, v6}, Lcom/android/server/pm/PackageManagerService;->-wrap24(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;)V
+    invoke-static {v8, v6}, Lcom/android/server/pm/PackageManagerService;->-wrap23(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 21417
+    .line 21081
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
@@ -608,10 +608,10 @@
     :cond_3
     monitor-exit v7
 
-    .line 21397
+    .line 21061
     return-void
 
-    .line 21400
+    .line 21064
     .restart local v0    # "i":I
     .restart local v2    # "packagesCount":I
     .restart local v5    # "removedFromList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -640,14 +640,14 @@
     .param p1, "provider"    # Landroid/content/pm/PackageManagerInternal$PackagesProvider;
 
     .prologue
-    .line 21331
+    .line 20995
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21332
+    .line 20996
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -659,10 +659,10 @@
 
     monitor-exit v1
 
-    .line 21330
+    .line 20994
     return-void
 
-    .line 21331
+    .line 20995
     :catchall_0
     move-exception v0
 
@@ -676,14 +676,14 @@
     .param p1, "provider"    # Landroid/content/pm/PackageManagerInternal$PackagesProvider;
 
     .prologue
-    .line 21359
+    .line 21023
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21360
+    .line 21024
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -695,10 +695,10 @@
 
     monitor-exit v1
 
-    .line 21358
+    .line 21022
     return-void
 
-    .line 21359
+    .line 21023
     :catchall_0
     move-exception v0
 
@@ -712,14 +712,14 @@
     .param p1, "provider"    # Landroid/content/pm/PackageManagerInternal$PackagesProvider;
 
     .prologue
-    .line 21345
+    .line 21009
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21346
+    .line 21010
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -731,10 +731,10 @@
 
     monitor-exit v1
 
-    .line 21344
+    .line 21008
     return-void
 
-    .line 21345
+    .line 21009
     :catchall_0
     move-exception v0
 
@@ -748,14 +748,14 @@
     .param p1, "provider"    # Landroid/content/pm/PackageManagerInternal$SyncAdapterPackagesProvider;
 
     .prologue
-    .line 21366
+    .line 21030
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21367
+    .line 21031
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -767,10 +767,10 @@
 
     monitor-exit v1
 
-    .line 21365
+    .line 21029
     return-void
 
-    .line 21366
+    .line 21030
     :catchall_0
     move-exception v0
 
@@ -784,14 +784,14 @@
     .param p1, "provider"    # Landroid/content/pm/PackageManagerInternal$PackagesProvider;
 
     .prologue
-    .line 21338
+    .line 21002
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21339
+    .line 21003
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -803,10 +803,10 @@
 
     monitor-exit v1
 
-    .line 21337
+    .line 21001
     return-void
 
-    .line 21338
+    .line 21002
     :catchall_0
     move-exception v0
 
@@ -821,14 +821,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 21474
+    .line 21138
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 21475
+    .line 21139
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerInternalImpl;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -844,7 +844,7 @@
 
     return v0
 
-    .line 21474
+    .line 21138
     :catchall_0
     move-exception v0
 

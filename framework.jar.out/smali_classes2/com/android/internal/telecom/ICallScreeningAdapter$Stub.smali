@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.telecom.ICallScreeningAdapter"
 
-.field static final TRANSACTION_allowCall_0:I = 0x1
+.field static final TRANSACTION_allowCall:I = 0x1
 
 .field static final TRANSACTION_disallowCall:I = 0x2
 
@@ -42,7 +42,7 @@
     .line 22
     const-string/jumbo v0, "com.android.internal.telecom.ICallScreeningAdapter"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/internal/telecom/ICallScreeningAdapter$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 20
     return-void

@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_acknowledgeStopMessage:I = 0x2
 
-.field static final TRANSACTION_jobFinished_2:I = 0x3
+.field static final TRANSACTION_jobFinished:I = 0x3
 
 
 # direct methods

@@ -39,7 +39,7 @@
     .param p4, "val$identifier"    # Landroid/hardware/input/InputDeviceIdentifier;
 
     .prologue
-    .line 1108
+    .line 1060
     .local p3, "val$enabledLayouts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/hardware/input/KeyboardLayout;>;"
     .local p5, "val$potentialLayouts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/hardware/input/KeyboardLayout;>;"
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$7;->this$0:Lcom/android/server/input/InputManagerService;
@@ -68,7 +68,7 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 1116
+    .line 1068
     iget-object v2, p0, Lcom/android/server/input/InputManagerService$7;->val$enabledLayoutDescriptors:[Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -80,7 +80,7 @@
 
     aget-object v0, v2, v1
 
-    .line 1117
+    .line 1069
     .local v0, "s":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -94,21 +94,21 @@
 
     if-eqz v4, :cond_0
 
-    .line 1118
+    .line 1070
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$7;->val$enabledLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1119
+    .line 1071
     return-void
 
-    .line 1116
+    .line 1068
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1126
+    .line 1078
     .end local v0    # "s":Ljava/lang/String;
     :cond_1
     invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getVendorId()I
@@ -123,7 +123,7 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 1127
+    .line 1079
     invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getProductId()I
 
     move-result v1
@@ -136,33 +136,33 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 1128
+    .line 1080
     iget-boolean v1, p0, Lcom/android/server/input/InputManagerService$7;->mHasSeenDeviceSpecificLayout:Z
 
     if-nez v1, :cond_2
 
-    .line 1129
+    .line 1081
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/input/InputManagerService$7;->mHasSeenDeviceSpecificLayout:Z
 
-    .line 1130
+    .line 1082
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$7;->val$potentialLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1132
+    .line 1084
     :cond_2
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$7;->val$potentialLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1113
+    .line 1065
     :cond_3
     :goto_1
     return-void
 
-    .line 1133
+    .line 1085
     :cond_4
     invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getVendorId()I
 
@@ -176,12 +176,12 @@
 
     if-ne v1, v5, :cond_3
 
-    .line 1134
+    .line 1086
     iget-boolean v1, p0, Lcom/android/server/input/InputManagerService$7;->mHasSeenDeviceSpecificLayout:Z
 
     if-nez v1, :cond_3
 
-    .line 1135
+    .line 1087
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$7;->val$potentialLayouts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z

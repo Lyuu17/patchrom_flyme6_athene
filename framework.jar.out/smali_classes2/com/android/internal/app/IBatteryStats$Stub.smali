@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.app.IBatteryStats"
 
-.field static final TRANSACTION_computeBatteryTimeRemaining_17:I = 0x12
+.field static final TRANSACTION_computeBatteryTimeRemaining:I = 0x12
 
-.field static final TRANSACTION_computeChargeTimeRemaining_18:I = 0x13
+.field static final TRANSACTION_computeChargeTimeRemaining:I = 0x13
 
 .field static final TRANSACTION_getAwakeTimeBattery:I = 0x4b
 

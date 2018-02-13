@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/audio/AudioService;
 
     .prologue
-    .line 5734
+    .line 5375
     iput-object p1, p0, Lcom/android/server/audio/AudioService$AudioServiceUserRestrictionsListener;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,14 +54,14 @@
     .param p3, "prevRestrictions"    # Landroid/os/Bundle;
 
     .prologue
-    .line 5742
+    .line 5383
     const-string/jumbo v2, "no_unmute_microphone"
 
     invoke-virtual {p3, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v1
 
-    .line 5744
+    .line 5385
     .local v1, "wasRestricted":Z
     const-string/jumbo v2, "no_unmute_microphone"
 
@@ -69,16 +69,16 @@
 
     move-result v0
 
-    .line 5745
+    .line 5386
     .local v0, "isRestricted":Z
     if-eq v1, v0, :cond_0
 
-    .line 5746
+    .line 5387
     iget-object v2, p0, Lcom/android/server/audio/AudioService$AudioServiceUserRestrictionsListener;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v2, v0, p1}, Lcom/android/server/audio/AudioService;->-wrap40(Lcom/android/server/audio/AudioService;ZI)V
+    invoke-static {v2, v0, p1}, Lcom/android/server/audio/AudioService;->-wrap39(Lcom/android/server/audio/AudioService;ZI)V
 
-    .line 5753
+    .line 5394
     :cond_0
     const-string/jumbo v2, "no_adjust_volume"
 
@@ -88,14 +88,14 @@
 
     if-nez v2, :cond_2
 
-    .line 5754
+    .line 5395
     const-string/jumbo v2, "disallow_unmute_device"
 
     invoke-virtual {p3, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v1
 
-    .line 5756
+    .line 5397
     .end local v1    # "wasRestricted":Z
     :goto_0
     const-string/jumbo v2, "no_adjust_volume"
@@ -106,29 +106,29 @@
 
     if-nez v2, :cond_3
 
-    .line 5757
+    .line 5398
     const-string/jumbo v2, "disallow_unmute_device"
 
     invoke-virtual {p2, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 5758
+    .line 5399
     :goto_1
     if-eq v1, v0, :cond_1
 
-    .line 5759
+    .line 5400
     iget-object v2, p0, Lcom/android/server/audio/AudioService$AudioServiceUserRestrictionsListener;->this$0:Lcom/android/server/audio/AudioService;
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v0, v3, p1}, Lcom/android/server/audio/AudioService;->-wrap39(Lcom/android/server/audio/AudioService;ZII)V
+    invoke-static {v2, v0, v3, p1}, Lcom/android/server/audio/AudioService;->-wrap38(Lcom/android/server/audio/AudioService;ZII)V
 
-    .line 5738
+    .line 5379
     :cond_1
     return-void
 
-    .line 5753
+    .line 5394
     .restart local v1    # "wasRestricted":Z
     :cond_2
     const/4 v1, 0x1
@@ -136,7 +136,7 @@
     .local v1, "wasRestricted":Z
     goto :goto_0
 
-    .line 5756
+    .line 5397
     .end local v1    # "wasRestricted":Z
     :cond_3
     const/4 v0, 0x1

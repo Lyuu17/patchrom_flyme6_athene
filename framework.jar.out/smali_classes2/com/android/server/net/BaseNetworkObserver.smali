@@ -63,7 +63,7 @@
     .param p4, "servers"    # [Ljava/lang/String;
 
     .prologue
-    .line 76
+    .line 71
     return-void
 .end method
 
@@ -74,15 +74,6 @@
 
     .prologue
     .line 51
-    return-void
-.end method
-
-.method public interfaceMessageRecevied(Ljava/lang/String;)V
-    .locals 0
-    .param p1, "message"    # Ljava/lang/String;
-
-    .prologue
-    .line 66
     return-void
 .end method
 
@@ -111,7 +102,7 @@
     .param p2, "iface"    # Ljava/lang/String;
 
     .prologue
-    .line 71
+    .line 66
     return-void
 .end method
 
@@ -120,7 +111,7 @@
     .param p1, "route"    # Landroid/net/RouteInfo;
 
     .prologue
-    .line 86
+    .line 81
     return-void
 .end method
 
@@ -129,6 +120,6 @@
     .param p1, "route"    # Landroid/net/RouteInfo;
 
     .prologue
-    .line 81
+    .line 76
     return-void
 .end method

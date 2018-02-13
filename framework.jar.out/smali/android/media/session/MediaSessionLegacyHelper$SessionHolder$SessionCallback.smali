@@ -44,29 +44,6 @@
 
 
 # virtual methods
-.method public getNowPlayingEntries()V
-    .locals 1
-
-    .prologue
-    .line 569
-    iget-object v0, p0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder$SessionCallback;->this$1:Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;
-
-    iget-object v0, v0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;->mRccListener:Landroid/media/session/MediaSession$Callback;
-
-    if-eqz v0, :cond_0
-
-    .line 570
-    iget-object v0, p0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder$SessionCallback;->this$1:Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;
-
-    iget-object v0, v0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;->mRccListener:Landroid/media/session/MediaSession$Callback;
-
-    invoke-virtual {v0}, Landroid/media/session/MediaSession$Callback;->getNowPlayingEntries()V
-
-    .line 568
-    :cond_0
-    return-void
-.end method
-
 .method public onFastForward()V
     .locals 1
 
@@ -298,54 +275,6 @@
     invoke-virtual {v0}, Landroid/media/session/MediaSessionLegacyHelper$MediaButtonListener;->onStop()V
 
     .line 533
-    :cond_0
-    return-void
-.end method
-
-.method public setBrowsedPlayer()V
-    .locals 1
-
-    .prologue
-    .line 555
-    iget-object v0, p0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder$SessionCallback;->this$1:Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;
-
-    iget-object v0, v0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;->mRccListener:Landroid/media/session/MediaSession$Callback;
-
-    if-eqz v0, :cond_0
-
-    .line 556
-    iget-object v0, p0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder$SessionCallback;->this$1:Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;
-
-    iget-object v0, v0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;->mRccListener:Landroid/media/session/MediaSession$Callback;
-
-    invoke-virtual {v0}, Landroid/media/session/MediaSession$Callback;->setBrowsedPlayer()V
-
-    .line 554
-    :cond_0
-    return-void
-.end method
-
-.method public setPlayItem(IJ)V
-    .locals 2
-    .param p1, "scope"    # I
-    .param p2, "uid"    # J
-
-    .prologue
-    .line 562
-    iget-object v0, p0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder$SessionCallback;->this$1:Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;
-
-    iget-object v0, v0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;->mRccListener:Landroid/media/session/MediaSession$Callback;
-
-    if-eqz v0, :cond_0
-
-    .line 563
-    iget-object v0, p0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder$SessionCallback;->this$1:Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;
-
-    iget-object v0, v0, Landroid/media/session/MediaSessionLegacyHelper$SessionHolder;->mRccListener:Landroid/media/session/MediaSession$Callback;
-
-    invoke-virtual {v0, p1, p2, p3}, Landroid/media/session/MediaSession$Callback;->setPlayItem(IJ)V
-
-    .line 561
     :cond_0
     return-void
 .end method

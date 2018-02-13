@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">Leyfir forriti að breyta kostum samstillingar fyrir reikning. Þetta er til dæmis hægt að nota til að kveikja á samstillingu forritsins Fólk við reikning.</string>
     <string name="permlab_readSyncStats">lesa talnagögn um samstillingu</string>
     <string name="permdesc_readSyncStats">Leyfir forriti að lesa talnagögn samstillingar fyrir reikning, þ. á m. feril samstillingaratvika og samstillt gagnamagn.</string>
-    <string name="permlab_sdcardRead">lesa innihald SD-kortsins</string>
-    <string name="permdesc_sdcardRead">Leyfir forriti að lesa innihald SD-kortsins.</string>
-    <string name="permlab_sdcardWrite">breyta eða eyða innihaldi SD-kortsins</string>
-    <string name="permdesc_sdcardWrite">Leyfir forriti að skrifa á SD-kortið.</string>
+    <string name="permlab_sdcardRead">lesa innihald USB-geymslunnar</string>
+    <string name="permdesc_sdcardRead">Leyfir forriti að lesa innihald USB-geymslunnar.</string>
+    <string name="permlab_sdcardWrite">breyta eða eyða innihaldi USB-geymslunnar</string>
+    <string name="permdesc_sdcardWrite">Leyfir forriti að skrifa í USB-geymsluna.</string>
     <string name="permlab_use_sip">hringja/svara SIP-símtölum</string>
     <string name="permdesc_use_sip">Leyfir forritinu að hringja og svara SIP-símtölum.</string>
     <string name="permlab_register_sim_subscription">skrá nýjar símatengingar fyrir SIM-kort</string>
@@ -1025,7 +1025,7 @@ fyrir reikninginn %s."</string>
     <string name="no_matches">Engar samsvaranir</string>
     <string name="find_on_page">Finna á síðu</string>
     <string name="action_mode_done">Lokið</string>
-    <string name="progress_erasing">Hreinsar út af SD-korti…</string>
+    <string name="progress_erasing">Hreinsar út af USB-geymslu…</string>
     <string name="share">Deila</string>
     <string name="find">Finna</string>
     <string name="websearch">Vefleit</string>

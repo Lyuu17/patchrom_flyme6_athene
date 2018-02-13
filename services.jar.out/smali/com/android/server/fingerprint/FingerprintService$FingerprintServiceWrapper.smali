@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/fingerprint/FingerprintService;
 
     .prologue
-    .line 746
+    .line 744
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Landroid/hardware/fingerprint/IFingerprintService$Stub;-><init>()V
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 791
+    .line 789
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v2, "android.permission.MANAGE_FINGERPRINT"
@@ -59,12 +59,12 @@
 
     const/4 v0, 0x0
 
-    .line 792
+    .line 790
     .local v0, "restricted":Z
     :goto_0
     return v0
 
-    .line 791
+    .line 789
     .end local v0    # "restricted":Z
     :cond_0
     const/4 v0, 0x1
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    .line 1000
+    .line 993
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get7(Lcom/android/server/fingerprint/FingerprintService;)Landroid/os/Handler;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 999
+    .line 992
     return-void
 .end method
 
@@ -111,30 +111,30 @@
     .param p7, "opPackageName"    # Ljava/lang/String;
 
     .prologue
-    .line 813
+    .line 811
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v4
 
-    .line 814
+    .line 812
     .local v4, "callingUid":I
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v9
 
-    .line 815
+    .line 813
     .local v9, "callingUserId":I
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v5
 
-    .line 816
+    .line 814
     .local v5, "pid":I
     invoke-direct {p0}, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->isRestricted()Z
 
     move-result v13
 
-    .line 817
+    .line 815
     .local v13, "restricted":Z
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -162,7 +162,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 812
+    .line 810
     return-void
 .end method
 
@@ -172,18 +172,18 @@
     .param p2, "opPackageName"    # Ljava/lang/String;
 
     .prologue
-    .line 846
+    .line 844
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v3
 
-    .line 847
+    .line 845
     .local v3, "uid":I
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v4
 
-    .line 848
+    .line 846
     .local v4, "pid":I
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -203,7 +203,7 @@
 
     invoke-virtual {v6, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 845
+    .line 843
     return-void
 .end method
 
@@ -212,14 +212,14 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 797
+    .line 795
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.MANAGE_FINGERPRINT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 798
+    .line 796
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get7(Lcom/android/server/fingerprint/FingerprintService;)Landroid/os/Handler;
@@ -232,7 +232,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 796
+    .line 794
     return-void
 .end method
 
@@ -243,7 +243,7 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 975
+    .line 968
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v2}, Lcom/android/server/fingerprint/FingerprintService;->-get0(Lcom/android/server/fingerprint/FingerprintService;)Landroid/content/Context;
@@ -258,7 +258,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 977
+    .line 970
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -269,30 +269,30 @@
 
     move-result-object v2
 
-    .line 978
+    .line 971
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v3
 
-    .line 977
+    .line 970
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 979
+    .line 972
     const-string/jumbo v3, ", uid="
 
-    .line 977
+    .line 970
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 979
+    .line 972
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v3
 
-    .line 977
+    .line 970
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -303,16 +303,16 @@
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 980
+    .line 973
     return-void
 
-    .line 983
+    .line 976
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 985
+    .line 978
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -321,20 +321,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 987
+    .line 980
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 974
+    .line 967
     return-void
 
-    .line 986
+    .line 979
     :catchall_0
     move-exception v2
 
-    .line 987
+    .line 980
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 986
+    .line 979
     throw v2
 .end method
 
@@ -348,14 +348,14 @@
     .param p6, "opPackageName"    # Ljava/lang/String;
 
     .prologue
-    .line 763
+    .line 761
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.MANAGE_FINGERPRINT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 764
+    .line 762
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get0(Lcom/android/server/fingerprint/FingerprintService;)Landroid/content/Context;
@@ -366,15 +366,15 @@
 
     move-result-object v0
 
-    .line 765
+    .line 763
     const v1, 0x10e00af
 
-    .line 764
+    .line 762
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v10
 
-    .line 767
+    .line 765
     .local v10, "limit":I
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -386,21 +386,21 @@
 
     move-result v9
 
-    .line 768
+    .line 766
     .local v9, "enrolled":I
     if-lt v9, v10, :cond_0
 
-    .line 769
+    .line 767
     const-string/jumbo v0, "FingerprintService"
 
     const-string/jumbo v1, "Too many fingerprints registered"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 770
+    .line 768
     return-void
 
-    .line 775
+    .line 773
     :cond_0
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -410,16 +410,16 @@
 
     if-nez v0, :cond_1
 
-    .line 776
+    .line 774
     return-void
 
-    .line 779
+    .line 777
     :cond_1
     invoke-direct {p0}, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->isRestricted()Z
 
     move-result v7
 
-    .line 780
+    .line 778
     .local v7, "restricted":Z
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -447,7 +447,7 @@
 
     invoke-virtual {v11, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 762
+    .line 760
     return-void
 .end method
 
@@ -456,7 +456,7 @@
     .param p1, "opPackageName"    # Ljava/lang/String;
 
     .prologue
-    .line 970
+    .line 963
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/fingerprint/FingerprintService;->getAuthenticatorId(Ljava/lang/String;)J
@@ -483,10 +483,10 @@
     .end annotation
 
     .prologue
-    .line 928
+    .line 921
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    .line 929
+    .line 922
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -495,7 +495,7 @@
 
     move-result v2
 
-    .line 928
+    .line 921
     const/4 v3, 0x0
 
     invoke-static {v0, p2, v3, v1, v2}, Lcom/android/server/fingerprint/FingerprintService;->-wrap0(Lcom/android/server/fingerprint/FingerprintService;Ljava/lang/String;ZII)Z
@@ -504,14 +504,14 @@
 
     if-nez v0, :cond_0
 
-    .line 930
+    .line 923
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 
-    .line 932
+    .line 925
     :cond_0
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -521,14 +521,14 @@
 
     if-nez v0, :cond_1
 
-    .line 933
+    .line 926
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 
-    .line 936
+    .line 929
     :cond_1
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -547,10 +547,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 941
+    .line 934
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    .line 942
+    .line 935
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -559,17 +559,17 @@
 
     move-result v2
 
-    .line 941
+    .line 934
     invoke-static {v0, p2, v3, v1, v2}, Lcom/android/server/fingerprint/FingerprintService;->-wrap0(Lcom/android/server/fingerprint/FingerprintService;Ljava/lang/String;ZII)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 943
+    .line 936
     return v3
 
-    .line 946
+    .line 939
     :cond_0
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -579,10 +579,10 @@
 
     if-nez v0, :cond_1
 
-    .line 947
+    .line 940
     return v3
 
-    .line 949
+    .line 942
     :cond_1
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -601,10 +601,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 904
+    .line 897
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    .line 905
+    .line 898
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -613,17 +613,17 @@
 
     move-result v3
 
-    .line 904
+    .line 897
     invoke-static {v1, p3, v0, v2, v3}, Lcom/android/server/fingerprint/FingerprintService;->-wrap0(Lcom/android/server/fingerprint/FingerprintService;Ljava/lang/String;ZII)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 906
+    .line 899
     return v0
 
-    .line 908
+    .line 901
     :cond_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -648,14 +648,14 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 755
+    .line 753
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.MANAGE_FINGERPRINT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 756
+    .line 754
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/fingerprint/FingerprintService;->startPostEnroll(Landroid/os/IBinder;)I
@@ -670,14 +670,14 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 749
+    .line 747
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.MANAGE_FINGERPRINT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 750
+    .line 748
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/fingerprint/FingerprintService;->startPreEnroll(Landroid/os/IBinder;)J
@@ -696,19 +696,19 @@
     .param p5, "receiver"    # Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     .prologue
-    .line 891
+    .line 884
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.MANAGE_FINGERPRINT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 892
+    .line 885
     invoke-direct {p0}, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->isRestricted()Z
 
     move-result v7
 
-    .line 893
+    .line 886
     .local v7, "restricted":Z
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -734,7 +734,7 @@
 
     invoke-virtual {v8, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 890
+    .line 883
     return-void
 .end method
 
@@ -745,14 +745,14 @@
     .param p3, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 913
+    .line 906
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.MANAGE_FINGERPRINT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 914
+    .line 907
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0, p2}, Lcom/android/server/fingerprint/FingerprintService;->isCurrentUserOrProfile(I)Z
@@ -761,10 +761,10 @@
 
     if-nez v0, :cond_0
 
-    .line 915
+    .line 908
     return-void
 
-    .line 917
+    .line 910
     :cond_0
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -778,7 +778,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 912
+    .line 905
     return-void
 .end method
 
@@ -787,14 +787,14 @@
     .param p1, "token"    # [B
 
     .prologue
-    .line 992
+    .line 985
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.RESET_FINGERPRINT_LOCKOUT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 994
+    .line 987
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get7(Lcom/android/server/fingerprint/FingerprintService;)Landroid/os/Handler;
@@ -809,7 +809,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 991
+    .line 984
     return-void
 .end method
 
@@ -818,14 +818,14 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 879
+    .line 872
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     const-string/jumbo v1, "android.permission.MANAGE_FINGERPRINT"
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->checkPermission(Ljava/lang/String;)V
 
-    .line 880
+    .line 873
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get7(Lcom/android/server/fingerprint/FingerprintService;)Landroid/os/Handler;
@@ -838,6 +838,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 878
+    .line 871
     return-void
 .end method

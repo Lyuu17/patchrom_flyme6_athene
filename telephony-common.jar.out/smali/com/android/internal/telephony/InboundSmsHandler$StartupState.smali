@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/InboundSmsHandler;
 
     .prologue
-    .line 384
+    .line 336
     iput-object p1, p0, Lcom/android/internal/telephony/InboundSmsHandler$StartupState;->this$0:Lcom/android/internal/telephony/InboundSmsHandler;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -51,7 +51,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 387
+    .line 339
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler$StartupState;->this$0:Lcom/android/internal/telephony/InboundSmsHandler;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -76,27 +76,27 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/InboundSmsHandler;->log(Ljava/lang/String;)V
 
-    .line 388
+    .line 340
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 404
+    .line 356
     :pswitch_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 392
+    .line 344
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler$StartupState;->this$0:Lcom/android/internal/telephony/InboundSmsHandler;
 
     invoke-static {v0, p1}, Lcom/android/internal/telephony/InboundSmsHandler;->-wrap4(Lcom/android/internal/telephony/InboundSmsHandler;Landroid/os/Message;)V
 
-    .line 393
+    .line 345
     return v3
 
-    .line 396
+    .line 348
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler$StartupState;->this$0:Lcom/android/internal/telephony/InboundSmsHandler;
 
@@ -108,10 +108,10 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/InboundSmsHandler;->-wrap12(Lcom/android/internal/telephony/InboundSmsHandler;Lcom/android/internal/util/IState;)V
 
-    .line 397
+    .line 349
     return v3
 
-    .line 388
+    .line 340
     nop
 
     :pswitch_data_0

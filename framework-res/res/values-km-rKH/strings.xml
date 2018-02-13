@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">ឲ្យ​កម្មវិធី​កែ​ការ​កំណត់​ធ្វើ​សម​កាល​កម្ម​សម្រាប់​គណនី។ ឧទាហរណ៍ វា​អាច​ត្រូវ​បាន​ប្រើ​ដើម្បី​បើក​ការ​ធ្វើ​សម​កាល​កម្ម​កម្មវិធី​របស់​មនុស្ស​ជា​មួយ​គណនី។</string>
     <string name="permlab_readSyncStats">អាន​ស្ថិតិ​ធ្វើ​សម​កាល​កម្ម</string>
     <string name="permdesc_readSyncStats">ឲ្យ​កម្មវិធី​អាន​ស្ថានភាព​ធ្វើ​សម​កាល​កម្ម​សម្រាប់​គណនី រួមមាន​ព្រឹត្តិការណ៍​ប្រវត្តិ​ធ្វើ​សម​កាល​កម្ម ​និង​ទំហំ​ទិន្នន័យ​បាន​ធ្វើ​សម​កាល​កម្ម។</string>
-    <string name="permlab_sdcardRead">អាន​មាតិកា​​កាត​អេសឌី​របស់​អ្នក</string>
-    <string name="permdesc_sdcardRead">អនុញ្ញាត​ឱ្យ​កម្មវិធី​ដើម្បី​អាន​មាតិកា​​កាត​អេសឌី​​របស់​អ្នក​។</string>
-    <string name="permlab_sdcardWrite">កែ ឬ​លុប​មាតិកា​កាត​អេសឌី</string>
-    <string name="permdesc_sdcardWrite">ឲ្យ​​កម្មវិធី​សរសេរ​ទៅ​កាត​អេសឌី។</string>
+    <string name="permlab_sdcardRead">អាន​មាតិកា​ឧបករណ៍​ផ្ទុក​យូអេសប៊ី​របស់​អ្នក</string>
+    <string name="permdesc_sdcardRead">ឲ្យ​កម្មវិធី​អាន​មាតិកា​ឧបករណ៍​ផ្ទុក​យូអេសប៊ី​របស់​អ្នក។</string>
+    <string name="permlab_sdcardWrite">កែ​ ឬ​លុប​មាតិកា​នៃ​ឧបករណ៍​ផ្ទុក​យូអេសប៊ី​របស់​អ្នក</string>
+    <string name="permdesc_sdcardWrite">ឲ្យ​កម្មវិធី​សរសេរ​ឧបករណ៍​ផ្ទុក​យូអេសប៊ី។</string>
     <string name="permlab_use_sip">បង្កើត/ទទួល ការ​ហៅ SIP</string>
     <string name="permdesc_use_sip">​ឲ្យ​​កម្មវិធី បង្កើត និង​ទទួល​ការ​ហៅ SIP ។</string>
     <string name="permlab_register_sim_subscription">ចុះ​ឈ្មោះ​ការ​ភ្ជាប់​ស៊ី​ម​ទូរគមនាគមន៍​ថ្មី</string>
@@ -1024,7 +1024,7 @@
     <string name="no_matches">គ្មាន​ការ​ផ្គូផ្គង</string>
     <string name="find_on_page">រក​ក្នុង​ទំព័រ</string>
     <string name="action_mode_done">រួចរាល់</string>
-    <string name="progress_erasing">កំពុង​លុប​កាត​អេសឌី...</string>
+    <string name="progress_erasing">កំពុង​លុប​ឧបករណ៍​ផ្ទុក​យូអេសប៊ី...</string>
     <string name="share">ចែក​រំលែក​</string>
     <string name="find">រក</string>
     <string name="websearch">ស្វែងរក​តាម​បណ្ដាញ</string>

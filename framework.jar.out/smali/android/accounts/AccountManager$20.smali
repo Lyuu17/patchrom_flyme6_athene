@@ -42,7 +42,7 @@
     .param p10, "val$optionsIn"    # Landroid/os/Bundle;
 
     .prologue
-    .line 2769
+    .line 2743
     .local p5, "$anonymous2":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$20;->this$0:Landroid/accounts/AccountManager;
 
@@ -72,43 +72,43 @@
     .end annotation
 
     .prologue
-    .line 2772
+    .line 2746
     iget-object v0, p0, Landroid/accounts/AccountManager$20;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
 
     move-result-object v0
 
-    .line 2773
-    iget-object v1, p0, Landroid/accounts/AccountManager$20;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    .line 2747
+    iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
-    .line 2774
+    .line 2748
     iget-object v2, p0, Landroid/accounts/AccountManager$20;->val$accountType:Ljava/lang/String;
 
-    .line 2775
+    .line 2749
     iget-object v3, p0, Landroid/accounts/AccountManager$20;->val$authTokenType:Ljava/lang/String;
 
-    .line 2776
+    .line 2750
     iget-object v4, p0, Landroid/accounts/AccountManager$20;->val$requiredFeatures:[Ljava/lang/String;
 
-    .line 2777
+    .line 2751
     iget-object v5, p0, Landroid/accounts/AccountManager$20;->val$activity:Landroid/app/Activity;
 
     if-eqz v5, :cond_0
 
     const/4 v5, 0x1
 
-    .line 2778
+    .line 2752
     :goto_0
     iget-object v6, p0, Landroid/accounts/AccountManager$20;->val$optionsIn:Landroid/os/Bundle;
 
-    .line 2772
+    .line 2746
     invoke-interface/range {v0 .. v6}, Landroid/accounts/IAccountManager;->startAddAccountSession(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;ZLandroid/os/Bundle;)V
 
-    .line 2771
+    .line 2745
     return-void
 
-    .line 2777
+    .line 2751
     :cond_0
     const/4 v5, 0x0
 

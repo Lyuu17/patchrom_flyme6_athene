@@ -54,19 +54,19 @@
     .param p3, "numCpus"    # I
 
     .prologue
-    .line 340
+    .line 337
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 341
+    .line 338
     iput-object p1, p0, Lcom/android/internal/os/PowerProfile$CpuClusterKey;->timeKey:Ljava/lang/String;
 
-    .line 342
+    .line 339
     iput-object p2, p0, Lcom/android/internal/os/PowerProfile$CpuClusterKey;->powerKey:Ljava/lang/String;
 
-    .line 343
+    .line 340
     iput p3, p0, Lcom/android/internal/os/PowerProfile$CpuClusterKey;->numCpus:I
 
-    .line 340
+    .line 337
     return-void
 .end method
 

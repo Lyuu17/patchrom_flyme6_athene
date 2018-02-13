@@ -33,12 +33,12 @@
     .param p1, "this$0"    # Lcom/android/server/backup/BackupManagerService;
 
     .prologue
-    .line 6497
+    .line 6491
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$AdbRestoreFinishedLatch;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6498
+    .line 6492
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -47,7 +47,7 @@
 
     iput-object v0, p0, Lcom/android/server/backup/BackupManagerService$AdbRestoreFinishedLatch;->mLatch:Ljava/util/concurrent/CountDownLatch;
 
-    .line 6497
+    .line 6491
     return-void
 .end method
 
@@ -57,10 +57,10 @@
     .locals 6
 
     .prologue
-    .line 6502
+    .line 6496
     const/4 v1, 0x0
 
-    .line 6504
+    .line 6498
     .local v1, "latched":Z
     :try_start_0
     iget-object v2, p0, Lcom/android/server/backup/BackupManagerService$AdbRestoreFinishedLatch;->mLatch:Ljava/util/concurrent/CountDownLatch;
@@ -75,17 +75,17 @@
 
     move-result v1
 
-    .line 6501
+    .line 6495
     .end local v1    # "latched":Z
     :goto_0
     return-void
 
-    .line 6505
+    .line 6499
     .restart local v1    # "latched":Z
     :catch_0
     move-exception v0
 
-    .line 6506
+    .line 6500
     .local v0, "e":Ljava/lang/InterruptedException;
     const-string/jumbo v2, "AdbRestoreFinishedLatch"
 
@@ -100,7 +100,7 @@
     .locals 0
 
     .prologue
-    .line 6511
+    .line 6505
     return-void
 .end method
 
@@ -108,19 +108,19 @@
     .locals 2
 
     .prologue
-    .line 6526
+    .line 6520
     const-string/jumbo v0, "AdbRestoreFinishedLatch"
 
     const-string/jumbo v1, "adb onRestoreFinished() timed out"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6528
+    .line 6522
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$AdbRestoreFinishedLatch;->mLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 6524
+    .line 6518
     return-void
 .end method
 
@@ -129,11 +129,11 @@
     .param p1, "result"    # J
 
     .prologue
-    .line 6520
+    .line 6514
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$AdbRestoreFinishedLatch;->mLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 6516
+    .line 6510
     return-void
 .end method

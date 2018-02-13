@@ -73,8 +73,6 @@
 
 .field private final mInterfaceType:I
 
-.field private mIpv6TetheringEnabled:Z
-
 .field private mLastError:I
 
 .field private mMyUpstreamIfaceName:Ljava/lang/String;
@@ -107,14 +105,6 @@
     return-object v0
 .end method
 
-.method static synthetic -get10(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mUnavailableState:Lcom/android/internal/util/State;
-
-    return-object v0
-.end method
-
 .method static synthetic -get2(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
     .locals 1
 
@@ -123,15 +113,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get3(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mIpv6TetheringEnabled:Z
-
-    return v0
-.end method
-
-.method static synthetic -get4(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)I
+.method static synthetic -get3(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mLastError:I
@@ -139,7 +121,7 @@
     return v0
 .end method
 
-.method static synthetic -get5(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Ljava/lang/String;
+.method static synthetic -get4(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mMyUpstreamIfaceName:Ljava/lang/String;
@@ -147,7 +129,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get6(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/os/INetworkManagementService;
+.method static synthetic -get5(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/os/INetworkManagementService;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mNMService:Landroid/os/INetworkManagementService;
@@ -155,7 +137,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get7(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/net/INetworkStatsService;
+.method static synthetic -get6(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/net/INetworkStatsService;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mStatsService:Landroid/net/INetworkStatsService;
@@ -163,7 +145,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get8(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IControlsTethering;
+.method static synthetic -get7(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IControlsTethering;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetherController:Lcom/android/server/connectivity/tethering/IControlsTethering;
@@ -171,10 +153,18 @@
     return-object v0
 .end method
 
-.method static synthetic -get9(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
+.method static synthetic -get8(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetheredState:Lcom/android/internal/util/State;
+
+    return-object v0
+.end method
+
+.method static synthetic -get9(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mUnavailableState:Lcom/android/internal/util/State;
 
     return-object v0
 .end method
@@ -262,7 +252,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/os/Looper;ILandroid/os/INetworkManagementService;Landroid/net/INetworkStatsService;Lcom/android/server/connectivity/tethering/IControlsTethering;)V
-    .locals 4
+    .locals 3
     .param p1, "ifaceName"    # Ljava/lang/String;
     .param p2, "looper"    # Landroid/os/Looper;
     .param p3, "interfaceType"    # I
@@ -271,27 +261,25 @@
     .param p6, "tetherController"    # Lcom/android/server/connectivity/tethering/IControlsTethering;
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 99
+    .line 98
     invoke-direct {p0, p1, p2}, Lcom/android/internal/util/StateMachine;-><init>(Ljava/lang/String;Landroid/os/Looper;)V
 
-    .line 100
+    .line 99
     iput-object p4, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mNMService:Landroid/os/INetworkManagementService;
 
-    .line 101
+    .line 100
     iput-object p5, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mStatsService:Landroid/net/INetworkStatsService;
 
-    .line 102
+    .line 101
     iput-object p6, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetherController:Lcom/android/server/connectivity/tethering/IControlsTethering;
 
-    .line 103
+    .line 102
     iput-object p1, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mIfaceName:Ljava/lang/String;
 
-    .line 104
+    .line 103
     iput p3, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
 
-    .line 105
+    .line 104
     new-instance v0, Lcom/android/server/connectivity/tethering/IPv6TetheringInterfaceServices;
 
     iget-object v1, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mIfaceName:Ljava/lang/String;
@@ -302,75 +290,53 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mIPv6TetherSvc:Lcom/android/server/connectivity/tethering/IPv6TetheringInterfaceServices;
 
-    .line 106
-    iput-boolean v3, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mIpv6TetheringEnabled:Z
+    .line 105
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mLastError:I
 
     .line 107
-    iput v3, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mLastError:I
-
-    .line 109
     new-instance v0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$InitialState;
 
     invoke-direct {v0, p0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$InitialState;-><init>(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInitialState:Lcom/android/internal/util/State;
 
-    .line 110
+    .line 108
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInitialState:Lcom/android/internal/util/State;
 
     invoke-virtual {p0, v0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->addState(Lcom/android/internal/util/State;)V
 
-    .line 111
+    .line 109
     new-instance v0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$TetheredState;
 
     invoke-direct {v0, p0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$TetheredState;-><init>(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetheredState:Lcom/android/internal/util/State;
 
-    .line 112
+    .line 110
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetheredState:Lcom/android/internal/util/State;
 
     invoke-virtual {p0, v0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->addState(Lcom/android/internal/util/State;)V
 
-    .line 113
+    .line 111
     new-instance v0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$UnavailableState;
 
     invoke-direct {v0, p0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$UnavailableState;-><init>(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mUnavailableState:Lcom/android/internal/util/State;
 
-    .line 114
+    .line 112
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mUnavailableState:Lcom/android/internal/util/State;
 
     invoke-virtual {p0, v0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->addState(Lcom/android/internal/util/State;)V
 
-    .line 116
+    .line 114
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInitialState:Lcom/android/internal/util/State;
 
     invoke-virtual {p0, v0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->setInitialState(Lcom/android/internal/util/State;)V
 
-    .line 98
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Landroid/os/Looper;ILandroid/os/INetworkManagementService;Landroid/net/INetworkStatsService;Lcom/android/server/connectivity/tethering/IControlsTethering;Z)V
-    .locals 0
-    .param p1, "ifaceName"    # Ljava/lang/String;
-    .param p2, "looper"    # Landroid/os/Looper;
-    .param p3, "interfaceType"    # I
-    .param p4, "nMService"    # Landroid/os/INetworkManagementService;
-    .param p5, "statsService"    # Landroid/net/INetworkStatsService;
-    .param p6, "tetherController"    # Lcom/android/server/connectivity/tethering/IControlsTethering;
-    .param p7, "Ipv6TetheringEnabled"    # Z
-
-    .prologue
-    .line 122
-    invoke-direct/range {p0 .. p6}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;-><init>(Ljava/lang/String;Landroid/os/Looper;ILandroid/os/INetworkManagementService;Landroid/net/INetworkStatsService;Lcom/android/server/connectivity/tethering/IControlsTethering;)V
-
-    .line 123
-    iput-boolean p7, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mIpv6TetheringEnabled:Z
-
-    .line 121
+    .line 97
     return-void
 .end method
 
@@ -383,31 +349,31 @@
 
     const/4 v7, 0x1
 
-    .line 133
+    .line 125
     const/4 v3, 0x0
 
-    .line 134
+    .line 126
     .local v3, "ipAsString":Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 135
+    .line 127
     .local v4, "prefixLen":I
     iget v5, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
 
     if-ne v5, v7, :cond_1
 
-    .line 136
+    .line 128
     const-string/jumbo v3, "192.168.42.129"
 
-    .line 137
+    .line 129
     .local v3, "ipAsString":Ljava/lang/String;
     const/16 v4, 0x18
 
-    .line 146
+    .line 138
     :goto_0
     const/4 v2, 0x0
 
-    .line 148
+    .line 140
     .local v2, "ifcg":Landroid/net/InterfaceConfiguration;
     :try_start_0
     iget-object v5, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mNMService:Landroid/os/INetworkManagementService;
@@ -418,16 +384,16 @@
 
     move-result-object v2
 
-    .line 149
+    .line 141
     .local v2, "ifcg":Landroid/net/InterfaceConfiguration;
     if-eqz v2, :cond_0
 
-    .line 150
+    .line 142
     invoke-static {v3}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
     move-result-object v0
 
-    .line 151
+    .line 143
     .local v0, "addr":Ljava/net/InetAddress;
     new-instance v5, Landroid/net/LinkAddress;
 
@@ -435,19 +401,19 @@
 
     invoke-virtual {v2, v5}, Landroid/net/InterfaceConfiguration;->setLinkAddress(Landroid/net/LinkAddress;)V
 
-    .line 152
+    .line 144
     if-eqz p1, :cond_3
 
-    .line 153
+    .line 145
     invoke-virtual {v2}, Landroid/net/InterfaceConfiguration;->setInterfaceUp()V
 
-    .line 157
+    .line 149
     :goto_1
     const-string/jumbo v5, "running"
 
     invoke-virtual {v2, v5}, Landroid/net/InterfaceConfiguration;->clearFlag(Ljava/lang/String;)V
 
-    .line 158
+    .line 150
     iget-object v5, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mNMService:Landroid/os/INetworkManagementService;
 
     iget-object v6, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mIfaceName:Ljava/lang/String;
@@ -456,12 +422,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 165
+    .line 157
     .end local v0    # "addr":Ljava/net/InetAddress;
     :cond_0
     return v7
 
-    .line 138
+    .line 130
     .end local v2    # "ifcg":Landroid/net/InterfaceConfiguration;
     .local v3, "ipAsString":Ljava/lang/String;
     :cond_1
@@ -469,21 +435,21 @@
 
     if-nez v5, :cond_2
 
-    .line 139
+    .line 131
     const-string/jumbo v3, "192.168.43.1"
 
-    .line 140
+    .line 132
     .local v3, "ipAsString":Ljava/lang/String;
     const/16 v4, 0x18
 
     goto :goto_0
 
-    .line 143
+    .line 135
     .local v3, "ipAsString":Ljava/lang/String;
     :cond_2
     return v7
 
-    .line 155
+    .line 147
     .restart local v0    # "addr":Ljava/net/InetAddress;
     .restart local v2    # "ifcg":Landroid/net/InterfaceConfiguration;
     .local v3, "ipAsString":Ljava/lang/String;
@@ -495,13 +461,13 @@
 
     goto :goto_1
 
-    .line 160
+    .line 152
     .end local v0    # "addr":Ljava/net/InetAddress;
     .end local v2    # "ifcg":Landroid/net/InterfaceConfiguration;
     :catch_0
     move-exception v1
 
-    .line 161
+    .line 153
     .local v1, "e":Ljava/lang/Exception;
     const-string/jumbo v5, "TetherInterfaceSM"
 
@@ -527,7 +493,7 @@
 
     invoke-static {v5, v6, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 162
+    .line 154
     return v8
 .end method
 
@@ -537,7 +503,7 @@
     .param p2, "what"    # I
 
     .prologue
-    .line 168
+    .line 160
     return-void
 .end method
 
@@ -547,7 +513,7 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 118
     iget v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
 
     return v0

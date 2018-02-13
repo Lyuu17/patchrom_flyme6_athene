@@ -69,9 +69,6 @@
 .method private final native native_send_object_removed(I)V
 .end method
 
-.method private final native native_send_object_updated(I)V
-.end method
-
 .method private final native native_setup(Landroid/mtp/MtpDatabase;Z)V
 .end method
 
@@ -82,10 +79,10 @@
     .param p1, "storage"    # Landroid/mtp/MtpStorage;
 
     .prologue
-    .line 67
+    .line 63
     invoke-direct {p0, p1}, Landroid/mtp/MtpServer;->native_add_storage(Landroid/mtp/MtpStorage;)V
 
-    .line 66
+    .line 62
     return-void
 .end method
 
@@ -94,14 +91,14 @@
     .param p1, "storage"    # Landroid/mtp/MtpStorage;
 
     .prologue
-    .line 71
+    .line 67
     invoke-virtual {p1}, Landroid/mtp/MtpStorage;->getStorageId()I
 
     move-result v0
 
     invoke-direct {p0, v0}, Landroid/mtp/MtpServer;->native_remove_storage(I)V
 
-    .line 70
+    .line 66
     return-void
 .end method
 
@@ -157,18 +154,6 @@
     invoke-direct {p0, p1}, Landroid/mtp/MtpServer;->native_send_object_removed(I)V
 
     .line 54
-    return-void
-.end method
-
-.method public sendObjectUpdated(I)V
-    .locals 0
-    .param p1, "handle"    # I
-
-    .prologue
-    .line 63
-    invoke-direct {p0, p1}, Landroid/mtp/MtpServer;->native_send_object_updated(I)V
-
-    .line 62
     return-void
 .end method
 

@@ -138,13 +138,13 @@
     .param p3, "resolver"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 773
+    .line 771
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$Constants;->this$0:Lcom/android/server/DeviceIdleController;
 
-    .line 774
+    .line 772
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 771
+    .line 769
     new-instance v0, Landroid/util/KeyValueListParser;
 
     const/16 v1, 0x2c
@@ -153,10 +153,10 @@
 
     iput-object v0, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 775
+    .line 773
     iput-object p3, p0, Lcom/android/server/DeviceIdleController$Constants;->mResolver:Landroid/content/ContentResolver;
 
-    .line 776
+    .line 774
     invoke-virtual {p1}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -165,45 +165,45 @@
 
     move-result-object v0
 
-    .line 777
+    .line 775
     const-string/jumbo v1, "android.hardware.type.watch"
 
-    .line 776
+    .line 774
     invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController$Constants;->mHasWatch:Z
 
-    .line 778
+    .line 776
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mResolver:Landroid/content/ContentResolver;
 
-    .line 779
+    .line 777
     iget-boolean v0, p0, Lcom/android/server/DeviceIdleController$Constants;->mHasWatch:Z
 
     if-eqz v0, :cond_0
 
     const-string/jumbo v0, "device_idle_constants_watch"
 
-    .line 778
+    .line 776
     :goto_0
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 781
+    .line 779
     const/4 v2, 0x0
 
-    .line 778
+    .line 776
     invoke-virtual {v1, v0, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 782
+    .line 780
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController$Constants;->updateConstants()V
 
-    .line 773
+    .line 771
     return-void
 
-    .line 780
+    .line 778
     :cond_0
     const-string/jumbo v0, "device_idle_constants"
 
@@ -216,25 +216,25 @@
     .prologue
     const/16 v6, 0xf
 
-    .line 791
+    .line 789
     iget-object v7, p0, Lcom/android/server/DeviceIdleController$Constants;->this$0:Lcom/android/server/DeviceIdleController;
 
     monitor-enter v7
 
-    .line 793
+    .line 791
     :try_start_0
     iget-object v8, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     iget-object v9, p0, Lcom/android/server/DeviceIdleController$Constants;->mResolver:Landroid/content/ContentResolver;
 
-    .line 794
+    .line 792
     iget-boolean v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mHasWatch:Z
 
     if-eqz v1, :cond_0
 
     const-string/jumbo v1, "device_idle_constants_watch"
 
-    .line 793
+    .line 791
     :goto_0
     invoke-static {v9, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -245,149 +245,149 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 802
+    .line 800
     :goto_1
     :try_start_1
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 803
+    .line 801
     const-string/jumbo v8, "light_after_inactive_to"
 
-    .line 804
+    .line 802
     const-wide/32 v10, 0x493e0
 
-    .line 802
+    .line 800
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_AFTER_INACTIVE_TIMEOUT:J
 
-    .line 805
+    .line 803
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "light_pre_idle_to"
 
-    .line 806
+    .line 804
     const-wide/32 v10, 0x927c0
 
-    .line 805
+    .line 803
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_PRE_IDLE_TIMEOUT:J
 
-    .line 807
+    .line 805
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "light_idle_to"
 
-    .line 808
+    .line 806
     const-wide/32 v10, 0x493e0
 
-    .line 807
+    .line 805
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_TIMEOUT:J
 
-    .line 809
+    .line 807
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "light_idle_factor"
 
-    .line 810
+    .line 808
     const/high16 v9, 0x40000000    # 2.0f
 
-    .line 809
+    .line 807
     invoke-virtual {v1, v8, v9}, Landroid/util/KeyValueListParser;->getFloat(Ljava/lang/String;F)F
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_FACTOR:F
 
-    .line 811
+    .line 809
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "light_max_idle_to"
 
-    .line 812
+    .line 810
     const-wide/32 v10, 0xdbba0
 
-    .line 811
+    .line 809
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_MAX_IDLE_TIMEOUT:J
 
-    .line 813
+    .line 811
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 814
+    .line 812
     const-string/jumbo v8, "light_idle_maintenance_min_budget"
 
-    .line 815
+    .line 813
     const-wide/32 v10, 0xea60
 
-    .line 813
+    .line 811
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_MAINTENANCE_MIN_BUDGET:J
 
-    .line 816
+    .line 814
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 817
+    .line 815
     const-string/jumbo v8, "light_idle_maintenance_max_budget"
 
-    .line 818
+    .line 816
     const-wide/32 v10, 0x493e0
 
-    .line 816
+    .line 814
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_MAINTENANCE_MAX_BUDGET:J
 
-    .line 819
+    .line 817
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 820
+    .line 818
     const-string/jumbo v8, "min_light_maintenance_time"
 
-    .line 821
+    .line 819
     const-wide/16 v10, 0x1388
 
-    .line 819
+    .line 817
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MIN_LIGHT_MAINTENANCE_TIME:J
 
-    .line 822
+    .line 820
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 823
+    .line 821
     const-string/jumbo v8, "min_deep_maintenance_time"
 
-    .line 824
+    .line 822
     const-wide/16 v10, 0x7530
 
-    .line 822
+    .line 820
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MIN_DEEP_MAINTENANCE_TIME:J
 
-    .line 825
+    .line 823
     iget-boolean v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mHasWatch:Z
 
     if-eqz v1, :cond_1
@@ -403,7 +403,7 @@
 
     mul-long v4, v8, v10
 
-    .line 826
+    .line 824
     .local v4, "inactiveTimeoutDefault":J
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
@@ -415,37 +415,37 @@
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->INACTIVE_TIMEOUT:J
 
-    .line 828
+    .line 826
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "sensing_to"
 
-    .line 829
+    .line 827
     const-wide/32 v10, 0x3a980
 
-    .line 828
+    .line 826
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->SENSING_TIMEOUT:J
 
-    .line 830
+    .line 828
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "locating_to"
 
-    .line 831
+    .line 829
     const-wide/16 v10, 0x7530
 
-    .line 830
+    .line 828
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->LOCATING_TIMEOUT:J
 
-    .line 832
+    .line 830
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "location_accuracy"
@@ -458,22 +458,22 @@
 
     iput v1, p0, Lcom/android/server/DeviceIdleController$Constants;->LOCATION_ACCURACY:F
 
-    .line 833
+    .line 831
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v8, "motion_inactive_to"
 
-    .line 834
+    .line 832
     const-wide/32 v10, 0x927c0
 
-    .line 833
+    .line 831
     invoke-virtual {v1, v8, v10, v11}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MOTION_INACTIVE_TIMEOUT:J
 
-    .line 835
+    .line 833
     iget-boolean v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mHasWatch:Z
 
     if-eqz v1, :cond_2
@@ -487,7 +487,7 @@
 
     mul-long v2, v8, v10
 
-    .line 836
+    .line 834
     .local v2, "idleAfterInactiveTimeout":J
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
@@ -499,165 +499,165 @@
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_AFTER_INACTIVE_TIMEOUT:J
 
-    .line 839
+    .line 837
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v6, "idle_pending_to"
 
-    .line 840
+    .line 838
     const-wide/32 v8, 0x493e0
 
-    .line 839
+    .line 837
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_PENDING_TIMEOUT:J
 
-    .line 841
+    .line 839
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v6, "max_idle_pending_to"
 
-    .line 842
+    .line 840
     const-wide/32 v8, 0x927c0
 
-    .line 841
+    .line 839
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MAX_IDLE_PENDING_TIMEOUT:J
 
-    .line 843
+    .line 841
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v6, "idle_pending_factor"
 
-    .line 844
+    .line 842
     const/high16 v8, 0x40000000    # 2.0f
 
-    .line 843
+    .line 841
     invoke-virtual {v1, v6, v8}, Landroid/util/KeyValueListParser;->getFloat(Ljava/lang/String;F)F
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_PENDING_FACTOR:F
 
-    .line 845
+    .line 843
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v6, "idle_to"
 
-    .line 846
+    .line 844
     const-wide/32 v8, 0x36ee80
 
-    .line 845
+    .line 843
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_TIMEOUT:J
 
-    .line 847
+    .line 845
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v6, "max_idle_to"
 
-    .line 848
+    .line 846
     const-wide/32 v8, 0x1499700
 
-    .line 847
+    .line 845
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MAX_IDLE_TIMEOUT:J
 
-    .line 849
+    .line 847
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v6, "idle_factor"
 
-    .line 850
+    .line 848
     const/high16 v8, 0x40000000    # 2.0f
 
-    .line 849
+    .line 847
     invoke-virtual {v1, v6, v8}, Landroid/util/KeyValueListParser;->getFloat(Ljava/lang/String;F)F
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_FACTOR:F
 
-    .line 851
+    .line 849
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v6, "min_time_to_alarm"
 
-    .line 852
+    .line 850
     const-wide/32 v8, 0x36ee80
 
-    .line 851
+    .line 849
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MIN_TIME_TO_ALARM:J
 
-    .line 853
+    .line 851
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 854
+    .line 852
     const-string/jumbo v6, "max_temp_app_whitelist_duration"
 
     const-wide/32 v8, 0x493e0
 
-    .line 853
+    .line 851
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MAX_TEMP_APP_WHITELIST_DURATION:J
 
-    .line 855
+    .line 853
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 856
+    .line 854
     const-string/jumbo v6, "mms_temp_app_whitelist_duration"
 
     const-wide/32 v8, 0xea60
 
-    .line 855
+    .line 853
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->MMS_TEMP_APP_WHITELIST_DURATION:J
 
-    .line 857
+    .line 855
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 858
+    .line 856
     const-string/jumbo v6, "sms_temp_app_whitelist_duration"
 
     const-wide/16 v8, 0x4e20
 
-    .line 857
+    .line 855
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, p0, Lcom/android/server/DeviceIdleController$Constants;->SMS_TEMP_APP_WHITELIST_DURATION:J
 
-    .line 859
+    .line 857
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 860
+    .line 858
     const-string/jumbo v6, "notification_whitelist_duration"
 
     const-wide/16 v8, 0x7530
 
-    .line 859
+    .line 857
     invoke-virtual {v1, v6, v8, v9}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v8
@@ -668,10 +668,10 @@
 
     monitor-exit v7
 
-    .line 790
+    .line 788
     return-void
 
-    .line 795
+    .line 793
     .end local v2    # "idleAfterInactiveTimeout":J
     .end local v4    # "inactiveTimeoutDefault":J
     :cond_0
@@ -683,11 +683,11 @@
 
     goto/16 :goto_0
 
-    .line 796
+    .line 794
     :catch_0
     move-exception v0
 
-    .line 799
+    .line 797
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     :try_start_3
     const-string/jumbo v1, "DeviceIdleController"
@@ -700,7 +700,7 @@
 
     goto/16 :goto_1
 
-    .line 791
+    .line 789
     .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :catchall_0
     move-exception v1
@@ -709,13 +709,13 @@
 
     throw v1
 
-    .line 825
+    .line 823
     :cond_1
     const/16 v1, 0x1e
 
     goto/16 :goto_2
 
-    .line 835
+    .line 833
     .restart local v4    # "inactiveTimeoutDefault":J
     :cond_2
     const/16 v6, 0x1e
@@ -730,12 +730,12 @@
     .param p1, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 865
+    .line 863
     const-string/jumbo v0, "  Settings:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 867
+    .line 865
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -748,15 +748,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 868
+    .line 866
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_AFTER_INACTIVE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 869
+    .line 867
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 871
+    .line 869
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -769,15 +769,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 872
+    .line 870
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_PRE_IDLE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 873
+    .line 871
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 875
+    .line 873
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -790,15 +790,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 876
+    .line 874
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 877
+    .line 875
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 879
+    .line 877
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -811,15 +811,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 880
+    .line 878
     iget v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_FACTOR:F
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 881
+    .line 879
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 883
+    .line 881
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -832,15 +832,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 884
+    .line 882
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_MAX_IDLE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 885
+    .line 883
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 887
+    .line 885
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -853,15 +853,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 888
+    .line 886
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_MAINTENANCE_MIN_BUDGET:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 889
+    .line 887
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 891
+    .line 889
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -874,15 +874,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 892
+    .line 890
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LIGHT_IDLE_MAINTENANCE_MAX_BUDGET:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 893
+    .line 891
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 895
+    .line 893
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -895,15 +895,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 896
+    .line 894
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MIN_LIGHT_MAINTENANCE_TIME:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 897
+    .line 895
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 899
+    .line 897
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -916,15 +916,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 900
+    .line 898
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MIN_DEEP_MAINTENANCE_TIME:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 901
+    .line 899
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 903
+    .line 901
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -937,15 +937,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 904
+    .line 902
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->INACTIVE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 905
+    .line 903
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 907
+    .line 905
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -958,15 +958,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 908
+    .line 906
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->SENSING_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 909
+    .line 907
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 911
+    .line 909
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -979,15 +979,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 912
+    .line 910
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LOCATING_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 913
+    .line 911
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 915
+    .line 913
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1000,7 +1000,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 916
+    .line 914
     iget v0, p0, Lcom/android/server/DeviceIdleController$Constants;->LOCATION_ACCURACY:F
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(F)V
@@ -1009,10 +1009,10 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 917
+    .line 915
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 919
+    .line 917
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1025,15 +1025,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 920
+    .line 918
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MOTION_INACTIVE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 921
+    .line 919
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 923
+    .line 921
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1046,15 +1046,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 924
+    .line 922
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_AFTER_INACTIVE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 925
+    .line 923
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 927
+    .line 925
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1067,15 +1067,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 928
+    .line 926
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_PENDING_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 929
+    .line 927
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 931
+    .line 929
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1088,15 +1088,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 932
+    .line 930
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MAX_IDLE_PENDING_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 933
+    .line 931
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 935
+    .line 933
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1109,12 +1109,12 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 936
+    .line 934
     iget v0, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_PENDING_FACTOR:F
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(F)V
 
-    .line 938
+    .line 936
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1127,15 +1127,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 939
+    .line 937
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 940
+    .line 938
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 942
+    .line 940
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1148,15 +1148,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 943
+    .line 941
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MAX_IDLE_TIMEOUT:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 944
+    .line 942
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 946
+    .line 944
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1169,12 +1169,12 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 947
+    .line 945
     iget v0, p0, Lcom/android/server/DeviceIdleController$Constants;->IDLE_FACTOR:F
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(F)V
 
-    .line 949
+    .line 947
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1187,15 +1187,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 950
+    .line 948
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MIN_TIME_TO_ALARM:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 951
+    .line 949
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 953
+    .line 951
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1208,15 +1208,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 954
+    .line 952
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MAX_TEMP_APP_WHITELIST_DURATION:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 955
+    .line 953
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 957
+    .line 955
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1229,15 +1229,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 958
+    .line 956
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->MMS_TEMP_APP_WHITELIST_DURATION:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 959
+    .line 957
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 961
+    .line 959
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1250,15 +1250,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 962
+    .line 960
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->SMS_TEMP_APP_WHITELIST_DURATION:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 963
+    .line 961
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 965
+    .line 963
     const-string/jumbo v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1271,15 +1271,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 966
+    .line 964
     iget-wide v0, p0, Lcom/android/server/DeviceIdleController$Constants;->NOTIFICATION_WHITELIST_DURATION:J
 
     invoke-static {v0, v1, p1}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 967
+    .line 965
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 864
+    .line 862
     return-void
 .end method
 
@@ -1289,9 +1289,9 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 787
+    .line 785
     invoke-direct {p0}, Lcom/android/server/DeviceIdleController$Constants;->updateConstants()V
 
-    .line 786
+    .line 784
     return-void
 .end method

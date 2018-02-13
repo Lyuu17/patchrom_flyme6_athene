@@ -28,13 +28,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 3470
+    .line 3245
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$RankingHandlerWorker;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    .line 3471
+    .line 3246
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 3470
+    .line 3245
     return-void
 .end method
 
@@ -45,16 +45,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 3476
+    .line 3251
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 3475
+    .line 3250
     :goto_0
     return-void
 
-    .line 3478
+    .line 3253
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$RankingHandlerWorker;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 3481
+    .line 3256
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$RankingHandlerWorker;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 3476
+    .line 3251
     :pswitch_data_0
     .packed-switch 0x3e8
         :pswitch_0
@@ -83,15 +83,15 @@
     .param p1, "recon"    # Lcom/android/server/notification/RankingReconsideration;
 
     .prologue
-    .line 3493
+    .line 3268
     const/16 v3, 0x3e8
 
-    .line 3492
+    .line 3267
     invoke-static {p0, v3, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
-    .line 3494
+    .line 3269
     .local v2, "m":Landroid/os/Message;
     sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
@@ -99,11 +99,11 @@
 
     move-result-wide v0
 
-    .line 3495
+    .line 3270
     .local v0, "delay":J
     invoke-virtual {p0, v2, v0, v1}, Lcom/android/server/notification/NotificationManagerService$RankingHandlerWorker;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 3491
+    .line 3266
     return-void
 .end method
 
@@ -113,12 +113,12 @@
     .prologue
     const/16 v0, 0x3e9
 
-    .line 3487
+    .line 3262
     invoke-virtual {p0, v0}, Lcom/android/server/notification/NotificationManagerService$RankingHandlerWorker;->removeMessages(I)V
 
-    .line 3488
+    .line 3263
     invoke-virtual {p0, v0}, Lcom/android/server/notification/NotificationManagerService$RankingHandlerWorker;->sendEmptyMessage(I)Z
 
-    .line 3486
+    .line 3261
     return-void
 .end method

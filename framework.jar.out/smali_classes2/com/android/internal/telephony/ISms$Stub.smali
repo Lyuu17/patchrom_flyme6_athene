@@ -26,57 +26,51 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.telephony.ISms"
 
-.field static final TRANSACTION_copyMessageToIccEfForSubscriber_2:I = 0x3
+.field static final TRANSACTION_copyMessageToIccEfForSubscriber:I = 0x3
 
-.field static final TRANSACTION_disableCellBroadcastForSubscriber_12:I = 0xd
+.field static final TRANSACTION_disableCellBroadcastForSubscriber:I = 0xb
 
-.field static final TRANSACTION_disableCellBroadcastRangeForSubscriber_14:I = 0xf
+.field static final TRANSACTION_disableCellBroadcastRangeForSubscriber:I = 0xd
 
-.field static final TRANSACTION_enableCellBroadcastForSubscriber_11:I = 0xc
+.field static final TRANSACTION_enableCellBroadcastForSubscriber:I = 0xa
 
-.field static final TRANSACTION_enableCellBroadcastRangeForSubscriber_13:I = 0xe
+.field static final TRANSACTION_enableCellBroadcastRangeForSubscriber:I = 0xc
 
-.field static final TRANSACTION_getAllMessagesFromIccEfForSubscriber_0:I = 0x1
+.field static final TRANSACTION_getAllMessagesFromIccEfForSubscriber:I = 0x1
 
-.field static final TRANSACTION_getImsSmsFormatForSubscriber_22:I = 0x17
+.field static final TRANSACTION_getImsSmsFormatForSubscriber:I = 0x15
 
-.field static final TRANSACTION_getPreferredSmsSubscription:I = 0x16
+.field static final TRANSACTION_getPreferredSmsSubscription:I = 0x14
 
-.field static final TRANSACTION_getPremiumSmsPermission:I = 0x10
+.field static final TRANSACTION_getPremiumSmsPermission:I = 0xe
 
-.field static final TRANSACTION_getPremiumSmsPermissionForSubscriber:I = 0x11
+.field static final TRANSACTION_getPremiumSmsPermissionForSubscriber:I = 0xf
 
-.field static final TRANSACTION_getSmsCapacityOnIccForSubscriber:I = 0x1b
+.field static final TRANSACTION_injectSmsPduForSubscriber:I = 0x8
 
-.field static final TRANSACTION_injectSmsPduForSubscriber_8:I = 0x9
+.field static final TRANSACTION_isImsSmsSupportedForSubscriber:I = 0x12
 
-.field static final TRANSACTION_isImsSmsSupportedForSubscriber_19:I = 0x14
+.field static final TRANSACTION_isSMSPromptEnabled:I = 0x16
 
-.field static final TRANSACTION_isSMSPromptEnabled:I = 0x18
+.field static final TRANSACTION_isSmsSimPickActivityNeeded:I = 0x13
 
-.field static final TRANSACTION_isSmsSimPickActivityNeeded_20:I = 0x15
+.field static final TRANSACTION_sendDataForSubscriber:I = 0x4
 
-.field static final TRANSACTION_sendDataForSubscriberWithSelfPermissions_4:I = 0x5
+.field static final TRANSACTION_sendDataForSubscriberWithSelfPermissions:I = 0x5
 
-.field static final TRANSACTION_sendDataForSubscriber_3:I = 0x4
+.field static final TRANSACTION_sendMultipartTextForSubscriber:I = 0x9
 
-.field static final TRANSACTION_sendMultipartTextForSubscriberWithOptions_10:I = 0xb
+.field static final TRANSACTION_sendStoredMultipartText:I = 0x18
 
-.field static final TRANSACTION_sendMultipartTextForSubscriber_9:I = 0xa
+.field static final TRANSACTION_sendStoredText:I = 0x17
 
-.field static final TRANSACTION_sendStoredMultipartText_25:I = 0x1a
+.field static final TRANSACTION_sendTextForSubscriber:I = 0x6
 
-.field static final TRANSACTION_sendStoredText_24:I = 0x19
+.field static final TRANSACTION_sendTextForSubscriberWithSelfPermissions:I = 0x7
 
-.field static final TRANSACTION_sendTextForSubscriberWithOptions_7:I = 0x8
+.field static final TRANSACTION_setPremiumSmsPermission:I = 0x10
 
-.field static final TRANSACTION_sendTextForSubscriberWithSelfPermissions_6:I = 0x7
-
-.field static final TRANSACTION_sendTextForSubscriber_5:I = 0x6
-
-.field static final TRANSACTION_setPremiumSmsPermission:I = 0x12
-
-.field static final TRANSACTION_setPremiumSmsPermissionForSubscriber:I = 0x13
+.field static final TRANSACTION_setPremiumSmsPermissionForSubscriber:I = 0x11
 
 .field static final TRANSACTION_updateMessageOnIccEfForSubscriber:I = 0x2
 
@@ -154,7 +148,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 67
+    .locals 62
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -169,7 +163,7 @@
     .line 51
     sparse-switch p1, :sswitch_data_0
 
-    .line 566
+    .line 492
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -214,16 +208,16 @@
 
     invoke-virtual {v0, v5, v6}, Lcom/android/internal/telephony/ISms$Stub;->getAllMessagesFromIccEfForSubscriber(ILjava/lang/String;)Ljava/util/List;
 
-    move-result-object v65
+    move-result-object v60
 
     .line 66
-    .local v65, "_result":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
+    .local v60, "_result":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 67
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v65
+    move-object/from16 v1, v60
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
@@ -235,7 +229,7 @@
     .line 72
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":Ljava/lang/String;
-    .end local v65    # "_result":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
+    .end local v60    # "_result":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     :sswitch_2
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
@@ -278,14 +272,14 @@
     .line 83
     invoke-virtual/range {v4 .. v9}, Lcom/android/internal/telephony/ISms$Stub;->updateMessageOnIccEfForSubscriber(ILjava/lang/String;II[B)Z
 
-    move-result v66
+    move-result v61
 
     .line 84
-    .local v66, "_result":Z
+    .local v61, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 85
-    if-eqz v66, :cond_0
+    if-eqz v61, :cond_0
 
     const/4 v4, 0x1
 
@@ -311,7 +305,7 @@
     .end local v7    # "_arg2":I
     .end local v8    # "_arg3":I
     .end local v9    # "_arg4":[B
-    .end local v66    # "_result":Z
+    .end local v61    # "_result":Z
     :sswitch_3
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
@@ -362,14 +356,14 @@
     .line 101
     invoke-virtual/range {v10 .. v15}, Lcom/android/internal/telephony/ISms$Stub;->copyMessageToIccEfForSubscriber(ILjava/lang/String;I[B[B)Z
 
-    move-result v66
+    move-result v61
 
     .line 102
-    .restart local v66    # "_result":Z
+    .restart local v61    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 103
-    if-eqz v66, :cond_1
+    if-eqz v61, :cond_1
 
     const/4 v4, 0x1
 
@@ -395,7 +389,7 @@
     .end local v7    # "_arg2":I
     .end local v9    # "_arg4":[B
     .end local v14    # "_arg3":[B
-    .end local v66    # "_result":Z
+    .end local v61    # "_result":Z
     :sswitch_4
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
@@ -928,90 +922,135 @@
 
     .line 244
     .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
 
-    move-result-object v6
+    move-result-object v56
 
     .line 246
-    .restart local v6    # "_arg1":Ljava/lang/String;
+    .local v56, "_arg1":[B
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v18
 
     .line 248
     .restart local v18    # "_arg2":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 250
-    .restart local v19    # "_arg3":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v29
-
-    .line 252
-    .restart local v29    # "_arg4":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_c
 
-    .line 253
+    .line 249
     sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
 
     invoke-interface {v4, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result-object v30
+    move-result-object v57
 
-    check-cast v30, Landroid/app/PendingIntent;
+    check-cast v57, Landroid/app/PendingIntent;
 
-    .line 259
+    .line 254
     :goto_c
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v56
+
+    move-object/from16 v2, v18
+
+    move-object/from16 v3, v57
+
+    invoke-virtual {v0, v5, v1, v2, v3}, Lcom/android/internal/telephony/ISms$Stub;->injectSmsPduForSubscriber(I[BLjava/lang/String;Landroid/app/PendingIntent;)V
+
+    .line 255
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 256
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 252
+    :cond_c
+    const/16 v57, 0x0
+
+    .local v57, "_arg3":Landroid/app/PendingIntent;
+    goto :goto_c
+
+    .line 260
+    .end local v5    # "_arg0":I
+    .end local v18    # "_arg2":Ljava/lang/String;
+    .end local v56    # "_arg1":[B
+    .end local v57    # "_arg3":Landroid/app/PendingIntent;
+    :sswitch_9
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 262
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 264
+    .restart local v5    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 266
+    .restart local v6    # "_arg1":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v18
+
+    .line 268
+    .restart local v18    # "_arg2":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v19
+
+    .line 270
+    .restart local v19    # "_arg3":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object v38
+
+    .line 272
+    .local v38, "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object v39
+
+    .line 274
+    .local v39, "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object v40
+
+    .line 276
+    .local v40, "_arg6":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_d
 
-    .line 260
-    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+    const/16 v32, 0x1
 
-    move-object/from16 v0, p2
-
-    invoke-interface {v4, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v22
-
-    check-cast v22, Landroid/app/PendingIntent;
-
-    .line 266
+    .restart local v32    # "_arg7":Z
     :goto_d
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v41
-
-    .line 268
-    .local v41, "_arg7":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    if-eqz v4, :cond_e
-
-    const/16 v42, 0x1
-
-    .line 270
-    .local v42, "_arg8":Z
-    :goto_e
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v43
-
-    .local v43, "_arg9":I
     move-object/from16 v33, p0
 
     move/from16 v34, v5
@@ -1022,134 +1061,99 @@
 
     move-object/from16 v37, v19
 
-    move-object/from16 v38, v29
+    move/from16 v41, v32
 
-    move-object/from16 v39, v30
+    .line 277
+    invoke-virtual/range {v33 .. v41}, Lcom/android/internal/telephony/ISms$Stub;->sendMultipartTextForSubscriber(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Z)V
 
-    move-object/from16 v40, v22
-
-    .line 271
-    invoke-virtual/range {v33 .. v43}, Lcom/android/internal/telephony/ISms$Stub;->sendTextForSubscriberWithOptions(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;IZI)V
-
-    .line 272
+    .line 278
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 273
+    .line 279
     const/4 v4, 0x1
 
     return v4
 
-    .line 256
-    .end local v41    # "_arg7":I
-    .end local v42    # "_arg8":Z
-    .end local v43    # "_arg9":I
-    :cond_c
-    const/16 v30, 0x0
-
-    .restart local v30    # "_arg5":Landroid/app/PendingIntent;
-    goto :goto_c
-
-    .line 263
-    .end local v30    # "_arg5":Landroid/app/PendingIntent;
+    .line 276
+    .end local v32    # "_arg7":Z
     :cond_d
-    const/16 v22, 0x0
+    const/16 v32, 0x0
 
-    .restart local v22    # "_arg6":Landroid/app/PendingIntent;
     goto :goto_d
 
-    .line 268
-    .end local v22    # "_arg6":Landroid/app/PendingIntent;
-    .restart local v41    # "_arg7":I
-    :cond_e
-    const/16 v42, 0x0
-
-    .restart local v42    # "_arg8":Z
-    goto :goto_e
-
-    .line 277
+    .line 283
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":Ljava/lang/String;
     .end local v18    # "_arg2":Ljava/lang/String;
     .end local v19    # "_arg3":Ljava/lang/String;
-    .end local v29    # "_arg4":Ljava/lang/String;
-    .end local v41    # "_arg7":I
-    .end local v42    # "_arg8":Z
-    :sswitch_9
+    .end local v38    # "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v39    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    .end local v40    # "_arg6":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    :sswitch_a
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 279
+    .line 285
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 281
+    .line 287
     .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
-
-    move-result-object v61
-
-    .line 283
-    .local v61, "_arg1":[B
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v18
-
-    .line 285
-    .restart local v18    # "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v4
+    move-result v55
 
-    if-eqz v4, :cond_f
+    .line 289
+    .local v55, "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    .line 286
-    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+    move-result v7
 
-    move-object/from16 v0, p2
-
-    invoke-interface {v4, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v62
-
-    check-cast v62, Landroid/app/PendingIntent;
-
-    .line 291
-    :goto_f
+    .line 290
+    .restart local v7    # "_arg2":I
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v61
+    move/from16 v1, v55
 
-    move-object/from16 v2, v18
+    invoke-virtual {v0, v5, v1, v7}, Lcom/android/internal/telephony/ISms$Stub;->enableCellBroadcastForSubscriber(III)Z
 
-    move-object/from16 v3, v62
+    move-result v61
 
-    invoke-virtual {v0, v5, v1, v2, v3}, Lcom/android/internal/telephony/ISms$Stub;->injectSmsPduForSubscriber(I[BLjava/lang/String;Landroid/app/PendingIntent;)V
+    .line 291
+    .restart local v61    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 292
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+    if-eqz v61, :cond_e
+
+    const/4 v4, 0x1
+
+    :goto_e
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 293
     const/4 v4, 0x1
 
     return v4
 
-    .line 289
-    :cond_f
-    const/16 v62, 0x0
+    .line 292
+    :cond_e
+    const/4 v4, 0x0
 
-    .local v62, "_arg3":Landroid/app/PendingIntent;
-    goto :goto_f
+    goto :goto_e
 
     .line 297
     .end local v5    # "_arg0":I
-    .end local v18    # "_arg2":Ljava/lang/String;
-    .end local v61    # "_arg1":[B
-    .end local v62    # "_arg3":Landroid/app/PendingIntent;
-    :sswitch_a
+    .end local v7    # "_arg2":I
+    .end local v55    # "_arg1":I
+    .end local v61    # "_result":Z
+    :sswitch_b
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
     move-object/from16 v0, p2
@@ -1163,224 +1167,56 @@
 
     .line 301
     .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v6
+    move-result v55
 
     .line 303
-    .restart local v6    # "_arg1":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    .restart local v55    # "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v18
+    move-result v7
+
+    .line 304
+    .restart local v7    # "_arg2":I
+    move-object/from16 v0, p0
+
+    move/from16 v1, v55
+
+    invoke-virtual {v0, v5, v1, v7}, Lcom/android/internal/telephony/ISms$Stub;->disableCellBroadcastForSubscriber(III)Z
+
+    move-result v61
 
     .line 305
-    .restart local v18    # "_arg2":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    .restart local v61    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move-result-object v19
+    .line 306
+    if-eqz v61, :cond_f
+
+    const/4 v4, 0x1
+
+    :goto_f
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 307
-    .restart local v19    # "_arg3":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+    const/4 v4, 0x1
 
-    move-result-object v49
+    return v4
 
-    .line 309
-    .local v49, "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+    .line 306
+    :cond_f
+    const/4 v4, 0x0
 
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
-
-    move-result-object v50
+    goto :goto_f
 
     .line 311
-    .local v50, "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
-
-    move-result-object v51
-
-    .line 313
-    .local v51, "_arg6":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    if-eqz v4, :cond_10
-
-    const/16 v32, 0x1
-
-    .restart local v32    # "_arg7":Z
-    :goto_10
-    move-object/from16 v44, p0
-
-    move/from16 v45, v5
-
-    move-object/from16 v46, v6
-
-    move-object/from16 v47, v18
-
-    move-object/from16 v48, v19
-
-    move/from16 v52, v32
-
-    .line 314
-    invoke-virtual/range {v44 .. v52}, Lcom/android/internal/telephony/ISms$Stub;->sendMultipartTextForSubscriber(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Z)V
-
-    .line 315
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 316
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 313
-    .end local v32    # "_arg7":Z
-    :cond_10
-    const/16 v32, 0x0
-
-    goto :goto_10
-
-    .line 320
     .end local v5    # "_arg0":I
-    .end local v6    # "_arg1":Ljava/lang/String;
-    .end local v18    # "_arg2":Ljava/lang/String;
-    .end local v19    # "_arg3":Ljava/lang/String;
-    .end local v49    # "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v50    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    .end local v51    # "_arg6":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    :sswitch_b
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 322
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 324
-    .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 326
-    .restart local v6    # "_arg1":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v18
-
-    .line 328
-    .restart local v18    # "_arg2":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 330
-    .restart local v19    # "_arg3":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
-
-    move-result-object v49
-
-    .line 332
-    .restart local v49    # "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
-
-    move-result-object v50
-
-    .line 334
-    .restart local v50    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
-
-    move-result-object v51
-
-    .line 336
-    .restart local v51    # "_arg6":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v41
-
-    .line 338
-    .restart local v41    # "_arg7":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    if-eqz v4, :cond_11
-
-    const/16 v42, 0x1
-
-    .line 340
-    .restart local v42    # "_arg8":Z
-    :goto_11
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v43
-
-    .restart local v43    # "_arg9":I
-    move-object/from16 v44, p0
-
-    move/from16 v45, v5
-
-    move-object/from16 v46, v6
-
-    move-object/from16 v47, v18
-
-    move-object/from16 v48, v19
-
-    move/from16 v52, v41
-
-    move/from16 v53, v42
-
-    move/from16 v54, v43
-
-    .line 341
-    invoke-virtual/range {v44 .. v54}, Lcom/android/internal/telephony/ISms$Stub;->sendMultipartTextForSubscriberWithOptions(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;IZI)V
-
-    .line 342
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 343
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 338
-    .end local v42    # "_arg8":Z
-    .end local v43    # "_arg9":I
-    :cond_11
-    const/16 v42, 0x0
-
-    .restart local v42    # "_arg8":Z
-    goto :goto_11
-
-    .line 347
-    .end local v5    # "_arg0":I
-    .end local v6    # "_arg1":Ljava/lang/String;
-    .end local v18    # "_arg2":Ljava/lang/String;
-    .end local v19    # "_arg3":Ljava/lang/String;
-    .end local v41    # "_arg7":I
-    .end local v42    # "_arg8":Z
-    .end local v49    # "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v50    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    .end local v51    # "_arg6":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    .end local v7    # "_arg2":I
+    .end local v55    # "_arg1":I
+    .end local v61    # "_result":Z
     :sswitch_c
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
@@ -1388,39 +1224,335 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 349
+    .line 313
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 351
+    .line 315
     .restart local v5    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v60
+    move-result v55
 
-    .line 353
-    .local v60, "_arg1":I
+    .line 317
+    .restart local v55    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 354
+    .line 319
+    .restart local v7    # "_arg2":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v8
+
+    .line 320
+    .restart local v8    # "_arg3":I
+    move-object/from16 v0, p0
+
+    move/from16 v1, v55
+
+    invoke-virtual {v0, v5, v1, v7, v8}, Lcom/android/internal/telephony/ISms$Stub;->enableCellBroadcastRangeForSubscriber(IIII)Z
+
+    move-result v61
+
+    .line 321
+    .restart local v61    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 322
+    if-eqz v61, :cond_10
+
+    const/4 v4, 0x1
+
+    :goto_10
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 323
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 322
+    :cond_10
+    const/4 v4, 0x0
+
+    goto :goto_10
+
+    .line 327
+    .end local v5    # "_arg0":I
+    .end local v7    # "_arg2":I
+    .end local v8    # "_arg3":I
+    .end local v55    # "_arg1":I
+    .end local v61    # "_result":Z
+    :sswitch_d
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 329
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 331
+    .restart local v5    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v55
+
+    .line 333
+    .restart local v55    # "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    .line 335
+    .restart local v7    # "_arg2":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v8
+
+    .line 336
+    .restart local v8    # "_arg3":I
+    move-object/from16 v0, p0
+
+    move/from16 v1, v55
+
+    invoke-virtual {v0, v5, v1, v7, v8}, Lcom/android/internal/telephony/ISms$Stub;->disableCellBroadcastRangeForSubscriber(IIII)Z
+
+    move-result v61
+
+    .line 337
+    .restart local v61    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 338
+    if-eqz v61, :cond_11
+
+    const/4 v4, 0x1
+
+    :goto_11
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 339
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 338
+    :cond_11
+    const/4 v4, 0x0
+
+    goto :goto_11
+
+    .line 343
+    .end local v5    # "_arg0":I
+    .end local v7    # "_arg2":I
+    .end local v8    # "_arg3":I
+    .end local v55    # "_arg1":I
+    .end local v61    # "_result":Z
+    :sswitch_e
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 345
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v54
+
+    .line 346
+    .local v54, "_arg0":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v54
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/ISms$Stub;->getPremiumSmsPermission(Ljava/lang/String;)I
+
+    move-result v58
+
+    .line 347
+    .local v58, "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 348
+    move-object/from16 v0, p3
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 349
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 353
+    .end local v54    # "_arg0":Ljava/lang/String;
+    .end local v58    # "_result":I
+    :sswitch_f
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 355
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 357
+    .restart local v5    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 358
+    .restart local v6    # "_arg1":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v5, v6}, Lcom/android/internal/telephony/ISms$Stub;->getPremiumSmsPermissionForSubscriber(ILjava/lang/String;)I
+
+    move-result v58
+
+    .line 359
+    .restart local v58    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 360
+    move-object/from16 v0, p3
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 361
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 365
+    .end local v5    # "_arg0":I
+    .end local v6    # "_arg1":Ljava/lang/String;
+    .end local v58    # "_result":I
+    :sswitch_10
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 367
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v54
+
+    .line 369
+    .restart local v54    # "_arg0":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v55
+
+    .line 370
+    .restart local v55    # "_arg1":I
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v54
+
+    move/from16 v2, v55
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/ISms$Stub;->setPremiumSmsPermission(Ljava/lang/String;I)V
+
+    .line 371
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 372
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 376
+    .end local v54    # "_arg0":Ljava/lang/String;
+    .end local v55    # "_arg1":I
+    :sswitch_11
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 378
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 380
+    .restart local v5    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 382
+    .restart local v6    # "_arg1":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    .line 383
     .restart local v7    # "_arg2":I
     move-object/from16 v0, p0
 
-    move/from16 v1, v60
+    invoke-virtual {v0, v5, v6, v7}, Lcom/android/internal/telephony/ISms$Stub;->setPremiumSmsPermissionForSubscriber(ILjava/lang/String;I)V
 
-    invoke-virtual {v0, v5, v1, v7}, Lcom/android/internal/telephony/ISms$Stub;->enableCellBroadcastForSubscriber(III)Z
-
-    move-result v66
-
-    .line 355
-    .restart local v66    # "_result":Z
+    .line 384
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 356
-    if-eqz v66, :cond_12
+    .line 385
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 389
+    .end local v5    # "_arg0":I
+    .end local v6    # "_arg1":Ljava/lang/String;
+    .end local v7    # "_arg2":I
+    :sswitch_12
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 391
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    .line 392
+    .restart local v5    # "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v5}, Lcom/android/internal/telephony/ISms$Stub;->isImsSmsSupportedForSubscriber(I)Z
+
+    move-result v61
+
+    .line 393
+    .restart local v61    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 394
+    if-eqz v61, :cond_12
 
     const/4 v4, 0x1
 
@@ -1429,62 +1561,46 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 357
+    .line 395
     const/4 v4, 0x1
 
     return v4
 
-    .line 356
+    .line 394
     :cond_12
     const/4 v4, 0x0
 
     goto :goto_12
 
-    .line 361
+    .line 399
     .end local v5    # "_arg0":I
-    .end local v7    # "_arg2":I
-    .end local v60    # "_arg1":I
-    .end local v66    # "_result":Z
-    :sswitch_d
+    .end local v61    # "_result":Z
+    :sswitch_13
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 363
+    .line 401
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 365
+    .line 402
     .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v60
-
-    .line 367
-    .restart local v60    # "_arg1":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v7
-
-    .line 368
-    .restart local v7    # "_arg2":I
     move-object/from16 v0, p0
 
-    move/from16 v1, v60
+    invoke-virtual {v0, v5}, Lcom/android/internal/telephony/ISms$Stub;->isSmsSimPickActivityNeeded(I)Z
 
-    invoke-virtual {v0, v5, v1, v7}, Lcom/android/internal/telephony/ISms$Stub;->disableCellBroadcastForSubscriber(III)Z
+    move-result v61
 
-    move-result v66
-
-    .line 369
-    .restart local v66    # "_result":Z
+    .line 403
+    .restart local v61    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 370
-    if-eqz v66, :cond_13
+    .line 404
+    if-eqz v61, :cond_13
 
     const/4 v4, 0x1
 
@@ -1493,194 +1609,40 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 371
+    .line 405
     const/4 v4, 0x1
 
     return v4
 
-    .line 370
+    .line 404
     :cond_13
     const/4 v4, 0x0
 
     goto :goto_13
 
-    .line 375
-    .end local v5    # "_arg0":I
-    .end local v7    # "_arg2":I
-    .end local v60    # "_arg1":I
-    .end local v66    # "_result":Z
-    :sswitch_e
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 377
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 379
-    .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v60
-
-    .line 381
-    .restart local v60    # "_arg1":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v7
-
-    .line 383
-    .restart local v7    # "_arg2":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v8
-
-    .line 384
-    .restart local v8    # "_arg3":I
-    move-object/from16 v0, p0
-
-    move/from16 v1, v60
-
-    invoke-virtual {v0, v5, v1, v7, v8}, Lcom/android/internal/telephony/ISms$Stub;->enableCellBroadcastRangeForSubscriber(IIII)Z
-
-    move-result v66
-
-    .line 385
-    .restart local v66    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 386
-    if-eqz v66, :cond_14
-
-    const/4 v4, 0x1
-
-    :goto_14
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 387
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 386
-    :cond_14
-    const/4 v4, 0x0
-
-    goto :goto_14
-
-    .line 391
-    .end local v5    # "_arg0":I
-    .end local v7    # "_arg2":I
-    .end local v8    # "_arg3":I
-    .end local v60    # "_arg1":I
-    .end local v66    # "_result":Z
-    :sswitch_f
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 393
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 395
-    .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v60
-
-    .line 397
-    .restart local v60    # "_arg1":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v7
-
-    .line 399
-    .restart local v7    # "_arg2":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v8
-
-    .line 400
-    .restart local v8    # "_arg3":I
-    move-object/from16 v0, p0
-
-    move/from16 v1, v60
-
-    invoke-virtual {v0, v5, v1, v7, v8}, Lcom/android/internal/telephony/ISms$Stub;->disableCellBroadcastRangeForSubscriber(IIII)Z
-
-    move-result v66
-
-    .line 401
-    .restart local v66    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 402
-    if-eqz v66, :cond_15
-
-    const/4 v4, 0x1
-
-    :goto_15
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 403
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 402
-    :cond_15
-    const/4 v4, 0x0
-
-    goto :goto_15
-
-    .line 407
-    .end local v5    # "_arg0":I
-    .end local v7    # "_arg2":I
-    .end local v8    # "_arg3":I
-    .end local v60    # "_arg1":I
-    .end local v66    # "_result":Z
-    :sswitch_10
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
     .line 409
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    .end local v5    # "_arg0":I
+    .end local v61    # "_result":Z
+    :sswitch_14
+    const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
-    move-result-object v59
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 410
-    .local v59, "_arg0":Ljava/lang/String;
-    move-object/from16 v0, p0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ISms$Stub;->getPreferredSmsSubscription()I
 
-    move-object/from16 v1, v59
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/ISms$Stub;->getPremiumSmsPermission(Ljava/lang/String;)I
-
-    move-result v63
+    move-result v58
 
     .line 411
-    .local v63, "_result":I
+    .restart local v58    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 412
     move-object/from16 v0, p3
 
-    move/from16 v1, v63
+    move/from16 v1, v58
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -1690,9 +1652,8 @@
     return v4
 
     .line 417
-    .end local v59    # "_arg0":Ljava/lang/String;
-    .end local v63    # "_result":I
-    :sswitch_11
+    .end local v58    # "_result":I
+    :sswitch_15
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
     move-object/from16 v0, p2
@@ -1704,217 +1665,33 @@
 
     move-result v5
 
-    .line 421
+    .line 420
     .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 422
-    .restart local v6    # "_arg1":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5, v6}, Lcom/android/internal/telephony/ISms$Stub;->getPremiumSmsPermissionForSubscriber(ILjava/lang/String;)I
-
-    move-result v63
-
-    .line 423
-    .restart local v63    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 424
-    move-object/from16 v0, p3
-
-    move/from16 v1, v63
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 425
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 429
-    .end local v5    # "_arg0":I
-    .end local v6    # "_arg1":Ljava/lang/String;
-    .end local v63    # "_result":I
-    :sswitch_12
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 431
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {v0, v5}, Lcom/android/internal/telephony/ISms$Stub;->getImsSmsFormatForSubscriber(I)Ljava/lang/String;
 
     move-result-object v59
 
-    .line 433
-    .restart local v59    # "_arg0":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+    .line 421
+    .local v59, "_result":Ljava/lang/String;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move-result v60
-
-    .line 434
-    .restart local v60    # "_arg1":I
-    move-object/from16 v0, p0
+    .line 422
+    move-object/from16 v0, p3
 
     move-object/from16 v1, v59
 
-    move/from16 v2, v60
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/ISms$Stub;->setPremiumSmsPermission(Ljava/lang/String;I)V
-
-    .line 435
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 436
+    .line 423
     const/4 v4, 0x1
 
     return v4
 
-    .line 440
-    .end local v59    # "_arg0":Ljava/lang/String;
-    .end local v60    # "_arg1":I
-    :sswitch_13
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 442
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 444
-    .restart local v5    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 446
-    .restart local v6    # "_arg1":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v7
-
-    .line 447
-    .restart local v7    # "_arg2":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5, v6, v7}, Lcom/android/internal/telephony/ISms$Stub;->setPremiumSmsPermissionForSubscriber(ILjava/lang/String;I)V
-
-    .line 448
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 449
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 453
+    .line 427
     .end local v5    # "_arg0":I
-    .end local v6    # "_arg1":Ljava/lang/String;
-    .end local v7    # "_arg2":I
-    :sswitch_14
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 455
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 456
-    .restart local v5    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5}, Lcom/android/internal/telephony/ISms$Stub;->isImsSmsSupportedForSubscriber(I)Z
-
-    move-result v66
-
-    .line 457
-    .restart local v66    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 458
-    if-eqz v66, :cond_16
-
-    const/4 v4, 0x1
-
-    :goto_16
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 459
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 458
-    :cond_16
-    const/4 v4, 0x0
-
-    goto :goto_16
-
-    .line 463
-    .end local v5    # "_arg0":I
-    .end local v66    # "_result":Z
-    :sswitch_15
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 465
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 466
-    .restart local v5    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5}, Lcom/android/internal/telephony/ISms$Stub;->isSmsSimPickActivityNeeded(I)Z
-
-    move-result v66
-
-    .line 467
-    .restart local v66    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 468
-    if-eqz v66, :cond_17
-
-    const/4 v4, 0x1
-
-    :goto_17
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 469
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 468
-    :cond_17
-    const/4 v4, 0x0
-
-    goto :goto_17
-
-    .line 473
-    .end local v5    # "_arg0":I
-    .end local v66    # "_result":Z
+    .end local v59    # "_result":Ljava/lang/String;
     :sswitch_16
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
@@ -1922,29 +1699,38 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 474
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ISms$Stub;->getPreferredSmsSubscription()I
+    .line 428
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ISms$Stub;->isSMSPromptEnabled()Z
 
-    move-result v63
+    move-result v61
 
-    .line 475
-    .restart local v63    # "_result":I
+    .line 429
+    .restart local v61    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 476
+    .line 430
+    if-eqz v61, :cond_14
+
+    const/4 v4, 0x1
+
+    :goto_14
     move-object/from16 v0, p3
 
-    move/from16 v1, v63
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 477
+    .line 431
     const/4 v4, 0x1
 
     return v4
 
-    .line 481
-    .end local v63    # "_result":I
+    .line 430
+    :cond_14
+    const/4 v4, 0x0
+
+    goto :goto_14
+
+    .line 435
+    .end local v61    # "_result":Z
     :sswitch_17
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
@@ -1952,148 +1738,70 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 483
+    .line 437
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 484
-    .restart local v5    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5}, Lcom/android/internal/telephony/ISms$Stub;->getImsSmsFormatForSubscriber(I)Ljava/lang/String;
-
-    move-result-object v64
-
-    .line 485
-    .local v64, "_result":Ljava/lang/String;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 486
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, v64
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 487
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 491
-    .end local v5    # "_arg0":I
-    .end local v64    # "_result":Ljava/lang/String;
-    :sswitch_18
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 492
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ISms$Stub;->isSMSPromptEnabled()Z
-
-    move-result v66
-
-    .line 493
-    .restart local v66    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 494
-    if-eqz v66, :cond_18
-
-    const/4 v4, 0x1
-
-    :goto_18
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 495
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 494
-    :cond_18
-    const/4 v4, 0x0
-
-    goto :goto_18
-
-    .line 499
-    .end local v66    # "_result":Z
-    :sswitch_19
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 501
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 503
+    .line 439
     .restart local v5    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 505
+    .line 441
     .restart local v6    # "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_15
 
-    .line 506
+    .line 442
     sget-object v4, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
 
     invoke-interface {v4, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result-object v36
+    move-result-object v44
 
-    check-cast v36, Landroid/net/Uri;
+    check-cast v44, Landroid/net/Uri;
 
-    .line 512
-    :goto_19
+    .line 448
+    :goto_15
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v19
 
-    .line 514
+    .line 450
     .restart local v19    # "_arg3":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_16
 
-    .line 515
+    .line 451
     sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
 
     invoke-interface {v4, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result-object v38
+    move-result-object v46
 
-    check-cast v38, Landroid/app/PendingIntent;
+    check-cast v46, Landroid/app/PendingIntent;
 
-    .line 521
-    :goto_1a
+    .line 457
+    :goto_16
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_17
 
-    .line 522
+    .line 458
     sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -2104,102 +1812,102 @@
 
     check-cast v30, Landroid/app/PendingIntent;
 
-    :goto_1b
-    move-object/from16 v33, p0
+    :goto_17
+    move-object/from16 v41, p0
 
-    move/from16 v34, v5
+    move/from16 v42, v5
 
-    move-object/from16 v35, v6
+    move-object/from16 v43, v6
 
-    move-object/from16 v37, v19
+    move-object/from16 v45, v19
 
-    move-object/from16 v39, v30
+    move-object/from16 v47, v30
 
-    .line 527
-    invoke-virtual/range {v33 .. v39}, Lcom/android/internal/telephony/ISms$Stub;->sendStoredText(ILjava/lang/String;Landroid/net/Uri;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+    .line 463
+    invoke-virtual/range {v41 .. v47}, Lcom/android/internal/telephony/ISms$Stub;->sendStoredText(ILjava/lang/String;Landroid/net/Uri;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 
-    .line 528
+    .line 464
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 529
+    .line 465
     const/4 v4, 0x1
 
     return v4
 
-    .line 509
+    .line 445
     .end local v19    # "_arg3":Ljava/lang/String;
-    :cond_19
-    const/16 v36, 0x0
+    :cond_15
+    const/16 v44, 0x0
 
-    .local v36, "_arg2":Landroid/net/Uri;
-    goto :goto_19
+    .local v44, "_arg2":Landroid/net/Uri;
+    goto :goto_15
 
-    .line 518
-    .end local v36    # "_arg2":Landroid/net/Uri;
+    .line 454
+    .end local v44    # "_arg2":Landroid/net/Uri;
     .restart local v19    # "_arg3":Ljava/lang/String;
-    :cond_1a
-    const/16 v38, 0x0
+    :cond_16
+    const/16 v46, 0x0
 
-    .local v38, "_arg4":Landroid/app/PendingIntent;
-    goto :goto_1a
+    .local v46, "_arg4":Landroid/app/PendingIntent;
+    goto :goto_16
 
-    .line 525
-    .end local v38    # "_arg4":Landroid/app/PendingIntent;
-    :cond_1b
+    .line 461
+    .end local v46    # "_arg4":Landroid/app/PendingIntent;
+    :cond_17
     const/16 v30, 0x0
 
     .restart local v30    # "_arg5":Landroid/app/PendingIntent;
-    goto :goto_1b
+    goto :goto_17
 
-    .line 533
+    .line 469
     .end local v5    # "_arg0":I
     .end local v6    # "_arg1":Ljava/lang/String;
     .end local v19    # "_arg3":Ljava/lang/String;
     .end local v30    # "_arg5":Landroid/app/PendingIntent;
-    :sswitch_1a
+    :sswitch_18
     const-string/jumbo v4, "com.android.internal.telephony.ISms"
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 535
+    .line 471
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 537
+    .line 473
     .restart local v5    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 539
+    .line 475
     .restart local v6    # "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    if-eqz v4, :cond_1c
+    if-eqz v4, :cond_18
 
-    .line 540
+    .line 476
     sget-object v4, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
 
     invoke-interface {v4, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result-object v36
+    move-result-object v44
 
-    check-cast v36, Landroid/net/Uri;
+    check-cast v44, Landroid/net/Uri;
 
-    .line 546
-    :goto_1c
+    .line 482
+    :goto_18
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v19
 
-    .line 548
+    .line 484
     .restart local v19    # "_arg3":Ljava/lang/String;
     sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -2207,91 +1915,51 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
-    move-result-object v57
+    move-result-object v52
 
-    .line 550
-    .local v57, "_arg4":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    .line 486
+    .local v52, "_arg4":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
     sget-object v4, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
-    move-result-object v50
+    move-result-object v39
 
-    .restart local v50    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    move-object/from16 v52, p0
+    .restart local v39    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    move-object/from16 v47, p0
 
-    move/from16 v53, v5
+    move/from16 v48, v5
 
-    move-object/from16 v54, v6
+    move-object/from16 v49, v6
 
-    move-object/from16 v55, v36
+    move-object/from16 v50, v44
 
-    move-object/from16 v56, v19
+    move-object/from16 v51, v19
 
-    move-object/from16 v58, v50
+    move-object/from16 v53, v39
 
-    .line 551
-    invoke-virtual/range {v52 .. v58}, Lcom/android/internal/telephony/ISms$Stub;->sendStoredMultipartText(ILjava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
+    .line 487
+    invoke-virtual/range {v47 .. v53}, Lcom/android/internal/telephony/ISms$Stub;->sendStoredMultipartText(ILjava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
 
-    .line 552
+    .line 488
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 553
+    .line 489
     const/4 v4, 0x1
 
     return v4
 
-    .line 543
+    .line 479
     .end local v19    # "_arg3":Ljava/lang/String;
-    .end local v50    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    .end local v57    # "_arg4":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
-    :cond_1c
-    const/16 v36, 0x0
+    .end local v39    # "_arg5":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    .end local v52    # "_arg4":Ljava/util/List;, "Ljava/util/List<Landroid/app/PendingIntent;>;"
+    :cond_18
+    const/16 v44, 0x0
 
-    .restart local v36    # "_arg2":Landroid/net/Uri;
-    goto :goto_1c
-
-    .line 557
-    .end local v5    # "_arg0":I
-    .end local v6    # "_arg1":Ljava/lang/String;
-    .end local v36    # "_arg2":Landroid/net/Uri;
-    :sswitch_1b
-    const-string/jumbo v4, "com.android.internal.telephony.ISms"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 559
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    .line 560
-    .restart local v5    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5}, Lcom/android/internal/telephony/ISms$Stub;->getSmsCapacityOnIccForSubscriber(I)I
-
-    move-result v63
-
-    .line 561
-    .restart local v63    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 562
-    move-object/from16 v0, p3
-
-    move/from16 v1, v63
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 563
-    const/4 v4, 0x1
-
-    return v4
+    .restart local v44    # "_arg2":Landroid/net/Uri;
+    goto :goto_18
 
     .line 51
     nop
@@ -2322,9 +1990,6 @@
         0x16 -> :sswitch_16
         0x17 -> :sswitch_17
         0x18 -> :sswitch_18
-        0x19 -> :sswitch_19
-        0x1a -> :sswitch_1a
-        0x1b -> :sswitch_1b
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

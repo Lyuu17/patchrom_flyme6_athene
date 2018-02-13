@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static final app_ops_labels:I = 0x1070012
-
 .field public static final carrier_properties:I = 0x107006d
 
 .field public static final common_nicknames:I = 0x1070064
@@ -57,8 +55,6 @@
 
 .field public static final config_default_vm_number:I = 0x107004e
 
-.field public static final config_disabledComponents:I = 0x1070060
-
 .field public static final config_disabledUntilUsedPreinstalledCarrierApps:I = 0x1070044
 
 .field public static final config_disabledUntilUsedPreinstalledImes:I = 0x1070043
@@ -75,11 +71,7 @@
 
 .field public static final config_emergency_mcc_codes:I = 0x107005b
 
-.field public static final config_enabledPreinstalledCarrierApps:I = 0x1070013
-
 .field public static final config_ephemeralResolverPackage:I = 0x1070037
-
-.field public static final config_forceEnabledComponents:I = 0x1070061
 
 .field public static final config_globalActionsList:I = 0x1070049
 
@@ -103,17 +95,11 @@
 
 .field public static final config_notificationFallbackVibePattern:I = 0x1070041
 
-.field public static final config_notificationNoAlertsVibePattern:I = 0x1070042
-
 .field public static final config_notificationSignalExtractors:I = 0x1070045
 
 .field public static final config_oemUsbModeOverride:I = 0x107003d
 
 .field public static final config_onlySingleDcAllowed:I = 0x107003f
-
-.field public static final config_operatorConsideredDomesticRoaming:I = 0x1070059
-
-.field public static final config_operatorConsideredDomesticRoamingExceptions:I = 0x107005a
 
 .field public static final config_operatorConsideredNonRoaming:I = 0x1070046
 
@@ -171,10 +157,6 @@
 
 .field public static final imProtocols:I = 0x1070001
 
-.field public static final keypress_param_value:I = 0x1070056
-
-.field public static final lte_signal_strength_threshold:I = 0x1070058
-
 .field public static final maps_starting_lat_lng:I = 0x1070062
 
 .field public static final maps_starting_zoom:I = 0x1070063
@@ -187,15 +169,11 @@
 
 .field public static final no_ems_support_sim_operators:I = 0x107004c
 
-.field public static final notification_light_package_mapping:I = 0x107000f
-
 .field public static final organizationTypes:I = 0x1070002
 
 .field public static final phoneTypes:I = 0x1070003
 
 .field public static final postalAddressTypes:I = 0x1070004
-
-.field public static final power_off_alarm_apps:I = 0x107000e
 
 .field public static final preloaded_color_state_lists:I = 0x1070007
 
@@ -209,10 +187,6 @@
 
 .field public static final resolver_target_actions_unpin:I = 0x107000d
 
-.field public static final shutdown_reboot_actions:I = 0x1070011
-
-.field public static final shutdown_reboot_options:I = 0x1070010
-
 .field public static final sim_colors:I = 0x107000b
 
 .field public static final special_locale_codes:I = 0x1070009
@@ -220,8 +194,6 @@
 .field public static final special_locale_names:I = 0x107000a
 
 .field public static final supported_locales:I = 0x1070065
-
-.field public static final umts_signal_strength_threshold:I = 0x1070057
 
 .field public static final wfcOperatorErrorAlertMessages:I = 0x1070066
 
@@ -235,7 +207,7 @@
     .locals 0
 
     .prologue
-    .line 91
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

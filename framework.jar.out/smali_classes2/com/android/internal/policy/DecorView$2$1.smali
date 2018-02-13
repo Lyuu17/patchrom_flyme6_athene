@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Lcom/android/internal/policy/DecorView$2;
 
     .prologue
-    .line 1647
+    .line 1645
     iput-object p1, p0, Lcom/android/internal/policy/DecorView$2$1;->this$1:Lcom/android/internal/policy/DecorView$2;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1655
+    .line 1653
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2$1;->this$1:Lcom/android/internal/policy/DecorView$2;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
@@ -50,9 +50,9 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarContextView;->setAlpha(F)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1656
+    .line 1654
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2$1;->this$1:Lcom/android/internal/policy/DecorView$2;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
@@ -61,7 +61,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/DecorView;->-set0(Lcom/android/internal/policy/DecorView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 1654
+    .line 1652
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1650
+    .line 1648
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2$1;->this$1:Lcom/android/internal/policy/DecorView$2;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
@@ -81,8 +81,8 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarContextView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/widget/AbsActionBarView;->setVisibility(I)V
 
-    .line 1649
+    .line 1647
     return-void
 .end method

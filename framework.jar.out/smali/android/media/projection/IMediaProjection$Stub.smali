@@ -54,7 +54,7 @@
     .line 16
     const-string/jumbo v0, "android.media.projection.IMediaProjection"
 
-    invoke-virtual {p0, p0, v0}, Landroid/media/projection/IMediaProjection$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 14
     return-void

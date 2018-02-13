@@ -11157,6 +11157,11 @@
     .param p1, "color"    # I
 
     .prologue
+
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/policy/PhoneWindow;->getFlymeStatusBarColor(I)I
+
+    move-result p1
+
     const/4 v2, 0x0
 
     .line 3743
@@ -11587,4 +11592,35 @@
     .line 1538
     :cond_0
     return-void
+.end method
+
+.method private getFlymeStatusBarColor(I)I
+    .locals 1
+    .param p1, "color"    # I
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/policy/PhoneWindow;->mDecor:Lcom/android/internal/policy/DecorView;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/internal/policy/PhoneWindow;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/app/Activity;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/internal/policy/PhoneWindow;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->onStatusBarColorChange(I)I
+
+    move-result p1
+
+    :cond_0
+    return p1
 .end method

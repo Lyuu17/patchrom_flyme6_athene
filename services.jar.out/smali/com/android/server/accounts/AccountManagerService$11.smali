@@ -45,7 +45,7 @@
     .param p14, "val$accountType"    # Ljava/lang/String;
 
     .prologue
-    .line 2880
+    .line 2862
     iput-object p2, p0, Lcom/android/server/accounts/AccountManagerService$11;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     move-object/from16 v0, p11
@@ -86,7 +86,7 @@
 
     invoke-direct/range {v1 .. v10}, Lcom/android/server/accounts/AccountManagerService$StartAccountSession;-><init>(Lcom/android/server/accounts/AccountManagerService;Lcom/android/server/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZLjava/lang/String;ZZZ)V
 
-    .line 2888
+    .line 2870
     return-void
 .end method
 
@@ -101,24 +101,24 @@
     .end annotation
 
     .prologue
-    .line 2891
+    .line 2873
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$11;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$11;->mAccountType:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$authTokenType:Ljava/lang/String;
 
-    .line 2892
+    .line 2874
     iget-object v4, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$requiredFeatures:[Ljava/lang/String;
 
     iget-object v5, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$options:Landroid/os/Bundle;
 
     move-object v1, p0
 
-    .line 2891
+    .line 2873
     invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountAuthenticator;->startAddAccountSession(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2890
+    .line 2872
     return-void
 .end method
 
@@ -129,7 +129,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2897
+    .line 2879
     const-string/jumbo v2, ","
 
     iget-object v3, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$requiredFeatures:[Ljava/lang/String;
@@ -138,7 +138,7 @@
 
     move-result-object v0
 
-    .line 2898
+    .line 2880
     .local v0, "requiredFeaturesStr":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -164,28 +164,28 @@
 
     move-result-object v2
 
-    .line 2899
+    .line 2881
     iget-object v3, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$accountType:Ljava/lang/String;
 
-    .line 2898
+    .line 2880
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 2899
+    .line 2881
     const-string/jumbo v3, ", requiredFeatures "
 
-    .line 2898
+    .line 2880
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 2900
+    .line 2882
     iget-object v3, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$requiredFeatures:[Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 2898
+    .line 2880
     .end local v0    # "requiredFeaturesStr":Ljava/lang/String;
     :goto_0
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -202,6 +202,6 @@
     :cond_0
     move-object v0, v1
 
-    .line 2900
+    .line 2882
     goto :goto_0
 .end method

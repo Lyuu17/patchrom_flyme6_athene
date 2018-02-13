@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">अनुप्रयोगहरूलाई खाताको लागि सिंक सेटिङहरू परिमार्जन गर्न अनुमति दिन्छ। उदाहरणको लागि, यो खातासँग व्यक्ति अनुप्रयोगको सिंक सक्षम गर्न प्रयोग गर्न सकिन्छ।</string>
     <string name="permlab_readSyncStats">सिंक तथ्याङ्कहरू पढ्नुहोस्</string>
     <string name="permdesc_readSyncStats">"अनुप्रयोगलाई खाताको लागि समीकरणको आँकडा समीकरण घटनाहरूको  इतिहास र समीकरण गरिएको डेटाको मापन समेत, पढ्न अनुमति दिन्छ।"</string>
-    <string name="permlab_sdcardRead">आफ्नो SD कार्डको सामग्रीहरूहरु पढ्नुहोस्</string>
-    <string name="permdesc_sdcardRead">अनुप्रयोगलाई तपाईंको SD कार्डको सामग्री पढ्न अनुमति दिन्छ।</string>
-    <string name="permlab_sdcardWrite">तपाईँको SD कार्डको विषयसूची परिमार्जन गर्ने मेट्ने</string>
-    <string name="permdesc_sdcardWrite">अनुप्रयोगलाई SD कार्डमा लेख्न अनुमति दिन्छ।</string>
+    <string name="permlab_sdcardRead">आफ्नो USB भण्डारणको सामग्रीहरूहरु पढ्नुहोस्</string>
+    <string name="permdesc_sdcardRead">अनुप्रयोगलाई तपाईंको USB भण्डारणको सामग्री पढ्न अनुमति दिन्छ।</string>
+    <string name="permlab_sdcardWrite">तपाईँको USB भण्डारणको विषयवस्तुहरूलाई परिमार्जन गर्ने वा मेटाउने</string>
+    <string name="permdesc_sdcardWrite">USB भण्डारणमा लेख्‍नको लागि अनुप्रयोगलाई अनुमति दिन्छ।</string>
     <string name="permlab_use_sip">SIP कलहरू प्राप्त/बनाउन</string>
     <string name="permdesc_use_sip">SIP कलहरू बनाउन र प्राप्त गर्न अनुप्रयोगलाई अनुमति दिन्छ।</string>
     <string name="permlab_register_sim_subscription">नयाँ दूरसंचार सिम जडानहरू दर्ता गर्नुहोस्</string>
@@ -1022,7 +1022,7 @@
     <string name="no_matches">कुनै मिलेन</string>
     <string name="find_on_page">पृष्ठमा फेला पार्नुहोस्</string>
     <string name="action_mode_done">भयो</string>
-    <string name="progress_erasing">SD कार्ड मेटाउँदै…</string>
+    <string name="progress_erasing">USB भण्डारण मेटाउँदै…</string>
     <string name="share">साझेदारी गर्नुहोस्</string>
     <string name="find">पत्ता लगाउनुहोस्</string>
     <string name="websearch">वेब खोजी</string>

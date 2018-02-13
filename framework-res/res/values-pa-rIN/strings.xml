@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">"ਐਪ ਨੂੰ ਇੱਕ ਖਾਤੇ ਲਈ ਸਿੰਕ ਸੈਟਿੰਗਾਂ ਸੰਸ਼ੋਧਿਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ। ਉਦਾਹਰਨ ਲਈ, ਇਸਦੀ ਵਰਤੋਂ  ਇੱਕ ਖਾਤੇ ਨਾਲ People ਐਪ ਦਾ ਸਿੰਕ ਸਮਰੱਥ ਬਣਾਉਣ ਲਈ ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ।"</string>
     <string name="permlab_readSyncStats">ਸਿੰਕ ਅੰਕੜੇ ਪੜ੍ਹੋ</string>
     <string name="permdesc_readSyncStats">ਐਪ ਨੂੰ ਇੱਕ ਖਾਤੇ ਲਈ ਸਿੰਕ ਸਟੇਟਸ ਪੜ੍ਹਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ, ਸਿੰਕ ਇਵੈਂਟਾਂ ਦੇ ਇਤਿਹਾਸ ਅਤੇ ਕਿੰਨਾ ਡੈਟਾ ਸਿੰਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਸਮੇਤ।</string>
-    <string name="permlab_sdcardRead">ਆਪਣੇ SD ਕਾਰਡ ਦੀਆਂ ਸਮੱਗਰੀਆਂ ਪੜ੍ਹੋ</string>
-    <string name="permdesc_sdcardRead">ਐਪ ਨੂੰ ਤੁਹਾਡੇ SD ਕਾਰਡ ਦੀਆਂ ਸਮੱਗਰੀਆਂ ਪੜ੍ਹਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ।</string>
-    <string name="permlab_sdcardWrite">ਆਪਣੇ SD ਕਾਰਡ ਦੀਆਂ ਸਮੱਗਰੀਆਂ ਸੰਸ਼ੋਧਿਤ ਕਰੋ ਜਾਂ ਮਿਟਾਓ</string>
-    <string name="permdesc_sdcardWrite">ਐਪ ਨੂੰ SD ਕਾਰਡ ਲਿਖਣ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ।</string>
+    <string name="permlab_sdcardRead">"ਆਪਣੀ USB ਸਟੋਰੇਜ  ਦੀਆਂ ਸਮੱਗਰੀਆਂ ਪੜ੍ਹੋ"</string>
+    <string name="permdesc_sdcardRead">ਐਪ ਨੂੰ ਆਪਣੀ USB ਸਟੋਰੇਜ ਦੀਆਂ ਸਮੱਗਰੀਆਂ ਪੜ੍ਹਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ।</string>
+    <string name="permlab_sdcardWrite">ਆਪਣੀ USB ਸਟੋਰੇਜ ਦੀਆਂ ਸਮੱਗਰੀਆਂ ਸੰਸ਼ੋਧਿਤ ਕਰੋ ਜਾਂ ਮਿਟਾਓ</string>
+    <string name="permdesc_sdcardWrite">ਐਪ ਨੂੰ USB ਸਟੋਰੇਜ ਲਿਖਣ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ।</string>
     <string name="permlab_use_sip">SIP ਕਾਲਾਂ ਕਰੋ/ਪ੍ਰਾਪਤ ਕਰੋ</string>
     <string name="permdesc_use_sip">ਐਪ ਨੂੰ SIP ਕਾਲਾਂ ਕਰਨ ਅਤੇ ਪ੍ਰਾਪਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ।</string>
     <string name="permlab_register_sim_subscription">ਨਵਾਂ ਟੈਲੀਕੌਮ SIM ਕਨੈਕਸ਼ਨ ਰਜਿਸਟਰ ਕਰੋ</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">ਕੋਈ ਮੇਲ ਨਹੀਂ</string>
     <string name="find_on_page">ਸਫ਼ੇ ਤੇ ਲੱਭੋ</string>
     <string name="action_mode_done">ਹੋ ਗਿਆ</string>
-    <string name="progress_erasing">SD ਕਾਰਡ ਮਿਟਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="progress_erasing">USB ਸਟੋਰੇਜ ਮਿਟਾ ਰਿਹਾ ਹੈ…</string>
     <string name="share">ਸਾਂਝਾ ਕਰੋ</string>
     <string name="find">ਲੱਭੋ</string>
     <string name="websearch">ਵੈਬ ਖੋਜ</string>

@@ -26,19 +26,19 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.ims.internal.uce.presence.IPresenceListener"
 
-.field static final TRANSACTION_capInfoReceived_6:I = 0x7
+.field static final TRANSACTION_capInfoReceived:I = 0x7
 
-.field static final TRANSACTION_cmdStatus_4:I = 0x5
+.field static final TRANSACTION_cmdStatus:I = 0x5
 
-.field static final TRANSACTION_getVersionCb_0:I = 0x1
+.field static final TRANSACTION_getVersionCb:I = 0x1
 
-.field static final TRANSACTION_listCapInfoReceived_7:I = 0x8
+.field static final TRANSACTION_listCapInfoReceived:I = 0x8
 
-.field static final TRANSACTION_publishTriggering_3:I = 0x4
+.field static final TRANSACTION_publishTriggering:I = 0x4
 
-.field static final TRANSACTION_serviceAvailable_1:I = 0x2
+.field static final TRANSACTION_serviceAvailable:I = 0x2
 
-.field static final TRANSACTION_serviceUnAvailable_2:I = 0x3
+.field static final TRANSACTION_serviceUnAvailable:I = 0x3
 
 .field static final TRANSACTION_sipResponseReceived:I = 0x6
 
@@ -54,7 +54,7 @@
     .line 18
     const-string/jumbo v0, "com.android.ims.internal.uce.presence.IPresenceListener"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/ims/internal/uce/presence/IPresenceListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

@@ -30,7 +30,7 @@
     .param p2, "val$userId"    # I
 
     .prologue
-    .line 1023
+    .line 1022
     iput-object p1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$4;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
 
     iput p2, p0, Lcom/android/server/wallpaper/WallpaperManagerService$4;->val$userId:I
@@ -46,14 +46,14 @@
     .locals 7
 
     .prologue
-    .line 1026
+    .line 1025
     iget v3, p0, Lcom/android/server/wallpaper/WallpaperManagerService$4;->val$userId:I
 
     invoke-static {v3}, Lcom/android/server/wallpaper/WallpaperManagerService;->-wrap0(I)Ljava/io/File;
 
     move-result-object v2
 
-    .line 1027
+    .line 1026
     .local v2, "wallpaperDir":Ljava/io/File;
     sget-object v4, Lcom/android/server/wallpaper/WallpaperManagerService;->sPerUserFiles:[Ljava/lang/String;
 
@@ -66,13 +66,13 @@
 
     aget-object v1, v4, v3
 
-    .line 1028
+    .line 1027
     .local v1, "filename":Ljava/lang/String;
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v2, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1029
+    .line 1028
     .local v0, "f":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -80,16 +80,16 @@
 
     if-eqz v6, :cond_0
 
-    .line 1030
+    .line 1029
     invoke-static {v0}, Landroid/os/SELinux;->restorecon(Ljava/io/File;)Z
 
-    .line 1027
+    .line 1026
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1025
+    .line 1024
     .end local v0    # "f":Ljava/io/File;
     .end local v1    # "filename":Ljava/lang/String;
     :cond_1

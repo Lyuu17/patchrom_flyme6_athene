@@ -24,15 +24,15 @@
     .param p1, "this$0"    # Lcom/android/server/usb/UsbDeviceManager;
 
     .prologue
-    .line 158
+    .line 157
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$AdbSettingsObserver;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
-    .line 159
+    .line 158
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 158
+    .line 157
     return-void
 .end method
 
@@ -45,17 +45,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 163
+    .line 162
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$AdbSettingsObserver;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-static {v1}, Lcom/android/server/usb/UsbDeviceManager;->-get6(Lcom/android/server/usb/UsbDeviceManager;)Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 164
+    .line 163
     const-string/jumbo v2, "adb_enabled"
 
-    .line 163
+    .line 162
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
@@ -64,7 +64,7 @@
 
     const/4 v0, 0x1
 
-    .line 165
+    .line 164
     .local v0, "enable":Z
     :goto_0
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$AdbSettingsObserver;->this$0:Lcom/android/server/usb/UsbDeviceManager;
@@ -77,10 +77,10 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(IZ)V
 
-    .line 162
+    .line 161
     return-void
 
-    .line 163
+    .line 162
     .end local v0    # "enable":Z
     :cond_0
     const/4 v0, 0x0

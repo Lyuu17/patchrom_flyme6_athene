@@ -33,21 +33,21 @@
     .param p5, "stack"    # Ljava/lang/String;
 
     .prologue
-    .line 991
+    .line 968
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 992
+    .line 969
     iput-wide p1, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->time:J
 
-    .line 993
+    .line 970
     iput-object p3, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->shortMsg:Ljava/lang/String;
 
-    .line 994
+    .line 971
     iput-object p4, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->longMsg:Ljava/lang/String;
 
-    .line 995
+    .line 972
     iput-object p5, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->stack:Ljava/lang/String;
 
-    .line 991
+    .line 968
     return-void
 .end method

@@ -35,30 +35,30 @@
     .locals 2
 
     .prologue
-    .line 9418
+    .line 9411
     const-string/jumbo v0, "content://com.android.contacts.metadata"
 
-    .line 9417
+    .line 9410
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$MetadataSync;->METADATA_AUTHORITY_URI:Landroid/net/Uri;
 
-    .line 9429
+    .line 9422
     sget-object v0, Landroid/provider/ContactsContract$MetadataSync;->METADATA_AUTHORITY_URI:Landroid/net/Uri;
 
-    .line 9430
+    .line 9423
     const-string/jumbo v1, "metadata_sync"
 
-    .line 9429
+    .line 9422
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$MetadataSync;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 9411
+    .line 9404
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 0
 
     .prologue
-    .line 9423
+    .line 9416
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

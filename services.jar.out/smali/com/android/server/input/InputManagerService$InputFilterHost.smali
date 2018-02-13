@@ -26,10 +26,20 @@
     .param p1, "this$0"    # Lcom/android/server/input/InputManagerService;
 
     .prologue
-    .line 2220
+    .line 2113
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$InputFilterHost;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/view/IInputFilterHost$Stub;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/android/server/input/InputManagerService;Lcom/android/server/input/InputManagerService$InputFilterHost;)V
+    .locals 0
+    .param p1, "this$0"    # Lcom/android/server/input/InputManagerService;
+
+    .prologue
+    invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService$InputFilterHost;-><init>(Lcom/android/server/input/InputManagerService;)V
 
     return-void
 .end method
@@ -40,12 +50,12 @@
     .locals 1
 
     .prologue
-    .line 2224
+    .line 2117
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/input/InputManagerService$InputFilterHost;->mDisconnected:Z
 
-    .line 2223
+    .line 2116
     return-void
 .end method
 
@@ -55,10 +65,10 @@
     .param p2, "policyFlags"    # I
 
     .prologue
-    .line 2229
+    .line 2122
     if-nez p1, :cond_0
 
-    .line 2230
+    .line 2123
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "event must not be null"
@@ -67,7 +77,7 @@
 
     throw v0
 
-    .line 2233
+    .line 2126
     :cond_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$InputFilterHost;->this$0:Lcom/android/server/input/InputManagerService;
 
@@ -75,39 +85,39 @@
 
     monitor-enter v9
 
-    .line 2234
+    .line 2127
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/input/InputManagerService$InputFilterHost;->mDisconnected:Z
 
     if-nez v0, :cond_1
 
-    .line 2235
+    .line 2128
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$InputFilterHost;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v0}, Lcom/android/server/input/InputManagerService;->-get2(Lcom/android/server/input/InputManagerService;)J
 
     move-result-wide v0
 
-    .line 2237
+    .line 2130
     const/high16 v2, 0x4000000
 
     or-int v8, p2, v2
 
-    .line 2235
+    .line 2128
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    .line 2236
+    .line 2129
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
     move-object v2, p1
 
-    .line 2235
+    .line 2128
     invoke-static/range {v0 .. v8}, Lcom/android/server/input/InputManagerService;->-wrap2(JLandroid/view/InputEvent;IIIIII)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -115,10 +125,10 @@
     :cond_1
     monitor-exit v9
 
-    .line 2228
+    .line 2121
     return-void
 
-    .line 2233
+    .line 2126
     :catchall_0
     move-exception v0
 

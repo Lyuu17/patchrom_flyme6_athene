@@ -47,8 +47,6 @@
 
 .field public static final PERSON:Ljava/lang/String; = "person"
 
-.field public static final PRIORITY:Ljava/lang/String; = "priority"
-
 .field public static final PROTOCOL:Ljava/lang/String; = "protocol"
 
 .field public static final READ:Ljava/lang/String; = "read"

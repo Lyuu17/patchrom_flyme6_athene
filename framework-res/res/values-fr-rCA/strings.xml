@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">"Permet à une application de modifier les paramètres de synchronisation d'un compte. Cette autorisation peut, par exemple, être utilisée pour activer la synchronisation de l'application Contacts avec un compte."</string>
     <string name="permlab_readSyncStats">lire les statistiques de synchronisation</string>
     <string name="permdesc_readSyncStats">"Permet à une application d'accéder aux statistiques de synchronisation d'un compte, y compris l'historique des événements de synchronisation et le volume de données synchronisées."</string>
-    <string name="permlab_sdcardRead">lire le contenu de la carte SD</string>
-    <string name="permdesc_sdcardRead">"Permet à l'application de lire le contenu de votre carte SD."</string>
-    <string name="permlab_sdcardWrite">modifier ou supprimer le contenu de la carte SD</string>
-    <string name="permdesc_sdcardWrite">"Permet à l'application de modifier le contenu de la carte SD."</string>
+    <string name="permlab_sdcardRead">lire le contenu du stockage USB</string>
+    <string name="permdesc_sdcardRead">"Permet à l'application de lire le contenu de votre périphérique de stockage USB."</string>
+    <string name="permlab_sdcardWrite">modifier ou supprimer le contenu de la mémoire USB</string>
+    <string name="permdesc_sdcardWrite">"Permet à l'application de modifier le contenu de la mémoire de stockage USB."</string>
     <string name="permlab_use_sip">faire et recevoir des appels SIP</string>
     <string name="permdesc_use_sip">"Autorise l'application à effectuer et à recevoir des appels SIP."</string>
     <string name="permlab_register_sim_subscription">"enregistrer de nouvelles connexions de télécommunication à l'aide de la carte SIM"</string>
@@ -1025,7 +1025,7 @@ pour le compte \"%s\""</string>
     <string name="no_matches">Aucune partie</string>
     <string name="find_on_page">Rechercher sur la page</string>
     <string name="action_mode_done">Terminé</string>
-    <string name="progress_erasing">Effacement de la carte SD en cours…</string>
+    <string name="progress_erasing">Effacement de la mémoire de stockage USB en cours…</string>
     <string name="share">Partager</string>
     <string name="find">Trouver</string>
     <string name="websearch">Recherche Web</string>

@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_getDriverName:I = 0x7
 
-.field static final TRANSACTION_open_0:I = 0x1
+.field static final TRANSACTION_open:I = 0x1
 
 .field static final TRANSACTION_setCardEmulationRoute:I = 0x5
 
@@ -52,7 +52,7 @@
     .line 18
     const-string/jumbo v0, "android.nfc.INfcAdapterExtras"
 
-    invoke-virtual {p0, p0, v0}, Landroid/nfc/INfcAdapterExtras$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

@@ -29,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 4525
+    .line 4518
     invoke-direct {p0}, Landroid/app/Notification$Style;-><init>()V
 
     return-void
@@ -42,13 +42,13 @@
     .end annotation
 
     .prologue
-    .line 4532
+    .line 4525
     invoke-direct {p0}, Landroid/app/Notification$Style;-><init>()V
 
-    .line 4533
+    .line 4526
     invoke-virtual {p0, p1}, Landroid/app/Notification$BigTextStyle;->setBuilder(Landroid/app/Notification$Builder;)V
 
-    .line 4532
+    .line 4525
     return-void
 .end method
 
@@ -61,10 +61,10 @@
     .prologue
     const v2, 0x10203bd
 
-    .line 4607
+    .line 4600
     invoke-virtual {p1, v2, p2}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 4609
+    .line 4602
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -73,11 +73,11 @@
 
     const/16 v0, 0x8
 
-    .line 4608
+    .line 4601
     :goto_0
     invoke-virtual {p1, v2, v0}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 4610
+    .line 4603
     const-string/jumbo v0, "setMaxLines"
 
     invoke-static {p0}, Landroid/app/Notification$BigTextStyle;->calculateMaxLines(Landroid/app/Notification$Builder;)I
@@ -86,7 +86,7 @@
 
     invoke-virtual {p1, v2, v0, v1}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 4611
+    .line 4604
     const-string/jumbo v0, "setHasImage"
 
     invoke-static {p0}, Landroid/app/Notification$Builder;->-get2(Landroid/app/Notification$Builder;)Landroid/app/Notification;
@@ -99,10 +99,10 @@
 
     invoke-virtual {p1, v2, v0, v1}, Landroid/widget/RemoteViews;->setBoolean(ILjava/lang/String;Z)V
 
-    .line 4606
+    .line 4599
     return-void
 
-    .line 4609
+    .line 4602
     :cond_0
     const/4 v0, 0x0
 
@@ -116,10 +116,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 4615
+    .line 4608
     const/16 v1, 0xd
 
-    .line 4616
+    .line 4609
     .local v1, "lineCount":I
     invoke-static {p0}, Landroid/app/Notification$Builder;->-get0(Landroid/app/Notification$Builder;)Ljava/util/ArrayList;
 
@@ -133,15 +133,15 @@
 
     const/4 v0, 0x1
 
-    .line 4617
+    .line 4610
     .local v0, "hasActions":Z
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 4618
+    .line 4611
     const/16 v1, 0x9
 
-    .line 4620
+    .line 4613
     :cond_1
     return v1
 .end method
@@ -153,17 +153,17 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 4566
+    .line 4559
     invoke-super {p0, p1}, Landroid/app/Notification$Style;->addExtras(Landroid/os/Bundle;)V
 
-    .line 4568
+    .line 4561
     const-string/jumbo v0, "android.bigText"
 
     iget-object v1, p0, Landroid/app/Notification$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 4565
+    .line 4558
     return-void
 .end method
 
@@ -172,14 +172,14 @@
     .param p1, "cs"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 4558
+    .line 4551
     invoke-static {p1}, Landroid/app/Notification;->safeCharSequence(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/Notification$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
 
-    .line 4559
+    .line 4552
     return-object p0
 .end method
 
@@ -187,7 +187,7 @@
     .locals 6
 
     .prologue
-    .line 4587
+    .line 4580
     iget-object v3, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
 
     invoke-static {v3}, Landroid/app/Notification$Builder;->-wrap0(Landroid/app/Notification$Builder;)Landroid/os/Bundle;
@@ -200,7 +200,7 @@
 
     move-result-object v2
 
-    .line 4588
+    .line 4581
     .local v2, "text":Ljava/lang/CharSequence;
     iget-object v3, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
 
@@ -214,7 +214,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 4590
+    .line 4583
     iget-object v3, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
 
     invoke-static {v3}, Landroid/app/Notification$Builder;->-wrap9(Landroid/app/Notification$Builder;)I
@@ -225,7 +225,7 @@
 
     move-result-object v1
 
-    .line 4592
+    .line 4585
     .local v1, "contentView":Landroid/widget/RemoteViews;
     iget-object v3, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
 
@@ -237,7 +237,7 @@
 
     invoke-virtual {v3, v4, v2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 4594
+    .line 4587
     iget-object v3, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
 
     iget-object v4, p0, Landroid/app/Notification$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
@@ -246,7 +246,7 @@
 
     move-result-object v0
 
-    .line 4595
+    .line 4588
     .local v0, "bigTextText":Ljava/lang/CharSequence;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -254,20 +254,20 @@
 
     if-eqz v3, :cond_0
 
-    .line 4598
+    .line 4591
     iget-object v3, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
 
     invoke-static {v3, v2}, Landroid/app/Notification$Builder;->-wrap12(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 4600
+    .line 4593
     :cond_0
     iget-object v3, p0, Landroid/app/Notification$BigTextStyle;->mBuilder:Landroid/app/Notification$Builder;
 
     invoke-static {v3, v1, v0}, Landroid/app/Notification$BigTextStyle;->applyBigTextContentView(Landroid/app/Notification$Builder;Landroid/widget/RemoteViews;Ljava/lang/CharSequence;)V
 
-    .line 4602
+    .line 4595
     return-object v1
 .end method
 
@@ -276,10 +276,10 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 4576
+    .line 4569
     invoke-super {p0, p1}, Landroid/app/Notification$Style;->restoreFromExtras(Landroid/os/Bundle;)V
 
-    .line 4578
+    .line 4571
     const-string/jumbo v0, "android.bigText"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
@@ -288,7 +288,7 @@
 
     iput-object v0, p0, Landroid/app/Notification$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
 
-    .line 4575
+    .line 4568
     return-void
 .end method
 
@@ -297,14 +297,14 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 4541
+    .line 4534
     invoke-static {p1}, Landroid/app/Notification;->safeCharSequence(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/app/Notification$BigTextStyle;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
 
-    .line 4542
+    .line 4535
     return-object p0
 .end method
 
@@ -313,13 +313,13 @@
     .param p1, "cs"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 4549
+    .line 4542
     invoke-static {p1}, Landroid/app/Notification;->safeCharSequence(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/app/Notification$BigTextStyle;->internalSetSummaryText(Ljava/lang/CharSequence;)V
 
-    .line 4550
+    .line 4543
     return-object p0
 .end method

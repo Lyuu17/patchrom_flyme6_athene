@@ -36,7 +36,7 @@
     .param p5, "val$groupIds"    # [I
 
     .prologue
-    .line 737
+    .line 735
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$5$6;->this$1:Lcom/android/server/fingerprint/FingerprintService$5;
 
     iput-wide p2, p0, Lcom/android/server/fingerprint/FingerprintService$5$6;->val$deviceId:J
@@ -56,7 +56,7 @@
     .locals 5
 
     .prologue
-    .line 740
+    .line 738
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$5$6;->this$1:Lcom/android/server/fingerprint/FingerprintService$5;
 
     iget-object v0, v0, Lcom/android/server/fingerprint/FingerprintService$5;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -69,6 +69,6 @@
 
     invoke-virtual {v0, v2, v3, v1, v4}, Lcom/android/server/fingerprint/FingerprintService;->handleEnumerate(J[I[I)V
 
-    .line 739
+    .line 737
     return-void
 .end method

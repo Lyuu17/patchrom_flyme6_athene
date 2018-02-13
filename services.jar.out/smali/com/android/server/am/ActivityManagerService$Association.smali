@@ -50,36 +50,36 @@
     .param p5, "targetProcess"    # Ljava/lang/String;
 
     .prologue
-    .line 973
+    .line 967
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 968
+    .line 962
     const/16 v0, 0x11
 
     iput v0, p0, Lcom/android/server/am/ActivityManagerService$Association;->mLastState:I
 
-    .line 970
+    .line 964
     const/16 v0, 0x12
 
     new-array v0, v0, [J
 
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService$Association;->mStateTimes:[J
 
-    .line 975
+    .line 969
     iput p1, p0, Lcom/android/server/am/ActivityManagerService$Association;->mSourceUid:I
 
-    .line 976
+    .line 970
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$Association;->mSourceProcess:Ljava/lang/String;
 
-    .line 977
+    .line 971
     iput p3, p0, Lcom/android/server/am/ActivityManagerService$Association;->mTargetUid:I
 
-    .line 978
+    .line 972
     iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$Association;->mTargetComponent:Landroid/content/ComponentName;
 
-    .line 979
+    .line 973
     iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$Association;->mTargetProcess:Ljava/lang/String;
 
-    .line 974
+    .line 968
     return-void
 .end method

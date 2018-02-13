@@ -33,7 +33,7 @@
     .param p1, "this$0"    # Landroid/view/View;
 
     .prologue
-    .line 22393
+    .line 22389
     iput-object p1, p0, Landroid/view/View$CheckForLongPress;->this$0:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,14 +57,14 @@
     .locals 1
 
     .prologue
-    .line 22414
+    .line 22410
     iget-object v0, p0, Landroid/view/View$CheckForLongPress;->this$0:Landroid/view/View;
 
     iget v0, v0, Landroid/view/View;->mWindowAttachCount:I
 
     iput v0, p0, Landroid/view/View$CheckForLongPress;->mOriginalWindowAttachCount:I
 
-    .line 22413
+    .line 22409
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .locals 3
 
     .prologue
-    .line 22400
+    .line 22396
     iget-object v0, p0, Landroid/view/View$CheckForLongPress;->this$0:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->isPressed()Z
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 22401
+    .line 22397
     iget v0, p0, Landroid/view/View$CheckForLongPress;->mOriginalWindowAttachCount:I
 
     iget-object v1, p0, Landroid/view/View$CheckForLongPress;->this$0:Landroid/view/View;
@@ -96,7 +96,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 22402
+    .line 22398
     iget-object v0, p0, Landroid/view/View$CheckForLongPress;->this$0:Landroid/view/View;
 
     iget v1, p0, Landroid/view/View$CheckForLongPress;->mX:F
@@ -109,14 +109,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 22403
+    .line 22399
     iget-object v0, p0, Landroid/view/View$CheckForLongPress;->this$0:Landroid/view/View;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Landroid/view/View;->-set0(Landroid/view/View;Z)Z
 
-    .line 22399
+    .line 22395
     :cond_0
     return-void
 .end method
@@ -127,12 +127,12 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 22409
+    .line 22405
     iput p1, p0, Landroid/view/View$CheckForLongPress;->mX:F
 
-    .line 22410
+    .line 22406
     iput p2, p0, Landroid/view/View$CheckForLongPress;->mY:F
 
-    .line 22408
+    .line 22404
     return-void
 .end method

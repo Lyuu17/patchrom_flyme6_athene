@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_getViewAt:I = 0x5
 
-.field static final TRANSACTION_getViewTypeCount_6:I = 0x7
+.field static final TRANSACTION_getViewTypeCount:I = 0x7
 
 .field static final TRANSACTION_hasStableIds:I = 0x9
 
@@ -58,7 +58,7 @@
     .line 16
     const-string/jumbo v0, "com.android.internal.widget.IRemoteViewsFactory"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/internal/widget/IRemoteViewsFactory$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 14
     return-void

@@ -45,7 +45,7 @@
     .param p11, "val$userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 1587
+    .line 1567
     .local p5, "$anonymous2":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$13;->this$0:Landroid/accounts/AccountManager;
 
@@ -77,25 +77,20 @@
     .end annotation
 
     .prologue
-    .line 1590
-    const/16 v0, 0x1f
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 1591
+    .line 1570
     iget-object v0, p0, Landroid/accounts/AccountManager$13;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/accounts/AccountManager$13;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
     iget-object v2, p0, Landroid/accounts/AccountManager$13;->val$accountType:Ljava/lang/String;
 
     iget-object v3, p0, Landroid/accounts/AccountManager$13;->val$authTokenType:Ljava/lang/String;
 
-    .line 1592
+    .line 1571
     iget-object v4, p0, Landroid/accounts/AccountManager$13;->val$requiredFeatures:[Ljava/lang/String;
 
     iget-object v5, p0, Landroid/accounts/AccountManager$13;->val$activity:Landroid/app/Activity;
@@ -113,13 +108,13 @@
 
     move-result v7
 
-    .line 1591
+    .line 1570
     invoke-interface/range {v0 .. v7}, Landroid/accounts/IAccountManager;->addAccountAsUser(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;ZLandroid/os/Bundle;I)V
 
-    .line 1589
+    .line 1569
     return-void
 
-    .line 1592
+    .line 1571
     :cond_0
     const/4 v5, 0x0
 

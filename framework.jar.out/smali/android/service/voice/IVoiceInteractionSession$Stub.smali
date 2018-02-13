@@ -56,7 +56,7 @@
     .line 18
     const-string/jumbo v0, "android.service.voice.IVoiceInteractionSession"
 
-    invoke-virtual {p0, p0, v0}, Landroid/service/voice/IVoiceInteractionSession$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

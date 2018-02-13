@@ -20,17 +20,9 @@
 
 .field private static final MSG_EVENT:I = 0x1
 
-.field private static final MSG_FOLDER_INFO_BROWSED_PLAYER:I = 0x9
-
-.field private static final MSG_PLAY_ITEM_RESPONSE:I = 0xc
-
 .field private static final MSG_UPDATE_EXTRAS:I = 0x7
 
 .field private static final MSG_UPDATE_METADATA:I = 0x3
-
-.field private static final MSG_UPDATE_NOWPLAYING_CONTENT_CHANGE:I = 0xb
-
-.field private static final MSG_UPDATE_NOWPLAYING_ENTRIES:I = 0xa
 
 .field private static final MSG_UPDATE_PLAYBACK_STATE:I = 0x2
 
@@ -103,39 +95,39 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 92
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
+    .line 72
     new-instance v0, Landroid/media/session/MediaController$CallbackStub;
 
     invoke-direct {v0, p0}, Landroid/media/session/MediaController$CallbackStub;-><init>(Landroid/media/session/MediaController;)V
 
     iput-object v0, p0, Landroid/media/session/MediaController;->mCbStub:Landroid/media/session/MediaController$CallbackStub;
 
-    .line 77
+    .line 73
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 78
+    .line 74
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/session/MediaController;->mLock:Ljava/lang/Object;
 
-    .line 80
+    .line 76
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/media/session/MediaController;->mCbRegistered:Z
 
-    .line 93
+    .line 89
     if-nez p2, :cond_0
 
-    .line 94
+    .line 90
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Session token cannot be null"
@@ -144,11 +136,11 @@
 
     throw v0
 
-    .line 96
+    .line 92
     :cond_0
     if-nez p1, :cond_1
 
-    .line 97
+    .line 93
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Context cannot be null"
@@ -157,28 +149,28 @@
 
     throw v0
 
-    .line 99
+    .line 95
     :cond_1
     iput-object p2, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
-    .line 100
+    .line 96
     new-instance v0, Landroid/media/session/MediaController$TransportControls;
 
     invoke-direct {v0, p0, v1}, Landroid/media/session/MediaController$TransportControls;-><init>(Landroid/media/session/MediaController;Landroid/media/session/MediaController$TransportControls;)V
 
     iput-object v0, p0, Landroid/media/session/MediaController;->mTransportControls:Landroid/media/session/MediaController$TransportControls;
 
-    .line 101
+    .line 97
     new-instance v0, Landroid/media/session/MediaSession$Token;
 
     invoke-direct {v0, p2}, Landroid/media/session/MediaSession$Token;-><init>(Landroid/media/session/ISessionController;)V
 
     iput-object v0, p0, Landroid/media/session/MediaController;->mToken:Landroid/media/session/MediaSession$Token;
 
-    .line 102
+    .line 98
     iput-object p1, p0, Landroid/media/session/MediaController;->mContext:Landroid/content/Context;
 
-    .line 92
+    .line 88
     return-void
 .end method
 
@@ -188,14 +180,14 @@
     .param p2, "token"    # Landroid/media/session/MediaSession$Token;
 
     .prologue
-    .line 112
+    .line 108
     invoke-virtual {p2}, Landroid/media/session/MediaSession$Token;->getBinder()Landroid/media/session/ISessionController;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Landroid/media/session/MediaController;-><init>(Landroid/content/Context;Landroid/media/session/ISessionController;)V
 
-    .line 111
+    .line 107
     return-void
 .end method
 
@@ -207,24 +199,24 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 450
+    .line 446
     invoke-direct {p0, p1}, Landroid/media/session/MediaController;->getHandlerForCallbackLocked(Landroid/media/session/MediaController$Callback;)Landroid/media/session/MediaController$MessageHandler;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 451
+    .line 447
     const-string/jumbo v2, "MediaController"
 
     const-string/jumbo v3, "Callback is already added, ignoring"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 452
+    .line 448
     return-void
 
-    .line 454
+    .line 450
     :cond_0
     new-instance v1, Landroid/media/session/MediaController$MessageHandler;
 
@@ -234,21 +226,21 @@
 
     invoke-direct {v1, v2, p1}, Landroid/media/session/MediaController$MessageHandler;-><init>(Landroid/os/Looper;Landroid/media/session/MediaController$Callback;)V
 
-    .line 455
+    .line 451
     .local v1, "holder":Landroid/media/session/MediaController$MessageHandler;
     iget-object v2, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 456
+    .line 452
     invoke-static {v1, v3}, Landroid/media/session/MediaController$MessageHandler;->-set0(Landroid/media/session/MediaController$MessageHandler;Z)Z
 
-    .line 458
+    .line 454
     iget-boolean v2, p0, Landroid/media/session/MediaController;->mCbRegistered:Z
 
     if-nez v2, :cond_1
 
-    .line 460
+    .line 456
     :try_start_0
     iget-object v2, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -256,23 +248,23 @@
 
     invoke-interface {v2, v3}, Landroid/media/session/ISessionController;->registerCallbackListener(Landroid/media/session/ISessionControllerCallback;)V
 
-    .line 461
+    .line 457
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/media/session/MediaController;->mCbRegistered:Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 449
+    .line 445
     :cond_1
     :goto_0
     return-void
 
-    .line 462
+    .line 458
     :catch_0
     move-exception v0
 
-    .line 463
+    .line 459
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "MediaController"
 
@@ -290,10 +282,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 490
+    .line 486
     if-nez p1, :cond_0
 
-    .line 491
+    .line 487
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v3, "Callback cannot be null"
@@ -302,7 +294,7 @@
 
     throw v2
 
-    .line 493
+    .line 489
     :cond_0
     iget-object v2, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
@@ -316,7 +308,7 @@
     :goto_0
     if-ltz v1, :cond_2
 
-    .line 494
+    .line 490
     iget-object v2, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -325,7 +317,7 @@
 
     check-cast v0, Landroid/media/session/MediaController$MessageHandler;
 
-    .line 495
+    .line 491
     .local v0, "handler":Landroid/media/session/MediaController$MessageHandler;
     invoke-static {v0}, Landroid/media/session/MediaController$MessageHandler;->-get0(Landroid/media/session/MediaController$MessageHandler;)Landroid/media/session/MediaController$Callback;
 
@@ -333,16 +325,16 @@
 
     if-ne p1, v2, :cond_1
 
-    .line 496
+    .line 492
     return-object v0
 
-    .line 493
+    .line 489
     :cond_1
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 499
+    .line 495
     .end local v0    # "handler":Landroid/media/session/MediaController$MessageHandler;
     :cond_2
     return-object v3
@@ -355,12 +347,12 @@
     .param p3, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 503
+    .line 499
     iget-object v2, p0, Landroid/media/session/MediaController;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 504
+    .line 500
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
@@ -374,7 +366,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 505
+    .line 501
     iget-object v1, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -387,7 +379,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 504
+    .line 500
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
@@ -395,10 +387,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 502
+    .line 498
     return-void
 
-    .line 503
+    .line 499
     .end local v0    # "i":I
     :catchall_0
     move-exception v1
@@ -415,10 +407,10 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 469
+    .line 465
     const/4 v3, 0x0
 
-    .line 470
+    .line 466
     .local v3, "success":Z
     iget-object v4, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
@@ -432,7 +424,7 @@
     :goto_0
     if-ltz v2, :cond_1
 
-    .line 471
+    .line 467
     iget-object v4, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -441,7 +433,7 @@
 
     check-cast v1, Landroid/media/session/MediaController$MessageHandler;
 
-    .line 472
+    .line 468
     .local v1, "handler":Landroid/media/session/MediaController$MessageHandler;
     invoke-static {v1}, Landroid/media/session/MediaController$MessageHandler;->-get0(Landroid/media/session/MediaController$MessageHandler;)Landroid/media/session/MediaController$Callback;
 
@@ -449,24 +441,24 @@
 
     if-ne p1, v4, :cond_0
 
-    .line 473
+    .line 469
     iget-object v4, p0, Landroid/media/session/MediaController;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 474
+    .line 470
     const/4 v3, 0x1
 
-    .line 475
+    .line 471
     invoke-static {v1, v6}, Landroid/media/session/MediaController$MessageHandler;->-set0(Landroid/media/session/MediaController$MessageHandler;Z)Z
 
-    .line 470
+    .line 466
     :cond_0
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 478
+    .line 474
     .end local v1    # "handler":Landroid/media/session/MediaController$MessageHandler;
     :cond_1
     iget-boolean v4, p0, Landroid/media/session/MediaController;->mCbRegistered:Z
@@ -481,7 +473,7 @@
 
     if-nez v4, :cond_2
 
-    .line 480
+    .line 476
     :try_start_0
     iget-object v4, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -491,19 +483,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 484
+    .line 480
     :goto_1
     iput-boolean v6, p0, Landroid/media/session/MediaController;->mCbRegistered:Z
 
-    .line 486
+    .line 482
     :cond_2
     return v3
 
-    .line 481
+    .line 477
     :catch_0
     move-exception v0
 
-    .line 482
+    .line 478
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v4, "MediaController"
 
@@ -522,7 +514,7 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 329
+    .line 325
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -536,15 +528,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 327
+    .line 323
     :goto_0
     return-void
 
-    .line 330
+    .line 326
     :catch_0
     move-exception v0
 
-    .line 331
+    .line 327
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -562,12 +554,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 445
+    .line 441
     if-nez p1, :cond_0
 
     return v0
 
-    .line 446
+    .line 442
     :cond_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -598,10 +590,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 133
+    .line 129
     if-nez p1, :cond_0
 
-    .line 134
+    .line 130
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "KeyEvent may not be null"
@@ -610,7 +602,7 @@
 
     throw v1
 
-    .line 136
+    .line 132
     :cond_0
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
@@ -622,10 +614,10 @@
 
     if-nez v1, :cond_1
 
-    .line 137
+    .line 133
     return v2
 
-    .line 140
+    .line 136
     :cond_1
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
@@ -638,11 +630,11 @@
 
     return v1
 
-    .line 141
+    .line 137
     :catch_0
     move-exception v0
 
-    .line 144
+    .line 140
     .local v0, "e":Landroid/os/RemoteException;
     return v2
 .end method
@@ -651,7 +643,7 @@
     .locals 3
 
     .prologue
-    .line 210
+    .line 206
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -663,11 +655,11 @@
 
     return-object v1
 
-    .line 211
+    .line 207
     :catch_0
     move-exception v0
 
-    .line 212
+    .line 208
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -675,7 +667,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 214
+    .line 210
     const/4 v1, 0x0
 
     return-object v1
@@ -685,7 +677,7 @@
     .locals 4
 
     .prologue
-    .line 247
+    .line 243
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -697,11 +689,11 @@
 
     return-wide v2
 
-    .line 248
+    .line 244
     :catch_0
     move-exception v0
 
-    .line 249
+    .line 245
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -709,7 +701,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 251
+    .line 247
     const-wide/16 v2, 0x0
 
     return-wide v2
@@ -719,7 +711,7 @@
     .locals 3
 
     .prologue
-    .line 168
+    .line 164
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -731,11 +723,11 @@
 
     return-object v1
 
-    .line 169
+    .line 165
     :catch_0
     move-exception v0
 
-    .line 170
+    .line 166
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -743,7 +735,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 171
+    .line 167
     const/4 v1, 0x0
 
     return-object v1
@@ -753,12 +745,12 @@
     .locals 3
 
     .prologue
-    .line 407
+    .line 403
     iget-object v1, p0, Landroid/media/session/MediaController;->mPackageName:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 409
+    .line 405
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -770,18 +762,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 414
+    .line 410
     :cond_0
     :goto_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mPackageName:Ljava/lang/String;
 
     return-object v1
 
-    .line 410
+    .line 406
     :catch_0
     move-exception v0
 
-    .line 411
+    .line 407
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -796,7 +788,7 @@
     .locals 8
 
     .prologue
-    .line 261
+    .line 257
     :try_start_0
     iget-object v0, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -804,7 +796,7 @@
 
     move-result-object v7
 
-    .line 262
+    .line 258
     .local v7, "result":Landroid/media/session/ParcelableVolumeInfo;
     new-instance v0, Landroid/media/session/MediaController$PlaybackInfo;
 
@@ -814,24 +806,24 @@
 
     iget v3, v7, Landroid/media/session/ParcelableVolumeInfo;->controlType:I
 
-    .line 263
+    .line 259
     iget v4, v7, Landroid/media/session/ParcelableVolumeInfo;->maxVolume:I
 
     iget v5, v7, Landroid/media/session/ParcelableVolumeInfo;->currentVolume:I
 
-    .line 262
+    .line 258
     invoke-direct/range {v0 .. v5}, Landroid/media/session/MediaController$PlaybackInfo;-><init>(ILandroid/media/AudioAttributes;III)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    .line 265
+    .line 261
     .end local v7    # "result":Landroid/media/session/ParcelableVolumeInfo;
     :catch_0
     move-exception v6
 
-    .line 266
+    .line 262
     .local v6, "e":Landroid/os/RemoteException;
     const-string/jumbo v0, "MediaController"
 
@@ -839,7 +831,7 @@
 
     invoke-static {v0, v1, v6}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 268
+    .line 264
     const/4 v0, 0x0
 
     return-object v0
@@ -849,7 +841,7 @@
     .locals 3
 
     .prologue
-    .line 154
+    .line 150
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -861,11 +853,11 @@
 
     return-object v1
 
-    .line 155
+    .line 151
     :catch_0
     move-exception v0
 
-    .line 156
+    .line 152
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -873,7 +865,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 157
+    .line 153
     const/4 v1, 0x0
 
     return-object v1
@@ -894,7 +886,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 183
+    .line 179
     :try_start_0
     iget-object v2, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -902,11 +894,11 @@
 
     move-result-object v1
 
-    .line 184
+    .line 180
     .local v1, "queue":Landroid/content/pm/ParceledListSlice;
     if-eqz v1, :cond_0
 
-    .line 185
+    .line 181
     invoke-virtual {v1}, Landroid/content/pm/ParceledListSlice;->getList()Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -915,12 +907,12 @@
 
     return-object v2
 
-    .line 187
+    .line 183
     .end local v1    # "queue":Landroid/content/pm/ParceledListSlice;
     :catch_0
     move-exception v0
 
-    .line 188
+    .line 184
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "MediaController"
 
@@ -928,7 +920,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 190
+    .line 186
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-object v4
@@ -938,7 +930,7 @@
     .locals 3
 
     .prologue
-    .line 198
+    .line 194
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -950,11 +942,11 @@
 
     return-object v1
 
-    .line 199
+    .line 195
     :catch_0
     move-exception v0
 
-    .line 200
+    .line 196
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -962,7 +954,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 202
+    .line 198
     const/4 v1, 0x0
 
     return-object v1
@@ -972,7 +964,7 @@
     .locals 3
 
     .prologue
-    .line 233
+    .line 229
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -984,11 +976,11 @@
 
     return v1
 
-    .line 234
+    .line 230
     :catch_0
     move-exception v0
 
-    .line 235
+    .line 231
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -996,7 +988,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 236
+    .line 232
     const/4 v1, 0x0
 
     return v1
@@ -1006,7 +998,7 @@
     .locals 3
 
     .prologue
-    .line 279
+    .line 275
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -1018,11 +1010,11 @@
 
     return-object v1
 
-    .line 280
+    .line 276
     :catch_0
     move-exception v0
 
-    .line 281
+    .line 277
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -1030,7 +1022,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 283
+    .line 279
     const/4 v1, 0x0
 
     return-object v1
@@ -1040,7 +1032,7 @@
     .locals 1
 
     .prologue
-    .line 438
+    .line 434
     iget-object v0, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
     return-object v0
@@ -1050,7 +1042,7 @@
     .locals 1
 
     .prologue
-    .line 292
+    .line 288
     iget-object v0, p0, Landroid/media/session/MediaController;->mToken:Landroid/media/session/MediaSession$Token;
 
     return-object v0
@@ -1060,12 +1052,12 @@
     .locals 3
 
     .prologue
-    .line 424
+    .line 420
     iget-object v1, p0, Landroid/media/session/MediaController;->mTag:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 426
+    .line 422
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -1077,18 +1069,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 431
+    .line 427
     :cond_0
     :goto_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mTag:Ljava/lang/String;
 
     return-object v1
 
-    .line 427
+    .line 423
     :catch_0
     move-exception v0
 
-    .line 428
+    .line 424
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -1103,7 +1095,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 118
     iget-object v0, p0, Landroid/media/session/MediaController;->mTransportControls:Landroid/media/session/MediaController$TransportControls;
 
     return-object v0
@@ -1114,12 +1106,12 @@
     .param p1, "callback"    # Landroid/media/session/MediaController$Callback;
 
     .prologue
-    .line 342
+    .line 338
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/media/session/MediaController;->registerCallback(Landroid/media/session/MediaController$Callback;Landroid/os/Handler;)V
 
-    .line 341
+    .line 337
     return-void
 .end method
 
@@ -1129,10 +1121,10 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 354
+    .line 350
     if-nez p1, :cond_0
 
-    .line 355
+    .line 351
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "callback must not be null"
@@ -1141,24 +1133,24 @@
 
     throw v0
 
-    .line 357
+    .line 353
     :cond_0
     if-nez p2, :cond_1
 
-    .line 358
+    .line 354
     new-instance p2, Landroid/os/Handler;
 
     .end local p2    # "handler":Landroid/os/Handler;
     invoke-direct {p2}, Landroid/os/Handler;-><init>()V
 
-    .line 360
+    .line 356
     .restart local p2    # "handler":Landroid/os/Handler;
     :cond_1
     iget-object v0, p0, Landroid/media/session/MediaController;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 361
+    .line 357
     :try_start_0
     invoke-direct {p0, p1, p2}, Landroid/media/session/MediaController;->addCallbackLocked(Landroid/media/session/MediaController$Callback;Landroid/os/Handler;)V
     :try_end_0
@@ -1166,10 +1158,10 @@
 
     monitor-exit v0
 
-    .line 353
+    .line 349
     return-void
 
-    .line 360
+    .line 356
     :catchall_0
     move-exception v1
 
@@ -1185,14 +1177,14 @@
     .param p3, "cb"    # Landroid/os/ResultReceiver;
 
     .prologue
-    .line 391
+    .line 387
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 392
+    .line 388
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "command cannot be null or empty"
@@ -1201,7 +1193,7 @@
 
     throw v1
 
-    .line 395
+    .line 391
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
@@ -1210,15 +1202,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 390
+    .line 386
     :goto_0
     return-void
 
-    .line 396
+    .line 392
     :catch_0
     move-exception v0
 
-    .line 397
+    .line 393
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -1235,7 +1227,7 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 308
+    .line 304
     :try_start_0
     iget-object v1, p0, Landroid/media/session/MediaController;->mSessionBinder:Landroid/media/session/ISessionController;
 
@@ -1249,15 +1241,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 306
+    .line 302
     :goto_0
     return-void
 
-    .line 309
+    .line 305
     :catch_0
     move-exception v0
 
-    .line 310
+    .line 306
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "MediaController"
 
@@ -1273,10 +1265,10 @@
     .param p1, "callback"    # Landroid/media/session/MediaController$Callback;
 
     .prologue
-    .line 372
+    .line 368
     if-nez p1, :cond_0
 
-    .line 373
+    .line 369
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "callback must not be null"
@@ -1285,13 +1277,13 @@
 
     throw v0
 
-    .line 375
+    .line 371
     :cond_0
     iget-object v0, p0, Landroid/media/session/MediaController;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 376
+    .line 372
     :try_start_0
     invoke-direct {p0, p1}, Landroid/media/session/MediaController;->removeCallbackLocked(Landroid/media/session/MediaController$Callback;)Z
     :try_end_0
@@ -1299,10 +1291,10 @@
 
     monitor-exit v0
 
-    .line 371
+    .line 367
     return-void
 
-    .line 375
+    .line 371
     :catchall_0
     move-exception v1
 

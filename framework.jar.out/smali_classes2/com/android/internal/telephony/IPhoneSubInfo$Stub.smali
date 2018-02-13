@@ -30,9 +30,9 @@
 
 .field static final TRANSACTION_getCompleteVoiceMailNumberForSubscriber:I = 0x16
 
-.field static final TRANSACTION_getDeviceIdForPhone_2:I = 0x3
+.field static final TRANSACTION_getDeviceId:I = 0x1
 
-.field static final TRANSACTION_getDeviceId_0:I = 0x1
+.field static final TRANSACTION_getDeviceIdForPhone:I = 0x3
 
 .field static final TRANSACTION_getDeviceSvn:I = 0x5
 
@@ -46,21 +46,21 @@
 
 .field static final TRANSACTION_getIccSerialNumberForSubscriber:I = 0xc
 
-.field static final TRANSACTION_getIccSimChallengeResponse_30:I = 0x1f
+.field static final TRANSACTION_getIccSimChallengeResponse:I = 0x1f
 
 .field static final TRANSACTION_getImeiForSubscriber:I = 0x4
 
-.field static final TRANSACTION_getIsimChallengeResponse_29:I = 0x1e
+.field static final TRANSACTION_getIsimChallengeResponse:I = 0x1e
 
-.field static final TRANSACTION_getIsimDomain_25:I = 0x1a
+.field static final TRANSACTION_getIsimDomain:I = 0x1a
 
-.field static final TRANSACTION_getIsimImpi_24:I = 0x19
+.field static final TRANSACTION_getIsimImpi:I = 0x19
 
-.field static final TRANSACTION_getIsimImpu_26:I = 0x1b
+.field static final TRANSACTION_getIsimImpu:I = 0x1b
 
-.field static final TRANSACTION_getIsimIst_27:I = 0x1c
+.field static final TRANSACTION_getIsimIst:I = 0x1c
 
-.field static final TRANSACTION_getIsimPcscf_28:I = 0x1d
+.field static final TRANSACTION_getIsimPcscf:I = 0x1d
 
 .field static final TRANSACTION_getLine1AlphaTag:I = 0xf
 
@@ -74,7 +74,7 @@
 
 .field static final TRANSACTION_getMsisdnForSubscriber:I = 0x12
 
-.field static final TRANSACTION_getNaiForSubscriber_1:I = 0x2
+.field static final TRANSACTION_getNaiForSubscriber:I = 0x2
 
 .field static final TRANSACTION_getSubscriberId:I = 0x7
 

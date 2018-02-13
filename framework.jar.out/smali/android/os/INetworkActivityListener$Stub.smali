@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.INetworkActivityListener"
 
-.field static final TRANSACTION_onNetworkActive_0:I = 0x1
+.field static final TRANSACTION_onNetworkActive:I = 0x1
 
 
 # direct methods
@@ -40,7 +40,7 @@
     .line 18
     const-string/jumbo v0, "android.os.INetworkActivityListener"
 
-    invoke-virtual {p0, p0, v0}, Landroid/os/INetworkActivityListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

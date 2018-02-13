@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_setCursorCapsMode:I = 0x3
 
-.field static final TRANSACTION_setExtractedText_3:I = 0x4
+.field static final TRANSACTION_setExtractedText:I = 0x4
 
 .field static final TRANSACTION_setRequestUpdateCursorAnchorInfoResult:I = 0x6
 

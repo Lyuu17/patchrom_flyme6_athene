@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">აპს შეეძლება, შეცვალოს ანგარიშის სინქრონიზაციის პარამეტრები. მაგალითად, მისი გამოყენება შეიძლება ანგარიშის People აპთან სინქრონიზაციის ჩასართავად.</string>
     <string name="permlab_readSyncStats">სინქრონიზაციის სტატისტიკების წაკითხვა</string>
     <string name="permdesc_readSyncStats">აპს შეეძლება ანგარიშის სინქრონიზაციის სტატისტიკის, მათ შორის სინქრონიზაციის მოვლენების ისტორიისა და სინქრონიზაციისას გადაცემული მონაცემების რაოდენობის წაკითხვა.</string>
-    <string name="permlab_sdcardRead">თქვენი SD ბარათის კონტენტის წაკითხვა</string>
-    <string name="permdesc_sdcardRead">აპი წაიკითხავს SD ბარათის კონტენტს.</string>
-    <string name="permlab_sdcardWrite">თქვენი SD ბარათის კონტენტის შეცვლა ან წაშლა</string>
-    <string name="permdesc_sdcardWrite">უფლებას აძლევს აპს, ჩაწეროს SD ბარათზე.</string>
+    <string name="permlab_sdcardRead">თქვენი USB მეხსიერების კონტენტის წაკითხვა</string>
+    <string name="permdesc_sdcardRead">აპი წაიკითხავს USB კონტენტს.</string>
+    <string name="permlab_sdcardWrite">თქვენი USB მეხსიერების კონტენტის შეცვლა ან წაშლა</string>
+    <string name="permdesc_sdcardWrite">უფლებას აძლევს აპს, ჩაწეროს USB მეხსიერებაზე.</string>
     <string name="permlab_use_sip">SIP ზარების წამოწყება/მიღება</string>
     <string name="permdesc_use_sip">ნებას რთავს აპს განახორციელოს და მიიღოს SIP ზარები.</string>
     <string name="permlab_register_sim_subscription">ტელეკომის ახალი SIM კავშირების რეგისტრაცია</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">შესატყვისები არ არის.</string>
     <string name="find_on_page">გვერდზე ძებნა</string>
     <string name="action_mode_done">დასრულდა</string>
-    <string name="progress_erasing">SD ბარათის წაშლა...</string>
+    <string name="progress_erasing">მიმდინარეობს USB მეხსიერების გასუფთავება…</string>
     <string name="share">გაზიარება</string>
     <string name="find">ძიება</string>
     <string name="websearch">ვებ-ძიება</string>

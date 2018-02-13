@@ -223,12 +223,12 @@
     .param p0, "sb"    # Ljava/lang/StringBuilder;
 
     .prologue
-    .line 265
+    .line 263
     const-string/jumbo v0, " OR url = "
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 264
+    .line 262
     return-void
 .end method
 
@@ -238,7 +238,7 @@
     .param p1, "search"    # Ljava/lang/String;
 
     .prologue
-    .line 402
+    .line 397
     return-void
 .end method
 
@@ -247,23 +247,18 @@
     .param p0, "cr"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 355
+    .line 351
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public static final clearHistory(Landroid/content/ContentResolver;)V
-    .locals 1
+    .locals 0
     .param p0, "cr"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 366
-    const/16 v0, 0x25
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 365
+    .line 361
     return-void
 .end method
 
@@ -272,7 +267,7 @@
     .param p0, "cr"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 411
+    .line 406
     return-void
 .end method
 
@@ -282,7 +277,7 @@
     .param p1, "url"    # Ljava/lang/String;
 
     .prologue
-    .line 392
+    .line 387
     return-void
 .end method
 
@@ -293,7 +288,7 @@
     .param p3, "end"    # J
 
     .prologue
-    .line 381
+    .line 376
     return-void
 .end method
 
@@ -310,11 +305,6 @@
     const/4 v3, 0x0
 
     .line 247
-    const/16 v0, 0x20
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 248
     new-instance v0, Landroid/database/MatrixCursor;
 
     const/4 v1, 0x1
@@ -342,12 +332,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 260
-    const/16 v0, 0x21
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 261
+    .line 259
     new-instance v0, Landroid/database/MatrixCursor;
 
     const/4 v1, 0x1
@@ -370,12 +355,7 @@
     .end annotation
 
     .prologue
-    .line 330
-    const/16 v0, 0x23
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 331
+    .line 327
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/String;
@@ -391,19 +371,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 269
-    const/16 v0, 0x22
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 270
+    .line 267
     const/4 v7, 0x0
 
-    .line 271
+    .line 268
     .local v7, "secure":Z
     move-object v6, p1
 
-    .line 272
+    .line 269
     .local v6, "compareString":Ljava/lang/String;
     const-string/jumbo v0, "http://"
 
@@ -413,14 +388,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 273
+    .line 270
     const/4 v0, 0x7
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 278
+    .line 275
     :cond_0
     :goto_0
     const-string/jumbo v0, "www."
@@ -431,22 +406,22 @@
 
     if-eqz v0, :cond_1
 
-    .line 279
+    .line 276
     const/4 v0, 0x4
 
     invoke-virtual {v6, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 281
+    .line 278
     :cond_1
     const/4 v8, 0x0
 
-    .line 282
+    .line 279
     .local v8, "whereClause":Ljava/lang/StringBuilder;
     if-eqz v7, :cond_3
 
-    .line 283
+    .line 280
     new-instance v8, Ljava/lang/StringBuilder;
 
     .end local v8    # "whereClause":Ljava/lang/StringBuilder;
@@ -454,7 +429,7 @@
 
     invoke-direct {v8, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 285
+    .line 282
     .local v8, "whereClause":Ljava/lang/StringBuilder;
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -474,13 +449,13 @@
 
     move-result-object v0
 
-    .line 284
+    .line 281
     invoke-static {v8, v0}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 286
+    .line 283
     invoke-static {v8}, Landroid/provider/Browser;->addOrUrlEquals(Ljava/lang/StringBuilder;)V
 
-    .line 288
+    .line 285
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -499,10 +474,10 @@
 
     move-result-object v0
 
-    .line 287
+    .line 284
     invoke-static {v8, v0}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 304
+    .line 301
     :goto_1
     sget-object v1, Landroid/provider/BrowserContract$History;->CONTENT_URI:Landroid/net/Uri;
 
@@ -522,7 +497,7 @@
 
     aput-object v0, v2, v3
 
-    .line 305
+    .line 302
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -531,14 +506,14 @@
 
     move-object v5, v4
 
-    .line 304
+    .line 301
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
     return-object v0
 
-    .line 274
+    .line 271
     .end local v8    # "whereClause":Ljava/lang/StringBuilder;
     :cond_2
     const-string/jumbo v0, "https://"
@@ -549,19 +524,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 275
+    .line 272
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 276
+    .line 273
     const/4 v7, 0x1
 
     goto :goto_0
 
-    .line 290
+    .line 287
     .local v8, "whereClause":Ljava/lang/StringBuilder;
     :cond_3
     new-instance v8, Ljava/lang/StringBuilder;
@@ -571,14 +546,14 @@
 
     invoke-direct {v8, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 291
+    .line 288
     .local v8, "whereClause":Ljava/lang/StringBuilder;
     invoke-static {v8, v6}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 293
+    .line 290
     invoke-static {v8}, Landroid/provider/Browser;->addOrUrlEquals(Ljava/lang/StringBuilder;)V
 
-    .line 294
+    .line 291
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -597,14 +572,14 @@
 
     move-result-object v9
 
-    .line 295
+    .line 292
     .local v9, "wwwString":Ljava/lang/String;
     invoke-static {v8, v9}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 297
+    .line 294
     invoke-static {v8}, Landroid/provider/Browser;->addOrUrlEquals(Ljava/lang/StringBuilder;)V
 
-    .line 299
+    .line 296
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -623,13 +598,13 @@
 
     move-result-object v0
 
-    .line 298
+    .line 295
     invoke-static {v8, v0}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 300
+    .line 297
     invoke-static {v8}, Landroid/provider/Browser;->addOrUrlEquals(Ljava/lang/StringBuilder;)V
 
-    .line 302
+    .line 299
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -648,25 +623,20 @@
 
     move-result-object v0
 
-    .line 301
+    .line 298
     invoke-static {v8, v0}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     goto/16 :goto_1
 .end method
 
 .method public static final requestAllIcons(Landroid/content/ContentResolver;Ljava/lang/String;Landroid/webkit/WebIconDatabase$IconListener;)V
-    .locals 1
+    .locals 0
     .param p0, "cr"    # Landroid/content/ContentResolver;
     .param p1, "where"    # Ljava/lang/String;
     .param p2, "listener"    # Landroid/webkit/WebIconDatabase$IconListener;
 
     .prologue
-    .line 428
-    const/16 v0, 0x24
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 427
+    .line 422
     return-void
 .end method
 
@@ -760,7 +730,7 @@
     .param p0, "cr"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 344
+    .line 340
     return-void
 .end method
 
@@ -771,6 +741,6 @@
     .param p2, "real"    # Z
 
     .prologue
-    .line 319
+    .line 316
     return-void
 .end method

@@ -391,10 +391,10 @@
     <string name="permdesc_writeSyncSettings">Permite que o app modifique as configurações de sincronização de uma conta. Por exemplo, pode ser usado para ativar a sincronização do app People com uma conta.</string>
     <string name="permlab_readSyncStats">ler estatísticas de sincronização</string>
     <string name="permdesc_readSyncStats">Permite que um app acesse as estatísticas de sincronização de uma conta, incluindo a história dos eventos de sincronização e a quantidade de dados sincronizados.</string>
-    <string name="permlab_sdcardRead">ler conteúdo do cartão SD</string>
-    <string name="permdesc_sdcardRead">Permite que o app leia o conteúdo do cartão SD.</string>
-    <string name="permlab_sdcardWrite">modificar ou excluir o conteúdo do cartão SD</string>
-    <string name="permdesc_sdcardWrite">Permite que o app grave em seu cartão SD.</string>
+    <string name="permlab_sdcardRead">ler conteúdo do armaz. USB</string>
+    <string name="permdesc_sdcardRead">Perm. que app leia cartão SD.</string>
+    <string name="permlab_sdcardWrite">modificar ou excluir conteúdo do armazenamento USB</string>
+    <string name="permdesc_sdcardWrite">Permite gravar no armaz. USB.</string>
     <string name="permlab_use_sip">fazer/receber chamadas SIP</string>
     <string name="permdesc_use_sip">Permite que o app faça e receba chamadas SIP.</string>
     <string name="permlab_register_sim_subscription">registrar novas conexões SIM de telecomunicações</string>
@@ -1029,7 +1029,7 @@ para a conta %s."</string>
     <string name="no_matches">Não encontrado</string>
     <string name="find_on_page">Localizar na página</string>
     <string name="action_mode_done">Concluído</string>
-    <string name="progress_erasing">Apagando cartão SD...</string>
+    <string name="progress_erasing">Apagando o armazenamento USB...</string>
     <string name="share">Compartilhar</string>
     <string name="find">Localizar</string>
     <string name="websearch">Pesquisa Google na Web</string>

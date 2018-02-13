@@ -74,13 +74,13 @@
 
 .field static final TRANSACTION_removeTestProvider:I = 0x19
 
-.field static final TRANSACTION_removeUpdates_1:I = 0x2
+.field static final TRANSACTION_removeUpdates:I = 0x2
 
 .field static final TRANSACTION_reportLocation:I = 0x21
 
-.field static final TRANSACTION_requestGeofence_2:I = 0x3
+.field static final TRANSACTION_requestGeofence:I = 0x3
 
-.field static final TRANSACTION_requestLocationUpdates_0:I = 0x1
+.field static final TRANSACTION_requestLocationUpdates:I = 0x1
 
 .field static final TRANSACTION_sendExtraCommand:I = 0x20
 

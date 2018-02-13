@@ -773,11 +773,7 @@
 
 .field public static final QS_LOCATION:I = 0x7a
 
-.field public static final QS_LOCATION_DETAIL:I = 0x1f8
-
 .field public static final QS_LOCK_TILE:I = 0x103
-
-.field public static final QS_NFC:I = 0x320
 
 .field public static final QS_NIGHT_DISPLAY:I = 0x1eb
 
@@ -955,13 +951,13 @@
     .locals 0
 
     .prologue
-    .line 497
+    .line 495
     invoke-direct {p0}, Lcom/android/framework/protobuf/nano/MessageNano;-><init>()V
 
-    .line 498
+    .line 496
     invoke-virtual {p0}, Lcom/android/internal/logging/MetricsProto$MetricsEvent;->clear()Lcom/android/internal/logging/MetricsProto$MetricsEvent;
 
-    .line 497
+    .line 495
     return-void
 .end method
 
@@ -969,23 +965,23 @@
     .locals 2
 
     .prologue
-    .line 484
+    .line 482
     sget-object v0, Lcom/android/internal/logging/MetricsProto$MetricsEvent;->_emptyArray:[Lcom/android/internal/logging/MetricsProto$MetricsEvent;
 
     if-nez v0, :cond_1
 
-    .line 485
+    .line 483
     sget-object v1, Lcom/android/framework/protobuf/nano/InternalNano;->LAZY_INIT_LOCK:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 487
+    .line 485
     :try_start_0
     sget-object v0, Lcom/android/internal/logging/MetricsProto$MetricsEvent;->_emptyArray:[Lcom/android/internal/logging/MetricsProto$MetricsEvent;
 
     if-nez v0, :cond_0
 
-    .line 488
+    .line 486
     const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/android/internal/logging/MetricsProto$MetricsEvent;
@@ -997,13 +993,13 @@
     :cond_0
     monitor-exit v1
 
-    .line 492
+    .line 490
     :cond_1
     sget-object v0, Lcom/android/internal/logging/MetricsProto$MetricsEvent;->_emptyArray:[Lcom/android/internal/logging/MetricsProto$MetricsEvent;
 
     return-object v0
 
-    .line 485
+    .line 483
     :catchall_0
     move-exception v0
 
@@ -1022,7 +1018,7 @@
     .end annotation
 
     .prologue
-    .line 533
+    .line 531
     new-instance v0, Lcom/android/internal/logging/MetricsProto$MetricsEvent;
 
     invoke-direct {v0}, Lcom/android/internal/logging/MetricsProto$MetricsEvent;-><init>()V
@@ -1044,7 +1040,7 @@
     .end annotation
 
     .prologue
-    .line 527
+    .line 525
     new-instance v0, Lcom/android/internal/logging/MetricsProto$MetricsEvent;
 
     invoke-direct {v0}, Lcom/android/internal/logging/MetricsProto$MetricsEvent;-><init>()V
@@ -1064,12 +1060,12 @@
     .locals 1
 
     .prologue
-    .line 502
+    .line 500
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/logging/MetricsProto$MetricsEvent;->cachedSize:I
 
-    .line 503
+    .line 501
     return-object p0
 .end method
 
@@ -1083,7 +1079,7 @@
     .end annotation
 
     .prologue
-    .line 507
+    .line 505
     invoke-virtual {p0, p1}, Lcom/android/internal/logging/MetricsProto$MetricsEvent;->mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Lcom/android/internal/logging/MetricsProto$MetricsEvent;
 
     move-result-object v0
@@ -1101,31 +1097,31 @@
     .end annotation
 
     .prologue
-    .line 511
+    .line 509
     :cond_0
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readTag()I
 
     move-result v0
 
-    .line 512
+    .line 510
     .local v0, "tag":I
     packed-switch v0, :pswitch_data_0
 
-    .line 516
+    .line 514
     invoke-static {p1, v0}, Lcom/android/framework/protobuf/nano/WireFormatNano;->parseUnknownField(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 517
-    return-object p0
-
-    .line 514
-    :pswitch_0
+    .line 515
     return-object p0
 
     .line 512
+    :pswitch_0
+    return-object p0
+
+    .line 510
     nop
 
     :pswitch_data_0

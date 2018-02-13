@@ -28,15 +28,15 @@
 
 .field static final TRANSACTION_cleanup:I = 0x2
 
-.field static final TRANSACTION_dexoptNextPackage_4:I = 0x5
+.field static final TRANSACTION_dexoptNextPackage:I = 0x5
 
-.field static final TRANSACTION_getProgress_3:I = 0x4
+.field static final TRANSACTION_getProgress:I = 0x4
 
 .field static final TRANSACTION_isDone:I = 0x3
 
 .field static final TRANSACTION_nextDexoptCommand:I = 0x6
 
-.field static final TRANSACTION_prepare_0:I = 0x1
+.field static final TRANSACTION_prepare:I = 0x1
 
 
 # direct methods

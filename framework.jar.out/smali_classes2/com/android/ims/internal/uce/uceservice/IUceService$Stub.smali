@@ -26,25 +26,25 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.ims.internal.uce.uceservice.IUceService"
 
-.field static final TRANSACTION_createOptionsService_3:I = 0x4
+.field static final TRANSACTION_createOptionsService:I = 0x4
 
-.field static final TRANSACTION_createPresenceService_5:I = 0x6
+.field static final TRANSACTION_createPresenceService:I = 0x6
 
-.field static final TRANSACTION_destroyOptionsService_4:I = 0x5
+.field static final TRANSACTION_destroyOptionsService:I = 0x5
 
 .field static final TRANSACTION_destroyPresenceService:I = 0x7
 
-.field static final TRANSACTION_getOptionsService_9:I = 0xa
+.field static final TRANSACTION_getOptionsService:I = 0xa
 
-.field static final TRANSACTION_getPresenceService_8:I = 0x9
+.field static final TRANSACTION_getPresenceService:I = 0x9
 
-.field static final TRANSACTION_getServiceStatus_7:I = 0x8
+.field static final TRANSACTION_getServiceStatus:I = 0x8
 
-.field static final TRANSACTION_isServiceStarted_2:I = 0x3
+.field static final TRANSACTION_isServiceStarted:I = 0x3
 
-.field static final TRANSACTION_startService_0:I = 0x1
+.field static final TRANSACTION_startService:I = 0x1
 
-.field static final TRANSACTION_stopService_1:I = 0x2
+.field static final TRANSACTION_stopService:I = 0x2
 
 
 # direct methods
@@ -58,7 +58,7 @@
     .line 18
     const-string/jumbo v0, "com.android.ims.internal.uce.uceservice.IUceService"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/ims/internal/uce/uceservice/IUceService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

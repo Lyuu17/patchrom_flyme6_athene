@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 303
+    .line 300
     iput-object p1, p0, Lcom/android/server/LocationManagerService$5;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,7 +40,7 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 306
+    .line 303
     iget-object v0, p0, Lcom/android/server/LocationManagerService$5;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->-get4(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
@@ -49,7 +49,7 @@
 
     monitor-enter v1
 
-    .line 307
+    .line 304
     :try_start_0
     iget-object v0, p0, Lcom/android/server/LocationManagerService$5;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -59,10 +59,10 @@
 
     monitor-exit v1
 
-    .line 305
+    .line 302
     return-void
 
-    .line 306
+    .line 303
     :catchall_0
     move-exception v0
 

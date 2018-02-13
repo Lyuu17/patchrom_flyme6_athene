@@ -102,17 +102,17 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 158
+    .line 150
     iget-object v9, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mHoverListener:Landroid/widget/MenuItemHoverListener;
 
     if-eqz v9, :cond_2
 
-    .line 162
+    .line 154
     invoke-virtual {p0}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
-    .line 163
+    .line 155
     .local v0, "adapter":Landroid/widget/ListAdapter;
     instance-of v9, v0, Landroid/widget/HeaderViewListAdapter;
 
@@ -120,16 +120,16 @@
 
     move-object v1, v0
 
-    .line 164
+    .line 156
     check-cast v1, Landroid/widget/HeaderViewListAdapter;
 
-    .line 165
+    .line 157
     .local v1, "headerAdapter":Landroid/widget/HeaderViewListAdapter;
     invoke-virtual {v1}, Landroid/widget/HeaderViewListAdapter;->getHeadersCount()I
 
     move-result v2
 
-    .line 166
+    .line 158
     .local v2, "headersCount":I
     invoke-virtual {v1}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
@@ -137,13 +137,13 @@
 
     check-cast v5, Lcom/android/internal/view/menu/MenuAdapter;
 
-    .line 173
+    .line 165
     .end local v1    # "headerAdapter":Landroid/widget/HeaderViewListAdapter;
     .local v5, "menuAdapter":Lcom/android/internal/view/menu/MenuAdapter;
     :goto_0
     const/4 v6, 0x0
 
-    .line 174
+    .line 166
     .local v6, "menuItem":Landroid/view/MenuItem;
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -153,7 +153,7 @@
 
     if-eq v9, v10, :cond_0
 
-    .line 175
+    .line 167
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v9
@@ -170,16 +170,16 @@
 
     move-result v8
 
-    .line 176
+    .line 168
     .local v8, "position":I
     const/4 v9, -0x1
 
     if-eq v8, v9, :cond_0
 
-    .line 177
+    .line 169
     sub-int v3, v8, v2
 
-    .line 178
+    .line 170
     .local v3, "itemPosition":I
     if-ltz v3, :cond_0
 
@@ -189,49 +189,49 @@
 
     if-ge v3, v9, :cond_0
 
-    .line 179
+    .line 171
     invoke-virtual {v5, v3}, Lcom/android/internal/view/menu/MenuAdapter;->getItem(I)Lcom/android/internal/view/menu/MenuItemImpl;
 
     move-result-object v6
 
-    .line 184
+    .line 176
     .end local v3    # "itemPosition":I
     .end local v6    # "menuItem":Landroid/view/MenuItem;
     .end local v8    # "position":I
     :cond_0
     iget-object v7, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mHoveredMenuItem:Landroid/view/MenuItem;
 
-    .line 185
+    .line 177
     .local v7, "oldMenuItem":Landroid/view/MenuItem;
     if-eq v7, v6, :cond_2
 
-    .line 186
+    .line 178
     invoke-virtual {v5}, Lcom/android/internal/view/menu/MenuAdapter;->getAdapterMenu()Lcom/android/internal/view/menu/MenuBuilder;
 
     move-result-object v4
 
-    .line 187
+    .line 179
     .local v4, "menu":Lcom/android/internal/view/menu/MenuBuilder;
     if-eqz v7, :cond_1
 
-    .line 188
+    .line 180
     iget-object v9, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mHoverListener:Landroid/widget/MenuItemHoverListener;
 
     invoke-interface {v9, v4, v7}, Landroid/widget/MenuItemHoverListener;->onItemHoverExit(Lcom/android/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)V
 
-    .line 191
+    .line 183
     :cond_1
     iput-object v6, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mHoveredMenuItem:Landroid/view/MenuItem;
 
-    .line 193
+    .line 185
     if-eqz v6, :cond_2
 
-    .line 194
+    .line 186
     iget-object v9, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mHoverListener:Landroid/widget/MenuItemHoverListener;
 
     invoke-interface {v9, v4, v6}, Landroid/widget/MenuItemHoverListener;->onItemHoverEnter(Lcom/android/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)V
 
-    .line 199
+    .line 191
     .end local v0    # "adapter":Landroid/widget/ListAdapter;
     .end local v2    # "headersCount":I
     .end local v4    # "menu":Lcom/android/internal/view/menu/MenuBuilder;
@@ -244,7 +244,7 @@
 
     return v9
 
-    .line 168
+    .line 160
     .restart local v0    # "adapter":Landroid/widget/ListAdapter;
     :cond_3
     const/4 v2, 0x0
@@ -252,7 +252,7 @@
     .restart local v2    # "headersCount":I
     move-object v5, v0
 
-    .line 169
+    .line 161
     check-cast v5, Lcom/android/internal/view/menu/MenuAdapter;
 
     .restart local v5    # "menuAdapter":Lcom/android/internal/view/menu/MenuAdapter;
@@ -260,136 +260,103 @@
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .locals 9
+    .locals 5
     .param p1, "keyCode"    # I
     .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
-    const/4 v5, -0x1
+    const/4 v2, -0x1
 
     .line 127
     invoke-virtual {p0}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->getSelectedView()Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lcom/android/internal/view/menu/ListMenuItemView;
+    check-cast v0, Lcom/android/internal/view/menu/ListMenuItemView;
 
     .line 128
-    .local v3, "selectedItem":Lcom/android/internal/view/menu/ListMenuItemView;
-    if-eqz v3, :cond_1
+    .local v0, "selectedItem":Lcom/android/internal/view/menu/ListMenuItemView;
+    if-eqz v0, :cond_1
 
-    iget v4, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mAdvanceKey:I
+    iget v1, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mAdvanceKey:I
 
-    if-ne p1, v4, :cond_1
+    if-ne p1, v1, :cond_1
 
     .line 129
-    invoke-virtual {v3}, Lcom/android/internal/view/menu/ListMenuItemView;->isEnabled()Z
+    invoke-virtual {v0}, Lcom/android/internal/view/menu/ListMenuItemView;->isEnabled()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v3}, Lcom/android/internal/view/menu/ListMenuItemView;->getItemData()Lcom/android/internal/view/menu/MenuItemImpl;
+    invoke-virtual {v0}, Lcom/android/internal/view/menu/ListMenuItemView;->getItemData()Lcom/android/internal/view/menu/MenuItemImpl;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Lcom/android/internal/view/menu/MenuItemImpl;->hasSubMenu()Z
+    invoke-virtual {v1}, Lcom/android/internal/view/menu/MenuItemImpl;->hasSubMenu()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    if-eqz v1, :cond_0
 
     .line 132
     invoke-virtual {p0}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->getSelectedItemPosition()I
 
-    move-result v4
+    move-result v1
 
     .line 133
     invoke-virtual {p0}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->getSelectedItemId()J
 
-    move-result-wide v6
+    move-result-wide v2
 
     .line 130
-    invoke-virtual {p0, v3, v4, v6, v7}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-virtual {p0, v0, v1, v2, v3}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->performItemClick(Landroid/view/View;IJ)Z
 
     .line 135
     :cond_0
-    return v8
+    return v4
 
     .line 136
     :cond_1
-    if-eqz v3, :cond_3
+    if-eqz v0, :cond_2
 
-    iget v4, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mRetreatKey:I
+    iget v1, p0, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->mRetreatKey:I
 
-    if-ne p1, v4, :cond_3
+    if-ne p1, v1, :cond_2
 
     .line 137
-    invoke-virtual {p0, v5}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->setSelectedPositionInt(I)V
+    invoke-virtual {p0, v2}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->setSelectedPositionInt(I)V
 
     .line 138
-    invoke-virtual {p0, v5}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->setNextSelectedPositionInt(I)V
+    invoke-virtual {p0, v2}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->setNextSelectedPositionInt(I)V
 
     .line 141
     invoke-virtual {p0}, Landroid/widget/MenuPopupWindow$MenuDropDownListView;->getAdapter()Landroid/widget/ListAdapter;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 143
-    .local v0, "adapter":Landroid/widget/ListAdapter;
-    instance-of v4, v0, Landroid/widget/HeaderViewListAdapter;
+    check-cast v1, Lcom/android/internal/view/menu/MenuAdapter;
 
-    if-eqz v4, :cond_2
+    invoke-virtual {v1}, Lcom/android/internal/view/menu/MenuAdapter;->getAdapterMenu()Lcom/android/internal/view/menu/MenuBuilder;
 
-    move-object v1, v0
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/android/internal/view/menu/MenuBuilder;->close(Z)V
+
+    .line 142
+    return v4
 
     .line 144
-    check-cast v1, Landroid/widget/HeaderViewListAdapter;
-
-    .line 145
-    .local v1, "headerAdapter":Landroid/widget/HeaderViewListAdapter;
-    invoke-virtual {v1}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/internal/view/menu/MenuAdapter;
-
-    .line 149
-    .end local v1    # "headerAdapter":Landroid/widget/HeaderViewListAdapter;
-    .local v2, "menuAdapter":Lcom/android/internal/view/menu/MenuAdapter;
-    :goto_0
-    invoke-virtual {v2}, Lcom/android/internal/view/menu/MenuAdapter;->getAdapterMenu()Lcom/android/internal/view/menu/MenuBuilder;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v5}, Lcom/android/internal/view/menu/MenuBuilder;->close(Z)V
-
-    .line 150
-    return v8
-
-    .end local v2    # "menuAdapter":Lcom/android/internal/view/menu/MenuAdapter;
     :cond_2
-    move-object v2, v0
-
-    .line 147
-    check-cast v2, Lcom/android/internal/view/menu/MenuAdapter;
-
-    .restart local v2    # "menuAdapter":Lcom/android/internal/view/menu/MenuAdapter;
-    goto :goto_0
-
-    .line 152
-    .end local v0    # "adapter":Landroid/widget/ListAdapter;
-    .end local v2    # "menuAdapter":Lcom/android/internal/view/menu/MenuAdapter;
-    :cond_3
     invoke-super {p0, p1, p2}, Landroid/widget/DropDownListView;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
-    move-result v4
+    move-result v1
 
-    return v4
+    return v1
 .end method
 
 .method public setHoverListener(Landroid/widget/MenuItemHoverListener;)V

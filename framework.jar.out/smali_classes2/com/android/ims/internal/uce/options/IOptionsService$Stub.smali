@@ -26,21 +26,21 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.ims.internal.uce.options.IOptionsService"
 
-.field static final TRANSACTION_addListener_1:I = 0x2
+.field static final TRANSACTION_addListener:I = 0x2
 
-.field static final TRANSACTION_getContactCap_5:I = 0x6
+.field static final TRANSACTION_getContactCap:I = 0x6
 
-.field static final TRANSACTION_getContactListCap_6:I = 0x7
+.field static final TRANSACTION_getContactListCap:I = 0x7
 
-.field static final TRANSACTION_getMyInfo_4:I = 0x5
+.field static final TRANSACTION_getMyInfo:I = 0x5
 
-.field static final TRANSACTION_getVersion_0:I = 0x1
+.field static final TRANSACTION_getVersion:I = 0x1
 
-.field static final TRANSACTION_removeListener_2:I = 0x3
+.field static final TRANSACTION_removeListener:I = 0x3
 
-.field static final TRANSACTION_responseIncomingOptions_7:I = 0x8
+.field static final TRANSACTION_responseIncomingOptions:I = 0x8
 
-.field static final TRANSACTION_setMyInfo_3:I = 0x4
+.field static final TRANSACTION_setMyInfo:I = 0x4
 
 
 # direct methods
@@ -54,7 +54,7 @@
     .line 16
     const-string/jumbo v0, "com.android.ims.internal.uce.options.IOptionsService"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/ims/internal/uce/options/IOptionsService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 14
     return-void

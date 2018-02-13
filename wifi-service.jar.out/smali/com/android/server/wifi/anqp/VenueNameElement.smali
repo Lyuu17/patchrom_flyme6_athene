@@ -184,7 +184,7 @@
     .restart local v0    # "index":I
     aget-object v7, v7, v1
 
-    invoke-virtual {v2}, Lcom/android/server/wifi/anqp/VenueNameElement$VenueType;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v8
 

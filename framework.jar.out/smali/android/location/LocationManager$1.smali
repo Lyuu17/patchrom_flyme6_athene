@@ -27,7 +27,7 @@
     .param p2, "val$callback"    # Landroid/location/GnssNavigationMessageEvent$Callback;
 
     .prologue
-    .line 2127
+    .line 2111
     iput-object p1, p0, Landroid/location/LocationManager$1;->this$0:Landroid/location/LocationManager;
 
     iput-object p2, p0, Landroid/location/LocationManager$1;->val$callback:Landroid/location/GnssNavigationMessageEvent$Callback;
@@ -44,18 +44,18 @@
     .param p1, "message"    # Landroid/location/GnssNavigationMessage;
 
     .prologue
-    .line 2130
+    .line 2114
     new-instance v0, Landroid/location/GnssNavigationMessageEvent;
 
     invoke-direct {v0, p1}, Landroid/location/GnssNavigationMessageEvent;-><init>(Landroid/location/GnssNavigationMessage;)V
 
-    .line 2131
+    .line 2115
     .local v0, "event":Landroid/location/GnssNavigationMessageEvent;
     iget-object v1, p0, Landroid/location/LocationManager$1;->val$callback:Landroid/location/GnssNavigationMessageEvent$Callback;
 
     invoke-virtual {v1, v0}, Landroid/location/GnssNavigationMessageEvent$Callback;->onGnssNavigationMessageReceived(Landroid/location/GnssNavigationMessageEvent;)V
 
-    .line 2129
+    .line 2113
     return-void
 .end method
 
@@ -64,11 +64,11 @@
     .param p1, "status"    # I
 
     .prologue
-    .line 2136
+    .line 2120
     iget-object v0, p0, Landroid/location/LocationManager$1;->val$callback:Landroid/location/GnssNavigationMessageEvent$Callback;
 
     invoke-virtual {v0, p1}, Landroid/location/GnssNavigationMessageEvent$Callback;->onStatusChanged(I)V
 
-    .line 2135
+    .line 2119
     return-void
 .end method

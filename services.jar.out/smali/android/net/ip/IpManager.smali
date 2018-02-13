@@ -2485,8 +2485,6 @@
     const/4 v3, 0x0
 
     .line 608
-    if-eqz p3, :cond_0
-
     array-length v2, p3
 
     if-lez v2, :cond_0

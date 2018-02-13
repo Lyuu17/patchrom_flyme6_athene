@@ -816,14 +816,6 @@
     .end annotation
 .end method
 
-.method public abstract isComponentProtected(Ljava/lang/String;ILandroid/content/ComponentName;I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract isEphemeralApplication(Ljava/lang/String;I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -905,14 +897,6 @@
 .end method
 
 .method public abstract isProtectedBroadcast(Ljava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isProtectedBroadcastAllowed(Ljava/lang/String;I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1247,14 +1231,6 @@
 .end method
 
 .method public abstract setComponentEnabledSetting(Landroid/content/ComponentName;III)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setComponentProtectedSetting(Landroid/content/ComponentName;ZI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

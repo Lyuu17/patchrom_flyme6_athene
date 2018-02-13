@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
     .prologue
-    .line 3201
+    .line 3185
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;-><init>()V
@@ -51,7 +51,7 @@
     .param p3, "idle"    # Z
 
     .prologue
-    .line 3207
+    .line 3191
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -63,15 +63,15 @@
 
     move-result-object v2
 
-    .line 3208
+    .line 3192
     const/16 v3, 0x2000
 
-    .line 3207
+    .line 3191
     invoke-virtual {v2, p1, v3, p2}, Landroid/content/pm/PackageManager;->getPackageUidAsUser(Ljava/lang/String;II)I
 
     move-result v1
 
-    .line 3210
+    .line 3194
     .local v1, "uid":I
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -81,13 +81,13 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3211
+    .line 3195
     :try_start_1
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->updateRuleForAppIdleUL(I)V
 
-    .line 3212
+    .line 3196
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->-wrap16(Lcom/android/server/net/NetworkPolicyManagerService;I)V
@@ -97,12 +97,12 @@
     :try_start_2
     monitor-exit v3
 
-    .line 3205
+    .line 3189
     .end local v1    # "uid":I
     :goto_0
     return-void
 
-    .line 3210
+    .line 3194
     .restart local v1    # "uid":I
     :catchall_0
     move-exception v2
@@ -113,7 +113,7 @@
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 3214
+    .line 3198
     .end local v1    # "uid":I
     :catch_0
     move-exception v0
@@ -127,14 +127,14 @@
     .param p1, "isParoleOn"    # Z
 
     .prologue
-    .line 3220
+    .line 3204
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v1, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 3221
+    .line 3205
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -144,10 +144,10 @@
 
     monitor-exit v1
 
-    .line 3219
+    .line 3203
     return-void
 
-    .line 3220
+    .line 3204
     :catchall_0
     move-exception v0
 

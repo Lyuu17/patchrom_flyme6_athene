@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_disconnectCall:I = 0x3
 
-.field static final TRANSACTION_holdCall_3:I = 0x4
+.field static final TRANSACTION_holdCall:I = 0x4
 
 .field static final TRANSACTION_mergeConference:I = 0xe
 

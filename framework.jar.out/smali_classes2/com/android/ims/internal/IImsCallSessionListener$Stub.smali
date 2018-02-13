@@ -54,7 +54,7 @@
 
 .field static final TRANSACTION_callSessionMergeStarted:I = 0xb
 
-.field static final TRANSACTION_callSessionMultipartyStateChanged_28:I = 0x1d
+.field static final TRANSACTION_callSessionMultipartyStateChanged:I = 0x1d
 
 .field static final TRANSACTION_callSessionProgressing:I = 0x1
 
@@ -76,7 +76,7 @@
 
 .field static final TRANSACTION_callSessionTerminated:I = 0x4
 
-.field static final TRANSACTION_callSessionTtyModeReceived_27:I = 0x1c
+.field static final TRANSACTION_callSessionTtyModeReceived:I = 0x1c
 
 .field static final TRANSACTION_callSessionUpdateFailed:I = 0xf
 

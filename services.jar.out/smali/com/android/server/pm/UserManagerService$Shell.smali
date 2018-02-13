@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
     .prologue
-    .line 3517
+    .line 3515
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$Shell;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
@@ -49,7 +49,7 @@
     .param p1, "cmd"    # Ljava/lang/String;
 
     .prologue
-    .line 3520
+    .line 3518
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$Shell;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/server/pm/UserManagerService;->onShellCommand(Lcom/android/server/pm/UserManagerService$Shell;Ljava/lang/String;)I
@@ -63,42 +63,42 @@
     .locals 2
 
     .prologue
-    .line 3525
+    .line 3523
     invoke-virtual {p0}, Lcom/android/server/pm/UserManagerService$Shell;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 3526
+    .line 3524
     .local v0, "pw":Ljava/io/PrintWriter;
     const-string/jumbo v1, "User manager (user) commands:"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3527
+    .line 3525
     const-string/jumbo v1, "  help"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3528
+    .line 3526
     const-string/jumbo v1, "    Print this help text."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3529
+    .line 3527
     const-string/jumbo v1, ""
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3530
+    .line 3528
     const-string/jumbo v1, "  list"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3531
+    .line 3529
     const-string/jumbo v1, "    Prints all users on the system."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3524
+    .line 3522
     return-void
 .end method

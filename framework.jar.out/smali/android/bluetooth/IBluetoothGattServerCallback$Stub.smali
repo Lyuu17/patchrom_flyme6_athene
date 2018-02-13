@@ -40,11 +40,11 @@
 
 .field static final TRANSACTION_onNotificationSent:I = 0xa
 
-.field static final TRANSACTION_onScanResult_1:I = 0x2
+.field static final TRANSACTION_onScanResult:I = 0x2
 
 .field static final TRANSACTION_onServerConnectionState:I = 0x3
 
-.field static final TRANSACTION_onServerRegistered_0:I = 0x1
+.field static final TRANSACTION_onServerRegistered:I = 0x1
 
 .field static final TRANSACTION_onServiceAdded:I = 0x4
 
@@ -60,7 +60,7 @@
     .line 19
     const-string/jumbo v0, "android.bluetooth.IBluetoothGattServerCallback"
 
-    invoke-virtual {p0, p0, v0}, Landroid/bluetooth/IBluetoothGattServerCallback$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 17
     return-void

@@ -26,13 +26,13 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 617
+    .line 507
     iput-object p1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
-    .line 618
+    .line 508
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 617
+    .line 507
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 623
+    .line 513
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 634
+    .line 524
     const-string/jumbo v0, "RemoteController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -75,11 +75,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 622
+    .line 512
     :goto_0
     return-void
 
-    .line 625
+    .line 515
     :pswitch_0
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -97,7 +97,7 @@
 
     goto :goto_1
 
-    .line 628
+    .line 518
     :pswitch_1
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -105,11 +105,11 @@
 
     check-cast v0, Landroid/media/session/PlaybackState;
 
-    invoke-static {v1, v0}, Landroid/media/RemoteController;->-wrap3(Landroid/media/RemoteController;Landroid/media/session/PlaybackState;)V
+    invoke-static {v1, v0}, Landroid/media/RemoteController;->-wrap2(Landroid/media/RemoteController;Landroid/media/session/PlaybackState;)V
 
     goto :goto_0
 
-    .line 631
+    .line 521
     :pswitch_2
     iget-object v1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -117,11 +117,11 @@
 
     check-cast v0, Landroid/media/MediaMetadata;
 
-    invoke-static {v1, v0}, Landroid/media/RemoteController;->-wrap2(Landroid/media/RemoteController;Landroid/media/MediaMetadata;)V
+    invoke-static {v1, v0}, Landroid/media/RemoteController;->-wrap1(Landroid/media/RemoteController;Landroid/media/MediaMetadata;)V
 
     goto :goto_0
 
-    .line 623
+    .line 513
     nop
 
     :pswitch_data_0

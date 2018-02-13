@@ -22,8 +22,6 @@
 
 .field public static final SERVICE_CATEGORY_CMAS_TEST_MESSAGE:I = 0x1004
 
-.field public static final TELESERVICE_CT_WAP:I = 0xfdea
-
 .field public static final TELESERVICE_MWI:I = 0x40000
 
 .field public static final TELESERVICE_NOT_SET:I = 0x0
@@ -68,14 +66,14 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
+    .line 72
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->teleService:I
 
-    .line 126
+    .line 125
     return-void
 .end method

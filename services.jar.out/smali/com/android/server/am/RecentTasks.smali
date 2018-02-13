@@ -159,7 +159,7 @@
 
     sput-object v0, Lcom/android/server/am/RecentTasks;->TAG_TASKS:Ljava/lang/String;
 
-    .line 734
+    .line 704
     new-instance v0, Lcom/android/server/am/RecentTasks$1;
 
     invoke-direct {v0}, Lcom/android/server/am/RecentTasks$1;-><init>()V
@@ -258,7 +258,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 121
+    .line 120
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -267,7 +267,7 @@
 
     if-nez v0, :cond_0
 
-    .line 122
+    .line 121
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     iget-object v1, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
@@ -278,7 +278,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 123
+    .line 122
     sget-object v0, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -301,7 +301,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
+    .line 117
     :cond_0
     return-void
 .end method
@@ -316,20 +316,20 @@
 
     const/4 v10, -0x1
 
-    .line 413
+    .line 383
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v4
 
-    .line 414
+    .line 384
     .local v4, "recentsCount":I
     move-object v6, p1
 
-    .line 415
+    .line 385
     .local v6, "top":Lcom/android/server/am/TaskRecord;
     move v7, p2
 
-    .line 416
+    .line 386
     .local v7, "topIndex":I
     :goto_0
     iget-object v8, v6, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
@@ -338,15 +338,15 @@
 
     if-lez v7, :cond_0
 
-    .line 417
+    .line 387
     iget-object v6, v6, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
 
-    .line 418
+    .line 388
     add-int/lit8 v7, v7, -0x1
 
     goto :goto_0
 
-    .line 423
+    .line 393
     :cond_0
     iget v8, v6, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
 
@@ -356,32 +356,32 @@
 
     const/4 v5, 0x1
 
-    .line 424
+    .line 394
     .local v5, "sane":Z
     :goto_1
     move v1, v7
 
-    .line 425
+    .line 395
     .local v1, "endIndex":I
     move-object v3, v6
 
-    .line 426
+    .line 396
     .local v3, "prev":Lcom/android/server/am/TaskRecord;
     :cond_1
     if-ge v1, v4, :cond_3
 
-    .line 427
+    .line 397
     invoke-virtual {p0, v1}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/server/am/TaskRecord;
 
-    .line 430
+    .line 400
     .local v0, "cur":Lcom/android/server/am/TaskRecord;
     if-ne v0, v6, :cond_6
 
-    .line 432
+    .line 402
     iget-object v8, v0, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
 
     if-nez v8, :cond_2
@@ -390,7 +390,7 @@
 
     if-eq v8, v10, :cond_8
 
-    .line 433
+    .line 403
     :cond_2
     sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
@@ -408,10 +408,10 @@
 
     move-result-object v9
 
-    .line 434
+    .line 404
     const-string/jumbo v10, ": first task has next affiliate: "
 
-    .line 433
+    .line 403
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
@@ -426,19 +426,19 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 435
+    .line 405
     const/4 v5, 0x0
 
-    .line 489
+    .line 459
     .end local v0    # "cur":Lcom/android/server/am/TaskRecord;
     :cond_3
     :goto_2
     if-eqz v5, :cond_4
 
-    .line 490
+    .line 460
     if-ge v1, p2, :cond_4
 
-    .line 491
+    .line 461
     sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -455,10 +455,10 @@
 
     move-result-object v9
 
-    .line 492
+    .line 462
     const-string/jumbo v10, ": did not extend to task "
 
-    .line 491
+    .line 461
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
@@ -467,10 +467,10 @@
 
     move-result-object v9
 
-    .line 492
+    .line 462
     const-string/jumbo v10, " @"
 
-    .line 491
+    .line 461
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
@@ -485,39 +485,39 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 493
+    .line 463
     const/4 v5, 0x0
 
-    .line 496
+    .line 466
     :cond_4
     if-eqz v5, :cond_d
 
-    .line 499
+    .line 469
     move v2, v7
 
     .local v2, "i":I
     :goto_3
     if-gt v2, v1, :cond_c
 
-    .line 502
+    .line 472
     invoke-virtual {p0, v2}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/server/am/TaskRecord;
 
-    .line 503
+    .line 473
     .restart local v0    # "cur":Lcom/android/server/am/TaskRecord;
     sub-int v8, v2, v7
 
     invoke-virtual {p0, v8, v0}, Lcom/android/server/am/RecentTasks;->add(ILjava/lang/Object;)V
 
-    .line 499
+    .line 469
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 423
+    .line 393
     .end local v0    # "cur":Lcom/android/server/am/TaskRecord;
     .end local v1    # "endIndex":I
     .end local v2    # "i":I
@@ -529,7 +529,7 @@
     .restart local v5    # "sane":Z
     goto/16 :goto_1
 
-    .line 440
+    .line 410
     .restart local v0    # "cur":Lcom/android/server/am/TaskRecord;
     .restart local v1    # "endIndex":I
     .restart local v3    # "prev":Lcom/android/server/am/TaskRecord;
@@ -538,14 +538,14 @@
 
     if-ne v8, v3, :cond_7
 
-    .line 441
+    .line 411
     iget v8, v0, Lcom/android/server/am/TaskRecord;->mNextAffiliateTaskId:I
 
     iget v9, v3, Lcom/android/server/am/TaskRecord;->taskId:I
 
     if-eq v8, v9, :cond_8
 
-    .line 442
+    .line 412
     :cond_7
     sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
@@ -563,10 +563,10 @@
 
     move-result-object v9
 
-    .line 443
+    .line 413
     const-string/jumbo v10, ": middle task "
 
-    .line 442
+    .line 412
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
@@ -575,10 +575,237 @@
 
     move-result-object v9
 
-    .line 443
+    .line 413
     const-string/jumbo v10, " @"
 
+    .line 412
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 414
+    const-string/jumbo v10, " has bad next affiliate "
+
+    .line 412
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 415
+    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
+
+    .line 412
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 415
+    const-string/jumbo v10, " id "
+
+    .line 412
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 415
+    iget v10, v0, Lcom/android/server/am/TaskRecord;->mNextAffiliateTaskId:I
+
+    .line 412
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 416
+    const-string/jumbo v10, ", expected "
+
+    .line 412
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 417
+    const/4 v5, 0x0
+
+    .line 418
+    goto/16 :goto_2
+
+    .line 421
+    :cond_8
+    iget v8, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliateTaskId:I
+
+    if-ne v8, v10, :cond_9
+
+    .line 423
+    iget-object v8, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
+
+    if-eqz v8, :cond_3
+
+    .line 424
+    sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "Bad chain @"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 425
+    const-string/jumbo v10, ": last task "
+
+    .line 424
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 425
+    const-string/jumbo v10, " has previous affiliate "
+
+    .line 424
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 426
+    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
+
+    .line 424
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 427
+    const/4 v5, 0x0
+
+    goto/16 :goto_2
+
+    .line 433
+    :cond_9
+    iget-object v8, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
+
+    if-nez v8, :cond_a
+
+    .line 434
+    sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "Bad chain @"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 435
+    const-string/jumbo v10, ": task "
+
+    .line 434
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 435
+    const-string/jumbo v10, " has previous affiliate "
+
+    .line 434
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 436
+    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
+
+    .line 434
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 436
+    const-string/jumbo v10, " but should be id "
+
+    .line 434
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 437
+    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
+
+    .line 434
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 438
+    const/4 v5, 0x0
+
+    .line 439
+    goto/16 :goto_2
+
     .line 442
+    :cond_a
+    iget v8, v0, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
+
+    iget v9, p1, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
+
+    if-eq v8, v9, :cond_b
+
+    .line 443
+    sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "Bad chain @"
+
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
@@ -588,46 +815,46 @@
     move-result-object v9
 
     .line 444
-    const-string/jumbo v10, " has bad next affiliate "
+    const-string/jumbo v10, ": task "
 
-    .line 442
+    .line 443
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 444
+    const-string/jumbo v10, " has affiliated id "
+
+    .line 443
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
     .line 445
-    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
+    iget v10, v0, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
 
-    .line 442
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 445
-    const-string/jumbo v10, " id "
-
-    .line 442
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 445
-    iget v10, v0, Lcom/android/server/am/TaskRecord;->mNextAffiliateTaskId:I
-
-    .line 442
+    .line 443
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    .line 446
-    const-string/jumbo v10, ", expected "
+    .line 445
+    const-string/jumbo v10, " but should be "
 
-    .line 442
+    .line 443
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 446
+    iget v10, p1, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
+
+    .line 443
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
@@ -643,244 +870,17 @@
     .line 448
     goto/16 :goto_2
 
-    .line 451
-    :cond_8
-    iget v8, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliateTaskId:I
-
-    if-ne v8, v10, :cond_9
-
-    .line 453
-    iget-object v8, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
-
-    if-eqz v8, :cond_3
-
-    .line 454
-    sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "Bad chain @"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 455
-    const-string/jumbo v10, ": last task "
-
-    .line 454
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 455
-    const-string/jumbo v10, " has previous affiliate "
-
-    .line 454
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 456
-    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
-
-    .line 454
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 457
-    const/4 v5, 0x0
-
-    goto/16 :goto_2
-
-    .line 463
-    :cond_9
-    iget-object v8, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
-
-    if-nez v8, :cond_a
-
-    .line 464
-    sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "Bad chain @"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 465
-    const-string/jumbo v10, ": task "
-
-    .line 464
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 465
-    const-string/jumbo v10, " has previous affiliate "
-
-    .line 464
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 466
-    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
-
-    .line 464
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 466
-    const-string/jumbo v10, " but should be id "
-
-    .line 464
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 467
-    iget-object v10, v0, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
-
-    .line 464
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 468
-    const/4 v5, 0x0
-
-    .line 469
-    goto/16 :goto_2
-
-    .line 472
-    :cond_a
-    iget v8, v0, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
-
-    iget v9, p1, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
-
-    if-eq v8, v9, :cond_b
-
-    .line 473
-    sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "Bad chain @"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 474
-    const-string/jumbo v10, ": task "
-
-    .line 473
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 474
-    const-string/jumbo v10, " has affiliated id "
-
-    .line 473
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 475
-    iget v10, v0, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
-
-    .line 473
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 475
-    const-string/jumbo v10, " but should be "
-
-    .line 473
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    .line 476
-    iget v10, p1, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
-
-    .line 473
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 477
-    const/4 v5, 0x0
-
-    .line 478
-    goto/16 :goto_2
-
-    .line 480
+    .line 450
     :cond_b
     move-object v3, v0
 
-    .line 481
+    .line 451
     add-int/lit8 v1, v1, 0x1
 
-    .line 482
+    .line 452
     if-lt v1, v4, :cond_1
 
-    .line 483
+    .line 453
     sget-object v8, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -897,10 +897,10 @@
 
     move-result-object v9
 
-    .line 484
+    .line 454
     const-string/jumbo v10, ": last task "
 
-    .line 483
+    .line 453
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
@@ -915,13 +915,13 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 485
+    .line 455
     const/4 v5, 0x0
 
-    .line 486
+    .line 456
     goto/16 :goto_2
 
-    .line 507
+    .line 477
     .end local v0    # "cur":Lcom/android/server/am/TaskRecord;
     .restart local v2    # "i":I
     :cond_c
@@ -929,7 +929,7 @@
 
     return v8
 
-    .line 511
+    .line 481
     .end local v2    # "i":I
     :cond_d
     return v11
@@ -940,18 +940,18 @@
     .param p1, "start"    # I
 
     .prologue
-    .line 743
+    .line 713
     invoke-virtual {p0, p1}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lcom/android/server/am/TaskRecord;
 
-    .line 744
+    .line 714
     .local v6, "startTask":Lcom/android/server/am/TaskRecord;
     iget v0, v6, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
 
-    .line 747
+    .line 717
     .local v0, "affiliateId":I
     iget v9, v6, Lcom/android/server/am/TaskRecord;->taskId:I
 
@@ -961,28 +961,28 @@
 
     if-nez v9, :cond_0
 
-    .line 748
+    .line 718
     iget-object v9, v6, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
 
     if-nez v9, :cond_0
 
-    .line 752
+    .line 722
     const/4 v9, 0x1
 
     iput-boolean v9, v6, Lcom/android/server/am/TaskRecord;->inRecents:Z
 
-    .line 753
+    .line 723
     add-int/lit8 v9, p1, 0x1
 
     return v9
 
-    .line 757
+    .line 727
     :cond_0
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->clear()V
 
-    .line 758
+    .line 728
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v9
@@ -993,34 +993,34 @@
     :goto_0
     if-lt v2, p1, :cond_2
 
-    .line 759
+    .line 729
     invoke-virtual {p0, v2}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lcom/android/server/am/TaskRecord;
 
-    .line 760
+    .line 730
     .local v7, "task":Lcom/android/server/am/TaskRecord;
     iget v9, v7, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
 
     if-ne v9, v0, :cond_1
 
-    .line 761
+    .line 731
     invoke-virtual {p0, v2}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
 
-    .line 762
+    .line 732
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 758
+    .line 728
     :cond_1
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 768
+    .line 738
     .end local v7    # "task":Lcom/android/server/am/TaskRecord;
     :cond_2
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
@@ -1029,7 +1029,7 @@
 
     invoke-static {v9, v10}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 772
+    .line 742
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
     const/4 v10, 0x0
@@ -1040,18 +1040,18 @@
 
     check-cast v1, Lcom/android/server/am/TaskRecord;
 
-    .line 773
+    .line 743
     .local v1, "first":Lcom/android/server/am/TaskRecord;
     const/4 v9, 0x1
 
     iput-boolean v9, v1, Lcom/android/server/am/TaskRecord;->inRecents:Z
 
-    .line 774
+    .line 744
     iget-object v9, v1, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
 
     if-eqz v9, :cond_3
 
-    .line 775
+    .line 745
     sget-object v9, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1076,17 +1076,17 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 776
+    .line 746
     const/4 v9, 0x0
 
     invoke-virtual {v1, v9}, Lcom/android/server/am/TaskRecord;->setNextAffiliate(Lcom/android/server/am/TaskRecord;)V
 
-    .line 777
+    .line 747
     const/4 v9, 0x0
 
     invoke-virtual {p0, v1, v9}, Lcom/android/server/am/RecentTasks;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 780
+    .line 750
     :cond_3
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
@@ -1094,7 +1094,7 @@
 
     move-result v8
 
-    .line 781
+    .line 751
     .local v8, "tmpSize":I
     const/4 v2, 0x0
 
@@ -1103,7 +1103,7 @@
 
     if-ge v2, v9, :cond_6
 
-    .line 782
+    .line 752
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1112,7 +1112,7 @@
 
     check-cast v4, Lcom/android/server/am/TaskRecord;
 
-    .line 783
+    .line 753
     .local v4, "next":Lcom/android/server/am/TaskRecord;
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
@@ -1124,13 +1124,13 @@
 
     check-cast v5, Lcom/android/server/am/TaskRecord;
 
-    .line 784
+    .line 754
     .local v5, "prev":Lcom/android/server/am/TaskRecord;
     iget-object v9, v4, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
 
     if-eq v9, v5, :cond_4
 
-    .line 785
+    .line 755
     sget-object v9, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1159,10 +1159,10 @@
 
     move-result-object v10
 
-    .line 786
+    .line 756
     const-string/jumbo v11, " setting prev="
 
-    .line 785
+    .line 755
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -1177,21 +1177,21 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 787
+    .line 757
     invoke-virtual {v4, v5}, Lcom/android/server/am/TaskRecord;->setPrevAffiliate(Lcom/android/server/am/TaskRecord;)V
 
-    .line 788
+    .line 758
     const/4 v9, 0x0
 
     invoke-virtual {p0, v4, v9}, Lcom/android/server/am/RecentTasks;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 790
+    .line 760
     :cond_4
     iget-object v9, v5, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
 
     if-eq v9, v4, :cond_5
 
-    .line 791
+    .line 761
     sget-object v9, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1220,10 +1220,10 @@
 
     move-result-object v10
 
-    .line 792
+    .line 762
     const-string/jumbo v11, " setting next="
 
-    .line 791
+    .line 761
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -1238,26 +1238,26 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 793
+    .line 763
     invoke-virtual {v5, v4}, Lcom/android/server/am/TaskRecord;->setNextAffiliate(Lcom/android/server/am/TaskRecord;)V
 
-    .line 794
+    .line 764
     const/4 v9, 0x0
 
     invoke-virtual {p0, v5, v9}, Lcom/android/server/am/RecentTasks;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 796
+    .line 766
     :cond_5
     const/4 v9, 0x1
 
     iput-boolean v9, v5, Lcom/android/server/am/TaskRecord;->inRecents:Z
 
-    .line 781
+    .line 751
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_1
 
-    .line 799
+    .line 769
     .end local v4    # "next":Lcom/android/server/am/TaskRecord;
     .end local v5    # "prev":Lcom/android/server/am/TaskRecord;
     :cond_6
@@ -1271,13 +1271,13 @@
 
     check-cast v3, Lcom/android/server/am/TaskRecord;
 
-    .line 800
+    .line 770
     .local v3, "last":Lcom/android/server/am/TaskRecord;
     iget-object v9, v3, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
 
     if-eqz v9, :cond_7
 
-    .line 801
+    .line 771
     sget-object v9, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1302,28 +1302,28 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 802
+    .line 772
     const/4 v9, 0x0
 
     invoke-virtual {v3, v9}, Lcom/android/server/am/TaskRecord;->setPrevAffiliate(Lcom/android/server/am/TaskRecord;)V
 
-    .line 803
+    .line 773
     const/4 v9, 0x0
 
     invoke-virtual {p0, v3, v9}, Lcom/android/server/am/RecentTasks;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 807
+    .line 777
     :cond_7
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1, v9}, Lcom/android/server/am/RecentTasks;->addAll(ILjava/util/Collection;)Z
 
-    .line 808
+    .line 778
     iget-object v9, p0, Lcom/android/server/am/RecentTasks;->mTmpRecents:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->clear()V
 
-    .line 811
+    .line 781
     add-int v9, p1, v8
 
     return v9
@@ -1333,7 +1333,7 @@
     .locals 6
 
     .prologue
-    .line 142
+    .line 141
     iget-object v3, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
@@ -1346,14 +1346,14 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 143
+    .line 142
     iget-object v3, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
 
-    .line 144
+    .line 143
     .local v2, "userId":I
     iget-object v3, p0, Lcom/android/server/am/RecentTasks;->mUsersWithRecentsLoaded:Landroid/util/SparseBooleanArray;
 
@@ -1363,7 +1363,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 147
+    .line 146
     iget-object v3, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1374,13 +1374,13 @@
 
     invoke-virtual {v3}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 142
+    .line 141
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 150
+    .line 149
     .end local v2    # "userId":I
     :cond_1
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
@@ -1392,14 +1392,14 @@
     :goto_1
     if-ltz v0, :cond_5
 
-    .line 151
+    .line 150
     invoke-virtual {p0, v0}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/am/TaskRecord;
 
-    .line 152
+    .line 151
     .local v1, "task":Lcom/android/server/am/TaskRecord;
     iget-boolean v3, v1, Lcom/android/server/am/TaskRecord;->isPersistable:Z
 
@@ -1417,14 +1417,14 @@
 
     if-eqz v3, :cond_3
 
-    .line 150
+    .line 149
     :cond_2
     :goto_2
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 155
+    .line 154
     :cond_3
     iget-object v3, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
@@ -1436,7 +1436,7 @@
 
     if-nez v3, :cond_4
 
-    .line 156
+    .line 155
     sget-object v3, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1465,18 +1465,18 @@
 
     move-result-object v4
 
-    .line 157
+    .line 156
     const-string/jumbo v5, " mPersistedTaskIds="
 
-    .line 156
+    .line 155
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 157
+    .line 156
     iget-object v5, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
-    .line 156
+    .line 155
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -1487,7 +1487,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
+    .line 157
     iget-object v3, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     iget v4, v1, Lcom/android/server/am/TaskRecord;->userId:I
@@ -1498,7 +1498,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 160
+    .line 159
     :cond_4
     iget-object v3, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
@@ -1518,7 +1518,7 @@
 
     goto :goto_2
 
-    .line 141
+    .line 140
     .end local v1    # "task":Lcom/android/server/am/TaskRecord;
     :cond_5
     return-void
@@ -1529,7 +1529,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 212
+    .line 211
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mUsersWithRecentsLoaded:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->get(I)Z
@@ -1538,7 +1538,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 213
+    .line 212
     sget-object v0, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1567,15 +1567,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 214
+    .line 213
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mUsersWithRecentsLoaded:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->delete(I)V
 
-    .line 215
+    .line 214
     invoke-virtual {p0, p1}, Lcom/android/server/am/RecentTasks;->removeTasksForUserLocked(I)V
 
-    .line 211
+    .line 210
     :cond_0
     return-void
 .end method
@@ -1593,39 +1593,39 @@
 
     const/4 v11, 0x0
 
-    .line 515
+    .line 485
     iget v8, p1, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
 
     iget v9, p1, Lcom/android/server/am/TaskRecord;->taskId:I
 
     if-ne v8, v9, :cond_0
 
-    .line 516
+    .line 486
     iget v8, p1, Lcom/android/server/am/TaskRecord;->mNextAffiliateTaskId:I
 
     if-eq v8, v10, :cond_1
 
-    .line 515
+    .line 485
     :cond_0
     const/4 v0, 0x1
 
-    .line 519
+    .line 489
     .local v0, "isAffiliated":Z
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v5
 
-    .line 523
+    .line 493
     .local v5, "recentsCount":I
     iget-object v8, p1, Lcom/android/server/am/TaskRecord;->voiceSession:Landroid/service/voice/IVoiceInteractionSession;
 
     if-eqz v8, :cond_3
 
-    .line 526
+    .line 496
     return-void
 
-    .line 517
+    .line 487
     .end local v0    # "isAffiliated":Z
     .end local v5    # "recentsCount":I
     :cond_1
@@ -1645,7 +1645,7 @@
     .restart local v0    # "isAffiliated":Z
     goto :goto_0
 
-    .line 529
+    .line 499
     .restart local v5    # "recentsCount":I
     :cond_3
     if-nez v0, :cond_4
@@ -1658,10 +1658,10 @@
 
     if-ne v8, p1, :cond_4
 
-    .line 531
+    .line 501
     return-void
 
-    .line 535
+    .line 505
     :cond_4
     if-eqz v0, :cond_5
 
@@ -1671,7 +1671,7 @@
 
     if-eqz v8, :cond_5
 
-    .line 536
+    .line 506
     iget v9, p1, Lcom/android/server/am/TaskRecord;->mAffiliatedTaskId:I
 
     invoke-virtual {p0, v11}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
@@ -1684,80 +1684,80 @@
 
     if-ne v9, v8, :cond_5
 
-    .line 539
+    .line 509
     return-void
 
-    .line 542
+    .line 512
     :cond_5
     const/4 v2, 0x0
 
-    .line 546
+    .line 516
     .local v2, "needAffiliationFix":Z
     iget-boolean v8, p1, Lcom/android/server/am/TaskRecord;->inRecents:Z
 
     if-eqz v8, :cond_8
 
-    .line 547
+    .line 517
     invoke-virtual {p0, p1}, Lcom/android/server/am/RecentTasks;->indexOf(Ljava/lang/Object;)I
 
     move-result v6
 
-    .line 548
+    .line 518
     .local v6, "taskIndex":I
     if-ltz v6, :cond_9
 
-    .line 549
+    .line 519
     if-eqz v0, :cond_6
 
-    .line 559
+    .line 529
     invoke-direct {p0, p1, v6}, Lcom/android/server/am/RecentTasks;->moveAffiliatedTasksToFront(Lcom/android/server/am/TaskRecord;I)Z
 
     move-result v8
 
     if-eqz v8, :cond_7
 
-    .line 561
+    .line 531
     return-void
 
-    .line 551
+    .line 521
     :cond_6
     invoke-virtual {p0, v6}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
 
-    .line 552
+    .line 522
     invoke-virtual {p0, v11, p1}, Lcom/android/server/am/RecentTasks;->add(ILjava/lang/Object;)V
 
-    .line 553
+    .line 523
     invoke-virtual {p0, p1, v11}, Lcom/android/server/am/RecentTasks;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 556
+    .line 526
     return-void
 
-    .line 566
+    .line 536
     :cond_7
     const/4 v2, 0x1
 
-    .line 575
+    .line 545
     .end local v6    # "taskIndex":I
     :cond_8
     :goto_1
     invoke-virtual {p0, p1, v12}, Lcom/android/server/am/RecentTasks;->trimForTaskLocked(Lcom/android/server/am/TaskRecord;Z)I
 
-    .line 577
+    .line 547
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v5
 
-    .line 578
+    .line 548
     invoke-static {}, Landroid/app/ActivityManager;->getMaxRecentTasksStatic()I
 
     move-result v1
 
-    .line 579
+    .line 549
     .local v1, "maxRecents":I
     :goto_2
     if-lt v5, v1, :cond_a
 
-    .line 580
+    .line 550
     add-int/lit8 v8, v5, -0x1
 
     invoke-virtual {p0, v8}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
@@ -1766,16 +1766,16 @@
 
     check-cast v7, Lcom/android/server/am/TaskRecord;
 
-    .line 581
+    .line 551
     .local v7, "tr":Lcom/android/server/am/TaskRecord;
     invoke-virtual {v7}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
 
-    .line 582
+    .line 552
     add-int/lit8 v5, v5, -0x1
 
     goto :goto_2
 
-    .line 569
+    .line 539
     .end local v1    # "maxRecents":I
     .end local v7    # "tr":Lcom/android/server/am/TaskRecord;
     .restart local v6    # "taskIndex":I
@@ -1802,91 +1802,91 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 570
+    .line 540
     const/4 v2, 0x1
 
     goto :goto_1
 
-    .line 584
+    .line 554
     .end local v6    # "taskIndex":I
     .restart local v1    # "maxRecents":I
     :cond_a
     iput-boolean v12, p1, Lcom/android/server/am/TaskRecord;->inRecents:Z
 
-    .line 585
+    .line 555
     if-eqz v0, :cond_b
 
     if-eqz v2, :cond_e
 
-    .line 588
+    .line 558
     :cond_b
     invoke-virtual {p0, v11, p1}, Lcom/android/server/am/RecentTasks;->add(ILjava/lang/Object;)V
 
-    .line 636
+    .line 606
     :cond_c
     :goto_3
     if-eqz v2, :cond_d
 
-    .line 638
+    .line 608
     iget v8, p1, Lcom/android/server/am/TaskRecord;->userId:I
 
     invoke-virtual {p0, v8}, Lcom/android/server/am/RecentTasks;->cleanupLocked(I)V
 
-    .line 514
+    .line 484
     :cond_d
     return-void
 
-    .line 590
+    .line 560
     :cond_e
     if-eqz v0, :cond_c
 
-    .line 593
+    .line 563
     iget-object v3, p1, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
 
-    .line 594
+    .line 564
     .local v3, "other":Lcom/android/server/am/TaskRecord;
     if-nez v3, :cond_f
 
-    .line 595
+    .line 565
     iget-object v3, p1, Lcom/android/server/am/TaskRecord;->mPrevAffiliate:Lcom/android/server/am/TaskRecord;
 
-    .line 597
+    .line 567
     :cond_f
     if-eqz v3, :cond_13
 
-    .line 598
+    .line 568
     invoke-virtual {p0, v3}, Lcom/android/server/am/RecentTasks;->indexOf(Ljava/lang/Object;)I
 
     move-result v4
 
-    .line 599
+    .line 569
     .local v4, "otherIndex":I
     if-ltz v4, :cond_12
 
-    .line 602
+    .line 572
     iget-object v8, p1, Lcom/android/server/am/TaskRecord;->mNextAffiliate:Lcom/android/server/am/TaskRecord;
 
     if-ne v3, v8, :cond_10
 
-    .line 605
+    .line 575
     add-int/lit8 v6, v4, 0x1
 
-    .line 613
+    .line 583
     .restart local v6    # "taskIndex":I
     :goto_4
     invoke-virtual {p0, v6, p1}, Lcom/android/server/am/RecentTasks;->add(ILjava/lang/Object;)V
 
-    .line 616
+    .line 586
     invoke-direct {p0, p1, v6}, Lcom/android/server/am/RecentTasks;->moveAffiliatedTasksToFront(Lcom/android/server/am/TaskRecord;I)Z
 
     move-result v8
 
     if-eqz v8, :cond_11
 
-    .line 618
+    .line 588
     return-void
 
-    .line 609
+    .line 579
     .end local v6    # "taskIndex":I
     :cond_10
     move v6, v4
@@ -1894,20 +1894,20 @@
     .restart local v6    # "taskIndex":I
     goto :goto_4
 
-    .line 623
+    .line 593
     :cond_11
     const/4 v2, 0x1
 
     goto :goto_3
 
-    .line 627
+    .line 597
     .end local v6    # "taskIndex":I
     :cond_12
     const/4 v2, 0x1
 
     goto :goto_3
 
-    .line 632
+    .line 602
     .end local v4    # "otherIndex":I
     :cond_13
     const/4 v2, 0x1
@@ -1924,25 +1924,25 @@
 
     const/4 v10, 0x0
 
-    .line 310
+    .line 280
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v5
 
-    .line 311
+    .line 281
     .local v5, "recentsCount":I
     if-nez v5, :cond_0
 
-    .line 314
+    .line 284
     return-void
 
-    .line 317
+    .line 287
     :cond_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v4
 
-    .line 318
+    .line 288
     .local v4, "pm":Landroid/content/pm/IPackageManager;
     add-int/lit8 v3, v5, -0x1
 
@@ -1950,14 +1950,14 @@
     :goto_0
     if-ltz v3, :cond_d
 
-    .line 319
+    .line 289
     invoke-virtual {p0, v3}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lcom/android/server/am/TaskRecord;
 
-    .line 320
+    .line 290
     .local v6, "task":Lcom/android/server/am/TaskRecord;
     const/4 v7, -0x1
 
@@ -1967,14 +1967,14 @@
 
     if-eq v7, p1, :cond_2
 
-    .line 318
+    .line 288
     :cond_1
     :goto_1
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_0
 
-    .line 324
+    .line 294
     :cond_2
     iget-boolean v7, v6, Lcom/android/server/am/TaskRecord;->autoRemoveRecents:Z
 
@@ -1986,13 +1986,13 @@
 
     if-nez v7, :cond_3
 
-    .line 326
+    .line 296
     invoke-virtual {p0, v3}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
 
-    .line 327
+    .line 297
     invoke-virtual {v6}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
 
-    .line 328
+    .line 298
     sget-object v7, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -2017,13 +2017,13 @@
 
     goto :goto_1
 
-    .line 332
+    .line 302
     :cond_3
     iget-object v7, v6, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     if-eqz v7, :cond_1
 
-    .line 333
+    .line 303
     iget-object v7, p0, Lcom/android/server/am/RecentTasks;->mTmpAvailActCache:Ljava/util/HashMap;
 
     iget-object v8, v6, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
@@ -2034,31 +2034,31 @@
 
     check-cast v0, Landroid/content/pm/ActivityInfo;
 
-    .line 334
+    .line 304
     .local v0, "ai":Landroid/content/pm/ActivityInfo;
     if-nez v0, :cond_5
 
-    .line 339
+    .line 309
     :try_start_0
     iget-object v7, v6, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
-    .line 340
+    .line 310
     const/high16 v8, 0x10000000
 
-    .line 339
+    .line 309
     invoke-interface {v4, v7, v8, p1}, Landroid/content/pm/IPackageManager;->getActivityInfo(Landroid/content/ComponentName;II)Landroid/content/pm/ActivityInfo;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v0
 
-    .line 345
+    .line 315
     if-nez v0, :cond_4
 
-    .line 346
+    .line 316
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTmpActivityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 348
+    .line 318
     :cond_4
     iget-object v7, p0, Lcom/android/server/am/RecentTasks;->mTmpAvailActCache:Ljava/util/HashMap;
 
@@ -2066,34 +2066,34 @@
 
     invoke-virtual {v7, v8, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 350
+    .line 320
     :cond_5
     iget-object v7, p0, Lcom/android/server/am/RecentTasks;->mTmpActivityInfo:Landroid/content/pm/ActivityInfo;
 
     if-ne v0, v7, :cond_a
 
-    .line 354
+    .line 324
     iget-object v7, p0, Lcom/android/server/am/RecentTasks;->mTmpAvailAppCache:Ljava/util/HashMap;
 
-    .line 355
+    .line 325
     iget-object v8, v6, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     invoke-virtual {v8}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 354
+    .line 324
     invoke-virtual {v7, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/content/pm/ApplicationInfo;
 
-    .line 356
+    .line 326
     .local v1, "app":Landroid/content/pm/ApplicationInfo;
     if-nez v1, :cond_7
 
-    .line 358
+    .line 328
     :try_start_1
     iget-object v7, v6, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
@@ -2101,23 +2101,23 @@
 
     move-result-object v7
 
-    .line 359
+    .line 329
     const/16 v8, 0x2000
 
-    .line 358
+    .line 328
     invoke-interface {v4, v7, v8, p1}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result-object v1
 
-    .line 364
+    .line 334
     if-nez v1, :cond_6
 
-    .line 365
+    .line 335
     iget-object v1, p0, Lcom/android/server/am/RecentTasks;->mTmpAppInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 367
+    .line 337
     :cond_6
     iget-object v7, p0, Lcom/android/server/am/RecentTasks;->mTmpAvailAppCache:Ljava/util/HashMap;
 
@@ -2129,27 +2129,27 @@
 
     invoke-virtual {v7, v8, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 369
+    .line 339
     :cond_7
     iget-object v7, p0, Lcom/android/server/am/RecentTasks;->mTmpAppInfo:Landroid/content/pm/ApplicationInfo;
 
     if-eq v1, v7, :cond_8
 
-    .line 370
+    .line 340
     iget v7, v1, Landroid/content/pm/ApplicationInfo;->flags:I
 
     and-int/2addr v7, v11
 
     if-nez v7, :cond_9
 
-    .line 372
+    .line 342
     :cond_8
     invoke-virtual {p0, v3}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
 
-    .line 373
+    .line 343
     invoke-virtual {v6}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
 
-    .line 374
+    .line 344
     sget-object v7, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -2174,13 +2174,13 @@
 
     goto/16 :goto_1
 
-    .line 380
+    .line 350
     :cond_9
     iput-boolean v10, v6, Lcom/android/server/am/TaskRecord;->isAvailable:Z
 
     goto/16 :goto_1
 
-    .line 383
+    .line 353
     .end local v1    # "app":Landroid/content/pm/ApplicationInfo;
     :cond_a
     iget-boolean v7, v0, Landroid/content/pm/ActivityInfo;->enabled:Z
@@ -2193,7 +2193,7 @@
 
     if-eqz v7, :cond_b
 
-    .line 384
+    .line 354
     iget-object v7, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v7, v7, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -2202,13 +2202,13 @@
 
     if-nez v7, :cond_c
 
-    .line 393
+    .line 363
     :cond_b
     iput-boolean v10, v6, Lcom/android/server/am/TaskRecord;->isAvailable:Z
 
     goto/16 :goto_1
 
-    .line 397
+    .line 367
     :cond_c
     const/4 v7, 0x1
 
@@ -2216,33 +2216,33 @@
 
     goto/16 :goto_1
 
-    .line 404
+    .line 374
     .end local v0    # "ai":Landroid/content/pm/ActivityInfo;
     .end local v6    # "task":Lcom/android/server/am/TaskRecord;
     :cond_d
     const/4 v3, 0x0
 
-    .line 405
+    .line 375
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v5
 
-    .line 406
+    .line 376
     :goto_2
     if-ge v3, v5, :cond_e
 
-    .line 407
+    .line 377
     invoke-direct {p0, v3}, Lcom/android/server/am/RecentTasks;->processNextAffiliateChainLocked(I)I
 
     move-result v3
 
     goto :goto_2
 
-    .line 309
+    .line 279
     :cond_e
     return-void
 
-    .line 360
+    .line 330
     .restart local v0    # "ai":Landroid/content/pm/ActivityInfo;
     .restart local v1    # "app":Landroid/content/pm/ApplicationInfo;
     .restart local v6    # "task":Lcom/android/server/am/TaskRecord;
@@ -2252,7 +2252,7 @@
     .local v2, "e":Landroid/os/RemoteException;
     goto/16 :goto_1
 
-    .line 341
+    .line 311
     .end local v1    # "app":Landroid/content/pm/ApplicationInfo;
     .end local v2    # "e":Landroid/os/RemoteException;
     :catch_1
@@ -2262,111 +2262,11 @@
     goto/16 :goto_1
 .end method
 
-.method cleanupProtectedComponentTasksLocked(I)V
-    .locals 9
-    .param p1, "userId"    # I
-
-    .prologue
-    const/4 v8, -0x1
-
-    .line 279
-    invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
-
-    move-result v3
-
-    .line 280
-    .local v3, "recentsCount":I
-    if-nez v3, :cond_0
-
-    .line 283
-    return-void
-
-    .line 286
-    :cond_0
-    invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
-
-    move-result-object v2
-
-    .line 287
-    .local v2, "pm":Landroid/content/pm/IPackageManager;
-    add-int/lit8 v1, v3, -0x1
-
-    .local v1, "i":I
-    :goto_0
-    if-ltz v1, :cond_3
-
-    .line 288
-    invoke-virtual {p0, v1}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/server/am/TaskRecord;
-
-    .line 289
-    .local v4, "task":Lcom/android/server/am/TaskRecord;
-    if-eq p1, v8, :cond_2
-
-    iget v5, v4, Lcom/android/server/am/TaskRecord;->userId:I
-
-    if-eq v5, p1, :cond_2
-
-    .line 287
-    :cond_1
-    :goto_1
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_0
-
-    .line 294
-    :cond_2
-    :try_start_0
-    iget-object v5, v4, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
-
-    if-eqz v5, :cond_1
-
-    .line 295
-    iget-object v5, v4, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
-
-    const/4 v6, 0x0
-
-    const/4 v7, -0x1
-
-    invoke-interface {v2, v6, v7, v5, p1}, Landroid/content/pm/IPackageManager;->isComponentProtected(Ljava/lang/String;ILandroid/content/ComponentName;I)Z
-
-    move-result v5
-
-    .line 294
-    if-eqz v5, :cond_1
-
-    .line 296
-    invoke-virtual {p0, v1}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
-
-    .line 297
-    invoke-virtual {v4}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    .line 299
-    :catch_0
-    move-exception v0
-
-    .local v0, "e":Landroid/os/RemoteException;
-    goto :goto_1
-
-    .line 278
-    .end local v0    # "e":Landroid/os/RemoteException;
-    .end local v4    # "task":Lcom/android/server/am/TaskRecord;
-    :cond_3
-    return-void
-.end method
-
 .method flush()V
     .locals 2
 
     .prologue
-    .line 184
+    .line 183
     iget-object v1, p0, Lcom/android/server/am/RecentTasks;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
@@ -2374,25 +2274,25 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 185
+    .line 184
     invoke-direct {p0}, Lcom/android/server/am/RecentTasks;->syncPersistentTaskIdsLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 184
+    .line 183
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 187
+    .line 186
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
 
     invoke-virtual {v0}, Lcom/android/server/am/TaskPersister;->flush()V
 
-    .line 183
+    .line 182
     return-void
 
-    .line 184
+    .line 183
     :catchall_0
     move-exception v0
 
@@ -2408,7 +2308,7 @@
     .param p1, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 176
+    .line 175
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
 
     invoke-virtual {v0, p1}, Lcom/android/server/am/TaskPersister;->getImageFromWriteQueue(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -2423,7 +2323,7 @@
     .param p1, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 172
+    .line 171
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
 
     invoke-virtual {v0, p1}, Lcom/android/server/am/TaskPersister;->getTaskDescriptionIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -2492,9 +2392,6 @@
     invoke-virtual {p0, p1}, Lcom/android/server/am/RecentTasks;->cleanupLocked(I)V
 
     .line 113
-    invoke-virtual {p0, p1}, Lcom/android/server/am/RecentTasks;->cleanupProtectedComponentTasksLocked(I)V
-
-    .line 114
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mUsersWithRecentsLoaded:Landroid/util/SparseBooleanArray;
 
     const/4 v1, 0x1
@@ -2512,7 +2409,7 @@
     .param p2, "flush"    # Z
 
     .prologue
-    .line 133
+    .line 132
     if-eqz p1, :cond_0
 
     iget-object v0, p1, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
@@ -2527,19 +2424,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 135
+    .line 134
     return-void
 
-    .line 137
+    .line 136
     :cond_0
     invoke-direct {p0}, Lcom/android/server/am/RecentTasks;->syncPersistentTaskIdsLocked()V
 
-    .line 138
+    .line 137
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/am/TaskPersister;->wakeup(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 132
+    .line 131
     return-void
 .end method
 
@@ -2552,12 +2449,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 261
+    .line 260
     invoke-static {p1}, Lcom/google/android/collect/Sets;->newHashSet([Ljava/lang/Object;)Ljava/util/HashSet;
 
     move-result-object v1
 
-    .line 262
+    .line 261
     .local v1, "packageNames":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
@@ -2569,20 +2466,20 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 263
+    .line 262
     invoke-virtual {p0, v0}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/am/TaskRecord;
 
-    .line 264
+    .line 263
     .local v2, "tr":Lcom/android/server/am/TaskRecord;
     iget-object v3, v2, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     if-eqz v3, :cond_0
 
-    .line 265
+    .line 264
     iget-object v3, v2, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -2593,32 +2490,32 @@
 
     move-result v3
 
-    .line 264
+    .line 263
     if-eqz v3, :cond_0
 
-    .line 266
+    .line 265
     iget v3, v2, Lcom/android/server/am/TaskRecord;->userId:I
 
     if-ne v3, p3, :cond_0
 
-    .line 267
+    .line 266
     iget-boolean v3, v2, Lcom/android/server/am/TaskRecord;->realActivitySuspended:Z
 
     if-eq v3, p2, :cond_0
 
-    .line 268
+    .line 267
     iput-boolean p2, v2, Lcom/android/server/am/TaskRecord;->realActivitySuspended:Z
 
-    .line 269
+    .line 268
     invoke-virtual {p0, v2, v4}, Lcom/android/server/am/RecentTasks;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 262
+    .line 261
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 260
+    .line 259
     .end local v2    # "tr":Lcom/android/server/am/TaskRecord;
     :cond_1
     return-void
@@ -2628,15 +2525,15 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 166
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->clear()V
 
-    .line 168
+    .line 167
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
 
     invoke-virtual {v0}, Lcom/android/server/am/TaskPersister;->startPersisting()V
 
-    .line 166
+    .line 165
     return-void
 .end method
 
@@ -2645,10 +2542,10 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 244
+    .line 243
     if-gtz p1, :cond_0
 
-    .line 245
+    .line 244
     sget-object v2, Lcom/android/server/am/RecentTasks;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2671,10 +2568,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 246
+    .line 245
     return-void
 
-    .line 249
+    .line 248
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
@@ -2686,32 +2583,32 @@
     :goto_0
     if-ltz v0, :cond_2
 
-    .line 250
+    .line 249
     invoke-virtual {p0, v0}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/am/TaskRecord;
 
-    .line 251
+    .line 250
     .local v1, "tr":Lcom/android/server/am/TaskRecord;
     iget v2, v1, Lcom/android/server/am/TaskRecord;->userId:I
 
     if-ne v2, p1, :cond_1
 
-    .line 254
+    .line 253
     invoke-virtual {p0, v0}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
 
-    .line 255
+    .line 254
     invoke-virtual {v1}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
 
-    .line 249
+    .line 248
     :cond_1
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 243
+    .line 242
     .end local v1    # "tr":Lcom/android/server/am/TaskRecord;
     :cond_2
     return-void
@@ -2723,12 +2620,12 @@
     .param p2, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 180
+    .line 179
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/am/TaskPersister;->saveImage(Landroid/graphics/Bitmap;Ljava/lang/String;)V
 
-    .line 179
+    .line 178
     return-void
 .end method
 
@@ -2737,12 +2634,12 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 232
+    .line 231
     invoke-virtual {p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v1
 
-    .line 233
+    .line 232
     .local v1, "recentsCount":I
     const/4 v0, 0x0
 
@@ -2750,29 +2647,29 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 234
+    .line 233
     invoke-virtual {p0, v0}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/am/TaskRecord;
 
-    .line 235
+    .line 234
     .local v2, "tr":Lcom/android/server/am/TaskRecord;
     iget v3, v2, Lcom/android/server/am/TaskRecord;->taskId:I
 
     if-ne v3, p1, :cond_0
 
-    .line 236
+    .line 235
     return-object v2
 
-    .line 233
+    .line 232
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 239
+    .line 238
     .end local v2    # "tr":Lcom/android/server/am/TaskRecord;
     :cond_1
     const/4 v3, 0x0
@@ -2786,10 +2683,10 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 128
+    .line 127
     invoke-direct {p0, p2}, Lcom/android/server/am/RecentTasks;->loadPersistedTaskIdsForUserLocked(I)V
 
-    .line 129
+    .line 128
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -2811,18 +2708,18 @@
     .param p2, "doTrim"    # Z
 
     .prologue
-    .line 647
+    .line 617
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/RecentTasks;->size()I
 
     move-result v8
 
-    .line 648
+    .line 618
     .local v8, "recentsCount":I
     move-object/from16 v0, p1
 
     iget-object v5, v0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    .line 649
+    .line 619
     .local v5, "intent":Landroid/content/Intent;
     if-eqz v5, :cond_1
 
@@ -2830,7 +2727,7 @@
 
     move-result v2
 
-    .line 650
+    .line 620
     :goto_0
     move-object/from16 v0, p1
 
@@ -2838,7 +2735,7 @@
 
     add-int/lit8 v6, v15, -0x1
 
-    .line 651
+    .line 621
     .local v6, "maxRecents":I
     const/4 v4, 0x0
 
@@ -2846,7 +2743,7 @@
     :goto_1
     if-ge v4, v8, :cond_11
 
-    .line 652
+    .line 622
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4}, Lcom/android/server/am/RecentTasks;->get(I)Ljava/lang/Object;
@@ -2855,13 +2752,13 @@
 
     check-cast v12, Lcom/android/server/am/TaskRecord;
 
-    .line 653
+    .line 623
     .local v12, "tr":Lcom/android/server/am/TaskRecord;
     move-object/from16 v0, p1
 
     if-eq v0, v12, :cond_6
 
-    .line 654
+    .line 624
     move-object/from16 v0, p1
 
     iget-object v15, v0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
@@ -2884,14 +2781,14 @@
 
     if-eq v15, v0, :cond_2
 
-    .line 651
+    .line 621
     :cond_0
     :goto_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 649
+    .line 619
     .end local v4    # "i":I
     .end local v6    # "maxRecents":I
     .end local v12    # "tr":Lcom/android/server/am/TaskRecord;
@@ -2901,7 +2798,7 @@
     .local v2, "document":Z
     goto :goto_0
 
-    .line 657
+    .line 627
     .end local v2    # "document":Z
     .restart local v4    # "i":I
     .restart local v6    # "maxRecents":I
@@ -2919,19 +2816,19 @@
 
     if-ne v15, v0, :cond_0
 
-    .line 660
+    .line 630
     const/4 v15, 0x3
 
     if-le v4, v15, :cond_3
 
-    .line 661
+    .line 631
     invoke-virtual {v12}, Lcom/android/server/am/TaskRecord;->freeLastThumbnail()V
 
-    .line 663
+    .line 633
     :cond_3
     iget-object v13, v12, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    .line 665
+    .line 635
     .local v13, "trIntent":Landroid/content/Intent;
     move-object/from16 v0, p1
 
@@ -2951,7 +2848,7 @@
 
     move-result v10
 
-    .line 666
+    .line 636
     :goto_3
     if-eqz v5, :cond_8
 
@@ -2959,17 +2856,17 @@
 
     move-result v11
 
-    .line 667
+    .line 637
     :goto_4
     const/4 v7, 0x0
 
-    .line 668
+    .line 638
     .local v7, "multiTasksAllowed":Z
     invoke-virtual {v5}, Landroid/content/Intent;->getFlags()I
 
     move-result v3
 
-    .line 669
+    .line 639
     .local v3, "flags":I
     const/high16 v15, 0x10080000
 
@@ -2977,17 +2874,17 @@
 
     if-eqz v15, :cond_4
 
-    .line 670
+    .line 640
     const/high16 v15, 0x8000000
 
     and-int/2addr v15, v3
 
     if-eqz v15, :cond_4
 
-    .line 671
+    .line 641
     const/4 v7, 0x1
 
-    .line 673
+    .line 643
     :cond_4
     if-eqz v13, :cond_9
 
@@ -2995,36 +2892,36 @@
 
     move-result v14
 
-    .line 674
+    .line 644
     :goto_5
     if-eqz v2, :cond_a
 
     move v1, v14
 
-    .line 675
+    .line 645
     :goto_6
     if-nez v10, :cond_5
 
     if-eqz v11, :cond_b
 
-    .line 679
+    .line 649
     :cond_5
     :goto_7
     if-eqz v1, :cond_d
 
-    .line 681
+    .line 651
     move-object/from16 v0, p1
 
     iget-object v15, v0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     if-eqz v15, :cond_c
 
-    .line 682
+    .line 652
     iget-object v15, v12, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     if-eqz v15, :cond_c
 
-    .line 683
+    .line 653
     move-object/from16 v0, p1
 
     iget-object v15, v0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
@@ -3037,25 +2934,25 @@
 
     move-result v9
 
-    .line 686
+    .line 656
     .local v9, "sameActivity":Z
     :goto_8
     if-eqz v9, :cond_0
 
-    .line 689
+    .line 659
     if-lez v6, :cond_6
 
-    .line 690
+    .line 660
     add-int/lit8 v6, v6, -0x1
 
-    .line 691
+    .line 661
     if-eqz p2, :cond_0
 
     if-eqz v11, :cond_0
 
     if-nez v7, :cond_0
 
-    .line 706
+    .line 676
     .end local v3    # "flags":I
     .end local v7    # "multiTasksAllowed":Z
     .end local v9    # "sameActivity":Z
@@ -3063,10 +2960,10 @@
     :cond_6
     if-nez p2, :cond_e
 
-    .line 709
+    .line 679
     return v4
 
-    .line 665
+    .line 635
     .restart local v13    # "trIntent":Landroid/content/Intent;
     :cond_7
     const/4 v10, 0x0
@@ -3074,7 +2971,7 @@
     .local v10, "sameAffinity":Z
     goto :goto_3
 
-    .line 666
+    .line 636
     .end local v10    # "sameAffinity":Z
     :cond_8
     const/4 v11, 0x0
@@ -3082,7 +2979,7 @@
     .local v11, "sameIntentFilter":Z
     goto :goto_4
 
-    .line 673
+    .line 643
     .end local v11    # "sameIntentFilter":Z
     .restart local v3    # "flags":I
     .restart local v7    # "multiTasksAllowed":Z
@@ -3092,7 +2989,7 @@
     .local v14, "trIsDocument":Z
     goto :goto_5
 
-    .line 674
+    .line 644
     .end local v14    # "trIsDocument":Z
     :cond_a
     const/4 v1, 0x0
@@ -3100,20 +2997,20 @@
     .local v1, "bothDocuments":Z
     goto :goto_6
 
-    .line 675
+    .line 645
     .end local v1    # "bothDocuments":Z
     :cond_b
     if-eqz v1, :cond_0
 
     goto :goto_7
 
-    .line 681
+    .line 651
     :cond_c
     const/4 v9, 0x0
 
     goto :goto_8
 
-    .line 700
+    .line 670
     :cond_d
     if-nez v2, :cond_0
 
@@ -3121,44 +3018,44 @@
 
     goto/16 :goto_2
 
-    .line 715
+    .line 685
     .end local v3    # "flags":I
     .end local v7    # "multiTasksAllowed":Z
     .end local v13    # "trIntent":Landroid/content/Intent;
     :cond_e
     invoke-virtual {v12}, Lcom/android/server/am/TaskRecord;->disposeThumbnail()V
 
-    .line 716
+    .line 686
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4}, Lcom/android/server/am/RecentTasks;->remove(I)Ljava/lang/Object;
 
-    .line 717
+    .line 687
     move-object/from16 v0, p1
 
     if-eq v0, v12, :cond_f
 
-    .line 718
+    .line 688
     invoke-virtual {v12}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
 
-    .line 720
+    .line 690
     :cond_f
     add-int/lit8 v4, v4, -0x1
 
-    .line 721
+    .line 691
     add-int/lit8 v8, v8, -0x1
 
-    .line 722
+    .line 692
     move-object/from16 v0, p1
 
     iget-object v15, v0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     if-nez v15, :cond_10
 
-    .line 725
+    .line 695
     move-object/from16 p1, v12
 
-    .line 727
+    .line 697
     :cond_10
     const/4 v15, 0x0
 
@@ -3168,7 +3065,7 @@
 
     goto/16 :goto_2
 
-    .line 730
+    .line 700
     .end local v12    # "tr":Lcom/android/server/am/TaskRecord;
     :cond_11
     const/4 v15, -0x1
@@ -3181,20 +3078,20 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 226
+    .line 225
     invoke-direct {p0, p1}, Lcom/android/server/am/RecentTasks;->unloadUserRecentsLocked(I)V
 
-    .line 227
+    .line 226
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mPersistedTaskIds:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 228
+    .line 227
     iget-object v0, p0, Lcom/android/server/am/RecentTasks;->mTaskPersister:Lcom/android/server/am/TaskPersister;
 
     invoke-virtual {v0, p1}, Lcom/android/server/am/TaskPersister;->unloadUserDataFromMemory(I)V
 
-    .line 225
+    .line 224
     return-void
 .end method
 
@@ -3202,7 +3099,7 @@
     .locals 6
 
     .prologue
-    .line 196
+    .line 195
     iget-object v5, p0, Lcom/android/server/am/RecentTasks;->mUsersWithRecentsLoaded:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v5}, Landroid/util/SparseBooleanArray;->size()I
@@ -3211,11 +3108,11 @@
 
     new-array v4, v5, [I
 
-    .line 197
+    .line 196
     .local v4, "usersWithRecentsLoaded":[I
     const/4 v1, 0x0
 
-    .line 198
+    .line 197
     .local v1, "len":I
     const/4 v0, 0x0
 
@@ -3225,14 +3122,14 @@
 
     if-ge v0, v5, :cond_1
 
-    .line 199
+    .line 198
     iget-object v5, p0, Lcom/android/server/am/RecentTasks;->mUsersWithRecentsLoaded:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v5, v0}, Landroid/util/SparseBooleanArray;->keyAt(I)I
 
     move-result v3
 
-    .line 200
+    .line 199
     .local v3, "userId":I
     iget-object v5, p0, Lcom/android/server/am/RecentTasks;->mUsersWithRecentsLoaded:Landroid/util/SparseBooleanArray;
 
@@ -3242,7 +3139,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 201
+    .line 200
     add-int/lit8 v2, v1, 0x1
 
     .end local v1    # "len":I
@@ -3251,7 +3148,7 @@
 
     move v1, v2
 
-    .line 198
+    .line 197
     .end local v2    # "len":I
     .restart local v1    # "len":I
     :cond_0
@@ -3259,21 +3156,21 @@
 
     goto :goto_0
 
-    .line 204
+    .line 203
     .end local v3    # "userId":I
     :cond_1
     array-length v5, v4
 
     if-ge v1, v5, :cond_2
 
-    .line 206
+    .line 205
     invoke-static {v4, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
     move-result-object v5
 
     return-object v5
 
-    .line 208
+    .line 207
     :cond_2
     return-object v4
 .end method

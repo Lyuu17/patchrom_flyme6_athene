@@ -42,7 +42,7 @@
 
 .field static final TRANSACTION_dispatchWindowShown:I = 0xd
 
-.field static final TRANSACTION_executeCommand_0:I = 0x1
+.field static final TRANSACTION_executeCommand:I = 0x1
 
 .field static final TRANSACTION_moved:I = 0x3
 

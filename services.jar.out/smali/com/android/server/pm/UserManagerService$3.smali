@@ -36,7 +36,7 @@
     .param p4, "val$prevRestrictionsFinal"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1383
+    .line 1382
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     iput p2, p0, Lcom/android/server/pm/UserManagerService$3;->val$userId:I
@@ -56,7 +56,7 @@
     .locals 6
 
     .prologue
-    .line 1387
+    .line 1386
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v2}, Lcom/android/server/pm/UserManagerService;->-get2(Lcom/android/server/pm/UserManagerService;)Landroid/content/Context;
@@ -69,10 +69,10 @@
 
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService$3;->val$prevRestrictionsFinal:Landroid/os/Bundle;
 
-    .line 1386
+    .line 1385
     invoke-static {v2, v3, v4, v5}, Lcom/android/server/pm/UserRestrictionsUtils;->applyUserRestrictions(Landroid/content/Context;ILandroid/os/Bundle;Landroid/os/Bundle;)V
 
-    .line 1390
+    .line 1389
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v2}, Lcom/android/server/pm/UserManagerService;->-get8(Lcom/android/server/pm/UserManagerService;)Ljava/util/ArrayList;
@@ -81,7 +81,7 @@
 
     monitor-enter v3
 
-    .line 1391
+    .line 1390
     :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -95,7 +95,7 @@
 
     new-array v1, v2, [Landroid/os/UserManagerInternal$UserRestrictionsListener;
 
-    .line 1392
+    .line 1391
     .local v1, "listeners":[Landroid/os/UserManagerInternal$UserRestrictionsListener;
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -109,7 +109,7 @@
 
     monitor-exit v3
 
-    .line 1394
+    .line 1393
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -118,25 +118,25 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 1395
+    .line 1394
     aget-object v2, v1, v0
 
     iget v3, p0, Lcom/android/server/pm/UserManagerService$3;->val$userId:I
 
-    .line 1396
+    .line 1395
     iget-object v4, p0, Lcom/android/server/pm/UserManagerService$3;->val$newRestrictionsFinal:Landroid/os/Bundle;
 
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService$3;->val$prevRestrictionsFinal:Landroid/os/Bundle;
 
-    .line 1395
+    .line 1394
     invoke-interface {v2, v3, v4, v5}, Landroid/os/UserManagerInternal$UserRestrictionsListener;->onUserRestrictionsChanged(ILandroid/os/Bundle;Landroid/os/Bundle;)V
 
-    .line 1394
+    .line 1393
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1390
+    .line 1389
     .end local v0    # "i":I
     .end local v1    # "listeners":[Landroid/os/UserManagerInternal$UserRestrictionsListener;
     :catchall_0
@@ -146,7 +146,7 @@
 
     throw v2
 
-    .line 1385
+    .line 1384
     .restart local v0    # "i":I
     .restart local v1    # "listeners":[Landroid/os/UserManagerInternal$UserRestrictionsListener;
     :cond_0

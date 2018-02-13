@@ -33,22 +33,22 @@
 
     const/4 v0, 0x0
 
-    .line 956
+    .line 950
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 957
+    .line 951
     iput v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaperIndex:I
 
-    .line 958
+    .line 952
     iput-object v1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 959
+    .line 953
     iput v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTargetIndex:I
 
-    .line 960
+    .line 954
     iput-object v1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 956
+    .line 950
     return-void
 .end method
 
@@ -71,19 +71,19 @@
 
     const/4 v0, 0x0
 
-    .line 973
+    .line 967
     iput v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaperIndex:I
 
-    .line 974
+    .line 968
     iput-object v1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 975
+    .line 969
     iput v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTargetIndex:I
 
-    .line 976
+    .line 970
     iput-object v1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 972
+    .line 966
     return-void
 .end method
 
@@ -93,13 +93,13 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 963
+    .line 957
     iput-object p1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 964
+    .line 958
     iput p2, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaperIndex:I
 
-    .line 962
+    .line 956
     return-void
 .end method
 
@@ -109,12 +109,12 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 968
+    .line 962
     iput-object p1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 969
+    .line 963
     iput p2, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTargetIndex:I
 
-    .line 967
+    .line 961
     return-void
 .end method

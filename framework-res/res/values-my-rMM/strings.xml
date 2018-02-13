@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">အကောင့်တစ်ခုအတွက် ထပ်တူညီအောင်လုပ်သော ဆက်တင်များကို ပြင်ရန် အက်ပ်ကို ခွင့်ပြုရန်။ ဥပမာ People အက်ပ်က အကောင့်တစ်ခုနှင့် ထပ်တူညီအောင် လုပ်ဆောင်ခြင်းအား ဖွင့်ရန် သုံးနိုင်သည်။</string>
     <string name="permlab_readSyncStats">ထပ်တူကူးခြင်း ကိန်းဂဏန်းအချက်အလက်များကို ဖတ်ခြင်း</string>
     <string name="permdesc_readSyncStats">အပလီကေးရှင်းအား အကောင့်တစ်ခု၏ ထပ်တူညီအောင် လုပ်ဆောင်မှု အခြေအနေ (ပြီးခဲ့သော အဖြစ်အပျက်၊ ဒေတာ ပမာဏ ပါဝင်မှု များအပါအဝင်)ကို ဖတ်ရှုခွင့် ပြုပါ။</string>
-    <string name="permlab_sdcardRead">SD ကဒ်မှ အချက်အလက်များအား ဖတ်ခြင်း</string>
-    <string name="permdesc_sdcardRead">အပလီကေးရှင်းအား အက်စ်ဒီ ကဒ်ပေါ်မှ ဒေတာများ ဖတ်ရှုခွင့်ပြုခြင်း</string>
-    <string name="permlab_sdcardWrite">SD ကဒ်ပေါ်မှ အချက်အလက်များအား ပြင်ဆင်ခြင်း သို့ ဖျက်ပစ်ခြင်း</string>
-    <string name="permdesc_sdcardWrite">အက်ပ်အား SD ကဒ်သို့ ရေးခွင့် ပြုသည်။</string>
+    <string name="permlab_sdcardRead">USB သိုလှောင်မှုမှ အချက်အလက်များအား ဖတ်ခြင်း</string>
+    <string name="permdesc_sdcardRead">အပလီကေးရှင်းအား USB သိုလှောင်မှုပေါ်မှ ဒေတာများ ဖတ်ရှုခွင့်ပြုခြင်း</string>
+    <string name="permlab_sdcardWrite">USBမှဒေတာအား ပြင် သို့ ဖျက်ရန်</string>
+    <string name="permdesc_sdcardWrite">အက်ပ်အား USB သိုလှောင်ခန်းသို့ ရေးခွင့် ပြုသည်။</string>
     <string name="permlab_use_sip">SIP ခေါ်ဆိုမှုများ ခေါ်ရန်/လက်ခံရန်</string>
     <string name="permdesc_use_sip">SIP ခေါ်ဆိုမှုများ ခေါ်ရန်နှင့် လက်ခံနိုင်ရန် အက်ပ်ကို ခွင့်ပြုပါ။</string>
     <string name="permlab_register_sim_subscription">တယ်လီကွမ် ဆင်းမ် ချိတ်ဆက်မှုများကို မှတ်ပုံတင်ပါ</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">ထပ်တူမတွေ့ရှိပါ</string>
     <string name="find_on_page">စာမျက်နှာတွင်ရှာဖွေရန်</string>
     <string name="action_mode_done">ပြီးပါပြီ</string>
-    <string name="progress_erasing">SD ကဒ် အား ဖျက်နေစဉ်…</string>
+    <string name="progress_erasing">USB သိုလှောင်မှု အချက်အလက်များ ဖျက်နေစဉ်…</string>
     <string name="share">မျှဝေခြင်း</string>
     <string name="find">ရှာဖွေရန်</string>
     <string name="websearch">ဝဘ်တွင် ရှာရန်</string>

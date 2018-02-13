@@ -38,19 +38,19 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiConnectivityManager;
 
     .prologue
-    .line 308
+    .line 302
     iput-object p1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 309
+    .line 303
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->mScanDetails:Ljava/util/List;
 
-    .line 308
+    .line 302
     return-void
 .end method
 
@@ -70,12 +70,12 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 306
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->mScanDetails:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 311
+    .line 305
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .param p2, "description"    # Ljava/lang/String;
 
     .prologue
-    .line 322
+    .line 316
     const-string/jumbo v0, "WifiConnectivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -102,10 +102,10 @@
 
     move-result-object v1
 
-    .line 324
+    .line 318
     const-string/jumbo v2, " description: "
 
-    .line 322
+    .line 316
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -120,7 +120,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
+    .line 315
     return-void
 .end method
 
@@ -129,15 +129,7 @@
     .param p1, "fullScanResult"    # Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 368
-    iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
-
-    invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-get7(Lcom/android/server/wifi/WifiConnectivityManager;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
+    .line 362
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-get6(Lcom/android/server/wifi/WifiConnectivityManager;)Z
@@ -146,7 +138,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 372
+    iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
+
+    invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-get5(Lcom/android/server/wifi/WifiConnectivityManager;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 366
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-get0(Lcom/android/server/wifi/WifiConnectivityManager;)Z
@@ -155,7 +155,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 373
+    .line 367
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -168,26 +168,26 @@
 
     move-result-object v1
 
-    .line 374
+    .line 368
     iget-object v2, p1, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    .line 373
+    .line 367
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 374
+    .line 368
     const-string/jumbo v2, " capabilities "
 
-    .line 373
+    .line 367
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 375
+    .line 369
     iget-object v2, p1, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 373
+    .line 367
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -198,7 +198,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 378
+    .line 372
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->mScanDetails:Ljava/util/List;
 
@@ -208,10 +208,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 367
+    .line 361
     return-void
 
-    .line 369
+    .line 363
     :cond_1
     return-void
 .end method
@@ -221,7 +221,7 @@
     .param p1, "periodInMs"    # I
 
     .prologue
-    .line 328
+    .line 322
     return-void
 .end method
 
@@ -232,15 +232,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 333
-    iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
-
-    invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get7(Lcom/android/server/wifi/WifiConnectivityManager;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
+    .line 327
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get6(Lcom/android/server/wifi/WifiConnectivityManager;)Z
@@ -249,16 +241,24 @@
 
     if-eqz v1, :cond_0
 
-    .line 340
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get5(Lcom/android/server/wifi/WifiConnectivityManager;)Z
 
     move-result v1
 
+    if-eqz v1, :cond_0
+
+    .line 334
+    iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
+
+    invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get4(Lcom/android/server/wifi/WifiConnectivityManager;)Z
+
+    move-result v1
+
     if-eqz v1, :cond_2
 
-    .line 341
+    .line 335
     aget-object v1, p1, v2
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiScanner$ScanData;->isAllChannelsScanned()Z
@@ -267,38 +267,38 @@
 
     if-nez v1, :cond_1
 
-    .line 342
+    .line 336
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     const-string/jumbo v2, "AllSingleScanListener waiting for full band scan results."
 
     invoke-static {v1, v2}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 343
+    .line 337
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->clearScanDetails()V
 
-    .line 344
+    .line 338
     return-void
 
-    .line 334
+    .line 328
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->clearScanDetails()V
 
-    .line 335
+    .line 329
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v1, v2}, Lcom/android/server/wifi/WifiConnectivityManager;->-set2(Lcom/android/server/wifi/WifiConnectivityManager;Z)Z
 
-    .line 336
+    .line 330
     return-void
 
-    .line 346
+    .line 340
     :cond_1
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v1, v2}, Lcom/android/server/wifi/WifiConnectivityManager;->-set2(Lcom/android/server/wifi/WifiConnectivityManager;Z)Z
 
-    .line 350
+    .line 344
     :cond_2
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
@@ -310,11 +310,11 @@
 
     move-result v0
 
-    .line 351
+    .line 345
     .local v0, "wasConnectAttempted":Z
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->clearScanDetails()V
 
-    .line 357
+    .line 351
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get1(Lcom/android/server/wifi/WifiConnectivityManager;)Z
@@ -323,28 +323,28 @@
 
     if-eqz v1, :cond_3
 
-    .line 358
+    .line 352
     if-eqz v0, :cond_4
 
-    .line 359
+    .line 353
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
-    invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get8(Lcom/android/server/wifi/WifiConnectivityManager;)Lcom/android/server/wifi/WifiMetrics;
+    invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get7(Lcom/android/server/wifi/WifiConnectivityManager;)Lcom/android/server/wifi/WifiMetrics;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/server/wifi/WifiMetrics;->incrementNumConnectivityWatchdogPnoBad()V
 
-    .line 332
+    .line 326
     :cond_3
     :goto_0
     return-void
 
-    .line 361
+    .line 355
     :cond_4
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
-    invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get8(Lcom/android/server/wifi/WifiConnectivityManager;)Lcom/android/server/wifi/WifiMetrics;
+    invoke-static {v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-get7(Lcom/android/server/wifi/WifiConnectivityManager;)Lcom/android/server/wifi/WifiMetrics;
 
     move-result-object v1
 
@@ -357,13 +357,13 @@
     .locals 2
 
     .prologue
-    .line 317
+    .line 311
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$AllSingleScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     const-string/jumbo v1, "registerScanListener onSuccess"
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 316
+    .line 310
     return-void
 .end method

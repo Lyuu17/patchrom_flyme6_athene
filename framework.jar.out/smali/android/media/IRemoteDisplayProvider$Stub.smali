@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_disconnect:I = 0x4
 
-.field static final TRANSACTION_setCallback_0:I = 0x1
+.field static final TRANSACTION_setCallback:I = 0x1
 
 .field static final TRANSACTION_setDiscoveryMode:I = 0x2
 
@@ -50,7 +50,7 @@
     .line 18
     const-string/jumbo v0, "android.media.IRemoteDisplayProvider"
 
-    invoke-virtual {p0, p0, v0}, Landroid/media/IRemoteDisplayProvider$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

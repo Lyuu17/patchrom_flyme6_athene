@@ -41,16 +41,16 @@
     .param p2, "uid"    # I
 
     .prologue
-    .line 131
+    .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 132
+    .line 130
     iput-object p1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mPackageName:Ljava/lang/String;
 
-    .line 133
+    .line 131
     iput p2, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mUid:I
 
-    .line 131
+    .line 129
     return-void
 .end method
 
@@ -63,29 +63,29 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 137
+    .line 135
     iget-object v5, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mApplicationName:Ljava/lang/String;
 
     if-nez v5, :cond_0
 
-    .line 138
+    .line 136
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
-    .line 141
+    .line 139
     .local v3, "pm":Landroid/content/pm/PackageManager;
     :try_start_0
     iget-object v5, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mPackageName:Ljava/lang/String;
 
-    .line 142
+    .line 140
     iget v6, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mUid:I
 
     invoke-static {v6}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v6
 
-    .line 141
+    .line 139
     const/4 v7, 0x0
 
     invoke-virtual {v3, v5, v7, v6}, Landroid/content/pm/PackageManager;->getApplicationInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
@@ -94,23 +94,23 @@
 
     move-result-object v0
 
-    .line 146
+    .line 144
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     if-eqz v0, :cond_0
 
-    .line 147
+    .line 145
     invoke-virtual {v3, v0}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 148
+    .line 146
     .local v2, "label":Ljava/lang/CharSequence;
     if-nez v2, :cond_1
 
     :goto_0
     iput-object v4, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mApplicationName:Ljava/lang/String;
 
-    .line 151
+    .line 149
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v2    # "label":Ljava/lang/CharSequence;
     .end local v3    # "pm":Landroid/content/pm/PackageManager;
@@ -119,16 +119,16 @@
 
     return-object v4
 
-    .line 143
+    .line 141
     .restart local v3    # "pm":Landroid/content/pm/PackageManager;
     :catch_0
     move-exception v1
 
-    .line 144
+    .line 142
     .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     return-object v4
 
-    .line 148
+    .line 146
     .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .restart local v2    # "label":Ljava/lang/CharSequence;
@@ -146,7 +146,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 127
+    .line 125
     iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSmsReceiverClass:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -155,7 +155,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 128
+    .line 126
     iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mRespondViaMessageClass:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -166,7 +166,7 @@
 
     const/4 v0, 0x1
 
-    .line 127
+    .line 125
     :cond_0
     return v0
 .end method
@@ -175,7 +175,7 @@
     .locals 2
 
     .prologue
-    .line 156
+    .line 154
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -192,114 +192,114 @@
 
     move-result-object v0
 
-    .line 157
+    .line 155
     const-string/jumbo v1, " mSmsReceiverClass: "
 
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 155
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSmsReceiverClass:Ljava/lang/String;
+
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     .line 156
+    const-string/jumbo v1, " mMmsReceiverClass: "
+
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 156
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mMmsReceiverClass:Ljava/lang/String;
+
+    .line 154
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     .line 157
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSmsReceiverClass:Ljava/lang/String;
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 158
-    const-string/jumbo v1, " mMmsReceiverClass: "
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 158
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mMmsReceiverClass:Ljava/lang/String;
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 159
     const-string/jumbo v1, " mRespondViaMessageClass: "
 
-    .line 156
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 157
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mRespondViaMessageClass:Ljava/lang/String;
+
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 158
+    const-string/jumbo v1, " mSendToClass: "
+
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 158
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSendToClass:Ljava/lang/String;
+
+    .line 154
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     .line 159
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mRespondViaMessageClass:Ljava/lang/String;
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 160
-    const-string/jumbo v1, " mSendToClass: "
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 160
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSendToClass:Ljava/lang/String;
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 161
     const-string/jumbo v1, " mSmsAppChangedClass: "
 
-    .line 156
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 159
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSmsAppChangedReceiverClass:Ljava/lang/String;
+
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 160
+    const-string/jumbo v1, " mProviderChangedReceiverClass: "
+
+    .line 154
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 160
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mProviderChangedReceiverClass:Ljava/lang/String;
+
+    .line 154
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     .line 161
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mSmsAppChangedReceiverClass:Ljava/lang/String;
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 162
-    const-string/jumbo v1, " mProviderChangedReceiverClass: "
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 162
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mProviderChangedReceiverClass:Ljava/lang/String;
-
-    .line 156
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 163
     const-string/jumbo v1, " mUid: "
 
-    .line 156
+    .line 154
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 163
+    .line 161
     iget v1, p0, Lcom/android/internal/telephony/SmsApplication$SmsApplicationData;->mUid:I
 
-    .line 156
+    .line 154
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0

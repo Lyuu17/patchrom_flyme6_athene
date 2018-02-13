@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/LockSettingsService;
 
     .prologue
-    .line 1330
+    .line 1280
     iput-object p1, p0, Lcom/android/server/LockSettingsService$5;->this$0:Lcom/android/server/LockSettingsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "pattern"    # Ljava/lang/String;
 
     .prologue
-    .line 1347
+    .line 1295
     invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternStringToBaseZero(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -62,38 +62,30 @@
     .end annotation
 
     .prologue
-    .line 1334
+    .line 1284
     iget-object v0, p0, Lcom/android/server/LockSettingsService$5;->this$0:Lcom/android/server/LockSettingsService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/LockSettingsService;->-wrap3(Lcom/android/server/LockSettingsService;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1333
+    .line 1283
     return-void
 .end method
 
 .method public toHash(Ljava/lang/String;I)[B
-    .locals 2
+    .locals 1
     .param p1, "pattern"    # Ljava/lang/String;
     .param p2, "userId"    # I
 
     .prologue
-    .line 1339
-    iget-object v1, p0, Lcom/android/server/LockSettingsService$5;->this$0:Lcom/android/server/LockSettingsService;
+    .line 1290
+    invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;)Ljava/util/List;
 
-    invoke-virtual {v1, p2}, Lcom/android/server/LockSettingsService;->getLockPatternSize(I)B
+    move-result-object v0
 
-    move-result v0
+    .line 1289
+    invoke-static {v0}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
-    .line 1341
-    .local v0, "lockPatternSize":B
-    invoke-static {p1, v0}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;B)Ljava/util/List;
+    move-result-object v0
 
-    move-result-object v1
-
-    .line 1340
-    invoke-static {v1, v0}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;B)[B
-
-    move-result-object v1
-
-    return-object v1
+    return-object v0
 .end method

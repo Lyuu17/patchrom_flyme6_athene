@@ -26,22 +26,22 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     .prologue
-    .line 356
+    .line 351
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
 
-    .line 358
+    .line 353
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, -0x1
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    .line 357
+    .line 352
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->mPreviousSubId:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 356
+    .line 351
     return-void
 .end method
 
@@ -51,42 +51,38 @@
     .locals 3
 
     .prologue
-    .line 366
+    .line 361
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
     const-string/jumbo v2, "SubscriptionListener.onSubscriptionInfoChanged"
 
-    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/dataconnection/DcTracker;->log(Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-wrap0(Lcom/android/internal/telephony/dataconnection/DcTracker;Ljava/lang/String;)V
 
-    .line 368
+    .line 363
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    iget-object v1, v1, Lcom/android/internal/telephony/dataconnection/DcTracker;->mPhone:Lcom/android/internal/telephony/Phone;
+    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get5(Lcom/android/internal/telephony/dataconnection/DcTracker;)Lcom/android/internal/telephony/Phone;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/Phone;->getSubId()I
 
     move-result v0
 
-    .line 369
+    .line 364
     .local v0, "subId":I
-    iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
-
-    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get7(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/telephony/SubscriptionManager;->isActiveSubId(I)Z
+    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 370
+    .line 365
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-wrap3(Lcom/android/internal/telephony/dataconnection/DcTracker;)V
+    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-wrap5(Lcom/android/internal/telephony/dataconnection/DcTracker;)V
 
-    .line 372
+    .line 367
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->mPreviousSubId:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -96,26 +92,20 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 373
-    iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
-
-    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-get7(Lcom/android/internal/telephony/dataconnection/DcTracker;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/telephony/SubscriptionManager;->isActiveSubId(I)Z
+    .line 368
+    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v1
 
-    .line 372
+    .line 367
     if-eqz v1, :cond_1
 
-    .line 374
+    .line 369
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTracker$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTracker;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->onRecordsLoadedOrSubIdChanged()V
+    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTracker;->-wrap4(Lcom/android/internal/telephony/dataconnection/DcTracker;)V
 
-    .line 365
+    .line 360
     :cond_1
     return-void
 .end method

@@ -26,15 +26,15 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.backup.IRestoreSession"
 
-.field static final TRANSACTION_endRestoreSession_4:I = 0x5
+.field static final TRANSACTION_endRestoreSession:I = 0x5
 
-.field static final TRANSACTION_getAvailableRestoreSets_0:I = 0x1
+.field static final TRANSACTION_getAvailableRestoreSets:I = 0x1
 
-.field static final TRANSACTION_restoreAll_1:I = 0x2
+.field static final TRANSACTION_restoreAll:I = 0x2
 
-.field static final TRANSACTION_restorePackage_3:I = 0x4
+.field static final TRANSACTION_restorePackage:I = 0x4
 
-.field static final TRANSACTION_restoreSome_2:I = 0x3
+.field static final TRANSACTION_restoreSome:I = 0x3
 
 
 # direct methods
@@ -48,7 +48,7 @@
     .line 21
     const-string/jumbo v0, "android.app.backup.IRestoreSession"
 
-    invoke-virtual {p0, p0, v0}, Landroid/app/backup/IRestoreSession$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 19
     return-void

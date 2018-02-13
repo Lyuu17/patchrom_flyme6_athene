@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/PhoneSwitcher;
 
     .prologue
-    .line 167
+    .line 162
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneSwitcher$1;->this$0:Lcom/android/internal/telephony/PhoneSwitcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 170
+    .line 165
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSwitcher$1;->this$0:Lcom/android/internal/telephony/PhoneSwitcher;
 
     const/16 v2, 0x65
@@ -49,10 +49,10 @@
 
     move-result-object v0
 
-    .line 171
+    .line 166
     .local v0, "msg":Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 169
+    .line 164
     return-void
 .end method

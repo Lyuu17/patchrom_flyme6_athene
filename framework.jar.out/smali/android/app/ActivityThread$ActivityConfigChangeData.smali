@@ -27,15 +27,15 @@
     .param p2, "config"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 658
+    .line 640
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 659
+    .line 641
     iput-object p1, p0, Landroid/app/ActivityThread$ActivityConfigChangeData;->activityToken:Landroid/os/IBinder;
 
-    .line 660
+    .line 642
     iput-object p2, p0, Landroid/app/ActivityThread$ActivityConfigChangeData;->overrideConfig:Landroid/content/res/Configuration;
 
-    .line 658
+    .line 640
     return-void
 .end method

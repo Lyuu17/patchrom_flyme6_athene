@@ -52,13 +52,13 @@
 
 .field static final TRANSACTION_setDisplayPadding:I = 0xc
 
-.field static final TRANSACTION_setLockWallpaperCallback_17:I = 0x12
+.field static final TRANSACTION_setLockWallpaperCallback:I = 0x12
 
-.field static final TRANSACTION_setWallpaperComponentChecked_1:I = 0x2
+.field static final TRANSACTION_setWallpaper:I = 0x1
 
-.field static final TRANSACTION_setWallpaperComponent_2:I = 0x3
+.field static final TRANSACTION_setWallpaperComponent:I = 0x3
 
-.field static final TRANSACTION_setWallpaper_0:I = 0x1
+.field static final TRANSACTION_setWallpaperComponentChecked:I = 0x2
 
 .field static final TRANSACTION_settingsRestored:I = 0xe
 

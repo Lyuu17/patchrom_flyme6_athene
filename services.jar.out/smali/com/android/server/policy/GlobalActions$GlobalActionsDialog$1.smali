@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/server/policy/GlobalActions$GlobalActionsDialog;
 
     .prologue
-    .line 1526
+    .line 1231
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$GlobalActionsDialog$1;->this$1:Lcom/android/server/policy/GlobalActions$GlobalActionsDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 1529
+    .line 1234
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions$GlobalActionsDialog$1;->this$1:Lcom/android/server/policy/GlobalActions$GlobalActionsDialog;
 
     invoke-virtual {v0}, Lcom/android/server/policy/GlobalActions$GlobalActionsDialog;->dismiss()V
 
-    .line 1528
+    .line 1233
     return-void
 .end method

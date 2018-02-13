@@ -18,8 +18,6 @@
 
 .field public static final AVRCP_CONTROLLER:I = 0xc
 
-.field public static final DUN:I = 0x15
-
 .field public static final EXTRA_PREVIOUS_STATE:Ljava/lang/String; = "android.bluetooth.profile.extra.PREVIOUS_STATE"
 
 .field public static final EXTRA_STATE:Ljava/lang/String; = "android.bluetooth.profile.extra.STATE"
@@ -38,7 +36,7 @@
 
 .field public static final MAP:I = 0x9
 
-.field public static final MAX_PROFILE_ID:I = 0x15
+.field public static final MAX_PROFILE_ID:I = 0x11
 
 .field public static final PAN:I = 0x5
 

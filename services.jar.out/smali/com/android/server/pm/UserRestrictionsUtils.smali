@@ -78,7 +78,7 @@
     const/4 v3, 0x0
 
     .line 67
-    const/16 v0, 0x29
+    const/16 v0, 0x28
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -352,13 +352,6 @@
 
     aput-object v1, v0, v2
 
-    .line 108
-    const-string/jumbo v1, "no_su"
-
-    const/16 v2, 0x28
-
-    aput-object v1, v0, v2
-
     .line 67
     invoke-static {v0}, Lcom/android/server/pm/UserRestrictionsUtils;->newSetWithUniqueCheck([Ljava/lang/String;)Ljava/util/Set;
 
@@ -366,170 +359,163 @@
 
     sput-object v0, Lcom/android/server/pm/UserRestrictionsUtils;->USER_RESTRICTIONS:Ljava/util/Set;
 
-    .line 114
+    .line 113
     new-array v0, v4, [Ljava/lang/String;
 
-    .line 115
+    .line 114
     const-string/jumbo v1, "no_record_audio"
 
     aput-object v1, v0, v3
 
-    .line 114
+    .line 113
     invoke-static {v0}, Lcom/google/android/collect/Sets;->newArraySet([Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/pm/UserRestrictionsUtils;->NON_PERSIST_USER_RESTRICTIONS:Ljava/util/Set;
 
-    .line 121
-    const/16 v0, 0xe
+    .line 120
+    const/16 v0, 0xd
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 122
+    .line 121
     const-string/jumbo v1, "no_usb_file_transfer"
 
     aput-object v1, v0, v3
 
-    .line 123
+    .line 122
     const-string/jumbo v1, "no_config_tethering"
 
     aput-object v1, v0, v4
 
-    .line 124
+    .line 123
     const-string/jumbo v1, "no_network_reset"
 
     aput-object v1, v0, v5
 
-    .line 125
+    .line 124
     const-string/jumbo v1, "no_factory_reset"
 
     aput-object v1, v0, v6
 
-    .line 126
+    .line 125
     const-string/jumbo v1, "no_add_user"
 
     aput-object v1, v0, v7
 
-    .line 127
+    .line 126
     const-string/jumbo v1, "no_config_cell_broadcasts"
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 128
+    .line 127
     const-string/jumbo v1, "no_config_mobile_networks"
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 129
+    .line 128
     const-string/jumbo v1, "no_physical_media"
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 130
+    .line 129
     const-string/jumbo v1, "no_sms"
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    .line 131
+    .line 130
     const-string/jumbo v1, "no_fun"
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    .line 132
+    .line 131
     const-string/jumbo v1, "no_safe_boot"
 
     const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
-    .line 133
+    .line 132
     const-string/jumbo v1, "no_create_windows"
 
     const/16 v2, 0xb
 
     aput-object v1, v0, v2
 
-    .line 134
+    .line 133
     const-string/jumbo v1, "no_data_roaming"
 
     const/16 v2, 0xc
 
     aput-object v1, v0, v2
 
-    .line 135
-    const-string/jumbo v1, "no_su"
-
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    .line 121
+    .line 120
     invoke-static {v0}, Lcom/google/android/collect/Sets;->newArraySet([Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/pm/UserRestrictionsUtils;->DEVICE_OWNER_ONLY_RESTRICTIONS:Ljava/util/Set;
 
-    .line 141
+    .line 139
     new-array v0, v6, [Ljava/lang/String;
 
-    .line 142
+    .line 140
     const-string/jumbo v1, "no_record_audio"
 
     aput-object v1, v0, v3
 
-    .line 143
+    .line 141
     const-string/jumbo v1, "no_wallpaper"
 
     aput-object v1, v0, v4
 
-    .line 144
+    .line 142
     const-string/jumbo v1, "no_oem_unlock"
 
     aput-object v1, v0, v5
 
-    .line 141
+    .line 139
     invoke-static {v0}, Lcom/google/android/collect/Sets;->newArraySet([Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/pm/UserRestrictionsUtils;->IMMUTABLE_BY_OWNERS:Ljava/util/Set;
 
-    .line 151
+    .line 149
     new-array v0, v7, [Ljava/lang/String;
 
-    .line 152
+    .line 150
     const-string/jumbo v1, "no_adjust_volume"
 
     aput-object v1, v0, v3
 
-    .line 153
+    .line 151
     const-string/jumbo v1, "no_run_in_background"
 
     aput-object v1, v0, v4
 
-    .line 154
+    .line 152
     const-string/jumbo v1, "no_unmute_microphone"
 
     aput-object v1, v0, v5
 
-    .line 155
+    .line 153
     const-string/jumbo v1, "disallow_unmute_device"
 
     aput-object v1, v0, v6
 
-    .line 151
+    .line 149
     invoke-static {v0}, Lcom/google/android/collect/Sets;->newArraySet([Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v0
@@ -558,18 +544,18 @@
     .param p3, "newValue"    # Z
 
     .prologue
-    .line 341
+    .line 339
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 342
+    .line 340
     .local v0, "cr":Landroid/content/ContentResolver;
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v4
 
-    .line 344
+    .line 342
     .local v4, "id":J
     :try_start_0
     const-string/jumbo v10, "no_config_wifi"
@@ -580,29 +566,29 @@
 
     if-eqz v10, :cond_1
 
-    .line 346
+    .line 344
     if-eqz p3, :cond_0
 
-    .line 348
+    .line 346
     const-string/jumbo v10, "wifi_networks_available_notification_on"
 
-    .line 349
+    .line 347
     const/4 v11, 0x0
 
-    .line 347
+    .line 345
     invoke-static {v0, v10, v11, p1}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 452
+    .line 450
     :cond_0
     :goto_0
     invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 326
+    .line 324
     return-void
 
-    .line 344
+    .line 342
     :cond_1
     :try_start_1
     const-string/jumbo v10, "no_data_roaming"
@@ -613,25 +599,25 @@
 
     if-eqz v10, :cond_2
 
-    .line 353
+    .line 351
     if-eqz p3, :cond_0
 
-    .line 357
+    .line 355
     new-instance v9, Landroid/telephony/SubscriptionManager;
 
     invoke-direct {v9, p0}, Landroid/telephony/SubscriptionManager;-><init>(Landroid/content/Context;)V
 
-    .line 359
+    .line 357
     .local v9, "subscriptionManager":Landroid/telephony/SubscriptionManager;
     invoke-virtual {v9}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
 
     move-result-object v8
 
-    .line 360
+    .line 358
     .local v8, "subscriptionInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
     if-eqz v8, :cond_a
 
-    .line 361
+    .line 359
     invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v7
@@ -650,7 +636,7 @@
 
     check-cast v6, Landroid/telephony/SubscriptionInfo;
 
-    .line 363
+    .line 361
     .local v6, "subInfo":Landroid/telephony/SubscriptionInfo;
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -662,12 +648,12 @@
 
     move-result-object v10
 
-    .line 364
+    .line 362
     invoke-virtual {v6}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
     move-result v11
 
-    .line 363
+    .line 361
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -676,17 +662,17 @@
 
     move-result-object v10
 
-    .line 364
+    .line 362
     const-string/jumbo v11, "0"
 
-    .line 362
+    .line 360
     invoke-static {v0, v10, v11, p1}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
-    .line 451
+    .line 449
     .end local v6    # "subInfo":Landroid/telephony/SubscriptionInfo;
     .end local v7    # "subInfo$iterator":Ljava/util/Iterator;
     .end local v8    # "subscriptionInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
@@ -694,13 +680,13 @@
     :catchall_0
     move-exception v10
 
-    .line 452
+    .line 450
     invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 451
+    .line 449
     throw v10
 
-    .line 344
+    .line 342
     :cond_2
     :try_start_2
     const-string/jumbo v10, "no_share_location"
@@ -711,21 +697,21 @@
 
     if-eqz v10, :cond_3
 
-    .line 374
+    .line 372
     if-eqz p3, :cond_0
 
-    .line 376
+    .line 374
     const-string/jumbo v10, "location_mode"
 
-    .line 377
+    .line 375
     const/4 v11, 0x0
 
-    .line 375
+    .line 373
     invoke-static {v0, v10, v11, p1}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     goto :goto_0
 
-    .line 344
+    .line 342
     :cond_3
     const-string/jumbo v10, "no_debugging_features"
 
@@ -735,23 +721,23 @@
 
     if-eqz v10, :cond_4
 
-    .line 382
+    .line 380
     if-eqz p3, :cond_0
 
-    .line 385
+    .line 383
     if-nez p1, :cond_0
 
-    .line 387
+    .line 385
     const-string/jumbo v10, "adb_enabled"
 
     const-string/jumbo v11, "0"
 
-    .line 386
+    .line 384
     invoke-static {v0, v10, v11, p1}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto :goto_0
 
-    .line 344
+    .line 342
     :cond_4
     const-string/jumbo v10, "ensure_verify_apps"
 
@@ -761,38 +747,38 @@
 
     if-eqz v10, :cond_5
 
-    .line 393
+    .line 391
     if-eqz p3, :cond_0
 
-    .line 395
+    .line 393
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v10
 
-    .line 396
+    .line 394
     const-string/jumbo v11, "package_verifier_enable"
 
     const-string/jumbo v12, "1"
 
-    .line 394
+    .line 392
     invoke-static {v10, v11, v12, p1}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 399
+    .line 397
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v10
 
-    .line 400
+    .line 398
     const-string/jumbo v11, "verifier_verify_adb_installs"
 
     const-string/jumbo v12, "1"
 
-    .line 398
+    .line 396
     invoke-static {v10, v11, v12, p1}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto/16 :goto_0
 
-    .line 344
+    .line 342
     :cond_5
     const-string/jumbo v10, "no_install_unknown_sources"
 
@@ -802,20 +788,20 @@
 
     if-eqz v10, :cond_6
 
-    .line 405
+    .line 403
     if-eqz p3, :cond_0
 
-    .line 407
+    .line 405
     const-string/jumbo v10, "install_non_market_apps"
 
     const/4 v11, 0x0
 
-    .line 406
+    .line 404
     invoke-static {v0, v10, v11, p1}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     goto/16 :goto_0
 
-    .line 344
+    .line 342
     :cond_6
     const-string/jumbo v10, "no_run_in_background"
 
@@ -825,23 +811,23 @@
 
     if-eqz v10, :cond_7
 
-    .line 412
+    .line 410
     if-eqz p3, :cond_0
 
-    .line 413
+    .line 411
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     move-result v1
 
-    .line 414
+    .line 412
     .local v1, "currentUser":I
     if-eq v1, p1, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 416
+    .line 414
     :try_start_3
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -858,11 +844,11 @@
 
     goto/16 :goto_0
 
-    .line 417
+    .line 415
     :catch_0
     move-exception v2
 
-    .line 418
+    .line 416
     .local v2, "e":Landroid/os/RemoteException;
     :try_start_4
     invoke-virtual {v2}, Landroid/os/RemoteException;->rethrowAsRuntimeException()Ljava/lang/RuntimeException;
@@ -871,7 +857,7 @@
 
     throw v10
 
-    .line 344
+    .line 342
     .end local v1    # "currentUser":I
     .end local v2    # "e":Landroid/os/RemoteException;
     :cond_7
@@ -883,26 +869,26 @@
 
     if-eqz v10, :cond_8
 
-    .line 430
+    .line 428
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v11
 
-    .line 431
+    .line 429
     const-string/jumbo v12, "safe_boot_disallowed"
 
-    .line 432
+    .line 430
     if-eqz p3, :cond_b
 
     const/4 v10, 0x1
 
-    .line 429
+    .line 427
     :goto_2
     invoke-static {v11, v12, v10}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto/16 :goto_0
 
-    .line 344
+    .line 342
     :cond_8
     const-string/jumbo v10, "no_factory_reset"
 
@@ -912,47 +898,47 @@
 
     if-eqz v10, :cond_9
 
-    .line 436
+    .line 434
     :goto_3
     if-eqz p3, :cond_0
 
-    .line 438
+    .line 436
     const-string/jumbo v10, "persistent_data_block"
 
-    .line 437
+    .line 435
     invoke-virtual {p0, v10}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/service/persistentdata/PersistentDataBlockManager;
 
-    .line 439
+    .line 437
     .local v3, "manager":Landroid/service/persistentdata/PersistentDataBlockManager;
     if-eqz v3, :cond_0
 
-    .line 440
+    .line 438
     invoke-virtual {v3}, Landroid/service/persistentdata/PersistentDataBlockManager;->getOemUnlockEnabled()Z
 
     move-result v10
 
-    .line 439
+    .line 437
     if-eqz v10, :cond_0
 
-    .line 441
+    .line 439
     invoke-virtual {v3}, Landroid/service/persistentdata/PersistentDataBlockManager;->getFlashLockState()I
 
     move-result v10
 
     if-eqz v10, :cond_0
 
-    .line 446
+    .line 444
     const/4 v10, 0x0
 
     invoke-virtual {v3, v10}, Landroid/service/persistentdata/PersistentDataBlockManager;->setOemUnlockEnabled(Z)V
 
     goto/16 :goto_0
 
-    .line 344
+    .line 342
     .end local v3    # "manager":Landroid/service/persistentdata/PersistentDataBlockManager;
     :cond_9
     const-string/jumbo v10, "no_oem_unlock"
@@ -965,7 +951,7 @@
 
     goto :goto_3
 
-    .line 370
+    .line 368
     .restart local v8    # "subscriptionInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
     .restart local v9    # "subscriptionManager":Landroid/telephony/SubscriptionManager;
     :cond_a
@@ -973,14 +959,14 @@
 
     const-string/jumbo v11, "0"
 
-    .line 369
+    .line 367
     invoke-static {v0, v10, v11, p1}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     goto/16 :goto_0
 
-    .line 432
+    .line 430
     .end local v8    # "subscriptionInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
     .end local v9    # "subscriptionManager":Landroid/telephony/SubscriptionManager;
     :cond_b
@@ -997,7 +983,7 @@
     .param p3, "prevRestrictions"    # Landroid/os/Bundle;
 
     .prologue
-    .line 308
+    .line 306
     sget-object v4, Lcom/android/server/pm/UserRestrictionsUtils;->USER_RESTRICTIONS:Ljava/util/Set;
 
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1019,28 +1005,28 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 309
+    .line 307
     .local v0, "key":Ljava/lang/String;
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v2
 
-    .line 310
+    .line 308
     .local v2, "newValue":Z
     invoke-virtual {p3, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v3
 
-    .line 312
+    .line 310
     .local v3, "prevValue":Z
     if-eq v2, v3, :cond_0
 
-    .line 313
+    .line 311
     invoke-static {p0, p1, v0, v2}, Lcom/android/server/pm/UserRestrictionsUtils;->applyUserRestriction(Landroid/content/Context;ILjava/lang/String;Z)V
 
     goto :goto_0
 
-    .line 307
+    .line 305
     .end local v0    # "key":Ljava/lang/String;
     .end local v2    # "newValue":Z
     .end local v3    # "prevValue":Z
@@ -1058,13 +1044,13 @@
 
     const/4 v4, 0x0
 
-    .line 278
+    .line 276
     if-ne p0, p1, :cond_0
 
-    .line 279
+    .line 277
     return v5
 
-    .line 281
+    .line 279
     :cond_0
     invoke-static {p0}, Lcom/android/server/pm/UserRestrictionsUtils;->isEmpty(Landroid/os/Bundle;)Z
 
@@ -1072,14 +1058,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 282
+    .line 280
     invoke-static {p1}, Lcom/android/server/pm/UserRestrictionsUtils;->isEmpty(Landroid/os/Bundle;)Z
 
     move-result v2
 
     return v2
 
-    .line 284
+    .line 282
     :cond_1
     invoke-static {p1}, Lcom/android/server/pm/UserRestrictionsUtils;->isEmpty(Landroid/os/Bundle;)Z
 
@@ -1087,10 +1073,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 285
+    .line 283
     return v4
 
-    .line 287
+    .line 285
     :cond_2
     invoke-virtual {p0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
@@ -1114,7 +1100,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 288
+    .line 286
     .local v0, "key":Ljava/lang/String;
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
@@ -1126,10 +1112,10 @@
 
     if-eq v2, v3, :cond_3
 
-    .line 289
+    .line 287
     return v4
 
-    .line 292
+    .line 290
     .end local v0    # "key":Ljava/lang/String;
     :cond_4
     invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
@@ -1153,7 +1139,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 293
+    .line 291
     .restart local v0    # "key":Ljava/lang/String;
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
@@ -1165,10 +1151,10 @@
 
     if-eq v2, v3, :cond_5
 
-    .line 294
+    .line 292
     return v4
 
-    .line 297
+    .line 295
     .end local v0    # "key":Ljava/lang/String;
     :cond_6
     return v5
@@ -1179,7 +1165,7 @@
     .param p0, "restriction"    # Ljava/lang/String;
 
     .prologue
-    .line 239
+    .line 237
     sget-object v0, Lcom/android/server/pm/UserRestrictionsUtils;->IMMUTABLE_BY_OWNERS:Ljava/util/Set;
 
     invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -1207,7 +1193,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 247
+    .line 245
     sget-object v1, Lcom/android/server/pm/UserRestrictionsUtils;->IMMUTABLE_BY_OWNERS:Ljava/util/Set;
 
     invoke-interface {v1, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -1216,25 +1202,25 @@
 
     if-nez v1, :cond_0
 
-    .line 248
+    .line 246
     if-eqz p1, :cond_1
 
-    .line 249
+    .line 247
     sget-object v1, Lcom/android/server/pm/UserRestrictionsUtils;->DEVICE_OWNER_ONLY_RESTRICTIONS:Ljava/util/Set;
 
     invoke-interface {v1, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 248
+    .line 246
     if-eqz v1, :cond_1
 
-    .line 247
+    .line 245
     :cond_0
     :goto_0
     return v0
 
-    .line 248
+    .line 246
     :cond_1
     const/4 v0, 0x1
 
@@ -1246,7 +1232,7 @@
     .param p0, "in"    # Landroid/os/Bundle;
 
     .prologue
-    .line 219
+    .line 217
     if-eqz p0, :cond_0
 
     new-instance v0, Landroid/os/Bundle;
@@ -1271,14 +1257,14 @@
     .param p2, "restrictions"    # Landroid/os/Bundle;
 
     .prologue
-    .line 457
+    .line 455
     const/4 v2, 0x1
 
-    .line 458
+    .line 456
     .local v2, "noneSet":Z
     if-eqz p2, :cond_3
 
-    .line 459
+    .line 457
     invoke-virtual {p2}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v3
@@ -1302,7 +1288,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 460
+    .line 458
     .local v0, "key":Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -1312,7 +1298,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 461
+    .line 459
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1331,17 +1317,17 @@
 
     invoke-virtual {p0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 462
+    .line 460
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 465
+    .line 463
     .end local v0    # "key":Ljava/lang/String;
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 466
+    .line 464
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1362,13 +1348,13 @@
 
     invoke-virtual {p0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 456
+    .line 454
     .end local v1    # "key$iterator":Ljava/util/Iterator;
     :cond_2
     :goto_1
     return-void
 
-    .line 469
+    .line 467
     :cond_3
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1402,7 +1388,7 @@
 
     const/4 v1, 0x0
 
-    .line 208
+    .line 206
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/os/Bundle;->size()I
@@ -1426,7 +1412,7 @@
     .param p0, "restriction"    # Ljava/lang/String;
 
     .prologue
-    .line 162
+    .line 160
     sget-object v0, Lcom/android/server/pm/UserRestrictionsUtils;->USER_RESTRICTIONS:Ljava/util/Set;
 
     invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -1435,7 +1421,7 @@
 
     if-nez v0, :cond_0
 
-    .line 163
+    .line 161
     const-string/jumbo v0, "UserRestrictionsUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1458,12 +1444,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
+    .line 162
     const/4 v0, 0x0
 
     return v0
 
-    .line 166
+    .line 164
     :cond_0
     const/4 v0, 0x1
 
@@ -1480,10 +1466,10 @@
 
     const/4 v4, 0x0
 
-    .line 223
+    .line 221
     invoke-static {p0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 224
+    .line 222
     if-eq p0, p1, :cond_0
 
     move v2, v3
@@ -1491,19 +1477,19 @@
     :goto_0
     invoke-static {v2}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
-    .line 225
+    .line 223
     if-nez p1, :cond_1
 
-    .line 226
+    .line 224
     return-void
 
     :cond_0
     move v2, v4
 
-    .line 224
+    .line 222
     goto :goto_0
 
-    .line 228
+    .line 226
     :cond_1
     invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
@@ -1528,7 +1514,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 229
+    .line 227
     .local v0, "key":Ljava/lang/String;
     invoke-virtual {p1, v0, v4}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -1536,12 +1522,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 230
+    .line 228
     invoke-virtual {p0, v0, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     goto :goto_1
 
-    .line 222
+    .line 220
     .end local v0    # "key":Ljava/lang/String;
     :cond_3
     return-void
@@ -1598,7 +1584,7 @@
     .param p0, "in"    # Landroid/os/Bundle;
 
     .prologue
-    .line 204
+    .line 202
     if-eqz p0, :cond_0
 
     .end local p0    # "in":Landroid/os/Bundle;
@@ -1623,7 +1609,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 192
+    .line 190
     sget-object v3, Lcom/android/server/pm/UserRestrictionsUtils;->USER_RESTRICTIONS:Ljava/util/Set;
 
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1645,17 +1631,17 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 193
+    .line 191
     .local v0, "key":Ljava/lang/String;
     invoke-interface {p0, v4, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 194
+    .line 192
     .local v2, "value":Ljava/lang/String;
     if-eqz v2, :cond_0
 
-    .line 195
+    .line 193
     invoke-static {v2}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v3
@@ -1664,7 +1650,7 @@
 
     goto :goto_0
 
-    .line 191
+    .line 189
     .end local v0    # "key":Ljava/lang/String;
     .end local v2    # "value":Ljava/lang/String;
     :cond_1
@@ -1680,7 +1666,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 258
+    .line 256
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/os/Bundle;->size()I
@@ -1689,11 +1675,11 @@
 
     if-nez v2, :cond_1
 
-    .line 259
+    .line 257
     :cond_0
     return-void
 
-    .line 261
+    .line 259
     :cond_1
     invoke-virtual {p0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
@@ -1718,7 +1704,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 262
+    .line 260
     .local v0, "key":Ljava/lang/String;
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
@@ -1726,7 +1712,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 265
+    .line 263
     sget-object v2, Lcom/android/server/pm/UserRestrictionsUtils;->DEVICE_OWNER_ONLY_RESTRICTIONS:Ljava/util/Set;
 
     invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -1743,19 +1729,19 @@
 
     if-eqz v2, :cond_4
 
-    .line 266
+    .line 264
     :cond_3
     invoke-virtual {p1, v0, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     goto :goto_0
 
-    .line 268
+    .line 266
     :cond_4
     invoke-virtual {p2, v0, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     goto :goto_0
 
-    .line 257
+    .line 255
     .end local v0    # "key":Ljava/lang/String;
     :cond_5
     return-void
@@ -1775,17 +1761,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 171
+    .line 169
     if-nez p1, :cond_0
 
-    .line 172
+    .line 170
     return-void
 
-    .line 175
+    .line 173
     :cond_0
     invoke-interface {p0, v5, p2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 176
+    .line 174
     invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v2
@@ -1809,7 +1795,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 177
+    .line 175
     .local v0, "key":Ljava/lang/String;
     sget-object v2, Lcom/android/server/pm/UserRestrictionsUtils;->NON_PERSIST_USER_RESTRICTIONS:Ljava/util/Set;
 
@@ -1819,7 +1805,7 @@
 
     if-nez v2, :cond_1
 
-    .line 180
+    .line 178
     sget-object v2, Lcom/android/server/pm/UserRestrictionsUtils;->USER_RESTRICTIONS:Ljava/util/Set;
 
     invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -1828,21 +1814,21 @@
 
     if-eqz v2, :cond_2
 
-    .line 181
+    .line 179
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 182
+    .line 180
     const-string/jumbo v2, "true"
 
     invoke-interface {p0, v5, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     goto :goto_0
 
-    .line 186
+    .line 184
     :cond_2
     const-string/jumbo v2, "UserRestrictionsUtils"
 
@@ -1868,11 +1854,11 @@
 
     goto :goto_0
 
-    .line 188
+    .line 186
     .end local v0    # "key":Ljava/lang/String;
     :cond_3
     invoke-interface {p0, v5, p2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 170
+    .line 168
     return-void
 .end method

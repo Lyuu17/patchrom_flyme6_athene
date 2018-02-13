@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/input/InputManagerService;
 
     .prologue
-    .line 2433
+    .line 2266
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/hardware/input/InputManagerInternal;-><init>()V
@@ -51,7 +51,7 @@
     .param p3, "mode"    # I
 
     .prologue
-    .line 2442
+    .line 2275
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/input/InputManagerService;->-wrap0(Lcom/android/server/input/InputManagerService;Landroid/view/InputEvent;II)Z
@@ -68,19 +68,19 @@
     .param p3, "subtype"    # Landroid/view/inputmethod/InputMethodSubtype;
 
     .prologue
-    .line 2453
+    .line 2286
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 2454
+    .line 2287
     .local v0, "someArgs":Lcom/android/internal/os/SomeArgs;
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 2455
+    .line 2288
     iput-object p3, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 2456
+    .line 2289
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v1}, Lcom/android/server/input/InputManagerService;->-get1(Lcom/android/server/input/InputManagerService;)Lcom/android/server/input/InputManagerService$InputManagerHandler;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2452
+    .line 2285
     return-void
 .end method
 
@@ -107,12 +107,12 @@
     .param p2, "externalTouchViewport"    # Landroid/hardware/display/DisplayViewport;
 
     .prologue
-    .line 2437
+    .line 2270
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/input/InputManagerService;->-wrap13(Lcom/android/server/input/InputManagerService;Landroid/hardware/display/DisplayViewport;Landroid/hardware/display/DisplayViewport;)V
 
-    .line 2436
+    .line 2269
     return-void
 .end method
 
@@ -121,7 +121,7 @@
     .param p1, "interactive"    # Z
 
     .prologue
-    .line 2447
+    .line 2280
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v0}, Lcom/android/server/input/InputManagerService;->-get2(Lcom/android/server/input/InputManagerService;)J
@@ -130,7 +130,7 @@
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->-wrap7(JZ)V
 
-    .line 2446
+    .line 2279
     return-void
 .end method
 
@@ -139,7 +139,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 2467
+    .line 2300
     iget-object v3, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v3}, Lcom/android/server/input/InputManagerService;->-get0(Lcom/android/server/input/InputManagerService;)Ljava/io/File;
@@ -148,10 +148,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 2468
+    .line 2301
     const/4 v1, 0x0
 
-    .line 2470
+    .line 2303
     .local v1, "writer":Ljava/io/FileWriter;
     :try_start_0
     new-instance v2, Ljava/io/FileWriter;
@@ -167,7 +167,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2471
+    .line 2304
     .end local v1    # "writer":Ljava/io/FileWriter;
     .local v2, "writer":Ljava/io/FileWriter;
     if-eqz p1, :cond_1
@@ -181,16 +181,16 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 2475
+    .line 2308
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 2466
+    .line 2299
     .end local v2    # "writer":Ljava/io/FileWriter;
     :cond_0
     :goto_1
     return-void
 
-    .line 2471
+    .line 2304
     .restart local v2    # "writer":Ljava/io/FileWriter;
     :cond_1
     :try_start_2
@@ -201,13 +201,13 @@
 
     goto :goto_0
 
-    .line 2472
+    .line 2305
     .end local v2    # "writer":Ljava/io/FileWriter;
     .restart local v1    # "writer":Ljava/io/FileWriter;
     :catch_0
     move-exception v0
 
-    .line 2473
+    .line 2306
     .end local v1    # "writer":Ljava/io/FileWriter;
     .local v0, "e":Ljava/io/IOException;
     :goto_2
@@ -220,21 +220,21 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 2475
+    .line 2308
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_1
 
-    .line 2474
+    .line 2307
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v3
 
-    .line 2475
+    .line 2308
     :goto_3
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 2474
+    .line 2307
     throw v3
 
     .restart local v2    # "writer":Ljava/io/FileWriter;
@@ -247,7 +247,7 @@
     .local v1, "writer":Ljava/io/FileWriter;
     goto :goto_3
 
-    .line 2472
+    .line 2305
     .end local v1    # "writer":Ljava/io/FileWriter;
     .restart local v2    # "writer":Ljava/io/FileWriter;
     :catch_1
@@ -266,7 +266,7 @@
     .param p1, "deviceId"    # I
 
     .prologue
-    .line 2462
+    .line 2295
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v0}, Lcom/android/server/input/InputManagerService;->-get2(Lcom/android/server/input/InputManagerService;)J
@@ -275,6 +275,6 @@
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->-wrap8(JI)V
 
-    .line 2461
+    .line 2294
     return-void
 .end method

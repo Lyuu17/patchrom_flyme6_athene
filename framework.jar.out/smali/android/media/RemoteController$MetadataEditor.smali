@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/media/RemoteController;
 
     .prologue
-    .line 484
+    .line 398
     iput-object p1, p0, Landroid/media/RemoteController$MetadataEditor;->this$0:Landroid/media/RemoteController;
 
     invoke-direct {p0}, Landroid/media/MediaMetadataEditor;-><init>()V
@@ -43,52 +43,52 @@
 
     const/4 v1, 0x1
 
-    .line 489
+    .line 403
     iput-object p1, p0, Landroid/media/RemoteController$MetadataEditor;->this$0:Landroid/media/RemoteController;
 
     invoke-direct {p0}, Landroid/media/MediaMetadataEditor;-><init>()V
 
-    .line 490
-    iput-object p2, p0, Landroid/media/RemoteController$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    .line 404
+    iput-object p2, p0, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
-    .line 491
-    iput-wide p3, p0, Landroid/media/RemoteController$MetadataEditor;->mEditableKeys:J
+    .line 405
+    iput-wide p3, p0, Landroid/media/MediaMetadataEditor;->mEditableKeys:J
 
-    .line 494
+    .line 408
     invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 493
+    .line 407
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Landroid/media/RemoteController$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
+    iput-object v0, p0, Landroid/media/MediaMetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
-    .line 495
-    iget-object v0, p0, Landroid/media/RemoteController$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
+    .line 409
+    iget-object v0, p0, Landroid/media/MediaMetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 496
+    .line 410
     invoke-direct {p0, v2}, Landroid/media/RemoteController$MetadataEditor;->cleanupBitmapFromBundle(I)V
 
-    .line 499
+    .line 413
     :cond_0
-    iput-boolean v1, p0, Landroid/media/RemoteController$MetadataEditor;->mMetadataChanged:Z
+    iput-boolean v1, p0, Landroid/media/MediaMetadataEditor;->mMetadataChanged:Z
 
-    .line 500
-    iput-boolean v1, p0, Landroid/media/RemoteController$MetadataEditor;->mArtworkChanged:Z
+    .line 414
+    iput-boolean v1, p0, Landroid/media/MediaMetadataEditor;->mArtworkChanged:Z
 
-    .line 501
+    .line 415
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/media/RemoteController$MetadataEditor;->mApplied:Z
+    iput-boolean v0, p0, Landroid/media/MediaMetadataEditor;->mApplied:Z
 
-    .line 489
+    .line 403
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .param p1, "key"    # I
 
     .prologue
-    .line 505
+    .line 419
     sget-object v0, Landroid/media/RemoteController$MetadataEditor;->METADATA_KEYS_TYPE:Landroid/util/SparseIntArray;
 
     const/4 v1, -0x1
@@ -110,8 +110,8 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 506
-    iget-object v0, p0, Landroid/media/RemoteController$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    .line 420
+    iget-object v0, p0, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -119,7 +119,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
-    .line 504
+    .line 418
     :cond_0
     return-void
 .end method
@@ -132,9 +132,9 @@
     .prologue
     monitor-enter p0
 
-    .line 519
+    .line 433
     :try_start_0
-    iget-boolean v1, p0, Landroid/media/RemoteController$MetadataEditor;->mMetadataChanged:Z
+    iget-boolean v1, p0, Landroid/media/MediaMetadataEditor;->mMetadataChanged:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
@@ -142,10 +142,10 @@
 
     monitor-exit p0
 
-    .line 520
+    .line 434
     return-void
 
-    .line 522
+    .line 436
     :cond_0
     :try_start_1
     invoke-static {}, Landroid/media/RemoteController;->-get1()Ljava/lang/Object;
@@ -156,7 +156,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 523
+    .line 437
     :try_start_2
     iget-object v1, p0, Landroid/media/RemoteController$MetadataEditor;->this$0:Landroid/media/RemoteController;
 
@@ -166,40 +166,40 @@
 
     if-eqz v1, :cond_1
 
-    .line 524
-    iget-object v1, p0, Landroid/media/RemoteController$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
+    .line 438
+    iget-object v1, p0, Landroid/media/MediaMetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
-    .line 525
+    .line 439
     const v3, 0x10000001
 
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 524
-    invoke-virtual {v1, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    .line 438
+    invoke-virtual {v1, v3}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 527
+    .line 441
     const v1, 0x10000001
 
     const/4 v3, 0x0
 
-    .line 526
-    invoke-virtual {p0, v1, v3}, Landroid/media/RemoteController$MetadataEditor;->getObject(ILjava/lang/Object;)Ljava/lang/Object;
+    .line 440
+    invoke-virtual {p0, v1, v3}, Landroid/media/MediaMetadataEditor;->getObject(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/Rating;
 
-    .line 528
+    .line 442
     .local v0, "rating":Landroid/media/Rating;
     if-eqz v0, :cond_1
 
-    .line 529
+    .line 443
     iget-object v1, p0, Landroid/media/RemoteController$MetadataEditor;->this$0:Landroid/media/RemoteController;
 
     invoke-static {v1}, Landroid/media/RemoteController;->-get0(Landroid/media/RemoteController;)Landroid/media/session/MediaController;
@@ -219,19 +219,19 @@
     :try_start_3
     monitor-exit v2
 
-    .line 537
+    .line 451
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Landroid/media/RemoteController$MetadataEditor;->mApplied:Z
+    iput-boolean v1, p0, Landroid/media/MediaMetadataEditor;->mApplied:Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     monitor-exit p0
 
-    .line 515
+    .line 429
     return-void
 
-    .line 522
+    .line 436
     :catchall_0
     move-exception v1
 

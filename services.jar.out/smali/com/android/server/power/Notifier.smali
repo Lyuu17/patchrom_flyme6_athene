@@ -184,21 +184,21 @@
     .line 109
     iput-boolean v2, p0, Lcom/android/server/power/Notifier;->mInteractive:Z
 
-    .line 634
+    .line 639
     new-instance v1, Lcom/android/server/power/Notifier$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/power/Notifier$1;-><init>(Lcom/android/server/power/Notifier;)V
 
     iput-object v1, p0, Lcom/android/server/power/Notifier;->mScreeBrightnessBoostChangedDone:Landroid/content/BroadcastReceiver;
 
-    .line 655
+    .line 660
     new-instance v1, Lcom/android/server/power/Notifier$2;
 
     invoke-direct {v1, p0}, Lcom/android/server/power/Notifier$2;-><init>(Lcom/android/server/power/Notifier;)V
 
     iput-object v1, p0, Lcom/android/server/power/Notifier;->mWakeUpBroadcastDone:Landroid/content/BroadcastReceiver;
 
-    .line 678
+    .line 683
     new-instance v1, Lcom/android/server/power/Notifier$3;
 
     invoke-direct {v1, p0}, Lcom/android/server/power/Notifier$3;-><init>(Lcom/android/server/power/Notifier;)V
@@ -355,17 +355,17 @@
     .locals 1
 
     .prologue
-    .line 566
+    .line 571
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/power/Notifier;->mBroadcastInProgress:Z
 
-    .line 567
+    .line 572
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mSuspendBlocker:Lcom/android/server/power/SuspendBlocker;
 
     invoke-interface {v0}, Lcom/android/server/power/SuspendBlocker;->release()V
 
-    .line 565
+    .line 570
     return-void
 .end method
 
@@ -615,17 +615,17 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 688
+    .line 693
     iget-object v4, p0, Lcom/android/server/power/Notifier;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
 
-    .line 689
+    .line 694
     const-string/jumbo v5, "charging_sounds_enabled"
 
-    .line 688
+    .line 693
     invoke-static {v4, v5, v6}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v4
@@ -634,7 +634,7 @@
 
     const/4 v0, 0x1
 
-    .line 690
+    .line 695
     .local v0, "enabled":Z
     :goto_0
     iget-object v4, p0, Lcom/android/server/power/Notifier;->mContext:Landroid/content/Context;
@@ -643,21 +643,21 @@
 
     move-result-object v4
 
-    .line 691
+    .line 696
     const-string/jumbo v5, "wireless_charging_started_sound"
 
-    .line 690
+    .line 695
     invoke-static {v4, v5}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 692
+    .line 697
     .local v2, "soundPath":Ljava/lang/String;
     if-eqz v0, :cond_0
 
     if-eqz v2, :cond_0
 
-    .line 693
+    .line 698
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -680,28 +680,28 @@
 
     move-result-object v3
 
-    .line 694
+    .line 699
     .local v3, "soundUri":Landroid/net/Uri;
     if-eqz v3, :cond_0
 
-    .line 695
+    .line 700
     iget-object v4, p0, Lcom/android/server/power/Notifier;->mContext:Landroid/content/Context;
 
     invoke-static {v4, v3}, Landroid/media/RingtoneManager;->getRingtone(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/Ringtone;
 
     move-result-object v1
 
-    .line 696
+    .line 701
     .local v1, "sfx":Landroid/media/Ringtone;
     if-eqz v1, :cond_0
 
-    .line 697
+    .line 702
     invoke-virtual {v1, v6}, Landroid/media/Ringtone;->setStreamType(I)V
 
-    .line 698
+    .line 703
     invoke-virtual {v1}, Landroid/media/Ringtone;->play()V
 
-    .line 703
+    .line 708
     .end local v1    # "sfx":Landroid/media/Ringtone;
     .end local v3    # "soundUri":Landroid/net/Uri;
     :cond_0
@@ -709,10 +709,10 @@
 
     invoke-interface {v4}, Lcom/android/server/power/SuspendBlocker;->release()V
 
-    .line 687
+    .line 692
     return-void
 
-    .line 688
+    .line 693
     .end local v0    # "enabled":Z
     .end local v2    # "soundPath":Ljava/lang/String;
     :cond_1
@@ -728,14 +728,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 630
+    .line 635
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/power/Notifier;->mScreenBrightnessBoostIntent:Landroid/content/Intent;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 631
+    .line 636
     iget-object v4, p0, Lcom/android/server/power/Notifier;->mScreeBrightnessBoostChangedDone:Landroid/content/BroadcastReceiver;
 
     iget-object v5, p0, Lcom/android/server/power/Notifier;->mHandler:Lcom/android/server/power/Notifier$NotifierHandler;
@@ -746,10 +746,10 @@
 
     move-object v8, v3
 
-    .line 630
+    .line 635
     invoke-virtual/range {v0 .. v8}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 625
+    .line 630
     return-void
 .end method
 
@@ -763,21 +763,21 @@
 
     const/4 v3, 0x0
 
-    .line 669
+    .line 674
     invoke-static {}, Landroid/app/ActivityManagerNative;->isSystemReady()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 670
+    .line 675
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/power/Notifier;->mScreenOffIntent:Landroid/content/Intent;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 671
+    .line 676
     iget-object v4, p0, Lcom/android/server/power/Notifier;->mGoToSleepBroadcastDone:Landroid/content/BroadcastReceiver;
 
     iget-object v5, p0, Lcom/android/server/power/Notifier;->mHandler:Lcom/android/server/power/Notifier$NotifierHandler;
@@ -786,14 +786,14 @@
 
     move-object v8, v3
 
-    .line 670
+    .line 675
     invoke-virtual/range {v0 .. v8}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 664
+    .line 669
     :goto_0
     return-void
 
-    .line 673
+    .line 678
     :cond_0
     const/4 v0, 0x2
 
@@ -817,7 +817,7 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 674
+    .line 679
     invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendNextBroadcast()V
 
     goto :goto_0
@@ -831,28 +831,28 @@
 
     const/4 v3, 0x1
 
-    .line 585
+    .line 590
     iget-object v2, p0, Lcom/android/server/power/Notifier;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 586
+    .line 591
     :try_start_0
     iget v1, p0, Lcom/android/server/power/Notifier;->mBroadcastedInteractiveState:I
 
     if-nez v1, :cond_0
 
-    .line 588
+    .line 593
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/power/Notifier;->mPendingWakeUpBroadcast:Z
 
-    .line 589
+    .line 594
     const/4 v1, 0x1
 
     iput v1, p0, Lcom/android/server/power/Notifier;->mBroadcastedInteractiveState:I
 
-    .line 612
+    .line 617
     :goto_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -860,7 +860,7 @@
 
     iput-wide v4, p0, Lcom/android/server/power/Notifier;->mBroadcastStartTime:J
 
-    .line 613
+    .line 618
     iget v0, p0, Lcom/android/server/power/Notifier;->mBroadcastedInteractiveState:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -868,22 +868,22 @@
     .local v0, "powerState":I
     monitor-exit v2
 
-    .line 616
+    .line 621
     const/16 v1, 0xaa5
 
     invoke-static {v1, v3}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 618
+    .line 623
     if-ne v0, v3, :cond_6
 
-    .line 619
+    .line 624
     invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendWakeUpBroadcast()V
 
-    .line 583
+    .line 588
     :goto_1
     return-void
 
-    .line 590
+    .line 595
     .end local v0    # "powerState":I
     :cond_0
     :try_start_1
@@ -891,7 +891,7 @@
 
     if-ne v1, v3, :cond_3
 
-    .line 592
+    .line 597
     iget-boolean v1, p0, Lcom/android/server/power/Notifier;->mPendingWakeUpBroadcast:Z
 
     if-nez v1, :cond_1
@@ -900,18 +900,18 @@
 
     if-nez v1, :cond_1
 
-    .line 593
+    .line 598
     iget v1, p0, Lcom/android/server/power/Notifier;->mPendingInteractiveState:I
 
     if-ne v1, v4, :cond_2
 
-    .line 594
+    .line 599
     :cond_1
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/power/Notifier;->mPendingGoToSleepBroadcast:Z
 
-    .line 595
+    .line 600
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/android/server/power/Notifier;->mBroadcastedInteractiveState:I
@@ -920,7 +920,7 @@
 
     goto :goto_0
 
-    .line 585
+    .line 590
     :catchall_0
     move-exception v1
 
@@ -928,7 +928,7 @@
 
     throw v1
 
-    .line 597
+    .line 602
     :cond_2
     :try_start_2
     invoke-direct {p0}, Lcom/android/server/power/Notifier;->finishPendingBroadcastLocked()V
@@ -937,10 +937,10 @@
 
     monitor-exit v2
 
-    .line 598
+    .line 603
     return-void
 
-    .line 602
+    .line 607
     :cond_3
     :try_start_3
     iget-boolean v1, p0, Lcom/android/server/power/Notifier;->mPendingWakeUpBroadcast:Z
@@ -951,25 +951,25 @@
 
     if-nez v1, :cond_4
 
-    .line 603
+    .line 608
     iget v1, p0, Lcom/android/server/power/Notifier;->mPendingInteractiveState:I
 
     if-ne v1, v3, :cond_5
 
-    .line 604
+    .line 609
     :cond_4
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/power/Notifier;->mPendingWakeUpBroadcast:Z
 
-    .line 605
+    .line 610
     const/4 v1, 0x1
 
     iput v1, p0, Lcom/android/server/power/Notifier;->mBroadcastedInteractiveState:I
 
     goto :goto_0
 
-    .line 607
+    .line 612
     :cond_5
     invoke-direct {p0}, Lcom/android/server/power/Notifier;->finishPendingBroadcastLocked()V
     :try_end_3
@@ -977,10 +977,10 @@
 
     monitor-exit v2
 
-    .line 608
+    .line 613
     return-void
 
-    .line 621
+    .line 626
     .restart local v0    # "powerState":I
     :cond_6
     invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendGoToSleepBroadcast()V
@@ -992,12 +992,12 @@
     .locals 2
 
     .prologue
-    .line 571
+    .line 576
     iget-object v1, p0, Lcom/android/server/power/Notifier;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 572
+    .line 577
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/power/Notifier;->mUserActivityPending:Z
     :try_end_0
@@ -1007,10 +1007,10 @@
 
     monitor-exit v1
 
-    .line 573
+    .line 578
     return-void
 
-    .line 575
+    .line 580
     :cond_0
     const/4 v0, 0x0
 
@@ -1021,26 +1021,26 @@
 
     monitor-exit v1
 
-    .line 577
+    .line 582
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mRetailDemoModeServiceInternal:Landroid/app/RetailDemoModeServiceInternal;
 
     if-eqz v0, :cond_1
 
-    .line 578
+    .line 583
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mRetailDemoModeServiceInternal:Landroid/app/RetailDemoModeServiceInternal;
 
     invoke-interface {v0}, Landroid/app/RetailDemoModeServiceInternal;->onUserActivity()V
 
-    .line 580
+    .line 585
     :cond_1
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mPolicy:Landroid/view/WindowManagerPolicy;
 
     invoke-interface {v0}, Landroid/view/WindowManagerPolicy;->userActivity()V
 
-    .line 570
+    .line 575
     return-void
 
-    .line 571
+    .line 576
     :catchall_0
     move-exception v0
 
@@ -1061,21 +1061,21 @@
 
     const/4 v3, 0x0
 
-    .line 646
+    .line 651
     invoke-static {}, Landroid/app/ActivityManagerNative;->isSystemReady()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 647
+    .line 652
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/power/Notifier;->mScreenOnIntent:Landroid/content/Intent;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 648
+    .line 653
     iget-object v4, p0, Lcom/android/server/power/Notifier;->mWakeUpBroadcastDone:Landroid/content/BroadcastReceiver;
 
     iget-object v5, p0, Lcom/android/server/power/Notifier;->mHandler:Lcom/android/server/power/Notifier$NotifierHandler;
@@ -1084,14 +1084,14 @@
 
     move-object v8, v3
 
-    .line 647
+    .line 652
     invoke-virtual/range {v0 .. v8}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 641
+    .line 646
     :goto_0
     return-void
 
-    .line 650
+    .line 655
     :cond_0
     new-array v0, v1, [Ljava/lang/Object;
 
@@ -1111,7 +1111,7 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 651
+    .line 656
     invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendNextBroadcast()V
 
     goto :goto_0
@@ -1158,17 +1158,17 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 553
+    .line 558
     iget-boolean v1, p0, Lcom/android/server/power/Notifier;->mBroadcastInProgress:Z
 
     if-nez v1, :cond_1
 
-    .line 554
+    .line 559
     iget v1, p0, Lcom/android/server/power/Notifier;->mPendingInteractiveState:I
 
     if-eqz v1, :cond_1
 
-    .line 555
+    .line 560
     iget-boolean v1, p0, Lcom/android/server/power/Notifier;->mPendingWakeUpBroadcast:Z
 
     if-nez v1, :cond_0
@@ -1177,23 +1177,23 @@
 
     if-nez v1, :cond_0
 
-    .line 556
+    .line 561
     iget v1, p0, Lcom/android/server/power/Notifier;->mPendingInteractiveState:I
 
     iget v2, p0, Lcom/android/server/power/Notifier;->mBroadcastedInteractiveState:I
 
     if-eq v1, v2, :cond_1
 
-    .line 557
+    .line 562
     :cond_0
     iput-boolean v3, p0, Lcom/android/server/power/Notifier;->mBroadcastInProgress:Z
 
-    .line 558
+    .line 563
     iget-object v1, p0, Lcom/android/server/power/Notifier;->mSuspendBlocker:Lcom/android/server/power/SuspendBlocker;
 
     invoke-interface {v1}, Lcom/android/server/power/SuspendBlocker;->acquire()V
 
-    .line 559
+    .line 564
     iget-object v1, p0, Lcom/android/server/power/Notifier;->mHandler:Lcom/android/server/power/Notifier$NotifierHandler;
 
     const/4 v2, 0x2
@@ -1202,16 +1202,16 @@
 
     move-result-object v0
 
-    .line 560
+    .line 565
     .local v0, "msg":Landroid/os/Message;
     invoke-virtual {v0, v3}, Landroid/os/Message;->setAsynchronous(Z)V
 
-    .line 561
+    .line 566
     iget-object v1, p0, Lcom/android/server/power/Notifier;->mHandler:Lcom/android/server/power/Notifier$NotifierHandler;
 
     invoke-virtual {v1, v0}, Lcom/android/server/power/Notifier$NotifierHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 552
+    .line 557
     .end local v0    # "msg":Landroid/os/Message;
     :cond_1
     return-void
@@ -1935,9 +1935,34 @@
 .end method
 
 .method public onWirelessChargingStarted()V
-    .locals 0
+    .locals 3
 
     .prologue
+    .line 551
+    iget-object v1, p0, Lcom/android/server/power/Notifier;->mSuspendBlocker:Lcom/android/server/power/SuspendBlocker;
+
+    invoke-interface {v1}, Lcom/android/server/power/SuspendBlocker;->acquire()V
+
+    .line 552
+    iget-object v1, p0, Lcom/android/server/power/Notifier;->mHandler:Lcom/android/server/power/Notifier$NotifierHandler;
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v1, v2}, Lcom/android/server/power/Notifier$NotifierHandler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 553
+    .local v0, "msg":Landroid/os/Message;
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/os/Message;->setAsynchronous(Z)V
+
+    .line 554
+    iget-object v1, p0, Lcom/android/server/power/Notifier;->mHandler:Lcom/android/server/power/Notifier$NotifierHandler;
+
+    invoke-virtual {v1, v0}, Lcom/android/server/power/Notifier$NotifierHandler;->sendMessage(Landroid/os/Message;)Z
+
     .line 546
     return-void
 .end method

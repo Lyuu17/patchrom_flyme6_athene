@@ -36,25 +36,25 @@
     .param p5, "_callerApp"    # Lcom/android/server/am/ProcessRecord;
 
     .prologue
-    .line 469
+    .line 464
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 471
+    .line 466
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->r:Lcom/android/server/am/ActivityRecord;
 
-    .line 472
+    .line 467
     iput-object p2, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->sourceRecord:Lcom/android/server/am/ActivityRecord;
 
-    .line 473
+    .line 468
     iput p3, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->startFlags:I
 
-    .line 474
+    .line 469
     iput-object p4, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->stack:Lcom/android/server/am/ActivityStack;
 
-    .line 475
+    .line 470
     iput-object p5, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->callerApp:Lcom/android/server/am/ProcessRecord;
 
-    .line 470
+    .line 465
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 480
+    .line 475
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->callerApp:Lcom/android/server/am/ProcessRecord;
 
@@ -73,7 +73,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 481
+    .line 476
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->callerApp:Lcom/android/server/am/ProcessRecord;
 
     iget-object v1, v1, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
@@ -82,16 +82,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 478
+    .line 473
     :cond_0
     :goto_0
     return-void
 
-    .line 483
+    .line 478
     :catch_0
     move-exception v0
 
-    .line 484
+    .line 479
     .local v0, "e":Landroid/os/RemoteException;
     invoke-static {}, Lcom/android/server/am/ActivityStackSupervisor;->-get0()Ljava/lang/String;
 
@@ -107,10 +107,10 @@
 
     move-result-object v2
 
-    .line 485
+    .line 480
     iget-object v3, p0, Lcom/android/server/am/ActivityStackSupervisor$PendingActivityLaunch;->sourceRecord:Lcom/android/server/am/ActivityRecord;
 
-    .line 484
+    .line 479
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2

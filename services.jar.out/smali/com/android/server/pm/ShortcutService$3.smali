@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/ShortcutService;
 
     .prologue
-    .line 458
+    .line 462
     iput-object p1, p0, Lcom/android/server/pm/ShortcutService$3;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-direct {p0}, Landroid/app/IUidObserver$Stub;-><init>()V
@@ -44,7 +44,7 @@
     .end annotation
 
     .prologue
-    .line 470
+    .line 474
     return-void
 .end method
 
@@ -58,14 +58,14 @@
     .end annotation
 
     .prologue
-    .line 466
+    .line 470
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$3;->this$0:Lcom/android/server/pm/ShortcutService;
 
     const/16 v1, 0x10
 
     invoke-virtual {v0, p1, v1}, Lcom/android/server/pm/ShortcutService;->handleOnUidStateChanged(II)V
 
-    .line 465
+    .line 469
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .end annotation
 
     .prologue
-    .line 474
+    .line 478
     return-void
 .end method
 
@@ -94,11 +94,11 @@
     .end annotation
 
     .prologue
-    .line 461
+    .line 465
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$3;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/pm/ShortcutService;->handleOnUidStateChanged(II)V
 
-    .line 460
+    .line 464
     return-void
 .end method

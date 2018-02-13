@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_setExcludeFromRecents:I = 0x5
 
-.field static final TRANSACTION_startActivity_3:I = 0x4
+.field static final TRANSACTION_startActivity:I = 0x4
 
 
 # direct methods

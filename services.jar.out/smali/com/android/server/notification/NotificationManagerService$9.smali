@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
     .prologue
-    .line 4049
+    .line 3713
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -40,10 +40,10 @@
     .param p2, "incomingNumber"    # Ljava/lang/String;
 
     .prologue
-    .line 4052
+    .line 3716
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-get6(Lcom/android/server/notification/NotificationManagerService;)I
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->-get5(Lcom/android/server/notification/NotificationManagerService;)I
 
     move-result v0
 
@@ -51,7 +51,7 @@
 
     return-void
 
-    .line 4053
+    .line 3717
     :cond_0
     sget-boolean v0, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
@@ -83,12 +83,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4054
+    .line 3718
     :cond_1
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v0, p1}, Lcom/android/server/notification/NotificationManagerService;->-set1(Lcom/android/server/notification/NotificationManagerService;I)I
+    invoke-static {v0, p1}, Lcom/android/server/notification/NotificationManagerService;->-set0(Lcom/android/server/notification/NotificationManagerService;I)I
 
-    .line 4051
+    .line 3715
     return-void
 .end method

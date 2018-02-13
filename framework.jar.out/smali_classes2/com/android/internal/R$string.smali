@@ -91,15 +91,9 @@
 
 .field public static final activitychooserview_choose_application_error:I = 0x1040539
 
-.field public static final adb_active_generic_notification_message:I = 0x1040028
-
 .field public static final adb_active_notification_message:I = 0x104049b
 
 .field public static final adb_active_notification_title:I = 0x104049a
-
-.field public static final adb_both_active_notification_title:I = 0x1040027
-
-.field public static final adb_net_active_notification_title:I = 0x1040026
 
 .field public static final addToDictionary:I = 0x10403e6
 
@@ -112,8 +106,6 @@
 .field public static final aerr_process:I = 0x104040e
 
 .field public static final aerr_process_repeated:I = 0x1040410
-
-.field public static final allow:I = 0x10404e5
 
 .field public static final alternate_eri_file:I = 0x10404f4
 
@@ -148,8 +140,6 @@
 .field public static final anr_process:I = 0x104041b
 
 .field public static final anr_title:I = 0x1040417
-
-.field public static final app_killed_message:I = 0x1040019
 
 .field public static final app_running_notification_text:I = 0x10403ee
 
@@ -385,8 +375,6 @@
 
 .field public static final config_chooseTypeAndAccountActivity:I = 0x10400c5
 
-.field public static final config_comboNetworkLocationProvider:I = 0x10400aa
-
 .field public static final config_customAdbPublicKeyConfirmationComponent:I = 0x10400c7
 
 .field public static final config_customAdbPublicKeyConfirmationSecondaryUserComponent:I = 0x10400c8
@@ -579,12 +567,6 @@
 
 .field public static final decline_remote_bugreport_action:I = 0x10404a1
 
-.field public static final def_custom_bt_defname:I = 0x10400e8
-
-.field public static final def_wifi_direct_name:I = 0x10400e7
-
-.field public static final def_wifi_wifihotspot_pass:I = 0x10400e6
-
 .field public static final defaultMsisdnAlphaTag:I = 0x1040005
 
 .field public static final defaultVoiceMailAlphaTag:I = 0x1040004
@@ -622,8 +604,6 @@
 .field public static final demo_user_inactivity_timeout_right_button:I = 0x104067b
 
 .field public static final demo_user_inactivity_timeout_title:I = 0x1040678
-
-.field public static final deny:I = 0x10404e6
 
 .field public static final description_target_unlock_tablet:I = 0x104053d
 
@@ -855,19 +835,13 @@
 
 .field public static final global_action_bug_report:I = 0x10401a7
 
-.field public static final global_action_current_user:I = 0x104001c
-
 .field public static final global_action_emergency:I = 0x10401a6
 
 .field public static final global_action_lockdown:I = 0x10401b8
 
 .field public static final global_action_power_off:I = 0x10401a4
 
-.field public static final global_action_reboot:I = 0x104001b
-
 .field public static final global_action_restart:I = 0x10401a5
-
-.field public static final global_action_screenshot:I = 0x104001a
 
 .field public static final global_action_settings:I = 0x10401b5
 
@@ -882,8 +856,6 @@
 .field public static final global_actions_airplane_mode_off_status:I = 0x10401b4
 
 .field public static final global_actions_airplane_mode_on_status:I = 0x10401b3
-
-.field public static final global_actions_screenshot_status:I = 0x104001d
 
 .field public static final global_actions_toggle_airplane_mode:I = 0x10401b2
 
@@ -1057,10 +1029,6 @@
 
 .field public static final launch_warning_title:I = 0x1040420
 
-.field public static final lineage_system_error_manufacturer:I = 0x1040076
-
-.field public static final locale_codes:I = 0x10400e5
-
 .field public static final lock_to_app_exit:I = 0x104062e
 
 .field public static final lock_to_app_start:I = 0x104062d
@@ -1068,8 +1036,6 @@
 .field public static final lock_to_app_toast:I = 0x104062b
 
 .field public static final lock_to_app_toast_locked:I = 0x104062c
-
-.field public static final lock_to_app_toast_no_navbar:I = 0x1040075
 
 .field public static final lock_to_app_unlock_password:I = 0x1040631
 
@@ -1379,10 +1345,6 @@
 
 .field public static final notification_title:I = 0x104017b
 
-.field public static final notify_package_component_protected_text:I = 0x1040074
-
-.field public static final notify_package_component_protected_title:I = 0x1040073
-
 .field public static final now_string_shortest:I = 0x10403d8
 
 .field public static final number_picker_increment_scroll_action:I = 0x1040522
@@ -1398,10 +1360,6 @@
 .field public static final older:I = 0x10403c8
 
 .field public static final open_permission_deny:I = 0x10403b6
-
-.field public static final operator_config_url:I = 0x10400d9
-
-.field public static final operator_ping_url:I = 0x10400da
 
 .field public static final orgTypeCustom:I = 0x10402e9
 
@@ -1535,8 +1493,6 @@
 
 .field public static final postalTypeWork:I = 0x10402d7
 
-.field public static final power_key_emergency_number:I = 0x10400db
-
 .field public static final power_off:I = 0x1040191
 
 .field public static final prepend_shortcut_label:I = 0x10403b9
@@ -1548,14 +1504,6 @@
 .field public static final print_service_installed_message:I = 0x104060e
 
 .field public static final print_service_installed_title:I = 0x104060d
-
-.field public static final privacy_guard_dialog_summary:I = 0x104002e
-
-.field public static final privacy_guard_dialog_title:I = 0x104002d
-
-.field public static final privacy_guard_notification:I = 0x104002b
-
-.field public static final privacy_guard_notification_detail:I = 0x104002c
 
 .field public static final profile_encrypted_detail:I = 0x104066c
 
@@ -1573,15 +1521,9 @@
 
 .field public static final reason_unknown:I = 0x104060b
 
-.field public static final reboot_confirm:I = 0x1040024
-
-.field public static final reboot_progress:I = 0x1040025
-
 .field public static final reboot_safemode_confirm:I = 0x104019f
 
 .field public static final reboot_safemode_title:I = 0x104019e
-
-.field public static final reboot_title:I = 0x1040023
 
 .field public static final reboot_to_reset_message:I = 0x104019a
 
@@ -1787,8 +1729,6 @@
 
 .field public static final sim_restart_button:I = 0x1040484
 
-.field public static final singlehandmode_click_hint_message:I = 0x1040077
-
 .field public static final sipAddressTypeCustom:I = 0x10402f9
 
 .field public static final sipAddressTypeHome:I = 0x10402fa
@@ -1877,8 +1817,6 @@
 
 .field public static final status_bar_speakerphone:I = 0x104008a
 
-.field public static final status_bar_su:I = 0x1040097
-
 .field public static final status_bar_sync_active:I = 0x1040083
 
 .field public static final status_bar_sync_failing:I = 0x1040082
@@ -1940,12 +1878,6 @@
 .field public static final terabyteShort:I = 0x1040105
 
 .field public static final tethered_notification_message:I = 0x1040505
-
-.field public static final tethered_notification_multi_device_message:I = 0x104007a
-
-.field public static final tethered_notification_no_device_message:I = 0x1040078
-
-.field public static final tethered_notification_one_device_message:I = 0x1040079
 
 .field public static final tethered_notification_title:I = 0x1040504
 
@@ -2209,7 +2141,7 @@
     .locals 0
 
     .prologue
-    .line 27835
+    .line 19028
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

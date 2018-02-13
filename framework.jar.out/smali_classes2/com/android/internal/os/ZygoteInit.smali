@@ -1400,11 +1400,33 @@
     if-nez v21, :cond_1
 
     .line 346
+    new-instance v21, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v22, "PreloadClass "
+
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    move-object/from16 v0, v21
+
+    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v21
+
     const-wide/16 v22, 0x4000
 
     move-wide/from16 v0, v22
 
-    invoke-static {v0, v1, v14}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
+    move-object/from16 v2, v21
+
+    invoke-static {v0, v1, v2}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -2212,11 +2234,22 @@
 
     move-result v1
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 249
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_2
 
+    .line 250
+    :cond_0
+    :goto_0
+    invoke-static {v2}, Landroid/opengl/EGL14;->eglGetDisplay(I)Landroid/opengl/EGLDisplay;
+
+    .line 246
+    :cond_1
+    return-void
+
+    .line 249
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
@@ -2224,13 +2257,7 @@
     .line 248
     if-eqz v1, :cond_1
 
-    .line 250
-    :cond_0
-    invoke-static {v2}, Landroid/opengl/EGL14;->eglGetDisplay(I)Landroid/opengl/EGLDisplay;
-
-    .line 246
-    :cond_1
-    return-void
+    goto :goto_0
 .end method
 
 .method private static preloadResources()V
@@ -2975,7 +3002,7 @@
     aput v2, v1, v3
 
     .line 647
-    sget v2, Landroid/system/OsConstants;->CAP_SYS_PTRACE:I
+    sget v2, Landroid/system/OsConstants;->CAP_SYS_RESOURCE:I
 
     const/16 v3, 0x8
 

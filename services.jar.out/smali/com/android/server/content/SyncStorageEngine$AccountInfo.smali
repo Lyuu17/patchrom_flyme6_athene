@@ -36,20 +36,20 @@
     .param p1, "accountAndUser"    # Landroid/accounts/AccountAndUser;
 
     .prologue
-    .line 159
+    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 157
+    .line 154
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 156
+    .line 153
     iput-object v0, p0, Lcom/android/server/content/SyncStorageEngine$AccountInfo;->authorities:Ljava/util/HashMap;
 
-    .line 160
+    .line 157
     iput-object p1, p0, Lcom/android/server/content/SyncStorageEngine$AccountInfo;->accountAndUser:Landroid/accounts/AccountAndUser;
 
-    .line 159
+    .line 156
     return-void
 .end method

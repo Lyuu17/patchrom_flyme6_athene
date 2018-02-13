@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
     .prologue
-    .line 3310
+    .line 3309
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-direct {p0}, Landroid/os/UserManagerInternal;-><init>()V
@@ -49,7 +49,7 @@
     .param p1, "listener"    # Landroid/os/UserManagerInternal$UserRestrictionsListener;
 
     .prologue
-    .line 3350
+    .line 3349
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get8(Lcom/android/server/pm/UserManagerService;)Ljava/util/ArrayList;
@@ -58,7 +58,7 @@
 
     monitor-enter v1
 
-    .line 3351
+    .line 3350
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -72,10 +72,10 @@
 
     monitor-exit v1
 
-    .line 3349
+    .line 3348
     return-void
 
-    .line 3350
+    .line 3349
     :catchall_0
     move-exception v0
 
@@ -92,7 +92,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 3451
+    .line 3450
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     const/16 v2, -0x2710
@@ -101,7 +101,7 @@
 
     move-result-object v0
 
-    .line 3453
+    .line 3452
     .local v0, "user":Landroid/content/pm/UserInfo;
     if-eqz v0, :cond_0
 
@@ -111,12 +111,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 3458
+    .line 3456
     :cond_0
     :goto_0
     return-object v0
 
-    .line 3454
+    .line 3453
     :cond_1
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -126,19 +126,10 @@
 
     invoke-virtual {v1, v2, v4, v3}, Lcom/android/server/pm/UserManagerService;->setUserRestriction(Ljava/lang/String;ZI)V
 
-    .line 3455
+    .line 3454
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     const-string/jumbo v2, "no_outgoing_calls"
-
-    iget v3, v0, Landroid/content/pm/UserInfo;->id:I
-
-    invoke-virtual {v1, v2, v4, v3}, Lcom/android/server/pm/UserManagerService;->setUserRestriction(Ljava/lang/String;ZI)V
-
-    .line 3456
-    iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
-
-    const-string/jumbo v2, "no_su"
 
     iget v3, v0, Landroid/content/pm/UserInfo;->id:I
 
@@ -152,7 +143,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 3320
+    .line 3319
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get6(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -161,7 +152,7 @@
 
     monitor-enter v1
 
-    .line 3321
+    .line 3320
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -181,7 +172,7 @@
 
     return-object v0
 
-    .line 3320
+    .line 3319
     :catchall_0
     move-exception v0
 
@@ -196,7 +187,7 @@
     .param p2, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 3345
+    .line 3344
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/UserManagerService;->getUserRestrictions(I)Landroid/os/Bundle;
@@ -217,7 +208,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 3463
+    .line 3461
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v1}, Lcom/android/server/pm/UserManagerService;->-get9(Lcom/android/server/pm/UserManagerService;)Landroid/util/SparseIntArray;
@@ -226,7 +217,7 @@
 
     monitor-enter v1
 
-    .line 3464
+    .line 3462
     :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -251,7 +242,7 @@
 
     return v0
 
-    .line 3463
+    .line 3461
     :catchall_0
     move-exception v0
 
@@ -265,7 +256,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 3493
+    .line 3491
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v1}, Lcom/android/server/pm/UserManagerService;->-get9(Lcom/android/server/pm/UserManagerService;)Landroid/util/SparseIntArray;
@@ -274,7 +265,7 @@
 
     monitor-enter v2
 
-    .line 3494
+    .line 3492
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -290,7 +281,7 @@
 
     move-result v0
 
-    .line 3495
+    .line 3493
     .local v0, "state":I
     const/4 v1, 0x3
 
@@ -308,7 +299,7 @@
 
     goto :goto_0
 
-    .line 3493
+    .line 3491
     .end local v0    # "state":I
     :catchall_0
     move-exception v1
@@ -325,7 +316,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3484
+    .line 3482
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v2}, Lcom/android/server/pm/UserManagerService;->-get9(Lcom/android/server/pm/UserManagerService;)Landroid/util/SparseIntArray;
@@ -334,7 +325,7 @@
 
     monitor-enter v2
 
-    .line 3485
+    .line 3483
     :try_start_0
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -350,13 +341,13 @@
 
     move-result v0
 
-    .line 3486
+    .line 3484
     .local v0, "state":I
     const/4 v3, 0x2
 
     if-eq v0, v3, :cond_0
 
-    .line 3487
+    .line 3485
     const/4 v3, 0x3
 
     if-ne v0, v3, :cond_1
@@ -365,16 +356,16 @@
     :goto_0
     monitor-exit v2
 
-    .line 3486
+    .line 3484
     return v1
 
-    .line 3487
+    .line 3485
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 3484
+    .line 3482
     .end local v0    # "state":I
     :catchall_0
     move-exception v1
@@ -389,7 +380,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 3435
+    .line 3434
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v1}, Lcom/android/server/pm/UserManagerService;->-get10(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -398,7 +389,7 @@
 
     monitor-enter v2
 
-    .line 3436
+    .line 3435
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -406,7 +397,7 @@
 
     move-result-object v0
 
-    .line 3437
+    .line 3436
     .local v0, "userInfo":Landroid/content/pm/UserInfo;
     if-eqz v0, :cond_0
 
@@ -416,21 +407,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 3440
+    .line 3439
     iget v1, v0, Landroid/content/pm/UserInfo;->flags:I
 
     or-int/lit8 v1, v1, 0x40
 
     iput v1, v0, Landroid/content/pm/UserInfo;->flags:I
 
-    .line 3441
+    .line 3440
     invoke-virtual {v0}, Landroid/content/pm/UserInfo;->isGuest()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 3443
+    .line 3442
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/content/pm/UserInfo;->guestToRemove:Z
@@ -440,10 +431,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 3434
+    .line 3433
     return-void
 
-    .line 3435
+    .line 3434
     .end local v0    # "userInfo":Landroid/content/pm/UserInfo;
     :catchall_0
     move-exception v1
@@ -459,48 +450,48 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 3404
+    .line 3403
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 3406
+    .line 3405
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v3}, Lcom/android/server/pm/UserManagerService;->-wrap4(Lcom/android/server/pm/UserManagerService;)V
 
-    .line 3403
+    .line 3402
     :goto_0
     return-void
 
-    .line 3409
+    .line 3408
     :cond_0
     new-instance v2, Lcom/android/server/pm/UserManagerService$LocalService$1;
 
     invoke-direct {v2, p0}, Lcom/android/server/pm/UserManagerService$LocalService$1;-><init>(Lcom/android/server/pm/UserManagerService$LocalService;)V
 
-    .line 3421
+    .line 3420
     .local v2, "userSwitchedReceiver":Landroid/content/BroadcastReceiver;
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 3422
+    .line 3421
     .local v1, "userSwitchedFilter":Landroid/content/IntentFilter;
     const-string/jumbo v3, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 3423
+    .line 3422
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v3}, Lcom/android/server/pm/UserManagerService;->-get2(Lcom/android/server/pm/UserManagerService;)Landroid/content/Context;
 
     move-result-object v3
 
-    .line 3424
+    .line 3423
     iget-object v4, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v4}, Lcom/android/server/pm/UserManagerService;->-get3(Lcom/android/server/pm/UserManagerService;)Landroid/os/Handler;
@@ -509,10 +500,10 @@
 
     const/4 v5, 0x0
 
-    .line 3423
+    .line 3422
     invoke-virtual {v3, v2, v1, v5, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 3428
+    .line 3427
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v3}, Lcom/android/server/pm/UserManagerService;->-get2(Lcom/android/server/pm/UserManagerService;)Landroid/content/Context;
@@ -527,7 +518,7 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 3429
+    .line 3428
     .local v0, "am":Landroid/app/ActivityManager;
     invoke-virtual {v0, v6}, Landroid/app/ActivityManager;->switchUser(I)Z
 
@@ -539,7 +530,7 @@
     .param p1, "listener"    # Landroid/os/UserManagerInternal$UserRestrictionsListener;
 
     .prologue
-    .line 3357
+    .line 3356
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get8(Lcom/android/server/pm/UserManagerService;)Ljava/util/ArrayList;
@@ -548,7 +539,7 @@
 
     monitor-enter v1
 
-    .line 3358
+    .line 3357
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -562,10 +553,10 @@
 
     monitor-exit v1
 
-    .line 3356
+    .line 3355
     return-void
 
-    .line 3357
+    .line 3356
     :catchall_0
     move-exception v0
 
@@ -579,7 +570,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 3477
+    .line 3475
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get9(Lcom/android/server/pm/UserManagerService;)Landroid/util/SparseIntArray;
@@ -588,7 +579,7 @@
 
     monitor-enter v1
 
-    .line 3478
+    .line 3476
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -602,10 +593,10 @@
 
     monitor-exit v1
 
-    .line 3476
+    .line 3474
     return-void
 
-    .line 3477
+    .line 3475
     :catchall_0
     move-exception v0
 
@@ -620,7 +611,7 @@
     .param p2, "baseRestrictions"    # Landroid/os/Bundle;
 
     .prologue
-    .line 3328
+    .line 3327
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v1}, Lcom/android/server/pm/UserManagerService;->-get6(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -629,7 +620,7 @@
 
     monitor-enter v2
 
-    .line 3329
+    .line 3328
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -643,7 +634,7 @@
 
     invoke-virtual {v1, p1, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 3330
+    .line 3329
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v1, p1}, Lcom/android/server/pm/UserManagerService;->-wrap3(Lcom/android/server/pm/UserManagerService;I)V
@@ -652,14 +643,14 @@
 
     monitor-exit v2
 
-    .line 3333
+    .line 3332
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v1, p1}, Lcom/android/server/pm/UserManagerService;->-wrap2(Lcom/android/server/pm/UserManagerService;I)Lcom/android/server/pm/UserManagerService$UserData;
 
     move-result-object v0
 
-    .line 3334
+    .line 3333
     .local v0, "userData":Lcom/android/server/pm/UserManagerService$UserData;
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -669,10 +660,10 @@
 
     monitor-enter v2
 
-    .line 3335
+    .line 3334
     if-eqz v0, :cond_0
 
-    .line 3336
+    .line 3335
     :try_start_1
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -683,10 +674,10 @@
     :goto_0
     monitor-exit v2
 
-    .line 3327
+    .line 3326
     return-void
 
-    .line 3328
+    .line 3327
     .end local v0    # "userData":Lcom/android/server/pm/UserManagerService$UserData;
     :catchall_0
     move-exception v1
@@ -695,7 +686,7 @@
 
     throw v1
 
-    .line 3338
+    .line 3337
     .restart local v0    # "userData":Lcom/android/server/pm/UserManagerService$UserData;
     :cond_0
     :try_start_2
@@ -725,7 +716,7 @@
 
     goto :goto_0
 
-    .line 3334
+    .line 3333
     :catchall_1
     move-exception v1
 
@@ -739,7 +730,7 @@
     .param p1, "isManaged"    # Z
 
     .prologue
-    .line 3364
+    .line 3363
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get10(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -748,7 +739,7 @@
 
     monitor-enter v1
 
-    .line 3365
+    .line 3364
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -758,10 +749,10 @@
 
     monitor-exit v1
 
-    .line 3363
+    .line 3362
     return-void
 
-    .line 3364
+    .line 3363
     :catchall_0
     move-exception v0
 
@@ -777,12 +768,12 @@
     .param p3, "globalRestrictions"    # Landroid/os/Bundle;
 
     .prologue
-    .line 3314
+    .line 3313
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/pm/UserManagerService;->setDevicePolicyUserRestrictionsInner(ILandroid/os/Bundle;Landroid/os/Bundle;)V
 
-    .line 3313
+    .line 3312
     return-void
 .end method
 
@@ -791,7 +782,7 @@
     .param p1, "forceEphemeralUsers"    # Z
 
     .prologue
-    .line 3397
+    .line 3396
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get10(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -800,7 +791,7 @@
 
     monitor-enter v1
 
-    .line 3398
+    .line 3397
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -810,10 +801,10 @@
 
     monitor-exit v1
 
-    .line 3396
+    .line 3395
     return-void
 
-    .line 3397
+    .line 3396
     :catchall_0
     move-exception v0
 
@@ -828,12 +819,12 @@
     .param p2, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 3378
+    .line 3377
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3380
+    .line 3379
     .local v0, "ident":J
     :try_start_0
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
@@ -846,7 +837,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 3381
+    .line 3380
     :try_start_1
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -854,7 +845,7 @@
 
     move-result-object v2
 
-    .line 3382
+    .line 3381
     .local v2, "userData":Lcom/android/server/pm/UserManagerService$UserData;
     if-eqz v2, :cond_0
 
@@ -864,7 +855,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 3383
+    .line 3382
     :cond_0
     const-string/jumbo v3, "UserManagerService"
 
@@ -895,13 +886,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 3391
+    .line 3390
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3384
+    .line 3383
     return-void
 
-    .line 3386
+    .line 3385
     :cond_1
     :try_start_3
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
@@ -910,7 +901,7 @@
 
     invoke-static {v3, v5, p2}, Lcom/android/server/pm/UserManagerService;->-wrap7(Lcom/android/server/pm/UserManagerService;Landroid/content/pm/UserInfo;Landroid/graphics/Bitmap;)V
 
-    .line 3387
+    .line 3386
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v3, v2}, Lcom/android/server/pm/UserManagerService;->-wrap8(Lcom/android/server/pm/UserManagerService;Lcom/android/server/pm/UserManagerService$UserData;)V
@@ -920,20 +911,20 @@
     :try_start_4
     monitor-exit v4
 
-    .line 3389
+    .line 3388
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v3, p1}, Lcom/android/server/pm/UserManagerService;->-wrap6(Lcom/android/server/pm/UserManagerService;I)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 3391
+    .line 3390
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3377
+    .line 3376
     return-void
 
-    .line 3380
+    .line 3379
     .end local v2    # "userData":Lcom/android/server/pm/UserManagerService$UserData;
     :catchall_0
     move-exception v3
@@ -945,14 +936,14 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 3390
+    .line 3389
     :catchall_1
     move-exception v3
 
-    .line 3391
+    .line 3390
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3390
+    .line 3389
     throw v3
 .end method
 
@@ -962,7 +953,7 @@
     .param p2, "isManaged"    # Z
 
     .prologue
-    .line 3371
+    .line 3370
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get10(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -971,7 +962,7 @@
 
     monitor-enter v1
 
-    .line 3372
+    .line 3371
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -985,10 +976,10 @@
 
     monitor-exit v1
 
-    .line 3370
+    .line 3369
     return-void
 
-    .line 3371
+    .line 3370
     :catchall_0
     move-exception v0
 
@@ -1003,7 +994,7 @@
     .param p2, "userState"    # I
 
     .prologue
-    .line 3470
+    .line 3468
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->-get9(Lcom/android/server/pm/UserManagerService;)Landroid/util/SparseIntArray;
@@ -1012,7 +1003,7 @@
 
     monitor-enter v1
 
-    .line 3471
+    .line 3469
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$LocalService;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -1026,10 +1017,10 @@
 
     monitor-exit v1
 
-    .line 3469
+    .line 3467
     return-void
 
-    .line 3470
+    .line 3468
     :catchall_0
     move-exception v0
 

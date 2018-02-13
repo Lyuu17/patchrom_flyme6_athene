@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiConnectivityManager;
 
     .prologue
-    .line 203
+    .line 197
     iput-object p1, p0, Lcom/android/server/wifi/WifiConnectivityManager$2;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 205
+    .line 199
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$2;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap7(Lcom/android/server/wifi/WifiConnectivityManager;)V
 
-    .line 204
+    .line 198
     return-void
 .end method

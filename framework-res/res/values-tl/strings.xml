@@ -391,10 +391,10 @@
     <string name="permdesc_writeSyncSettings">Pinapayagan ang isang app na baguhin ang mga setting ng pag-sync para sa isang account. Halimbawa, magagamit ito upang paganahin ang pag-sync ng app na Mga Tao sa isang account.</string>
     <string name="permlab_readSyncStats">basahin ang mga istatistika ng sync</string>
     <string name="permdesc_readSyncStats">Pinapayagan ang app na basahin ang mga istatistika ng pag-sync para sa isang account, kabilang ang kasaysayan ng mga kaganapan sa pag-sync at kung ilang data ang naka-sync.</string>
-    <string name="permlab_sdcardRead">basahin ang mga nilalaman ng iyong SD card</string>
-    <string name="permdesc_sdcardRead">Pinapayagan ang app na basahin ang mga nilalaman ng iyong SD card.</string>
-    <string name="permlab_sdcardWrite">baguhin o i-delete ang mga nilalaman ng iyong SD card</string>
-    <string name="permdesc_sdcardWrite">Pinapayagan ang app na magsulat sa SD card.</string>
+    <string name="permlab_sdcardRead">basa nilalaman USB storage mo</string>
+    <string name="permdesc_sdcardRead">Pinapayagan ang app na basahin ang mga nilalaman ng iyong USB storage.</string>
+    <string name="permlab_sdcardWrite">Baguhin/I-delete ang laman ng USB</string>
+    <string name="permdesc_sdcardWrite">Pinapayagan ang app na magsulat sa USB storage.</string>
     <string name="permlab_use_sip">magsagawa/tumanggap ng mga tawag sa SIP</string>
     <string name="permdesc_use_sip">Pinapayagan ang app na magsagawa at makatanggap ng mga tawag sa SIP.</string>
     <string name="permlab_register_sim_subscription">magrehistro ng mga bagong koneksyon sa SIM ng telecom</string>
@@ -1029,7 +1029,7 @@ para sa account na %s."</string>
     <string name="no_matches">Walang mga tugma</string>
     <string name="find_on_page">Maghanap sa pahina</string>
     <string name="action_mode_done">Tapos na</string>
-    <string name="progress_erasing">Binubura ang SD card...</string>
+    <string name="progress_erasing">Binubura ang USB storage...</string>
     <string name="share">Ibahagi</string>
     <string name="find">Hanapin</string>
     <string name="websearch">Paghahanap sa Web</string>

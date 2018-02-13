@@ -59,10 +59,10 @@
     .locals 2
 
     .prologue
-    .line 3919
+    .line 3916
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3928
+    .line 3925
     new-instance v0, Landroid/util/SparseLongArray;
 
     const/4 v1, 0x2
@@ -71,7 +71,7 @@
 
     iput-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->updateRequestIds:Landroid/util/SparseLongArray;
 
-    .line 3919
+    .line 3916
     return-void
 .end method
 
@@ -90,20 +90,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3941
+    .line 3938
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
     if-eqz v0, :cond_0
 
-    .line 3942
+    .line 3939
     iput-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
-    .line 3943
+    .line 3940
     const/4 v0, 0x1
 
     return v0
 
-    .line 3945
+    .line 3942
     :cond_0
     const/4 v0, 0x0
 
@@ -115,10 +115,10 @@
     .param p1, "views"    # Landroid/widget/RemoteViews;
 
     .prologue
-    .line 3936
+    .line 3933
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
-    .line 3937
+    .line 3934
     const/4 v0, 0x1
 
     return v0
@@ -130,7 +130,7 @@
     .locals 1
 
     .prologue
-    .line 3950
+    .line 3947
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
     if-eqz v0, :cond_0
@@ -152,7 +152,7 @@
     .prologue
     const/16 v2, 0x3a
 
-    .line 3932
+    .line 3929
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -220,7 +220,7 @@
     .local p1, "timestamps":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Long;>;"
     const-wide/16 v8, 0x0
 
-    .line 273
+    .line 271
     if-eqz p0, :cond_1
 
     invoke-virtual {p0, p4}, Landroid/os/DropBoxManager;->isTagEnabled(Ljava/lang/String;)Z
@@ -229,33 +229,33 @@
 
     if-eqz v6, :cond_1
 
-    .line 274
+    .line 272
     const-string/jumbo v6, "BootReceiver"
 
     const-string/jumbo v7, "Copying audit failures to DropBox"
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 276
+    .line 274
     new-instance v0, Ljava/io/File;
 
     const-string/jumbo v6, "/proc/last_kmsg"
 
     invoke-direct {v0, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 277
+    .line 275
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->lastModified()J
 
     move-result-wide v2
 
-    .line 278
+    .line 276
     .local v2, "fileTime":J
     cmp-long v6, v2, v8
 
     if-gtz v6, :cond_0
 
-    .line 279
+    .line 277
     new-instance v0, Ljava/io/File;
 
     .end local v0    # "file":Ljava/io/File;
@@ -263,32 +263,13 @@
 
     invoke-direct {v0, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 280
+    .line 278
     .restart local v0    # "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->lastModified()J
 
     move-result-wide v2
 
     .line 281
-    cmp-long v6, v2, v8
-
-    if-gtz v6, :cond_0
-
-    .line 282
-    new-instance v0, Ljava/io/File;
-
-    .end local v0    # "file":Ljava/io/File;
-    const-string/jumbo v6, "/sys/fs/pstore/console-ramoops-0"
-
-    invoke-direct {v0, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 283
-    .restart local v0    # "file":Ljava/io/File;
-    invoke-virtual {v0}, Ljava/io/File;->lastModified()J
-
-    move-result-wide v2
-
-    .line 287
     :cond_0
     cmp-long v6, v2, v8
 
@@ -296,13 +277,13 @@
 
     return-void
 
-    .line 273
+    .line 271
     .end local v0    # "file":Ljava/io/File;
     .end local v2    # "fileTime":J
     :cond_1
     return-void
 
-    .line 289
+    .line 283
     .restart local v0    # "file":Ljava/io/File;
     .restart local v2    # "fileTime":J
     :cond_2
@@ -326,10 +307,10 @@
 
     if-nez v6, :cond_3
 
-    .line 290
+    .line 284
     return-void
 
-    .line 293
+    .line 287
     :cond_3
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -337,20 +318,20 @@
 
     invoke-virtual {p1, p4, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 295
+    .line 289
     const-string/jumbo v6, "[[TRUNCATED]]\n"
 
     invoke-static {v0, p3, v6}, Landroid/os/FileUtils;->readTextFile(Ljava/io/File;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 296
+    .line 290
     .local v4, "log":Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 297
+    .line 291
     .local v5, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v6, "\n"
 
@@ -367,7 +348,7 @@
 
     aget-object v1, v7, v6
 
-    .line 298
+    .line 292
     .local v1, "line":Ljava/lang/String;
     const-string/jumbo v9, "audit"
 
@@ -377,7 +358,7 @@
 
     if-eqz v9, :cond_4
 
-    .line 299
+    .line 293
     invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
@@ -386,13 +367,13 @@
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 297
+    .line 291
     :cond_4
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 302
+    .line 296
     .end local v1    # "line":Ljava/lang/String;
     :cond_5
     const-string/jumbo v6, "BootReceiver"
@@ -431,7 +412,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 303
+    .line 297
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -454,7 +435,7 @@
 
     invoke-virtual {p0, p4, v6}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 272
+    .line 270
     return-void
 .end method
 
@@ -489,7 +470,7 @@
     .end annotation
 
     .prologue
-    .line 246
+    .line 244
     .local p1, "timestamps":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Long;>;"
     const-string/jumbo v3, ""
 
@@ -507,7 +488,7 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/BootReceiver;->addFileWithFootersToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 245
+    .line 243
     return-void
 .end method
 
@@ -544,7 +525,7 @@
     .end annotation
 
     .prologue
-    .line 253
+    .line 251
     .local p1, "timestamps":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Long;>;"
     if-eqz p0, :cond_0
 
@@ -554,18 +535,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 255
+    .line 253
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 256
+    .line 254
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->lastModified()J
 
     move-result-wide v2
 
-    .line 257
+    .line 255
     .local v2, "fileTime":J
     const-wide/16 v4, 0x0
 
@@ -575,13 +556,13 @@
 
     return-void
 
-    .line 253
+    .line 251
     .end local v0    # "file":Ljava/io/File;
     .end local v2    # "fileTime":J
     :cond_0
     return-void
 
-    .line 259
+    .line 257
     .restart local v0    # "file":Ljava/io/File;
     .restart local v2    # "fileTime":J
     :cond_1
@@ -605,10 +586,10 @@
 
     if-nez v1, :cond_2
 
-    .line 260
+    .line 258
     return-void
 
-    .line 263
+    .line 261
     :cond_2
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -616,7 +597,7 @@
 
     invoke-virtual {p1, p4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 265
+    .line 263
     const-string/jumbo v1, "BootReceiver"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -655,7 +636,7 @@
 
     invoke-static {v1, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 266
+    .line 264
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -684,7 +665,7 @@
 
     invoke-virtual {p0, p6, v1}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 252
+    .line 250
     return-void
 .end method
 
@@ -717,11 +698,11 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 303
     .local p1, "timestamps":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Long;>;"
     const/4 v14, 0x0
 
-    .line 310
+    .line 304
     .local v14, "upload_needed":Z
     if-eqz p0, :cond_0
 
@@ -733,27 +714,27 @@
 
     if-eqz v2, :cond_0
 
-    .line 311
+    .line 305
     const-string/jumbo v2, "BootReceiver"
 
     const-string/jumbo v3, "Checking for fsck errors"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 313
+    .line 307
     new-instance v8, Ljava/io/File;
 
     const-string/jumbo v2, "/dev/fscklogs/log"
 
     invoke-direct {v8, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 314
+    .line 308
     .local v8, "file":Ljava/io/File;
     invoke-virtual {v8}, Ljava/io/File;->lastModified()J
 
     move-result-wide v10
 
-    .line 315
+    .line 309
     .local v10, "fileTime":J
     const-wide/16 v2, 0x0
 
@@ -763,13 +744,13 @@
 
     return-void
 
-    .line 310
+    .line 304
     .end local v8    # "file":Ljava/io/File;
     .end local v10    # "fileTime":J
     :cond_0
     return-void
 
-    .line 317
+    .line 311
     .restart local v8    # "file":Ljava/io/File;
     .restart local v10    # "fileTime":J
     :cond_1
@@ -781,13 +762,13 @@
 
     move-result-object v12
 
-    .line 318
+    .line 312
     .local v12, "log":Ljava/lang/String;
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 319
+    .line 313
     .local v13, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v2, "\n"
 
@@ -804,7 +785,7 @@
 
     aget-object v9, v3, v2
 
-    .line 320
+    .line 314
     .local v9, "line":Ljava/lang/String;
     const-string/jumbo v5, "FILE SYSTEM WAS MODIFIED"
 
@@ -814,15 +795,15 @@
 
     if-eqz v5, :cond_4
 
-    .line 321
+    .line 315
     const/4 v14, 0x1
 
-    .line 326
+    .line 320
     .end local v9    # "line":Ljava/lang/String;
     :cond_2
     if-eqz v14, :cond_3
 
-    .line 327
+    .line 321
     const-string/jumbo v5, "/dev/fscklogs/log"
 
     move-object v2, p0
@@ -837,14 +818,14 @@
 
     invoke-static/range {v2 .. v7}, Lcom/android/server/BootReceiver;->addFileToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 331
+    .line 325
     :cond_3
     invoke-virtual {v8}, Ljava/io/File;->delete()Z
 
-    .line 308
+    .line 302
     return-void
 
-    .line 319
+    .line 313
     .restart local v9    # "line":Ljava/lang/String;
     :cond_4
     add-int/lit8 v2, v2, 0x1
@@ -1390,26 +1371,14 @@
     .line 196
     invoke-static/range {v2 .. v8}, Lcom/android/server/BootReceiver;->addFileWithFootersToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 199
-    const-string/jumbo v6, "/sys/fs/pstore/console-ramoops-0"
-
-    sget v7, Lcom/android/server/BootReceiver;->LOG_SIZE:I
-
-    neg-int v7, v7
-
-    const-string/jumbo v8, "SYSTEM_LAST_KMSG"
-
     .line 198
-    invoke-static/range {v2 .. v8}, Lcom/android/server/BootReceiver;->addFileWithFootersToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-
-    .line 200
     const-string/jumbo v9, "/cache/recovery/log"
 
     sget v6, Lcom/android/server/BootReceiver;->LOG_SIZE:I
 
     neg-int v10, v6
 
-    .line 201
+    .line 199
     const-string/jumbo v11, "SYSTEM_RECOVERY_LOG"
 
     move-object v6, v2
@@ -1418,13 +1387,13 @@
 
     move-object v8, v4
 
-    .line 200
+    .line 198
     invoke-static/range {v6 .. v11}, Lcom/android/server/BootReceiver;->addFileToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 202
+    .line 200
     const-string/jumbo v9, "/cache/recovery/last_kmsg"
 
-    .line 203
+    .line 201
     sget v6, Lcom/android/server/BootReceiver;->LOG_SIZE:I
 
     neg-int v10, v6
@@ -1437,10 +1406,10 @@
 
     move-object v8, v4
 
-    .line 202
+    .line 200
     invoke-static/range {v6 .. v11}, Lcom/android/server/BootReceiver;->addFileToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 204
+    .line 202
     sget v6, Lcom/android/server/BootReceiver;->LOG_SIZE:I
 
     neg-int v6, v6
@@ -1449,7 +1418,7 @@
 
     invoke-static {v2, v3, v4, v6, v7}, Lcom/android/server/BootReceiver;->addAuditErrorsToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 205
+    .line 203
     sget v6, Lcom/android/server/BootReceiver;->LOG_SIZE:I
 
     neg-int v6, v6
@@ -1458,7 +1427,7 @@
 
     invoke-static {v2, v3, v4, v6, v7}, Lcom/android/server/BootReceiver;->addFsckErrorsToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 211
+    .line 209
     :cond_3
     :goto_1
     sget-object v6, Lcom/android/server/BootReceiver;->TOMBSTONE_DIR:Ljava/io/File;
@@ -1467,7 +1436,7 @@
 
     move-result-object v16
 
-    .line 212
+    .line 210
     .local v16, "tombstoneFiles":[Ljava/io/File;
     const/4 v13, 0x0
 
@@ -1481,7 +1450,7 @@
 
     if-ge v13, v6, :cond_7
 
-    .line 213
+    .line 211
     aget-object v6, v16, v13
 
     invoke-virtual {v6}, Ljava/io/File;->isFile()Z
@@ -1490,14 +1459,14 @@
 
     if-eqz v6, :cond_4
 
-    .line 214
+    .line 212
     aget-object v6, v16, v13
 
     invoke-virtual {v6}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 215
+    .line 213
     sget v10, Lcom/android/server/BootReceiver;->LOG_SIZE:I
 
     const-string/jumbo v11, "SYSTEM_TOMBSTONE"
@@ -1508,10 +1477,10 @@
 
     move-object v8, v4
 
-    .line 214
+    .line 212
     invoke-static/range {v6 .. v11}, Lcom/android/server/BootReceiver;->addFileToDropBox(Landroid/os/DropBoxManager;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 212
+    .line 210
     :cond_4
     add-int/lit8 v13, v13, 0x1
 
@@ -1537,7 +1506,7 @@
 
     goto/16 :goto_0
 
-    .line 207
+    .line 205
     .end local v14    # "now":Ljava/lang/String;
     :cond_6
     if-eqz v2, :cond_3
@@ -1548,7 +1517,7 @@
 
     goto :goto_1
 
-    .line 219
+    .line 217
     .restart local v13    # "i":I
     .restart local v16    # "tombstoneFiles":[Ljava/io/File;
     :cond_7
@@ -1556,7 +1525,7 @@
 
     invoke-direct {v0, v3}, Lcom/android/server/BootReceiver;->writeTimestamps(Ljava/util/HashMap;)V
 
-    .line 223
+    .line 221
     new-instance v6, Lcom/android/server/BootReceiver$2;
 
     sget-object v7, Lcom/android/server/BootReceiver;->TOMBSTONE_DIR:Ljava/io/File;
@@ -1577,7 +1546,7 @@
 
     sput-object v6, Lcom/android/server/BootReceiver;->sTombstoneObserver:Landroid/os/FileObserver;
 
-    .line 240
+    .line 238
     sget-object v6, Lcom/android/server/BootReceiver;->sTombstoneObserver:Landroid/os/FileObserver;
 
     invoke-virtual {v6}, Landroid/os/FileObserver;->startWatching()V
@@ -1600,12 +1569,12 @@
     .end annotation
 
     .prologue
-    .line 335
+    .line 329
     sget-object v20, Lcom/android/server/BootReceiver;->sFile:Landroid/util/AtomicFile;
 
     monitor-enter v20
 
-    .line 336
+    .line 330
     :try_start_0
     new-instance v13, Ljava/util/HashMap;
 
@@ -1613,11 +1582,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 337
+    .line 331
     .local v13, "timestamps":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Long;>;"
     const/4 v11, 0x0
 
-    .line 338
+    .line 332
     .local v11, "success":Z
     const/16 v18, 0x0
 
@@ -1631,13 +1600,13 @@
 
     move-result-object v10
 
-    .line 339
+    .line 333
     .local v10, "stream":Ljava/io/FileInputStream;
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v9
 
-    .line 340
+    .line 334
     .local v9, "parser":Lorg/xmlpull/v1/XmlPullParser;
     sget-object v17, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -1649,7 +1618,7 @@
 
     invoke-interface {v9, v10, v0}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 343
+    .line 337
     :cond_0
     invoke-interface {v9}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -1664,7 +1633,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 344
+    .line 338
     const/16 v17, 0x1
 
     move/from16 v0, v16
@@ -1673,7 +1642,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 348
+    .line 342
     :cond_1
     const/16 v17, 0x2
 
@@ -1683,7 +1652,7 @@
 
     if-eq v0, v1, :cond_4
 
-    .line 349
+    .line 343
     new-instance v17, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v19, "no start tag found"
@@ -1699,7 +1668,7 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 386
+    .line 380
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v10    # "stream":Ljava/io/FileInputStream;
     .end local v16    # "type":I
@@ -1748,11 +1717,11 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_7
     .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
-    .line 371
+    .line 365
     :catch_1
     move-exception v2
 
-    .line 372
+    .line 366
     .local v2, "e":Ljava/io/FileNotFoundException;
     :try_start_5
     const-string/jumbo v17, "BootReceiver"
@@ -1777,10 +1746,10 @@
 
     move-result-object v18
 
-    .line 373
+    .line 367
     const-string/jumbo v19, "; starting empty"
 
-    .line 372
+    .line 366
     invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v18
@@ -1793,10 +1762,10 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
-    .line 383
+    .line 377
     if-nez v11, :cond_3
 
-    .line 384
+    .line 378
     :try_start_6
     invoke-virtual {v13}, Ljava/util/HashMap;->clear()V
     :try_end_6
@@ -1807,10 +1776,10 @@
     :goto_2
     monitor-exit v20
 
-    .line 387
+    .line 381
     return-object v13
 
-    .line 352
+    .line 346
     .restart local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .restart local v10    # "stream":Ljava/io/FileInputStream;
     .restart local v16    # "type":I
@@ -1820,7 +1789,7 @@
 
     move-result v8
 
-    .line 353
+    .line 347
     .local v8, "outerDepth":I
     :cond_5
     :goto_3
@@ -1836,7 +1805,7 @@
 
     if-eq v0, v1, :cond_8
 
-    .line 354
+    .line 348
     const/16 v17, 0x3
 
     move/from16 v0, v16
@@ -1853,7 +1822,7 @@
 
     if-le v0, v8, :cond_8
 
-    .line 355
+    .line 349
     :cond_6
     const/16 v17, 0x3
 
@@ -1871,12 +1840,12 @@
 
     if-eq v0, v1, :cond_5
 
-    .line 359
+    .line 353
     invoke-interface {v9}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 360
+    .line 354
     .local v12, "tagName":Ljava/lang/String;
     const-string/jumbo v17, "log"
 
@@ -1888,7 +1857,7 @@
 
     if-eqz v17, :cond_7
 
-    .line 361
+    .line 355
     const-string/jumbo v17, "filename"
 
     const/16 v19, 0x0
@@ -1901,13 +1870,13 @@
 
     move-result-object v7
 
-    .line 363
+    .line 357
     .local v7, "filename":Ljava/lang/String;
     const-string/jumbo v17, "timestamp"
 
     const/16 v19, 0x0
 
-    .line 362
+    .line 356
     move-object/from16 v0, v19
 
     move-object/from16 v1, v17
@@ -1924,7 +1893,7 @@
 
     move-result-wide v14
 
-    .line 364
+    .line 358
     .local v14, "timestamp":J
     invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1936,7 +1905,7 @@
 
     goto :goto_3
 
-    .line 386
+    .line 380
     .end local v7    # "filename":Ljava/lang/String;
     .end local v8    # "outerDepth":I
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
@@ -1949,7 +1918,7 @@
 
     goto/16 :goto_0
 
-    .line 366
+    .line 360
     .restart local v8    # "outerDepth":I
     .restart local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .restart local v10    # "stream":Ljava/io/FileInputStream;
@@ -1994,7 +1963,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 367
+    .line 361
     invoke-static {v9}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_7
     .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_0
@@ -2002,12 +1971,12 @@
 
     goto/16 :goto_3
 
-    .line 370
+    .line 364
     .end local v12    # "tagName":Ljava/lang/String;
     :cond_8
     const/4 v11, 0x1
 
-    .line 386
+    .line 380
     if-eqz v10, :cond_9
 
     :try_start_8
@@ -2035,7 +2004,7 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_9 .. :try_end_9} :catch_7
     .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
-    .line 374
+    .line 368
     .end local v8    # "outerDepth":I
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v10    # "stream":Ljava/io/FileInputStream;
@@ -2043,7 +2012,7 @@
     :catch_2
     move-exception v3
 
-    .line 375
+    .line 369
     .local v3, "e":Ljava/io/IOException;
     :try_start_a
     const-string/jumbo v17, "BootReceiver"
@@ -2072,10 +2041,10 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_3
 
-    .line 383
+    .line 377
     if-nez v11, :cond_3
 
-    .line 384
+    .line 378
     :try_start_b
     invoke-virtual {v13}, Ljava/util/HashMap;->clear()V
     :try_end_b
@@ -2083,7 +2052,7 @@
 
     goto/16 :goto_2
 
-    .line 335
+    .line 329
     .end local v3    # "e":Ljava/io/IOException;
     :catchall_2
     move-exception v17
@@ -2092,7 +2061,7 @@
 
     throw v17
 
-    .line 386
+    .line 380
     .restart local v8    # "outerDepth":I
     .restart local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .restart local v10    # "stream":Ljava/io/FileInputStream;
@@ -2134,11 +2103,11 @@
 
     goto/16 :goto_1
 
-    .line 376
+    .line 370
     :catch_5
     move-exception v4
 
-    .line 377
+    .line 371
     .local v4, "e":Ljava/lang/IllegalStateException;
     :try_start_d
     const-string/jumbo v17, "BootReceiver"
@@ -2167,10 +2136,10 @@
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_3
 
-    .line 383
+    .line 377
     if-nez v11, :cond_3
 
-    .line 384
+    .line 378
     :try_start_e
     invoke-virtual {v13}, Ljava/util/HashMap;->clear()V
     :try_end_e
@@ -2178,7 +2147,7 @@
 
     goto/16 :goto_2
 
-    .line 386
+    .line 380
     .end local v4    # "e":Ljava/lang/IllegalStateException;
     :cond_b
     :try_start_f
@@ -2191,11 +2160,11 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_f .. :try_end_f} :catch_7
     .catchall {:try_start_f .. :try_end_f} :catchall_3
 
-    .line 378
+    .line 372
     :catch_6
     move-exception v5
 
-    .line 379
+    .line 373
     .local v5, "e":Ljava/lang/NullPointerException;
     :try_start_10
     const-string/jumbo v17, "BootReceiver"
@@ -2224,16 +2193,16 @@
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_3
 
-    .line 383
+    .line 377
     if-nez v11, :cond_3
 
-    .line 384
+    .line 378
     :try_start_11
     invoke-virtual {v13}, Ljava/util/HashMap;->clear()V
 
     goto/16 :goto_2
 
-    .line 383
+    .line 377
     .end local v5    # "e":Ljava/lang/NullPointerException;
     .restart local v8    # "outerDepth":I
     .restart local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
@@ -2242,14 +2211,14 @@
     :cond_c
     if-nez v11, :cond_3
 
-    .line 384
+    .line 378
     invoke-virtual {v13}, Ljava/util/HashMap;->clear()V
     :try_end_11
     .catchall {:try_start_11 .. :try_end_11} :catchall_2
 
     goto/16 :goto_2
 
-    .line 380
+    .line 374
     .end local v8    # "outerDepth":I
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v10    # "stream":Ljava/io/FileInputStream;
@@ -2257,7 +2226,7 @@
     :catch_7
     move-exception v6
 
-    .line 381
+    .line 375
     .local v6, "e":Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_12
     const-string/jumbo v17, "BootReceiver"
@@ -2286,27 +2255,27 @@
     :try_end_12
     .catchall {:try_start_12 .. :try_end_12} :catchall_3
 
-    .line 383
+    .line 377
     if-nez v11, :cond_3
 
-    .line 384
+    .line 378
     :try_start_13
     invoke-virtual {v13}, Ljava/util/HashMap;->clear()V
 
     goto/16 :goto_2
 
-    .line 382
+    .line 376
     .end local v6    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     :catchall_3
     move-exception v17
 
-    .line 383
+    .line 377
     if-nez v11, :cond_d
 
-    .line 384
+    .line 378
     invoke-virtual {v13}, Ljava/util/HashMap;->clear()V
 
-    .line 382
+    .line 376
     :cond_d
     throw v17
     :try_end_13
@@ -2343,13 +2312,13 @@
     .end annotation
 
     .prologue
-    .line 392
+    .line 386
     .local p1, "timestamps":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Long;>;"
     sget-object v6, Lcom/android/server/BootReceiver;->sFile:Landroid/util/AtomicFile;
 
     monitor-enter v6
 
-    .line 395
+    .line 389
     :try_start_0
     sget-object v5, Lcom/android/server/BootReceiver;->sFile:Landroid/util/AtomicFile;
 
@@ -2360,14 +2329,14 @@
 
     move-result-object v4
 
-    .line 402
+    .line 396
     .local v4, "stream":Ljava/io/FileOutputStream;
     :try_start_1
     new-instance v3, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v3}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 403
+    .line 397
     .local v3, "out":Lorg/xmlpull/v1/XmlSerializer;
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -2377,7 +2346,7 @@
 
     invoke-interface {v3, v4, v5}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 404
+    .line 398
     const/4 v5, 0x1
 
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -2388,14 +2357,14 @@
 
     invoke-interface {v3, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 405
+    .line 399
     const-string/jumbo v5, "log-files"
 
     const/4 v7, 0x0
 
     invoke-interface {v3, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 407
+    .line 401
     invoke-virtual {p1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v5
@@ -2404,7 +2373,7 @@
 
     move-result-object v2
 
-    .line 408
+    .line 402
     .local v2, "itor":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -2413,14 +2382,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 409
+    .line 403
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 410
+    .line 404
     .local v1, "filename":Ljava/lang/String;
     const-string/jumbo v5, "log"
 
@@ -2428,14 +2397,14 @@
 
     invoke-interface {v3, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 411
+    .line 405
     const-string/jumbo v5, "filename"
 
     const/4 v7, 0x0
 
     invoke-interface {v3, v7, v5, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 412
+    .line 406
     const-string/jumbo v7, "timestamp"
 
     invoke-virtual {p1, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2452,7 +2421,7 @@
 
     invoke-interface {v3, v8, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 413
+    .line 407
     const-string/jumbo v5, "log"
 
     const/4 v7, 0x0
@@ -2464,14 +2433,14 @@
 
     goto :goto_0
 
-    .line 420
+    .line 414
     .end local v1    # "filename":Ljava/lang/String;
     .end local v2    # "itor":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     .end local v3    # "out":Lorg/xmlpull/v1/XmlSerializer;
     :catch_0
     move-exception v0
 
-    .line 421
+    .line 415
     .local v0, "e":Ljava/io/IOException;
     :try_start_2
     const-string/jumbo v5, "BootReceiver"
@@ -2496,7 +2465,7 @@
 
     invoke-static {v5, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 422
+    .line 416
     sget-object v5, Lcom/android/server/BootReceiver;->sFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v5, v4}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
@@ -2507,15 +2476,15 @@
     :goto_1
     monitor-exit v6
 
-    .line 391
+    .line 385
     return-void
 
-    .line 396
+    .line 390
     .end local v4    # "stream":Ljava/io/FileOutputStream;
     :catch_1
     move-exception v0
 
-    .line 397
+    .line 391
     .restart local v0    # "e":Ljava/io/IOException;
     :try_start_3
     const-string/jumbo v5, "BootReceiver"
@@ -2544,10 +2513,10 @@
 
     monitor-exit v6
 
-    .line 398
+    .line 392
     return-void
 
-    .line 416
+    .line 410
     .end local v0    # "e":Ljava/io/IOException;
     .restart local v2    # "itor":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     .restart local v3    # "out":Lorg/xmlpull/v1/XmlSerializer;
@@ -2560,10 +2529,10 @@
 
     invoke-interface {v3, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 417
+    .line 411
     invoke-interface {v3}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 419
+    .line 413
     sget-object v5, Lcom/android/server/BootReceiver;->sFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v5, v4}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
@@ -2573,7 +2542,7 @@
 
     goto :goto_1
 
-    .line 392
+    .line 386
     .end local v2    # "itor":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     .end local v3    # "out":Lorg/xmlpull/v1/XmlSerializer;
     .end local v4    # "stream":Ljava/io/FileOutputStream;

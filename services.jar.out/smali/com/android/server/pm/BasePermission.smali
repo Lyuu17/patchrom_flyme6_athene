@@ -12,8 +12,6 @@
 
 
 # instance fields
-.field allowViaWhitelist:Z
-
 .field private gids:[I
 
 .field final name:Ljava/lang/String;
@@ -43,24 +41,24 @@
     .param p3, "_type"    # I
 
     .prologue
-    .line 58
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
+    .line 57
     iput-object p1, p0, Lcom/android/server/pm/BasePermission;->name:Ljava/lang/String;
 
-    .line 60
+    .line 58
     iput-object p2, p0, Lcom/android/server/pm/BasePermission;->sourcePackage:Ljava/lang/String;
 
-    .line 61
+    .line 59
     iput p3, p0, Lcom/android/server/pm/BasePermission;->type:I
 
-    .line 63
+    .line 61
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/pm/BasePermission;->protectionLevel:I
 
-    .line 58
+    .line 56
     return-void
 .end method
 
@@ -71,19 +69,19 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 78
+    .line 76
     iget-boolean v2, p0, Lcom/android/server/pm/BasePermission;->perUser:Z
 
     if-eqz v2, :cond_1
 
-    .line 79
+    .line 77
     iget-object v2, p0, Lcom/android/server/pm/BasePermission;->gids:[I
 
     array-length v2, v2
 
     new-array v1, v2, [I
 
-    .line 80
+    .line 78
     .local v1, "userGids":[I
     const/4 v0, 0x0
 
@@ -95,7 +93,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 81
+    .line 79
     iget-object v2, p0, Lcom/android/server/pm/BasePermission;->gids:[I
 
     aget v2, v2, v0
@@ -106,16 +104,16 @@
 
     aput v2, v1, v0
 
-    .line 80
+    .line 78
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 83
+    .line 81
     :cond_0
     return-object v1
 
-    .line 85
+    .line 83
     .end local v0    # "i":I
     .end local v1    # "userGids":[I
     :cond_1
@@ -130,18 +128,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 95
+    .line 93
     iget v1, p0, Lcom/android/server/pm/BasePermission;->protectionLevel:I
 
     and-int/lit8 v1, v1, 0xf
 
-    .line 96
+    .line 94
     const/4 v2, 0x2
 
-    .line 95
+    .line 93
     if-ne v1, v2, :cond_0
 
-    .line 97
+    .line 95
     iget v1, p0, Lcom/android/server/pm/BasePermission;->protectionLevel:I
 
     and-int/lit8 v1, v1, 0x20
@@ -150,7 +148,7 @@
 
     const/4 v0, 0x1
 
-    .line 95
+    .line 93
     :cond_0
     return v0
 .end method
@@ -161,7 +159,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 90
+    .line 88
     iget v1, p0, Lcom/android/server/pm/BasePermission;->protectionLevel:I
 
     and-int/lit8 v1, v1, 0xf
@@ -183,13 +181,13 @@
     .param p2, "perUser"    # Z
 
     .prologue
-    .line 73
+    .line 71
     iput-object p1, p0, Lcom/android/server/pm/BasePermission;->gids:[I
 
-    .line 74
+    .line 72
     iput-boolean p2, p0, Lcom/android/server/pm/BasePermission;->perUser:Z
 
-    .line 72
+    .line 70
     return-void
 .end method
 
@@ -197,7 +195,7 @@
     .locals 2
 
     .prologue
-    .line 68
+    .line 66
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -232,10 +230,10 @@
 
     move-result-object v0
 
-    .line 69
+    .line 67
     const-string/jumbo v1, "}"
 
-    .line 68
+    .line 66
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

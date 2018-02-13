@@ -42,10 +42,6 @@
 
 .field private mSensorType:Ljava/lang/String;
 
-.field private mUseDefaultBatchingForAccel:Z
-
-.field private mUseSystemClockforRotationSensor:Z
-
 
 # direct methods
 .method static synthetic -get0()Z
@@ -80,14 +76,6 @@
     return-object v0
 .end method
 
-.method static synthetic -get4(Lcom/android/server/policy/WindowOrientationListener;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mUseSystemClockforRotationSensor:Z
-
-    return v0
-.end method
-
 .method static constructor <clinit>()V
     .locals 2
 
@@ -114,12 +102,12 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 74
+    .line 72
     const/4 v0, 0x2
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/policy/WindowOrientationListener;-><init>(Landroid/content/Context;Landroid/os/Handler;I)V
 
-    .line 73
+    .line 71
     return-void
 .end method
 
@@ -130,25 +118,25 @@
     .param p3, "rate"    # I
 
     .prologue
-    .line 89
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
+    .line 61
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mCurrentRotation:I
 
-    .line 65
+    .line 63
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
-    .line 90
+    .line 88
     iput-object p2, p0, Lcom/android/server/policy/WindowOrientationListener;->mHandler:Landroid/os/Handler;
 
-    .line 91
+    .line 89
     const-string/jumbo v0, "sensor"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -159,10 +147,10 @@
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 92
+    .line 90
     iput p3, p0, Lcom/android/server/policy/WindowOrientationListener;->mRate:I
 
-    .line 93
+    .line 91
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
     const/16 v1, 0x1b
@@ -173,55 +161,25 @@
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
-    .line 95
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    .line 96
-    const v1, 0x11200d9
-
-    .line 95
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mUseDefaultBatchingForAccel:Z
-
-    .line 98
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    .line 99
-    const v1, 0x11200d7
-
-    .line 98
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mUseSystemClockforRotationSensor:Z
-
-    .line 101
+    .line 93
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
 
-    .line 102
+    .line 94
     new-instance v0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 
     invoke-direct {v0, p0}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;-><init>(Lcom/android/server/policy/WindowOrientationListener;)V
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
-    .line 105
+    .line 97
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     if-nez v0, :cond_1
 
-    .line 106
+    .line 98
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
     const/4 v1, 0x1
@@ -232,19 +190,19 @@
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
-    .line 108
+    .line 100
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_1
 
-    .line 110
+    .line 102
     new-instance v0, Lcom/android/server/policy/WindowOrientationListener$AccelSensorJudge;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/policy/WindowOrientationListener$AccelSensorJudge;-><init>(Lcom/android/server/policy/WindowOrientationListener;Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
-    .line 89
+    .line 87
     :cond_1
     return-void
 .end method
@@ -255,12 +213,12 @@
     .locals 2
 
     .prologue
-    .line 211
+    .line 202
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 212
+    .line 203
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
     :try_end_0
@@ -280,7 +238,7 @@
 
     goto :goto_0
 
-    .line 211
+    .line 202
     :catchall_0
     move-exception v0
 
@@ -293,18 +251,18 @@
     .locals 3
 
     .prologue
-    .line 146
+    .line 137
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 147
+    .line 138
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_0
 
-    .line 148
+    .line 139
     const-string/jumbo v0, "WindowOrientationListener"
 
     const-string/jumbo v2, "Cannot detect sensors. Invalid disable"
@@ -315,29 +273,29 @@
 
     monitor-exit v1
 
-    .line 149
+    .line 140
     return-void
 
-    .line 151
+    .line 142
     :cond_0
     :try_start_1
     iget-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mEnabled:Z
 
     if-eqz v0, :cond_2
 
-    .line 152
+    .line 143
     sget-boolean v0, Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
 
     if-eqz v0, :cond_1
 
-    .line 153
+    .line 144
     const-string/jumbo v0, "WindowOrientationListener"
 
     const-string/jumbo v2, "WindowOrientationListener disabled"
 
     invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 155
+    .line 146
     :cond_1
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -345,7 +303,7 @@
 
     invoke-virtual {v0, v2}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 156
+    .line 147
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mEnabled:Z
@@ -355,10 +313,10 @@
     :cond_2
     monitor-exit v1
 
-    .line 145
+    .line 136
     return-void
 
-    .line 146
+    .line 137
     :catchall_0
     move-exception v0
 
@@ -373,12 +331,12 @@
     .param p2, "prefix"    # Ljava/lang/String;
 
     .prologue
-    .line 231
+    .line 222
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 232
+    .line 223
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -400,7 +358,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 233
+    .line 224
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -419,7 +377,7 @@
 
     move-result-object p2
 
-    .line 234
+    .line 225
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -446,7 +404,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 235
+    .line 226
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -473,7 +431,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 236
+    .line 227
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -500,7 +458,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 237
+    .line 228
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -527,7 +485,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 238
+    .line 229
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -554,12 +512,12 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 240
+    .line 231
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     if-eqz v0, :cond_0
 
-    .line 241
+    .line 232
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;->dumpLocked(Ljava/io/PrintWriter;Ljava/lang/String;)V
@@ -569,10 +527,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 230
+    .line 221
     return-void
 
-    .line 231
+    .line 222
     :catchall_0
     move-exception v0
 
@@ -587,18 +545,18 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 120
+    .line 112
     iget-object v6, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 121
+    .line 113
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_0
 
-    .line 122
+    .line 114
     const-string/jumbo v0, "WindowOrientationListener"
 
     const-string/jumbo v1, "Cannot detect sensors. Not enabled"
@@ -609,35 +567,35 @@
 
     monitor-exit v6
 
-    .line 123
+    .line 115
     return-void
 
-    .line 125
+    .line 117
     :cond_0
     :try_start_1
     iget-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mEnabled:Z
 
     if-nez v0, :cond_2
 
-    .line 126
+    .line 118
     sget-boolean v0, Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
 
     if-eqz v0, :cond_1
 
-    .line 127
+    .line 119
     const-string/jumbo v0, "WindowOrientationListener"
 
     const-string/jumbo v1, "WindowOrientationListener enabled"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 129
+    .line 121
     :cond_1
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     invoke-virtual {v0}, Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;->resetLocked()V
 
-    .line 130
+    .line 122
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     invoke-virtual {v0}, Landroid/hardware/Sensor;->getType()I
@@ -646,16 +604,10 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 131
-    iget-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mUseDefaultBatchingForAccel:Z
-
-    .line 130
-    if-eqz v0, :cond_3
-
-    .line 132
+    .line 123
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 133
+    .line 124
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     iget-object v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
@@ -666,10 +618,10 @@
 
     const v4, 0x186a0
 
-    .line 132
+    .line 123
     invoke-virtual/range {v0 .. v5}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;IILandroid/os/Handler;)Z
 
-    .line 137
+    .line 128
     :goto_0
     const/4 v0, 0x1
 
@@ -680,10 +632,10 @@
     :cond_2
     monitor-exit v6
 
-    .line 119
+    .line 111
     return-void
 
-    .line 135
+    .line 126
     :cond_3
     :try_start_2
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
@@ -702,7 +654,7 @@
 
     goto :goto_0
 
-    .line 120
+    .line 112
     :catchall_0
     move-exception v0
 
@@ -715,18 +667,18 @@
     .locals 2
 
     .prologue
-    .line 199
+    .line 190
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 200
+    .line 191
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 201
+    .line 192
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     invoke-virtual {v0}, Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;->getProposedRotationLocked()I
@@ -739,7 +691,7 @@
 
     return v0
 
-    .line 203
+    .line 194
     :cond_0
     const/4 v0, -0x1
 
@@ -747,7 +699,7 @@
 
     return v0
 
-    .line 199
+    .line 190
     :catchall_0
     move-exception v0
 
@@ -763,24 +715,24 @@
     .locals 4
 
     .prologue
-    .line 170
+    .line 161
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
     move-result-wide v0
 
-    .line 172
+    .line 163
     .local v0, "whenElapsedNanos":J
     iget-object v3, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 173
+    .line 164
     :try_start_0
     iget-object v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     if-eqz v2, :cond_0
 
-    .line 174
+    .line 165
     iget-object v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     invoke-virtual {v2, v0, v1}, Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;->onTouchEndLocked(J)V
@@ -790,10 +742,10 @@
     :cond_0
     monitor-exit v3
 
-    .line 169
+    .line 160
     return-void
 
-    .line 172
+    .line 163
     :catchall_0
     move-exception v2
 
@@ -806,18 +758,18 @@
     .locals 2
 
     .prologue
-    .line 162
+    .line 153
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 163
+    .line 154
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     if-eqz v0, :cond_0
 
-    .line 164
+    .line 155
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
     invoke-virtual {v0}, Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;->onTouchStartLocked()V
@@ -827,10 +779,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 161
+    .line 152
     return-void
 
-    .line 162
+    .line 153
     :catchall_0
     move-exception v0
 
@@ -844,12 +796,12 @@
     .param p1, "rotation"    # I
 
     .prologue
-    .line 185
+    .line 176
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 186
+    .line 177
     :try_start_0
     iput p1, p0, Lcom/android/server/policy/WindowOrientationListener;->mCurrentRotation:I
     :try_end_0
@@ -857,10 +809,10 @@
 
     monitor-exit v0
 
-    .line 184
+    .line 175
     return-void
 
-    .line 185
+    .line 176
     :catchall_0
     move-exception v1
 

@@ -55,48 +55,48 @@
     .param p8, "hideWindowFlag"    # I
 
     .prologue
-    .line 2269
+    .line 2267
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2254
+    .line 2252
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->view:Landroid/view/View;
 
-    .line 2255
+    .line 2253
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->targetVisibility:I
 
-    .line 2256
+    .line 2254
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->present:Z
 
-    .line 2272
+    .line 2270
     iput p7, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->id:I
 
-    .line 2273
+    .line 2271
     iput p1, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->systemUiHideFlag:I
 
-    .line 2274
+    .line 2272
     iput p2, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->translucentFlag:I
 
-    .line 2275
+    .line 2273
     iput p3, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->verticalGravity:I
 
-    .line 2276
+    .line 2274
     iput p4, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->horizontalGravity:I
 
-    .line 2277
+    .line 2275
     iput p5, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->seascapeGravity:I
 
-    .line 2278
+    .line 2276
     iput-object p6, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->transitionName:Ljava/lang/String;
 
-    .line 2279
+    .line 2277
     iput p8, p0, Lcom/android/internal/policy/DecorView$ColorViewState;->hideWindowFlag:I
 
-    .line 2271
+    .line 2269
     return-void
 .end method

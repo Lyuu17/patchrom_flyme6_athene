@@ -29,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 235
+    .line 234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 245
+    .line 244
     iget-wide v0, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->imagesSize:J
 
     iget-wide v2, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->videosSize:J

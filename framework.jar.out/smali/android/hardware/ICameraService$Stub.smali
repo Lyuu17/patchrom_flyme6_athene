@@ -38,7 +38,7 @@
 
 .field static final TRANSACTION_getCameraInfo:I = 0x2
 
-.field static final TRANSACTION_getCameraVendorTagDescriptor_8:I = 0x9
+.field static final TRANSACTION_getCameraVendorTagDescriptor:I = 0x9
 
 .field static final TRANSACTION_getLegacyParameters:I = 0xa
 

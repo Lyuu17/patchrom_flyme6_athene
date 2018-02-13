@@ -27,13 +27,13 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 400
+    .line 411
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 402
+    .line 413
     iput-object p1, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 400
+    .line 411
     return-void
 .end method
 
@@ -49,38 +49,38 @@
     .end annotation
 
     .prologue
-    .line 696
+    .line 707
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 697
+    .line 708
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 700
+    .line 711
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 701
+    .line 712
     if-eqz p1, :cond_0
 
-    .line 702
+    .line 713
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 703
+    .line 714
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 708
+    .line 719
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -90,10 +90,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 709
+    .line 720
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 710
+    .line 721
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -104,18 +104,18 @@
 
     const/4 v2, 0x1
 
-    .line 713
+    .line 724
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 714
+    .line 725
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 716
+    .line 727
     return v2
 
-    .line 706
+    .line 717
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -127,20 +127,20 @@
 
     goto :goto_0
 
-    .line 712
+    .line 723
     :catchall_0
     move-exception v3
 
-    .line 713
+    .line 724
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 714
+    .line 725
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 712
+    .line 723
     throw v3
 
-    .line 710
+    .line 721
     :cond_1
     const/4 v2, 0x0
 
@@ -152,10 +152,89 @@
     .locals 1
 
     .prologue
-    .line 406
+    .line 417
     iget-object v0, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
+.end method
+
+.method public bindResponse(IZ)V
+    .locals 5
+    .param p1, "ind_id"    # I
+    .param p2, "ind_status"    # Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 984
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 985
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 987
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 988
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 989
+    if-eqz p2, :cond_0
+
+    const/4 v2, 0x1
+
+    :cond_0
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 990
+    iget-object v2, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v3, 0x1b
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 991
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 994
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 995
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 982
+    return-void
+
+    .line 993
+    :catchall_0
+    move-exception v2
+
+    .line 994
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 995
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 993
+    throw v2
 .end method
 
 .method public clccResponse(IIIIZLjava/lang/String;I)V
@@ -176,37 +255,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 918
+    .line 929
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 919
+    .line 930
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 921
+    .line 932
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 922
+    .line 933
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 923
+    .line 934
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 924
+    .line 935
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 925
+    .line 936
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 926
+    .line 937
     if-eqz p5, :cond_0
 
     const/4 v2, 0x1
@@ -214,13 +293,13 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 927
+    .line 938
     invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 928
+    .line 939
     invoke-virtual {v0, p7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 929
+    .line 940
     iget-object v2, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x18
@@ -229,31 +308,31 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 930
+    .line 941
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 933
+    .line 944
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 934
+    .line 945
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 916
+    .line 927
     return-void
 
-    .line 932
+    .line 943
     :catchall_0
     move-exception v2
 
-    .line 933
+    .line 944
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 934
+    .line 945
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 932
+    .line 943
     throw v2
 .end method
 
@@ -267,38 +346,38 @@
     .end annotation
 
     .prologue
-    .line 416
+    .line 427
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 417
+    .line 428
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 420
+    .line 431
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 421
+    .line 432
     if-eqz p1, :cond_0
 
-    .line 422
+    .line 433
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 423
+    .line 434
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 428
+    .line 439
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -308,10 +387,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 429
+    .line 440
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 430
+    .line 441
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -322,18 +401,18 @@
 
     const/4 v2, 0x1
 
-    .line 433
+    .line 444
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 434
+    .line 445
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 436
+    .line 447
     return v2
 
-    .line 426
+    .line 437
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -345,20 +424,20 @@
 
     goto :goto_0
 
-    .line 432
+    .line 443
     :catchall_0
     move-exception v3
 
-    .line 433
+    .line 444
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 434
+    .line 445
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 432
+    .line 443
     throw v3
 
-    .line 430
+    .line 441
     :cond_1
     const/4 v2, 0x0
 
@@ -375,25 +454,25 @@
     .end annotation
 
     .prologue
-    .line 785
+    .line 796
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 786
+    .line 797
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 789
+    .line 800
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 790
+    .line 801
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x11
@@ -402,10 +481,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 791
+    .line 802
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 792
+    .line 803
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -416,18 +495,18 @@
 
     const/4 v2, 0x1
 
-    .line 795
+    .line 806
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 796
+    .line 807
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 798
+    .line 809
     return v2
 
-    .line 792
+    .line 803
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -435,18 +514,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 794
+    .line 805
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 795
+    .line 806
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 796
+    .line 807
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 794
+    .line 805
     throw v3
 .end method
 
@@ -459,25 +538,25 @@
     .end annotation
 
     .prologue
-    .line 956
+    .line 967
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 957
+    .line 968
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 960
+    .line 971
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 961
+    .line 972
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x1a
@@ -486,10 +565,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 962
+    .line 973
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 963
+    .line 974
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -500,18 +579,18 @@
 
     const/4 v2, 0x1
 
-    .line 966
+    .line 977
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 967
+    .line 978
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 969
+    .line 980
     return v2
 
-    .line 963
+    .line 974
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -519,18 +598,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 965
+    .line 976
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 966
+    .line 977
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 967
+    .line 978
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 965
+    .line 976
     throw v3
 .end method
 
@@ -544,38 +623,38 @@
     .end annotation
 
     .prologue
-    .line 440
+    .line 451
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 441
+    .line 452
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 444
+    .line 455
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 445
+    .line 456
     if-eqz p1, :cond_0
 
-    .line 446
+    .line 457
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 447
+    .line 458
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 452
+    .line 463
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -585,10 +664,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 453
+    .line 464
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 454
+    .line 465
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -599,18 +678,18 @@
 
     const/4 v2, 0x1
 
-    .line 457
+    .line 468
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 458
+    .line 469
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 460
+    .line 471
     return v2
 
-    .line 450
+    .line 461
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -622,20 +701,20 @@
 
     goto :goto_0
 
-    .line 456
+    .line 467
     :catchall_0
     move-exception v3
 
-    .line 457
+    .line 468
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 458
+    .line 469
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 456
+    .line 467
     throw v3
 
-    .line 454
+    .line 465
     :cond_1
     const/4 v2, 0x0
 
@@ -652,25 +731,25 @@
     .end annotation
 
     .prologue
-    .line 802
+    .line 813
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 803
+    .line 814
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 806
+    .line 817
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 807
+    .line 818
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x12
@@ -679,10 +758,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 808
+    .line 819
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 809
+    .line 820
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -693,18 +772,18 @@
 
     const/4 v2, 0x1
 
-    .line 812
+    .line 823
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 813
+    .line 824
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 815
+    .line 826
     return v2
 
-    .line 809
+    .line 820
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -712,18 +791,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 811
+    .line 822
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 812
+    .line 823
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 813
+    .line 824
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 811
+    .line 822
     throw v3
 .end method
 
@@ -736,25 +815,25 @@
     .end annotation
 
     .prologue
-    .line 939
+    .line 950
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 940
+    .line 951
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 943
+    .line 954
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 944
+    .line 955
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x19
@@ -763,10 +842,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 945
+    .line 956
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 946
+    .line 957
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -777,18 +856,18 @@
 
     const/4 v2, 0x1
 
-    .line 949
+    .line 960
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 950
+    .line 961
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 952
+    .line 963
     return v2
 
-    .line 946
+    .line 957
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -796,18 +875,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 948
+    .line 959
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 949
+    .line 960
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 950
+    .line 961
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 948
+    .line 959
     throw v3
 .end method
 
@@ -820,25 +899,25 @@
     .end annotation
 
     .prologue
-    .line 834
+    .line 845
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 835
+    .line 846
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 838
+    .line 849
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 839
+    .line 850
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x14
@@ -847,10 +926,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 840
+    .line 851
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 841
+    .line 852
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -861,18 +940,18 @@
 
     const/4 v2, 0x1
 
-    .line 844
+    .line 855
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 845
+    .line 856
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 847
+    .line 858
     return v2
 
-    .line 841
+    .line 852
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -880,18 +959,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 843
+    .line 854
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 844
+    .line 855
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 845
+    .line 856
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 843
+    .line 854
     throw v3
 .end method
 
@@ -905,38 +984,38 @@
     .end annotation
 
     .prologue
-    .line 744
+    .line 755
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 745
+    .line 756
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 748
+    .line 759
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 749
+    .line 760
     if-eqz p1, :cond_0
 
-    .line 750
+    .line 761
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 751
+    .line 762
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 756
+    .line 767
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -946,27 +1025,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 757
+    .line 768
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 758
+    .line 769
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 761
+    .line 772
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 762
+    .line 773
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 764
+    .line 775
     return v2
 
-    .line 754
+    .line 765
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -978,17 +1057,17 @@
 
     goto :goto_0
 
-    .line 760
+    .line 771
     :catchall_0
     move-exception v3
 
-    .line 761
+    .line 772
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 762
+    .line 773
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 760
+    .line 771
     throw v3
 .end method
 
@@ -1002,38 +1081,38 @@
     .end annotation
 
     .prologue
-    .line 670
+    .line 681
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 671
+    .line 682
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 674
+    .line 685
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 675
+    .line 686
     if-eqz p1, :cond_0
 
-    .line 676
+    .line 687
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 677
+    .line 688
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 682
+    .line 693
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -1043,27 +1122,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 683
+    .line 694
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 684
+    .line 695
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 687
+    .line 698
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 688
+    .line 699
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 690
+    .line 701
     return v2
 
-    .line 680
+    .line 691
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -1075,17 +1154,17 @@
 
     goto :goto_0
 
-    .line 686
+    .line 697
     :catchall_0
     move-exception v3
 
-    .line 687
+    .line 698
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 688
+    .line 699
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 686
+    .line 697
     throw v3
 .end method
 
@@ -1108,25 +1187,25 @@
     .end annotation
 
     .prologue
-    .line 464
+    .line 475
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 465
+    .line 476
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 468
+    .line 479
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 469
+    .line 480
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x3
@@ -1135,10 +1214,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 470
+    .line 481
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 471
+    .line 482
     sget-object v3, Landroid/bluetooth/BluetoothDevice;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
@@ -1147,28 +1226,28 @@
 
     move-result-object v2
 
-    .line 474
+    .line 485
     .local v2, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 475
+    .line 486
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 477
+    .line 488
     return-object v2
 
-    .line 473
+    .line 484
     .end local v2    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     :catchall_0
     move-exception v3
 
-    .line 474
+    .line 485
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 475
+    .line 486
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 473
+    .line 484
     throw v3
 .end method
 
@@ -1182,38 +1261,38 @@
     .end annotation
 
     .prologue
-    .line 499
+    .line 510
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 500
+    .line 511
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 503
+    .line 514
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 504
+    .line 515
     if-eqz p1, :cond_0
 
-    .line 505
+    .line 516
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 506
+    .line 517
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 511
+    .line 522
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -1223,27 +1302,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 512
+    .line 523
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 513
+    .line 524
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 516
+    .line 527
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 517
+    .line 528
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 519
+    .line 530
     return v2
 
-    .line 509
+    .line 520
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -1255,17 +1334,17 @@
 
     goto :goto_0
 
-    .line 515
+    .line 526
     :catchall_0
     move-exception v3
 
-    .line 516
+    .line 527
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 517
+    .line 528
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 515
+    .line 526
     throw v3
 .end method
 
@@ -1289,28 +1368,28 @@
     .end annotation
 
     .prologue
-    .line 481
+    .line 492
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 482
+    .line 493
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 485
+    .line 496
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 486
+    .line 497
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 487
+    .line 498
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x4
@@ -1319,10 +1398,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 488
+    .line 499
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 489
+    .line 500
     sget-object v3, Landroid/bluetooth/BluetoothDevice;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
@@ -1331,28 +1410,28 @@
 
     move-result-object v2
 
-    .line 492
+    .line 503
     .local v2, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 493
+    .line 504
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 495
+    .line 506
     return-object v2
 
-    .line 491
+    .line 502
     .end local v2    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     :catchall_0
     move-exception v3
 
-    .line 492
+    .line 503
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 493
+    .line 504
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 491
+    .line 502
     throw v3
 .end method
 
@@ -1360,7 +1439,7 @@
     .locals 1
 
     .prologue
-    .line 410
+    .line 421
     const-string/jumbo v0, "android.bluetooth.IBluetoothHeadset"
 
     return-object v0
@@ -1376,38 +1455,38 @@
     .end annotation
 
     .prologue
-    .line 548
+    .line 559
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 549
+    .line 560
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 552
+    .line 563
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 553
+    .line 564
     if-eqz p1, :cond_0
 
-    .line 554
+    .line 565
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 555
+    .line 566
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 560
+    .line 571
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -1417,27 +1496,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 561
+    .line 572
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 562
+    .line 573
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 565
+    .line 576
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 566
+    .line 577
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 568
+    .line 579
     return v2
 
-    .line 558
+    .line 569
     .end local v2    # "_result":I
     :cond_0
     const/4 v3, 0x0
@@ -1449,17 +1528,17 @@
 
     goto :goto_0
 
-    .line 564
+    .line 575
     :catchall_0
     move-exception v3
 
-    .line 565
+    .line 576
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 566
+    .line 577
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 564
+    .line 575
     throw v3
 .end method
 
@@ -1473,38 +1552,38 @@
     .end annotation
 
     .prologue
-    .line 620
+    .line 631
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 621
+    .line 632
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 624
+    .line 635
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 625
+    .line 636
     if-eqz p1, :cond_0
 
-    .line 626
+    .line 637
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 627
+    .line 638
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 632
+    .line 643
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -1514,10 +1593,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 633
+    .line 644
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 634
+    .line 645
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1528,18 +1607,18 @@
 
     const/4 v2, 0x1
 
-    .line 637
+    .line 648
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 638
+    .line 649
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 640
+    .line 651
     return v2
 
-    .line 630
+    .line 641
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -1551,20 +1630,20 @@
 
     goto :goto_0
 
-    .line 636
+    .line 647
     :catchall_0
     move-exception v3
 
-    .line 637
+    .line 648
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 638
+    .line 649
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 636
+    .line 647
     throw v3
 
-    .line 634
+    .line 645
     :cond_1
     const/4 v2, 0x0
 
@@ -1581,25 +1660,25 @@
     .end annotation
 
     .prologue
-    .line 768
+    .line 779
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 769
+    .line 780
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 772
+    .line 783
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 773
+    .line 784
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x10
@@ -1608,10 +1687,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 774
+    .line 785
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 775
+    .line 786
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1622,18 +1701,18 @@
 
     const/4 v2, 0x1
 
-    .line 778
+    .line 789
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 779
+    .line 790
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 781
+    .line 792
     return v2
 
-    .line 775
+    .line 786
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -1641,18 +1720,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 777
+    .line 788
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 778
+    .line 789
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 779
+    .line 790
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 777
+    .line 788
     throw v3
 .end method
 
@@ -1670,40 +1749,40 @@
     .end annotation
 
     .prologue
-    .line 899
+    .line 910
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 900
+    .line 911
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 902
+    .line 913
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 903
+    .line 914
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 904
+    .line 915
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 905
+    .line 916
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 906
+    .line 917
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 907
+    .line 918
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 908
+    .line 919
     iget-object v2, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x17
@@ -1712,31 +1791,31 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 909
+    .line 920
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 912
+    .line 923
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 913
+    .line 924
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 897
+    .line 908
     return-void
 
-    .line 911
+    .line 922
     :catchall_0
     move-exception v2
 
-    .line 912
+    .line 923
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 913
+    .line 924
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 911
+    .line 922
     throw v2
 .end method
 
@@ -1750,38 +1829,38 @@
     .end annotation
 
     .prologue
-    .line 720
+    .line 731
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 721
+    .line 732
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 724
+    .line 735
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 725
+    .line 736
     if-eqz p1, :cond_0
 
-    .line 726
+    .line 737
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 727
+    .line 738
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 732
+    .line 743
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -1791,10 +1870,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 733
+    .line 744
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 734
+    .line 745
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1805,18 +1884,18 @@
 
     const/4 v2, 0x1
 
-    .line 737
+    .line 748
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 738
+    .line 749
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 740
+    .line 751
     return v2
 
-    .line 730
+    .line 741
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -1828,20 +1907,20 @@
 
     goto :goto_0
 
-    .line 736
+    .line 747
     :catchall_0
     move-exception v3
 
-    .line 737
+    .line 748
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 738
+    .line 749
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 736
+    .line 747
     throw v3
 
-    .line 734
+    .line 745
     :cond_1
     const/4 v2, 0x0
 
@@ -1861,45 +1940,45 @@
     .end annotation
 
     .prologue
-    .line 644
+    .line 655
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 645
+    .line 656
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 648
+    .line 659
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 649
+    .line 660
     if-eqz p1, :cond_0
 
-    .line 650
+    .line 661
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 651
+    .line 662
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 656
+    .line 667
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 657
+    .line 668
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 658
+    .line 669
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xb
@@ -1908,10 +1987,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 659
+    .line 670
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 660
+    .line 671
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1922,18 +2001,18 @@
 
     const/4 v2, 0x1
 
-    .line 663
+    .line 674
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 664
+    .line 675
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 666
+    .line 677
     return v2
 
-    .line 654
+    .line 665
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -1945,20 +2024,20 @@
 
     goto :goto_0
 
-    .line 662
+    .line 673
     :catchall_0
     move-exception v3
 
-    .line 663
+    .line 674
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 664
+    .line 675
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 662
+    .line 673
     throw v3
 
-    .line 660
+    .line 671
     :cond_1
     const/4 v2, 0x0
 
@@ -1978,25 +2057,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 819
+    .line 830
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 820
+    .line 831
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 822
+    .line 833
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 823
+    .line 834
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
@@ -2004,7 +2083,7 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 824
+    .line 835
     iget-object v2, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x13
@@ -2013,31 +2092,31 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 825
+    .line 836
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 828
+    .line 839
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 829
+    .line 840
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 817
+    .line 828
     return-void
 
-    .line 827
+    .line 838
     :catchall_0
     move-exception v2
 
-    .line 828
+    .line 839
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 829
+    .line 840
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 827
+    .line 838
     throw v2
 .end method
 
@@ -2052,42 +2131,42 @@
     .end annotation
 
     .prologue
-    .line 523
+    .line 534
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 524
+    .line 535
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 527
+    .line 538
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 528
+    .line 539
     if-eqz p1, :cond_0
 
-    .line 529
+    .line 540
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 530
+    .line 541
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 535
+    .line 546
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 536
+    .line 547
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x6
@@ -2096,10 +2175,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 537
+    .line 548
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 538
+    .line 549
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2110,18 +2189,18 @@
 
     const/4 v2, 0x1
 
-    .line 541
+    .line 552
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 542
+    .line 553
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 544
+    .line 555
     return v2
 
-    .line 533
+    .line 544
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -2133,20 +2212,20 @@
 
     goto :goto_0
 
-    .line 540
+    .line 551
     :catchall_0
     move-exception v3
 
-    .line 541
+    .line 552
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 542
+    .line 553
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 540
+    .line 551
     throw v3
 
-    .line 538
+    .line 549
     :cond_1
     const/4 v2, 0x0
 
@@ -2164,38 +2243,38 @@
     .end annotation
 
     .prologue
-    .line 851
+    .line 862
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 852
+    .line 863
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 855
+    .line 866
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 856
+    .line 867
     if-eqz p1, :cond_0
 
-    .line 857
+    .line 868
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 858
+    .line 869
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 863
+    .line 874
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -2205,10 +2284,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 864
+    .line 875
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 865
+    .line 876
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2219,18 +2298,18 @@
 
     const/4 v2, 0x1
 
-    .line 868
+    .line 879
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 869
+    .line 880
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 871
+    .line 882
     return v2
 
-    .line 861
+    .line 872
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -2242,20 +2321,20 @@
 
     goto :goto_0
 
-    .line 867
+    .line 878
     :catchall_0
     move-exception v3
 
-    .line 868
+    .line 879
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 869
+    .line 880
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 867
+    .line 878
     throw v3
 
-    .line 865
+    .line 876
     :cond_1
     const/4 v2, 0x0
 
@@ -2273,38 +2352,38 @@
     .end annotation
 
     .prologue
-    .line 572
+    .line 583
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 573
+    .line 584
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 576
+    .line 587
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 577
+    .line 588
     if-eqz p1, :cond_0
 
-    .line 578
+    .line 589
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 579
+    .line 590
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 584
+    .line 595
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -2314,10 +2393,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 585
+    .line 596
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 586
+    .line 597
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2328,18 +2407,18 @@
 
     const/4 v2, 0x1
 
-    .line 589
+    .line 600
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 590
+    .line 601
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 592
+    .line 603
     return v2
 
-    .line 582
+    .line 593
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -2351,20 +2430,20 @@
 
     goto :goto_0
 
-    .line 588
+    .line 599
     :catchall_0
     move-exception v3
 
-    .line 589
+    .line 600
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 590
+    .line 601
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 588
+    .line 599
     throw v3
 
-    .line 586
+    .line 597
     :cond_1
     const/4 v2, 0x0
 
@@ -2382,38 +2461,38 @@
     .end annotation
 
     .prologue
-    .line 875
+    .line 886
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 876
+    .line 887
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 879
+    .line 890
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 880
+    .line 891
     if-eqz p1, :cond_0
 
-    .line 881
+    .line 892
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 882
+    .line 893
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 887
+    .line 898
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -2423,10 +2502,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 888
+    .line 899
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 889
+    .line 900
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2437,18 +2516,18 @@
 
     const/4 v2, 0x1
 
-    .line 892
+    .line 903
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 893
+    .line 904
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 895
+    .line 906
     return v2
 
-    .line 885
+    .line 896
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -2460,20 +2539,20 @@
 
     goto :goto_0
 
-    .line 891
+    .line 902
     :catchall_0
     move-exception v3
 
-    .line 892
+    .line 903
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 893
+    .line 904
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 891
+    .line 902
     throw v3
 
-    .line 889
+    .line 900
     :cond_1
     const/4 v2, 0x0
 
@@ -2491,38 +2570,38 @@
     .end annotation
 
     .prologue
-    .line 596
+    .line 607
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 597
+    .line 608
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 600
+    .line 611
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.bluetooth.IBluetoothHeadset"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 601
+    .line 612
     if-eqz p1, :cond_0
 
-    .line 602
+    .line 613
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 603
+    .line 614
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 608
+    .line 619
     :goto_0
     iget-object v3, p0, Landroid/bluetooth/IBluetoothHeadset$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -2532,10 +2611,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 609
+    .line 620
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 610
+    .line 621
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2546,18 +2625,18 @@
 
     const/4 v2, 0x1
 
-    .line 613
+    .line 624
     .local v2, "_result":Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 614
+    .line 625
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 616
+    .line 627
     return v2
 
-    .line 606
+    .line 617
     .end local v2    # "_result":Z
     :cond_0
     const/4 v3, 0x0
@@ -2569,20 +2648,20 @@
 
     goto :goto_0
 
-    .line 612
+    .line 623
     :catchall_0
     move-exception v3
 
-    .line 613
+    .line 624
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 614
+    .line 625
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 612
+    .line 623
     throw v3
 
-    .line 610
+    .line 621
     :cond_1
     const/4 v2, 0x0
 

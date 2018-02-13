@@ -41,13 +41,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 377
+    .line 372
     iput-object p1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
-    .line 378
+    .line 373
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 377
+    .line 372
     return-void
 .end method
 
@@ -60,17 +60,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 383
+    .line 378
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 382
+    .line 377
     :cond_0
     :goto_0
     return-void
 
-    .line 385
+    .line 380
     :pswitch_0
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 388
+    .line 383
     :pswitch_1
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -88,17 +88,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 389
+    .line 384
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-static {v1, v2}, Landroid/service/quicksettings/TileService;->-set0(Landroid/service/quicksettings/TileService;Z)Z
 
-    .line 390
+    .line 385
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-virtual {v1}, Landroid/service/quicksettings/TileService;->onStopListening()V
 
-    .line 392
+    .line 387
     :cond_1
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -106,7 +106,7 @@
 
     goto :goto_0
 
-    .line 395
+    .line 390
     :pswitch_2
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -116,19 +116,19 @@
 
     if-eqz v1, :cond_0
 
-    .line 396
+    .line 391
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-static {v1, v2}, Landroid/service/quicksettings/TileService;->-set0(Landroid/service/quicksettings/TileService;Z)Z
 
-    .line 397
+    .line 392
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-virtual {v1}, Landroid/service/quicksettings/TileService;->onStopListening()V
 
     goto :goto_0
 
-    .line 401
+    .line 396
     :pswitch_3
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -138,21 +138,21 @@
 
     if-nez v1, :cond_0
 
-    .line 402
+    .line 397
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     const/4 v2, 0x1
 
     invoke-static {v1, v2}, Landroid/service/quicksettings/TileService;->-set0(Landroid/service/quicksettings/TileService;Z)Z
 
-    .line 403
+    .line 398
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-virtual {v1}, Landroid/service/quicksettings/TileService;->onStartListening()V
 
     goto :goto_0
 
-    .line 407
+    .line 402
     :pswitch_4
     iget-object v2, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -162,14 +162,14 @@
 
     invoke-static {v2, v1}, Landroid/service/quicksettings/TileService;->-set1(Landroid/service/quicksettings/TileService;Landroid/os/IBinder;)Landroid/os/IBinder;
 
-    .line 408
+    .line 403
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-virtual {v1}, Landroid/service/quicksettings/TileService;->onClick()V
 
     goto :goto_0
 
-    .line 411
+    .line 406
     :pswitch_5
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
@@ -179,7 +179,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 412
+    .line 407
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
 
     invoke-static {v1}, Landroid/service/quicksettings/TileService;->-get4(Landroid/service/quicksettings/TileService;)Ljava/lang/Runnable;
@@ -190,7 +190,7 @@
 
     goto :goto_0
 
-    .line 417
+    .line 412
     :pswitch_6
     :try_start_0
     iget-object v1, p0, Landroid/service/quicksettings/TileService$H;->this$0:Landroid/service/quicksettings/TileService;
@@ -211,14 +211,14 @@
 
     goto :goto_0
 
-    .line 418
+    .line 413
     :catch_0
     move-exception v0
 
     .local v0, "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 383
+    .line 378
     nop
 
     :pswitch_data_0

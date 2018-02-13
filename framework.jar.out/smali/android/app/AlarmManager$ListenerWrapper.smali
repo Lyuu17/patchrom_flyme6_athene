@@ -34,15 +34,15 @@
     .param p2, "listener"    # Landroid/app/AlarmManager$OnAlarmListener;
 
     .prologue
-    .line 245
+    .line 191
     iput-object p1, p0, Landroid/app/AlarmManager$ListenerWrapper;->this$0:Landroid/app/AlarmManager;
 
     invoke-direct {p0}, Landroid/app/IAlarmListener$Stub;-><init>()V
 
-    .line 246
+    .line 192
     iput-object p2, p0, Landroid/app/AlarmManager$ListenerWrapper;->mListener:Landroid/app/AlarmManager$OnAlarmListener;
 
-    .line 245
+    .line 191
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .locals 4
 
     .prologue
-    .line 255
+    .line 201
     :try_start_0
     iget-object v1, p0, Landroid/app/AlarmManager$ListenerWrapper;->this$0:Landroid/app/AlarmManager;
 
@@ -66,12 +66,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 260
+    .line 206
     const-class v2, Landroid/app/AlarmManager;
 
     monitor-enter v2
 
-    .line 261
+    .line 207
     :try_start_1
     invoke-static {}, Landroid/app/AlarmManager;->-get1()Landroid/util/ArrayMap;
 
@@ -79,7 +79,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 262
+    .line 208
     invoke-static {}, Landroid/app/AlarmManager;->-get1()Landroid/util/ArrayMap;
 
     move-result-object v1
@@ -93,14 +93,14 @@
     :cond_0
     monitor-exit v2
 
-    .line 253
+    .line 199
     return-void
 
-    .line 256
+    .line 202
     :catch_0
     move-exception v0
 
-    .line 257
+    .line 203
     .local v0, "ex":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -108,7 +108,7 @@
 
     throw v1
 
-    .line 260
+    .line 206
     .end local v0    # "ex":Landroid/os/RemoteException;
     :catchall_0
     move-exception v1
@@ -123,15 +123,15 @@
     .param p1, "alarmManager"    # Landroid/app/IAlarmCompleteListener;
 
     .prologue
-    .line 269
+    .line 215
     iput-object p1, p0, Landroid/app/AlarmManager$ListenerWrapper;->mCompletion:Landroid/app/IAlarmCompleteListener;
 
-    .line 270
+    .line 216
     iget-object v0, p0, Landroid/app/AlarmManager$ListenerWrapper;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 268
+    .line 214
     return-void
 .end method
 
@@ -139,12 +139,12 @@
     .locals 4
 
     .prologue
-    .line 277
+    .line 223
     const-class v2, Landroid/app/AlarmManager;
 
     monitor-enter v2
 
-    .line 278
+    .line 224
     :try_start_0
     invoke-static {}, Landroid/app/AlarmManager;->-get1()Landroid/util/ArrayMap;
 
@@ -152,7 +152,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 279
+    .line 225
     invoke-static {}, Landroid/app/AlarmManager;->-get1()Landroid/util/ArrayMap;
 
     move-result-object v1
@@ -166,7 +166,7 @@
     :cond_0
     monitor-exit v2
 
-    .line 285
+    .line 231
     :try_start_1
     iget-object v1, p0, Landroid/app/AlarmManager$ListenerWrapper;->mListener:Landroid/app/AlarmManager$OnAlarmListener;
 
@@ -174,7 +174,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 291
+    .line 237
     :try_start_2
     iget-object v1, p0, Landroid/app/AlarmManager$ListenerWrapper;->mCompletion:Landroid/app/IAlarmCompleteListener;
 
@@ -182,11 +182,11 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 274
+    .line 220
     :goto_0
     return-void
 
-    .line 277
+    .line 223
     :catchall_0
     move-exception v1
 
@@ -194,11 +194,11 @@
 
     throw v1
 
-    .line 292
+    .line 238
     :catch_0
     move-exception v0
 
-    .line 293
+    .line 239
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v1, "AlarmManager"
 
@@ -208,12 +208,12 @@
 
     goto :goto_0
 
-    .line 286
+    .line 232
     .end local v0    # "e":Ljava/lang/Exception;
     :catchall_1
     move-exception v1
 
-    .line 291
+    .line 237
     :try_start_3
     iget-object v2, p0, Landroid/app/AlarmManager$ListenerWrapper;->mCompletion:Landroid/app/IAlarmCompleteListener;
 
@@ -221,15 +221,15 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 286
+    .line 232
     :goto_1
     throw v1
 
-    .line 292
+    .line 238
     :catch_1
     move-exception v0
 
-    .line 293
+    .line 239
     .restart local v0    # "e":Ljava/lang/Exception;
     const-string/jumbo v2, "AlarmManager"
 
@@ -245,9 +245,9 @@
     .param p1, "h"    # Landroid/os/Handler;
 
     .prologue
-    .line 250
+    .line 196
     iput-object p1, p0, Landroid/app/AlarmManager$ListenerWrapper;->mHandler:Landroid/os/Handler;
 
-    .line 249
+    .line 195
     return-void
 .end method

@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IMediaScannerService"
 
-.field static final TRANSACTION_requestScanFile_0:I = 0x1
+.field static final TRANSACTION_requestScanFile:I = 0x1
 
-.field static final TRANSACTION_scanFile_1:I = 0x2
+.field static final TRANSACTION_scanFile:I = 0x2
 
 
 # direct methods
@@ -42,7 +42,7 @@
     .line 18
     const-string/jumbo v0, "android.media.IMediaScannerService"
 
-    invoke-virtual {p0, p0, v0}, Landroid/media/IMediaScannerService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 16
     return-void

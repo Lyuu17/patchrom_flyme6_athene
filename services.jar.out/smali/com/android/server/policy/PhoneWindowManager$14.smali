@@ -1,11 +1,14 @@
 .class Lcom/android/server/policy/PhoneWindowManager$14;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/policy/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/policy/PhoneWindowManager;->launchHomeFromHotKey(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,96 +20,71 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/policy/PhoneWindowManager;
 
+.field final synthetic val$awakenFromDreams:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;)V
+.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;Z)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
+    .param p2, "val$awakenFromDreams"    # Z
 
     .prologue
-    .line 7311
+    .line 3856
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->val$awakenFromDreams:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public onKeyguardExitResult(Z)V
+    .locals 4
+    .param p1, "success"    # Z
 
     .prologue
-    const/4 v3, 0x0
+    .line 3859
+    if-eqz p1, :cond_0
 
-    const/4 v5, 0x1
+    .line 3861
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
-    .line 7313
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-interface {v1}, Landroid/app/IActivityManager;->stopAppSwitches()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7314
-    .local v0, "action":Ljava/lang/String;
-    const-string/jumbo v2, "org.codeaurora.intent.action.WIFI_DISPLAY_VIDEO"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 7315
-    const-string/jumbo v2, "state"
-
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v1
-
-    .line 7316
-    .local v1, "state":I
-    if-ne v1, v5, :cond_1
-
-    .line 7317
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iput-boolean v5, v2, Lcom/android/server/policy/PhoneWindowManager;->mWifiDisplayConnected:Z
-
-    .line 7321
+    .line 3864
     :goto_0
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 7322
-    const-string/jumbo v3, "wfd_UIBC_rot"
+    const-string/jumbo v2, "homekey"
 
-    const/4 v4, -0x1
+    invoke-virtual {v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->sendCloseSystemWindows(Ljava/lang/String;)V
 
-    invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    .line 3865
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    move-result v3
+    iget-boolean v2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->val$awakenFromDreams:Z
 
-    .line 7321
-    iput v3, v2, Lcom/android/server/policy/PhoneWindowManager;->mWifiDisplayCustomRotation:I
+    const/4 v3, 0x1
 
-    .line 7323
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    invoke-virtual {v1, v3, v2}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
 
-    invoke-virtual {v2, v5}, Lcom/android/server/policy/PhoneWindowManager;->updateRotation(Z)V
-
-    .line 7312
-    .end local v1    # "state":I
+    .line 3858
     :cond_0
     return-void
 
-    .line 7319
-    .restart local v1    # "state":I
-    :cond_1
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    .line 3862
+    :catch_0
+    move-exception v0
 
-    iput-boolean v3, v2, Lcom/android/server/policy/PhoneWindowManager;->mWifiDisplayConnected:Z
-
+    .local v0, "e":Landroid/os/RemoteException;
     goto :goto_0
 .end method

@@ -38,19 +38,19 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiConnectivityManager;
 
     .prologue
-    .line 248
+    .line 242
     iput-object p1, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 249
+    .line 243
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->mScanDetails:Ljava/util/List;
 
-    .line 248
+    .line 242
     return-void
 .end method
 
@@ -70,12 +70,12 @@
     .locals 1
 
     .prologue
-    .line 252
+    .line 246
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->mScanDetails:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 251
+    .line 245
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .param p2, "description"    # Ljava/lang/String;
 
     .prologue
-    .line 262
+    .line 256
     const-string/jumbo v0, "WifiConnectivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -102,10 +102,10 @@
 
     move-result-object v1
 
-    .line 264
+    .line 258
     const-string/jumbo v2, " description: "
 
-    .line 262
+    .line 256
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -120,7 +120,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 267
+    .line 261
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-get2(Lcom/android/server/wifi/WifiConnectivityManager;)I
@@ -135,18 +135,18 @@
 
     if-ge v1, v0, :cond_0
 
-    .line 268
+    .line 262
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     const/16 v1, 0x7d0
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap3(Lcom/android/server/wifi/WifiConnectivityManager;I)V
 
-    .line 261
+    .line 255
     :goto_0
     return-void
 
-    .line 270
+    .line 264
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
@@ -154,7 +154,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-set0(Lcom/android/server/wifi/WifiConnectivityManager;I)I
 
-    .line 271
+    .line 265
     const-string/jumbo v0, "WifiConnectivityManager"
 
     const-string/jumbo v1, "Failed to successfully start periodic scan for 5 times"
@@ -169,7 +169,7 @@
     .param p1, "fullScanResult"    # Landroid/net/wifi/ScanResult;
 
     .prologue
-    .line 291
+    .line 285
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiConnectivityManager;->-get0(Lcom/android/server/wifi/WifiConnectivityManager;)Z
@@ -178,7 +178,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 292
+    .line 286
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -191,26 +191,26 @@
 
     move-result-object v1
 
-    .line 293
+    .line 287
     iget-object v2, p1, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    .line 292
+    .line 286
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 293
+    .line 287
     const-string/jumbo v2, " capabilities "
 
-    .line 292
+    .line 286
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 294
+    .line 288
     iget-object v2, p1, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 292
+    .line 286
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -221,7 +221,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 297
+    .line 291
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->mScanDetails:Ljava/util/List;
 
@@ -231,7 +231,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 290
+    .line 284
     return-void
 .end method
 
@@ -240,7 +240,7 @@
     .param p1, "periodInMs"    # I
 
     .prologue
-    .line 278
+    .line 272
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -257,10 +257,10 @@
 
     move-result-object v1
 
-    .line 279
+    .line 273
     const-string/jumbo v2, "ms"
 
-    .line 278
+    .line 272
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -271,7 +271,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 277
+    .line 271
     return-void
 .end method
 
@@ -280,7 +280,7 @@
     .param p1, "results"    # [Landroid/net/wifi/WifiScanner$ScanData;
 
     .prologue
-    .line 284
+    .line 278
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     iget-object v1, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->mScanDetails:Ljava/util/List;
@@ -289,17 +289,17 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap0(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/util/List;Ljava/lang/String;)Z
 
-    .line 285
+    .line 279
     invoke-virtual {p0}, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->clearScanDetails()V
 
-    .line 286
+    .line 280
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-set0(Lcom/android/server/wifi/WifiConnectivityManager;I)I
 
-    .line 283
+    .line 277
     return-void
 .end method
 
@@ -307,13 +307,13 @@
     .locals 2
 
     .prologue
-    .line 257
+    .line 251
     iget-object v0, p0, Lcom/android/server/wifi/WifiConnectivityManager$PeriodicScanListener;->this$0:Lcom/android/server/wifi/WifiConnectivityManager;
 
     const-string/jumbo v1, "PeriodicScanListener onSuccess"
 
     invoke-static {v0, v1}, Lcom/android/server/wifi/WifiConnectivityManager;->-wrap1(Lcom/android/server/wifi/WifiConnectivityManager;Ljava/lang/String;)V
 
-    .line 256
+    .line 250
     return-void
 .end method

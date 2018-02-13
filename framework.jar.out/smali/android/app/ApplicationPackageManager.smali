@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/ApplicationPackageManager$FlymeInjector;,
         Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;,
         Landroid/app/ApplicationPackageManager$OnPermissionsChangeListenerDelegate;,
         Landroid/app/ApplicationPackageManager$ResourceName;
@@ -113,27 +114,27 @@
     .locals 1
 
     .prologue
-    .line 2446
+    .line 2424
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
 
-    .line 2448
+    .line 2426
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 2447
+    .line 2425
     sput-object v0, Landroid/app/ApplicationPackageManager;->sIconCache:Landroid/util/ArrayMap;
 
-    .line 2450
+    .line 2428
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 2449
+    .line 2427
     sput-object v0, Landroid/app/ApplicationPackageManager;->sStringCache:Landroid/util/ArrayMap;
 
     .line 98
@@ -168,7 +169,7 @@
 
     iput v0, p0, Landroid/app/ApplicationPackageManager;->mCachedSafeMode:I
 
-    .line 2453
+    .line 2431
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
@@ -226,19 +227,19 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 2382
+    .line 2360
     invoke-direct {p0, p1}, Landroid/app/ApplicationPackageManager;->isManagedProfile(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2383
+    .line 2361
     const v0, 0x108032a
 
     return v0
 
-    .line 2385
+    .line 2363
     :cond_0
     const/4 v0, 0x0
 
@@ -255,30 +256,30 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 2329
+    .line 2307
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v1
 
-    .line 2330
+    .line 2308
     .local v1, "badgedWidth":I
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v0
 
-    .line 2331
+    .line 2309
     .local v0, "badgedHeight":I
     if-eqz p4, :cond_2
 
-    .line 2332
+    .line 2310
     instance-of v7, p1, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 2331
+    .line 2309
     if-eqz v7, :cond_2
 
     move-object v7, p1
 
-    .line 2333
+    .line 2311
     check-cast v7, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v7}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
@@ -289,42 +290,42 @@
 
     move-result v4
 
-    .line 2336
+    .line 2314
     .local v4, "canBadgeInPlace":Z
     :goto_0
     if-eqz v4, :cond_3
 
     move-object v7, p1
 
-    .line 2337
+    .line 2315
     check-cast v7, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v7}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 2341
+    .line 2319
     .local v2, "bitmap":Landroid/graphics/Bitmap;
     :goto_1
     new-instance v5, Landroid/graphics/Canvas;
 
     invoke-direct {v5, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 2343
+    .line 2321
     .local v5, "canvas":Landroid/graphics/Canvas;
     if-nez v4, :cond_0
 
-    .line 2344
+    .line 2322
     invoke-virtual {p1, v8, v8, v1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2345
+    .line 2323
     invoke-virtual {p1, v5}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2348
+    .line 2326
     :cond_0
     if-eqz p3, :cond_6
 
-    .line 2349
+    .line 2327
     iget v7, p3, Landroid/graphics/Rect;->left:I
 
     if-ltz v7, :cond_1
@@ -333,7 +334,7 @@
 
     if-gez v7, :cond_4
 
-    .line 2351
+    .line 2329
     :cond_1
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
@@ -351,20 +352,20 @@
 
     move-result-object v9
 
-    .line 2352
+    .line 2330
     const-string/jumbo v10, " not in badged drawable bounds "
 
-    .line 2351
+    .line 2329
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    .line 2353
+    .line 2331
     new-instance v10, Landroid/graphics/Rect;
 
     invoke-direct {v10, v8, v8, v1, v0}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 2351
+    .line 2329
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v8
@@ -383,10 +384,10 @@
     :cond_2
     move v4, v8
 
-    .line 2331
+    .line 2309
     goto :goto_0
 
-    .line 2339
+    .line 2317
     .restart local v4    # "canBadgeInPlace":Z
     :cond_3
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -398,7 +399,7 @@
     .restart local v2    # "bitmap":Landroid/graphics/Bitmap;
     goto :goto_1
 
-    .line 2350
+    .line 2328
     .restart local v5    # "canvas":Landroid/graphics/Canvas;
     :cond_4
     invoke-virtual {p3}, Landroid/graphics/Rect;->width()I
@@ -413,7 +414,7 @@
 
     if-gt v7, v0, :cond_1
 
-    .line 2355
+    .line 2333
     invoke-virtual {p3}, Landroid/graphics/Rect;->width()I
 
     move-result v7
@@ -424,10 +425,10 @@
 
     invoke-virtual {p2, v8, v8, v7, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2357
+    .line 2335
     invoke-virtual {v5}, Landroid/graphics/Canvas;->save()I
 
-    .line 2358
+    .line 2336
     iget v7, p3, Landroid/graphics/Rect;->left:I
 
     int-to-float v7, v7
@@ -438,17 +439,17 @@
 
     invoke-virtual {v5, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2359
+    .line 2337
     invoke-virtual {p2, v5}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2360
+    .line 2338
     invoke-virtual {v5}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2366
+    .line 2344
     :goto_2
     if-nez v4, :cond_7
 
-    .line 2367
+    .line 2345
     new-instance v6, Landroid/graphics/drawable/BitmapDrawable;
 
     iget-object v7, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
@@ -459,7 +460,7 @@
 
     invoke-direct {v6, v7, v2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 2369
+    .line 2347
     .local v6, "mergedDrawable":Landroid/graphics/drawable/BitmapDrawable;
     instance-of v7, p1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -467,10 +468,10 @@
 
     move-object v3, p1
 
-    .line 2370
+    .line 2348
     check-cast v3, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 2371
+    .line 2349
     .local v3, "bitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -482,22 +483,22 @@
 
     invoke-virtual {v6, v7}, Landroid/graphics/drawable/BitmapDrawable;->setTargetDensity(I)V
 
-    .line 2374
+    .line 2352
     .end local v3    # "bitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     :cond_5
     return-object v6
 
-    .line 2362
+    .line 2340
     .end local v6    # "mergedDrawable":Landroid/graphics/drawable/BitmapDrawable;
     :cond_6
     invoke-virtual {p2, v8, v8, v1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2363
+    .line 2341
     invoke-virtual {p2, v5}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_2
 
-    .line 2377
+    .line 2355
     :cond_7
     return-object p1
 .end method
@@ -987,7 +988,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 2389
+    .line 2367
     invoke-virtual {p0}, Landroid/app/ApplicationPackageManager;->getUserManager()Landroid/os/UserManager;
 
     move-result-object v0
@@ -1398,7 +1399,7 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 2276
+    .line 2254
     :try_start_0
     iget-object v0, p0, Landroid/app/ApplicationPackageManager;->mPM:Landroid/content/pm/IPackageManager;
 
@@ -1420,14 +1421,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2274
+    .line 2252
     return-void
 
-    .line 2278
+    .line 2256
     :catch_0
     move-exception v6
 
-    .line 2279
+    .line 2257
     .local v6, "e":Landroid/os/RemoteException;
     invoke-virtual {v6}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -1857,7 +1858,7 @@
     .param p1, "sourceUserId"    # I
 
     .prologue
-    .line 2289
+    .line 2267
     :try_start_0
     iget-object v1, p0, Landroid/app/ApplicationPackageManager;->mPM:Landroid/content/pm/IPackageManager;
 
@@ -1871,14 +1872,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2287
+    .line 2265
     return-void
 
-    .line 2290
+    .line 2268
     :catch_0
     move-exception v0
 
-    .line 2291
+    .line 2269
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -2943,6 +2944,13 @@
     .locals 2
 
     .prologue
+
+    invoke-static {}, Landroid/app/ApplicationPackageManager$FlymeInjector;->getFlymeDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+
     .line 1098
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -3011,6 +3019,13 @@
 
     .line 1023
     .local v0, "cachedIcon":Landroid/graphics/drawable/Drawable;
+
+    invoke-static/range {p1 .. p1}, Landroid/app/ApplicationPackageManager$FlymeInjector;->isFlymeCalendarPkg(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_flyme_0
+
     if-eqz v0, :cond_0
 
     .line 1024
@@ -3018,6 +3033,7 @@
 
     .line 1027
     :cond_0
+    :cond_flyme_0
     if-nez p3, :cond_1
 
     .line 1029
@@ -3044,7 +3060,7 @@
     .local v6, "r":Landroid/content/res/Resources;
     const/4 v7, 0x0
 
-    invoke-virtual {v6, p2, v7}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    invoke-static/range {p0 .. p3}, Landroid/app/ApplicationPackageManager$FlymeInjector;->getFlymeThemeDrawable(Landroid/app/ApplicationPackageManager;Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -4414,12 +4430,12 @@
     .locals 8
 
     .prologue
-    .line 2247
+    .line 2225
     iget-object v7, p0, Landroid/app/ApplicationPackageManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v7
 
-    .line 2248
+    .line 2226
     :try_start_0
     iget-object v0, p0, Landroid/app/ApplicationPackageManager;->mInstaller:Landroid/content/pm/PackageInstaller;
     :try_end_0
@@ -4427,7 +4443,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2250
+    .line 2228
     :try_start_1
     new-instance v0, Landroid/content/pm/PackageInstaller;
 
@@ -4439,7 +4455,7 @@
 
     move-result-object v3
 
-    .line 2251
+    .line 2229
     iget-object v2, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
 
     invoke-virtual {v2}, Landroid/app/ContextImpl;->getPackageName()Ljava/lang/String;
@@ -4454,7 +4470,7 @@
 
     move-object v2, p0
 
-    .line 2250
+    .line 2228
     invoke-direct/range {v0 .. v5}, Landroid/content/pm/PackageInstaller;-><init>(Landroid/content/Context;Landroid/content/pm/PackageManager;Landroid/content/pm/IPackageInstaller;Ljava/lang/String;I)V
 
     iput-object v0, p0, Landroid/app/ApplicationPackageManager;->mInstaller:Landroid/content/pm/PackageInstaller;
@@ -4462,7 +4478,7 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2256
+    .line 2234
     :cond_0
     :try_start_2
     iget-object v0, p0, Landroid/app/ApplicationPackageManager;->mInstaller:Landroid/content/pm/PackageInstaller;
@@ -4473,11 +4489,11 @@
 
     return-object v0
 
-    .line 2252
+    .line 2230
     :catch_0
     move-exception v6
 
-    .line 2253
+    .line 2231
     .local v6, "e":Landroid/os/RemoteException;
     :try_start_3
     invoke-virtual {v6}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
@@ -4488,7 +4504,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 2247
+    .line 2225
     .end local v6    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v0
@@ -6710,51 +6726,6 @@
     return-void
 .end method
 
-.method public isComponentProtected(Ljava/lang/String;ILandroid/content/ComponentName;)Z
-    .locals 3
-    .param p1, "callingPackage"    # Ljava/lang/String;
-    .param p2, "callingUid"    # I
-    .param p3, "componentName"    # Landroid/content/ComponentName;
-
-    .prologue
-    .line 2237
-    :try_start_0
-    iget-object v1, p0, Landroid/app/ApplicationPackageManager;->mPM:Landroid/content/pm/IPackageManager;
-
-    .line 2238
-    iget-object v2, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
-
-    invoke-virtual {v2}, Landroid/app/ContextImpl;->getUserId()I
-
-    move-result v2
-
-    .line 2237
-    invoke-interface {v1, p1, p2, p3, v2}, Landroid/content/pm/IPackageManager;->isComponentProtected(Ljava/lang/String;ILandroid/content/ComponentName;I)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v1
-
-    return v1
-
-    .line 2239
-    :catch_0
-    move-exception v0
-
-    .line 2240
-    .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "ApplicationPackageManager"
-
-    const-string/jumbo v2, "Failed to get component protected setting"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 2241
-    const/4 v1, 0x0
-
-    return v1
-.end method
-
 .method public isEphemeralApplication()Z
     .locals 4
 
@@ -6803,7 +6774,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 2263
+    .line 2241
     :try_start_0
     iget-object v1, p0, Landroid/app/ApplicationPackageManager;->mPM:Landroid/content/pm/IPackageManager;
 
@@ -6821,11 +6792,11 @@
 
     return v1
 
-    .line 2264
+    .line 2242
     :catch_0
     move-exception v0
 
-    .line 2265
+    .line 2243
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -7097,12 +7068,12 @@
     .param p2, "appInfo"    # Landroid/content/pm/ApplicationInfo;
 
     .prologue
-    .line 2299
+    .line 2277
     invoke-virtual {p0, p1, p2}, Landroid/app/ApplicationPackageManager;->loadUnbadgedItemIcon(Landroid/content/pm/PackageItemInfo;Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 2300
+    .line 2278
     .local v0, "dr":Landroid/graphics/drawable/Drawable;
     iget v1, p1, Landroid/content/pm/PackageItemInfo;->showUserIcon:I
 
@@ -7110,10 +7081,10 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 2301
+    .line 2279
     return-object v0
 
-    .line 2303
+    .line 2281
     :cond_0
     new-instance v1, Landroid/os/UserHandle;
 
@@ -7138,14 +7109,14 @@
     .param p2, "appInfo"    # Landroid/content/pm/ApplicationInfo;
 
     .prologue
-    .line 2310
+    .line 2288
     iget v2, p1, Landroid/content/pm/PackageItemInfo;->showUserIcon:I
 
     const/16 v3, -0x2710
 
     if-eq v2, v3, :cond_1
 
-    .line 2311
+    .line 2289
     invoke-virtual {p0}, Landroid/app/ApplicationPackageManager;->getUserManager()Landroid/os/UserManager;
 
     move-result-object v2
@@ -7156,11 +7127,11 @@
 
     move-result-object v0
 
-    .line 2312
+    .line 2290
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     if-nez v0, :cond_0
 
-    .line 2313
+    .line 2291
     iget v2, p1, Landroid/content/pm/PackageItemInfo;->showUserIcon:I
 
     const/4 v3, 0x0
@@ -7171,7 +7142,7 @@
 
     return-object v2
 
-    .line 2315
+    .line 2293
     :cond_0
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -7179,18 +7150,18 @@
 
     return-object v2
 
-    .line 2317
+    .line 2295
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     :cond_1
     const/4 v1, 0x0
 
-    .line 2318
+    .line 2296
     .local v1, "dr":Landroid/graphics/drawable/Drawable;
     iget-object v2, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    .line 2319
+    .line 2297
     iget-object v2, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget v3, p1, Landroid/content/pm/PackageItemInfo;->icon:I
@@ -7199,17 +7170,17 @@
 
     move-result-object v1
 
-    .line 2321
+    .line 2299
     .end local v1    # "dr":Landroid/graphics/drawable/Drawable;
     :cond_2
     if-nez v1, :cond_3
 
-    .line 2322
+    .line 2300
     invoke-virtual {p1, p0}, Landroid/content/pm/PackageItemInfo;->loadDefaultIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 2324
+    .line 2302
     :cond_3
     return-object v1
 .end method
@@ -8743,45 +8714,6 @@
     throw v1
 .end method
 
-.method public setComponentProtectedSetting(Landroid/content/ComponentName;Z)V
-    .locals 3
-    .param p1, "componentName"    # Landroid/content/ComponentName;
-    .param p2, "newState"    # Z
-
-    .prologue
-    .line 2226
-    :try_start_0
-    iget-object v1, p0, Landroid/app/ApplicationPackageManager;->mPM:Landroid/content/pm/IPackageManager;
-
-    iget-object v2, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
-
-    invoke-virtual {v2}, Landroid/app/ContextImpl;->getUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/content/pm/IPackageManager;->setComponentProtectedSetting(Landroid/content/ComponentName;ZI)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 2224
-    :goto_0
-    return-void
-
-    .line 2227
-    :catch_0
-    move-exception v0
-
-    .line 2228
-    .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "ApplicationPackageManager"
-
-    const-string/jumbo v2, "Failed to set component protected setting"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
-.end method
-
 .method public setDefaultBrowserPackageNameAsUser(Ljava/lang/String;I)Z
     .locals 2
     .param p1, "packageName"    # Ljava/lang/String;
@@ -9205,4 +9137,87 @@
     move-result-object v1
 
     throw v1
+.end method
+
+.method public getPackageArchiveInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    .locals 6
+    .param p1, "archiveFilePath"    # Ljava/lang/String;
+    .param p2, "flags"    # I
+
+    .prologue
+    const/4 v4, 0x0
+
+    invoke-super {p0, p1, p2}, Landroid/content/pm/PackageManager;->getPackageArchiveInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v3
+
+    .local v3, "packageInfo":Landroid/content/pm/PackageInfo;
+    if-nez v3, :cond_0
+
+    return-object v4
+
+    :cond_0
+    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
+
+    invoke-static {v4}, Landroid/content/pm/FlymePackageManager;->getInstance(Landroid/content/Context;)Landroid/content/pm/FlymePackageManager;
+
+    move-result-object v2
+
+    .local v2, "fpm":Landroid/content/pm/FlymePackageManager;
+    if-eqz v2, :cond_1
+
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v4
+
+    const/16 v5, 0x3e8
+
+    if-eq v4, v5, :cond_1
+
+    invoke-virtual {v2}, Landroid/content/pm/FlymePackageManager;->getInternalAppList()Ljava/util/List;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v2}, Landroid/content/pm/FlymePackageManager;->getInternalAppList()Ljava/util/List;
+
+    move-result-object v4
+
+    iget-object v5, v3, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+
+    invoke-interface {v4, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    :try_start_0
+    iget-object v4, v3, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    invoke-virtual {p0, v4, v5}, Landroid/app/ApplicationPackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v1
+
+    .local v1, "fakeInfo":Landroid/content/pm/PackageInfo;
+    if-eqz v1, :cond_1
+
+    iget v4, v1, Landroid/content/pm/PackageInfo;->versionCode:I
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const v5, 0x7fffffff
+
+    if-ne v4, v5, :cond_1
+
+    return-object v1
+
+    .end local v1    # "fakeInfo":Landroid/content/pm/PackageInfo;
+    :catch_0
+    move-exception v0
+
+    :cond_1
+    return-object v3
 .end method

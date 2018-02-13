@@ -17,8 +17,6 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
-.field public static final enum ACTIVATE_DESCRIPTOR:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
-
 .field public static final enum ADDRESS:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
 .field public static final enum ALPHA_ID:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
@@ -379,21 +377,8 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->TEXT_ATTRIBUTE:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
-    .line 50
-    new-instance v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
-
-    const-string/jumbo v1, "ACTIVATE_DESCRIPTOR"
-
-    const/16 v2, 0x18
-
-    const/16 v3, 0x7b
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->ACTIVATE_DESCRIPTOR:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
-
     .line 25
-    const/16 v0, 0x19
+    const/16 v0, 0x18
 
     new-array v0, v0, [Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
@@ -531,12 +516,6 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->ACTIVATE_DESCRIPTOR:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
-
-    const/16 v2, 0x18
-
-    aput-object v1, v0, v2
-
     sput-object v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->$VALUES:[Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     return-void
@@ -547,13 +526,13 @@
     .param p3, "value"    # I
 
     .prologue
-    .line 54
+    .line 53
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 55
+    .line 54
     iput p3, p0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->mValue:I
 
-    .line 54
+    .line 53
     return-void
 .end method
 
@@ -562,7 +541,7 @@
     .param p0, "value"    # I
 
     .prologue
-    .line 68
+    .line 67
     invoke-static {}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->values()[Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     move-result-object v2
@@ -576,22 +555,22 @@
 
     aget-object v0, v2, v1
 
-    .line 69
+    .line 68
     .local v0, "e":Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
     iget v4, v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->mValue:I
 
     if-ne v4, p0, :cond_0
 
-    .line 70
+    .line 69
     return-object v0
 
-    .line 68
+    .line 67
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 73
+    .line 72
     .end local v0    # "e":Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
     :cond_1
     const/4 v1, 0x0
@@ -632,7 +611,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 63
     iget v0, p0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->mValue:I
 
     return v0

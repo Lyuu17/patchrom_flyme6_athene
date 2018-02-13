@@ -48,7 +48,7 @@
     .param p8, "val$previousFlagPlaySound"    # I
 
     .prologue
-    .line 466
+    .line 463
     iput-object p1, p0, Lcom/android/server/media/MediaSessionRecord$2;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
     iput-boolean p2, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$useSuggested:Z
@@ -76,12 +76,12 @@
     .locals 6
 
     .prologue
-    .line 469
+    .line 466
     iget-boolean v0, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$useSuggested:Z
 
     if-eqz v0, :cond_1
 
-    .line 470
+    .line 467
     iget v0, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$stream:I
 
     const/4 v1, 0x0
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 471
+    .line 468
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$2;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
     invoke-static {v0}, Lcom/android/server/media/MediaSessionRecord;->-get3(Lcom/android/server/media/MediaSessionRecord;)Landroid/media/AudioManagerInternal;
@@ -103,21 +103,21 @@
 
     iget v2, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$direction:I
 
-    .line 472
+    .line 469
     iget v3, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$flags:I
 
     iget-object v4, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$packageName:Ljava/lang/String;
 
     iget v5, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$uid:I
 
-    .line 471
+    .line 468
     invoke-virtual/range {v0 .. v5}, Landroid/media/AudioManagerInternal;->adjustSuggestedStreamVolumeForUid(IIILjava/lang/String;I)V
 
-    .line 468
+    .line 465
     :goto_0
     return-void
 
-    .line 474
+    .line 471
     :cond_0
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$2;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -125,10 +125,10 @@
 
     move-result-object v0
 
-    .line 475
+    .line 472
     iget v2, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$direction:I
 
-    .line 476
+    .line 473
     iget v1, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$flags:I
 
     iget v3, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$previousFlagPlaySound:I
@@ -139,15 +139,15 @@
 
     iget v5, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$uid:I
 
-    .line 475
+    .line 472
     const/high16 v1, -0x80000000
 
-    .line 474
+    .line 471
     invoke-virtual/range {v0 .. v5}, Landroid/media/AudioManagerInternal;->adjustSuggestedStreamVolumeForUid(IIILjava/lang/String;I)V
 
     goto :goto_0
 
-    .line 479
+    .line 476
     :cond_1
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$2;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -161,12 +161,12 @@
 
     iget v3, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$flags:I
 
-    .line 480
+    .line 477
     iget-object v4, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$packageName:Ljava/lang/String;
 
     iget v5, p0, Lcom/android/server/media/MediaSessionRecord$2;->val$uid:I
 
-    .line 479
+    .line 476
     invoke-virtual/range {v0 .. v5}, Landroid/media/AudioManagerInternal;->adjustStreamVolumeForUid(IIILjava/lang/String;I)V
 
     goto :goto_0

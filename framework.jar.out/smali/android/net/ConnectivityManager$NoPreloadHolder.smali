@@ -36,7 +36,7 @@
 
     const/4 v3, 0x0
 
-    .line 3510
+    .line 3482
     new-array v0, v2, [Ljava/lang/Class;
 
     const-class v1, Landroid/net/ConnectivityManager;
@@ -49,14 +49,14 @@
 
     aput-object v2, v1, v3
 
-    .line 3509
+    .line 3481
     invoke-static {v0, v1}, Lcom/android/internal/util/MessageUtils;->findMessageNames([Ljava/lang/Class;[Ljava/lang/String;)Landroid/util/SparseArray;
 
     move-result-object v0
 
     sput-object v0, Landroid/net/ConnectivityManager$NoPreloadHolder;->sMagicDecoderRing:Landroid/util/SparseArray;
 
-    .line 3508
+    .line 3480
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .locals 0
 
     .prologue
-    .line 3508
+    .line 3480
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

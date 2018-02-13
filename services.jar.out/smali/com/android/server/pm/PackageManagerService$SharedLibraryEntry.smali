@@ -27,15 +27,15 @@
     .param p2, "_apk"    # Ljava/lang/String;
 
     .prologue
-    .line 672
+    .line 658
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 673
+    .line 659
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$SharedLibraryEntry;->path:Ljava/lang/String;
 
-    .line 674
+    .line 660
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$SharedLibraryEntry;->apk:Ljava/lang/String;
 
-    .line 672
+    .line 658
     return-void
 .end method

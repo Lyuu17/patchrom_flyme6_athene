@@ -32,13 +32,13 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1431
+    .line 1428
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1432
+    .line 1429
     iput-object p1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
-    .line 1431
+    .line 1428
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 2
 
     .prologue
-    .line 1533
+    .line 1530
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
@@ -60,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 1545
+    .line 1542
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v0
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 1541
+    .line 1538
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 1549
+    .line 1546
     invoke-static {}, Landroid/os/Binder;->getCallingUserHandle()Landroid/os/UserHandle;
 
     move-result-object v0
@@ -96,7 +96,7 @@
     .locals 2
 
     .prologue
-    .line 1553
+    .line 1550
     invoke-static {}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getCallingUid()I
 
     move-result v0
@@ -123,10 +123,10 @@
     .param p1, "token"    # J
 
     .prologue
-    .line 1537
+    .line 1534
     invoke-static {p1, p2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1536
+    .line 1533
     return-void
 .end method
 
@@ -135,7 +135,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 1561
+    .line 1558
     invoke-static {p1}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
 
     move-result-object v0
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 1474
+    .line 1471
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/app/AlarmManager;
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 1597
+    .line 1594
     const-string/jumbo v0, "/data/system/"
 
     return-object v0
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 1483
+    .line 1480
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
@@ -187,7 +187,7 @@
     .locals 1
 
     .prologue
-    .line 1496
+    .line 1493
     const-string/jumbo v0, "audio"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -205,14 +205,14 @@
     .locals 1
 
     .prologue
-    .line 1492
+    .line 1489
     const-string/jumbo v0, "backup"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 1491
+    .line 1488
     invoke-static {v0}, Landroid/app/backup/IBackupManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/backup/IBackupManager;
 
     move-result-object v0
@@ -224,14 +224,14 @@
     .locals 1
 
     .prologue
-    .line 1458
+    .line 1455
     const-string/jumbo v0, "connmetrics"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 1457
+    .line 1454
     invoke-static {v0}, Landroid/net/IIpConnectivityMetrics$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/IIpConnectivityMetrics;
 
     move-result-object v0
@@ -243,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 1487
+    .line 1484
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
@@ -255,14 +255,14 @@
     .locals 1
 
     .prologue
-    .line 1479
+    .line 1476
     const-string/jumbo v0, "window"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 1478
+    .line 1475
     invoke-static {v0}, Landroid/view/IWindowManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/view/IWindowManager;
 
     move-result-object v0
@@ -274,7 +274,7 @@
     .locals 1
 
     .prologue
-    .line 1525
+    .line 1522
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -286,7 +286,7 @@
     .locals 2
 
     .prologue
-    .line 1453
+    .line 1450
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/app/NotificationManager;
@@ -304,7 +304,7 @@
     .locals 1
 
     .prologue
-    .line 1449
+    .line 1446
     const-class v0, Landroid/content/pm/PackageManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -320,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 1462
+    .line 1459
     const-class v0, Landroid/os/PowerManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -336,7 +336,7 @@
     .locals 1
 
     .prologue
-    .line 1466
+    .line 1463
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
@@ -350,7 +350,7 @@
     .locals 2
 
     .prologue
-    .line 1470
+    .line 1467
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "trust"
@@ -368,7 +368,7 @@
     .locals 1
 
     .prologue
-    .line 1441
+    .line 1438
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
@@ -382,7 +382,7 @@
     .locals 1
 
     .prologue
-    .line 1445
+    .line 1442
     const-class v0, Landroid/os/UserManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -398,7 +398,7 @@
     .locals 2
 
     .prologue
-    .line 1529
+    .line 1526
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/net/wifi/WifiManager;
@@ -416,7 +416,7 @@
     .locals 2
 
     .prologue
-    .line 1500
+    .line 1497
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
@@ -430,7 +430,7 @@
     .locals 4
 
     .prologue
-    .line 1436
+    .line 1433
     new-instance v0, Lcom/android/server/devicepolicy/Owners;
 
     invoke-virtual {p0}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->getUserManager()Landroid/os/UserManager;
@@ -441,12 +441,12 @@
 
     move-result-object v2
 
-    .line 1437
+    .line 1434
     invoke-virtual {p0}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->getPackageManagerInternal()Landroid/content/pm/PackageManagerInternal;
 
     move-result-object v3
 
-    .line 1436
+    .line 1433
     invoke-direct {v0, v1, v2, v3}, Lcom/android/server/devicepolicy/Owners;-><init>(Landroid/os/UserManager;Landroid/os/UserManagerInternal;Landroid/content/pm/PackageManagerInternal;)V
 
     return-object v0
@@ -459,7 +459,7 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 1565
+    .line 1562
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/os/PowerManager;
@@ -472,7 +472,7 @@
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/os/PowerManager;->goToSleep(JII)V
 
-    .line 1564
+    .line 1561
     return-void
 .end method
 
@@ -481,7 +481,7 @@
     .param p1, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 1569
+    .line 1566
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/os/PowerManager;
@@ -494,7 +494,7 @@
 
     invoke-virtual {v0, p1}, Landroid/os/PowerManager;->reboot(Ljava/lang/String;)V
 
-    .line 1568
+    .line 1565
     return-void
 .end method
 
@@ -506,7 +506,7 @@
     .param p4, "userHandle"    # I
 
     .prologue
-    .line 1602
+    .line 1599
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -515,7 +515,7 @@
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1601
+    .line 1598
     return-void
 .end method
 
@@ -523,7 +523,7 @@
     .locals 1
 
     .prologue
-    .line 1651
+    .line 1648
     invoke-static {}, Landroid/app/admin/SecurityLog;->getLoggingEnabledProperty()Z
 
     move-result v0
@@ -535,7 +535,7 @@
     .locals 1
 
     .prologue
-    .line 1655
+    .line 1652
     invoke-static {}, Landroid/app/admin/SecurityLog;->isLoggingEnabled()Z
 
     move-result v0
@@ -548,10 +548,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1647
+    .line 1644
     invoke-static {p1}, Landroid/app/admin/SecurityLog;->setLoggingEnabledProperty(Z)V
 
-    .line 1646
+    .line 1643
     return-void
 .end method
 
@@ -561,7 +561,7 @@
     .param p2, "def"    # I
 
     .prologue
-    .line 1631
+    .line 1628
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -581,7 +581,7 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1635
+    .line 1632
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -590,7 +590,7 @@
 
     invoke-static {v0, p1, p2}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1634
+    .line 1631
     return-void
 .end method
 
@@ -600,7 +600,7 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1643
+    .line 1640
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -609,7 +609,7 @@
 
     invoke-static {v0, p1, p2}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 1642
+    .line 1639
     return-void
 .end method
 
@@ -620,7 +620,7 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1622
+    .line 1619
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -629,7 +629,7 @@
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 1621
+    .line 1618
     return-void
 .end method
 
@@ -640,7 +640,7 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1607
+    .line 1604
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -660,7 +660,7 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1627
+    .line 1624
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -669,7 +669,7 @@
 
     invoke-static {v0, p1, p2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1626
+    .line 1623
     return-void
 .end method
 
@@ -680,7 +680,7 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1612
+    .line 1609
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -689,7 +689,7 @@
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1611
+    .line 1608
     return-void
 .end method
 
@@ -699,7 +699,7 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1639
+    .line 1636
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -708,7 +708,7 @@
 
     invoke-static {v0, p1, p2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 1638
+    .line 1635
     return-void
 .end method
 
@@ -719,7 +719,7 @@
     .param p3, "userHandle"    # I
 
     .prologue
-    .line 1617
+    .line 1614
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -728,7 +728,7 @@
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 1616
+    .line 1613
     return-void
 .end method
 
@@ -736,7 +736,7 @@
     .locals 1
 
     .prologue
-    .line 1521
+    .line 1518
     invoke-static {}, Landroid/os/storage/StorageManager;->isEncryptable()Z
 
     move-result v0
@@ -748,7 +748,7 @@
     .locals 1
 
     .prologue
-    .line 1517
+    .line 1514
     invoke-static {}, Landroid/os/storage/StorageManager;->isEncrypted()Z
 
     move-result v0
@@ -760,7 +760,7 @@
     .locals 1
 
     .prologue
-    .line 1504
+    .line 1501
     invoke-static {}, Landroid/os/storage/StorageManager;->isFileEncryptedNativeOnly()Z
 
     move-result v0
@@ -772,12 +772,12 @@
     .locals 3
 
     .prologue
-    .line 1508
+    .line 1505
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 1510
+    .line 1507
     .local v0, "identity":J
     :try_start_0
     invoke-static {}, Landroid/os/storage/StorageManager;->isNonDefaultBlockEncrypted()Z
@@ -786,20 +786,20 @@
 
     move-result v2
 
-    .line 1512
+    .line 1509
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1510
+    .line 1507
     return v2
 
-    .line 1511
+    .line 1508
     :catchall_0
     move-exception v2
 
-    .line 1512
+    .line 1509
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1511
+    .line 1508
     throw v2
 .end method
 
@@ -808,7 +808,7 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 1585
+    .line 1582
     invoke-static {p1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -822,7 +822,7 @@
     .param p2, "def"    # Ljava/lang/String;
 
     .prologue
-    .line 1581
+    .line 1578
     invoke-static {p1, p2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -836,7 +836,7 @@
     .param p2, "def"    # Z
 
     .prologue
-    .line 1573
+    .line 1570
     invoke-static {p1, p2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
@@ -850,7 +850,7 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 1577
+    .line 1574
     invoke-static {p1, p2, p3}, Landroid/os/SystemProperties;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v0
@@ -864,10 +864,10 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1589
+    .line 1586
     invoke-static {p1, p2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1588
+    .line 1585
     return-void
 .end method
 
@@ -875,7 +875,7 @@
     .locals 1
 
     .prologue
-    .line 1557
+    .line 1554
     invoke-virtual {p0}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->binderGetCallingUid()I
 
     move-result v0
@@ -891,7 +891,7 @@
     .locals 1
 
     .prologue
-    .line 1593
+    .line 1590
     invoke-static {}, Landroid/os/UserManager;->isSplitSystemUser()Z
 
     move-result v0

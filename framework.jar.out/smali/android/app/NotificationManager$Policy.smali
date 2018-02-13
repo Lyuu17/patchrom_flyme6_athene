@@ -81,37 +81,37 @@
 
     const/4 v3, 0x1
 
-    .line 739
+    .line 732
     const/4 v0, 0x4
 
-    .line 740
+    .line 733
     const/16 v1, 0x8
 
-    .line 741
+    .line 734
     const/16 v2, 0x10
 
-    .line 736
+    .line 729
     filled-new-array {v3, v4, v0, v1, v2}, [I
 
     move-result-object v0
 
     sput-object v0, Landroid/app/NotificationManager$Policy;->ALL_PRIORITY_CATEGORIES:[I
 
-    .line 777
+    .line 770
     filled-new-array {v3, v4}, [I
 
     move-result-object v0
 
     sput-object v0, Landroid/app/NotificationManager$Policy;->ALL_SUPPRESSED_EFFECTS:[I
 
-    .line 928
+    .line 921
     new-instance v0, Landroid/app/NotificationManager$Policy$1;
 
     invoke-direct {v0}, Landroid/app/NotificationManager$Policy$1;-><init>()V
 
     sput-object v0, Landroid/app/NotificationManager$Policy;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 724
+    .line 717
     return-void
 .end method
 
@@ -122,13 +122,13 @@
     .param p3, "priorityMessageSenders"    # I
 
     .prologue
-    .line 797
+    .line 790
     const/4 v0, -0x1
 
-    .line 796
+    .line 789
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/app/NotificationManager$Policy;-><init>(IIII)V
 
-    .line 795
+    .line 788
     return-void
 .end method
 
@@ -140,22 +140,22 @@
     .param p4, "suppressedVisualEffects"    # I
 
     .prologue
-    .line 809
+    .line 802
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 811
+    .line 804
     iput p1, p0, Landroid/app/NotificationManager$Policy;->priorityCategories:I
 
-    .line 812
+    .line 805
     iput p2, p0, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
 
-    .line 813
+    .line 806
     iput p3, p0, Landroid/app/NotificationManager$Policy;->priorityMessageSenders:I
 
-    .line 814
+    .line 807
     iput p4, p0, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
-    .line 810
+    .line 803
     return-void
 .end method
 
@@ -164,7 +164,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 819
+    .line 812
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -183,7 +183,7 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Landroid/app/NotificationManager$Policy;-><init>(IIII)V
 
-    .line 818
+    .line 811
     return-void
 .end method
 
@@ -192,10 +192,10 @@
     .param p0, "effect"    # I
 
     .prologue
-    .line 900
+    .line 893
     packed-switch p0, :pswitch_data_0
 
-    .line 904
+    .line 897
     :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -217,25 +217,25 @@
 
     return-object v0
 
-    .line 901
+    .line 894
     :pswitch_1
     const-string/jumbo v0, "SUPPRESSED_EFFECT_SCREEN_OFF"
 
     return-object v0
 
-    .line 902
+    .line 895
     :pswitch_2
     const-string/jumbo v0, "SUPPRESSED_EFFECT_SCREEN_ON"
 
     return-object v0
 
-    .line 903
+    .line 896
     :pswitch_3
     const-string/jumbo v0, "SUPPRESSED_EFFECTS_UNSET"
 
     return-object v0
 
-    .line 900
+    .line 893
     :pswitch_data_0
     .packed-switch -0x1
         :pswitch_3
@@ -252,20 +252,20 @@
     .prologue
     const/16 v4, 0x2c
 
-    .line 882
+    .line 875
     if-nez p0, :cond_0
 
     const-string/jumbo v3, ""
 
     return-object v3
 
-    .line 883
+    .line 876
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 884
+    .line 877
     .local v2, "sb":Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
@@ -277,18 +277,18 @@
 
     if-ge v0, v3, :cond_3
 
-    .line 885
+    .line 878
     sget-object v3, Landroid/app/NotificationManager$Policy;->ALL_PRIORITY_CATEGORIES:[I
 
     aget v1, v3, v0
 
-    .line 886
+    .line 879
     .local v1, "priorityCategory":I
     and-int v3, p0, v1
 
     if-eqz v3, :cond_2
 
-    .line 887
+    .line 880
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -297,7 +297,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 888
+    .line 881
     :cond_1
     invoke-static {v1}, Landroid/app/NotificationManager$Policy;->priorityCategoryToString(I)Ljava/lang/String;
 
@@ -305,23 +305,23 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 890
+    .line 883
     :cond_2
     not-int v3, v1
 
     and-int/2addr p0, v3
 
-    .line 884
+    .line 877
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 892
+    .line 885
     .end local v1    # "priorityCategory":I
     :cond_3
     if-eqz p0, :cond_5
 
-    .line 893
+    .line 886
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -330,7 +330,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 894
+    .line 887
     :cond_4
     const-string/jumbo v3, "PRIORITY_CATEGORY_UNKNOWN_"
 
@@ -340,7 +340,7 @@
 
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 896
+    .line 889
     :cond_5
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -354,10 +354,10 @@
     .param p0, "priorityCategory"    # I
 
     .prologue
-    .line 909
+    .line 902
     sparse-switch p0, :sswitch_data_0
 
-    .line 915
+    .line 908
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -378,37 +378,37 @@
 
     return-object v0
 
-    .line 910
+    .line 903
     :sswitch_0
     const-string/jumbo v0, "PRIORITY_CATEGORY_REMINDERS"
 
     return-object v0
 
-    .line 911
+    .line 904
     :sswitch_1
     const-string/jumbo v0, "PRIORITY_CATEGORY_EVENTS"
 
     return-object v0
 
-    .line 912
+    .line 905
     :sswitch_2
     const-string/jumbo v0, "PRIORITY_CATEGORY_MESSAGES"
 
     return-object v0
 
-    .line 913
+    .line 906
     :sswitch_3
     const-string/jumbo v0, "PRIORITY_CATEGORY_CALLS"
 
     return-object v0
 
-    .line 914
+    .line 907
     :sswitch_4
     const-string/jumbo v0, "PRIORITY_CATEGORY_REPEAT_CALLERS"
 
     return-object v0
 
-    .line 909
+    .line 902
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -424,10 +424,10 @@
     .param p0, "prioritySenders"    # I
 
     .prologue
-    .line 920
+    .line 913
     packed-switch p0, :pswitch_data_0
 
-    .line 924
+    .line 917
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -448,25 +448,25 @@
 
     return-object v0
 
-    .line 921
+    .line 914
     :pswitch_0
     const-string/jumbo v0, "PRIORITY_SENDERS_ANY"
 
     return-object v0
 
-    .line 922
+    .line 915
     :pswitch_1
     const-string/jumbo v0, "PRIORITY_SENDERS_CONTACTS"
 
     return-object v0
 
-    .line 923
+    .line 916
     :pswitch_2
     const-string/jumbo v0, "PRIORITY_SENDERS_STARRED"
 
     return-object v0
 
-    .line 920
+    .line 913
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -482,20 +482,20 @@
     .prologue
     const/16 v4, 0x2c
 
-    .line 864
+    .line 857
     if-gtz p0, :cond_0
 
     const-string/jumbo v3, ""
 
     return-object v3
 
-    .line 865
+    .line 858
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 866
+    .line 859
     .local v2, "sb":Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
@@ -507,18 +507,18 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 867
+    .line 860
     sget-object v3, Landroid/app/NotificationManager$Policy;->ALL_SUPPRESSED_EFFECTS:[I
 
     aget v0, v3, v1
 
-    .line 868
+    .line 861
     .local v0, "effect":I
     and-int v3, p0, v0
 
     if-eqz v3, :cond_2
 
-    .line 869
+    .line 862
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -527,7 +527,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 870
+    .line 863
     :cond_1
     invoke-static {v0}, Landroid/app/NotificationManager$Policy;->effectToString(I)Ljava/lang/String;
 
@@ -535,23 +535,23 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 872
+    .line 865
     :cond_2
     not-int v3, v0
 
     and-int/2addr p0, v3
 
-    .line 866
+    .line 859
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 874
+    .line 867
     .end local v0    # "effect":I
     :cond_3
     if-eqz p0, :cond_5
 
-    .line 875
+    .line 868
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -560,7 +560,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 876
+    .line 869
     :cond_4
     const-string/jumbo v3, "UNKNOWN_"
 
@@ -570,7 +570,7 @@
 
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 878
+    .line 871
     :cond_5
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -585,7 +585,7 @@
     .locals 1
 
     .prologue
-    .line 832
+    .line 825
     const/4 v0, 0x0
 
     return v0
@@ -600,14 +600,14 @@
 
     const/4 v2, 0x0
 
-    .line 843
+    .line 836
     instance-of v3, p1, Landroid/app/NotificationManager$Policy;
 
     if-nez v3, :cond_0
 
     return v2
 
-    .line 844
+    .line 837
     :cond_0
     if-ne p1, p0, :cond_1
 
@@ -616,10 +616,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 845
+    .line 838
     check-cast v0, Landroid/app/NotificationManager$Policy;
 
-    .line 846
+    .line 839
     .local v0, "other":Landroid/app/NotificationManager$Policy;
     iget v3, v0, Landroid/app/NotificationManager$Policy;->priorityCategories:I
 
@@ -627,41 +627,41 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 847
+    .line 840
     iget v3, v0, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
 
     iget v4, p0, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
 
     if-ne v3, v4, :cond_3
 
-    .line 848
+    .line 841
     iget v3, v0, Landroid/app/NotificationManager$Policy;->priorityMessageSenders:I
 
     iget v4, p0, Landroid/app/NotificationManager$Policy;->priorityMessageSenders:I
 
     if-ne v3, v4, :cond_3
 
-    .line 849
+    .line 842
     iget v3, v0, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
     iget v4, p0, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
     if-ne v3, v4, :cond_2
 
-    .line 846
+    .line 839
     :goto_0
     return v1
 
     :cond_2
     move v1, v2
 
-    .line 849
+    .line 842
     goto :goto_0
 
     :cond_3
     move v1, v2
 
-    .line 846
+    .line 839
     goto :goto_0
 .end method
 
@@ -669,7 +669,7 @@
     .locals 3
 
     .prologue
-    .line 837
+    .line 830
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -704,7 +704,7 @@
 
     aput-object v1, v0, v2
 
-    .line 838
+    .line 831
     iget v1, p0, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -715,7 +715,7 @@
 
     aput-object v1, v0, v2
 
-    .line 837
+    .line 830
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
     move-result v0
@@ -727,7 +727,7 @@
     .locals 2
 
     .prologue
-    .line 854
+    .line 847
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -738,82 +738,82 @@
 
     move-result-object v0
 
-    .line 855
+    .line 848
     iget v1, p0, Landroid/app/NotificationManager$Policy;->priorityCategories:I
 
     invoke-static {v1}, Landroid/app/NotificationManager$Policy;->priorityCategoriesToString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 856
+    .line 849
     const-string/jumbo v1, ",priorityCallSenders="
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 856
+    .line 849
     iget v1, p0, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
 
     invoke-static {v1}, Landroid/app/NotificationManager$Policy;->prioritySendersToString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 857
+    .line 850
     const-string/jumbo v1, ",priorityMessageSenders="
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 857
+    .line 850
     iget v1, p0, Landroid/app/NotificationManager$Policy;->priorityMessageSenders:I
 
     invoke-static {v1}, Landroid/app/NotificationManager$Policy;->prioritySendersToString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 858
+    .line 851
     const-string/jumbo v1, ",suppressedVisualEffects="
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 859
+    .line 852
     iget v1, p0, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
     invoke-static {v1}, Landroid/app/NotificationManager$Policy;->suppressedEffectsToString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 860
+    .line 853
     const-string/jumbo v1, "]"
 
-    .line 854
+    .line 847
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -831,26 +831,26 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 824
+    .line 817
     iget v0, p0, Landroid/app/NotificationManager$Policy;->priorityCategories:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 825
+    .line 818
     iget v0, p0, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 826
+    .line 819
     iget v0, p0, Landroid/app/NotificationManager$Policy;->priorityMessageSenders:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 827
+    .line 820
     iget v0, p0, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 823
+    .line 816
     return-void
 .end method

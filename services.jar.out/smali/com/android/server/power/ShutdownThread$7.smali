@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/power/ShutdownThread;
 
     .prologue
-    .line 830
+    .line 675
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$7;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +44,12 @@
     .prologue
     const/16 v1, 0x64
 
-    .line 833
+    .line 678
     if-ltz p1, :cond_1
 
     if-ge p1, v1, :cond_1
 
-    .line 835
+    .line 680
     int-to-double v2, p1
 
     const-wide/high16 v4, 0x4054000000000000L    # 80.0
@@ -62,64 +62,64 @@
 
     double-to-int p1, v2
 
-    .line 836
+    .line 681
     add-int/lit8 p1, p1, 0x14
 
-    .line 837
+    .line 682
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$7;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v1}, Lcom/android/server/power/ShutdownThread;->-get0(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
 
     move-result-object v1
 
-    .line 838
+    .line 683
     const v2, 0x1040197
 
-    .line 837
+    .line 682
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 839
+    .line 684
     .local v0, "msg":Ljava/lang/CharSequence;
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get4()Lcom/android/server/power/ShutdownThread;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get3()Lcom/android/server/power/ShutdownThread;
 
     move-result-object v1
 
-    invoke-static {v1, p1, v0}, Lcom/android/server/power/ShutdownThread;->-wrap2(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
+    invoke-static {v1, p1, v0}, Lcom/android/server/power/ShutdownThread;->-wrap1(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
 
-    .line 832
+    .line 677
     .end local v0    # "msg":Ljava/lang/CharSequence;
     :cond_0
     :goto_0
     return-void
 
-    .line 840
+    .line 685
     :cond_1
     if-ne p1, v1, :cond_0
 
-    .line 841
+    .line 686
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$7;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v1}, Lcom/android/server/power/ShutdownThread;->-get0(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
 
     move-result-object v1
 
-    .line 842
+    .line 687
     const v2, 0x1040198
 
-    .line 841
+    .line 686
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 843
+    .line 688
     .restart local v0    # "msg":Ljava/lang/CharSequence;
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get4()Lcom/android/server/power/ShutdownThread;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get3()Lcom/android/server/power/ShutdownThread;
 
     move-result-object v1
 
-    invoke-static {v1, p1, v0}, Lcom/android/server/power/ShutdownThread;->-wrap2(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
+    invoke-static {v1, p1, v0}, Lcom/android/server/power/ShutdownThread;->-wrap1(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
 
     goto :goto_0
 .end method

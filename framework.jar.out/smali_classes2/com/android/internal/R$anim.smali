@@ -53,10 +53,6 @@
 
 .field public static final fade_out:I = 0x10a0001
 
-.field public static final last_app_in:I = 0x10a0052
-
-.field public static final last_app_out:I = 0x10a0053
-
 .field public static final launch_task_behind_source:I = 0x10a0054
 
 .field public static final linear_interpolator:I = 0x10a000b

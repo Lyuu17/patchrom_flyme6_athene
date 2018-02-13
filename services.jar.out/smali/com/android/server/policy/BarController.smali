@@ -75,22 +75,22 @@
     .param p7, "transparentFlag"    # I
 
     .prologue
-    .line 67
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 54
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/BarController;->mServiceAquireLock:Ljava/lang/Object;
 
-    .line 59
+    .line 58
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/policy/BarController;->mState:I
 
-    .line 69
+    .line 68
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -111,32 +111,32 @@
 
     iput-object v0, p0, Lcom/android/server/policy/BarController;->mTag:Ljava/lang/String;
 
-    .line 70
+    .line 69
     iput p2, p0, Lcom/android/server/policy/BarController;->mTransientFlag:I
 
-    .line 71
+    .line 70
     iput p3, p0, Lcom/android/server/policy/BarController;->mUnhideFlag:I
 
-    .line 72
+    .line 71
     iput p4, p0, Lcom/android/server/policy/BarController;->mTranslucentFlag:I
 
-    .line 73
+    .line 72
     iput p5, p0, Lcom/android/server/policy/BarController;->mStatusBarManagerId:I
 
-    .line 74
+    .line 73
     iput p6, p0, Lcom/android/server/policy/BarController;->mTranslucentWmFlag:I
 
-    .line 75
+    .line 74
     iput p7, p0, Lcom/android/server/policy/BarController;->mTransparentFlag:I
 
-    .line 76
+    .line 75
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/BarController;->mHandler:Landroid/os/Handler;
 
-    .line 68
+    .line 67
     return-void
 .end method
 
@@ -154,25 +154,25 @@
 
     const/4 v3, 0x0
 
-    .line 165
+    .line 164
     invoke-interface {p3}, Landroid/view/WindowManagerPolicy$WindowState;->isDrawnLw()Z
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    .line 166
+    .line 165
     invoke-interface {p3}, Landroid/view/WindowManagerPolicy$WindowState;->isVisibleLw()Z
 
     move-result v1
 
-    .line 167
+    .line 166
     .local v1, "vis":Z
     invoke-interface {p3}, Landroid/view/WindowManagerPolicy$WindowState;->isAnimatingLw()Z
 
     move-result v0
 
-    .line 168
+    .line 167
     .local v0, "anim":Z
     iget v2, p0, Lcom/android/server/policy/BarController;->mState:I
 
@@ -180,7 +180,7 @@
 
     if-eqz p4, :cond_1
 
-    .line 170
+    .line 169
     :cond_0
     iget v2, p0, Lcom/android/server/policy/BarController;->mState:I
 
@@ -188,39 +188,39 @@
 
     if-eqz v1, :cond_2
 
-    .line 171
+    .line 170
     return v3
 
-    .line 168
+    .line 167
     :cond_1
     if-nez v1, :cond_0
 
-    .line 169
+    .line 168
     return v5
 
-    .line 172
+    .line 171
     :cond_2
     if-eqz p4, :cond_5
 
-    .line 173
+    .line 172
     if-eqz p1, :cond_3
 
     if-eqz v1, :cond_3
 
     if-eqz p2, :cond_4
 
-    .line 176
+    .line 175
     :cond_3
     return v3
 
-    .line 173
+    .line 172
     :cond_4
     if-eqz v0, :cond_3
 
-    .line 174
+    .line 173
     return v4
 
-    .line 180
+    .line 179
     .end local v0    # "anim":Z
     .end local v1    # "vis":Z
     :cond_5
@@ -236,7 +236,7 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 269
+    .line 268
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v0, :cond_2
@@ -245,14 +245,14 @@
 
     if-eq p1, v0, :cond_2
 
-    .line 270
+    .line 269
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
     if-eq v0, v1, :cond_0
 
     if-ne p1, v1, :cond_1
 
-    .line 271
+    .line 270
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -260,11 +260,11 @@
 
     iput-wide v0, p0, Lcom/android/server/policy/BarController;->mLastTranslucent:J
 
-    .line 273
+    .line 272
     :cond_1
     iput p1, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
-    .line 268
+    .line 267
     :cond_2
     return-void
 .end method
@@ -274,7 +274,7 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 288
+    .line 287
     const/4 v0, 0x3
 
     if-ne p0, v0, :cond_0
@@ -283,7 +283,7 @@
 
     return-object v0
 
-    .line 289
+    .line 288
     :cond_0
     const/4 v0, 0x2
 
@@ -293,7 +293,7 @@
 
     return-object v0
 
-    .line 290
+    .line 289
     :cond_1
     const/4 v0, 0x1
 
@@ -303,7 +303,7 @@
 
     return-object v0
 
-    .line 291
+    .line 290
     :cond_2
     if-nez p0, :cond_3
 
@@ -311,7 +311,7 @@
 
     return-object v0
 
-    .line 292
+    .line 291
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -343,15 +343,15 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 184
+    .line 183
     iget v0, p0, Lcom/android/server/policy/BarController;->mState:I
 
     if-eq p1, v0, :cond_0
 
-    .line 185
+    .line 184
     iput p1, p0, Lcom/android/server/policy/BarController;->mState:I
 
-    .line 187
+    .line 186
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/policy/BarController$1;
@@ -360,12 +360,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 196
+    .line 195
     const/4 v0, 0x1
 
     return v0
 
-    .line 198
+    .line 197
     :cond_0
     const/4 v0, 0x0
 
@@ -382,7 +382,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 110
+    .line 109
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v0, :cond_1
@@ -393,27 +393,27 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 111
+    .line 110
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientFlag:I
 
     and-int/2addr v0, p2
 
     if-nez v0, :cond_1
 
-    .line 113
+    .line 112
     const/4 v0, 0x3
 
     invoke-direct {p0, v0}, Lcom/android/server/policy/BarController;->setTransientBarState(I)V
 
-    .line 114
+    .line 113
     invoke-virtual {p0, v2}, Lcom/android/server/policy/BarController;->setBarShowingLw(Z)Z
 
-    .line 109
+    .line 108
     :cond_0
     :goto_0
     return-void
 
-    .line 115
+    .line 114
     :cond_1
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -431,7 +431,7 @@
 
     if-nez v0, :cond_0
 
-    .line 117
+    .line 116
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/server/policy/BarController;->setBarShowingLw(Z)Z
@@ -448,12 +448,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 122
+    .line 121
     iget-object v1, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v1, :cond_0
 
-    .line 123
+    .line 122
     if-eqz p1, :cond_3
 
     invoke-interface {p1}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
@@ -466,12 +466,12 @@
 
     if-nez v1, :cond_3
 
-    .line 125
-    invoke-static {p1, v2}, Landroid/view/WindowManagerPolicyControl;->getWindowFlags(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)I
+    .line 124
+    invoke-static {p1, v2}, Lcom/android/server/policy/PolicyControl;->getWindowFlags(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)I
 
     move-result v0
 
-    .line 126
+    .line 125
     .local v0, "fl":I
     iget v1, p0, Lcom/android/server/policy/BarController;->mTranslucentWmFlag:I
 
@@ -479,12 +479,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 127
+    .line 126
     iget v1, p0, Lcom/android/server/policy/BarController;->mTranslucentFlag:I
 
     or-int/2addr p2, v1
 
-    .line 131
+    .line 130
     :goto_0
     const/high16 v1, -0x80000000
 
@@ -492,18 +492,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 132
+    .line 131
     iget v1, p0, Lcom/android/server/policy/BarController;->mTransparentFlag:I
 
     or-int/2addr p2, v1
 
-    .line 141
+    .line 140
     .end local v0    # "fl":I
     :cond_0
     :goto_1
     return p2
 
-    .line 129
+    .line 128
     .restart local v0    # "fl":I
     :cond_1
     iget v1, p0, Lcom/android/server/policy/BarController;->mTranslucentFlag:I
@@ -514,7 +514,7 @@
 
     goto :goto_0
 
-    .line 134
+    .line 133
     :cond_2
     iget v1, p0, Lcom/android/server/policy/BarController;->mTransparentFlag:I
 
@@ -524,7 +524,7 @@
 
     goto :goto_1
 
-    .line 137
+    .line 136
     .end local v0    # "fl":I
     :cond_3
     iget v1, p0, Lcom/android/server/policy/BarController;->mTranslucentFlag:I
@@ -539,7 +539,7 @@
 
     or-int p2, v1, v2
 
-    .line 138
+    .line 137
     iget v1, p0, Lcom/android/server/policy/BarController;->mTransparentFlag:I
 
     not-int v1, v1
@@ -563,7 +563,7 @@
 
     const/4 v2, 0x0
 
-    .line 202
+    .line 201
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v0, :cond_1
@@ -576,7 +576,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 203
+    .line 202
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowState;->isVisibleLw()Z
@@ -593,7 +593,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 206
+    .line 205
     :cond_0
     :goto_0
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
@@ -610,11 +610,11 @@
 
     if-eqz v0, :cond_3
 
-    .line 216
+    .line 215
     :cond_1
     return v2
 
-    .line 204
+    .line 203
     :cond_2
     const/4 v0, 0x2
 
@@ -622,22 +622,22 @@
 
     goto :goto_0
 
-    .line 208
+    .line 207
     :cond_3
     invoke-direct {p0, v2}, Lcom/android/server/policy/BarController;->setTransientBarState(I)V
 
-    .line 209
+    .line 208
     iget-boolean v0, p0, Lcom/android/server/policy/BarController;->mPendingShow:Z
 
     if-eqz v0, :cond_4
 
-    .line 210
+    .line 209
     invoke-virtual {p0, v3}, Lcom/android/server/policy/BarController;->setBarShowingLw(Z)Z
 
-    .line 211
+    .line 210
     iput-boolean v2, p0, Lcom/android/server/policy/BarController;->mPendingShow:Z
 
-    .line 213
+    .line 212
     :cond_4
     return v3
 .end method
@@ -650,35 +650,35 @@
 
     const/4 v2, 0x0
 
-    .line 220
+    .line 219
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 222
+    .line 221
     return v2
 
-    .line 223
+    .line 222
     :cond_0
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
     if-ne v0, v3, :cond_1
 
-    .line 225
+    .line 224
     return v2
 
-    .line 226
+    .line 225
     :cond_1
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-nez v0, :cond_2
 
-    .line 228
+    .line 227
     return v2
 
-    .line 229
+    .line 228
     :cond_2
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -688,10 +688,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 231
+    .line 230
     return v2
 
-    .line 233
+    .line 232
     :cond_3
     return v3
 .end method
@@ -704,19 +704,19 @@
     .prologue
     const/16 v1, 0x3d
 
-    .line 296
+    .line 295
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v0, :cond_0
 
-    .line 297
+    .line 296
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mTag:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 298
+    .line 297
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "  "
@@ -729,7 +729,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 299
+    .line 298
     iget v0, p0, Lcom/android/server/policy/BarController;->mState:I
 
     invoke-static {v0}, Landroid/app/StatusBarManager;->windowStateToString(I)Ljava/lang/String;
@@ -738,7 +738,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 300
+    .line 299
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "  "
@@ -751,7 +751,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 301
+    .line 300
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
     invoke-static {v0}, Lcom/android/server/policy/BarController;->transientBarStateToString(I)Ljava/lang/String;
@@ -760,7 +760,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 295
+    .line 294
     :cond_0
     return-void
 .end method
@@ -769,18 +769,18 @@
     .locals 2
 
     .prologue
-    .line 279
+    .line 278
     iget-object v1, p0, Lcom/android/server/policy/BarController;->mServiceAquireLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 280
+    .line 279
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mStatusBarInternal:Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     if-nez v0, :cond_0
 
-    .line 281
+    .line 280
     const-class v0, Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -791,7 +791,7 @@
 
     iput-object v0, p0, Lcom/android/server/policy/BarController;->mStatusBarInternal:Lcom/android/server/statusbar/StatusBarManagerInternal;
 
-    .line 283
+    .line 282
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mStatusBarInternal:Lcom/android/server/statusbar/StatusBarManagerInternal;
     :try_end_0
@@ -801,7 +801,7 @@
 
     return-object v0
 
-    .line 279
+    .line 278
     :catchall_0
     move-exception v0
 
@@ -816,7 +816,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 102
+    .line 101
     iget v1, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
     if-ne v1, v0, :cond_0
@@ -834,7 +834,7 @@
     .locals 2
 
     .prologue
-    .line 98
+    .line 97
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
     const/4 v1, 0x2
@@ -861,14 +861,14 @@
 
     const/4 v6, 0x0
 
-    .line 145
+    .line 144
     iget-object v5, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-nez v5, :cond_0
 
     return v6
 
-    .line 146
+    .line 145
     :cond_0
     if-eqz p1, :cond_1
 
@@ -878,13 +878,13 @@
 
     if-ne v5, v8, :cond_1
 
-    .line 147
+    .line 146
     iput-boolean v7, p0, Lcom/android/server/policy/BarController;->mPendingShow:Z
 
-    .line 148
+    .line 147
     return v6
 
-    .line 150
+    .line 149
     :cond_1
     iget-object v5, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -892,7 +892,7 @@
 
     move-result v4
 
-    .line 151
+    .line 150
     .local v4, "wasVis":Z
     iget-object v5, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -900,7 +900,7 @@
 
     move-result v3
 
-    .line 152
+    .line 151
     .local v3, "wasAnim":Z
     if-eqz p1, :cond_5
 
@@ -924,25 +924,25 @@
 
     move-result v0
 
-    .line 154
+    .line 153
     .local v0, "change":Z
     :goto_1
     iput-boolean v6, p0, Lcom/android/server/policy/BarController;->mNoAnimationOnNextShow:Z
 
-    .line 155
+    .line 154
     iget-object v5, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     invoke-direct {p0, v4, v3, v5, v0}, Lcom/android/server/policy/BarController;->computeStateLw(ZZLandroid/view/WindowManagerPolicy$WindowState;Z)I
 
     move-result v1
 
-    .line 156
+    .line 155
     .local v1, "state":I
     invoke-direct {p0, v1}, Lcom/android/server/policy/BarController;->updateStateLw(I)Z
 
     move-result v2
 
-    .line 157
+    .line 156
     .local v2, "stateChanged":Z
     if-nez v0, :cond_3
 
@@ -957,10 +957,10 @@
     :cond_4
     move v5, v7
 
-    .line 152
+    .line 151
     goto :goto_0
 
-    .line 153
+    .line 152
     :cond_5
     iget-object v8, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -997,23 +997,23 @@
     .param p1, "transparent"    # Z
 
     .prologue
-    .line 84
+    .line 83
     iget-boolean v0, p0, Lcom/android/server/policy/BarController;->mShowTransparent:Z
 
     if-eq p1, v0, :cond_0
 
-    .line 85
+    .line 84
     iput-boolean p1, p0, Lcom/android/server/policy/BarController;->mShowTransparent:Z
 
-    .line 86
+    .line 85
     iput-boolean p1, p0, Lcom/android/server/policy/BarController;->mSetUnHideFlagWhenNextTransparent:Z
 
-    .line 87
+    .line 86
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/policy/BarController;->mNoAnimationOnNextShow:Z
 
-    .line 83
+    .line 82
     :cond_0
     return-void
 .end method
@@ -1023,10 +1023,10 @@
     .param p1, "win"    # Landroid/view/WindowManagerPolicy$WindowState;
 
     .prologue
-    .line 80
+    .line 79
     iput-object p1, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
-    .line 79
+    .line 78
     return-void
 .end method
 
@@ -1034,17 +1034,17 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 91
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 92
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/server/policy/BarController;->setTransientBarState(I)V
 
-    .line 91
+    .line 90
     :cond_0
     return-void
 .end method
@@ -1053,7 +1053,7 @@
     .locals 1
 
     .prologue
-    .line 161
+    .line 160
     const/4 v0, 0x0
 
     return v0
@@ -1068,14 +1068,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 238
+    .line 237
     iget-object v0, p0, Lcom/android/server/policy/BarController;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-nez v0, :cond_0
 
     return p3
 
-    .line 239
+    .line 238
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/policy/BarController;->isTransientShowing()Z
 
@@ -1089,73 +1089,73 @@
 
     if-eqz v0, :cond_3
 
-    .line 240
+    .line 239
     :cond_1
     if-eqz p1, :cond_8
 
-    .line 241
+    .line 240
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientFlag:I
 
     or-int/2addr p3, v0
 
-    .line 242
+    .line 241
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientFlag:I
 
     and-int/2addr v0, p2
 
     if-nez v0, :cond_2
 
-    .line 243
+    .line 242
     iget v0, p0, Lcom/android/server/policy/BarController;->mUnhideFlag:I
 
     or-int/2addr p3, v0
 
-    .line 245
+    .line 244
     :cond_2
     const/4 v0, 0x2
 
     invoke-direct {p0, v0}, Lcom/android/server/policy/BarController;->setTransientBarState(I)V
 
-    .line 250
+    .line 249
     :cond_3
     :goto_0
     iget-boolean v0, p0, Lcom/android/server/policy/BarController;->mShowTransparent:Z
 
     if-eqz v0, :cond_4
 
-    .line 251
+    .line 250
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransparentFlag:I
 
     or-int/2addr p3, v0
 
-    .line 252
+    .line 251
     iget-boolean v0, p0, Lcom/android/server/policy/BarController;->mSetUnHideFlagWhenNextTransparent:Z
 
     if-eqz v0, :cond_4
 
-    .line 253
+    .line 252
     iget v0, p0, Lcom/android/server/policy/BarController;->mUnhideFlag:I
 
     or-int/2addr p3, v0
 
-    .line 254
+    .line 253
     iput-boolean v1, p0, Lcom/android/server/policy/BarController;->mSetUnHideFlagWhenNextTransparent:Z
 
-    .line 257
+    .line 256
     :cond_4
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientBarState:I
 
     if-eqz v0, :cond_5
 
-    .line 258
+    .line 257
     iget v0, p0, Lcom/android/server/policy/BarController;->mTransientFlag:I
 
     or-int/2addr p3, v0
 
-    .line 259
+    .line 258
     and-int/lit8 p3, p3, -0x2
 
-    .line 261
+    .line 260
     :cond_5
     iget v0, p0, Lcom/android/server/policy/BarController;->mTranslucentFlag:I
 
@@ -1169,7 +1169,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 263
+    .line 262
     :cond_6
     :goto_1
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1178,17 +1178,17 @@
 
     iput-wide v0, p0, Lcom/android/server/policy/BarController;->mLastTranslucent:J
 
-    .line 265
+    .line 264
     :cond_7
     return p3
 
-    .line 247
+    .line 246
     :cond_8
     invoke-direct {p0, v1}, Lcom/android/server/policy/BarController;->setTransientBarState(I)V
 
     goto :goto_0
 
-    .line 262
+    .line 261
     :cond_9
     or-int v0, p3, p2
 
@@ -1205,7 +1205,7 @@
     .locals 4
 
     .prologue
-    .line 106
+    .line 105
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0

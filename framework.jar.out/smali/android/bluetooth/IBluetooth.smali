@@ -247,14 +247,6 @@
     .end annotation
 .end method
 
-.method public abstract getSocketOpt(III[B)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getState()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -472,14 +464,6 @@
 .end method
 
 .method public abstract setSimAccessPermission(Landroid/bluetooth/BluetoothDevice;I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setSocketOpt(III[BI)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

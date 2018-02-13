@@ -27,15 +27,15 @@
     .param p2, "smsSender"    # Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
 
     .prologue
-    .line 436
+    .line 433
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-direct {p0}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;-><init>()V
 
-    .line 437
+    .line 434
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
 
-    .line 436
+    .line 433
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .param p1, "result"    # I
 
     .prologue
-    .line 472
+    .line 469
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,7 +69,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 471
+    .line 468
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .param p1, "result"    # I
 
     .prologue
-    .line 462
+    .line 459
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -101,7 +101,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 461
+    .line 458
     return-void
 .end method
 
@@ -111,7 +111,7 @@
     .param p2, "sendConfPdu"    # [B
 
     .prologue
-    .line 467
+    .line 464
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -134,7 +134,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 466
+    .line 463
     return-void
 .end method
 
@@ -144,7 +144,7 @@
     .param p2, "messageRefs"    # [I
 
     .prologue
-    .line 457
+    .line 454
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -167,7 +167,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 456
+    .line 453
     return-void
 .end method
 
@@ -177,17 +177,17 @@
     .param p2, "messageRef"    # I
 
     .prologue
-    .line 445
+    .line 442
     iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-static {v2}, Lcom/android/internal/telephony/SMSDispatcher;->-wrap1(Lcom/android/internal/telephony/SMSDispatcher;)V
 
-    .line 446
+    .line 443
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 448
+    .line 445
     .local v0, "identity":J
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
@@ -196,9 +196,9 @@
 
     iget-object v3, v3, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v2, v3}, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->disposeConnection(Landroid/content/Context;)V
+    invoke-virtual {v2, v3}, Landroid/telephony/CarrierMessagingServiceManager;->disposeConnection(Landroid/content/Context;)V
 
-    .line 449
+    .line 446
     iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     iget-object v3, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
@@ -209,19 +209,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 451
+    .line 448
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 444
+    .line 441
     return-void
 
-    .line 450
+    .line 447
     :catchall_0
     move-exception v2
 
-    .line 451
+    .line 448
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 450
+    .line 447
     throw v2
 .end method

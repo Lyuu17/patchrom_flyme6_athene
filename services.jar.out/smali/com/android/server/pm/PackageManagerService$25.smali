@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/pm/PackageManagerService;->loadPrivatePackages(Landroid/os/storage/VolumeInfo;)V
+    value = Lcom/android/server/pm/PackageManagerService;->unloadPrivatePackages(Landroid/os/storage/VolumeInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .param p2, "val$vol"    # Landroid/os/storage/VolumeInfo;
 
     .prologue
-    .line 19671
+    .line 19571
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$25;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$25;->val$vol:Landroid/os/storage/VolumeInfo;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 19674
+    .line 19574
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$25;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$25;->val$vol:Landroid/os/storage/VolumeInfo;
 
-    invoke-static {v0, v1}, Lcom/android/server/pm/PackageManagerService;->-wrap30(Lcom/android/server/pm/PackageManagerService;Landroid/os/storage/VolumeInfo;)V
+    invoke-static {v0, v1}, Lcom/android/server/pm/PackageManagerService;->-wrap41(Lcom/android/server/pm/PackageManagerService;Landroid/os/storage/VolumeInfo;)V
 
-    .line 19673
+    .line 19573
     return-void
 .end method

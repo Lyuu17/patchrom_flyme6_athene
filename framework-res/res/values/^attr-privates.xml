@@ -226,9 +226,9 @@
     <attr name="layout_ignoreOffset" format="boolean" />
     <attr name="layout_hasNestedScrollIndicator" format="boolean" />
     <attr name="cantSaveState" format="boolean" />
-    <attr name="allowViaWhitelist" format="boolean" />
     <attr name="systemUserOnly" format="boolean" />
     <attr name="alwaysFocusable" format="boolean" />
     <attr name="minimalWidth" format="dimension" />
     <attr name="minimalHeight" format="dimension" />
+    <attr name="needAccessControl" format="boolean" />
 </resources>

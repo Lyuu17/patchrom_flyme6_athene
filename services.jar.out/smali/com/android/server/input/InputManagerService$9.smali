@@ -30,7 +30,7 @@
     .param p2, "val$result"    # [Landroid/hardware/input/KeyboardLayout;
 
     .prologue
-    .line 1388
+    .line 1340
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$9;->this$0:Lcom/android/server/input/InputManagerService;
 
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$9;->val$result:[Landroid/hardware/input/KeyboardLayout;
@@ -49,13 +49,13 @@
     .param p3, "layout"    # Landroid/hardware/input/KeyboardLayout;
 
     .prologue
-    .line 1392
+    .line 1344
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$9;->val$result:[Landroid/hardware/input/KeyboardLayout;
 
     const/4 v1, 0x0
 
     aput-object p3, v0, v1
 
-    .line 1391
+    .line 1343
     return-void
 .end method

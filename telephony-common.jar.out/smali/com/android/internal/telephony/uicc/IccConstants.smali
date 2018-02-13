@@ -14,8 +14,6 @@
 
 .field public static final DF_GSM:Ljava/lang/String; = "7F20"
 
-.field public static final DF_MMSS:Ljava/lang/String; = "5F3C"
-
 .field public static final DF_PHONEBOOK:Ljava/lang/String; = "5F3A"
 
 .field public static final DF_TELECOM:Ljava/lang/String; = "7F10"
@@ -39,12 +37,6 @@
 .field public static final EF_CSIM_MDN:I = 0x6f44
 
 .field public static final EF_CSIM_MIPUPP:I = 0x6f4d
-
-.field public static final EF_CSIM_MLPL:I = 0x4f20
-
-.field public static final EF_CSIM_MSPL:I = 0x4f21
-
-.field public static final EF_CSIM_PRL:I = 0x6f30
 
 .field public static final EF_CSIM_SPN:I = 0x6f41
 
@@ -73,8 +65,6 @@
 .field public static final EF_GID1:I = 0x6f3e
 
 .field public static final EF_GID2:I = 0x6f3f
-
-.field public static final EF_HPLMNWACT:I = 0x6f62
 
 .field public static final EF_HPLMN_W_ACT:I = 0x6f62
 
@@ -115,8 +105,6 @@
 .field public static final EF_PCSCF:I = 0x6f09
 
 .field public static final EF_PL:I = 0x2f05
-
-.field public static final EF_PLMNWACT:I = 0x6f60
 
 .field public static final EF_PLMN_W_ACT:I = 0x6f60
 

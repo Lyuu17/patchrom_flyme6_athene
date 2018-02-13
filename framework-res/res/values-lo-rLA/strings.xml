@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">ອະນຸຍາດໃຫ້ແອັບຯແກ້ໄຂການຕັ້ງຄ່າການຊິ້ງຂໍ້ມູນສຳລັບບັນຊີ. ຍົກຕົວຢ່າງ: ມັນສາມາດໃຊ້ເພື່ອເປີດນຳໃຊ້ການຊິ້ງຂໍ້ມູນຂອງ People ແອັບຯກັບບັນຊີໃດນຶ່ງໄດ້.</string>
     <string name="permlab_readSyncStats">ອ່ານສະຖິຕິການຊິ້ງຂໍ້ມູນ</string>
     <string name="permdesc_readSyncStats">ອະນຸຍາດໃຫ້ແອັບຯ ອ່ານສະຖິຕິການຊິ້ງຂໍ້ມູນຂອງບັນຊີໃດນຶ່ງ ຮວມທັງປະຫວັດການຊິ້ງຂໍ້ມູນ ແລະຈຳນວນຂໍ້ມູນທີ່ຖືກຊິ້ງ.</string>
-    <string name="permlab_sdcardRead">ອ່ານເນື້ອຫາຕ່າງໆໃນ SD Card ຂອງທ່ານ</string>
-    <string name="permdesc_sdcardRead">ອະນຸຍາດໃຫ້ແອັບຯອ່ານເນື້ອຫາຕ່າງໆໃນ SD Card ຂອງທ່ານ.</string>
-    <string name="permlab_sdcardWrite">ແກ້ໄຂ ຫຼືລຶບເນື້ອຫາຂອງ SD card ຂອງທ່ານ</string>
-    <string name="permdesc_sdcardWrite">ອະນຸຍາດໃຫ້ແອັບຯຂຽນຂໍ້ມູນລົງໃນ SD card ໄດ້.</string>
+    <string name="permlab_sdcardRead">ອ່ານເນື້ອຫາຕ່າງໆໃນບ່ອນຈັດເກັບຂໍ້ມູນ USB ຂອງທ່ານ</string>
+    <string name="permdesc_sdcardRead">ອະນຸຍາດໃຫ້ແອັບຯອ່ານເນື້ອຫາຕ່າງໆໃນບ່ອນຈັດເກັບຂໍ້ມູນ USB ຂອງທ່ານ.</string>
+    <string name="permlab_sdcardWrite">ແກ້ໄຂ ຫຼືລຶບເນື້ອຫາໃນບ່ອນຈັດເກັບຂໍ້ມູນ USB ຂອງທ່ານ</string>
+    <string name="permdesc_sdcardWrite">ອະນຸຍາດໃຫ້ແອັບຯຂຽນຂໍ້ມູນໃສ່ບ່ອນຈັດເກັບຂໍ້ມູນ USB.</string>
     <string name="permlab_use_sip">ຮັບສາຍ/ໂທອອກ ຜ່ານ SIP</string>
     <string name="permdesc_use_sip">ອະນຸຍາດ​ໃຫ້ແອັບຯ​ສາມາດ​ຮັບສາຍ ແລະໂທອອກ​ຜ່ານ SIP ໄດ້</string>
     <string name="permlab_register_sim_subscription">ລົງ​ທະ​ບຽນ SIM ການ​ເຊື່ອມ​ຕໍ່​ໂທ​ລະ​ຄົມ​ມະ​ນາ​ຄົມ​ໃໝ່</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">ບໍ່ພົບຜົນການຊອກຫາ</string>
     <string name="find_on_page">ຊອກໃນໜ້າ</string>
     <string name="action_mode_done">ແລ້ວໆ</string>
-    <string name="progress_erasing">ກຳລັງລຶບ​ SD card...</string>
+    <string name="progress_erasing">ກຳລັງລຶບ ບ່ອນຈັດເກັບຂໍ້ມູນ USB …</string>
     <string name="share">ແບ່ງປັນ</string>
     <string name="find">ຊອກຫາ</string>
     <string name="websearch">ຊອກຫາເວັບ</string>

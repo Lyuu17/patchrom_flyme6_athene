@@ -27,15 +27,15 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 2813
+    .line 2761
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2814
+    .line 2762
     iput-object p1, p0, Landroid/media/AudioManager$AudioRecordingCallbackInfo;->mCb:Landroid/media/AudioManager$AudioRecordingCallback;
 
-    .line 2815
+    .line 2763
     iput-object p2, p0, Landroid/media/AudioManager$AudioRecordingCallbackInfo;->mHandler:Landroid/os/Handler;
 
-    .line 2813
+    .line 2761
     return-void
 .end method

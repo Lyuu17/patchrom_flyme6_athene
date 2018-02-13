@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 2313
+    .line 2317
     invoke-virtual {p5}, Landroid/content/pm/ShortcutInfo;->getLastChangedTimestamp()J
 
     move-result-wide v0
@@ -49,10 +49,10 @@
 
     if-gez v0, :cond_0
 
-    .line 2314
+    .line 2318
     return v2
 
-    .line 2316
+    .line 2320
     :cond_0
     if-eqz p2, :cond_1
 
@@ -66,18 +66,18 @@
 
     if-eqz v0, :cond_3
 
-    .line 2319
+    .line 2323
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 2320
+    .line 2324
     invoke-virtual {p5}, Landroid/content/pm/ShortcutInfo;->getActivity()Landroid/content/ComponentName;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 2321
+    .line 2325
     invoke-virtual {p5}, Landroid/content/pm/ShortcutInfo;->getActivity()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -88,66 +88,66 @@
 
     if-eqz v0, :cond_4
 
-    .line 2325
+    .line 2329
     :cond_2
     and-int/lit8 v0, p4, 0x1
 
     if-eqz v0, :cond_5
 
-    .line 2326
+    .line 2330
     invoke-virtual {p5}, Landroid/content/pm/ShortcutInfo;->isDynamic()Z
 
     move-result v0
 
-    .line 2325
+    .line 2329
     if-eqz v0, :cond_5
 
-    .line 2327
+    .line 2331
     return v3
 
-    .line 2317
+    .line 2321
     :cond_3
     return v2
 
-    .line 2322
+    .line 2326
     :cond_4
     return v2
 
-    .line 2329
+    .line 2333
     :cond_5
     and-int/lit8 v0, p4, 0x2
 
     if-eqz v0, :cond_6
 
-    .line 2330
+    .line 2334
     invoke-virtual {p5}, Landroid/content/pm/ShortcutInfo;->isPinned()Z
 
     move-result v0
 
-    .line 2329
+    .line 2333
     if-eqz v0, :cond_6
-
-    .line 2331
-    return v3
-
-    .line 2333
-    :cond_6
-    and-int/lit8 v0, p4, 0x8
-
-    if-eqz v0, :cond_7
-
-    .line 2334
-    invoke-virtual {p5}, Landroid/content/pm/ShortcutInfo;->isManifestShortcut()Z
-
-    move-result v0
-
-    .line 2333
-    if-eqz v0, :cond_7
 
     .line 2335
     return v3
 
     .line 2337
+    :cond_6
+    and-int/lit8 v0, p4, 0x8
+
+    if-eqz v0, :cond_7
+
+    .line 2338
+    invoke-virtual {p5}, Landroid/content/pm/ShortcutInfo;->isManifestShortcut()Z
+
+    move-result v0
+
+    .line 2337
+    if-eqz v0, :cond_7
+
+    .line 2339
+    return v3
+
+    .line 2341
     :cond_7
     return v2
 .end method
@@ -158,7 +158,7 @@
     .param p1, "si"    # Landroid/content/pm/ShortcutInfo;
 
     .prologue
-    .line 2377
+    .line 2381
     invoke-virtual {p1}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v0
@@ -175,7 +175,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/ShortcutService;
 
     .prologue
-    .line 2257
+    .line 2261
     iput-object p1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-direct {p0}, Landroid/content/pm/ShortcutServiceInternal;-><init>()V
@@ -206,27 +206,27 @@
 
     const/4 v3, 0x0
 
-    .line 2363
+    .line 2367
     const-string/jumbo v2, "packageName"
 
     invoke-static {p3, v2}, Lcom/android/internal/util/Preconditions;->checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    .line 2364
+    .line 2368
     const-string/jumbo v2, "shortcutId"
 
     invoke-static {p4, v2}, Lcom/android/internal/util/Preconditions;->checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    .line 2366
+    .line 2370
     iget-object v2, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v2, p5}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2367
+    .line 2371
     iget-object v2, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v2, p1}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2369
+    .line 2373
     iget-object v2, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v2, p5}, Lcom/android/server/pm/ShortcutService;->getUserShortcutsLocked(I)Lcom/android/server/pm/ShortcutUser;
@@ -237,14 +237,14 @@
 
     move-result-object v0
 
-    .line 2371
+    .line 2375
     .local v0, "p":Lcom/android/server/pm/ShortcutPackage;
     if-nez v0, :cond_0
 
-    .line 2372
+    .line 2376
     return-object v6
 
-    .line 2375
+    .line 2379
     :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
@@ -252,7 +252,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 2377
+    .line 2381
     .local v1, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/pm/ShortcutInfo;>;"
     new-instance v2, Lcom/android/server/pm/ShortcutService$LocalService$-android_content_pm_ShortcutInfo_getShortcutInfoLocked_int_launcherUserId_java_lang_String_callingPackage_java_lang_String_packageName_java_lang_String_shortcutId_int_userId_LambdaImpl0;
 
@@ -262,10 +262,10 @@
 
     move v5, p1
 
-    .line 2376
+    .line 2380
     invoke-virtual/range {v0 .. v5}, Lcom/android/server/pm/ShortcutPackage;->findAll(Ljava/util/List;Ljava/util/function/Predicate;ILjava/lang/String;I)V
 
-    .line 2379
+    .line 2383
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -316,14 +316,14 @@
     .end annotation
 
     .prologue
-    .line 2302
+    .line 2306
     .local p4, "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p10, "ret":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/pm/ShortcutInfo;>;"
     if-nez p4, :cond_0
 
     const/4 v6, 0x0
 
-    .line 2305
+    .line 2309
     :goto_0
     iget-object v3, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
@@ -339,14 +339,14 @@
 
     move-result-object v2
 
-    .line 2307
+    .line 2311
     .local v2, "p":Lcom/android/server/pm/ShortcutPackage;
     if-nez v2, :cond_1
 
-    .line 2308
+    .line 2312
     return-void
 
-    .line 2303
+    .line 2307
     .end local v2    # "p":Lcom/android/server/pm/ShortcutPackage;
     :cond_0
     new-instance v6, Landroid/util/ArraySet;
@@ -358,7 +358,7 @@
     .local v6, "ids":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 2312
+    .line 2316
     .end local v6    # "ids":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     .restart local v2    # "p":Lcom/android/server/pm/ShortcutPackage;
     :cond_1
@@ -384,10 +384,10 @@
 
     move v12, p1
 
-    .line 2311
+    .line 2315
     invoke-virtual/range {v7 .. v12}, Lcom/android/server/pm/ShortcutPackage;->findAll(Ljava/util/List;Ljava/util/function/Predicate;ILjava/lang/String;I)V
 
-    .line 2301
+    .line 2305
     return-void
 .end method
 
@@ -407,7 +407,7 @@
     .param p11, "p"    # Lcom/android/server/pm/ShortcutPackage;
 
     .prologue
-    .line 2290
+    .line 2294
     invoke-virtual/range {p11 .. p11}, Lcom/android/server/pm/ShortcutPackage;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
@@ -432,7 +432,7 @@
 
     move/from16 v12, p10
 
-    .line 2289
+    .line 2293
     invoke-direct/range {v1 .. v12}, Lcom/android/server/pm/ShortcutService$LocalService;->getShortcutsInnerLocked(ILjava/lang/String;Ljava/lang/String;Ljava/util/List;JLandroid/content/ComponentName;IILjava/util/ArrayList;I)V
 
     .line 0
@@ -444,7 +444,7 @@
     .param p1, "listener"    # Landroid/content/pm/ShortcutServiceInternal$ShortcutChangeListener;
 
     .prologue
-    .line 2434
+    .line 2438
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v0}, Lcom/android/server/pm/ShortcutService;->-get2(Lcom/android/server/pm/ShortcutService;)Ljava/lang/Object;
@@ -453,7 +453,7 @@
 
     monitor-enter v1
 
-    .line 2435
+    .line 2439
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
@@ -473,10 +473,10 @@
 
     monitor-exit v1
 
-    .line 2433
+    .line 2437
     return-void
 
-    .line 2434
+    .line 2438
     :catchall_0
     move-exception v0
 
@@ -496,17 +496,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2410
+    .line 2414
     const-string/jumbo v1, "packageName can\'t be empty"
 
     invoke-static {p3, v1}, Lcom/android/internal/util/Preconditions;->checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    .line 2411
+    .line 2415
     const-string/jumbo v1, "shortcutId can\'t be empty"
 
     invoke-static {p4, v1}, Lcom/android/internal/util/Preconditions;->checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    .line 2413
+    .line 2417
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v1}, Lcom/android/server/pm/ShortcutService;->-get2(Lcom/android/server/pm/ShortcutService;)Ljava/lang/Object;
@@ -515,18 +515,18 @@
 
     monitor-enter v2
 
-    .line 2414
+    .line 2418
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p5}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2415
+    .line 2419
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2417
+    .line 2421
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p2, p5, p1}, Lcom/android/server/pm/ShortcutService;->getLauncherShortcutsLocked(Ljava/lang/String;II)Lcom/android/server/pm/ShortcutLauncher;
@@ -535,12 +535,12 @@
 
     invoke-virtual {v1}, Lcom/android/server/pm/ShortcutLauncher;->attemptToRestoreIfNeededAndSave()V
 
-    .line 2421
+    .line 2425
     invoke-direct/range {p0 .. p5}, Lcom/android/server/pm/ShortcutService$LocalService;->getShortcutInfoLocked(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Landroid/content/pm/ShortcutInfo;
 
     move-result-object v0
 
-    .line 2424
+    .line 2428
     .local v0, "si":Landroid/content/pm/ShortcutInfo;
     if-eqz v0, :cond_0
 
@@ -556,7 +556,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2428
+    .line 2432
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getIntents()[Landroid/content/Intent;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -567,7 +567,7 @@
 
     return-object v1
 
-    .line 2425
+    .line 2429
     :cond_0
     :try_start_1
     const-string/jumbo v1, "ShortcutService"
@@ -602,10 +602,10 @@
 
     monitor-exit v2
 
-    .line 2426
+    .line 2430
     return-object v5
 
-    .line 2413
+    .line 2417
     .end local v0    # "si":Landroid/content/pm/ShortcutInfo;
     :catchall_0
     move-exception v1
@@ -626,22 +626,22 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 2469
+    .line 2473
     const-string/jumbo v3, "callingPackage"
 
     invoke-static {p2, v3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2470
+    .line 2474
     const-string/jumbo v3, "packageName"
 
     invoke-static {p3, v3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2471
+    .line 2475
     const-string/jumbo v3, "shortcutId"
 
     invoke-static {p4, v3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2473
+    .line 2477
     iget-object v3, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v3}, Lcom/android/server/pm/ShortcutService;->-get2(Lcom/android/server/pm/ShortcutService;)Ljava/lang/Object;
@@ -650,18 +650,18 @@
 
     monitor-enter v4
 
-    .line 2474
+    .line 2478
     :try_start_0
     iget-object v3, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v3, p5}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2475
+    .line 2479
     iget-object v3, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v3, p1}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2477
+    .line 2481
     iget-object v3, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v3, p2, p5, p1}, Lcom/android/server/pm/ShortcutService;->getLauncherShortcutsLocked(Ljava/lang/String;II)Lcom/android/server/pm/ShortcutLauncher;
@@ -670,7 +670,7 @@
 
     invoke-virtual {v3}, Lcom/android/server/pm/ShortcutLauncher;->attemptToRestoreIfNeededAndSave()V
 
-    .line 2480
+    .line 2484
     iget-object v3, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v3, p5}, Lcom/android/server/pm/ShortcutService;->getUserShortcutsLocked(I)Lcom/android/server/pm/ShortcutUser;
@@ -683,23 +683,23 @@
 
     move-result-object v1
 
-    .line 2482
+    .line 2486
     .local v1, "p":Lcom/android/server/pm/ShortcutPackage;
     if-nez v1, :cond_0
 
     monitor-exit v4
 
-    .line 2483
+    .line 2487
     return-object v7
 
-    .line 2486
+    .line 2490
     :cond_0
     :try_start_1
     invoke-virtual {v1, p4}, Lcom/android/server/pm/ShortcutPackage;->findShortcutById(Ljava/lang/String;)Landroid/content/pm/ShortcutInfo;
 
     move-result-object v2
 
-    .line 2487
+    .line 2491
     .local v2, "shortcutInfo":Landroid/content/pm/ShortcutInfo;
     if-eqz v2, :cond_1
 
@@ -711,7 +711,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 2491
+    .line 2495
     :try_start_2
     invoke-virtual {v2}, Landroid/content/pm/ShortcutInfo;->getBitmapPath()Ljava/lang/String;
 
@@ -719,7 +719,7 @@
 
     if-nez v3, :cond_2
 
-    .line 2492
+    .line 2496
     const-string/jumbo v3, "ShortcutService"
 
     const-string/jumbo v5, "null bitmap detected in getShortcutIconFd()"
@@ -731,16 +731,16 @@
 
     monitor-exit v4
 
-    .line 2493
+    .line 2497
     return-object v7
 
     :cond_1
     monitor-exit v4
 
-    .line 2488
+    .line 2492
     return-object v7
 
-    .line 2496
+    .line 2500
     :cond_2
     :try_start_3
     new-instance v3, Ljava/io/File;
@@ -751,10 +751,10 @@
 
     invoke-direct {v3, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 2497
+    .line 2501
     const/high16 v5, 0x10000000
 
-    .line 2495
+    .line 2499
     invoke-static {v3, v5}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;
     :try_end_3
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
@@ -766,11 +766,11 @@
 
     return-object v3
 
-    .line 2498
+    .line 2502
     :catch_0
     move-exception v0
 
-    .line 2499
+    .line 2503
     .local v0, "e":Ljava/io/FileNotFoundException;
     :try_start_4
     const-string/jumbo v3, "ShortcutService"
@@ -803,10 +803,10 @@
 
     monitor-exit v4
 
-    .line 2500
+    .line 2504
     return-object v7
 
-    .line 2473
+    .line 2477
     .end local v0    # "e":Ljava/io/FileNotFoundException;
     .end local v1    # "p":Lcom/android/server/pm/ShortcutPackage;
     .end local v2    # "shortcutInfo":Landroid/content/pm/ShortcutInfo;
@@ -829,22 +829,22 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2442
+    .line 2446
     const-string/jumbo v3, "callingPackage"
 
     invoke-static {p2, v3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2443
+    .line 2447
     const-string/jumbo v3, "packageName"
 
     invoke-static {p3, v3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2444
+    .line 2448
     const-string/jumbo v3, "shortcutId"
 
     invoke-static {p4, v3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2446
+    .line 2450
     iget-object v3, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v3}, Lcom/android/server/pm/ShortcutService;->-get2(Lcom/android/server/pm/ShortcutService;)Ljava/lang/Object;
@@ -853,18 +853,18 @@
 
     monitor-enter v3
 
-    .line 2447
+    .line 2451
     :try_start_0
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v4, p5}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2448
+    .line 2452
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v4, p1}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2450
+    .line 2454
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v4, p2, p5, p1}, Lcom/android/server/pm/ShortcutService;->getLauncherShortcutsLocked(Ljava/lang/String;II)Lcom/android/server/pm/ShortcutLauncher;
@@ -873,7 +873,7 @@
 
     invoke-virtual {v4}, Lcom/android/server/pm/ShortcutLauncher;->attemptToRestoreIfNeededAndSave()V
 
-    .line 2453
+    .line 2457
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v4, p5}, Lcom/android/server/pm/ShortcutService;->getUserShortcutsLocked(I)Lcom/android/server/pm/ShortcutUser;
@@ -886,23 +886,23 @@
 
     move-result-object v0
 
-    .line 2455
+    .line 2459
     .local v0, "p":Lcom/android/server/pm/ShortcutPackage;
     if-nez v0, :cond_0
 
     monitor-exit v3
 
-    .line 2456
+    .line 2460
     return v2
 
-    .line 2459
+    .line 2463
     :cond_0
     :try_start_1
     invoke-virtual {v0, p4}, Lcom/android/server/pm/ShortcutPackage;->findShortcutById(Ljava/lang/String;)Landroid/content/pm/ShortcutInfo;
 
     move-result-object v1
 
-    .line 2460
+    .line 2464
     .local v1, "shortcutInfo":Landroid/content/pm/ShortcutInfo;
     if-eqz v1, :cond_1
 
@@ -912,7 +912,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 2461
+    .line 2465
     invoke-virtual {v1}, Landroid/content/pm/ShortcutInfo;->getIconResourceId()I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -922,10 +922,10 @@
     :cond_1
     monitor-exit v3
 
-    .line 2460
+    .line 2464
     return v2
 
-    .line 2446
+    .line 2450
     .end local v0    # "p":Lcom/android/server/pm/ShortcutPackage;
     .end local v1    # "shortcutInfo":Landroid/content/pm/ShortcutInfo;
     :catchall_0
@@ -965,13 +965,13 @@
     .end annotation
 
     .prologue
-    .line 2265
+    .line 2269
     .local p6, "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2268
+    .line 2272
     .local v15, "ret":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/pm/ShortcutInfo;>;"
     and-int/lit8 v5, p8, 0x4
 
@@ -979,22 +979,22 @@
 
     const/4 v4, 0x1
 
-    .line 2269
+    .line 2273
     .local v4, "cloneKeyFieldOnly":Z
     :goto_0
     if-eqz v4, :cond_2
 
     const/16 v16, 0x4
 
-    .line 2271
+    .line 2275
     .local v16, "cloneFlag":I
     :goto_1
     if-nez p5, :cond_0
 
-    .line 2272
+    .line 2276
     const/16 p6, 0x0
 
-    .line 2275
+    .line 2279
     .end local p6    # "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_0
     move-object/from16 v0, p0
@@ -1007,7 +1007,7 @@
 
     monitor-enter v17
 
-    .line 2276
+    .line 2280
     :try_start_0
     move-object/from16 v0, p0
 
@@ -1017,7 +1017,7 @@
 
     invoke-virtual {v5, v0}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2277
+    .line 2281
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
@@ -1026,7 +1026,7 @@
 
     invoke-virtual {v5, v0}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2279
+    .line 2283
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
@@ -1043,7 +1043,7 @@
 
     invoke-virtual {v5}, Lcom/android/server/pm/ShortcutLauncher;->attemptToRestoreIfNeededAndSave()V
 
-    .line 2282
+    .line 2286
     if-eqz p5, :cond_3
 
     move-object/from16 v5, p0
@@ -1064,7 +1064,7 @@
 
     move/from16 v14, p9
 
-    .line 2283
+    .line 2287
     invoke-direct/range {v5 .. v16}, Lcom/android/server/pm/ShortcutService$LocalService;->getShortcutsInnerLocked(ILjava/lang/String;Ljava/lang/String;Ljava/util/List;JLandroid/content/ComponentName;IILjava/util/ArrayList;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1072,10 +1072,10 @@
     :goto_2
     monitor-exit v17
 
-    .line 2295
+    .line 2299
     return-object v15
 
-    .line 2268
+    .line 2272
     .end local v4    # "cloneKeyFieldOnly":Z
     .end local v16    # "cloneFlag":I
     .restart local p6    # "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -1084,7 +1084,7 @@
 
     goto :goto_0
 
-    .line 2270
+    .line 2274
     .restart local v4    # "cloneKeyFieldOnly":Z
     :cond_2
     const/16 v16, 0xb
@@ -1092,12 +1092,12 @@
     .restart local v16    # "cloneFlag":I
     goto :goto_1
 
-    .line 2287
+    .line 2291
     .end local p6    # "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_3
     move-object/from16 v9, p6
 
-    .line 2288
+    .line 2292
     .local v9, "shortcutIdsF":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :try_start_1
     move-object/from16 v0, p0
@@ -1136,7 +1136,7 @@
 
     goto :goto_2
 
-    .line 2275
+    .line 2279
     .end local v9    # "shortcutIdsF":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :catchall_0
     move-exception v5
@@ -1152,7 +1152,7 @@
     .param p2, "callingPackage"    # Ljava/lang/String;
 
     .prologue
-    .line 2508
+    .line 2512
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v0, p2, p1}, Lcom/android/server/pm/ShortcutService;->hasShortcutHostPermission(Ljava/lang/String;I)Z
@@ -1171,17 +1171,17 @@
     .param p5, "userId"    # I
 
     .prologue
-    .line 2344
+    .line 2348
     const-string/jumbo v1, "packageName"
 
     invoke-static {p3, v1}, Lcom/android/internal/util/Preconditions;->checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    .line 2345
+    .line 2349
     const-string/jumbo v1, "shortcutId"
 
     invoke-static {p4, v1}, Lcom/android/internal/util/Preconditions;->checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    .line 2347
+    .line 2351
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v1}, Lcom/android/server/pm/ShortcutService;->-get2(Lcom/android/server/pm/ShortcutService;)Ljava/lang/Object;
@@ -1190,18 +1190,18 @@
 
     monitor-enter v2
 
-    .line 2348
+    .line 2352
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p5}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2349
+    .line 2353
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2351
+    .line 2355
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p2, p5, p1}, Lcom/android/server/pm/ShortcutService;->getLauncherShortcutsLocked(Ljava/lang/String;II)Lcom/android/server/pm/ShortcutLauncher;
@@ -1210,12 +1210,12 @@
 
     invoke-virtual {v1}, Lcom/android/server/pm/ShortcutLauncher;->attemptToRestoreIfNeededAndSave()V
 
-    .line 2354
+    .line 2358
     invoke-direct/range {p0 .. p5}, Lcom/android/server/pm/ShortcutService$LocalService;->getShortcutInfoLocked(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Landroid/content/pm/ShortcutInfo;
 
     move-result-object v0
 
-    .line 2356
+    .line 2360
     .local v0, "si":Landroid/content/pm/ShortcutInfo;
     if-eqz v0, :cond_0
 
@@ -1235,7 +1235,7 @@
 
     goto :goto_0
 
-    .line 2347
+    .line 2351
     .end local v0    # "si":Landroid/content/pm/ShortcutInfo;
     :catchall_0
     move-exception v1
@@ -1264,18 +1264,18 @@
     .end annotation
 
     .prologue
-    .line 2387
+    .line 2391
     .local p4, "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-string/jumbo v1, "packageName"
 
     invoke-static {p3, v1}, Lcom/android/internal/util/Preconditions;->checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    .line 2388
+    .line 2392
     const-string/jumbo v1, "shortcutIds"
 
     invoke-static {p4, v1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2390
+    .line 2394
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v1}, Lcom/android/server/pm/ShortcutService;->-get2(Lcom/android/server/pm/ShortcutService;)Ljava/lang/Object;
@@ -1284,49 +1284,49 @@
 
     monitor-enter v2
 
-    .line 2391
+    .line 2395
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p5}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2392
+    .line 2396
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/pm/ShortcutService;->throwIfUserLockedL(I)V
 
-    .line 2395
+    .line 2399
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p2, p5, p1}, Lcom/android/server/pm/ShortcutService;->getLauncherShortcutsLocked(Ljava/lang/String;II)Lcom/android/server/pm/ShortcutLauncher;
 
     move-result-object v0
 
-    .line 2396
+    .line 2400
     .local v0, "launcher":Lcom/android/server/pm/ShortcutLauncher;
     invoke-virtual {v0}, Lcom/android/server/pm/ShortcutLauncher;->attemptToRestoreIfNeededAndSave()V
 
-    .line 2398
+    .line 2402
     invoke-virtual {v0, p5, p3, p4}, Lcom/android/server/pm/ShortcutLauncher;->pinShortcuts(ILjava/lang/String;Ljava/util/List;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v2
 
-    .line 2400
+    .line 2404
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1, p3, p5}, Lcom/android/server/pm/ShortcutService;->packageShortcutsChanged(Ljava/lang/String;I)V
 
-    .line 2402
+    .line 2406
     iget-object v1, p0, Lcom/android/server/pm/ShortcutService$LocalService;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v1}, Lcom/android/server/pm/ShortcutService;->verifyStates()V
 
-    .line 2385
+    .line 2389
     return-void
 
-    .line 2390
+    .line 2394
     .end local v0    # "launcher":Lcom/android/server/pm/ShortcutLauncher;
     :catchall_0
     move-exception v1

@@ -72,7 +72,7 @@
     .locals 3
 
     .prologue
-    .line 2866
+    .line 2815
     const-string/jumbo v0, "content://cellbroadcasts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -81,155 +81,155 @@
 
     sput-object v0, Landroid/provider/Telephony$CellBroadcasts;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 3003
+    .line 2952
     const/16 v0, 0x14
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 3004
+    .line 2953
     const-string/jumbo v1, "_id"
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 3005
+    .line 2954
     const-string/jumbo v1, "geo_scope"
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 3006
+    .line 2955
     const-string/jumbo v1, "plmn"
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 3007
+    .line 2956
     const-string/jumbo v1, "lac"
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 3008
+    .line 2957
     const-string/jumbo v1, "cid"
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 3009
+    .line 2958
     const-string/jumbo v1, "serial_number"
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 3010
+    .line 2959
     const-string/jumbo v1, "service_category"
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 3011
+    .line 2960
     const-string/jumbo v1, "language"
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 3012
+    .line 2961
     const-string/jumbo v1, "body"
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    .line 3013
+    .line 2962
     const-string/jumbo v1, "date"
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    .line 3014
+    .line 2963
     const-string/jumbo v1, "read"
 
     const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
-    .line 3015
+    .line 2964
     const-string/jumbo v1, "format"
 
     const/16 v2, 0xb
 
     aput-object v1, v0, v2
 
-    .line 3016
+    .line 2965
     const-string/jumbo v1, "priority"
 
     const/16 v2, 0xc
 
     aput-object v1, v0, v2
 
-    .line 3017
+    .line 2966
     const-string/jumbo v1, "etws_warning_type"
 
     const/16 v2, 0xd
 
     aput-object v1, v0, v2
 
-    .line 3018
+    .line 2967
     const-string/jumbo v1, "cmas_message_class"
 
     const/16 v2, 0xe
 
     aput-object v1, v0, v2
 
-    .line 3019
+    .line 2968
     const-string/jumbo v1, "cmas_category"
 
     const/16 v2, 0xf
 
     aput-object v1, v0, v2
 
-    .line 3020
+    .line 2969
     const-string/jumbo v1, "cmas_response_type"
 
     const/16 v2, 0x10
 
     aput-object v1, v0, v2
 
-    .line 3021
+    .line 2970
     const-string/jumbo v1, "cmas_severity"
 
     const/16 v2, 0x11
 
     aput-object v1, v0, v2
 
-    .line 3022
+    .line 2971
     const-string/jumbo v1, "cmas_urgency"
 
     const/16 v2, 0x12
 
     aput-object v1, v0, v2
 
-    .line 3023
+    .line 2972
     const-string/jumbo v1, "cmas_certainty"
 
     const/16 v2, 0x13
 
     aput-object v1, v0, v2
 
-    .line 3003
+    .line 2952
     sput-object v0, Landroid/provider/Telephony$CellBroadcasts;->QUERY_COLUMNS:[Ljava/lang/String;
 
-    .line 2855
+    .line 2804
     return-void
 .end method
 
@@ -237,7 +237,7 @@
     .locals 0
 
     .prologue
-    .line 2861
+    .line 2810
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

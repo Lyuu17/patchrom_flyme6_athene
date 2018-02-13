@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IWallpaperManagerCallback"
 
-.field static final TRANSACTION_onWallpaperChanged_0:I = 0x1
+.field static final TRANSACTION_onWallpaperChanged:I = 0x1
 
 
 # direct methods

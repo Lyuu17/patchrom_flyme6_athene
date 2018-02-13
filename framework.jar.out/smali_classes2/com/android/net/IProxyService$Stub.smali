@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.net.IProxyService"
 
-.field static final TRANSACTION_resolvePacFile_0:I = 0x1
+.field static final TRANSACTION_resolvePacFile:I = 0x1
 
 .field static final TRANSACTION_setPacFile:I = 0x2
 
@@ -46,7 +46,7 @@
     .line 16
     const-string/jumbo v0, "com.android.net.IProxyService"
 
-    invoke-virtual {p0, p0, v0}, Lcom/android/net/IProxyService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     .line 14
     return-void

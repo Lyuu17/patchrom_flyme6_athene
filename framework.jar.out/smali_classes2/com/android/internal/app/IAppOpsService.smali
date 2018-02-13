@@ -85,23 +85,7 @@
     .end annotation
 .end method
 
-.method public abstract getPrivacyGuardSettingForPackage(ILjava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getToken(Landroid/os/IBinder;)Landroid/os/IBinder;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isControlAllowed(ILjava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -149,14 +133,6 @@
     .end annotation
 .end method
 
-.method public abstract resetCounters()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setAudioRestriction(IIII[Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -166,14 +142,6 @@
 .end method
 
 .method public abstract setMode(IILjava/lang/String;I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setPrivacyGuardSettingForPackage(ILjava/lang/String;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

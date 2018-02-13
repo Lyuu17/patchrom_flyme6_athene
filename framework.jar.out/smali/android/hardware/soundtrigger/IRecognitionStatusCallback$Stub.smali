@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.soundtrigger.IRecognitionStatusCallback"
 
-.field static final TRANSACTION_onError_2:I = 0x3
+.field static final TRANSACTION_onError:I = 0x3
 
-.field static final TRANSACTION_onGenericSoundTriggerDetected_1:I = 0x2
+.field static final TRANSACTION_onGenericSoundTriggerDetected:I = 0x2
 
-.field static final TRANSACTION_onKeyphraseDetected_0:I = 0x1
+.field static final TRANSACTION_onKeyphraseDetected:I = 0x1
 
 .field static final TRANSACTION_onRecognitionPaused:I = 0x4
 

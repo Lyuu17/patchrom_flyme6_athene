@@ -387,10 +387,10 @@
     <string name="permdesc_writeSyncSettings">‏ایپ کو کسی اکاؤنٹ کیلئے مطابقت پذیری کی ترتیبات میں ترمیم کرنے کی اجازت دیتا ہے۔ مثلا، کسی اکاؤنٹ کے ساتھ People ایپ کی مطابقت پذیری فعال کرنے کیلئے اسے استعمال کیا جاسکتا ہے۔</string>
     <string name="permlab_readSyncStats">مطابقت پذیری کے اعداد و شمار پڑھیں</string>
     <string name="permdesc_readSyncStats">ایپ کو کسی اکاؤنٹ کیلئے مطابقت پذیری کے اعداد و شمار، بشمول مطابقت پذیری کے ایونٹس اور جس قدر ڈیٹا مطابقت پذیر ہے اس کی سرگزشت کو پڑھنے کی اجازت دیتا ہے۔</string>
-    <string name="permlab_sdcardRead">‏اپنے SD کارڈ کے مواد کو پڑھیں</string>
-    <string name="permdesc_sdcardRead">‏ایپ کو آپ کے SD کارڈ کے مواد کو پڑھنے کی اجازت دیتا ہے۔</string>
-    <string name="permlab_sdcardWrite">‏اپنے SD کارڈ کے مواد میں ترمیم یا انہیں حذف کریں</string>
-    <string name="permdesc_sdcardWrite">‏ایپ کو SD کارڈ پر لکھنے کی اجازت دیتا ہے۔</string>
+    <string name="permlab_sdcardRead">‏آپ USB سٹوریج کے مواد کو پڑھیں</string>
+    <string name="permdesc_sdcardRead">‏ایپ کو آپ کے USB اسٹوریج کے مواد کو پڑھنے کی اجازت دیتا ہے۔</string>
+    <string name="permlab_sdcardWrite">‏اپنے USB سٹوریج کے مواد میں ترمیم یا حذف کریں</string>
+    <string name="permdesc_sdcardWrite">‏ایپ کو USB اسٹوریج پر لکھنے کی اجازت دیتا ہے۔</string>
     <string name="permlab_use_sip">‏SIP کالز کریں/موصول کریں</string>
     <string name="permdesc_use_sip">‏ایپ کو SIP کالز کرنے اور موصول کرنے کی اجازت دیتا ہے۔</string>
     <string name="permlab_register_sim_subscription">‏نئے ٹیلی کام SIM کنکشنز رجسٹر کریں</string>
@@ -1025,7 +1025,7 @@
     <string name="no_matches">کوئی مماثلتیں نہیں ہیں</string>
     <string name="find_on_page">صفحہ پر تلاش کریں</string>
     <string name="action_mode_done">ہو گیا</string>
-    <string name="progress_erasing">‏SD کارڈ کو مٹا رہا ہے…</string>
+    <string name="progress_erasing">‏USB اسٹوریج کو مٹا رہا ہے…</string>
     <string name="share">اشتراک کریں</string>
     <string name="find">تلاش کریں</string>
     <string name="websearch">ویب تلاش</string>

@@ -29,13 +29,13 @@
     .end annotation
 
     .prologue
-    .line 1273
+    .line 1277
     invoke-direct {p0, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 1274
+    .line 1278
     iput-object p1, p0, Lcom/android/server/pm/ShortcutService$FileOutputStreamWithPath;->mFile:Ljava/io/File;
 
-    .line 1272
+    .line 1276
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .locals 1
 
     .prologue
-    .line 1278
+    .line 1282
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService$FileOutputStreamWithPath;->mFile:Ljava/io/File;
 
     return-object v0

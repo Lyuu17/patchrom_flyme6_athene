@@ -26,15 +26,15 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.accounts.IAccountAuthenticator"
 
-.field static final TRANSACTION_addAccountFromCredentials:I = 0xa
+.field static final TRANSACTION_addAccount:I = 0x1
 
-.field static final TRANSACTION_addAccount_0:I = 0x1
+.field static final TRANSACTION_addAccountFromCredentials:I = 0xa
 
 .field static final TRANSACTION_confirmCredentials:I = 0x2
 
 .field static final TRANSACTION_editProperties:I = 0x6
 
-.field static final TRANSACTION_finishSession_12:I = 0xd
+.field static final TRANSACTION_finishSession:I = 0xd
 
 .field static final TRANSACTION_getAccountCredentialsForCloning:I = 0x9
 

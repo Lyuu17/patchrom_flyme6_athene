@@ -39,7 +39,7 @@
     .param p9, "val$userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 2948
+    .line 2922
     .local p5, "$anonymous2":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$22;->this$0:Landroid/accounts/AccountManager;
 
@@ -67,44 +67,44 @@
     .end annotation
 
     .prologue
-    .line 2951
+    .line 2925
     iget-object v0, p0, Landroid/accounts/AccountManager$22;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
 
     move-result-object v0
 
-    .line 2952
-    iget-object v1, p0, Landroid/accounts/AccountManager$22;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    .line 2926
+    iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
-    .line 2953
+    .line 2927
     iget-object v2, p0, Landroid/accounts/AccountManager$22;->val$sessionBundle:Landroid/os/Bundle;
 
-    .line 2954
+    .line 2928
     iget-object v3, p0, Landroid/accounts/AccountManager$22;->val$activity:Landroid/app/Activity;
 
     if-eqz v3, :cond_0
 
     const/4 v3, 0x1
 
-    .line 2955
+    .line 2929
     :goto_0
     iget-object v4, p0, Landroid/accounts/AccountManager$22;->val$appInfo:Landroid/os/Bundle;
 
-    .line 2956
+    .line 2930
     iget-object v5, p0, Landroid/accounts/AccountManager$22;->val$userHandle:Landroid/os/UserHandle;
 
     invoke-virtual {v5}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v5
 
-    .line 2951
+    .line 2925
     invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountManager;->finishSessionAsUser(Landroid/accounts/IAccountManagerResponse;Landroid/os/Bundle;ZLandroid/os/Bundle;I)V
 
-    .line 2950
+    .line 2924
     return-void
 
-    .line 2954
+    .line 2928
     :cond_0
     const/4 v3, 0x0
 

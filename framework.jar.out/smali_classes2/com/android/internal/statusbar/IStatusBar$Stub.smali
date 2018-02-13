@@ -38,9 +38,9 @@
 
 .field static final TRANSACTION_appTransitionFinished:I = 0x1a
 
-.field static final TRANSACTION_appTransitionPending_22:I = 0x17
+.field static final TRANSACTION_appTransitionPending:I = 0x17
 
-.field static final TRANSACTION_appTransitionStarting_24:I = 0x19
+.field static final TRANSACTION_appTransitionStarting:I = 0x19
 
 .field static final TRANSACTION_buzzBeepBlinked:I = 0xb
 
@@ -60,7 +60,7 @@
 
 .field static final TRANSACTION_notificationLightPulse:I = 0xd
 
-.field static final TRANSACTION_onCameraLaunchGestureDetected_28:I = 0x1d
+.field static final TRANSACTION_onCameraLaunchGestureDetected:I = 0x1d
 
 .field static final TRANSACTION_preloadRecentApps:I = 0x12
 
@@ -68,11 +68,11 @@
 
 .field static final TRANSACTION_removeIcon:I = 0x2
 
-.field static final TRANSACTION_setIcon_0:I = 0x1
+.field static final TRANSACTION_setIcon:I = 0x1
 
 .field static final TRANSACTION_setImeWindowStatus:I = 0x9
 
-.field static final TRANSACTION_setSystemUiVisibility_6:I = 0x7
+.field static final TRANSACTION_setSystemUiVisibility:I = 0x7
 
 .field static final TRANSACTION_setWindowState:I = 0xa
 

@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Looper;
 
     .prologue
-    .line 1032
+    .line 1074
     iput-object p1, p0, Landroid/bluetooth/BluetoothHeadset$3;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -42,17 +42,17 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1035
+    .line 1077
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1034
+    .line 1076
     :cond_0
     :goto_0
     return-void
 
-    .line 1037
+    .line 1079
     :pswitch_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$3;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
@@ -62,22 +62,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 1038
+    .line 1080
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$3;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadset;->-get3(Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
     move-result-object v0
 
-    .line 1039
+    .line 1081
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadset$3;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
-    .line 1038
+    .line 1080
     invoke-interface {v0, v2, v1}, Landroid/bluetooth/BluetoothProfile$ServiceListener;->onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
 
     goto :goto_0
 
-    .line 1044
+    .line 1086
     :pswitch_1
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$3;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1045
+    .line 1087
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadset$3;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadset;->-get3(Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 1035
+    .line 1077
     nop
 
     :pswitch_data_0

@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.IConnectivityMetricsLogger"
 
-.field static final TRANSACTION_getEvents_2:I = 0x3
+.field static final TRANSACTION_getEvents:I = 0x3
 
 .field static final TRANSACTION_logEvent:I = 0x1
 

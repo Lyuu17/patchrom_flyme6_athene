@@ -35,7 +35,7 @@
     .param p3, "val$systemLocale"    # Ljava/util/Locale;
 
     .prologue
-    .line 837
+    .line 789
     .local p4, "val$layouts":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/input/KeyboardLayout;>;"
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$4;->this$0:Lcom/android/server/input/InputManagerService;
 
@@ -59,7 +59,7 @@
     .param p3, "layout"    # Landroid/hardware/input/KeyboardLayout;
 
     .prologue
-    .line 843
+    .line 795
     invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getVendorId()I
 
     move-result v3
@@ -72,7 +72,7 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 844
+    .line 796
     invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getProductId()I
 
     move-result v3
@@ -85,23 +85,23 @@
 
     if-eq v3, v4, :cond_1
 
-    .line 845
+    .line 797
     :cond_0
     return-void
 
-    .line 847
+    .line 799
     :cond_1
     invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getLocales()Landroid/os/LocaleList;
 
     move-result-object v1
 
-    .line 848
+    .line 800
     .local v1, "locales":Landroid/os/LocaleList;
     invoke-virtual {v1}, Landroid/os/LocaleList;->size()I
 
     move-result v2
 
-    .line 849
+    .line 801
     .local v2, "numLocales":I
     const/4 v0, 0x0
 
@@ -109,7 +109,7 @@
     :goto_0
     if-ge v0, v2, :cond_2
 
-    .line 850
+    .line 802
     iget-object v3, p0, Lcom/android/server/input/InputManagerService$4;->val$systemLocale:Ljava/util/Locale;
 
     invoke-virtual {v1, v0}, Landroid/os/LocaleList;->get(I)Ljava/util/Locale;
@@ -122,16 +122,16 @@
 
     if-eqz v3, :cond_3
 
-    .line 851
+    .line 803
     iget-object v3, p0, Lcom/android/server/input/InputManagerService$4;->val$layouts:Ljava/util/List;
 
     invoke-interface {v3, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 840
+    .line 792
     :cond_2
     return-void
 
-    .line 849
+    .line 801
     :cond_3
     add-int/lit8 v0, v0, 0x1
 

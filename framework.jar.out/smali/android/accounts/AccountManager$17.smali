@@ -33,7 +33,7 @@
     .param p7, "val$activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 1883
+    .line 1859
     .local p5, "$anonymous2":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$17;->this$0:Landroid/accounts/AccountManager;
 
@@ -57,19 +57,14 @@
     .end annotation
 
     .prologue
-    .line 1886
-    const/16 v0, 0x1f
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 1887
+    .line 1862
     iget-object v0, p0, Landroid/accounts/AccountManager$17;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
 
     move-result-object v1
 
-    iget-object v2, p0, Landroid/accounts/AccountManager$17;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    iget-object v2, p0, Landroid/accounts/AccountManager$AmsTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
     iget-object v3, p0, Landroid/accounts/AccountManager$17;->val$accountType:Ljava/lang/String;
 
@@ -82,10 +77,10 @@
     :goto_0
     invoke-interface {v1, v2, v3, v0}, Landroid/accounts/IAccountManager;->editProperties(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Z)V
 
-    .line 1885
+    .line 1861
     return-void
 
-    .line 1887
+    .line 1862
     :cond_0
     const/4 v0, 0x0
 

@@ -54,22 +54,22 @@
     .locals 3
 
     .prologue
-    .line 1728
+    .line 1727
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 1729
+    .line 1728
     const-string/jumbo v1, "1"
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 1728
+    .line 1727
     sput-object v0, Landroid/provider/CalendarContract$Instances;->WHERE_CALENDARS_ARGS:[Ljava/lang/String;
 
-    .line 1799
+    .line 1796
     const-string/jumbo v0, "content://com.android.calendar/instances/when"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -78,17 +78,17 @@
 
     sput-object v0, Landroid/provider/CalendarContract$Instances;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 1807
+    .line 1804
     const-string/jumbo v0, "content://com.android.calendar/instances/whenbyday"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1806
+    .line 1803
     sput-object v0, Landroid/provider/CalendarContract$Instances;->CONTENT_BY_DAY_URI:Landroid/net/Uri;
 
-    .line 1813
+    .line 1810
     const-string/jumbo v0, "content://com.android.calendar/instances/search"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -97,17 +97,17 @@
 
     sput-object v0, Landroid/provider/CalendarContract$Instances;->CONTENT_SEARCH_URI:Landroid/net/Uri;
 
-    .line 1821
+    .line 1818
     const-string/jumbo v0, "content://com.android.calendar/instances/searchbyday"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1820
+    .line 1817
     sput-object v0, Landroid/provider/CalendarContract$Instances;->CONTENT_SEARCH_BY_DAY_URI:Landroid/net/Uri;
 
-    .line 1725
+    .line 1724
     return-void
 .end method
 
@@ -115,7 +115,7 @@
     .locals 0
 
     .prologue
-    .line 1735
+    .line 1734
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -129,33 +129,28 @@
     .param p4, "end"    # J
 
     .prologue
-    .line 1754
-    const/16 v0, 0x36
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 1755
+    .line 1753
     sget-object v0, Landroid/provider/CalendarContract$Instances;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v6
 
-    .line 1756
+    .line 1754
     .local v6, "builder":Landroid/net/Uri$Builder;
     invoke-static {v6, p2, p3}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 1757
+    .line 1755
     invoke-static {v6, p4, p5}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 1758
+    .line 1756
     invoke-virtual {v6}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
 
     const-string/jumbo v3, "visible=?"
 
-    .line 1759
+    .line 1757
     sget-object v4, Landroid/provider/CalendarContract$Instances;->WHERE_CALENDARS_ARGS:[Ljava/lang/String;
 
     const-string/jumbo v5, "begin ASC"
@@ -164,7 +159,7 @@
 
     move-object v2, p1
 
-    .line 1758
+    .line 1756
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
@@ -181,38 +176,33 @@
     .param p6, "searchQuery"    # Ljava/lang/String;
 
     .prologue
-    .line 1784
-    const/16 v0, 0x36
-
-    invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
-
-    .line 1785
+    .line 1782
     sget-object v0, Landroid/provider/CalendarContract$Instances;->CONTENT_SEARCH_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v6
 
-    .line 1786
+    .line 1783
     .local v6, "builder":Landroid/net/Uri$Builder;
     invoke-static {v6, p2, p3}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 1787
+    .line 1784
     invoke-static {v6, p4, p5}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 1788
+    .line 1785
     invoke-virtual {v6, p6}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v6
 
-    .line 1789
+    .line 1786
     invoke-virtual {v6}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
 
     const-string/jumbo v3, "visible=?"
 
-    .line 1790
+    .line 1787
     sget-object v4, Landroid/provider/CalendarContract$Instances;->WHERE_CALENDARS_ARGS:[Ljava/lang/String;
 
     const-string/jumbo v5, "begin ASC"
@@ -221,7 +211,7 @@
 
     move-object v2, p1
 
-    .line 1789
+    .line 1786
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0

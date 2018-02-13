@@ -141,6 +141,10 @@
 
     .line 387
     .local v0, "ar":Landroid/os/AsyncResult;
+    iget-object v3, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+
+    if-eqz v3, :cond_1
+
     iget-object v3, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     if-eqz v3, :cond_1

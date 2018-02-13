@@ -245,14 +245,6 @@
     .end annotation
 .end method
 
-.method public abstract getAtr(I)[B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getCalculatedPreferredNetworkType(Ljava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -513,14 +505,6 @@
     .end annotation
 .end method
 
-.method public abstract getLteOnGsmMode()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getMergedSubscriberIds(Ljava/lang/String;)[Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -761,14 +745,6 @@
     .end annotation
 .end method
 
-.method public abstract iccOpenLogicalChannelWithP2(ILjava/lang/String;B)Landroid/telephony/IccOpenLogicalChannelResponse;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract iccTransmitApduBasicChannel(IIIIIILjava/lang/String;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -826,14 +802,6 @@
 .end method
 
 .method public abstract isImsRegistered()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isImsRegisteredForSubscriber(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

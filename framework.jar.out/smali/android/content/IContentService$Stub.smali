@@ -50,27 +50,27 @@
 
 .field static final TRANSACTION_getMasterSyncAutomaticallyAsUser:I = 0x17
 
-.field static final TRANSACTION_getPeriodicSyncs_13:I = 0xe
+.field static final TRANSACTION_getPeriodicSyncs:I = 0xe
 
 .field static final TRANSACTION_getSyncAdapterPackagesForAuthorityAsUser:I = 0x1c
 
+.field static final TRANSACTION_getSyncAdapterTypes:I = 0x1a
+
 .field static final TRANSACTION_getSyncAdapterTypesAsUser:I = 0x1b
 
-.field static final TRANSACTION_getSyncAdapterTypes_25:I = 0x1a
+.field static final TRANSACTION_getSyncAutomatically:I = 0xa
 
 .field static final TRANSACTION_getSyncAutomaticallyAsUser:I = 0xb
 
-.field static final TRANSACTION_getSyncAutomatically_9:I = 0xa
+.field static final TRANSACTION_getSyncStatus:I = 0x1e
 
 .field static final TRANSACTION_getSyncStatusAsUser:I = 0x1f
 
-.field static final TRANSACTION_getSyncStatus_29:I = 0x1e
+.field static final TRANSACTION_isSyncActive:I = 0x1d
 
-.field static final TRANSACTION_isSyncActive_28:I = 0x1d
+.field static final TRANSACTION_isSyncPending:I = 0x20
 
 .field static final TRANSACTION_isSyncPendingAsUser:I = 0x21
-
-.field static final TRANSACTION_isSyncPending_31:I = 0x20
 
 .field static final TRANSACTION_notifyChange:I = 0x3
 
@@ -90,9 +90,9 @@
 
 .field static final TRANSACTION_setMasterSyncAutomaticallyAsUser:I = 0x15
 
-.field static final TRANSACTION_setSyncAutomaticallyAsUser:I = 0xd
+.field static final TRANSACTION_setSyncAutomatically:I = 0xc
 
-.field static final TRANSACTION_setSyncAutomatically_11:I = 0xc
+.field static final TRANSACTION_setSyncAutomaticallyAsUser:I = 0xd
 
 .field static final TRANSACTION_sync:I = 0x5
 

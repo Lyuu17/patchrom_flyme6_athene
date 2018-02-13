@@ -161,8 +161,6 @@
 
 .field public static final clearDefaultHint:I = 0x1020336
 
-.field public static final click_hint:I = 0x102040f
-
 .field public static final closeButton:I = 0x1020027
 
 .field public static final close_window:I = 0x1020365
@@ -270,10 +268,6 @@
 .field public static final headers:I = 0x10203d8
 
 .field public static final hint:I = 0x1020005
-
-.field public static final hint_info:I = 0x102040d
-
-.field public static final hint_section:I = 0x102040c
 
 .field public static final home:I = 0x102002c
 
@@ -447,8 +441,6 @@
 
 .field public static final option3:I = 0x102036d
 
-.field public static final option4:I = 0x102036e
-
 .field public static final original_app_icon:I = 0x1020392
 
 .field public static final original_message:I = 0x1020393
@@ -480,10 +472,6 @@
 .field public static final permission_group:I = 0x1020344
 
 .field public static final permission_list:I = 0x1020345
-
-.field public static final permission_remember_choice_checkbox:I = 0x10203cf
-
-.field public static final permission_text:I = 0x10203ce
 
 .field public static final perms_list:I = 0x1020347
 
@@ -536,10 +524,6 @@
 .field public static final reask_hint:I = 0x1020339
 
 .field public static final redo:I = 0x1020033
-
-.field public static final relative_bottom:I = 0x1020410
-
-.field public static final relative_top:I = 0x102040b
 
 .field public static final remote_input_tag:I = 0x102005c
 
@@ -619,13 +603,9 @@
 
 .field public static final shortcut:I = 0x1020397
 
-.field public static final single_hand_window_title:I = 0x102040e
-
 .field public static final six:I = 0x1020450
 
 .field public static final skip_button:I = 0x10203de
-
-.field public static final slide_hint_area:I = 0x1020411
 
 .field public static final sms_short_code_confirm_message:I = 0x1020412
 
@@ -773,7 +753,7 @@
     .locals 0
 
     .prologue
-    .line 25907
+    .line 17320
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

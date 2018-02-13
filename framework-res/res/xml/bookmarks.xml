@@ -8,4 +8,7 @@
     <bookmark category="android.intent.category.APP_MAPS" shortcut="m" />
     <bookmark category="android.intent.category.APP_MUSIC" shortcut="p" />
     <bookmark category="android.intent.category.APP_MESSAGING" shortcut="s" />
+    <bookmark package="com.google.android.gm" class="com.google.android.gm.ConversationListActivityGmail" shortcut="g" />
+    <bookmark package="com.google.android.talk" class="com.google.android.talk.SigningInActivity" shortcut="t" />
+    <bookmark package="com.google.android.youtube" class="com.google.android.youtube.app.honeycomb.Shell$HomeActivity" shortcut="y" />
 </bookmarks>
