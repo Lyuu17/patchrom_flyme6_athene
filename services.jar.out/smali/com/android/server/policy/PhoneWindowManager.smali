@@ -24279,6 +24279,12 @@
 
     if-eqz v4, :cond_flyme_0
 
+    const-wide/16 v4, -0x1
+
+    return-wide v4
+
+    :cond_flyme_0
+
     const/4 v4, 0x4
 
     move/from16 v0, v31
