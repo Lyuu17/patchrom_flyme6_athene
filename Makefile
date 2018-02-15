@@ -55,7 +55,7 @@ vendor_modify_images := boot
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService BookmarkProvider EasterEgg ExtShared HTMLViewer KeyChain PacProcessor PrintRecommendationService PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup \
-		     BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver CMSettingsProvider DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
+		     BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver CMActions CMSettingsProvider DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
