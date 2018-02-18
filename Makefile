@@ -40,7 +40,7 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-#vendor_remove_dirs := vendor/operator/app
+vendor_remove_dirs := vendor/system/rfs
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
@@ -55,7 +55,7 @@ vendor_modify_images := boot
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService BookmarkProvider EasterEgg ExtShared HTMLViewer KeyChain PacProcessor PrintRecommendationService PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup \
-		     BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver CMActions CMSettingsProvider DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
+		     AudioFX BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver CMActions CMAudioService CMParts CMSettingsProvider DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -73,7 +73,7 @@ vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService BookmarkProvide
 # You need to decode android.policy.jar to the project directory (use apktool d android.policy.jar) first,
 # and then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := framework services telephony-common wifi-service
+vendor_modify_jars := framework services telephony-common wifi-service org.cyanogenmod.platform.jar
 
 ##############################################################################
 # The value decides which board system directory you want to save.
