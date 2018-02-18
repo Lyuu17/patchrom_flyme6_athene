@@ -690,6 +690,8 @@
     .locals 13
 
     .prologue
+    return-void
+
     const/4 v12, 0x0
 
     const v11, 0x3f060049
