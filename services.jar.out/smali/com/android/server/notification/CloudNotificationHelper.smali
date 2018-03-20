@@ -4,9 +4,7 @@
 
 
 # static fields
-.field public static CLOUD_PACKAGE_NAME:Ljava/lang/String;
-
-.field public static TOOLS_PACKAGE_NAME:Ljava/lang/String;
+.field private static CLOUD_PACKAGE_NAME:Ljava/lang/String;
 
 
 # direct methods
@@ -14,14 +12,12 @@
     .locals 1
 
     .prologue
-    const-string v0, "com.meizu.cloud"
+    .line 20
+    const-string/jumbo v0, "com.meizu.cloud"
 
     sput-object v0, Lcom/android/server/notification/CloudNotificationHelper;->CLOUD_PACKAGE_NAME:Ljava/lang/String;
 
-    const-string v0, "com.flyme.systemuitools"
-
-    sput-object v0, Lcom/android/server/notification/CloudNotificationHelper;->TOOLS_PACKAGE_NAME:Ljava/lang/String;
-
+    .line 19
     return-void
 .end method
 
@@ -244,20 +240,11 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    sget-object v1, Lcom/android/server/notification/CloudNotificationHelper;->TOOLS_PACKAGE_NAME:Ljava/lang/String;
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :cond_0
     iget-object v1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 24
     iget-object v1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
@@ -270,20 +257,20 @@
 
     .line 25
     .local v0, "originalName":Ljava/lang/String;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-lez v1, :cond_1
+    if-lez v1, :cond_0
 
     .line 26
     return-object v0
 
     .line 29
     .end local v0    # "originalName":Ljava/lang/String;
-    :cond_1
+    :cond_0
     return-object p1
 .end method
 

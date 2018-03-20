@@ -6252,7 +6252,15 @@
     return-void
 .end method
 
-# virtual methods
+.method flymeGetFieldPackageManagerService()Lcom/android/server/pm/PackageManagerService;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/SystemServer;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
+
+    return-object v0
+.end method
+
 .method flymeGetFieldSystemContext()Landroid/content/Context;
     .locals 1
 
