@@ -382,6 +382,8 @@
 
     .prologue
     .line 82
+    return-void
+    
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mSettingsObserver:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;
 
     if-nez v0, :cond_0

@@ -6026,10 +6026,9 @@
     or-int v5, v4, v9
 
     .local v5, "newUidRules":I
+    invoke-static {p0, p1, v4}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->updateFlymeRules(Lcom/android/server/net/NetworkPolicyManagerService;II)I
 
-    invoke-static {p0, p1, v5}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->updateFlymeRules(Lcom/android/server/net/NetworkPolicyManagerService;II)I
-
-    move-result v5
+    move-result v4
 
     if-nez v5, :cond_c
 

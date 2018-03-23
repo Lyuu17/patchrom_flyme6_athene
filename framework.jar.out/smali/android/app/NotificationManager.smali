@@ -1310,7 +1310,7 @@
     move-result-object v2
 
     const/4 v0, 0x0
-    
+
     aget-boolean v2, v2, v0
 
     return v2

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 7253
+    .line 7236
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,12 +38,12 @@
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 7786
+    .line 7789
     iget-object v0, p0, Landroid/app/Activity;->mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
 
     invoke-virtual {v0, p1}, Landroid/app/Activity$FlymeInjector$TintBarInject;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 7784
+    .line 7787
     return-void
 .end method
 
@@ -52,12 +52,12 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 7780
+    .line 7783
     iget-object v0, p0, Landroid/app/Activity;->mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
 
     invoke-virtual {v0}, Landroid/app/Activity$FlymeInjector$TintBarInject;->onCreate()V
 
-    .line 7778
+    .line 7781
     return-void
 .end method
 
@@ -66,12 +66,12 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 7796
+    .line 7799
     iget-object v0, p0, Landroid/app/Activity;->mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
 
     invoke-virtual {v0}, Landroid/app/Activity$FlymeInjector$TintBarInject;->onStart()V
 
-    .line 7794
+    .line 7797
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .param p1, "params"    # Landroid/view/WindowManager$LayoutParams;
 
     .prologue
-    .line 7791
+    .line 7794
     iget-object v0, p0, Landroid/app/Activity;->mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
 
     invoke-virtual {v0, p1}, Landroid/app/Activity$FlymeInjector$TintBarInject;->onWindowAttributesChanged(Landroid/view/WindowManager$LayoutParams;)Landroid/view/WindowManager$LayoutParams;
@@ -97,26 +97,26 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 7881
+    .line 7808
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
-    .line 7882
+    .line 7809
     .local v1, "win":Landroid/view/Window;
     invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v2
 
-    .line 7883
+    .line 7810
     .local v2, "winParams":Landroid/view/WindowManager$LayoutParams;
     const/high16 v0, 0x4000000
 
-    .line 7884
+    .line 7811
     .local v0, "bits":I
     if-eqz p1, :cond_0
 
-    .line 7885
+    .line 7812
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/high16 v4, 0x4000000
@@ -125,14 +125,14 @@
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 7889
+    .line 7816
     :goto_0
     invoke-virtual {v1, v2}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 7880
+    .line 7807
     return-void
 
-    .line 7887
+    .line 7814
     :cond_0
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 

@@ -6918,10 +6918,12 @@
 
     if-nez v4, :cond_27
 
+    .line 3721
     const/4 v4, 0x0
 
     return-object v4
 
+    .line 3723
     :cond_30
     if-nez p6, :cond_31
 

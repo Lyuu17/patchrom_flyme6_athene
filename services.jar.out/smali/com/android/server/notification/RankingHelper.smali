@@ -1833,8 +1833,6 @@
 
     iput v7, v3, Lcom/android/server/notification/RankingHelper$Record;->visibility:I
 
-    invoke-direct {p0, p1, v3}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
-
     const-string v7, "sound-timeout"
 
     const/4 v8, 0x0
@@ -1846,6 +1844,8 @@
     int-to-long v8, v7
 
     iput-wide v8, v3, Lcom/android/server/notification/RankingHelper$Record;->soundTimeout:J
+
+    invoke-direct {p0, p1, v3}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
 
     goto/16 :goto_0
 
@@ -2568,6 +2568,8 @@
 
     invoke-interface {p1, v6, v4, v5}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
+    invoke-direct {p0, p1, v3}, Lcom/android/server/notification/RankingHelper;->writeFlymeExtraFields(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/notification/RankingHelper$Record;)V
+
     .line 229
     :cond_7
     const-string/jumbo v4, "package"
@@ -2575,10 +2577,6 @@
     const/4 v5, 0x0
 
     invoke-interface {p1, v5, v4}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
-
-    :cond_flyme_0
-
-    invoke-direct {p0, p1, v3}, Lcom/android/server/notification/RankingHelper;->writeFlymeExtraFields(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/notification/RankingHelper$Record;)V
 
     goto/16 :goto_1
 
@@ -2706,6 +2704,36 @@
     invoke-static {v1, v0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
     return-void
+.end method
+
+.method private isFlymeNonDefaultSettings(Lcom/android/server/notification/RankingHelper$Record;Z)Z
+    .locals 3
+    .param p1, "r"    # Lcom/android/server/notification/RankingHelper$Record;
+    .param p2, "hasNonDefaultSettings"    # Z
+
+    .prologue
+    const/4 v0, 0x1
+
+    if-nez p2, :cond_0
+
+    iget-boolean v1, p1, Lcom/android/server/notification/RankingHelper$Record;->mFlymeRemind:Z
+
+    if-nez v1, :cond_1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    iget v1, p1, Lcom/android/server/notification/RankingHelper$Record;->mFlymeHeadsUp:I
+
+    const/4 v2, -0x1
+
+    if-ne v1, v2, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
@@ -3076,102 +3104,6 @@
     return v0
 .end method
 
-.method public setNotificationFirewall(Lcom/android/server/notification/NotificationFirewall;)V
-    .locals 1
-    .param p1, "firewall"    # Lcom/android/server/notification/NotificationFirewall;
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/notification/RankingHelper;->mFlymeRankingController:Lcom/flyme/server/notfication/RankingController;
-
-    invoke-interface {v0, p1}, Lcom/flyme/server/notfication/RankingController;->setNotificationFirewall(Lcom/android/server/notification/NotificationFirewall;)V
-
-    return-void
-.end method
-
-.method public setPackageHeadsUpVisibility(Ljava/lang/String;II)V
-    .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "visibility"    # I
-
-    .prologue
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getPackageHeadsUpVisibility(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne p3, v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-direct {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getOrCreateRecord(Ljava/lang/String;I)Lcom/android/server/notification/RankingHelper$Record;
-
-    move-result-object v0
-
-    iput p3, v0, Lcom/android/server/notification/RankingHelper$Record;->mFlymeHeadsUp:I
-
-    invoke-direct {p0}, Lcom/android/server/notification/RankingHelper;->updateConfig()V
-
-    return-void
-.end method
-
-.method public setPackageRemindEnable(Ljava/lang/String;IZ)V
-    .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "enable"    # Z
-
-    .prologue
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getPackageRemindEnable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-ne p3, v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-direct {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getOrCreateRecord(Ljava/lang/String;I)Lcom/android/server/notification/RankingHelper$Record;
-
-    move-result-object v0
-
-    iput-boolean p3, v0, Lcom/android/server/notification/RankingHelper$Record;->mFlymeRemind:Z
-
-    invoke-direct {p0}, Lcom/android/server/notification/RankingHelper;->updateConfig()V
-
-    return-void
-.end method
-
-.method private isFlymeNonDefaultSettings(Lcom/android/server/notification/RankingHelper$Record;Z)Z
-    .locals 3
-    .param p1, "r"    # Lcom/android/server/notification/RankingHelper$Record;
-    .param p2, "hasNonDefaultSettings"    # Z
-
-    .prologue
-    const/4 v0, 0x1
-
-    if-nez p2, :cond_0
-
-    iget-boolean v1, p1, Lcom/android/server/notification/RankingHelper$Record;->mFlymeRemind:Z
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    iget v1, p1, Lcom/android/server/notification/RankingHelper$Record;->mFlymeHeadsUp:I
-
-    const/4 v2, -0x1
-
-    if-ne v1, v2, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public hasLauncherActivity(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 5
     .param p1, "context"    # Landroid/content/Context;
@@ -3241,4 +3173,70 @@
     move-result v0
 
     return v0
+.end method
+
+.method public setNotificationFirewall(Lcom/android/server/notification/NotificationFirewall;)V
+    .locals 1
+    .param p1, "firewall"    # Lcom/android/server/notification/NotificationFirewall;
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/notification/RankingHelper;->mFlymeRankingController:Lcom/flyme/server/notfication/RankingController;
+
+    invoke-interface {v0, p1}, Lcom/flyme/server/notfication/RankingController;->setNotificationFirewall(Lcom/android/server/notification/NotificationFirewall;)V
+
+    return-void
+.end method
+
+.method public setPackageHeadsUpVisibility(Ljava/lang/String;II)V
+    .locals 1
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "visibility"    # I
+
+    .prologue
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getPackageHeadsUpVisibility(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-ne p3, v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-direct {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getOrCreateRecord(Ljava/lang/String;I)Lcom/android/server/notification/RankingHelper$Record;
+
+    move-result-object v0
+
+    iput p3, v0, Lcom/android/server/notification/RankingHelper$Record;->mFlymeHeadsUp:I
+
+    invoke-direct {p0}, Lcom/android/server/notification/RankingHelper;->updateConfig()V
+
+    return-void
+.end method
+
+.method public setPackageRemindEnable(Ljava/lang/String;IZ)V
+    .locals 1
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "enable"    # Z
+
+    .prologue
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getPackageRemindEnable(Ljava/lang/String;I)Z
+
+    move-result v0
+
+    if-ne p3, v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-direct {p0, p1, p2}, Lcom/android/server/notification/RankingHelper;->getOrCreateRecord(Ljava/lang/String;I)Lcom/android/server/notification/RankingHelper$Record;
+
+    move-result-object v0
+
+    iput-boolean p3, v0, Lcom/android/server/notification/RankingHelper$Record;->mFlymeRemind:Z
+
+    invoke-direct {p0}, Lcom/android/server/notification/RankingHelper;->updateConfig()V
+
+    return-void
 .end method

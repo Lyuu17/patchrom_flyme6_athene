@@ -19,10 +19,9 @@
     .locals 0
 
     .prologue
-    .line 5780
+    .line 5771
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5782
     return-void
 .end method
 
@@ -31,10 +30,10 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 5802
+    .line 5774
     const-string/jumbo v0, "flyme"
 
-    .line 5803
+    .line 5775
     .local v0, "FLYME_PACKAGE":Ljava/lang/String;
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -46,7 +45,7 @@
 
     return v1
 
-    .line 5804
+    .line 5776
     :cond_0
     const/4 v1, 0x0
 

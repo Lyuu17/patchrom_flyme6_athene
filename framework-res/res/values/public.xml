@@ -9479,5 +9479,4 @@
     <public type="^attr-private" name="alwaysFocusable" id="0x011600c8" />
     <public type="^attr-private" name="minimalWidth" id="0x011600c9" />
     <public type="^attr-private" name="minimalHeight" id="0x011600ca" />
-    <public type="^attr-private" name="needAccessControl" id="0x011600cb" />
 </resources>

@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 X-Android-APK-Signed: 2
-SHA-256-Digest-Manifest: H6yA+AJPfg3DgVAUcP17GSvOFxGaboSXKVMuk1UKThY=
+SHA-256-Digest-Manifest: ZkuQpeZjBNuT0B2RxikISvJBRNQIji64rstnncLRQWs=
 Created-By: 1.0 (Android SignApk)
 
 Name: res/drawable-xxhdpi-v4/btn_radio_on_holo.png
@@ -6463,7 +6463,7 @@ Name: res/drawable-xxhdpi-v4/scrollbar_handle_holo_light.9.png
 SHA-256-Digest: RNNwVZsIAbccGSJotEwKEFapkrB2K5qGIDzTbKWA5Qc=
 
 Name: resources.arsc
-SHA-256-Digest: ulgNqOn5PKV3hsnhGMb3e7+C1iaat7Vf8a/7YzhW6Wc=
+SHA-256-Digest: hruIOPCMGxIQ1F4K6xVccwgHGxM/mOiW3cIFV5EgiYo=
 
 Name: res/drawable-xhdpi-v4/checkbox_off_background.png
 SHA-256-Digest: dmYkQIiWGUBc8nh2exu4JpIIW/6inZdVDW9toPS02CQ=

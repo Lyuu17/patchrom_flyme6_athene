@@ -2676,27 +2676,34 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 629
     iget v0, p0, Lcom/android/server/am/ProcessRecord;->pid:I
 
     invoke-static {v0}, Landroid/os/Process;->killProcessQuiet(I)V
 
+    .line 630
     iget v0, p0, Lcom/android/server/am/ProcessRecord;->uid:I
 
     iget v1, p0, Lcom/android/server/am/ProcessRecord;->pid:I
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerService;->killProcessGroup(II)V
 
+    .line 631
     iget-boolean v0, p0, Lcom/android/server/am/ProcessRecord;->persistent:Z
 
     if-nez v0, :cond_1
 
+    .line 632
     iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->killed:Z
 
+    .line 633
     iput-boolean v3, p0, Lcom/android/server/am/ProcessRecord;->killedByAm:Z
 
+    .line 635
     :cond_1
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
 
+    .line 622
     :cond_2
     return-void
 .end method
@@ -3187,12 +3194,15 @@
     :cond_a
     move v3, v4
 
+    .line 479
     goto/16 :goto_7
 
+    .line 503
     .restart local v8    # "seempStr":Ljava/lang/String;
     :cond_b
     iput-object p1, p0, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
 
+    .line 468
     return-void
 .end method
 
@@ -4443,9 +4453,11 @@
 
     invoke-interface {v0, v1, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
+    .line 563
     :cond_0
     iput-object v3, p0, Lcom/android/server/am/ProcessRecord;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
 
+    .line 559
     return-void
 .end method
 

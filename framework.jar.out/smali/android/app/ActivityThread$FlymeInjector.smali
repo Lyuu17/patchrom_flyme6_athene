@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 6269
+    .line 6261
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
     .param p0, "at"    # Landroid/app/ActivityThread;
 
     .prologue
-    .line 6298
+    .line 6274
     invoke-static {}, Lcom/meizu/common/alphame/AlphaMe;->getInstance()Lcom/meizu/common/alphame/AlphaMe;
 
     move-result-object v0
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/meizu/common/alphame/AlphaMe;->collect(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 6297
+    .line 6273
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .param p0, "at"    # Landroid/app/ActivityThread;
 
     .prologue
-    .line 6294
+    .line 6270
     invoke-static {}, Lcom/meizu/common/alphame/AlphaMe;->getInstance()Lcom/meizu/common/alphame/AlphaMe;
 
     move-result-object v0
@@ -107,7 +107,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/meizu/common/alphame/AlphaMe;->collect(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 6293
+    .line 6269
     return-void
 .end method
 
@@ -117,17 +117,17 @@
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 6272
+    .line 6264
     if-eqz p1, :cond_0
 
-    .line 6273
+    .line 6265
     invoke-virtual {p0}, Landroid/app/LoadedApk;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->setFlymeThemeResource(Ljava/lang/String;)V
 
-    .line 6271
+    .line 6263
     :cond_0
     return-void
 .end method

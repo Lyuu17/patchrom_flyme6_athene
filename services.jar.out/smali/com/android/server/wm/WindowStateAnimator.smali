@@ -2327,11 +2327,14 @@
 
     move-result v0
 
+    .line 1863
     .local v0, "shown":Z
     if-nez v0, :cond_1
 
+    .line 1864
     return v5
 
+    .line 1866
     :cond_1
     iget-object v2, p0, Lcom/android/server/wm/WindowStateAnimator;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5688,7 +5691,7 @@
     .line 1200
     :cond_1f
     invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;->moveShownFrameIfNeed(Lcom/android/server/wm/WindowStateAnimator;)V
-
+    
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/wm/WindowStateAnimator;->mAlpha:F
@@ -6689,27 +6692,34 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 934
     :cond_5
     :goto_2
     iget-object v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v4, v8}, Lcom/android/server/wm/WindowState;->setHasSurface(Z)V
 
+    .line 935
     iget-object v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceController:Lcom/android/server/wm/WindowSurfaceController;
 
     if-eqz v4, :cond_6
 
+    .line 936
     iget-object v4, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceController:Lcom/android/server/wm/WindowSurfaceController;
 
     invoke-virtual {v4, v8}, Lcom/android/server/wm/WindowSurfaceController;->setShown(Z)V
 
+    .line 938
     :cond_6
     iput-object v7, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceController:Lcom/android/server/wm/WindowSurfaceController;
 
+    .line 939
     iput v8, p0, Lcom/android/server/wm/WindowStateAnimator;->mDrawState:I
 
+    .line 877
     return-void
 
+    .line 919
     :cond_7
     :try_start_1
     invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->destroySurface()V
@@ -7653,10 +7663,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/wm/WindowManagerService;->updateNonSystemOverlayWindowsVisibilityIfNeeded(Lcom/android/server/wm/WindowState;Z)V
 
+    .line 622
     iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceController:Lcom/android/server/wm/WindowSurfaceController;
 
     invoke-virtual {v0, p1}, Lcom/android/server/wm/WindowSurfaceController;->hideInTransaction(Ljava/lang/String;)V
 
+    .line 616
     :cond_0
     return-void
 .end method

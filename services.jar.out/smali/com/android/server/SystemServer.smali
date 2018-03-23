@@ -7,7 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/SystemServer$AdbPortObserver;,
-	Lcom/android/server/SystemServer$FlymeInjector;
+        Lcom/android/server/SystemServer$FlymeInjector;
     }
 .end annotation
 
@@ -3093,6 +3093,10 @@
 
     if-eqz v4, :cond_4a
 
+    const-wide/32 v4, 0x80000
+
+    invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
+
     :cond_16
     :goto_1a
     const-string v4, "StartAudioService"
@@ -3644,12 +3648,15 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_28
+    goto/16 :goto_flyme_0
+
     if-nez v44, :cond_29
 
     if-eqz v36, :cond_4e
 
     .end local v21    # "atlas":Lcom/android/server/AssetAtlasService;
     :cond_29
+    :goto_flyme_0
     :goto_25
     if-nez v44, :cond_2a
 
@@ -4120,12 +4127,6 @@
     check-cast v20, Lcom/android/server/MmsServiceBroker;
 
     .local v20, "mmsService":Lcom/android/server/MmsServiceBroker;
-    move-object/from16 v4, p0
-
-    move-object/from16 v5, v105
-
-    invoke-static {v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;)V
-
     :try_start_2c
     invoke-static/range {v58 .. v58}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -4228,6 +4229,12 @@
     .end local v73    # "method":Ljava/lang/reflect/Method;
     .end local v89    # "serverClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :goto_2b
+    move-object/from16 v4, p0
+
+    move-object/from16 v5, v105
+
+    invoke-static {v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;)V
+
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/SystemServer;->mContentResolver:Landroid/content/ContentResolver;
@@ -5375,13 +5382,13 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/String;)Lcom/android/server/SystemService;
 
-    .line 1032
     move-result-object v4
 
     move-object/from16 v0, p0
 
     iput-object v4, v0, Lcom/android/server/SystemServer;->mFlymeWallpaperLifeService:Lcom/android/server/SystemService;
 
+    .line 1032
     const-wide/32 v4, 0x80000
 
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
@@ -5598,8 +5605,6 @@
 
     .line 1193
     :cond_4e
-    goto/16 :goto_flyme_0
-
     const-string/jumbo v4, "StartAssetAtlasService"
 
     invoke-static {v4}, Lcom/android/server/SystemServer;->traceBeginAndSlog(Ljava/lang/String;)V
@@ -5635,7 +5640,6 @@
 
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
 
-    :goto_flyme_0
     goto/16 :goto_25
 
     .line 1197

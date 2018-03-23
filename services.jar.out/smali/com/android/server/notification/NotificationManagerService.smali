@@ -96,8 +96,6 @@
 
 
 # instance fields
-.field private mAdjustableNotificationLedBrightness:Z
-
 .field private mFlymeFirewall:Lcom/android/server/notification/NotificationFirewall;
 
 .field private mFlymeInterceptThread:Landroid/os/HandlerThread;
@@ -107,6 +105,8 @@
 .field mFlymeWakeLock:Landroid/os/PowerManager$WakeLock;
 
 .field mFlymeWakeUpScreenRunnable:Ljava/lang/Runnable;
+
+.field private mAdjustableNotificationLedBrightness:Z
 
 .field private mAm:Landroid/app/IActivityManager;
 
@@ -12636,8 +12636,10 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mFallbackVibrationPattern:[J
 
+    .line 1166
     const/16 v1, 0x20
 
+    .line 1165
     move-object/from16 v0, p0
 
     invoke-direct {v0, v1}, Lcom/android/server/notification/NotificationManagerService;->doLightsSupport(I)Z

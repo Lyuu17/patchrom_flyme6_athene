@@ -6461,7 +6461,7 @@ Name: res/drawable-xxhdpi-v4/scrollbar_handle_holo_light.9.png
 SHA-256-Digest: +nrC6lx6yHJj8CdYdwHu1dyJVAwhF8gqyX4TcVir8Fk=
 
 Name: resources.arsc
-SHA-256-Digest: I0/mrhlP6+g/3bONtHxarHye895xLU0ec3nIYILZH50=
+SHA-256-Digest: e33vZw8PzM3iz68hG4BkJriy1Xq5yC1pbPNYk/s8ve0=
 
 Name: res/drawable-xhdpi-v4/checkbox_off_background.png
 SHA-256-Digest: UIUBYuwVfsFhtYCCcgs/q4LQTc7BpPgLH1HlcvV/PAs=

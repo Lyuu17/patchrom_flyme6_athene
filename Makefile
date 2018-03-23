@@ -40,7 +40,7 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-vendor_remove_dirs := vendor/system/rfs
+#vendor_remove_dirs := vendor/operator/app
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
@@ -55,7 +55,7 @@ vendor_remove_dirs := vendor/system/rfs
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService BookmarkProvider EasterEgg ExtShared HTMLViewer KeyChain PacProcessor PrintRecommendationService PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup \
-		     AudioFX BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver CMActions CMAudioService CMParts CMSettingsProvider DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
+                     BackupRestoreConfirmation BlockedNumberProvider CMActions CMSettingsProvider CarrierConfig CellBroadcastReceiver DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -94,7 +94,7 @@ vendor_modify_jars := framework services telephony-common wifi-service org.cyano
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := NfcNci
+board_remove_apps := AppCenterIntl NfcNci
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.

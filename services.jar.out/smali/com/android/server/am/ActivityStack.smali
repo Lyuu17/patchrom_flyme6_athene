@@ -5271,6 +5271,21 @@
     .line 2330
     :cond_19
     :goto_7
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v24
+
+    invoke-direct {v0, v1}, Lcom/android/server/am/ActivityStack;->checkFlymeAccessControl(Lcom/android/server/am/ActivityRecord;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_flyme_0
     if-eqz p1, :cond_1b
 
     move-object/from16 v0, p1
@@ -14223,18 +14238,22 @@
 
     if-ne v14, v15, :cond_7
 
+    .line 4982
     :cond_6
     move-object v12, v11
 
+    .line 4983
     .local v12, "top":Lcom/android/server/am/ActivityRecord;
     const/4 v7, 0x0
 
     const/4 v6, 0x0
 
+    .line 4987
     .end local v12    # "top":Lcom/android/server/am/ActivityRecord;
     :cond_7
     add-int/lit8 v6, v6, 0x1
 
+    .line 4988
     iget-object v14, v11, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
 
     if-eqz v14, :cond_3
@@ -14312,40 +14331,49 @@
 
     iput-wide v14, v4, Landroid/app/ActivityManager$RunningTaskInfo;->lastActiveTime:J
 
+    .line 5008
     const/4 v13, 0x0
 
+    .line 5011
     :cond_9
     iget-object v14, v12, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
     if-eqz v14, :cond_a
 
+    .line 5012
     iget-object v14, v12, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
     iget-object v14, v14, Lcom/android/server/am/TaskRecord;->lastDescription:Ljava/lang/CharSequence;
 
     iput-object v14, v4, Landroid/app/ActivityManager$RunningTaskInfo;->description:Ljava/lang/CharSequence;
 
+    .line 5014
     :cond_a
     iput v6, v4, Landroid/app/ActivityManager$RunningTaskInfo;->numActivities:I
 
+    .line 5015
     iput v7, v4, Landroid/app/ActivityManager$RunningTaskInfo;->numRunning:I
 
+    .line 5016
     invoke-virtual {v9}, Lcom/android/server/am/TaskRecord;->canGoInDockedStack()Z
 
     move-result v14
 
     iput-boolean v14, v4, Landroid/app/ActivityManager$RunningTaskInfo;->isDockable:Z
 
+    .line 5017
     iget v14, v9, Lcom/android/server/am/TaskRecord;->mResizeMode:I
 
     iput v14, v4, Landroid/app/ActivityManager$RunningTaskInfo;->resizeMode:I
 
+    .line 5018
     move-object/from16 v0, p1
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_2
 
+    .line 4956
     .end local v2    # "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
     .end local v3    # "activityNdx":I
     .end local v4    # "ci":Landroid/app/ActivityManager$RunningTaskInfo;

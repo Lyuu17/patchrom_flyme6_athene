@@ -1163,15 +1163,18 @@
     .locals 4
 
     .prologue
+    .line 414
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v2
 
+    .line 415
     .local v2, "numberOfCameras":I
     new-instance v0, Landroid/hardware/Camera$CameraInfo;
 
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
+    .line 416
     .local v0, "cameraInfo":Landroid/hardware/Camera$CameraInfo;
     const/4 v1, 0x0
 
@@ -1212,6 +1215,7 @@
     .param p0, "cameraId"    # I
 
     .prologue
+    .line 404
     new-instance v0, Landroid/hardware/Camera;
 
     invoke-direct {v0, p0}, Landroid/hardware/Camera;-><init>(I)V
@@ -1225,17 +1229,19 @@
     .param p1, "halVersion"    # I
 
     .prologue
+    .line 464
     const/16 v0, 0x100
 
     if-ge p1, v0, :cond_0
 
+    .line 465
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Invalid HAL version "
+    const-string/jumbo v2, "Invalid HAL version "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1253,6 +1259,7 @@
 
     throw v0
 
+    .line 468
     :cond_0
     new-instance v0, Landroid/hardware/Camera;
 
@@ -1265,7 +1272,7 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 596
     new-instance v0, Landroid/hardware/Camera;
 
     invoke-direct {v0}, Landroid/hardware/Camera;-><init>()V
@@ -1282,6 +1289,7 @@
     .param p4, "obj"    # Ljava/lang/Object;
 
     .prologue
+    .line 1264
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0    # "camera_ref":Ljava/lang/Object;
@@ -1291,28 +1299,33 @@
 
     check-cast v0, Landroid/hardware/Camera;
 
+    .line 1265
     .local v0, "c":Landroid/hardware/Camera;
     if-nez v0, :cond_0
 
+    .line 1266
     return-void
 
-    .line 468
+    .line 1268
     :cond_0
     iget-object v2, v0, Landroid/hardware/Camera;->mEventHandler:Landroid/hardware/Camera$EventHandler;
 
     if-eqz v2, :cond_1
 
+    .line 1269
     iget-object v2, v0, Landroid/hardware/Camera;->mEventHandler:Landroid/hardware/Camera$EventHandler;
 
     invoke-virtual {v2, p1, p2, p3, p4}, Landroid/hardware/Camera$EventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 1270
     .local v1, "m":Landroid/os/Message;
     iget-object v2, v0, Landroid/hardware/Camera;->mEventHandler:Landroid/hardware/Camera$EventHandler;
 
     invoke-virtual {v2, v1}, Landroid/hardware/Camera$EventHandler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 1262
     .end local v1    # "m":Landroid/os/Message;
     :cond_1
     return-void
