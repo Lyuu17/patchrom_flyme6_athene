@@ -1327,9 +1327,9 @@
 
     .prologue
     .line 154
-    const-string/jumbo v0, "org.cyanogenmod.livedisplay"
+    const/4 v0, 0x0
 
-    return-object v0
+    return v0
 .end method
 
 .method public isCoreService()Z
