@@ -91615,8 +91615,6 @@
     throw v3
 .end method
 
-.end method
-
 .method public static isFlymeLauncherCalling()Z
     .locals 15
 
